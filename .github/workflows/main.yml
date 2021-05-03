@@ -26,7 +26,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: yanboyang713/yanboyang713.github.io
           publish_dir: ./public
           publish_branch: gh-pages
