@@ -1,7 +1,7 @@
 ---
 title: "First_post"
 date: 2021-04-25T06:11:32+10:00
-draft: true
+draft: false
 math: true
 ---
 # test
