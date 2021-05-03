@@ -31,7 +31,7 @@ jobs:
           external_repository: yanboyang713/yanboyang713.github.io
           publish_dir: ./public
           publish_branch: gh-pages
-          #   keep_files: true
+          keep_files: true
           user_name: yanboyang713
           user_email: yanboyang713@gmail.com
           #  cname: example.com
