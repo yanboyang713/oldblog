@@ -1,0 +1,279 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>How to install Docker, Nvidia Docker and Docker Compose - My New Hugo Site</title><meta name=description content="This is My New Hugo Site"><meta property="og:title" content="How to install Docker, Nvidia Docker and Docker Compose"><meta property="og:description" content="Install Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04 https://docs.docker.com/engine/install/ubuntu/
+Step 1 — Installing Docker The Docker installation package available in the official Ubuntu repository may not be the latest version. To ensure we get the latest version, we’ll install Docker from the official Docker repository. To do that, we’ll add a new package source, add the GPG key from Docker to ensure the downloads are valid, and then install the package.
+First, update your existing list of packages:"><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/dockerinstall/"><meta property="og:image" content="http://example.org/logo.png"><meta property="article:section" content="posts"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://example.org/logo.png"><meta name=twitter:title content="How to install Docker, Nvidia Docker and Docker Compose"><meta name=twitter:description content="Install Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04 https://docs.docker.com/engine/install/ubuntu/
+Step 1 — Installing Docker The Docker installation package available in the official Ubuntu repository may not be the latest version. To ensure we get the latest version, we’ll install Docker from the official Docker repository. To do that, we’ll add a new package source, add the GPG key from Docker to ensure the downloads are valid, and then install the package.
+First, update your existing list of packages:"><meta name=application-name content="LoveIt"><meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://example.org/dockerinstall/><link rel=prev href=http://example.org/tensorflowgpusupport/><link rel=next href=http://example.org/zotero/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"How to install Docker, Nvidia Docker and Docker Compose","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/example.org\/dockerinstall\/"},"genre":"posts","keywords":"Docker","wordcount":2146,"url":"http:\/\/example.org\/dockerinstall\/","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"xxxx"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="My New Hugo Site"></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>Posts </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop><input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="My New Hugo Site"></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title>Posts</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">How to install Docker, Nvidia Docker and Docker Compose</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>xxxx</a></span>&nbsp;<span class=post-category>included in <a href=/categories/virtual-environment/><i class="far fa-folder fa-fw"></i>virtual environment</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2146 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#install-docker>Install Docker</a><ul><li><a href=#step-1--installing-docker>Step 1 — Installing Docker</a></li><li><a href=#step-2--executing-the-docker-command-without-sudo-optional>Step 2 — Executing the Docker Command Without Sudo (Optional)</a></li><li><a href=#install-docker-compose>Install Docker Compose</a><ul><li><a href=#install-steps>Install Steps</a></li></ul></li></ul></li><li><a href=#nvidia-docker-nvidia-container-toolkit>Nvidia Docker (NVIDIA Container Toolkit)</a><ul><li><a href=#introduction>Introduction</a></li><li><a href=#install-nvidia-docker>Install Nvidia Docker</a><ul><li><a href=#pre-requisites>Pre-Requisites</a><ul><li><a href=#nvidia-drivers>NVIDIA Drivers</a><ul><li><a href=#on-ubuntu-lts>On Ubuntu LTS</a></li><li><a href=#secure-uefi-boot>Secure UEFI Boot</a></li></ul></li></ul></li><li><a href=#installing-on-ubuntu-and-debian>Installing on Ubuntu and Debian</a></li></ul></li></ul></li><li><a href=#install-docker-in-arch-linux>Install Docker in Arch Linux</a><ul><li><a href=#step-1>Step 1:</a></li><li><a href=#step-2>Step 2:</a></li><li><a href=#step-3>Step 3:</a></li><li><a href=#step-4>Step 4:</a></li><li><a href=#step-5>Step 5:</a></li><li><a href=#step-6>Step 6:</a></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=install-docker>Install Docker</h2><p><a href=https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04>https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04</a>
+<a href=https://docs.docker.com/engine/install/ubuntu/>https://docs.docker.com/engine/install/ubuntu/</a></p><h3 id=step-1--installing-docker>Step 1 — Installing Docker</h3><p>The Docker installation package available in the official Ubuntu repository may not be the latest version. To ensure we get the latest version, we’ll install Docker from the official Docker repository. To do that, we’ll add a new package source, add the GPG key from Docker to ensure the downloads are valid, and then install the package.</p><p>First, update your existing list of packages:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo apt update
+</code></pre></td></tr></table></div></div><p>Next, install a few prerequisite packages which let apt use packages over HTTPS:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo apt-get install <span class=se>\
+</span><span class=se></span>    apt-transport-https <span class=se>\
+</span><span class=se></span>    ca-certificates <span class=se>\
+</span><span class=se></span>    curl <span class=se>\
+</span><span class=se></span>    gnupg-agent <span class=se>\
+</span><span class=se></span>    software-properties-common
+
+</code></pre></td></tr></table></div></div><p>Then add the GPG key for the official Docker repository to your system:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>boyyan-ms:~$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+OK
+</code></pre></td></tr></table></div></div><p>Verify that you now have the key with the fingerprint 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88, by searching for the last 8 characters of the fingerprint.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>boyyan-ms:~$ sudo apt-key fingerprint 0EBFCD88
+pub   rsa4096 2017-02-22 [SCEA]
+      9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+uid           [ unknown] Docker Release (CE deb) &lt;docker@docker.com&gt;
+sub   rsa4096 2017-02-22 [S]
+</code></pre></td></tr></table></div></div><p>Add the Docker repository to APT sources:
+<strong>For x86_64 / amd64:</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-go data-lang=go><span class=nx>boyyan</span><span class=o>-</span><span class=nx>ms</span><span class=p>:</span><span class=err>~$</span> <span class=nx>sudo</span> <span class=nx>add</span><span class=o>-</span><span class=nx>apt</span><span class=o>-</span><span class=nx>repository</span> \
+<span class=p>&gt;</span>    <span class=s>&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+</span><span class=s>&gt;    $(lsb_release -cs) \
+</span><span class=s>&gt;    stable&#34;</span>
+<span class=nx>Get</span><span class=p>:</span><span class=mi>1</span> <span class=nx>https</span><span class=p>:</span><span class=c1>//download.docker.com/linux/ubuntu focal InRelease [36.2 kB]
+</span><span class=c1></span><span class=nx>Get</span><span class=p>:</span><span class=mi>2</span> <span class=nx>https</span><span class=p>:</span><span class=c1>//download.docker.com/linux/ubuntu focal/stable amd64 Packages [4226 B]
+</span><span class=c1></span><span class=nx>Hit</span><span class=p>:</span><span class=mi>3</span> <span class=nx>http</span><span class=p>:</span><span class=c1>//archive.ubuntu.com/ubuntu focal InRelease
+</span><span class=c1></span><span class=nx>Get</span><span class=p>:</span><span class=mi>4</span> <span class=nx>http</span><span class=p>:</span><span class=c1>//archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+</span><span class=c1></span><span class=nx>Get</span><span class=p>:</span><span class=mi>5</span> <span class=nx>http</span><span class=p>:</span><span class=c1>//archive.ubuntu.com/ubuntu focal-security InRelease [109 kB]
+</span><span class=c1></span><span class=nx>Fetched</span> <span class=mi>263</span> <span class=nx>kB</span> <span class=nx>in</span> <span class=mi>2</span><span class=nf>s</span> <span class=p>(</span><span class=mi>128</span> <span class=nx>kB</span><span class=o>/</span><span class=nx>s</span><span class=p>)</span>  
+<span class=nx>Reading</span> <span class=kn>package</span> <span class=nx>lists</span><span class=o>...</span> <span class=nx>Done</span>
+</code></pre></td></tr></table></div></div><p>Next, update the package database with the Docker packages from the newly added repo:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo apt update
+</code></pre></td></tr></table></div></div><p>Finally, install Docker:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo apt-get install docker-ce docker-ce-cli containerd.io
+</code></pre></td></tr></table></div></div><p>Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it’s running:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>(base) yanboyang713@boyang:~/Documents/docker-as-dev-environment$ sudo systemctl status docker
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+   Active: active (running) since Fri 2020-10-09 15:28:29 CST; 1 day 2h ago
+     Docs: https://docs.docker.com
+ Main PID: 1701 (dockerd)
+    Tasks: 21
+   CGroup: /system.slice/docker.service
+           └─1701 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Oct 09 15:28:28 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:28.951155226+08:00&#34; level=warning msg=&#34;Y
+Oct 09 15:28:28 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:28.951158322+08:00&#34; level=warning msg=&#34;Y
+Oct 09 15:28:28 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:28.951164075+08:00&#34; level=warning msg=&#34;Y
+Oct 09 15:28:28 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:28.951254105+08:00&#34; level=info msg=&#34;Load
+Oct 09 15:28:29 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:29.081341203+08:00&#34; level=info msg=&#34;Defa
+Oct 09 15:28:29 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:29.106837782+08:00&#34; level=info msg=&#34;Load
+Oct 09 15:28:29 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:29.138925271+08:00&#34; level=info msg=&#34;Dock
+Oct 09 15:28:29 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:29.139550992+08:00&#34; level=info msg=&#34;Daem
+Oct 09 15:28:29 boyang systemd[1]: Started Docker Application Container Engine.
+Oct 09 15:28:29 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:29.151309815+08:00&#34; level=info msg=&#34;API
+</code></pre></td></tr></table></div></div><p>Verify that Docker Engine is installed correctly by running the hello-world image.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ sudo docker run hello-world
+</code></pre></td></tr></table></div></div><p>This command downloads a test image and runs it in a container. When the container runs, it prints an informational message and exits.</p><p>Docker Engine is installed and running.</p><p><strong>NOTE:</strong>
+If you install Docker in Proxmox VE LXC, facing the <em><strong>ERROR</strong></em> message at the below.
+boyyan@boyyan-ms:~$ sudo docker run hello-world
+[sudo] password for boyyan:
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:349: starting container process caused &ldquo;process_linux.go:449: container init caused "rootfs_linux.go:58: mounting \"proc\" to rootfs \"/var/lib/docker/overlay2/7cd9e570d9b46c7f1252862830bd45bb29f679d162a62f8260b519cd227561c9/merged\" at \"/proc\" caused \"permission denied\""": unknown.
+ERRO[0002] error waiting for container: context canceled</p><p>Please, go to your Container Features and check <strong>Nesting</strong>. Issue will gone.
+<img class=lazyload src=/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1607259609/docker/nesting_jskvss.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1607259609/docker/nesting_jskvss.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1607259609/docker/nesting_jskvss.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1607259609/docker/nesting_jskvss.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1607259609/docker/nesting_jskvss.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1607259609/docker/nesting_jskvss.png></p><p>Installing Docker now gives you not just the Docker service (daemon) but also the docker command line utility, or the Docker client. We’ll explore how to use the docker command later in this tutorial.</p><h3 id=step-2--executing-the-docker-command-without-sudo-optional>Step 2 — Executing the Docker Command Without Sudo (Optional)</h3><p>By default, the docker command can only be run the root user or by a user in the docker group, which is automatically created during Docker’s installation process. If you attempt to run the docker command without prefixing it with sudo or without being in the docker group, you’ll get an output like this:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?.
+See &#39;docker run --help&#39;.
+</code></pre></td></tr></table></div></div><p>If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:</p><ol><li>Create the <strong>docker</strong> group.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ sudo groupadd docker
+</code></pre></td></tr></table></div></div><ol start=2><li>Add your user to the <strong>docker</strong> group.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>sudo usermod -aG docker ${USER}
+</code></pre></td></tr></table></div></div><p>To apply the new group membership, log out of the server and back in, or type the following:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>su - <span class=si>${</span><span class=nv>USER</span><span class=si>}</span>
+</code></pre></td></tr></table></div></div><p>You will be prompted to enter your user’s password to continue.</p><p>Confirm that your user is now added to the docker group by typing:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>(base) yanboyang713@boyang:~/Documents/docker-as-dev-environment$ id -nG
+yanboyang713 adm cdrom sudo dip plugdev lpadmin sambashare microk8s docker
+
+</code></pre></td></tr></table></div></div><p>If you need to add a user to the docker group that you’re not logged in as, declare that username explicitly using:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo usermod -aG docker username
+</code></pre></td></tr></table></div></div><p>The rest of this article assumes you are running the docker command as a user in the docker group. If you choose not to, please prepend the commands with sudo.</p><p>Let’s explore the docker command next.</p><h3 id=install-docker-compose>Install Docker Compose</h3><p>Docker Compose relies on Docker Engine for any meaningful work, so make sure you have Docker Engine installed either locally or remote, depending on your setup.</p><pre><code>On desktop systems like Docker Desktop for Mac and Windows, Docker Compose is included as part of those desktop installs.
+
+On Linux systems, first install the Docker Engine for your OS as described on the Get Docker page, then come back here for instructions on installing Compose on Linux systems.
+
+To run Compose as a non-root user, see Manage Docker as a non-root user.
+</code></pre><h4 id=install-steps>Install Steps</h4><p>On Linux, you can download the Docker Compose binary from the Compose repository release page on GitHub. Follow the instructions from the link, which involve running the curl command in your terminal to download the binaries. These step-by-step instructions are also included below.</p><ol><li>Run this command to download the current stable release of Docker Compose:</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo curl -L <span class=s2>&#34;https://github.com/docker/compose/releases/download/1.27.4/docker-compose-</span><span class=k>$(</span>uname -s<span class=k>)</span><span class=s2>-</span><span class=k>$(</span>uname -m<span class=k>)</span><span class=s2>&#34;</span> -o /usr/local/bin/docker-compose
+</code></pre></td></tr></table></div></div><ol start=2><li>Apply executable permissions to the binary:</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo chmod +x /usr/local/bin/docker-compose
+</code></pre></td></tr></table></div></div><p><strong>Note</strong>: If the command docker-compose fails after installation, check your path. You can also create a symbolic link to /usr/bin or any other directory in your path.</p><p>For example:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+</code></pre></td></tr></table></div></div><ol><li>Optionally, install command completion for the bash and zsh shell.</li><li>Test the installation.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ docker-compose --version
+docker-compose version 1.27.4, build 1110ad01
+
+</code></pre></td></tr></table></div></div><h2 id=nvidia-docker-nvidia-container-toolkit>Nvidia Docker (NVIDIA Container Toolkit)</h2><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cloud.githubusercontent.com/assets/3028125/12213714/5b208976-b632-11e5-8406-38d379ec46aa.png data-srcset="https://cloud.githubusercontent.com/assets/3028125/12213714/5b208976-b632-11e5-8406-38d379ec46aa.png, https://cloud.githubusercontent.com/assets/3028125/12213714/5b208976-b632-11e5-8406-38d379ec46aa.png 1.5x, https://cloud.githubusercontent.com/assets/3028125/12213714/5b208976-b632-11e5-8406-38d379ec46aa.png 2x" data-sizes=auto alt=https://cloud.githubusercontent.com/assets/3028125/12213714/5b208976-b632-11e5-8406-38d379ec46aa.png title=https://cloud.githubusercontent.com/assets/3028125/12213714/5b208976-b632-11e5-8406-38d379ec46aa.png></p><h3 id=introduction>Introduction</h3><p>The NVIDIA Container Toolkit allows users to build and run GPU accelerated Docker containers. The toolkit includes a container runtime library and utilities to automatically configure containers to leverage NVIDIA GPUs.</p><p>Product documentation including an architecture overview, platform support, installation and usage guides can be found in the documentation repository.</p><h3 id=install-nvidia-docker>Install Nvidia Docker</h3><h4 id=pre-requisites>Pre-Requisites</h4><p>Make sure you have installed the NVIDIA driver and Docker engine for your Linux distribution Note that you do not need to install the CUDA Toolkit on the host system, but the NVIDIA driver needs to be installed.</p><h5 id=nvidia-drivers>NVIDIA Drivers</h5><p>Before you get started, make sure you have installed the NVIDIA driver for your Linux distribution. The recommended way to install drivers is to use the package manager for your distribution but other installer mechanisms are also available (e.g. by downloading .run installers from NVIDIA Driver Downloads).</p><h6 id=on-ubuntu-lts>On Ubuntu LTS</h6><ol><li>The NVIDIA driver requires that the kernel headers and development packages for the running version of the kernel be installed at the time of the driver installation, as well whenever the driver is rebuilt. For example, if your system is running kernel version 4.4.0, the 4.4.0 kernel headers and development packages must also be installed.</li></ol><p>The kernel headers and development packages for the currently running kernel can be installed with:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo apt-get install linux-headers-<span class=k>$(</span>uname -r<span class=k>)</span>
+</code></pre></td></tr></table></div></div><ol start=2><li>Ensure packages on the CUDA network repository have priority over the Canonical repository.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ <span class=nv>distribution</span><span class=o>=</span><span class=k>$(</span>. /etc/os-release<span class=p>;</span><span class=nb>echo</span> <span class=nv>$ID$VERSION_ID</span> <span class=p>|</span> sed -e <span class=s1>&#39;s/\.//g&#39;</span><span class=k>)</span>
+$ wget https://developer.download.nvidia.com/compute/cuda/repos/<span class=nv>$distribution</span>/x86_64/cuda-<span class=nv>$distribution</span>.pin
+$ sudo mv cuda-<span class=nv>$distribution</span>.pin /etc/apt/preferences.d/cuda-repository-pin-600
+</code></pre></td></tr></table></div></div><ol start=3><li>Install the CUDA repository public GPG key. Note that on Ubuntu 16.04, replace https with http in the command below.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/<span class=nv>$distribution</span>/x86_64/7fa2af80.pub
+</code></pre></td></tr></table></div></div><ol start=4><li>Setup the CUDA network repository.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=nb>echo</span> <span class=s2>&#34;deb http://developer.download.nvidia.com/compute/cuda/repos/</span><span class=nv>$distribution</span><span class=s2>/x86_64 /&#34;</span> <span class=p>|</span> sudo tee /etc/apt/sources.list.d/cuda.list
+</code></pre></td></tr></table></div></div><ol start=5><li>Update the APT repository cache and install the driver using the cuda-drivers meta-package. Use the &ndash;no-install-recommends option for a lean driver install without any dependencies on X packages. This is particularly useful for headless installations on cloud instances.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ sudo apt-get update
+
+$ sudo apt-get -y install cuda-drivers
+</code></pre></td></tr></table></div></div><h6 id=secure-uefi-boot>Secure UEFI Boot</h6><p>An issue that often arises when attempting to install Nvidia drivers on Linux involves a motherboard setting known as Secure UEFI Boot. In order for the driver installation to be successful it is necessary to disable this setting on most motherboards.</p><p>The procedure for carrying this out is highly specific to each particular motherboard. Hence it is difficult to provide detailed instructions that apply to a range of system configurations.</p><p>In broad terms it will be necessary to enter the BIOS as the machine boots up. This can usually be achieved by pressing the Del or F10 key. Once in the BIOS it is necessary to navigate to the section that determines boot settings. To disable Secure UEFI Boot it sometimes involves backing up and removing certain keys while in other instances it is simply a boolean setting that is easily modified.</p><p>If this feature is not disabled then in all likelihood trouble will arise subsequent to the Nvidia driver installation. Issues may occur when attempting to login in to Ubuntu after bootup. The problem is particularly difficult to resolve as it often involves an inability to load the Ubuntu GUI!</p><h4 id=installing-on-ubuntu-and-debian>Installing on Ubuntu and Debian</h4><ol><li>Setup the stable repository and the GPG key:</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=nv>distribution</span><span class=o>=</span><span class=k>$(</span>. /etc/os-release<span class=p>;</span><span class=nb>echo</span> <span class=nv>$ID$VERSION_ID</span><span class=k>)</span>
+
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey <span class=p>|</span> sudo apt-key add -
+
+curl -s -L https://nvidia.github.io/nvidia-docker/<span class=nv>$distribution</span>/nvidia-docker.list <span class=p>|</span> sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+
+</code></pre></td></tr></table></div></div><p><strong>Note</strong>
+To get access to experimental features such as CUDA on WSL or the new MIG capability on A100, you may want to add the experimental branch to the repository listing:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>curl -s -L https://nvidia.github.io/nvidia-container-runtime/experimental/<span class=nv>$distribution</span>/nvidia-container-runtime.list <span class=p>|</span> sudo tee /etc/apt/sources.list.d/nvidia-container-runtime.list
+</code></pre></td></tr></table></div></div><ol start=2><li>Install the nvidia-docker2 package (and dependencies) after updating the package listing:</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo apt-get update
+
+sudo apt-get install -y nvidia-docker2
+</code></pre></td></tr></table></div></div><ol start=3><li>Restart the Docker daemon to complete the installation after setting the default runtime:</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo systemctl restart docker
+</code></pre></td></tr></table></div></div><ol start=4><li>At this point, a working setup can be tested by running a base CUDA container:</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>(base) yanboyang713@boyang:~$ sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
+[sudo] password for yanboyang713: 
+Sun Oct 11 11:24:35 2020       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 455.23.05    Driver Version: 455.23.05    CUDA Version: 11.1     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  GeForce RTX 2070    On   | 00000000:01:00.0  On |                  N/A |
+| 33%   36C    P8    11W / 175W |    293MiB /  7979MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
++-----------------------------------------------------------------------------+
+
+</code></pre></td></tr></table></div></div><h2 id=install-docker-in-arch-linux>Install Docker in Arch Linux</h2><h3 id=step-1>Step 1:</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>yay -S docker
+</code></pre></td></tr></table></div></div><h3 id=step-2>Step 2:</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo systemctl start docker.service
+</code></pre></td></tr></table></div></div><h3 id=step-3>Step 3:</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo docker info
+</code></pre></td></tr></table></div></div><h3 id=step-4>Step 4:</h3><p>Verify that you can run containers. The following command downloads the latest Arch Linux image and uses it to run a Hello World program within a container:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ sudo docker run -it --rm archlinux bash -c &#34;echo hello world&#34;
+[sudo] password for yanboyang713: 
+Unable to find image &#39;archlinux:latest&#39; locally
+latest: Pulling from library/archlinux
+cc7ff1c0e722: Pull complete 
+503b62125c98: Pull complete 
+Digest: sha256:3af015abc04cb71af3d9eb97d6c8c8c1d46a89e729a122251451e4b94d2710cd
+Status: Downloaded newer image for archlinux:latest
+hello world
+</code></pre></td></tr></table></div></div><h3 id=step-5>Step 5:</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo systemctl <span class=nb>enable</span> docker.service
+</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo usermod -aG docker username
+</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>reboot
+</code></pre></td></tr></table></div></div><h3 id=step-6>Step 6:</h3><p>Install the docker-rootless-extras-binAUR package to run docker in rootless mode (that is, as a regular user instead of as root).</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>yay -S docker-rootless-extras-bin
+</code></pre></td></tr></table></div></div><p>To Run the Docker daemon as a non-root user (Rootless mode) for ArchLinux, you need to do the following things:</p><ol><li>Configure subuid and subgid</li></ol><p>Create &lsquo;/etc/subuid&rsquo; and &lsquo;/etc/subgid&rsquo; with: &lsquo;testuser:231072:65536&rsquo; (for example, &lsquo;testuser&rsquo; is username)</p><p>Example:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>yanboyang713:231072:65536
+</code></pre></td></tr></table></div></div><ol start=2><li>Enable socket-activation for the user service: &lsquo;systemctl &ndash;user enable &ndash;now docker.socket&rsquo;</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo systemctl <span class=nb>enable</span> --now docker.socket
+</code></pre></td></tr></table></div></div><ol start=3><li><p>Finally set docker socket environment variable:</p><p>export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock</p></li></ol><p>You can also add it to &lsquo;~/.bashrc&rsquo; or somewhere alike.</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 0001-01-01</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=/dockerinstall/index.md target=_blank rel="noopener noreferrer">Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=http://example.org/dockerinstall/ data-title="How to install Docker, Nvidia Docker and Docker Compose" data-via=xxxx data-hashtags=Docker><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=http://example.org/dockerinstall/ data-hashtag=Docker><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=http://example.org/dockerinstall/ data-title="How to install Docker, Nvidia Docker and Docker Compose" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=http://example.org/dockerinstall/ data-title="How to install Docker, Nvidia Docker and Docker Compose"><i data-svg-src=/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=http://example.org/dockerinstall/ data-title="How to install Docker, Nvidia Docker and Docker Compose"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=http://example.org/dockerinstall/ data-title="How to install Docker, Nvidia Docker and Docker Compose" data-description><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=http://example.org/dockerinstall/ data-title="How to install Docker, Nvidia Docker and Docker Compose" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=http://example.org/dockerinstall/ data-title="How to install Docker, Nvidia Docker and Docker Compose"><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/docker/>Docker</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/tensorflowgpusupport/ class=prev rel=prev title="Install Tensorflow 2.1 on Ubuntu 18.04 LTS with GPU support"><i class="fas fa-angle-left fa-fw"></i>Install Tensorflow 2.1 on Ubuntu 18.04 LTS with GPU support</a>
+<a href=/zotero/ class=next rel=next title="Getting Started with Zotero">Getting Started with Zotero<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.83.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">xxxx</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript src=/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script></body></html>

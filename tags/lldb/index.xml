@@ -1,0 +1,4 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>LLDB - Tag - My New Hugo Site</title><link>http://example.org/tags/lldb/</link><description>LLDB - Tag - My New Hugo Site</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 04 Jan 2021 06:11:32 +1000</lastBuildDate><atom:link href="http://example.org/tags/lldb/" rel="self" type="application/rss+xml"/><item><title>Getting started with LLDB</title><link>http://example.org/lldb/</link><pubDate>Mon, 04 Jan 2021 06:11:32 +1000</pubDate><author>Author</author><guid>http://example.org/lldb/</guid><description>Introduction Install 1 yay -S clang lldb Enable Debug Symbols gcc:
+1 c++ -g demo.cpp Clang:
+1 clang++ -g demo.cpp CMAKE:
+1 cmake -DCMAKE_BUILD_TYPE=Debug</description></item></channel></rss>
