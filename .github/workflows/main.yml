@@ -34,4 +34,4 @@ jobs:
           keep_files: true
           user_name: yanboyang713
           user_email: yanboyang713@gmail.com
-          #  cname: example.com
+          cname: yanboyang.com

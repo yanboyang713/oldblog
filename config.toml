@@ -1,9 +1,9 @@
-baseURL = "http://example.org/"
+baseURL = "https://yanboyang.com/"
 # [en, zh-cn, fr, ...] determines default content language
 defaultContentLanguage = "en"
 # language code
 languageCode = "en"
-title = "My New Hugo Site"
+title = "Boyang Yan's Tech Blog"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "CodeIT"
@@ -41,7 +41,7 @@ theme = "CodeIT"
   #  LoveIt theme version
   version = "0.2.X"
   # site description
-  description = "This is My New Hugo Site"
+  description = "This is Boyang Yan's Tech Blog"
   # site keywords
   keywords = ["Theme", "Hugo"]
   # site default theme ("light", "dark", "auto")
@@ -160,9 +160,9 @@ theme = "CodeIT"
       # URL of avatar shown in home page
       avatarURL = "/images/avatar.png"
       #  title shown in home page (HTML format is supported)
-      title = ""
+      title = "Boyang Yan's Blog"
       # subtitle shown in home page
-      subtitle = "This is My New Hugo Site"
+      subtitle = "Tech Blog"
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
@@ -242,7 +242,7 @@ theme = "CodeIT"
     XMPP = ""
     Matrix = ""
     Bilibili = ""
-    Email = "xxxx@xxxx.com"
+    Email = "yanboyang713@gmail.com"
     RSS = true # 
 
   #  Page config
