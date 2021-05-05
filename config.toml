@@ -6,7 +6,7 @@ languageCode = "en"
 title = "Boyang Yan's Tech Blog"
 
 # Change the default theme to be use when building the site with Hugo
-theme = "CodeIT"
+theme = "DoIt"
 
 [menu]
   [[menu.main]]
