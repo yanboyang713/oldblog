@@ -354,9 +354,9 @@ theme = "CodeIT"
       # Disqus comment config
       [params.page.comment.disqus]
         # 
-        enable = false
+        enable = true
         # Disqus shortname to use Disqus in posts
-        shortname = ""
+        shortname = "boyang-blog"
       # Gitalk comment config
       [params.page.comment.gitalk]
         # 
