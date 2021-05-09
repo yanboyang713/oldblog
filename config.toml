@@ -11,7 +11,7 @@ theme = "CodeIT"
 [menu]
   [[menu.main]]
     identifier = "home"
-    name = "home"
+    name = "Home"
     url = "/"
     weight = 1
   [[menu.main]]
@@ -190,12 +190,12 @@ theme = "CodeIT"
 
   # Social config about the author
   [params.social]
-    GitHub = "xxxx"
-    Linkedin = ""
-    Twitter = "xxxx"
-    Instagram = "xxxx"
-    Facebook = "xxxx"
-    Telegram = "xxxx"
+    GitHub = "yanboyang713"
+    Linkedin = "boyang-yan-50a70763"
+    Twitter = ""
+    Instagram = ""
+    Facebook = "boyang.yan.52"
+    Telegram = ""
     Medium = ""
     Gitlab = ""
     Youtubelegacy = ""
@@ -467,7 +467,7 @@ theme = "CodeIT"
     enable = false
     # Google Analytics
     [params.analytics.google]
-      id = ""
+      id = "UA-101949995-1"
       # whether to anonymize IP
       anonymizeIP = true
     # Fathom Analytics
