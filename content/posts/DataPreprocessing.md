@@ -625,7 +625,7 @@ First, we will install and load the rvest package:
 library(rvest)
 ```
 
-We will use read_html to locate the URL of the HTML table. When we use read_html, all table nodes that exist on the webpage will be captured.
+We will use **read_html** to locate the URL of the HTML table. When we use **read_html**, all table nodes that exist on the webpage will be captured.
 
 ```R
 births <- read_html("https://www.ssa.gov/oact/babynames/numberUSbirths.html")
