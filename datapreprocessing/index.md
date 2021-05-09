@@ -609,7 +609,7 @@ head(aviation)
 Note that, you will get an error when you try to read from an URL starting with https as the read.xls function does not support https. If you simply replace the https with http in the url, read.xls function will be able to import the file.
 
 ##### Scraping HTML Table Data
-Sometimes, web pages contain several HTML tables and we may want to read the data from that HTML table. The simplest approach to scraping HTML table data directly into R is by using the rvest package. Recall that. HTML tables are contained within <table> tags; therefore, to extract the tables, we need to use the html_nodes() function to select the <table> nodes.
+Sometimes, web pages contain several HTML tables and we may want to read the data from that HTML table. The simplest approach to scraping HTML table data directly into R is by using the rvest package. Recall that. HTML tables are contained within \<table\> tags; therefore, to extract the tables, we need to use the html_nodes() function to select the \<table\> nodes.
 
 To illustrate, I will use the example from the help page for rvest, which loads all tables from the U.S. Social Security webpage: https://www.ssa.gov/oact/babynames/numberUSbirths.html
 
