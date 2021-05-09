@@ -166,7 +166,7 @@ theme = "CodeIT"
     [params.home.profile]
       enable = true
       # Gravatar Email for preferred avatar in home page
-      gravatarEmail = ""
+      gravatarEmail = "yanboyang713@gmail.com"
       # URL of avatar shown in home page
       avatarURL = "/images/avatar.png"
       #  title shown in home page (HTML format is supported)
@@ -538,8 +538,8 @@ theme = "CodeIT"
 
 # Author config
 [author]
-  name = "xxxx"
-  email = ""
+  name = "Boyang Yan"
+  email = "yanboyang713@gmail.com"
   link = ""
 
 # Sitemap config
