@@ -1188,7 +1188,326 @@ Diamonds %>% plot(price ~ y, data = ., ylab="Price", xlab="Width (mm)",
 
 Once again, there appears to be some outliers that need following up.
 
-## Model Two - Probability: The Language of Uncertainty
+### Module 2 - Exercises
+Data from:
+Download the Cars.csv dataset from [here](https://raw.githubusercontent.com/yanboyang713/RMIT-Data-Repository/main/Cars.csv). 
+
+This dataset contains data from over 400 vehicles from 2003.
+
+The following variables, along with their coding, are included:
+
++ **Vehicle_name**: Model Name
++ **Sports**: Sports car? (1 = ‘yes’, 0 =‘no’)
++ **Sport_utility**: Sports utility vehicle? (1 = ‘yes’, 0 =‘no’)
++ **Wagon**: Wagon? (1 = ‘yes’, 0 =‘no’)
++ **Minivan**: Minivan? (1 = ‘yes’, 0 =‘no’)
++ **Pickup**: Pickup? (1 = ‘yes’, 0 =‘no’)
++ **All_wheel_drive**: All wheel drive? (1 = ‘yes’, 0 =‘no’)
++ **Rear_wheel_drive**: Rear wheel drive? (1 = ‘yes’, 0 =‘no’)
++ **Retail_price**: The recommended retail price ($)
++ **Dealer_cost**: The cost price for a car dealer ($)
++ **Engine_size**: Engine size in litres
++ **Cylinders**: Number of cylinders (-1 = Rotary engine)
++ **Kilowatts**: Power of the engine in kilowatts.
++ **Economy_city**: Kilometres per litre for city driving
++ **Economy_highway**: Kilometres per litre for highway driving
++ **Weight**: Curb weight of car (kg)
++ **Wheel_base**: Wheel base of car (cm)
++ **Length**: Length of car (cm)
++ **Width**: Width of car (cm)
+
+```{r}
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+# the url for the online csv file
+url <- "https://raw.githubusercontent.com/yanboyang713/RMIT-Data-Repository/main/Cars.csv"
+Cars <- read.csv(url)
+
+# When you doing plot. No order was specified when you created the factor (by default), so, when R tried to plot it, it just placed the levels in alphabetical order. If you using **ordered=TRUE**, there will create a order to ratings, and your plots should reflect that!
+
+Cars$Sports<- Cars$Sports %>% factor(levels=c(0,1), labels=c('No','Yes'), ordered=TRUE)
+
+Cars$Sport_utility<- Cars$Sport_utility %>% factor(levels=c(0,1), labels=c('No','Yes'), ordered=TRUE)
+
+Cars$Wagon<-Cars$Wagon %>% factor(levels=c(0,1), labels=c('No','Yes'), ordered=TRUE)
+
+Cars$Minivan<- Cars$Minivan %>% factor(levels=c(0,1), labels=c('No','Yes'), ordered=TRUE)
+
+Cars$Pickup<-Cars$Pickup %>% factor(levels=c(0,1), labels=c('No','Yes'), ordered=TRUE)
+
+Cars$All_wheel_drive <- Cars$All_wheel_drive %>% factor(levels=c(0,1), labels=c('No','Yes'), ordered=TRUE)
+
+Cars$Rear_wheel_drive <- Cars$Rear_wheel_drive %>% factor(levels=c(0,1), labels=c('No','Yes'), ordered=TRUE)
+
+```
+
+```{r}
+str(Cars)
+```
+
+1. Exercise 1
+
+What is the sample size?
+```{r}
+length(Cars$Vehicle_name)
+```
+
+2. Exercise 2
+Obtain a frequency distribution for the cylinder variable. How many cars had 4 cylinders?
+
+```{r}
+Cars$Cylinders %>% table()
+```
+
+```{r}
+Cars %>% filter(Cylinders == 4) %>% count()
+```
+
+3. Exercise 3
+
+What percentage of cars had 6 cylinders? (Round response to two decimal places)
+
+```{r}
+library(magrittr)
+
+Cars$Cylinders %>% table() %>% prop.table() %>% multiply_by(100) %>% round (2)
+
+data <- Cars$Cylinders %>% table() %>% prop.table() %>% multiply_by(100) %>% round (2) %>% paste0(., "%")
+
+
+CylindersType <- Cars$Cylinders %>% table() %>% prop.table() %>% multiply_by(100) %>% round (2) %>% rownames ()
+
+df <- data.frame(CylindersType, data)
+
+df
+```
+
+4. Exercise 4
+What proportion of cars had all wheel drive? (Round response to two decimal places)
+
+```{r}
+allWheelDrive <- table(Cars$All_wheel_drive) %>% prop.table() %>% round (2)
+allWheelDrive
+```
+
+```{r}
+allWheelDrive["Yes"] %>% multiply_by(100) %>% paste0(., "%")
+```
+5. Exercise 5
+
+How many sports cars were in the sample?
+
+```{r}
+table(Cars$Sports)["Yes"]
+```
+
+6. Exercise 6
+Create a bar chart showing the distribution of the proportion of different total car cylinders in the sample. Save the bar chart as an image and upload it to this exercise.
+
+```{r}
+table(Cars$Cylinders) %>% prop.table() %>%
+barplot(main="Distribution of Car Cylinders",xlab = "Cylinders",
+ylab="Proportion",col='grey')
+
+Cars$Cylinders %>% table() %>% prop.table() %>% multiply_by(100) %>% barplot(main = "Car Cylinders - Percentage",ylab="Percent", ylim=c(0,50))
+```
+
+7. Exercise 7
+Create a contingency table showing the column proportions of cylinders by sports car. What proportion of sports cars have six or more cylinders? (Round answer to two decimal places)
+
+```{r}
+tbl <- table(Cars$Cylinders,Cars$Sports) %>% prop.table(margin = 2)
+tbl
+class(tbl)
+
+tbl[5:8,2] %>% sum() %>% round(2)
+```
+
+8. Exercise 8
+What proportion of non-sports cars have six or more cylinders? (Round answer to two decimal places)
+
+```{r}
+tbl[5:8, 1] %>% sum() %>% round(2)
+```
+9. Exercise 9
+Are sports cars more likely to have 6 or more cylinders than non-sports cars?
+
+**Answer**: Yes! The reason is 0.73 > 0.65
+
+10. Exercise 10
+
+Create a clustered bar chart comparing the proportion of sports and non-sports car cylinder numbers. Save the plot and upload it to this exercise.
+
+```{r}
+table(Cars$Cylinders, Cars$Sports, dnn = c("Cylinders","Sports")) %>% prop.table(margin = 2) %>%
+barplot(main = "Distribution of Cylinders by Sports vs Non-sports Car",
+ylab="Proportion within Car Type",
+ylim=c(0,.8),legend=rownames(.),beside=TRUE,
+args.legend=c(x = "top",horiz=TRUE,title="Cyclinders"),
+xlab="Sports Car")
+```
+
+11. Exercise 11
+
+What is the modal cylinder number for non-sports cars?
+
+A: 6
+
+12. Exercise 12
+What is the modal cylinder number for sports cars?
+A: 6
+
+13. Exercise 13
+Produce a dot plot of car kilowatts. Save the plot and upload to this question.
+
+```{r}
+qplot(data = Cars, x = Kilowatts, geom = "dotplot", dotsize = .35, binwidth = 10)
+```
+
+14. Exercise 14
+How would you describe the shape of the kilowatts variable depicted in the dot plot?
+- [ ] Symmetric
+- [x] Skewed to the right
+- [ ] Skewed to the left
+- [ ] Multi-modal
+
+15. Exercise 15
+
+Produce a histogram of city fuel economy with 18 breaks. Save the plot and upload it to this exercise
+```{r}
+hist(Cars$Economy_city,col="grey",xlab="Kilowatts",main="Histogram of City Fuel Economy (km/L)", breaks=18)
+```
+
+16. Exercise 16
+How would you describe the distribution shape of the city fuel economy depicted in the histogram?
+- [ ] Skewed to the left
+- [ ] Multi-modal
+- [ ] Symmetric
+- [x] Skewed to the right
+
+17. Exercise 17
+For city fuel economy, would you expect the mean or median to be higher based on the shape of the distribution?
++ About the same
++ Median would be higher
++ Mean would be higher
++ Impossible to say
+A: Mean would be higher (right skew)
+
+```{r}
+mean(Cars$Economy_city, na.rm = TRUE) > median(Cars$Economy_city, na.rm = TRUE)
+```
+
+18. Exercise 18
+
+Produce a histogram of car length with 18 bins. Save the plot and upload it to this exercise.
+
+```{r}
+hist(Cars$Length,col="grey",xlab="Length (cm)",main="Histogram of Car Length (cm)", breaks=18)
+```
+
+19. Exercise 19
+How would you describe the distribution shape of car length depicted in the histogram?
++ Skewed to the left
++ Multi-modal
++ Symmetric
++ Skewed to the right
+
+A: Symmetric
+
+20. Exercise 20
+
+Create a filtered dataset called Cars\_filtered, with only 4 and 6 cylinder cars selected. Produce a side-by-side box plot of 4 and 6 cylinder cars on highway fuel economy. Save the plot and upload it to this exercise.
+
+```{r}
+Cars_filt <- Cars %>% filter(Cylinders == 4 | Cylinders == 6)
+
+boxplot(Economy_highway ~ Cylinders,data=Cars_filt, xlab = "Cylinders", ylab="Highway Fuel Economy km/L")
+```
+
+21. Exercise 21
+How many suggested outliers are present for the four cylinder cars?
+
+A: 3
+
+22. Exercise 22
+Which cylinder, 4 or 6, has the higher IQR for highway fuel economy?
+
+A: 4
+
+23. Exercise 23
+What is the median highway fuel economy for 4 cylinder cars?
+
+```{r}
+Cars %>% group_by(Cylinders) %>% summarise(Median = median(Economy_highway, na.rm = TRUE))
+```
+
+24. Exercise 24
+
+What is the mean highway fuel economy for 4 cylinder cars? (Round answer to two decimal places)
+
+```{r}
+Cars %>% group_by(Cylinders) %>% summarise(Median = median(Economy_highway, na.rm = TRUE), Mean = mean(Economy_highway, na.rm = TRUE)  %>% round(2))
+```
+
+25. Exercise 25
+What is the standard deviation for highway fuel economy for 4 cylinder cars? (Round answer to two decimal places)
+
+```{r}
+Cars %>% group_by(Cylinders) %>% summarise(Median = median(Economy_highway, na.rm = TRUE), Mean = mean(Economy_highway, na.rm = TRUE) %>% round(2), Std.Dv = sd(Economy_highway, na.rm = TRUE) %>% round(2))
+```
+
+26. Exercise 26
+What is the IQR for highway fuel economy for the 6 cylinder cars?
+
+```{r}
+Cars %>% group_by(Cylinders) %>% summarise(Median = median(Economy_highway, na.rm = TRUE), Mean = mean(Economy_highway, na.rm = TRUE) %>% round(2), Std.Dv = sd(Economy_highway, na.rm = TRUE) %>% round(2), IQR = IQR(Economy_highway,na.rm = TRUE))
+```
+
+27. Exercise 27
+What is the upper fence for an outlier on highway fuel economy in the 4 cylinder cars?
+
+```{r}
+Cars %>% filter(Cylinders == 4) %>% select(Economy_highway) %>% summary()
+```
+
+```{r}
+#Upper fence
+55 + (1.5*(55-45))
+```
+
+```{r}
+#Lower fence
+45 - (1.5*(55-45))
+```
+28. Exercise 28
+What is the range of highway fuel economy for 6 cylinder cars?
+
+```{r}
+Cars %>% filter(Cylinders == 6) %>% select(Economy_highway) %>% range()
+```
+
+```{r}
+#Range
+52 - 27
+```
+29. Exercise 29
+Produce a scatter plot of city fuel economy by highway fuel economy. Save the plot and upload it to
+this exercise.
+```{r}
+plot(Economy_city ~ Economy_highway, data = Cars, ylab="City Fuel Economy km/L", xlab="Highway Fuel Economy km/L", col="blue",main="City vs. Highway Fuel Economy")
+```
+
+30. Exercise 30
+Which of the following statements best explains the relationship between city and highway fuel economy?
+- [x] As highway fuel economy increases, city fuel economy tends to increase.
+- [ ] As highway fuel economy increases, city fuel economy tends to decrease.
+- [ ] As there are a few outliers present, it’s difficult to determine the nature of the relationship between city and highway fuel economy.
+- [ ] There is no relationship between city and highway fuel economy
+
+## Model Three - Probability: The Language of Uncertainty
 ### learning objectives
 The learning objectives associated with this module are:
 + List the basic principles of probability.
