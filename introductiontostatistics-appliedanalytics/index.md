@@ -2772,6 +2772,280 @@ if (area != "") {
 ```
 
 ### Module 4 - Exercises
+Complete the following module exercises (Submit your solutions via
+Blackboard) before the deadlines in order to obtain a participation mark (1%). The exercises aim to help develop your conceptual understanding and prepare you for the exam. Exam questions will be very similar to the module exercises (except in the exam you won’t be required to use R). Answers are available following submission. Working together in groups is encouraged, but please don’t give away the answers to other a students who haven’t done the work
+(they won’t be learning anything!). These exercises are designed to aid your learning.
+
+1. Exercise 1
+The risk of females experiencing an anxiety disorder during a given 12-month period is approximately 1 in 5. Suppose a researcher plans to take o a random sample of females and monitor their anxiety over 12 months. Which probability . distribution can be used to model the expected number of females in a sample experiencing an anxiety disorder within this period?
++ Binomial distribution
++ F distribution
++ Normal distribution
++ Poisson Distribution
+
+Answer: Binomial distribution
+
+2. Exercise 2
+If 20 females are randomly sampled, what is the probability that exactly 10 will experience an anxiety disorder during this 12-month period? (Round answer to 3 decimal places)
+
+```{r}
+dbinom(x = 10, size = 20, prob = 0.20) %>% round(3)
+```
+
+3. Exercise 3
+If 20 females are randomly sampled, what is the probability that exactly 5 will experience an anxiety disorder? (Round answer to 3 decimal places)
+```{r}
+dbinom(x = 5, size = 20, prob = 0.20) %>% round(3)
+```
+
+4. Exercise 4
+If 30 females are randomly sampled, what is the probability that exactly 5 will experience an anxiety disorder?
+
+```{r}
+dbinom(x = 5, size = 30, prob = 0.20) %>% round(3)
+```
+
+5. Exercise 5
+If 20 females are randomly sampled, what is the probability that 5 or 6 will experience an anxiety disorder? (Round answer to 3 decimal places)
+
+```{r}
+dbinom(x = 5:6, size = 20, prob = 0.20) %>% sum() %>% round(3)
+```
+
+6. Exercise 6
+If 10 females are randomly sampled, what is the probability that 5 or more will experience an anxiety disorder? (Round answer to 3 decimal places)
+
+```{r}
+1 - pbinom(q = 4, size = 10, prob = 0.20) %>% round(3)
+```
+Or,
+
+```{r}
+pbinom(q = 4, size = 10, prob = 0.20, lower.tail = FALSE) %>% round(3)
+```
+
+7. Exercise 7
+If 20 females are randomly sampled, what is the probability that 2 or more will experience an anxiety disorder? (Round answer to 3 decimal places)
+
+```{r}
+1 - pbinom(q = 1, size = 20, prob = 0.20) %>% round(3)
+```
+Or,
+
+```{r}
+pbinom(q = 1, size = 20 , prob = 0.20, lower.tail = FALSE) %>% round(3)
+```
+
+8. Exercise 8
+If 20 females are randomly sampled, what is the probability that 5 or less will experience an anxiety disorder? (Round answer to 3 decimal places)
+
+```{r}
+pbinom(q = 5, size = 20, prob = 0.20) %>% round(3)
+```
+
+9. Exercise 9
+If 30 females are randomly sampled, what is the probability that 10 or less will experience an anxiety disorder? (Round answer to 3 decimal places)
+```{r}
+pbinom(q = 10, size = 30, prob = 0.20) %>% round(3)
+```
+
+10. Exercise 10
+Suppose the average number of people that become victim to a shark attack in Australia each year is 10. Which probability distribution can be used to model the annual expected number of shark attacks in Australia?
+
++ Normal distribution
++ Binomial distribution
++ Poisson Distribution
++ F distribution
+
+Answer: Poisson distribution
+
+11. Exercise 11
+What is the expected number of shark attacks over a two year period? (Round answer to the nearest whole number)
+```{r}
+2 * 10
+```
+
+12. Exercise 12
+Assuming the rate of shark attacks in Australia remains constant over time, what is the probability that 10 people will be attacked within a given year? (Round answer to 3 decimal places)
+
+```{r}
+dpois(x = 10, lambda = 10) %>% round(3)
+```
+
+13. Exercise 13
+Assuming the rate of shark attacks in Australia remains constant over time, what is the probability that 30 people will be attacked by a shark across two years? (Round answer to 3 decimal places)
+```{r}
+dpois(x = 30, lambda = 10*2) %>% round(3)
+```
+
+14. Exercise 14
+Assuming the rate of shark attacks remains constant over time, what is the probability that 20 or less will be attacked by a shark within a year? (Round answer to 3 decimal places)
+```{r}
+ppois(q = 20, lambda = 10) %>% round(3)
+```
+
+15. Exercise 15
+Assuming the rate of shark attacks in Australia remains constant over time, what is the probability that 15 - 20 people will be attacked within a year? (Round answer to 3 decimal places)
+```{r}
+ppois(q = 20, lambda =10) %>% - ppois(q = 14, lambda = 10) %>% round(3)
+
+```
+
+16. Exercise 16
+Assuming rate of shark attacks in Australia remains constant over time, what is the probability that more than 20 people will be attacked within a year? (Round answer to 3 decimal places)
+```{r}
+1 - ppois(q = 20, lambda = 10) %>% round(3)
+```
+Or,
+```{r}
+ppois(q = 20, lambda = 10, lower.tail = FALSE) %>% round(3)
+```
+
+17. Exercise 17
+Assuming the rate of shark attacks remains constant over time, what is the probability that 15 or 17 people will be attacked within a year? (Round answer to 3 decimal places)
+```{r}
+dpois(x = 15, lambda = 10) %>% + dpois(x = 17, lambda = 10) %>% round(3)
+
+```
+
+18. Exercise 18
+What is the standard deviation of the standard normal distribution?
+Answer: 1
+
+19. Exercise 19
+What is the mean of the standard normal distribution?
+Answer: 0
+
+20. Exercise 20
+All symmetric distributions are normal distributions. True or false?
+
+Answer: False - A distribution cannot be normal if it is not symmetric, how
+ever, not all symmetric distributions are normal.
+
+21. Exercise 21
+Assume body temperature scores are normally distributed in the population with a mean of 36.81°C and a standard deviation of 0.41°C. A person’s body temperature is 37.33°C. Calculate their z -score.
+(Round answer to 2 decimal places)
+
+```{r}
+((37.33 - 36.81)/0.41) %>% round(2)
+```
+
+22. Exercise 22
+Calculate the z-score for a person who has a body temperature of 35.72°C. (Round answer to 2 decimal places)
+
+```{r}
+((35.72 - 36.81)/0.41) %>% round(2)
+```
+
+23. Exercise 23
+A person’s z-score for body temperature is calculated to be 2.41. What is their body temperature? (Round answer to 2 decimal places)
+
+```{r}
+((2.41 * 0.41) + 36.81) %>% round(2)
+```
+
+24. Exercise 24
+A person’s z-score for body temperature is calculated to be -1.24. What is their body temperature? (Round answer to 2 decimal places)
+
+```{r}
+((-1.24 * 0.41) + 36.81) %>% round(2)
+```
+
+25. Exercise 25
+If you take a random person from the population, what is the probability their body temperature will be less than 36.39°C? v (Round answer to 2 decimal places)
+
+```{r}
+pnorm(q = 36.39, mean = 36.81, sd = 0.41) %>% round(2)
+```
+
+26. Exercise 26
+If you take a random person from the population, what the probability their body temperature will be less than 37.93°C? (Round answer to 3 decimal places)
+
+
+```{r}
+pnorm(q = 37.93, mean = 36.81, sd = 0.41) %>% round(3)
+```
+27. Exercise 27
+If you take a random person from the population, what is the probability their body temperature will be less than 35.82°C? (Round answer to 3 decimal places)
+
+```{r}
+pnorm(q = 35.82, mean = 36.81, sd = 0.41) %>% round(3)
+```
+
+28. Exercise 28
+If you take a random person from the population, what is the probability their body temperature will be greater than 36.02°C? (Round answer to 3 decimal places)
+
+```{r}
+1 - pnorm(q = 36.02, mean = 36.81, sd = 0.41) %>% round(3)
+```
+
+Or,
+
+```{r}
+pnorm(q = 36.02, mean = 36.81, sd = 0.41, lower.tail = FALSE) %>% round(3)
+```
+
+29. Exercise 29
+If you take a random person from the population, what is the probability their body temperature will be greater than 37.39°C? (Round answer to 3 decimal places)
+
+```{r}
+1 - pnorm(q = 37.39, mean = 36.81, sd = 0.41) %>% round(3)
+```
+
+```{r}
+pnorm(q = 37.39, mean = 36.81, sd = 0.41, lower.tail = FALSE) %>% round(3)
+```
+
+30. Exercise 30
+If you take a random person from the population, what is the probability their body temperature will be greater than 38°C? (Round answer to 3 decimal places)
+
+```{r}
+1 - pnorm(q = 38, mean = 36.81, sd = 0.41) %>% round(3)
+```
+
+```{r}
+pnorm(q = 38, mean = 36.81, sd = 0.41, lower.tail = FALSE) %>% round(3)
+```
+
+31. Exercise 31
+If you take a random person from the population, what is the probability their body temperature will be between 36.13°C and 36.64°C? (Round answer to 3 decimal places)
+
+```{r}
+pnorm(q = 36.64, mean = 36.81, sd = 0.41) %>% - pnorm(q = 36.13, mean = 36.81, sd = 0.41) %>% round(3)
+```
+
+32. Exercise 32
+If you take a random person from the population, what is the probability their body temperature will be between 36.95°C and 37.05°C? (Round answer to 3 decimal places)
+
+```{r}
+pnorm(q = 37.05, mean = 36.81, sd = 0.41) %>% - pnorm(q = 36.95, mean = 36.81, sd = 0.41) %>% round(3)
+```
+
+33. Exercise 33
+If you take a random i person from the population, what is the probability their body temperature will be between 37.20°C and 37.30°C? (Round answer to 3 decimal places)
+```{r}
+pnorm(q = 37.30, mean = 36.81, sd = 0.41) %>% - pnorm(q = 37.20, mean = 36.81, sd = 0.41) %>% round(3)
+```
+
+34. Exercise 34
+If you take a random person from the population and find that they scored in the 87th percentile for body temperature, what is their actual body temperature? (Round answer to 2 decimal places)
+
+```{r}
+qnorm(p = .87, mean = 36.81, sd = 0.41) %>% round(2)
+```
+
+35. Exercise 35
+If you take a random person from the population and find that they scored in the 9th percentile for body temperature, what is their actual body temperature? (Round answer to 2 decimal places)
+
+```{r}
+qnorm(p = .09, mean = 36.81, sd = 0.41) %>% round(2)
+```
+
+36. Exercise 36
+A mild fever is defined as a body temperature of 39°C. What percentile does a mild fever correspond to in the normal body temperature population? (Round your a answer to 2 decimal places)
+```{r}
+pnorm(q = 39, mean = 36.81, sd = 0.41) %>% round(2) * 100
+```
 
 ## Module 5 Sampling: Randomly Representative
 
@@ -3105,6 +3379,195 @@ http://onlinestatbook.com/stat_sim/sampling_dist/
 
 + Another can be found here:
 https://gallery.shinyapps.io/CLT_mean/
+
+### Exercises
+# Exercises
+Complete the following module exercises (Submit your solutions via Canvas) before the deadlines in order to obtain a participation mark (1%). The exercises aim to help develop your conceptual understanding and prepare you for the exam. Exam questions will be very similar to the module exercises (except in the exam you won’t be required to use R). Answers are available following submission. Working together in groups is encouraged, but please don’t give away the answers to other students who haven’t done the work (they won’t be learning anything!). These exercises are designed to aid your learning.
+
+1. Exercise 1
+Why do researchers use samples instead of populations?
+
++ Because a random sample always approximates the population
++ Because samples are always representative of the population
++ Because measuring an entire population is generally impossible
++ Because samples and populations are the same thing
+
+Answer: because measuring an entire population is generally impossible
+
+2. Exercise 2
+How can a researcher guarantee selecting a representative sample from a population?
+
++ By using random sampling
++ By using cluster sampling
++ By using stratified sampling
++ There is no way to “guarantee” your sample is representative
+
+Answer: There is no way to "guarantee" your sample is representative. Random, cluster and stratified sampling can only ever maximise the probability of selecting a representative sample.
+
+3. Exercise 3
+A researcher wants to gather a cluster sample of Australians to survey their exercise habits. Which of the following could be used as a cluster?
+
++ State
++ Postcode
++ City/Town
++ All of the above
+
+Answer: All of the above
+
+4. Exercise 4
+
+Which of the following methods is considered an example of simple random sampling from the Australian population?
+
++ Randomly sample postcodes and then randomly sample participants within the selected postcodes
++ Divide the population up into age categories and then randomly select participants in each category proportional to the population distribution
++ From a list of the entire population, randomly select the desired number of participants
++ From the hometown of the researcher, approach people in a shopping centre
+
+Answer: From a list of the entire population, randomly select the desired number of participants
+
+5. Exercise 5
+
+When is a sample said to be biased?
+
++ When the sample is likely to not be representative of the population
++ When the sample has a negative attitude towards the research being conducted
++ When the sample is likely to be representative of the population
++ When the sample is small
+
+Answer: When the sample is likely to not be representative of the population
+
+Sampling bias occurs when some members of a population are systematically more likely to be selected in a sample than others. It is also called ascertainment bias in medical fields.
+
+Sampling bias limits the generalizability of findings because it is a threat to external validity, specifically population validity. In other words, findings from biased samples can only be generalized to populations that share characteristics with the sample.
+
+6. Exercise 6
+
+Large samples are representative samples. True or false?
+
+Answer: False. Even though a sample might be considered large, whether it is likely to be representative comes down to how it was selected. Large biased samples are still biased. Probability sampling techniques are the best way to maximise the probability of getting a representative sample.
+
+7. Exercise 7
+
+Sampling Distribution Activity
+
+We will use the Sampling Distribution Shiny app hosted here - https://calpolystat1.shinyapps.io/sampling_distribution/ to explore the concept of a sampling distribution.
+
+For the app, set the following options:
+
+Population distribution: Normal
+Population mean: 100
+Population standard deviation: 15
+Sample size: 10
+Statistic: Mean
+Number of samples: 1000
+Click here to display population characteristics: Select this option.
+Display summaries of sampling distribution: Checked.
+Click the Draw Sample button. This will generate 1000 sample means and plot them as a sampling distribution. Y
+
+
+The standard deviation of a sampling distribution is also known as which of the following?
+
++ Sampling standard deviation
++ Standard error
++ Standard normal score
++ Z-score
+
+Answer: Standard error
+
+8. Exercise 8
+
+In the long run, what will be the mean of the sampling distribution of the mean if we took many more samples of size = 10?
+
++ 0
++ 15
++ 99
++ 100
+
+Answer: 100
+
+9. Exercise 9
+
+Change the Sample Size to 100. Clear the app and Draw 1000 new samples of n=100. What happened to the standard deviation of the sampling distribution of the mean?
+
++ Equalled the mean
++ Did not change
++ Increased
++ Decreased
+
+Answer: Decreased
+
+10. Exercise 10
+
+Therefore, as sample size increases, the standard error of a statistic…
+
++ stays the same
++ increases
++ decreases
++ varies randomly
+
+Answer: decreases
+
+11. Exercise 11
+
+Central Limit Theorem Activity
+
+Using the same Shiny app, set the following options:
+
+Population distribution: Right-skewed
+Population mean: 100
+Population standard deviation: 15
+Sample size: 10
+Statistic: Mean
+Number of samples: 1000
+Click here to display population characteristics: Select this option.
+Display summaries of sampling distribution: Checked.
+
+Click the Draw Sample button. This will generate 1000 sample means and plot them as a sampling distribution. 
+
+The population distribution is right-skewed. For a sampling distribution of the mean where n=10, how would you describe its shape?
+
++ Bi-modal
++ Left-skewed
++ Approximately normal
++ Right-skewed
+
+Answer: Right-skewed
+
+12. Exercise 12
+
+Change the Sample Size to 100. Clear the app and Draw 1000 new samples. Now how would you describe the shape of the sampling distribution of the means?
+
++ Bi-modal
++ Right-skewed
++ Left-skewed
++ Approximately normal
+
+Answer: Approximately normal
+
+13. Exercise 13
+
+A population distribution is negatively skewed. If a sampling distribution is created using samples of size N=10, what would be the expected shape of the sampling distribution?
+
++ Approximately normal
++ Skewed to the left
++ Skewed positively
++ Symmetric
+
+Answer: Skewed to the left. Only sampling distributions a of sample sizes greater than 30 will be approximately normal when the underlying population disstribution is not normal.
+
+14. Exercise 14
+
+Mobile Phone Battery Life
+
+Suppose the average duration of a new iPhone battery for continuous video playback is 10 hours with a standard deviation of 30 minutes.
+
+Suppose a store orders 50 iPhones and asks their customers to record their continuous video playback time in hours.
+
+What is the standard error for the sampling distribution of the mean playback time (hours) for n=50? (Round to three decimal places)
+
+```{r}
+(0.5/sqrt(50)) %>% round(3)
+```
 
 ## Module 6 Estimating Uncertainty Confidently
 
