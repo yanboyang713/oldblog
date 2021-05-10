@@ -2462,10 +2462,63 @@ The learning objectives associated with this module are:
 + Discuss the major factors that impact the width of a confidence interval.
 + Use technology to calculate confidence intervals for common statistics including means, proportions and rates.
 
+### Types of Inference
++ **Estimation**:
+  – Estimating or predicting the value of the parameter
+  – “What is (are) the most likely values of μ or p?”
+  - Example: A consumer wants to estimate the average price of similar homes in her city before putting her home on the market.
+    + Estimation: Estimate μ, the average home price.
+
++ **Hypothesis Testing**: (I will teach it on module 7)
+  – Deciding about the value of a parameter based on some preconceived idea.
+  – "Did the sample come from a population with m = 5 or p = .2?"
+  - Example: A manufacturer wants to know if a new type of steel is more resistant to high temperatures than an old type was.
+    + Hypothesis test: Is the new average resistance, μΝ equal to the old average resistance, $ μ_Ο $?
+
 ### Point and Interval Estimation
+
+#### Definitions
+An estimator is a rule, usually a formula, that tells you how to calculate the estimate based on the sample.
+
++ **Point estimation**: A single number is calculated to estimate the parameter.
 The **point estimate** of a sample statistic, such as the mean, median, proportion or rate are single, or point values. They are often our best estimate for a population parameter, but do not express the degree of uncertainty for an estimate associated with its sampling variability. Point estimates should be accompanied by additional information to assist with drawing inferences about the population.
 
++ **Interval estimation**: Two numbers are calculated to create an interval within which the parameter is expected to lie.
 **Interval estimation** serves to overcome this limitation. The idea is to supplement the point estimate with an interval that reflects the degree of uncertainty associated with a statistic. The most common type of interval estimator is called the **confidence interval**, or CI for short.
+
+#### Some definitions
++ A point estimate is a single number,
++ a confidence interval provides additional information about the variability of the estimate (based on the sampling distribution)
+
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1620610086/MATH1324/ModelSix/Mon_May_10_11_26_32_AM_AEST_2021_oyiigh.png)
+
+##### Properties of Point Estimators
++ Since an estimator is calculated from sample values, it varies from sample to sample according to its **sampling distribution**.
++ An **estimator** is **unbiased** if the mean of its sampling distribution equals the parameter of interest.
+  – It does not systematically overestimate or underestimate the target parameter.
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1620610736/MATH1324/ModelSix/Mon_May_10_11_38_27_AM_AEST_2021_pqb6am.png)
+
++ Of all the **unbiased** estimators, we prefer the estimator whose sampling distribution has the **smallest spread** or **variability**.
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1620610843/MATH1324/ModelSix/Mon_May_10_11_40_12_AM_AEST_2021_ajtlae.png)
+
+##### Measuring the Goodness of an Estimator
+The distance between an estimate and the true value of the parameter is the **error of estimation**.
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1620631387/MATH1324/ModelSix/Mon_May_10_05_22_34_PM_AEST_2021_bep0ld.png)
+
+**NOTE:** The distance between the bullet and the bull’s-eye.
+
+##### The Margin of Error
+For **unbiased** estimators with normal sampling distributions, 95% of all point estimates will lie within 1.96 standard deviations of the parameter of interest.
+**Margin of error**: The maximum error of estimation, calculated as
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1620631927/MATH1324/ModelSix/Mon_May_10_05_31_29_PM_AEST_2021_yl5mpp.png)
+
+##### Confidence Intervals
+An interval gives a range of values:
++ Takes into consideration variation in sample statistics from sample to sample
++ Gives information about “closeness” to unknown population parameters
++ Stated in terms of level of confidence
+  – e.g. 95% confident, 99% confident
+  – Can never be 100% confident
 
 Let’s consider a typical confidence interval using a hypothetical example. Let’s assume height is normally distributed in the population with a standard deviation of 7 cm (This is unrealistic as we often do not know the population SD, but let’s go with it for now). An investigator takes a random sample of 10 peoples’ height (cm). Say the mean of the sample was found to be 176.5 cm. To calculate a **confidence interval for the mean of a normally distributed variable with a known standard deviation**, we use the following formula:
 
@@ -2491,7 +2544,7 @@ qnorm(p = .975)
 ### [1] 1.959964
 ```
 
-Note, that if we don’t specify the mean and standard deviation for qnorm(), the R function reverts to a standard normal distribution with mean = 0 and sd = 1. We discover Pr(Z<1.96)=.975. The following figure shows how z=1.96 relates back to the 95% CI. We can see that Pr(−1.96<z<1.96)=.95 or 95%. This means that 0.025 probability sits in the upper and lower tail of the distribution. As you will discover later on, the critical value is required in the conference interval formula to ensure the confidence interval achieves the desired level of coverage, e.g. 95%.
+Note, that if we don’t specify the mean and standard deviation for qnorm(), the R function reverts to a standard normal distribution with mean = 0 and sd = 1. We discover $ Pr( Z < 1.96 ) = .975 $. The following figure shows how $ z = 1.96 $ relates back to the 95% CI. We can see that $ Pr(−1.96 < z < 1.96) = .95 $ or 95%. This means that 0.025 probability sits in the upper and lower tail of the distribution. As you will discover later on, the critical value is required in the conference interval formula to ensure the confidence interval achieves the desired level of coverage, e.g. 95%.
 
 ![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1618681589/MATH1324/ModelSix/significanceInterval_a2gi1s.png)
 
@@ -2509,6 +2562,15 @@ Before we dig deeper, you need to have a definition of a CI in the back of your 
 100(1−α)% CI, is an interval estimate for a population parameter, based on a given sample statistic, where if samples of a certain size n were repeatedly drawn from the population and a CI for each sample’s statistic was calculated, 100(1−α)% of these intervals would capture the population parameter, whereas the other 100(α)% would not.
 
 Now with this strange and long-winded definition in mind, let’s start digging deeper into the theory.
+
+#### The General Process
+The general formula for all confidence intervals is:
+$$ Point Estimate ± (Critical Value)(Standard Error) $$
+
+Where:
++ Point Estimate is the sample statistic estimating the population parameter of interest
++ Critical Value is a table value based on the sampling distribution of the point estimate and the desired confidence level
++ Standard Error is the standard deviation of the point estimate
 
 ### Theory
 We will explore confidence interval theory using a simulation and visualisation. We will first make some assumptions about the population. Let’s assume height is normally distributed with a mean of 175 and a standard deviation of 7:
@@ -2552,11 +2614,40 @@ $$176.5 \pm z_{1 - (\alpha/2)}\frac{\sigma}{\sqrt{n}} =  1.96\frac{7}{\sqrt{30}}
 and therefore, x¯=176.5, 95% CI [174.00, 179.00]. This 95% CI is narrower than the interval calculated for n=10, 95% CI [172.16, 180.84]. Conceptually, larger random samples are better estimates of the population and therefore, we can be more certain in their estimates over the use of smaller samples.
 
 #### Confidenece Level
++ Expressed as a percentage (<100%)
++ Suppose confidence level = 95%
+  – Also written (1 - α) = 0.95, (so α = 0.05)
++ A relative frequency interpretation:
+  – 95% of all the confidence intervals that can be constructed will contain the unknown true parameter
++ A specific interval either will contain or will not contain the true parameter
+  – No probability involved in a specific interval
+
 While the 95% CI is the most common, it is possible to use other levels of confidence. Let’s compute a 90% and 99% confidence interval for the sample mean height when n=10. This is depicted in the following plot. Plot 1 reports a 99% CI, Plot 2, 95% CI, and Plot 3, 90% CI.
 
 ![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1618683157/MATH1324/ModelSix/confidenceIntervalsThree_wgrptl.png)
 
 As you can see, higher levels of confidence are associated with wider intervals. This makes sense. If you want to be more confident about capturing a population parameter, cast a wider interval!
+
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1620633826/MATH1324/ModelSix/Mon_May_10_06_03_11_PM_AEST_2021_itm5l8.png)
+
+##### Confidence Interval for μ (σ Known)
++ Assumptions
+  – Population standard deviation σ is known
+  – Population is normally distributed
+  – If population is not normal, use large sample (n > 30)
++ Confidence interval estimate:
+$$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$
+
+where $ \bar {X} $ is the point estimate, $ Z_{\alpha/2} $ is the normal distribution critical value for a probability of $ \alpha/2 $ in each tail is the standard error.
+
++ Finding the Critical Value, $ Z_{\alpha/2} $
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1620634357/MATH1324/ModelSix/Mon_May_10_06_12_02_PM_AEST_2021_h5afqy.png)
+
++ Commonly used levels are 90%, 95% and 99%
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1620634427/MATH1324/ModelSix/Mon_May_10_06_13_24_PM_AEST_2021_sg8urt.png)
+
++ Intervals and Level of Confidence
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1620634520/MATH1324/ModelSix/Mon_May_10_06_14_55_PM_AEST_2021_puxcwi.png)
 
 Now let’s look at the formula. We need to change the z critical value for the confidence interval formula:
 
@@ -2810,15 +2901,50 @@ Eagle Boys do appear to have larger diameters. However, the data were taken from
 
 #### Mean - Unknown Population Standard Deviation - t-distribution
 
-{% youtube Uv6nGIgZMVw %}
+##### Do You Ever Truly Know σ?
++ Probably not!
++ In virtually all real world engineering, science and business situations, $ \sigma $ is not known.
++ If you truly know $ \mu $ there would be no need to gather a sample to estimate it.
+
+##### Confidence Interval for μ (σ Unknown)
++ If the population standard deviation $ \sigma $ is unknown, we can substitute the sample standard deviation, S
++ This introduces extra uncertainty, since S is variable from sample to sample
++ So we use the t distribution instead of the normal distribution.
++ Assumptions:
+  – Population standard deviation is unknown
+  – Population is normally distributed
+  – If population is not normal, use large sample (n > 30)
++ Use Student’s t Distribution
+
+
+{{< youtube Uv6nGIgZMVw >}}
 
 In the first example of CIs, we made an unrealistic assumption that the population standard deviation, σ, is known for a normally distributed variable. This allows us to use the standard normal distribution to calculate the CIs. In real research, σ is rarely known and must be estimated from the sample standard deviation, s. As we are estimating two parameters from the sample, the population mean, μ, and standard deviation, σ, we need to take into account the extra uncertainty or error associated with s to ensure the expected coverage of the CI remains at the desired level, e.g. 95%. The family of t-distributions are used for this purpose.
 
 The t-distribution has an extra parameter, called degrees of freedom, df, that can be altered to change the heaviness of the distribution’s tails. Degrees of freedom for a t-distribution are typically calculated as:
 
-$$ df = n - 1$$
+The t is a family of distributions
++ The $ t_{α/2} $ value depends on degrees of freedom (d.f.)
++ Number of observations that are free to vary after sample mean has been calculated
+
+$$ d.f. = n - 1 $$
 
 The t-distribution looks very flat in comparison to a normal distribution when the df values are low. However, as df increases (i.e. sample size increases), the t-distribution will start to approximate a normal distribution. In fact, for sample sizes where df > 30, there is very little practical difference between them. As df approaches infinity, the t-distribution will become a normal distribution.
+
+###### Degrees of Freedom (df)
+**Idea**: Number of observations that are free to vary after sample mean has been calculated
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1620635777/MATH1324/ModelSix/Mon_May_10_06_35_40_PM_AEST_2021_al0jfk.png)
+
+Here, n = 3, so degrees of freedom = n – 1 = 3 – 1 = 2 (2 values can be any numbers, but the third is not free to vary for a given mean)
+
+###### Student’s t Distribution
+As the degrees of freedom increases, the t distribution approaches the normal distribution.
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1620636136/MATH1324/ModelSix/Mon_May_10_06_41_51_PM_AEST_2021_kxgrwx.png)
+
+Developed in work with Guinness Brewery for working with small samples.
+
+###### Student’s t Table
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1620636256/MATH1324/ModelSix/Mon_May_10_06_43_48_PM_AEST_2021_oczelf.png)
 
 In the Pizza example, we don’t know the population standard deviation, so we have to estimate it using the sample. Do we need to worry about normality of the data to consider whether the confidence interval formula used previously is appropriate? The answer to this question depends on the sample size. If the sample size was small (e.g. n<30), the non-normality of the data would prevent us from applying a regular CI formula. However, thanks to the larger sample size (n=39 for Dominos and n=38 for Eagle Boys) and the CLT introduced in the previous module, the standard CI formula works quite well. We only need to adjust the formula slightly to take into account that we don’t know the population standard deviation.
 
