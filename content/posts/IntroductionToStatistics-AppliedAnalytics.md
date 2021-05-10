@@ -211,6 +211,95 @@ Tukey, J. W. 1953. “The growth of experimental design in a research laboratory
 
 Wild, C., M. Pfannkuch, M. Regan, and N. J. Horton. 2011. “Towards more accessible conceptions of statistical inference.” Journal of the Royal Statistical Society 174: 247–95. https://doi.org/10.1111/j.1467-985X.2010.00678.x.
 
+### Exercise (Model One)
+1. If two researchers gather two random samples in the same circumstances, these two samples are likely to vary. Which of the following statements best explains why?
+- [ ] The researchers have not sampled correctly. 
+- [x] Different samples are made up of different combinations of units from a population, and will therefore always vary to some degree.
+- [ ] The researchers have collected their samples at different time points.
+- [ ] Because no matter how careful they are, the researchers could not use the same method.
+
+2. Which of the following characteristics is unique to a statistical problem and helps differentiate it from a mathematical problem? 
+- [ ] Measurements are assumed to be exact.
+- [ ] The problem can be expressed without a context. 
+- [ ] The problem has a unique answer.
+- [x] The anticipation of variation. 
+
+3. During data collection and prior to data exploration, what should you be checking?
+- [ ] Consistency of data collection 
+- [ ] Obvious error or issues 
+- [ ] Accuracy of data collection
+- [x] All of the above
+
+4. Variation is all around us, and this is the main reason why statistics is needed. Variation exists on many different levels. Which of the following is something that does NOT vary?
+- [ ] Students' attitudes towards maths.
+- [ ] The mean age calculated from different samples of a population.
+- [x] The ratio of a circle's circumference to its diameter.
+- [ ] Measurement of an individual's blood pressure.
+
+5. Match the scale of measurement with the correct example.
++ Nominal - Credit card number
++ Ratio - Forced expiratory volume
++ Ordinal - Energy star ratings
++ Interval - IQ Scores
+
+6. Which of the following is an example of real or natural variability?
+- [ ] You notice variability in your body weight measurement when using your bathroom scale and the scale in your gym.
+- [ ] Driving to your workplace after leaving home at 10am tends to be faster than leaving at 8am.
+- [ ] Monday train commuting times between your home station and work is around 24 minutes, but it can be as quick as 21 minutes and as long as 27.
+- [ ] Two investigators gather a small sample of 30 adults each and measure their body mass indexes (BMI). The mean BMI for each sample is different.
+
+7. Which of the following is a qualitative variable?
+- [x] Bank account number 
+- [ ] Travel time
+- [ ] Energy intake
+- [ ] Wireless signal strength
+
+8. Which of the following is an interval level measure?
+- [ ] Mass
+- [x] Degrees Fahrenheit 
+- [ ] Distance
+- [ ] Length
+
+9. Statistical inference refers to:
+- [ ] Measuring the population. 
+- [ ] Drawing conclusions about a sample using census data. 
+- [x] Drawing conclusions about a population using sample data. 
+- [ ] Analysing your sample data.
+
+10. Larger random samples have less sampling error.
+- [x] True
+- [ ] False
+
+11. Order the stages, from first to last, of the statistical data investigation process.
+1 - Initial questions
+2 - Issues and planning
+3 - Collecting, handling and checking data
+4 - Exploring, interpreting data in contect
+
+12. Thinking statistically is required during which stages of the statistical data investigation process? Select all that apply.
+- [x] Initial questions 
+- [x] Issues and planning 
+- [x] Collecting, handling and checking data
+- [x] Exploring, interpreting data in context 
+
+13. Which of the following is a major challenge for surveys?
+- [ ] Can only be done online 
+- [ ] Unethical
+- [ ] Expensive and time-consuming
+- [x] Response rate
+
+14. Why do experimental investigations use placebos?
+- [x] People need to think they're getting the treatment because peoples' beliefs and biases can impact results.
+- [ ] Because they are cheaper than the real treatment. 
+- [ ] Because placebos are an effective treatment. 
+- [ ] So participants don't feel they're missing out.
+
+15. Why do experimental investigations use randomisation?
+- [ ] To ensure participants are blinded to their allocated group. 
+- [x] To help establish baseline equivalence between groups. 
+- [ ] To fairly allocate people to the treatment. 
+- [ ] To ensure the investigator is blinded.
+
 ## Model Two - Descriptive Statistics through Visualisation
 ### Learning Objectives
 The learning objectives associated with this module are:
