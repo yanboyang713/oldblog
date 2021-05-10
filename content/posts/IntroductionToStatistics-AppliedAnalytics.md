@@ -1845,6 +1845,256 @@ choose(10,4)
 
 That’s incredible. There are 210 different combinations of friends that you could end up taking to the final. Considering the social ramifications of each combination will take weeks of deliberation, leave it to chance. Use a raffle instead. That way no one can claim favouritism… Who said statistics wasn’t useful!
 
+### Exercises
+# Data
+The table below was adapted from Table 11.1 of the Australian Health Survey: First Results, 2011-12
+s[cat.no.4364.0.55.001](http://www.abs.gov.au/ausstats/abs@.nsf/mf/4364.0.55.001).
+Table 11.1 presents the estimates of persons (reported in 100,000s) from the 2011-2013 Australian Health
+Survey relating to Australians’ levels of exercise. The values are in 100,000s. Estimates were derived
+from surveys of approximately 9500 Australian households.
+
+| Age group   | 15–17 |    18–24 |    25–34 |    35–44 |    45–54 |    55–64 |    65–74 |      75+ | Total 100’000 |
+|-------------|-------|----------|----------|----------|----------|----------|----------|----------|---------------|
+| **Males**   |       |          |          |          |          |          |          |          |               |
+| Sedentary   |  63.3 |    307.1 |    440.3 |    527.4 |    518.4 |    477.3 |    320.2 |    253.9 | 2,907.90      |
+| Low         | 109.8 |    230.6 |    446.2 |    466.6 |      473 |    373.9 |    245.7 |    165.2 | 2,511.00      |
+| Moderate    | 125.8 |    278.8 |    377.9 |    305.8 |    295.4 |      318 |       np |       np | 1,701.70      |
+| High        | 136.6 |    303.3 |    341.8 |    249.4 |    202.3 |     96.1 |       np |       np | 1,329.50      |
+| Total(b)    | 435.5 | 1,119.80 | 1,606.20 | 1,549.20 | 1,489.10 | 1,265.30 |    565.9 |    419.1 | 8,450.10      |
+| **Females** |       |          |          |          |          |          |          |          |               |
+| Sedentary   | 119.6 |    336.5 |    558.6 |    549.1 |    570.9 |    475.7 |      357 |    451.2 | 3,418.60      |
+| Low         | 154.1 |    426.9 |    552.2 |    562.2 |    516.3 |    486.2 |    276.3 |    154.7 | 3,128.90      |
+| Moderate    |  93.3 |    193.9 |    294.9 |    319.3 |    307.6 |    272.1 |       np |       np | 1,481.10      |
+| High        |  49.1 |    112.2 |    192.6 |    156.1 |    137.7 |     63.8 |       np |       np | 711.5         |
+| Total(b)    | 416.1 | 1,069.50 | 1,598.30 | 1,586.70 | 1,532.50 | 1,297.80 |    633.3 |    605.9 | 8,740.10      |
+| **Persons** |       |          |          |          |          |          |          |          |               |
+| Sedentary   | 182.9 |    643.6 |    998.9 | 1,076.50 | 1,089.30 |      953 |    677.2 |    705.1 | 6,326.50      |
+| Low         | 263.9 |    657.5 |    998.4 | 1,028.80 |    989.3 |    860.1 |      522 |    319.9 | 5,639.90      |
+| Moderate    | 219.1 |    472.7 |    672.8 |    625.1 |      603 |    590.1 |       np |       np | 3,182.80      |
+| High        | 185.7 |    415.5 |    534.4 |    405.5 |      340 |    159.9 |       np |       np | 2,041.00      |
+| Total(b)    | 851.6 | 2,189.30 | 3,204.50 | 3,135.90 | 3,021.60 | 2,563.10 | 1,199.20 | 1,025.00 | 17,190.20     |
+
+Note. np = not estimated.
+Use this table to answer the following questions:
+
+1. Exercise 1
+According to Table 11.1, gender is mutually exclusive. True or false?
+
+A: TRUE
+
+2. Exercise 2
+Being male and sedentary is mutually exclusive. True or false?
+
+A: FALSE
+
+3. Exercise 3
+Substitute T the correct probability C symbol with the statement.
+1. ∪
+2. A|B
+3. Ā
+4. ∩
+
+a. A or B = A __ B
+b. A and B = A __ B
+c. Not A = __
+d. A given B = A __ B
+
+A: a = 1, b = 4, c = 3, d = 2
+
+4. Exercise 4
+What is the probability of an Australian being sedentary? (Round answer to 3 decimal places)
+
+```R
+(6326.5 / 17190.2) %>% round(3)
+```
+
+5. Exercise 5
+According to Table 11.1, what is the probability of being male? (Round answer to 3 decimal places)
+
+```R
+(8450.1/17190.2) %>% round(3)
+```
+
+6. Exercise 6
+According to Table 11.1, what is the probability of being female? (Round answer to 3 decimal places)
+```R
+1 - (8450.1/17190.2) %>% round(3)
+```
+
+```{r}
+(8740.1 / 17190.2) %>% round(3)
+```
+
+7. Exercise 7
+What is the probability of being a male and sedentary? (Round answer to 3 decimal places)
+```{r}
+(2907.90 / 17190.2) %>% round(3)
+```
+
+8. Exercise 8
+What is the probability of being female and sedentary? (Round answer to 3 decimal places)
+```{r}
+(3418.60 / 17190.2) %>% round(3)
+```
+
+9. Exercise 9
+In the previous question, you calculated the probability of being female and sedentary. Determine if
+being sedentary is independent of being female. Ensure you can show your reasoning.
+
++ Being female is independent from being sedentary.
++ Being sedentary depends on being female.
++ Being female and sedentary are independent because both events are mutually exclusive.
++ Only being male depends on being sedentary.
+
+A: Being sedentary depends on being female.
+
+From the previous question you should have found that Pr(Female ∩ Sedentary) = 0.199. If these two events are independent, then Pr(Female ∩ Sedentary) = Pr(Female)*Pr(Sedentary).
+Using Table 11.1:
+
+Pr(Female) =
+```{r}
+8740.1/17190.2
+```
+Pr(Sedentary) =
+```{r}
+6326.5/17190.2
+```
+Pr(Female)*Pr(Sedentary) =
+```{r}
+(8740.1/17190.2) * (6326.5/17190.2)
+```
+This is not equal s to 0.199 calculated from Table 11.1, therefore being sederntary and female is dependent.
+
+10. Exercise 10
+What is the probability of being male, aged 25 - 34 and high in exercise level? (Round answer to 3 decimal places)
+```{r}
+(341.8/17190.2) %>% round(3)
+```
+
+11. Exercise 11
+What is the probability of being female, aged 25 - 34 and high in exercise level? (Round answer to 3 decimal places)
+```{r}
+(192.6/17190.2) %>% round(3)
+```
+
+12. Exercise 12
+What is the probability of being aged between 35-44? (Round answer to 3 decimal places)
+```{r}
+(3135.9/17190.2) %>% round(3)
+```
+13. Exercise 13
+What is the probability of being aged 75 years and over? (Round answer to 3 decimal places)
+```{r}
+(1025/17190.2) %>% round(3)
+```
+
+14. Exercise 14
+What is the probability of being a male or female? (Round answer to 3 decimal places)
+```{r}
+((8450.1 + 8740.1)/17190.2) %>% round(3)
+```
+
+15. Exercise 15
+What is the probability of being aged between 25 - 34 or 35 - 44? (Round answer to 3 decimal places)
+```{r}
+((3204.5 + 3135.9)/17190.2) %>% round(3)
+```
+
+16. Exercise 16
+What is the probability of having a high level of exercise given that a person is male? (Round answer to 3 decimal places)
+```{r}
+(1329.5/8450.1) %>% round(3)
+```
+
+17. Exercise 17
+What is the probability of having a high level of exercise given that a person is female? (Round answer to 3 decimal places)
+```{r}
+(711.5/8740.1) %>% round(3)
+```
+
+18. Exercise 18
+Comparing the two conditional probabilities calculated in Questions 16 and 17, which of the following statements is true?
++ Males are nearly twice as likely than females to be engaged in high levels of exercise.
++ The proportion of males and females involved in high levels of exercise is approximately the
+same.
++ Females are more likely than males to be involved in high levels of exercise.
++ Men enjoy exercise more than women
+
+A: Males are nearly twice as likely than females to be engaged in high levels of exercise.
+
+19. Exercise 19
+What is the probability that a person is sedentary given they are aged 45 years or above? (Round answer to 3 decimal places)
+
+```{r}
+((1089.3 + 953 + 677.2 + 705.1)/(3021.6 + 2563.1 + 1199.2 + 1025)) %>% round(3)
+```
+
+20. Exercise 20
+What is the probability that a person is sedentary given they are aged under 45 years? (Round answer to 3 decimal places)
+
+```{r}
+((182.9 + 643.6 + 998.9 + 1076.5)/(851.6 + 2189.3 + 3204.5 + 3135.9)) %>% round(3)
+```
+
+21. Exercise 21
+Comparing the two conditional probabilities calculated in Questions 19 and 20, which of the following statements is true?
+
++ Age is independent of being sedentary.
++ Young people under the age of 45 are more likely than people over the age of 45 to be sedentary.
++ Old people get lazy.
++ People over the age of 45 are more likely to be sedentary than people under the age of 45.
+
+A: People over the age of 45 are more likely to be sedentary than people under the age of 45.
+
+22. Exercise 22
+What is the probability that a person is NOT sedentary given they are aged 45 years or above? (Round answer to 3 decimal places)
+
+```{r}
+1 - ((1089.3 + 953 + 677.2 + 705.1)/(3021.6 + 2563.1 + 1199.2 + 1025)) %>% round(3)
+```
+
+23. Exercise 23
+You’ve forgotten your four digit pin number for your VISA card. The only thing you can remember is that your pin had no repeated numbers. How many possible pin numbers would you need to consider to break the pin using brute force (trying every possible pin)?
+
+```{r}
+factorial(10)/factorial(10-4)
+```
+
+# Exercise 24
+You have to rank your top three movies of all time. You’ve narrowed your list to 20 titles, but need to rank only the top i three. How many possible ways could you assign the top three, 1st ,2nd and 3rd?
+
+```{r}
+factorial(20)/factorial(20-3)
+```
+
+```{r}
+#install if necessary
+#install.packages('gtools')
+#load library
+library(gtools)
+#urn with 3 balls
+x <- c(1:20)
+
+#get all permutations
+#permutations(n=20,r=3,v=x,repeats.allowed=F)
+
+#number of permutations
+nrow(permutations(n=20,r=3,v=x,repeats.allowed=F))
+```
+
+25. Exercise 25
+You’ve performed an experiment with four groups, Group A, B, C and D. You want to compare the means of each group to every other group. These are known as pairwise comparisons. For example, Group A vs. B, Group B vs. C etc. How many possible combinations of pairwise comparions do you need to consider?
+
+```{r}
+choose(4,2)
+```
+
+26. Exercise 26
+You go to a sandwich bar. You count there are 30 different ingredients (e.g. meat, lettuce, tomatoes). You can pick five ingredients to make a $5 sandwich. How many possible combinations of five ingredients could you choose?
+```{r}
+choose(30,5)
+```
+
 ## Probability Distributions: Random, but Predictable
 ### Overview
 Despite the omnipresence of variability, many variables follow predicable patterns. That’s not to say we can reliably predict an individual observation with great certainty, but over the course of many repeated observations of a variable, we can predict many informative outcomes. This module introduces two discrete probability distributions and one continuous probability distribution which are know to model the behaviour of many random processes.
@@ -2523,6 +2773,8 @@ if (area != "") {
   text(x = mu-sd*4, y = dnorm(mu-sd/4,mu,sd), labels = prob_statement, pos = 4)
 }
 ```
+
+### Module 4 - Exercises
 
 ## Module 5 Sampling: Randomly Representative
 
