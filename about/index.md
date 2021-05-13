@@ -1,15 +1,10 @@
 # About Me
 
 # Personal Evaluation
-I see myself advancing with a strong ability and interesting in new technology
-and academic research.
-I successfully participated two international academic conferences,
-one published paper and one patent. In the University study, I got undergraduate
-scholarships and the best prize for final project. The final project is related
-to swipe card system. My insteresting research area on computer graphic, softerware testing and machine learning.
+I see myself advancing with a strong ability and interesting in new technology and academic research. I successfully participated two international academic conferences, one published paper and one patent. In the University study, I got undergraduate scholarships and the best prize for final project. The final project is related to swipe card system. My insteresting research area on computer graphic, softerware testing and machine learning.
 
 # Working Experience
-1. 2020.3 - now
+1. 2020.3 - 2021.6
 	* Support Engineer
 	* Microsoft, China
 	* Azure Machine Learning CSS Team
@@ -23,7 +18,10 @@ to swipe card system. My insteresting research area on computer graphic, softerw
 	* Metamorphic Testing - Software Testing
 
 # Education
-1. 2019.3 - now
+1. 2021.3 - now
+    * Master of Statistics and Operations Research
+    * Royal Melbourne Institute of Technology (RMIT), Australia
+1. 2019.3 - 2020
 	* Netmath
 	* University of Illinois (Urbana–Champaign)
 	* Major in Mathematics
