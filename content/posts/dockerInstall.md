@@ -334,7 +334,7 @@ sudo systemctl enable docker.service
 ```
 
 ```bash
-sudo usermod -aG docker username
+sudo usermod -aG docker $USER
 ```
 
 ```bash
@@ -370,6 +370,171 @@ sudo systemctl enable --now docker.socket
 You can also add it to '~/.bashrc' or somewhere alike.
 
 
+### Run GPU accelerated Docker containers with NVIDIA GPUs
+Install the nvidia-container-toolkitAUR package. Next, restart docker. 
 
+```bash
+sudo systemctl restart docker.service
+```
 
+```bash
+docker run --gpus all --device /dev/nvidia0 --device /dev/nvidia-uvm --device /dev/nvidia-uvm-tools --device /dev/nvidiactl nvidia/cuda:11.0-base nvidia-smi
+```
 
+## Installing Nvidia Driver
+
+```console
+[yanboyang713@Boyang-PC ~]$ nvidia-smi
+Fri May 21 01:30:15 2021       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.73.01    Driver Version: 460.73.01    CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  GeForce RTX 2070    Off  | 00000000:01:00.0  On |                  N/A |
+| 31%   34C    P8    17W / 175W |    267MiB /  7979MiB |      9%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A       484      G   /usr/lib/Xorg                     227MiB |
+|    0   N/A  N/A      1051      G   picom                              12MiB |
+|    0   N/A  N/A      1159      G   palemoon                           24MiB |
++-----------------------------------------------------------------------------+
+```
+
+Manual Install using the Official Nvidia.com driver
+1. Update your system to load the latest kernel image. Failing this step may result in kernel headers mismatch:
+
+```bash
+sudo pacman -Syu
+```
+
+2. Identify your NVIDIA VGA card.The below commands will allow you to identify your Nvidia card model: 
+```bash
+lspci -vnn | grep VGA
+```
+
+```console
+[yanboyang713@Boyang-PC ~]$ lspci -vnn | grep VGA
+lspci: Unable to load libkmod resources: error -2
+01:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU106 [GeForce RTX 2070] [10de:1f02] (rev a1) (prog-if 00 [VGA controller])
+```
+
+3. Download the Official Nvidia Driver. Using your web browser navigate to the [official Nvidia](http://www.nvidia.com/Download/index.aspx) website and download an appropriate driver for your Nvidia graphic card. Save the file into your home directory. Example: 
+
+```console
+[yanboyang713@Boyang-PC ~]$ cd ~/Downloads/
+[yanboyang713@Boyang-PC Downloads]$ ls
+NVIDIA-Linux-x86_64-465.31.run
+```
+
+4. Install Prerequisites. Development tools and kernel headers are required to compile and install Nvidia driver. Let' s start by installation of kernel headers. First, we need to detect currently loaded kernel. For example: 
+
+```console
+[yanboyang713@Boyang-PC Downloads]$ uname -r
+5.10.34-1-MANJARO
+```
+
+The kernel headers we need to install are
+
+```console
+[yanboyang713@Boyang-PC Downloads]$ sudo pacman -S linux-headers
+[sudo] password for yanboyang713: 
+:: There are 11 providers available for linux-headers:
+:: Repository core
+   1) linux414-headers  2) linux419-headers  3) linux44-headers  4) linux49-headers  5) linux510-headers  6) linux511-headers  7) linux512-headers  8) linux513-headers  9) linux54-headers
+:: Repository community
+   10) linux54-rt-headers  11) linux59-rt-headers
+
+Enter a number (default=1): 5
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (1) linux510-headers-5.10.36-2
+
+Total Download Size:    9.46 MiB
+Total Installed Size:  47.74 MiB
+
+:: Proceed with installation? [Y/n] Y
+:: Retrieving packages...
+ linux510-headers-5.10.36-2-x86_64                                                                    9.5 MiB   157 KiB/s 01:02 [#############################################################################] 100%
+(1/1) checking keys in keyring                                                                                                  [#############################################################################] 100%
+(1/1) checking package integrity                                                                                                [#############################################################################] 100%
+(1/1) loading package files                                                                                                     [#############################################################################] 100%
+(1/1) checking for file conflicts                                                                                               [#############################################################################] 100%
+(1/1) checking available disk space                                                                                             [#############################################################################] 100%
+:: Processing package changes...
+(1/1) installing linux510-headers                                                                                               [#############################################################################] 100%
+:: Running post-transaction hooks...
+(1/2) Arming ConditionNeedsUpdate...
+(2/2) Updating module dependencies...
+```
+
+**NOTE:** Match with kernel version.
+
+Next task is to install development tools. Execute the bellow command and hit ENTER to install all: 
+
+```bash
+sudo pacman -S base-devel dkms
+```
+
+5. In this step we will disable the default nouveau drivers. To do so we need to open and edit the /etc/default/grub Grub configuration file.
+
+Locate the line starting with GRUB_CMDLINE_LINUX and include the following code nouveau.modeset=0.
+
+Example:
+
+```bash
+sudo vim /etc/default/grub
+```
+
+Alter the ***GRUB_CMDLINE_LINUX*** line:
+
+```bash
+GRUB_CMDLINE_LINUX="nouveau.modeset=0"
+```
+
+Once you have made the change update GRUB:
+
+```bash
+$ sudo update-grub
+```
+
+Reboot your system:
+
+```bash
+sudo reboot
+```
+
+6. Stop windows X
+```bash
+sudo systemctl lightdm stop
+OR,
+sudo systemctl gdm stop
+```
+
+7. ctual installation of Nvidia driver by executing the following linux command and following the wizard: 
+
+```bash
+sudo bash NVIDIA*
+```
+
+You may also be asked questions like: 
+
+```bash
+Would you like to register the kernel module sources with DKMS? This will allow DKMS to automatically build a  new module, if you install a different kernel later. ->YES 
+Install NVIDIA's 32-bit compatibility libraries? -> YES
+Would you like to run the nvidia-xconfig utility? -> YES 
+```
+
+8. Reboot your system: 
+```bash
+sudo reboot
+```
