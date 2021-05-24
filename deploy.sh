@@ -8,6 +8,7 @@ deploy () {
     # get Repositorie Name
     RepositorieName=$(grep -oP '(?<=[[:space:]]).*?(?=!)' <<< "$1")
 
+    echo "Your Github Repositorir Name is: $RepositorieName\n"
     #set git remote URL
     git remote set-url origin git@github.com:"$RepositorieName".git
 
@@ -51,7 +52,7 @@ testConnectionAndDeploy () {
         read -p "Are you done update your deploy key (Y/n)? " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]; then
-            testConnectionAndDeploy
+            deploy $testConnection
         fi
     fi
 }
