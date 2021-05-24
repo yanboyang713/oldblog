@@ -8,7 +8,8 @@ deploy () {
     # get Repositorie Name
     RepositorieName=$(grep -oP '(?<=[[:space:]]).*?(?=!)' <<< "$1")
 
-    echo "Your Github Repositorir Name is: $RepositorieName\n"
+    echo "Your Github Repositorir Name is: $RepositorieName \n"
+
     #set git remote URL
     git remote set-url origin git@github.com:"$RepositorieName".git
 
