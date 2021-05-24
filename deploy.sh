@@ -46,7 +46,7 @@ testConnectionAndDeploy () {
     # success connect to Github
     if [[ $testConnection =~ successfully ]]; then
         echo "***** You can connect to Github successfully **********"
-        deploy $testConnection
+        deploy "$testConnection"
     else
         echo "***** Could NOT connect to Github!!! Please, update your Github deploy keys *******"
         echo "***** You can add the below public key as your deploy key *****"
@@ -55,7 +55,7 @@ testConnectionAndDeploy () {
         read -p "Are you done update your deploy key (Y/n)? " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]; then
-            deploy $testConnection
+            deploy "$testConnection"
         fi
     fi
 }
