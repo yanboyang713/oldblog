@@ -5,6 +5,8 @@ printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
 
 deploy () {
 
+    echo "$1"
+
     # get Repositorie Name
     RepositorieName=$(grep -oP '(?<=[[:space:]]).*?(?=!)' <<< "$1")
 
