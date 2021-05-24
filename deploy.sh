@@ -55,7 +55,12 @@ testConnectionAndDeploy () {
         read -p "Are you done update your deploy key (Y/n)? " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]; then
-            deploy "$testConnection"
+            testConnection=$(ssh -T git@github.com 2>&1)
+            if [[ $testConnection =~ successfully ]]; then
+                deploy "$testConnection"
+            else
+                echo "Please wait a few minutes, and try again !!!"
+            fi
         fi
     fi
 }
