@@ -35,6 +35,8 @@ initSSHkey () {
     ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -P ""
     ssh-keyscan github.com > ~/.ssh/known_hosts 2>/dev/null
     ssh-keyscan gitlab.com >> ~/.ssh/known_hosts 2>/dev/null
+
+    echo "Init SSH key Done!!!"
 }
 
 testConnectionAndDeploy () {
