@@ -20,9 +20,6 @@ deploy () {
 
     # Commit changes.
     msg="Published on $(date +'%Y-%m-%d %H:%M:%S')"
-    if [ -n "$*" ]; then
-        msg="$*"
-    fi
 
     echo "$msg"
     git commit -m "$msg"
