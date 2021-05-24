@@ -30,4 +30,6 @@ gpg:              unchanged: 1
 ```
 
 
+## Spacemacs Config
+Find the ~/.spacemacs file by pressing SPC f e d
 
