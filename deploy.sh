@@ -58,6 +58,7 @@ testConnectionAndDeploy () {
     fi
 }
 
+
 # Have ssh key
 if [ "$(ls -A ~/.ssh 2>/dev/null)" ]; then
     echo "***** .ssh directory exists and has content, continuing *****";
