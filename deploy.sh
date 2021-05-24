@@ -1,5 +1,12 @@
 #!/bin/bash
-# Program: This program for push Hugo to github
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: Hugo Depolyment                                 ##
+## PURPOSE: This program for push Hugo to github             ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 25.05.2021                            ##
+###############################################################
 
 printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
 
