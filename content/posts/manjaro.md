@@ -10,7 +10,13 @@ categories: [ "Linux" ]
 ### Screenshot
 #### Requirements
 + maim
+```bash
+yay -S xclip
+```
 + xclip
+```bash
+yay -S maim
+```
 
 #### Set-up
 Set this on your i3 config file ~/.i3/config
