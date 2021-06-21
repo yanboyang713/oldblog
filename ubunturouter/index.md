@@ -34,6 +34,25 @@ sudo apt-get update
 sudo apt-get install bridge-utils
 ```
 
+```bash
+yay bridge-utils
+yay -S openvswitch
+
+systemctl start ovsdb-server
+systemctl start ovs-vswitchd
+
+ovs-vsctl add-br br0
+ip ad
+
+sudo ovs-vsctl add-port br0 enp3s0f0
+[yanboyang713@Boyang-PC ~]$ sudo ovs-vsctl add-port br0 enp3s0f1
+[yanboyang713@Boyang-PC ~]$ sudo ovs-vsctl add-port br0 enp3s0f2
+[yanboyang713@Boyang-PC ~]$ sudo ovs-vsctl add-port br0 enp3s0f3
+
+ifconfig
+sudo ip addr add 192.168.1.1/24 dev br0
+```
+
 #### Distinguish External and Internal Interfaces' Name
 Identify the interface name for your ethernet device using the IP command as shown.
 
@@ -157,6 +176,11 @@ sudo sh nat.sh
 ```
 
 ### Clients network settings
+```bash
+IPv4——选择使用指定的DNS，在DNS服务器地址中输入223.5.5.5 和 223.6.6.6，输入后确定退出即设置完成。
+IPv6——选择使用指定的DNS，在DNS服务器地址中输入2400:3200::1 和 2400:3200:baba::1，输入后确定退出即设置完成。
+```
+
 Each clients at the less MUST setting the corrent IP address, netmask, gateway and DNS.
 
 ** TIPS:
