@@ -19,21 +19,38 @@ This post document is about using Basler Camera with Opencv on Python. At the be
 You can follow the below steps to create the conda environment. If you want to know more details about Conda, please have a look link: {% post_link conda %}
 
 ```bash
+Please run
+
+	$ source /opt/anaconda/bin/activate root
+	$ source /opt/anaconda/bin/deactivate root
+
+to activate and deactivate the anaconda enviroment.
+
 conda create -n baslerOpencv python=3.7.7
 conda activate baslerOpencv
 conda install notebook ipykernel
 ipython kernel install --user --name baslerOpencv --display-name "Python (Basler with Opencv)"
 ```
 ### Installing Pylon
+#### For Ubuntu
 1. Go to [Pylon Official Website](https://www.baslerweb.com/en/products/software/basler-pylon-camera-software-suite/).
 2. Go to Downloads Section
 3. Click link: pylon 6.1.1 Camera Software Suite Linux x86 (64 Bit) - Debian Installer Package
+https://www.baslerweb.com/fp-1615275588/media/a_b_testing_1/pylon_6.2.0.21487_x86_64_setup.tar.gz
 4. Filling in your personal INFOs and click "Start the Download!"
 5. Goto you download directory(Using cd command)
 6. You can use the apt command for install deb file
 ```bash
 sudo apt install xxxx.deb
 ```
+#### For Arch Linux (Manjaro)
+```bash
+yay -S pylon
+```
+**NOTE:**
+1. You can found pylon in DIR: /opt/pylon6
+2. **ipconfigurator**, **PylonFirmwareUpdater** and **pylonviewer**, which can found on DIR: /opt/pylon6/bin
+
 When you done, you can see there are three applications be installed, which are Pylon IP Configurator, pylon viewer and Basler Product Documention.
 
 ### Installing pypylon binary wheel file to conda environment
@@ -42,7 +59,11 @@ When you done, you can see there are three applications be installed, which are 
 + Download a binary wheel from the [releases](https://github.com/Basler/pypylon/releases) page.
 https://github.com/basler/pypylon/releases/download/1.6.0/pypylon-1.6.0-cp37-cp37m-linux_x86_64.whl
 + Install the wheel using pip3 install <your downloaded wheel>.whl
-+ Look at samples/grab.py in this repository
++ Look at [samples/grab.py](https://github.com/basler/pypylon/blob/master/samples/grab.py) in this repository
+
+```bash
+pip install pypylon
+```
 
 **TIPS:**
 ```bash
@@ -55,7 +76,11 @@ ImportError: libpython3.7m.so.1.0: cannot open shared object file: No such file 
 ```
 
 ```bash
+# check your directory
 export LD_LIBRARY_PATH=/home/yanboyang713/miniconda3/envs/front/lib
+Or,
+export LD_LIBRARY_PATH=/home/yanboyang713/.conda/envs/baslerOpencv/lib
+
 echo $LD_LIBRARY_PATH
 ```
 
@@ -65,6 +90,69 @@ pip install pypylon-opencv-viewer
 ### Installing Opencv to conda environment
 pip install opencv-python==3.4.2.17
 pip install opencv-contrib-python==3.4.2.17 
+
+## Testing pylon with your camera
+
+```python
+from pypylon import pylon
+from pypylon import genicam
+
+import sys
+
+# Number of images to be grabbed.
+countOfImagesToGrab = 100
+
+# The exit code of the sample application.
+exitCode = 0
+
+try:
+    # Create an instant camera object with the camera device found first.
+    camera = pylon.InstantCamera(pylon.TlFactory.GetInstance().CreateFirstDevice())
+    camera.Open()
+
+    # Print the model name of the camera.
+    print("Using device ", camera.GetDeviceInfo().GetModelName())
+
+    # demonstrate some feature access
+    new_width = camera.Width.GetValue() - camera.Width.GetInc()
+    if new_width >= camera.Width.GetMin():
+        camera.Width.SetValue(new_width)
+
+    # The parameter MaxNumBuffer can be used to control the count of buffers
+    # allocated for grabbing. The default value of this parameter is 10.
+    camera.MaxNumBuffer = 5
+
+    # Start the grabbing of c_countOfImagesToGrab images.
+    # The camera device is parameterized with a default configuration which
+    # sets up free-running continuous acquisition.
+    camera.StartGrabbingMax(countOfImagesToGrab)
+
+    # Camera.StopGrabbing() is called automatically by the RetrieveResult() method
+    # when c_countOfImagesToGrab images have been retrieved.
+    while camera.IsGrabbing():
+        # Wait for an image and then retrieve it. A timeout of 5000 ms is used.
+        grabResult = camera.RetrieveResult(5000, pylon.TimeoutHandling_ThrowException)
+
+        # Image grabbed successfully?
+        if grabResult.GrabSucceeded():
+            # Access the image data.
+            print("SizeX: ", grabResult.Width)
+            print("SizeY: ", grabResult.Height)
+            img = grabResult.Array
+            print("Gray value of first pixel: ", img[0, 0])
+        else:
+            print("Error: ", grabResult.ErrorCode, grabResult.ErrorDescription)
+        grabResult.Release()
+    camera.Close()
+
+except genicam.GenericException as e:
+    # Error handling.
+    print("An exception occurred.")
+    print(e.GetDescription())
+    exitCode = 1
+
+sys.exit(exitCode)
+```
 
 ## Image Control
 ### Image ROI (Area of Insterest)

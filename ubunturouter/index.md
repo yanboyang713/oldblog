@@ -1,11 +1,11 @@
-# Setting up an ubuntu Router with bridge
+# Setting up an Linux Router with bridge
 
 ## Introduction
-This post document is about how to build a Linux gateway base on Ubuntu OS. The gateway connects an internal network to an external network. Basically, performing Network Address Translation (NAT) for hosts on the internal network. It is exceptionally similar to what your home router does.
+This post document is about how to build a Linux gateway. The gateway connects an internal network to an external network. Basically, performing Network Address Translation (NAT) for hosts on the internal network. It is exceptionally similar to what your home router does.
 
 ## User Scenario
 1. Acting as a router at home or in office as a local area network.
-2. Connecting multi-network cameras to Ubuntu Server for transfer image data.
+2. Connecting multi-network cameras to Linux Server for transfer image data.
 
 ## Terminology
 1. **interface** is used to mean the operating system's name for a place which sends or receives data packets. It is often, but not necessarily, the same as a device. An interface may have several devices associated (e.g. a bridge), or a single device may have several interfaces. device will refer here to the bit of hardware dealing with your network connections. 
@@ -26,7 +26,11 @@ In our scenario, we will use software network bridging to connect all of ports f
 If you want to you also can add your virtual machines(VMs) to this bridge.
 This way, the all of PCIE ports are deployed on the same subnet as the host and can access services such as DHCP and much more.
 
-#### Installing Network Bridge Utilities
+#### Installing Network Bridge
+There are two types of **Bridge** are common in used, **Linux Bridge** and **Open vSwitch (OVS)**.
+I recommend your using OVS, more powerful than Linux Bridge.
+
+##### For Ubuntu (Linux Bridge)
 Begin by installing the bridge-utils package which contains utilities for configuring the Ubuntu ethernet bridge using the apt package manager as shown.
 
 ```bash
@@ -34,23 +38,22 @@ sudo apt-get update
 sudo apt-get install bridge-utils
 ```
 
+##### For Arch Linux (OVS)
 ```bash
-yay bridge-utils
 yay -S openvswitch
+```
 
-systemctl start ovsdb-server
-systemctl start ovs-vswitchd
+#### Start-up OVS
 
-ovs-vsctl add-br br0
-ip ad
+```bash
+sudo systemctl start ovsdb-server
+sudo systemctl start ovs-vswitchd
+```
 
-sudo ovs-vsctl add-port br0 enp3s0f0
-[yanboyang713@Boyang-PC ~]$ sudo ovs-vsctl add-port br0 enp3s0f1
-[yanboyang713@Boyang-PC ~]$ sudo ovs-vsctl add-port br0 enp3s0f2
-[yanboyang713@Boyang-PC ~]$ sudo ovs-vsctl add-port br0 enp3s0f3
-
-ifconfig
-sudo ip addr add 192.168.1.1/24 dev br0
+Testing OVS running successful.
+```bash
+# Prints a brief overview of the database contents
+sudo ovs-vsctl show
 ```
 
 #### Distinguish External and Internal Interfaces' Name
@@ -70,6 +73,7 @@ From this screenshot, as you can see:
 3. **br0** is my bridge, which connect with all of PCIE ports. The bridge will as internal network. This interface have not yet. Please following the next creating the bridge section.
 
 #### Creating and Setting the Bridge at Start-up
+##### For Ubuntu (Linux bridge)
 We need to edit the /etc/network/interfaces file. This file shows an example of a bridge configure.
 
 Sample /etc/network/interfaces file
@@ -106,6 +110,32 @@ From this interface configure file, you can see:
 ```bash
 sudo /etc/init.d/networking restart 
 ```
+
+##### For Arch Linux (OVS)
++ Create a new OVS bridge, named **br0**.
+```bash
+ovs-vsctl add-br br0
+```
+
++ Check the Bridge Interface created successful or not.
+```bash
+ip ad
+```
+
++ Connect internal ports to OVS bridge.
+
+```bash
+sudo ovs-vsctl add-port br0 enp3s0f0
+sudo ovs-vsctl add-port br0 enp3s0f1
+sudo ovs-vsctl add-port br0 enp3s0f2
+sudo ovs-vsctl add-port br0 enp3s0f3
+```
+
++ Assign IP address to OVS bridge.
+```bash
+sudo ip addr add 192.168.1.1/24 dev br0
+```
+
 ### Enable IP forwarding and Masquerading
 Doing the above might not be enough to make the Ubuntu machine a real router which does NAT (Network Address Translation) and IP Forwarding. The following script configures the Kernel IPTable and IP forwarding. You will have to configure at least the script's 2 variables; the 1st is the external network interface; the 2nd is the internal network interface.
 

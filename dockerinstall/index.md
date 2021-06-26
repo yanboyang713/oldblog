@@ -161,6 +161,11 @@ The rest of this article assumes you are running the docker command as a user in
 Let’s explore the docker command next.
 
 ### Install Docker Compose
+
+```bash
+yay -S docker-compose
+```
+
 Docker Compose relies on Docker Engine for any meaningful work, so make sure you have Docker Engine installed either locally or remote, depending on your setup.
 
     On desktop systems like Docker Desktop for Mac and Windows, Docker Compose is included as part of those desktop installs.
@@ -276,7 +281,7 @@ sudo systemctl restart docker
 Sun Oct 11 11:24:35 2020       
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 455.23.05    Driver Version: 455.23.05    CUDA Version: 11.1     |
-|-------------------------------+----------------------+----------------------+
+|-------------------------------|----------------------|----------------------+
 | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
 | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
 |                               |                      |               MIG M. |
@@ -284,7 +289,7 @@ Sun Oct 11 11:24:35 2020
 |   0  GeForce RTX 2070    On   | 00000000:01:00.0  On |                  N/A |
 | 33%   36C    P8    11W / 175W |    293MiB /  7979MiB |      0%      Default |
 |                               |                      |                  N/A |
-+-------------------------------+----------------------+----------------------+
++-------------------------------|----------------------|----------------------+
                                                                                
 +-----------------------------------------------------------------------------+
 | Processes:                                                                  |
@@ -384,7 +389,7 @@ docker run --gpus all --device /dev/nvidia0 --device /dev/nvidia-uvm --device /d
 Fri May 21 01:30:15 2021       
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 460.73.01    Driver Version: 460.73.01    CUDA Version: 11.2     |
-|-------------------------------+----------------------+----------------------+
+|-------------------------------|----------------------|----------------------+
 | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
 | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
 |                               |                      |               MIG M. |
@@ -392,7 +397,7 @@ Fri May 21 01:30:15 2021
 |   0  GeForce RTX 2070    Off  | 00000000:01:00.0  On |                  N/A |
 | 31%   34C    P8    17W / 175W |    267MiB /  7979MiB |      9%      Default |
 |                               |                      |                  N/A |
-+-------------------------------+----------------------+----------------------+
++-------------------------------|----------------------|----------------------+
                                                                                
 +-----------------------------------------------------------------------------+
 | Processes:                                                                  |
