@@ -6,6 +6,22 @@ category: [ "Basler" ]
 ---
 ## Introduction
 
+## PTP
+Check network card PTP suuport:
+```bash
+yay -S ethtool
+sudo ethtool -T enp3s0f3
+```
+
+
+```bash
+yay -S ptpd-git
+```
+
+```bash
+yay -S linuxptp
+```
+
 ## Software Trigger Asynchronous
 ### Synchronous Free Run
 https://docs.baslerweb.com/synchronous-free-run
