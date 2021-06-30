@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MATH1324 on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/categories/math1324/</link>
+    <description>Recent content in MATH1324 on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Wed, 03 Mar 2021 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/categories/math1324/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Statistics (Applied Analytics)</title>
+      <link>https://yanboyang.com/introductiontostatistics-appliedanalytics/</link>
+      <pubDate>Wed, 03 Mar 2021 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/introductiontostatistics-appliedanalytics/</guid>
+      <description>What is Statistics? Statistics is the science of collecting, organizing, analyzing, and interpreting data in order to make decisions.
+Some informal definitions of statistics, provided by various well-known statisticians, are
+ The science of learning from (or making sense out of) data (J. Kettenring). The theory and methods of extracting information from observational data for solving real-world problems (C.R. Rao). The science of uncertainty (D.J. Hand). The art of telling a story with data (L.</description>
+    </item>
+    
+  </channel>
+</rss>

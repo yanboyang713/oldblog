@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/blog/</link>
+    <description>Recent content in Blog on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Wed, 05 Feb 2020 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a Hexo blog with Docker</title>
+      <link>https://yanboyang.com/hexowithdocker/</link>
+      <pubDate>Wed, 05 Feb 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/hexowithdocker/</guid>
+      <description>Overview This is a tutorial on creating a blog or website using hexo.io (a static site generator).
+We will use Docker as our development environment. Also, we will storge our Hexo development code in Github main branche and all of our generate static pages will hosting in Github Page on gh-pages branches with your own custom domain and https.
+Why we choose Hexo After comparing a multitude of offerings, I settled on the excellent hexo.</description>
+    </item>
+    
+    <item>
+      <title>Creating a Hugo blog</title>
+      <link>https://yanboyang.com/hugo/</link>
+      <pubDate>Wed, 05 Feb 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/hugo/</guid>
+      <description>Overview This is a tutorial on creating a blog or website using hugo (a static site generator).
+We will use Docker as our development environment. Also, we will storge our Hugo development code in Github main branche and automate the whole process with Github Action Workflow for Github Pages.
+Prerequisites You will need to have the following:
+ Docker installation. Docker is available for Mac/Windows/Linux and is easily installed. You can following the link at the below for install Docker.</description>
+    </item>
+    
+  </channel>
+</rss>

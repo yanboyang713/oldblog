@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/machine-learning/</link>
+    <description>Recent content in Machine Learning on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Mon, 01 Mar 2021 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>4 big data architectures, Data Streaming, Lambda architecture, Kappa architecture and Unifield architecture</title>
+      <link>https://yanboyang.com/bigdataarchitectures/</link>
+      <pubDate>Mon, 01 Mar 2021 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/bigdataarchitectures/</guid>
+      <description>Introduction Although data analysis is hidden behind the business system, it has a very important role. The results of data analysis play a pivotal role in decision-making and business development. With the development of big data technology, the exposure of proper terms such as data mining and data exploration is getting higher and higher, but before big data analysis systems similar to the Hadoop become popular, data analysis work has undergone considerable development, especially data analysis based on BI systems already has very mature and stable technical solutions and ecosystems.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with Python using Conda</title>
+      <link>https://yanboyang.com/conda/</link>
+      <pubDate>Tue, 08 Sep 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/conda/</guid>
+      <description>Introduction This post document is about using Conda to management Python and R language packages (libraries/dependencies), as well as virtual environment. Conda is an open source package management system and environment management system. Conda can quickly installs, runs and updates packages and their dependencies. Conda easily creates, saves, loads and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language.</description>
+    </item>
+    
+    <item>
+      <title>Extented Image Training Set Tips</title>
+      <link>https://yanboyang.com/extentedimagetrainingset/</link>
+      <pubDate>Mon, 07 Sep 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/extentedimagetrainingset/</guid>
+      <description>Introduction Regardless of the algorithm and framework used to train the neural network, the amount of image data is always an important prerequisite for determining the quality of the training model. Data expansion is a common method for training models, which is very important for the robustness and accuracy of the model. This post document will use OpenCV to show some of tips for how we can extented image training set.</description>
+    </item>
+    
+    <item>
+      <title>Azure Machine Learning Workspace Authentication Troubleshooting Guide</title>
+      <link>https://yanboyang.com/amlworkspaceauthentication/</link>
+      <pubDate>Sat, 05 Sep 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/amlworkspaceauthentication/</guid>
+      <description>Could you try using config.json file connect to your Azure ML Workspace first? The steps you can following at the below.
+ Go to https://portal.azure.com/ Download config.json config.json Story config.json to the same directory as your Python code. run python code at the below  1 2 3  from azureml.core import Workspace ws = Workspace.from_config() print(&amp;#34;Found workspace {}at location {}&amp;#34;.format(ws.name, ws.location))    If using config.json file connect to your Azure ML Workspace does not work, please check your SDK version and update your SDK.</description>
+    </item>
+    
+    <item>
+      <title>Guide to File Formats for Machine Learning</title>
+      <link>https://yanboyang.com/machinelearningfileformats/</link>
+      <pubDate>Tue, 01 Sep 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/machinelearningfileformats/</guid>
+      <description>Introduction This post document is a guide to the popular file formats used in open source frameworks for machine learning in Python, including TensorFlow/Keras, PyTorch, Scikit-Learn, and PySpark. We will also describe how a Feature Store can make the Data Scientist’s life easier by generating training/test data in a file format of choice on a file system of choice. This guide is base on Jim Dowling&amp;rsquo;s blog.
+A file format defines the structure and encoding of the data stored in it and it is typically identified by its file extension — for example, a filename ending in .</description>
+    </item>
+    
+    <item>
+      <title>Machine Learning Workflow</title>
+      <link>https://yanboyang.com/machinelearningworkflow/</link>
+      <pubDate>Sat, 04 Jan 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/machinelearningworkflow/</guid>
+      <description>Machine Learning Development Liftcycle Overview There are two important parts for ML lifecycle (pipeline).
+ Data-flow about how to management/store your data and how to transfer your data in your ML lifecycle. Transfer your data highly regarding with Networking, so in this post, I will talk a little bit about Network Topologgy from On-premises network to Azure Network Topology. Compute Resources/Environments about how to compute your data on each steps, different steps are running within different environments.</description>
+    </item>
+    
+    <item>
+      <title>Install Tensorflow 2.1 on Ubuntu 18.04 LTS with GPU support</title>
+      <link>https://yanboyang.com/tensorflowgpusupport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/tensorflowgpusupport/</guid>
+      <description>Introduction This post document is about how to build GPU support environment for Tensorflow 2.1. This document will include install Nvidia driver, CUDA Toolkit, cuDNN on Ubuntu 18.04.
+Hardware Environment Secure UEFI Boot An issue that often arises when attempting to install Nvidia drivers on Linux involves a motherboard setting known as Secure UEFI Boot. In order for the driver installation to be successful it is necessary to disable this setting on most motherboards.</description>
+    </item>
+    
+  </channel>
+</rss>

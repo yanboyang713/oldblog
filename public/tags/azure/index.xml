@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/azure/</link>
+    <description>Recent content in Azure on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Wed, 09 Sep 2020 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Data Science Virtual Machine Getting Started</title>
+      <link>https://yanboyang.com/dsvm/</link>
+      <pubDate>Wed, 09 Sep 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/dsvm/</guid>
+      <description>Introduction Azure Data Science Virtual Machine(DSVM) is Azure Virtual Machine image, pre-installed, configured and tested with several popular tools that are data analytics, machine learning and AI training. DSVM will be your best option as your develop environment base on cloud. DSVM helps in flexible virtualization without the need for purchasing and maintenance of hardware. You will see the DSVM highlights at the below section. DSVM almost cover all of popular tools for data science.</description>
+    </item>
+    
+    <item>
+      <title>Azure Machine Learning Compute Instance Getting Started</title>
+      <link>https://yanboyang.com/amlci/</link>
+      <pubDate>Mon, 07 Sep 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/amlci/</guid>
+      <description>Introduction This post document is a brief introduction about Azure Machine Learning Service Compute Instance(CI). CI can be as your development environment or training compute tartget. TIPS: However, if your specialty on Linux, I recommand you using DSVM ({% post_link DSVM %}) as your development environment. For training process, I recommand you using Azure Machine Learning training cluster(Compute cluster).
+Managing a compute instance From portal In your workspace in Azure Machine Learning studio, select Compute, then select Compute Instance on the top.</description>
+    </item>
+    
+    <item>
+      <title>Azure Machine Learning Workspace Authentication Troubleshooting Guide</title>
+      <link>https://yanboyang.com/amlworkspaceauthentication/</link>
+      <pubDate>Sat, 05 Sep 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/amlworkspaceauthentication/</guid>
+      <description>Could you try using config.json file connect to your Azure ML Workspace first? The steps you can following at the below.
+ Go to https://portal.azure.com/ Download config.json config.json Story config.json to the same directory as your Python code. run python code at the below  1 2 3  from azureml.core import Workspace ws = Workspace.from_config() print(&amp;#34;Found workspace {}at location {}&amp;#34;.format(ws.name, ws.location))    If using config.json file connect to your Azure ML Workspace does not work, please check your SDK version and update your SDK.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Azure CLI</title>
+      <link>https://yanboyang.com/azurecli/</link>
+      <pubDate>Sat, 01 Feb 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/azurecli/</guid>
+      <description>Run Azure CLI in a Docker container You can use Docker to run a standalone Linux container with the Azure CLI pre-installed. Docker gets you started quickly with an isolated environment to run the CLI in. The image can also be used as a base for your own deployments.
+Run in a Docker container Install Install the CLI using docker run.
+1  docker run -it mcr.microsoft.com/azure-cli   NOTE:</description>
+    </item>
+    
+    <item>
+      <title>Machine Learning Workflow</title>
+      <link>https://yanboyang.com/machinelearningworkflow/</link>
+      <pubDate>Sat, 04 Jan 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/machinelearningworkflow/</guid>
+      <description>Machine Learning Development Liftcycle Overview There are two important parts for ML lifecycle (pipeline).
+ Data-flow about how to management/store your data and how to transfer your data in your ML lifecycle. Transfer your data highly regarding with Networking, so in this post, I will talk a little bit about Network Topologgy from On-premises network to Azure Network Topology. Compute Resources/Environments about how to compute your data on each steps, different steps are running within different environments.</description>
+    </item>
+    
+    <item>
+      <title>Using Azure Container Instances with Azure Machine Learning Service</title>
+      <link>https://yanboyang.com/aci/</link>
+      <pubDate>Sat, 04 Jan 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/aci/</guid>
+      <description>Stop and Start ACI for AML endpoint You can use Azure command-line interface (Azure CLI) to stop and start the Azure Container Instances.
+The steps at the below.
+Step 1: Go to your portal and click Cloud Shell Step 2: Check the Container Name using the below command. &amp;ldquo;sklearn-mnist-svc-4dea&amp;rdquo; is my Endpoint name az container list | grep &amp;ldquo;sklearn-mnist-svc-4dea&amp;rdquo; Step 3: Confirm your Container Name for your Endpoint using the below command.</description>
+    </item>
+    
+    <item>
+      <title>Azure Raise Support Ticket/Case and Troubleshooting Guide</title>
+      <link>https://yanboyang.com/azureraisecase/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/azureraisecase/</guid>
+      <description>Introduction When you use the Azure platform, you can open a case/ticket at any time when you encounter problems or have questions.
+The steps for raise a new case/ticket  Go to portal. Click question mark.  Click &amp;ldquo;Help+support&amp;rdquo;  Click + New support request  You can open a Technical support request. There is an example.   Troubleshooting Permission Issue If you face the error MSG at the below.</description>
+    </item>
+    
+  </channel>
+</rss>

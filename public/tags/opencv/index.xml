@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenCV on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/opencv/</link>
+    <description>Recent content in OpenCV on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Sat, 06 Feb 2021 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/tags/opencv/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting started with Opencv</title>
+      <link>https://yanboyang.com/opencv/</link>
+      <pubDate>Sat, 06 Feb 2021 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/opencv/</guid>
+      <description>Introduction OpenCV is a popular framework widely used in the development of products for intelligent video analytics. Such solutions use both classic algorithms of computer vision (e.g. an algorithm for optical flow detection), and AI-based approaches, in particular, neural networks.
+Installing with Docker build:
+1  docker build -t my_pi_opencv_img .   run:
+1 2 3 4 5 6  docker run -it --rm \  -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY \  -v /home/yanboyang713/Documents/imagezmq:/home \  --name my_opencv_app_run \  my_pi_opencv_img \  /bin/bash    python -c &amp;ldquo;import cv2; print(cv2.</description>
+    </item>
+    
+    <item>
+      <title>High-performance Scalable Realtime Distributed Video Processing</title>
+      <link>https://yanboyang.com/realtimedistributedvideoprocessing/</link>
+      <pubDate>Sat, 06 Feb 2021 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/realtimedistributedvideoprocessing/</guid>
+      <description>Introduction Opencv </description>
+    </item>
+    
+    <item>
+      <title>Extented Image Training Set Tips</title>
+      <link>https://yanboyang.com/extentedimagetrainingset/</link>
+      <pubDate>Mon, 07 Sep 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/extentedimagetrainingset/</guid>
+      <description>Introduction Regardless of the algorithm and framework used to train the neural network, the amount of image data is always an important prerequisite for determining the quality of the training model. Data expansion is a common method for training models, which is very important for the robustness and accuracy of the model. This post document will use OpenCV to show some of tips for how we can extented image training set.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with Basler Camera With Opencv on Python</title>
+      <link>https://yanboyang.com/baslerwithopencv/</link>
+      <pubDate>Thu, 03 Sep 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/baslerwithopencv/</guid>
+      <description>Introduction This post document is about using Basler Camera with Opencv on Python. At the beginning of this guide I will introduct how to set-up development environment with Pylon and opencv within Conda virual environment. Seconly, I will talk about how to check and set some of basic Basler feature base on pypylon. At the end, I will give a example about using Opencv read Basler Camera data stream.
+Hardware and Software Testing Environment Hardware Environment  Camera: Basler (a2A1920 - 51gcPRO) Network Adapter: Intel I350 Gigabit Network adapter (POE) CPU: Intel(R) Core(TM) i7-9700F CPU @ 3.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with Multi-Basler Trigger Asynchronous</title>
+      <link>https://yanboyang.com/baslertriggerasynchronous/</link>
+      <pubDate>Thu, 02 Jan 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/baslertriggerasynchronous/</guid>
+      <description>Introduction PTP Check network card PTP suuport:
+1 2  yay -S ethtool sudo ethtool -T enp3s0f3   1  yay -S ptpd-git   1  yay -S linuxptp   Software Trigger Asynchronous Synchronous Free Run https://docs.baslerweb.com/synchronous-free-run The Synchronous Free Run camera feature allows you to capture images on multiple cameras at the same time and the same frame rate.
+How It Works If you are using multiple cameras in free run mode, image acquisition is slightly asynchronous due to a variety of reasons, e.</description>
+    </item>
+    
+  </channel>
+</rss>

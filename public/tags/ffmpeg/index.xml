@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ffmpeg on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/ffmpeg/</link>
+    <description>Recent content in ffmpeg on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster><atom:link href="https://yanboyang.com/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting started with FFmpeg</title>
+      <link>https://yanboyang.com/ffmpeg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/ffmpeg/</guid>
+      <description>Overview FFmpeg is a free software project and is the leading software for everything related to multimedia like video encoding, streaming and muxing.
+FFmpeg - &amp;ldquo;FF&amp;rdquo; mean &amp;ldquo;Fast Forward&amp;rdquo;, &amp;ldquo;mpeg&amp;rdquo; mean &amp;ldquo;Moving Picture Expers Group&amp;rdquo;
+Installation https://github.com/jrottenberg/ffmpeg
+https://www.whoishostingthis.com/compare/ffmpeg/resources/
+alias ffmpeg=&amp;lsquo;docker run -v=pwd:/tmp/ffmpeg opencoconut/ffmpeg&amp;rsquo;
+1  yay -S ffmpeg   Using Linux Terminal to Install VLC in Ubuntu sudo snap install vlc
+Invert the video stream to a virtual video camera If your video stream is inverted, you can make a new virtual video camera which inverts the inverted video.</description>
+    </item>
+    
+  </channel>
+</rss>

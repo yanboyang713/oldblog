@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Boyang Yan&#39;s Tech Blog</title>
-    <link>https://yanboyang.com/</link>
-    <description>Recent content on Boyang Yan&#39;s Tech Blog</description>
+    <title>Posts on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/posts/</link>
+    <description>Recent content in Posts on Boyang Yan&#39;s Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
     <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
-    <lastBuildDate>Sat, 29 May 2021 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 May 2021 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started with Scala</title>
       <link>https://yanboyang.com/scala/</link>
@@ -54,16 +54,6 @@ Usage Console 1  docker run -it --rm silex/emacs   GUI 1 2  xhost +local:root # 
       <author>yanboyang713@gmail.com (Boyang Yan)</author>
       <guid>https://yanboyang.com/writingmathematicfomular/</guid>
       <description>Greek Letters    Symbol Script     $$\begin{equation}\alpha\end{equation}$$ \alpha   $A$ A   $\beta$ \beta   $B$ B   $\gamma$ \gammma   $\Gamma$ \Gamma   $\pi$ \pi   $\Pi$ \Pi   $\phi$ \phi   $\Phi$ \Phi   $\varphi$ \varphi   $\theta$ \theta    Operators    Symbol Script     $\cos$ \cos   $\sin$ \sin   $\lim$ \lim   $\exp$ \exp   $\to$ \to   $\infty$ \infty   $\equiv$ \equiv   $\bmod$ \bmod   $\times$ \times    Power and Indices    Symbol Script     $k_{n+1}$ k_{n+1}   $n^2$ n^2   $k_n^2$ k_n^2    Fractions and Binomials    Symbol Script     $\frac{n!</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>https://yanboyang.com/about/</link>
-      <pubDate>Fri, 05 Mar 2021 06:11:32 +1000</pubDate>
-      <author>yanboyang713@gmail.com (Boyang Yan)</author>
-      <guid>https://yanboyang.com/about/</guid>
-      <description>Personal Evaluation I see myself advancing with a strong ability and interesting in new technology and academic research. I successfully participated two international academic conferences, one published paper and one patent. In the University study, I got undergraduate scholarships and the best prize for final project. The final project is related to swipe card system. My insteresting research area on computer graphic, softerware testing and machine learning.
-Working Experience  2020.</description>
     </item>
     
     <item>

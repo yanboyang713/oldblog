@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Buildah on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/buildah/</link>
+    <description>Recent content in Buildah on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Sat, 02 Jan 2021 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/tags/buildah/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Ultimate Guide to Podman, Skopeo and Buildah</title>
+      <link>https://yanboyang.com/podmanandskopeoandbuildah/</link>
+      <pubDate>Sat, 02 Jan 2021 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/podmanandskopeoandbuildah/</guid>
+      <description>Overview https://docs.oracle.com/en/operating-systems/oracle-linux/podman/podman-containers.html#podman-command-reference
+Let&amp;rsquo;s we retire Docker and move to Podman. A whole new revolution of containerization started with the Docker where the daemon process manages the whole bunch of things and became one of the most popular and widely used container management systems. However, with the advent of standards from the Open Container Initiative (OCI), other runtimes are being developed. One such runtime is CRI-O, which was created along with a set of tools to provide alternate ways to work directly with containers.</description>
+    </item>
+    
+  </channel>
+</rss>

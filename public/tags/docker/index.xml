@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/docker/</link>
+    <description>Recent content in Docker on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Mon, 01 Mar 2021 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Launching RStudio in Docker</title>
+      <link>https://yanboyang.com/rstudio/</link>
+      <pubDate>Mon, 01 Mar 2021 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/rstudio/</guid>
+      <description>Introduction RStudio Server enables you to provide a browser based interface to a version of R running on a remote Linux server, bringing the power and productivity of the RStudio IDE to server-based deployments of R.
+In this blog, I will talk about how to launch a Docker container that allows us to run RStudio in a browser using the &amp;ndash;rm flag when we run Docker makes the container ephemeral that mean it is automatically deleted after we close the container.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes vs Docker Swarm</title>
+      <link>https://yanboyang.com/kubervsdocker/</link>
+      <pubDate>Sun, 02 Feb 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/kubervsdocker/</guid>
+      <description>Introduction In this tutorial, we will be reviewing what the fundamental similarities and distinctions are between Kubernetes and Docker Swarm. Kubernetes and Docker are two of the major players in container orchestration. Both Kubernetes and Docker Swarm continue to grow in popularity as they are increasingly used by those working with container deployment, orchestration, and management. Across all vertical markets, businesses continue to find new methods of utilization and practice with more uses constantly being discovered.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with Docker Networking</title>
+      <link>https://yanboyang.com/dockernetworking/</link>
+      <pubDate>Sun, 05 Jan 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/dockernetworking/</guid>
+      <description>Networking Overview One of the reasons Docker containers and services are so powerful is that you can connect them together, or connect them to non-Docker workloads. Docker containers and services do not even need to be aware that they are deployed on Docker, or whether their peers are also Docker workloads or not. Whether your Docker hosts run Linux, Windows, or a mix of the two, you can use Docker to manage them in a platform-agnostic way.</description>
+    </item>
+    
+    <item>
+      <title>Docker as Local Development Environment</title>
+      <link>https://yanboyang.com/dockeraslocaldevelopmentenvironment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/dockeraslocaldevelopmentenvironment/</guid>
+      <description>Introduction https://blog.atulr.com/docker-local-environment/
+Perrequires  Install Docker Install Docker Compose  Docker Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.
+Docker container To form a mental picture, for the time being just consider a Docker Container as an extremely light weight isolated linux based virtual machine inside which we will run our application service (although containers are not exactly VMs).</description>
+    </item>
+    
+    <item>
+      <title>How to install Docker, Nvidia Docker and Docker Compose</title>
+      <link>https://yanboyang.com/dockerinstall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/dockerinstall/</guid>
+      <description>Install Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04 https://docs.docker.com/engine/install/ubuntu/
+Step 1 — Installing Docker The Docker installation package available in the official Ubuntu repository may not be the latest version. To ensure we get the latest version, we’ll install Docker from the official Docker repository. To do that, we’ll add a new package source, add the GPG key from Docker to ensure the downloads are valid, and then install the package.
+First, update your existing list of packages:</description>
+    </item>
+    
+  </channel>
+</rss>

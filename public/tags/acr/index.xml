@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ACR on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/acr/</link>
+    <description>Recent content in ACR on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Sat, 01 Feb 2020 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/tags/acr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting started with Azure Container Registry (ACR)</title>
+      <link>https://yanboyang.com/acr/</link>
+      <pubDate>Sat, 01 Feb 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/acr/</guid>
+      <description>Introduction Azure Container Registry is a managed, private Docker registry service based on the open-source Docker Registry 2.0. Create and maintain Azure container registries to store and manage your private Docker container images and related artifacts.
+Use Azure container registries with your existing container development and deployment pipelines, or use Azure Container Registry Tasks to build container images in Azure. Build on demand, or fully automate builds with triggers such as source code commits and base image updates.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hexo on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/hexo/</link>
+    <description>Recent content in Hexo on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Wed, 05 Feb 2020 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a Hexo blog with Docker</title>
+      <link>https://yanboyang.com/hexowithdocker/</link>
+      <pubDate>Wed, 05 Feb 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/hexowithdocker/</guid>
+      <description>Overview This is a tutorial on creating a blog or website using hexo.io (a static site generator).
+We will use Docker as our development environment. Also, we will storge our Hexo development code in Github main branche and all of our generate static pages will hosting in Github Page on gh-pages branches with your own custom domain and https.
+Why we choose Hexo After comparing a multitude of offerings, I settled on the excellent hexo.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GPU on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/categories/gpu/</link>
+    <description>Recent content in GPU on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster><atom:link href="https://yanboyang.com/categories/gpu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Tensorflow 2.1 on Ubuntu 18.04 LTS with GPU support</title>
+      <link>https://yanboyang.com/tensorflowgpusupport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/tensorflowgpusupport/</guid>
+      <description>Introduction This post document is about how to build GPU support environment for Tensorflow 2.1. This document will include install Nvidia driver, CUDA Toolkit, cuDNN on Ubuntu 18.04.
+Hardware Environment Secure UEFI Boot An issue that often arises when attempting to install Nvidia drivers on Linux involves a motherboard setting known as Secure UEFI Boot. In order for the driver installation to be successful it is necessary to disable this setting on most motherboards.</description>
+    </item>
+    
+  </channel>
+</rss>

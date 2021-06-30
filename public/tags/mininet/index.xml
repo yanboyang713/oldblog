@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mininet on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/mininet/</link>
+    <description>Recent content in mininet on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster><atom:link href="https://yanboyang.com/tags/mininet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started Mininet</title>
+      <link>https://yanboyang.com/mininet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/mininet/</guid>
+      <description>Mininet Overview Mininet is a network emulator which creates a network of virtual hosts, switches, controllers, and links. Mininet hosts run standard Linux network software, and its switches support OpenFlow for highly flexible custom routing and Software-Defined Networking.
+Mininet supports research, development, learning, prototyping, testing, debugging, and any other tasks that could benefit from having a complete experimental network on a laptop or other PC.
+Mininet:
+ Provides a simple and inexpensive network testbed for developing OpenFlow applications Enables multiple concurrent developers to work independently on the same topology Supports system-level regression tests, which are repeatable and easily packaged Enables complex topology testing, without the need to wire up a physical network Includes a CLI that is topology-aware and OpenFlow-aware, for debugging or running network-wide tests Supports arbitrary custom topologies, and includes a basic set of parametrized topologies is usable out of the box without programming, but also Provides a straightforward and extensible Python API for network creation and experimentation.</description>
+    </item>
+    
+  </channel>
+</rss>

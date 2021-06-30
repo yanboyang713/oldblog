@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure CLI on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/azure-cli/</link>
+    <description>Recent content in Azure CLI on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Sat, 01 Feb 2020 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/tags/azure-cli/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started with Azure CLI</title>
+      <link>https://yanboyang.com/azurecli/</link>
+      <pubDate>Sat, 01 Feb 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/azurecli/</guid>
+      <description>Run Azure CLI in a Docker container You can use Docker to run a standalone Linux container with the Azure CLI pre-installed. Docker gets you started quickly with an isolated environment to run the CLI in. The image can also be used as a base for your own deployments.
+Run in a Docker container Install Install the CLI using docker run.
+1  docker run -it mcr.microsoft.com/azure-cli   NOTE:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vim on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/vim/</link>
+    <description>Recent content in vim on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Mon, 07 Sep 2020 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VIM Keyboard Shortcuts Cheatsheet</title>
+      <link>https://yanboyang.com/vim/</link>
+      <pubDate>Mon, 07 Sep 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/vim/</guid>
+      <description>Introduction This post document is brief introduction about how to use VIM/VI text editor and help you remember the shortcuts. The Vim editor is a command-line based tool that’s an enhanced version of the venerable vi editor. Despite the abundance of graphical rich text editors, familiarity with Vim will help every Linux user – from an experienced system administrator to a newbie Raspberry Pi user.
+One important thing to note when using Vim, is that the function of a key depends on the “mode” the editor is in.</description>
+    </item>
+    
+  </channel>
+</rss>

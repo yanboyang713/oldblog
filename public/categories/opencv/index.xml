@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Opencv on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/categories/opencv/</link>
+    <description>Recent content in Opencv on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Sat, 06 Feb 2021 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/categories/opencv/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting started with Opencv</title>
+      <link>https://yanboyang.com/opencv/</link>
+      <pubDate>Sat, 06 Feb 2021 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/opencv/</guid>
+      <description>Introduction OpenCV is a popular framework widely used in the development of products for intelligent video analytics. Such solutions use both classic algorithms of computer vision (e.g. an algorithm for optical flow detection), and AI-based approaches, in particular, neural networks.
+Installing with Docker build:
+1  docker build -t my_pi_opencv_img .   run:
+1 2 3 4 5 6  docker run -it --rm \  -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY \  -v /home/yanboyang713/Documents/imagezmq:/home \  --name my_opencv_app_run \  my_pi_opencv_img \  /bin/bash    python -c &amp;ldquo;import cv2; print(cv2.</description>
+    </item>
+    
+  </channel>
+</rss>

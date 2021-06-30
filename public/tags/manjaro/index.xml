@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>manjaro on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/manjaro/</link>
+    <description>Recent content in manjaro on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Thu, 06 Feb 2020 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/tags/manjaro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Manjaro Linux kernel headers installation</title>
+      <link>https://yanboyang.com/kernel/</link>
+      <pubDate>Thu, 06 Feb 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/kernel/</guid>
+      <description>Overview A Linux kernel is the core of a Linux distribution and consists of three things:
+ The kernel itself The kernel&amp;rsquo;s headers The kernel&amp;rsquo;s extra modules  The kernel headers are used to define device interfaces. For example, they can be used to compile the module that controls your computer&amp;rsquo;s video card and driver.
+The main reason you may find yourself needing to install kernel headers is if you are compiling kernel modules and need Linux to access and communicate with hardware as intended.</description>
+    </item>
+    
+    <item>
+      <title>Manjaro Linux Tips</title>
+      <link>https://yanboyang.com/manjaro/</link>
+      <pubDate>Thu, 06 Feb 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/manjaro/</guid>
+      <description>I3 WM Screenshot Requirements  maim  1  yay -S xclip    xclip  1  yay -S maim   Set-up Set this on your i3 config file ~/.i3/config
+1 2 3 4 5 6 7 8 9  ## Screenshots bindsym Print exec --no-startup-id maim &amp;#34;/home/$USER/Pictures/$(date)&amp;#34; bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) &amp;#34;/home/$USER/Pictures/$(date)&amp;#34; bindsym Shift+Print exec --no-startup-id maim --select &amp;#34;/home/$USER/Pictures/$(date)&amp;#34; ### Clipboard Screenshots bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png   NOTE: You may remove the default screenshot shortcuts to prevent error.</description>
+    </item>
+    
+  </channel>
+</rss>

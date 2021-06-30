@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/categories/networking/</link>
+    <description>Recent content in Networking on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Tue, 08 Sep 2020 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/categories/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSH server set-up with multi-user and Security Practices</title>
+      <link>https://yanboyang.com/ssh/</link>
+      <pubDate>Tue, 08 Sep 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/ssh/</guid>
+      <description>Introduction This post document is about how to set-up SSH server base on Ubuntu OS. A lots of users have some concerns about SSH security, especially when multi-user or multi-group share to use with same SSH tunnel. So, this article will fouce on SSH server security practices with multi-user. In this article, first I will talk Linux User and Group Management.
+TIPS: When you using SSH connect with a host, CLI Text Editor is importance for editing some of config file.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Reverse Proxy</title>
+      <link>https://yanboyang.com/frp/</link>
+      <pubDate>Sun, 06 Sep 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/frp/</guid>
+      <description>What is frp? frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the Internet. As of now, it supports TCP and UDP, as well as HTTP and HTTPS protocols, where requests can be forwarded to internal services by domain name.
+frp also has a P2P connect mode.
+Architecture architecture
+Installation  Download the latest programs from Release page according to your operating system and architecture.</description>
+    </item>
+    
+    <item>
+      <title>Setting up an Linux Router with bridge</title>
+      <link>https://yanboyang.com/ubunturouter/</link>
+      <pubDate>Fri, 04 Sep 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/ubunturouter/</guid>
+      <description>Introduction This post document is about how to build a Linux gateway. The gateway connects an internal network to an external network. Basically, performing Network Address Translation (NAT) for hosts on the internal network. It is exceptionally similar to what your home router does.
+User Scenario  Acting as a router at home or in office as a local area network. Connecting multi-network cameras to Linux Server for transfer image data.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with Docker Networking</title>
+      <link>https://yanboyang.com/dockernetworking/</link>
+      <pubDate>Sun, 05 Jan 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/dockernetworking/</guid>
+      <description>Networking Overview One of the reasons Docker containers and services are so powerful is that you can connect them together, or connect them to non-Docker workloads. Docker containers and services do not even need to be aware that they are deployed on Docker, or whether their peers are also Docker workloads or not. Whether your Docker hosts run Linux, Windows, or a mix of the two, you can use Docker to manage them in a platform-agnostic way.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started Mininet</title>
+      <link>https://yanboyang.com/mininet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/mininet/</guid>
+      <description>Mininet Overview Mininet is a network emulator which creates a network of virtual hosts, switches, controllers, and links. Mininet hosts run standard Linux network software, and its switches support OpenFlow for highly flexible custom routing and Software-Defined Networking.
+Mininet supports research, development, learning, prototyping, testing, debugging, and any other tasks that could benefit from having a complete experimental network on a laptop or other PC.
+Mininet:
+ Provides a simple and inexpensive network testbed for developing OpenFlow applications Enables multiple concurrent developers to work independently on the same topology Supports system-level regression tests, which are repeatable and easily packaged Enables complex topology testing, without the need to wire up a physical network Includes a CLI that is topology-aware and OpenFlow-aware, for debugging or running network-wide tests Supports arbitrary custom topologies, and includes a basic set of parametrized topologies is usable out of the box without programming, but also Provides a straightforward and extensible Python API for network creation and experimentation.</description>
+    </item>
+    
+  </channel>
+</rss>

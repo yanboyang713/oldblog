@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Password Master on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/categories/password-master/</link>
+    <description>Recent content in Password Master on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster><atom:link href="https://yanboyang.com/categories/password-master/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started with Password Master (Bitwarden)</title>
+      <link>https://yanboyang.com/passwordmaster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/passwordmaster/</guid>
+      <description>Introduction Installation 1  yay -S bitwarden-cli   1 2 3 4 5 6 7 8 9 10 11  [yanboyang713@Boyang-PC~]$bwlogin?Emailaddress:yanboyang713@gmail.com?Masterpassword:[hidden]Youareloggedin!Tounlockyourvault,setyoursessionkeytothe`BW_SESSION`environmentvariable.ex:$exportBW_SESSION=&amp;#34;082KKVK/t0NjLQ7AiFRkuC/G/4pilfC05UCXedpAILtyHfEs0jnZGPmIT43BVbcGUfnPgvUved7Z90+8Rk0vKg==&amp;#34;&amp;gt;$env:BW_SESSION=&amp;#34;082KKVK/t0NjLQ7AiFRkuC/G/4pilfC05UCXedpAILtyHfEs0jnZGPmIT43BVbcGUfnPgvUved7Z90+8Rk0vKg==&amp;#34;Youcanalsopassthesessionkeytoanycommandwiththe`--session`option.ex:$bwlistitems--session082KKVK/t0NjLQ7AiFRkuC/G/4pilfC05UCXedpAILtyHfEs0jnZGPmIT43BVbcGUfnPgvUved7Z90+8Rk0vKg==  1  yay -S yarn npm   1  bash &amp;lt;(curl -s https://raw.githubusercontent.com/AZMCode/git-credential-bw/master/devScripts/install.sh)   1  sudo npm install -g tslib   </description>
+    </item>
+    
+  </channel>
+</rss>

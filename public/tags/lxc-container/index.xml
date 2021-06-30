@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LXC Container on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/lxc-container/</link>
+    <description>Recent content in LXC Container on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Thu, 06 Feb 2020 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/tags/lxc-container/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Get started with LXC Container in Proxmox</title>
+      <link>https://yanboyang.com/lxccontainerproxmox/</link>
+      <pubDate>Thu, 06 Feb 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/lxccontainerproxmox/</guid>
+      <description>Introduction https://pve.proxmox.com/wiki/Linux_Container
+Containers are a lightweight alternative to fully virtualized machines (VMs). They use the kernel of the host system that they run on, instead of emulating a full operating system (OS). This means that containers can access resources on the host system directly.
+The runtime costs for containers is low, usually negligible. However, there are some drawbacks that need be considered:
+  Only Linux distributions can be run in Proxmox Containers.</description>
+    </item>
+    
+  </channel>
+</rss>

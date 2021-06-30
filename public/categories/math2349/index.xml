@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MATH2349 on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/categories/math2349/</link>
+    <description>Recent content in MATH2349 on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Fri, 05 Mar 2021 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/categories/math2349/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Wrangling (Data Preprocessing)</title>
+      <link>https://yanboyang.com/datapreprocessing/</link>
+      <pubDate>Fri, 05 Mar 2021 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/datapreprocessing/</guid>
+      <description>Module 1 - Data Preprocessing: From Raw Data to Ready to Analyse Summary Module 1 will set the background for the entire course. Data preprocessing will be defined and the importance of data preprocessing inside the data analysis workflow will be explored. The module will define 5 major tasks for data preprocessing and will provide a quick overview of these tasks. Then, in the following modules of this course, we will unwrap each data preprocessing task by providing details of operations related to that task.</description>
+    </item>
+    
+  </channel>
+</rss>

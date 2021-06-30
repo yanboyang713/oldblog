@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux command on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/linux-command/</link>
+    <description>Recent content in Linux command on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Sun, 06 Sep 2020 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/tags/linux-command/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux basic commands and common tools</title>
+      <link>https://yanboyang.com/linux/</link>
+      <pubDate>Sun, 06 Sep 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/linux/</guid>
+      <description>Hardware Information There are plenty of commands to check information about the hardware of Linux system. Some commands report only specific hardware components like CPU or memory while the rest cover multiple hardware units. This section will look at some of the most commonly used commands to check information and configuration details about various hardware peripherals and devices.
+The list includes lscpu, hwinfo, lshw, dmidecode, lspci etc.
+lscpu The lscpu command reports information about the cpu and processing units.</description>
+    </item>
+    
+  </channel>
+</rss>

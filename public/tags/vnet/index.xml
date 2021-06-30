@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VNET on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/vnet/</link>
+    <description>Recent content in VNET on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Tue, 05 Jan 2021 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/tags/vnet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Networking</title>
+      <link>https://yanboyang.com/azurevnet/</link>
+      <pubDate>Tue, 05 Jan 2021 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/azurevnet/</guid>
+      <description>Create a virtual network using the Azure CLI A virtual network enables Azure resources, like virtual machines (VMs), to communicate privately with each other, and with the internet. In this quickstart, you learn how to create a virtual network. After creating a virtual network, you deploy two VMs into the virtual network. You then connect to the VMs from the internet, and communicate privately over the new virtual network.
+Create a resource group and a virtual network Before you can create a virtual network, you have to create a resource group to host the virtual network.</description>
+    </item>
+    
+  </channel>
+</rss>

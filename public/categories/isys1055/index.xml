@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ISYS1055 on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/categories/isys1055/</link>
+    <description>Recent content in ISYS1055 on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Mon, 01 Mar 2021 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/categories/isys1055/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting started SQLite</title>
+      <link>https://yanboyang.com/sqlite/</link>
+      <pubDate>Mon, 01 Mar 2021 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/sqlite/</guid>
+      <description>Introduction In this tutorial, you will learn SQLite step by step through extensive hands-on practices. This SQLite tutorial is designed for developers who want to use SQLite as the back-end database or to use SQLite to manage structured data in applications including desktop, web, and mobile apps. SQLite is an open-source, zero-configuration, self-contained, stand-alone, transaction relational database engine designed to be embedded into an application.
+Getting started with SQLite You should go through this section if this is the first time you have worked with SQLite.</description>
+    </item>
+    
+  </channel>
+</rss>

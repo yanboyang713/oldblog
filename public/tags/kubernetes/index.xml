@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kubernetes on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/kubernetes/</link>
+    <description>Recent content in kubernetes on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Wed, 05 Feb 2020 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting started with Setup A Kubernetes Cluster</title>
+      <link>https://yanboyang.com/k8s/</link>
+      <pubDate>Wed, 05 Feb 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/k8s/</guid>
+      <description>Introduction A Kubernetes Cluster is a group of node or machines running together. At the highest level of Kubernetes, there exist two kinds of servers, a Master and a Worker node. These servers can be Virtual Machine (VM) or physical servers (Bare metal). Together, these servers form a Kubernetes cluster and are controlled by the services that make up the Control Plane. Kubernetes development started by focusing on the key features of an orchestrator, such as replication of an application with load balancing and service discovery, followed by basic health checks and repair features to ensure availability.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes vs Docker Swarm</title>
+      <link>https://yanboyang.com/kubervsdocker/</link>
+      <pubDate>Sun, 02 Feb 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/kubervsdocker/</guid>
+      <description>Introduction In this tutorial, we will be reviewing what the fundamental similarities and distinctions are between Kubernetes and Docker Swarm. Kubernetes and Docker are two of the major players in container orchestration. Both Kubernetes and Docker Swarm continue to grow in popularity as they are increasingly used by those working with container deployment, orchestration, and management. Across all vertical markets, businesses continue to find new methods of utilization and practice with more uses constantly being discovered.</description>
+    </item>
+    
+  </channel>
+</rss>

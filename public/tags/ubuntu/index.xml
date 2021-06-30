@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ubuntu on Boyang Yan&#39;s Tech Blog</title>
+    <link>https://yanboyang.com/tags/ubuntu/</link>
+    <description>Recent content in Ubuntu on Boyang Yan&#39;s Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yanboyang713@gmail.com (Boyang Yan)</managingEditor>
+    <webMaster>yanboyang713@gmail.com (Boyang Yan)</webMaster>
+    <lastBuildDate>Sun, 05 Jan 2020 06:11:32 +1000</lastBuildDate><atom:link href="https://yanboyang.com/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installing Wechat Desktop Client in Ubuntu Linux</title>
+      <link>https://yanboyang.com/wechat/</link>
+      <pubDate>Sun, 05 Jan 2020 06:11:32 +1000</pubDate>
+      <author>yanboyang713@gmail.com (Boyang Yan)</author>
+      <guid>https://yanboyang.com/wechat/</guid>
+      <description>Introduction WeChat is a popular micro-messaging cross-platform app supporting text, image/videos, group chats with over 900 million active monthly users, mostly in China. Along with the basic messaging facilities, it also provides payment services in China to pay bills, order goods and services, transfer money and much more.
+Using WeChat on Linux desktop Just as you saw for WhatsApp on Linux, WeChat can also be used via a web browser by scanning the QR code.</description>
+    </item>
+    
+  </channel>
+</rss>
