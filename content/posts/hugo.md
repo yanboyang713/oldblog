@@ -189,6 +189,7 @@ jobs:
 
 ## Post your blog
 I written a bash script for push your blog to Github evertime.
+
 **NOTE:** If you need add your public key.
 1. Go to Repository Settings
 2. Go to Deploy Keys and add your public key with the Allow write access
