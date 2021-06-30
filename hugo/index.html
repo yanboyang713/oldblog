@@ -1,8 +1,10 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Creating a Hugo blog - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Creating a Hugo blog"><meta property="og:description" content="Installation Hugo 1  yay -S hugo   Step 1: Install Hugo
-1  yay -S hugo   1 2 3 4  git clone https://github.com/yanboyang713/yanboyang713.github.io.git ## https://gohugo.io/commands/hugo_new_site/ hugo new site yanboyang713.github.io --force   Step 2: Create a New Site
-1 2 3 4 5 6 7 8 9 10 11 12  [yanboyang713@boyang ~]$ hugo new site blog Congratulations! Your new Hugo site is created in /home/yanboyang713/blog."><meta property="og:type" content="article"><meta property="og:url" content="https://yanboyang.com/hugo/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-02-05T06:11:32+10:00"><meta property="article:modified_time" content="2020-02-05T06:11:32+10:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://yanboyang.com/logo.png"><meta name=twitter:title content="Creating a Hugo blog"><meta name=twitter:description content="Installation Hugo 1  yay -S hugo   Step 1: Install Hugo
-1  yay -S hugo   1 2 3 4  git clone https://github.com/yanboyang713/yanboyang713.github.io.git ## https://gohugo.io/commands/hugo_new_site/ hugo new site yanboyang713.github.io --force   Step 2: Create a New Site
-1 2 3 4 5 6 7 8 9 10 11 12  [yanboyang713@boyang ~]$ hugo new site blog Congratulations! Your new Hugo site is created in /home/yanboyang713/blog."><meta name=application-name content="LoveIt"><meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/hugo/><link rel=prev href=https://yanboyang.com/enableusbsoundcardonandroid/><link rel=next href=https://yanboyang.com/hexowithdocker/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Creating a Hugo blog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/hugo\/"},"genre":"posts","keywords":"Hugo, Blog","wordcount":723,"url":"https:\/\/yanboyang.com\/hugo\/","datePublished":"2020-02-05T06:11:32+10:00","dateModified":"2020-02-05T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-wrapper><div class=header-title><a href=/ title="Boyang Yan's Tech Blog"></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/>Home </a><a class=menu-item href=/posts/>Posts </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><a class=menu-item href=/about/>About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop><input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Creating a Hugo blog - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Creating a Hugo blog"><meta property="og:description" content="Overview This is a tutorial on creating a blog or website using hugo (a static site generator).
+We will use Docker as our development environment. Also, we will storge our Hugo development code in Github main branche and automate the whole process with Github Action Workflow for Github Pages.
+Prerequisites You will need to have the following:
+ Docker installation. Docker is available for Mac/Windows/Linux and is easily installed. You can following the link at the below for install Docker."><meta property="og:type" content="article"><meta property="og:url" content="https://yanboyang.com/hugo/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-02-05T06:11:32+10:00"><meta property="article:modified_time" content="2020-02-05T06:11:32+10:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://yanboyang.com/logo.png"><meta name=twitter:title content="Creating a Hugo blog"><meta name=twitter:description content="Overview This is a tutorial on creating a blog or website using hugo (a static site generator).
+We will use Docker as our development environment. Also, we will storge our Hugo development code in Github main branche and automate the whole process with Github Action Workflow for Github Pages.
+Prerequisites You will need to have the following:
+ Docker installation. Docker is available for Mac/Windows/Linux and is easily installed. You can following the link at the below for install Docker."><meta name=application-name content="LoveIt"><meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/hugo/><link rel=prev href=https://yanboyang.com/enableusbsoundcardonandroid/><link rel=next href=https://yanboyang.com/hexowithdocker/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Creating a Hugo blog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/hugo\/"},"genre":"posts","keywords":"Hugo, Blog","wordcount":1640,"url":"https:\/\/yanboyang.com\/hugo\/","datePublished":"2020-02-05T06:11:32+10:00","dateModified":"2020-02-05T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-wrapper><div class=header-title><a href=/ title="Boyang Yan's Tech Blog"></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/>Home </a><a class=menu-item href=/posts/>Posts </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><a class=menu-item href=/about/>About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop><input type=text placeholder="Search titles or contents..." id=search-input-desktop>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
 <a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
 <span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
@@ -10,21 +12,45 @@
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
 <a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
 <span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/ title>Home</a><a class=menu-item href=/posts/ title>Posts</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><a class=menu-item href=/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Creating a Hugo blog</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/blog/><i class="far fa-folder fa-fw"></i>Blog</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-02-05>2020-02-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;723 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true><div class="details-summary toc-title"><span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#installation-hugo>Installation Hugo</a></li><li><a href=#set-up-your-google-analytics-account>Set up your Google Analytics account</a><ul><li><a href=#configuring-hugo>Configuring Hugo</a></li><li><a href=#headerhtml>header.html</a></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=installation-hugo>Installation Hugo</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>yay -S hugo
-</code></pre></td></tr></table></div></div><p>Step 1: Install Hugo</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>yay -S hugo
-</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Creating a Hugo blog</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/blog/><i class="far fa-folder fa-fw"></i>Blog</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-02-05>2020-02-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1640 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#overview>Overview</a></li><li><a href=#prerequisites>Prerequisites</a></li><li><a href=#set-up>Set-up</a><ul><li><a href=#on-github-create-a-repository-called-somethinggithubio>On Github, create a repository called something.github.io</a></li><li><a href=#clone-this-repository-to-local>Clone this repository to Local</a></li><li><a href=#create-a-new-hugo-site>Create a new Hugo site</a></li><li><a href=#chown-user-and-group-recursively>Chown User and Group Recursively</a></li><li><a href=#add-the-theme-to-your-blog>Add the theme to your blog</a></li><li><a href=#basic-configuration>Basic Configuration</a></li><li><a href=#create-your-first-post>Create Your First Post</a></li><li><a href=#launching-the-website-in-docker>Launching the Website in Docker</a></li><li><a href=#build-hugo-with-github-action>Build Hugo With GitHub Action</a></li></ul></li><li><a href=#post-your-blog>Post your blog</a></li><li><a href=#set-up-your-google-analytics-account>Set up your Google Analytics account</a><ul><li><a href=#configuring-hugo>Configuring Hugo</a></li><li><a href=#headerhtml>header.html</a></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=overview>Overview</h2><p>This is a tutorial on creating a blog or website using <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer">hugo</a> (a static site generator).</p><p>We will use Docker as our development environment. Also, we will storge our Hugo development code in Github main branche and automate the whole process with Github Action Workflow for Github Pages.</p><h2 id=prerequisites>Prerequisites</h2><p>You will need to have the following:</p><ol><li>Docker installation. Docker is available for Mac/Windows/Linux and is easily installed. You can following the link at the below for install Docker.
+link &ldquo;content/posts/dockerinstall.md&rdquo; install Docker &ldquo;go!&rdquo;</li><li>Domain Name (optional). I will be using a domain name for my configuration. If you wish to follow along fully, you’ll need a domain name but, you can just as easily stick with the free subdomain provided by Github pages, i.e. name.github.io, and skip the domain name related aspects in this tutorial. If you don’t have a domain name but wish to purchase one, <a href=https://www.namecheap.com/ target=_blank rel="noopener noreferrer">namecheap</a> is an excellent provider and fits in well with this tutorial.</li><li>Github account, sign up for free on github.com</li></ol><p>In the subsequent sections, we will be covering the complete setup of <a href=https://yanboyang.com>https://yanboyang.com</a></p><h2 id=set-up>Set-up</h2><h3 id=on-github-create-a-repository-called-somethinggithubio>On Github, create a repository called something.github.io</h3><p>In my case, I created yanboyang.github.io
+<img class=lazyload src=/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat_Dec_26_05_24_25_PM_CST_2020_zbblkc.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat_Dec_26_05_24_25_PM_CST_2020_zbblkc.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat_Dec_26_05_24_25_PM_CST_2020_zbblkc.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat_Dec_26_05_24_25_PM_CST_2020_zbblkc.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat_Dec_26_05_24_25_PM_CST_2020_zbblkc.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat_Dec_26_05_24_25_PM_CST_2020_zbblkc.png></p><h3 id=clone-this-repository-to-local>Clone this repository to Local</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>git clone https://github.com/yanboyang713/yanboyang713.github.io.git
-
-<span class=c1>## https://gohugo.io/commands/hugo_new_site/</span>
-hugo new site yanboyang713.github.io --force
-</code></pre></td></tr></table></div></div><p>Step 2: Create a New Site</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang Documents]$ git clone https://github.com/yanboyang713/yanboyang.github.io.git
+Cloning into &#39;yanboyang.github.io&#39;...
+remote: Enumerating objects: 760, done.
+remote: Counting objects: 100% (760/760), done.
+remote: Compressing objects: 100% (148/148), done.
+remote: Total 760 (delta 289), reused 743 (delta 276), pack-reused 0
+Receiving objects: 100% (760/760), 4.13 MiB | 1.88 MiB/s, done.
+Resolving deltas: 100% (289/289), done.
+</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># Go to your blog root folder</span>
+<span class=nb>cd</span> yanboyang.github.io
+</code></pre></td></tr></table></div></div><h3 id=create-a-new-hugo-site>Create a new Hugo site</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>docker run --rm -it <span class=se>\
+</span><span class=se></span>  -v <span class=k>$(</span><span class=nb>pwd</span><span class=k>)</span>:/src <span class=se>\
+</span><span class=se></span>  -w<span class=o>=</span><span class=s2>&#34;/src&#34;</span> <span class=se>\
+</span><span class=se></span>  klakegg/hugo:latest <span class=se>\
+</span><span class=se></span>  <span class=s2>&#34;new site . --force&#34;</span>
+</code></pre></td></tr></table></div></div><h3 id=chown-user-and-group-recursively>Chown User and Group Recursively</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>sudo chown -R yanboyang713:yanboyang713 .
+</code></pre></td></tr></table></div></div><h3 id=add-the-theme-to-your-blog>Add the theme to your blog</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>git submodule add https://github.com/sunt-programator/CodeIT.git themes/CodeIT
+</code></pre></td></tr></table></div></div><h3 id=basic-configuration>Basic Configuration</h3><p>The following is a basic configuration for the CodeIT theme:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -36,50 +62,369 @@ hugo new site yanboyang713.github.io --force
 </span><span class=lnt>10
 </span><span class=lnt>11
 </span><span class=lnt>12
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ hugo new site blog
-Congratulations! Your new Hugo site is created in /home/yanboyang713/blog.
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-toml data-lang=toml><span class=nx>baseURL</span> <span class=p>=</span> <span class=s2>&#34;http://example.org/&#34;</span>
+<span class=c># [en, zh-cn, fr, ...] determines default content language</span>
+<span class=nx>defaultContentLanguage</span> <span class=p>=</span> <span class=s2>&#34;en&#34;</span>
+<span class=c># language code</span>
+<span class=nx>languageCode</span> <span class=p>=</span> <span class=s2>&#34;en&#34;</span>
+<span class=nx>title</span> <span class=p>=</span> <span class=s2>&#34;My New Hugo Site&#34;</span>
 
-Just a few more steps and you&#39;re ready to go:
+<span class=c># Change the default theme to be use when building the site with Hugo</span>
+<span class=nx>theme</span> <span class=p>=</span> <span class=s2>&#34;CodeIT&#34;</span>
 
-1. Download a theme into the same-named folder.
-   Choose a theme from https://themes.gohugo.io/ or
-   create your own with the &#34;hugo new theme &lt;THEMENAME&gt;&#34; command.
-2. Perhaps you want to add some content. You can add single files
-   with &#34;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&#34;.
-3. Start the built-in live server via &#34;hugo server&#34;.
-Visit https://gohugo.io/ for quickstart guide and full documentation.
-</code></pre></td></tr></table></div></div><p>Step 3: Add a Theme</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> blog
+<span class=p>[</span><span class=nx>params</span><span class=p>]</span>
+  <span class=c># DoIt theme version</span>
+  <span class=nx>version</span> <span class=p>=</span> <span class=s2>&#34;0.2.X&#34;</span>
 
-git init
+<span class=p>[</span><span class=nx>menu</span><span class=p>]</span>
+  <span class=p>[[</span><span class=nx>menu</span><span class=p>.</span><span class=nx>main</span><span class=p>]]</span>
+    <span class=nx>identifier</span> <span class=p>=</span> <span class=s2>&#34;posts&#34;</span>
+    <span class=c># you can add extra information before the name (HTML format is supported), such as icons</span>
+    <span class=nx>pre</span> <span class=p>=</span> <span class=s2>&#34;&#34;</span>
+    <span class=c># you can add extra information after the name (HTML format is supported), such as icons</span>
+    <span class=nx>post</span> <span class=p>=</span> <span class=s2>&#34;&#34;</span>
+    <span class=nx>name</span> <span class=p>=</span> <span class=s2>&#34;Posts&#34;</span>
+    <span class=nx>url</span> <span class=p>=</span> <span class=s2>&#34;/posts/&#34;</span>
+    <span class=c># title will be shown when you hover on this menu link</span>
+    <span class=nx>title</span> <span class=p>=</span> <span class=s2>&#34;&#34;</span>
+    <span class=nx>weight</span> <span class=p>=</span> <span class=mi>1</span>
+  <span class=p>[[</span><span class=nx>menu</span><span class=p>.</span><span class=nx>main</span><span class=p>]]</span>
+    <span class=nx>identifier</span> <span class=p>=</span> <span class=s2>&#34;tags&#34;</span>
+    <span class=nx>pre</span> <span class=p>=</span> <span class=s2>&#34;&#34;</span>
+    <span class=nx>post</span> <span class=p>=</span> <span class=s2>&#34;&#34;</span>
+    <span class=nx>name</span> <span class=p>=</span> <span class=s2>&#34;Tags&#34;</span>
+    <span class=nx>url</span> <span class=p>=</span> <span class=s2>&#34;/tags/&#34;</span>
+    <span class=nx>title</span> <span class=p>=</span> <span class=s2>&#34;&#34;</span>
+    <span class=nx>weight</span> <span class=p>=</span> <span class=mi>2</span>
+  <span class=p>[[</span><span class=nx>menu</span><span class=p>.</span><span class=nx>main</span><span class=p>]]</span>
+    <span class=nx>identifier</span> <span class=p>=</span> <span class=s2>&#34;categories&#34;</span>
+    <span class=nx>pre</span> <span class=p>=</span> <span class=s2>&#34;&#34;</span>
+    <span class=nx>post</span> <span class=p>=</span> <span class=s2>&#34;&#34;</span>
+    <span class=nx>name</span> <span class=p>=</span> <span class=s2>&#34;Categories&#34;</span>
+    <span class=nx>url</span> <span class=p>=</span> <span class=s2>&#34;/categories/&#34;</span>
+    <span class=nx>title</span> <span class=p>=</span> <span class=s2>&#34;&#34;</span>
+    <span class=nx>weight</span> <span class=p>=</span> <span class=mi>3</span>
 
-git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
-</code></pre></td></tr></table></div></div><p>Step 4: Add Some Content
-You can manually create content files (for example as content/<category>/<file>.<format>) and provide metadata in them, however you can use the new command to do a few things for you (like add title and date):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>hugo new posts/my-first-post.md
-</code></pre></td></tr></table></div></div><p>Step 5: Start the Hugo server
-Now, start the Hugo server with drafts enabled:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+<span class=c># Markup related configuration in Hugo</span>
+<span class=p>[</span><span class=nx>markup</span><span class=p>]</span>
+  <span class=c># Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)</span>
+  <span class=p>[</span><span class=nx>markup</span><span class=p>.</span><span class=nx>highlight</span><span class=p>]</span>
+    <span class=c># false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)</span>
+    <span class=nx>noClasses</span> <span class=p>=</span> <span class=kc>false</span>
+</code></pre></td></tr></table></div></div><h3 id=create-your-first-post>Create Your First Post</h3><p>Here is the way to create your first post:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
 </span><span class=lnt>7
-</span><span class=lnt>8
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>
-Build Hugo With GitHub Action
-
-Add ssh deploy key
-Generate your deploy key with the following command.
-
-```bash
-ssh-keygen -t rsa -b 4096 -C &#34;$(git config user.email)&#34; -f gh-pages -N &#34;&#34;
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>docker run --rm -it <span class=se>\
+</span><span class=se></span>  -v <span class=k>$(</span><span class=nb>pwd</span><span class=k>)</span>:/src <span class=se>\
+</span><span class=se></span>  -w<span class=o>=</span><span class=s2>&#34;/src&#34;</span> <span class=se>\
+</span><span class=se></span>  klakegg/hugo:latest <span class=se>\
+</span><span class=se></span>  <span class=s2>&#34;new posts/first_post.md&#34;</span>
+  
+sudo chown -R yanboyang713:yanboyang713 content
+</code></pre></td></tr></table></div></div><p><strong>NOTE:</strong> Go to your first post and change the <strong>draft: false</strong></p><h3 id=launching-the-website-in-docker>Launching the Website in Docker</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>docker run --rm -it <span class=se>\
+</span><span class=se></span>  -v <span class=k>$(</span><span class=nb>pwd</span><span class=k>)</span>:/src <span class=se>\
+</span><span class=se></span>  -p 1313:1313 <span class=se>\
+</span><span class=se></span>  klakegg/hugo:latest <span class=se>\
+</span><span class=se></span>  server
+</code></pre></td></tr></table></div></div><p>Web Server is available at http://localhost:1313/</p><h3 id=build-hugo-with-github-action>Build Hugo With GitHub Action</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>mkdir -p .github/workflows
+vim .github/workflows/main.yml
+</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-yml data-lang=yml><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>github pages</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>push</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>branches</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- <span class=l>main </span><span class=w> </span><span class=c># Set a branch to deploy</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>deploy</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-18.04</span><span class=w>
+</span><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Git checkout</span><span class=w>
+</span><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v2</span><span class=w>
+</span><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span><span class=w>          </span><span class=nt>submodules</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>  </span><span class=c># Fetch Hugo themes (true OR recursive)</span><span class=w>
+</span><span class=w>          </span><span class=nt>fetch-depth</span><span class=p>:</span><span class=w> </span><span class=m>0</span><span class=w>    </span><span class=c># Fetch all history for .GitInfo and .Lastmod</span><span class=w>
+</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Setup Hugo</span><span class=w>
+</span><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>peaceiris/actions-hugo@v2</span><span class=w>
+</span><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span><span class=w>          </span><span class=nt>hugo-version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;latest&#39;</span><span class=w>
+</span><span class=w>          </span><span class=nt>extended</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Build</span><span class=w>
+</span><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>hugo --minify</span><span class=w>
+</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Deploy</span><span class=w>
+</span><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>peaceiris/actions-gh-pages@v3</span><span class=w>
+</span><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span><span class=w>          </span><span class=nt>personal_token</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.TOKEN }}</span><span class=w>
+</span><span class=w>          </span><span class=nt>external_repository</span><span class=p>:</span><span class=w> </span><span class=l>yanboyang713/yanboyang713.github.io</span><span class=w>
+</span><span class=w>          </span><span class=nt>publish_dir</span><span class=p>:</span><span class=w> </span><span class=l>./public</span><span class=w>
+</span><span class=w>          </span><span class=nt>publish_branch</span><span class=p>:</span><span class=w> </span><span class=l>gh-pages</span><span class=w>
+</span><span class=w>          </span><span class=nt>keep_files</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>          </span><span class=nt>user_name</span><span class=p>:</span><span class=w> </span><span class=l>yanboyang713</span><span class=w>
+</span><span class=w>          </span><span class=nt>user_email</span><span class=p>:</span><span class=w> </span><span class=l>yanboyang713@gmail.com</span><span class=w>
+</span><span class=w>          </span><span class=nt>cname</span><span class=p>:</span><span class=w> </span><span class=l>yanboyang.com</span><span class=w>
+</span></code></pre></td></tr></table></div></div><p>Add ssh deploy key
+Generate your deploy key with the following command.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>ssh-keygen -t rsa -b <span class=m>4096</span> -C <span class=s2>&#34;</span><span class=k>$(</span>git config user.email<span class=k>)</span><span class=s2>&#34;</span> -f gh-pages -N <span class=s2>&#34;&#34;</span>
 </code></pre></td></tr></table></div></div><p>Next, Go to Repository Settings</p><p>Go to Deploy Keys and add your public key with the Allow write access
-Go to Secrets and add your private key as ACTIONS_DEPLOY_KEY</p><h2 id=set-up-your-google-analytics-account>Set up your Google Analytics account</h2><p>Head over to <a href=https://analytics.google.com/>https://analytics.google.com/</a> and make an account (or sign in with your Google account).</p><p>Set up your “Property”, give it a name, and point it to the URL of the site you plan on tracking.</p><p>Click through the basic options until you land on a page with a Tracking Code. This is the value we need to be keeping track of.
+Go to Secrets and add your private key as ACTIONS_DEPLOY_KEY</p><h2 id=post-your-blog>Post your blog</h2><p>I written a bash script for push your blog to Github evertime.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span><span class=lnt>80
+</span><span class=lnt>81
+</span><span class=lnt>82
+</span><span class=lnt>83
+</span><span class=lnt>84
+</span><span class=lnt>85
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=cp>#!/bin/bash
+</span><span class=cp></span><span class=c1>###############################################################</span>
+<span class=c1>## AUTHOR Name: Boyang Yan                                   ##</span>
+<span class=c1>## KEYWORDs: Hugo Depolyment                                 ##</span>
+<span class=c1>## PURPOSE: This program for push Hugo to github             ##</span>
+<span class=c1>## ENVIRONment: mac, Linux                                   ##</span>
+<span class=c1>## COMMENTs:                                                 ##</span>
+<span class=c1>## Last Modified Date: 25.05.2021                            ##</span>
+<span class=c1>###############################################################</span>
+
+<span class=nb>printf</span> <span class=s2>&#34;\033[0;32mDeploying updates to GitHub...\033[0m\n&#34;</span>
+
+deploy <span class=o>()</span> <span class=o>{</span>
+
+    <span class=nb>echo</span> <span class=s2>&#34;</span><span class=nv>$1</span><span class=s2>&#34;</span>
+
+    <span class=c1># get Repositorie Name</span>
+    <span class=nv>RepositorieName</span><span class=o>=</span><span class=k>$(</span>grep -oP <span class=s1>&#39;(?&lt;=[[:space:]]).*?(?=!)&#39;</span> <span class=o>&lt;&lt;&lt;</span> <span class=s2>&#34;</span><span class=nv>$1</span><span class=s2>&#34;</span><span class=k>)</span>
+
+    <span class=nb>echo</span> <span class=s2>&#34;Your Github Repositorir Name is: </span><span class=nv>$RepositorieName</span><span class=s2>&#34;</span>
+
+    <span class=c1>#set git remote URL</span>
+    git remote set-url origin git@github.com:<span class=s2>&#34;</span><span class=nv>$RepositorieName</span><span class=s2>&#34;</span>.git
+
+    <span class=c1># Add changes to git.</span>
+    git add -A
+
+    <span class=c1># Commit changes.</span>
+    <span class=nv>msg</span><span class=o>=</span><span class=s2>&#34;Published on </span><span class=k>$(</span>date +<span class=s1>&#39;%Y-%m-%d %H:%M:%S&#39;</span><span class=k>)</span><span class=s2>&#34;</span>
+
+    <span class=nb>echo</span> <span class=s2>&#34;</span><span class=nv>$msg</span><span class=s2>&#34;</span>
+    git commit -m <span class=s2>&#34;</span><span class=nv>$msg</span><span class=s2>&#34;</span>
+
+    <span class=c1># Push source and build repos.</span>
+    git push
+
+<span class=o>}</span>
+
+initSSHkey <span class=o>()</span> <span class=o>{</span>
+    <span class=nb>echo</span> <span class=s2>&#34;***** App .ssh directory is empty, initialising ssh key and configuring known_hosts for common git repositories (github/gitlab) *****&#34;</span>
+    rm -rf ~/.ssh/*
+    ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -P <span class=s2>&#34;&#34;</span>
+    ssh-keyscan github.com &gt; ~/.ssh/known_hosts 2&gt;/dev/null
+    ssh-keyscan gitlab.com &gt;&gt; ~/.ssh/known_hosts 2&gt;/dev/null
+
+    <span class=nb>echo</span> <span class=s2>&#34;Init SSH key Done!!!&#34;</span>
+<span class=o>}</span>
+
+testConnectionAndDeploy <span class=o>()</span> <span class=o>{</span>
+    <span class=c1># Testing Github connection success or not</span>
+    <span class=nv>testConnection</span><span class=o>=</span><span class=k>$(</span>ssh -T git@github.com 2&gt;<span class=p>&amp;</span>1<span class=k>)</span>
+
+    <span class=c1># success connect to Github</span>
+    <span class=k>if</span> <span class=o>[[</span> <span class=nv>$testConnection</span> <span class=o>=</span>~ successfully <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+        <span class=nb>echo</span> <span class=s2>&#34;***** You can connect to Github successfully **********&#34;</span>
+        deploy <span class=s2>&#34;</span><span class=nv>$testConnection</span><span class=s2>&#34;</span>
+    <span class=k>else</span>
+        <span class=nb>echo</span> <span class=s2>&#34;***** Could NOT connect to Github!!! Please, update your Github deploy keys *******&#34;</span>
+        <span class=nb>echo</span> <span class=s2>&#34;***** You can add the below public key as your deploy key *****&#34;</span>
+        cat ~/.ssh/id_rsa.pub
+
+        <span class=nb>read</span> -p <span class=s2>&#34;Are you done update your deploy key (Y/n)? &#34;</span> -n <span class=m>1</span> -r
+        <span class=nb>echo</span>    <span class=c1># (optional) move to a new line</span>
+        <span class=k>if</span> <span class=o>[[</span> <span class=nv>$REPLY</span> <span class=o>=</span>~ ^<span class=o>[</span>Yy<span class=o>]</span>$ <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+            <span class=nv>testConnection</span><span class=o>=</span><span class=k>$(</span>ssh -T git@github.com 2&gt;<span class=p>&amp;</span>1<span class=k>)</span>
+            <span class=k>if</span> <span class=o>[[</span> <span class=nv>$testConnection</span> <span class=o>=</span>~ successfully <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+                deploy <span class=s2>&#34;</span><span class=nv>$testConnection</span><span class=s2>&#34;</span>
+            <span class=k>else</span>
+                <span class=nb>echo</span> <span class=s2>&#34;Please wait a few minutes, and try again !!!&#34;</span>
+            <span class=k>fi</span>
+        <span class=k>fi</span>
+    <span class=k>fi</span>
+<span class=o>}</span>
+
+
+<span class=c1># Have ssh key</span>
+<span class=k>if</span> <span class=o>[</span> <span class=s2>&#34;</span><span class=k>$(</span>ls -A ~/.ssh 2&gt;/dev/null<span class=k>)</span><span class=s2>&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+    <span class=nb>echo</span> <span class=s2>&#34;***** .ssh directory exists and has content, continuing *****&#34;</span><span class=p>;</span>
+    testConnectionAndDeploy
+<span class=c1># Have NOT ssh key</span>
+<span class=k>else</span>
+    initSSHkey
+    testConnectionAndDeploy
+
+<span class=k>fi</span><span class=p>;</span>
+</code></pre></td></tr></table></div></div><h2 id=set-up-your-google-analytics-account>Set up your Google Analytics account</h2><p>Head over to <a href=https://analytics.google.com/>https://analytics.google.com/</a> and make an account (or sign in with your Google account).</p><p>Set up your “Property”, give it a name, and point it to the URL of the site you plan on tracking.</p><p>Click through the basic options until you land on a page with a Tracking Code. This is the value we need to be keeping track of.
 If you’re having trouble with this step then I recommend checking out <a href=http://cloudywithachanceofdevops.com/posts/2018/05/17/setting-up-google-analytics-on-hugo/ target=_blank rel="noopener noreferrer">this</a> tutorial, which has very detailed step by step instructions for configuring your GA account.</p><h3 id=configuring-hugo>Configuring Hugo</h3><p>Hugo has a built in template for Google Analytics. All we need to do is make sure the template gets included in all our pages, so we can have more detailed tracking.</p><h3 id=headerhtml>header.html</h3><p>The easiest way to do this is to insert the template into the header.html file used by your Hugo theme of choice.</p><p>Since it is common to use a git submodule as a theme directory, it could be undesirable and messy to write changes directly into the submodule.</p><p>The solution to this is to create another directory layouts in the root of your hugo directory. Hugo looks at the contents of this folder and uses it to overwrites the styles defined by your theme.</p><p>For example I use the Terminal theme. The header file is located at <hugo root>/themes/terminal/layouts/partials/header.html</p><p>We can copy this file to our new directory, so it sits at <hugo root>/layouts/partials/header.html.</p><p>Next we can edit our header.html file to include the template for google analytics. Your header.html will look different depending on the theme you’re using, but there should be a<head>section at the top. If not we can simply create it.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
