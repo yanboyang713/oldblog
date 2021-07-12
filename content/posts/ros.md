@@ -8,6 +8,11 @@ categories: [ "ROS" ]
 ### In Docker
 https://hub.docker.com/r/osrf/ros2/
 
+```bash
+docker pull osrf/ros2:nightly
+docker run -it osrf/ros2:nightly bash
+docker-compose run redis /bin/bash
+```
 
 ### Building from source
 1. Install build dependencies (Arch Linux)
@@ -62,4 +67,3 @@ ros2_on(){
 ```
 
 ## Configuring your ROS 2 environment
-### Background
