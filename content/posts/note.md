@@ -1,7 +1,7 @@
 ---
 title: "A Beginner’s Guide to the Zettelkasten Method"
 subtitle: The smart note-taking method that popularized personalized knowledge management
-date: 202-08-20T06:11:32+10:00
+date: 2021-08-20T06:11:32+10:00
 tags: ["Zettelkasten"]
 categories: ["knowledge management"]
 ---
