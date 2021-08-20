@@ -1,112 +1,488 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Getting Started with Spacemacs/Emacs - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Getting Started with Spacemacs/Emacs"><meta property="og:description" content="Installation Run Emacs in Docker https://github.com/Silex/docker-emacs
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Getting Started with Spacemacs/Emacs - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Getting Started with Spacemacs/Emacs">
+<meta property="og:description" content="Installation Run Emacs in Docker https://github.com/Silex/docker-emacs
 Usage Console 1  docker run -it --rm silex/emacs   GUI 1 2  xhost +local:root # WARN: this comes with security issues docker run -it --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix silex/emacs   Arch Linux (Manjaro) 1  yay -S emacs   1  yay -S adobe-source-code-pro-fonts   clone spacemacs repo and use develop branch
-1  git clone https://github.com/syl20bnr/spacemacs.git ~/."><meta property="og:type" content="article"><meta property="og:url" content="https://yanboyang.com/spacemacs/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-04-04T06:11:32+10:00"><meta property="article:modified_time" content="2021-04-04T06:11:32+10:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://yanboyang.com/logo.png"><meta name=twitter:title content="Getting Started with Spacemacs/Emacs"><meta name=twitter:description content="Installation Run Emacs in Docker https://github.com/Silex/docker-emacs
+1  git clone https://github.com/syl20bnr/spacemacs.git ~/.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yanboyang.com/spacemacs/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-04-04T06:11:32+10:00">
+<meta property="article:modified_time" content="2021-04-04T06:11:32+10:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://yanboyang.com/logo.png">
+<meta name=twitter:title content="Getting Started with Spacemacs/Emacs">
+<meta name=twitter:description content="Installation Run Emacs in Docker https://github.com/Silex/docker-emacs
 Usage Console 1  docker run -it --rm silex/emacs   GUI 1 2  xhost +local:root # WARN: this comes with security issues docker run -it --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix silex/emacs   Arch Linux (Manjaro) 1  yay -S emacs   1  yay -S adobe-source-code-pro-fonts   clone spacemacs repo and use develop branch
-1  git clone https://github.com/syl20bnr/spacemacs.git ~/."><meta name=application-name content="LoveIt"><meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/spacemacs/><link rel=prev href=https://yanboyang.com/writingmathematicfomular/><link rel=next href=https://yanboyang.com/flink/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Spacemacs/Emacs","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/spacemacs\/"},"genre":"posts","keywords":"spacemacs, emacs","wordcount":2181,"url":"https:\/\/yanboyang.com\/spacemacs\/","datePublished":"2021-04-04T06:11:32+10:00","dateModified":"2021-04-04T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-wrapper><div class=header-title><a href=/ title="Boyang Yan's Tech Blog"></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/>Home </a><a class=menu-item href=/posts/>Posts </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><a class=menu-item href=/about/>About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop><input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
-<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
-</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="Boyang Yan's Tech Blog"></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
-<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/ title>Home</a><a class=menu-item href=/posts/ title>Posts</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><a class=menu-item href=/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Getting Started with Spacemacs/Emacs</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/emacs/><i class="far fa-folder fa-fw"></i>emacs</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-04-04>2021-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2181 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true><div class="details-summary toc-title"><span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#installation>Installation</a><ul><li><a href=#run-emacs-in-docker>Run Emacs in Docker</a><ul><li><a href=#usage>Usage</a><ul><li><a href=#console>Console</a></li><li><a href=#gui>GUI</a></li></ul></li></ul></li><li><a href=#arch-linux-manjaro>Arch Linux (Manjaro)</a></li></ul></li><li><a href=#go-over-the-emacs-tutorial-at-least-once>Go over the Emacs tutorial at least once</a></li><li><a href=#learn-to-active-some-built-in-functionality>Learn to active some built-in functionality</a></li><li><a href=#learn-some-elisp-emacs-lisp>Learn some elisp (emacs lisp)</a></li><li><a href=#start-to-hacking-emacs-from-the-day-one>Start to hacking Emacs from the day one!</a></li><li><a href=#emacs-package-system-in-the-first-glance>Emacs package system in the first glance.</a></li><li><a href=#day-two>Day Two</a><ul><li><a href=#improve-built-in-package-system>Improve built-in package system</a></li><li><a href=#setup-a-javascript-ide>Setup a javascript IDE</a></li><li><a href=#learn-more-from-emacs-itself>Learn more from Emacs itself</a></li><li><a href=#org-modebonus-time>Org-mode(Bonus Time)</a></li></ul></li><li><a href=#day-3>Day 3</a></li></ul><ul><li><a href=#better-defaults>Better defaults</a></li></ul><ul><li><a href=#day-6>Day 6</a><ul><li><a href=#org-mode>Org-mode</a></li></ul></li><li><a href=#spacemacs-config>Spacemacs Config</a></li><li><a href=#creating-a-spacemacs-layer>Creating a Spacemacs Layer</a></li></ul></nav></div></div><div class=content id=content><h2 id=installation>Installation</h2><h3 id=run-emacs-in-docker>Run Emacs in Docker</h3><p><a href=https://github.com/Silex/docker-emacs>https://github.com/Silex/docker-emacs</a></p><h4 id=usage>Usage</h4><h5 id=console>Console</h5><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>docker run -it --rm silex/emacs
-</code></pre></td></tr></table></div></div><h5 id=gui>GUI</h5><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+1  git clone https://github.com/syl20bnr/spacemacs.git ~/.">
+<meta name=application-name content="LoveIt">
+<meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/spacemacs/><link rel=prev href=https://yanboyang.com/writingmathematicfomular/><link rel=next href=https://yanboyang.com/flink/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Spacemacs/Emacs","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/spacemacs\/"},"genre":"posts","keywords":"spacemacs, emacs","wordcount":2181,"url":"https:\/\/yanboyang.com\/spacemacs\/","datePublished":"2021-04-04T06:11:32+10:00","dateModified":"2021-04-04T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title="Boyang Yan's Tech Blog"></a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/> Home </a><a class=menu-item href=/posts/> Posts </a><a class=menu-item href=/tags/> Tags </a><a class=menu-item href=/categories/> Categories </a><a class=menu-item href=/about/> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title="Boyang Yan's Tech Blog"></a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+Cancel
+</a>
+</div><a class=menu-item href=/ title>Home</a><a class=menu-item href=/posts/ title>Posts</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><a class=menu-item href=/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>Contents</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Getting Started with Spacemacs/Emacs</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/emacs/><i class="far fa-folder fa-fw"></i>emacs</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-04-04>2021-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2181 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div>
+</div><div class="details toc" id=toc-static kept=true>
+<div class="details-summary toc-title">
+<span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#installation>Installation</a>
+<ul>
+<li><a href=#run-emacs-in-docker>Run Emacs in Docker</a>
+<ul>
+<li><a href=#usage>Usage</a>
+<ul>
+<li><a href=#console>Console</a></li>
+<li><a href=#gui>GUI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#arch-linux-manjaro>Arch Linux (Manjaro)</a></li>
+</ul>
+</li>
+<li><a href=#go-over-the-emacs-tutorial-at-least-once>Go over the Emacs tutorial at least once</a></li>
+<li><a href=#learn-to-active-some-built-in-functionality>Learn to active some built-in functionality</a></li>
+<li><a href=#learn-some-elisp-emacs-lisp>Learn some elisp (emacs lisp)</a></li>
+<li><a href=#start-to-hacking-emacs-from-the-day-one>Start to hacking Emacs from the day one!</a></li>
+<li><a href=#emacs-package-system-in-the-first-glance>Emacs package system in the first glance.</a></li>
+<li><a href=#day-two>Day Two</a>
+<ul>
+<li><a href=#improve-built-in-package-system>Improve built-in package system</a></li>
+<li><a href=#setup-a-javascript-ide>Setup a javascript IDE</a></li>
+<li><a href=#learn-more-from-emacs-itself>Learn more from Emacs itself</a></li>
+<li><a href=#org-modebonus-time>Org-mode(Bonus Time)</a></li>
+</ul>
+</li>
+<li><a href=#day-3>Day 3</a></li>
+</ul>
+<ul>
+<li><a href=#better-defaults>Better defaults</a></li>
+</ul>
+<ul>
+<li><a href=#day-6>Day 6</a>
+<ul>
+<li><a href=#org-mode>Org-mode</a></li>
+</ul>
+</li>
+<li><a href=#spacemacs-config>Spacemacs Config</a></li>
+<li><a href=#creating-a-spacemacs-layer>Creating a Spacemacs Layer</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h2 id=installation>Installation</h2>
+<h3 id=run-emacs-in-docker>Run Emacs in Docker</h3>
+<p><a href=https://github.com/Silex/docker-emacs target=_blank rel="noopener noreferrer">https://github.com/Silex/docker-emacs</a></p>
+<h4 id=usage>Usage</h4>
+<h5 id=console>Console</h5>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>docker run -it --rm silex/emacs
+</code></pre></td></tr></table>
+</div>
+</div><h5 id=gui>GUI</h5>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>xhost +local:root # WARN: this comes with security issues
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>xhost +local:root # WARN: this comes with security issues
 docker run -it --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix silex/emacs
-</code></pre></td></tr></table></div></div><h3 id=arch-linux-manjaro>Arch Linux (Manjaro)</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>yay -S emacs
-</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>yay -S adobe-source-code-pro-fonts
-</code></pre></td></tr></table></div></div><p>clone spacemacs repo and use develop branch</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d -b develop
-</code></pre></td></tr></table></div></div><p>clone zilongshanren layer and checkout develop branch</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>git clone https://github.com/yanboyang713/spacemacs-private.git ~/.spacemacs.d/
-</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=arch-linux-manjaro>Arch Linux (Manjaro)</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yay -S emacs
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yay -S adobe-source-code-pro-fonts
+</code></pre></td></tr></table>
+</div>
+</div><p>clone spacemacs repo and use develop branch</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d -b develop
+</code></pre></td></tr></table>
+</div>
+</div><p>clone zilongshanren layer and checkout develop branch</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git clone https://github.com/yanboyang713/spacemacs-private.git ~/.spacemacs.d/
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ gpg --homedir ~/.emacs.d/elpa/gnupg --receive-keys 066DAFCB81E42C40
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ gpg --homedir ~/.emacs.d/elpa/gnupg --receive-keys 066DAFCB81E42C40
 gpg: key 066DAFCB81E42C40: &#34;GNU ELPA Signing Agent (2019) &lt;elpasign@elpa.gnu.org&gt;&#34; not changed
 gpg: Total number processed: 1
 gpg:              unchanged: 1
-</code></pre></td></tr></table></div></div><h2 id=go-over-the-emacs-tutorial-at-least-once>Go over the Emacs tutorial at least once</h2><ul><li>C-h t to open the tutorial.</li><li>You should be familiar with M(meta), s(uper, command key), S(hift) and C(trl)</li><li>You need be familiar with cursor movement (C-f/C-b/C-n/C-p/C-a/C-e) and basic editing (C-k)</li><li>Prefix key (C-h) and C-g (Stop currently input)</li></ul><h2 id=learn-to-active-some-built-in-functionality>Learn to active some built-in functionality</h2><ul><li>linum-mode to display line numbers (M-x linum-mode)</li><li>C-x C-f(find/file) to open files, C-x C-s(ave) to save files.</li><li>You should always ask Emacs the right question</li><li>C-h k(ey)/ C-h v(arable)/ C-h f(unction) (Emacs is a self document, extensiable editor)</li><li>The key bindings are actually a quick way to command Emacs.</li></ul><h2 id=learn-some-elisp-emacs-lisp>Learn some elisp (emacs lisp)</h2><ul><li>Use <a href=https://learnxinyminutes.com/docs/elisp/ target=_blank rel="noopener noreferrer">learnxinyminutes</a> website to learn Emacs lisp.</li><li>at least you know how to define variable, functions</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=go-over-the-emacs-tutorial-at-least-once>Go over the Emacs tutorial at least once</h2>
+<ul>
+<li>C-h t to open the tutorial.</li>
+<li>You should be familiar with M(meta), s(uper, command key), S(hift) and C(trl)</li>
+<li>You need be familiar with cursor movement (C-f/C-b/C-n/C-p/C-a/C-e) and basic editing (C-k)</li>
+<li>Prefix key (C-h) and C-g (Stop currently input)</li>
+</ul>
+<h2 id=learn-to-active-some-built-in-functionality>Learn to active some built-in functionality</h2>
+<ul>
+<li>linum-mode to display line numbers (M-x linum-mode)</li>
+<li>C-x C-f(find/file) to open files, C-x C-s(ave) to save files.</li>
+<li>You should always ask Emacs the right question</li>
+<li>C-h k(ey)/ C-h v(arable)/ C-h f(unction) (Emacs is a self document, extensiable editor)</li>
+<li>The key bindings are actually a quick way to command Emacs.</li>
+</ul>
+<h2 id=learn-some-elisp-emacs-lisp>Learn some elisp (emacs lisp)</h2>
+<ul>
+<li>Use <a href=https://learnxinyminutes.com/docs/elisp/ target=_blank rel="noopener noreferrer">learnxinyminutes</a> website to learn Emacs lisp.</li>
+<li>at least you know how to define variable, functions</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=k>setq</span> <span class=nv>my-name</span> <span class=s>&#34;Boyang Yan&#34;</span><span class=p>)</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=k>setq</span> <span class=nv>my-name</span> <span class=s>&#34;Boyang Yan&#34;</span><span class=p>)</span>
 <span class=p>(</span><span class=nv>message</span> <span class=nv>my-name</span><span class=p>)</span>
 
 <span class=p>(</span><span class=nb>defun</span> <span class=nv>my-func</span> <span class=p>()</span>
 <span class=p>(</span><span class=nv>interactive</span><span class=p>)</span>
 <span class=p>(</span><span class=nv>message</span> <span class=s>&#34;hello, %s&#34;</span> <span class=nv>my-name</span><span class=p>))</span>
-</code></pre></td></tr></table></div></div><ul><li>how to make a function callable (add keyword (interactive)) and how to set a key binding for the function.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;&lt;f2&gt;&#34;</span><span class=p>)</span> <span class=ss>&#39;my-func</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>C-x C-e(xection) lisp code
-C-h m(ode) check Enabled Minor Mode</p><h2 id=start-to-hacking-emacs-from-the-day-one>Start to hacking Emacs from the day one!</h2><p>All of emacs confige file, You can put into ~/emacs.d/init.el</p><ul><li>Turn off tool-bar</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>tool-bar-mode</span> <span class=mi>-1</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><ul><li>Turn off scroll-bar</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>scroll-bar-mode</span> <span class=mi>-1</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><ul><li>show linum-mode</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>how to make a function callable (add keyword (interactive)) and how to set a key binding for the function.</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;&lt;f2&gt;&#34;</span><span class=p>)</span> <span class=ss>&#39;my-func</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>C-x C-e(xection) lisp code
+C-h m(ode) check Enabled Minor Mode</p>
+<h2 id=start-to-hacking-emacs-from-the-day-one>Start to hacking Emacs from the day one!</h2>
+<p>All of emacs confige file, You can put into ~/emacs.d/init.el</p>
+<ul>
+<li>Turn off tool-bar</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>tool-bar-mode</span> <span class=mi>-1</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Turn off scroll-bar</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>scroll-bar-mode</span> <span class=mi>-1</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>show linum-mode</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>linum-mode</span> <span class=no>t</span><span class=p>)</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>linum-mode</span> <span class=no>t</span><span class=p>)</span>
 <span class=p>(</span><span class=nv>global-linum-mode</span> <span class=no>t</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><ul><li>turn off splash screen</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=k>setq</span> <span class=nv>inhibit-splash-screen</span> <span class=no>t</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><ul><li>Save your confige</li><li>define a function to quickly open your config file</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>turn off splash screen</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=k>setq</span> <span class=nv>inhibit-splash-screen</span> <span class=no>t</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Save your confige</li>
+<li>define a function to quickly open your config file</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nb>defun</span> <span class=nv>open-my-init-file</span><span class=p>()</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nb>defun</span> <span class=nv>open-my-init-file</span><span class=p>()</span>
 <span class=p>(</span><span class=nv>interactive</span><span class=p>)</span>
 <span class=p>(</span><span class=nv>find-file</span> <span class=s>&#34;~/.emacs.d/init.el&#34;</span><span class=p>))</span>
 
 <span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;&lt;f2&gt;&#34;</span><span class=p>)</span> <span class=ss>&#39;open-my-init-file</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>recentf-mode</span> <span class=no>t</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><h2 id=emacs-package-system-in-the-first-glance>Emacs package system in the first glance.</h2><ul><li>How to use the build-in Package system of Emacs.
-Options -> Mangage Emacs Package -> search -> install</li><li>Install company mode and active it.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>M-x company-mode
-</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>global-company-mode</span> <span class=no>t</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><ul><li><p>Major mode and Minor mode (C-h m)
-Only allow one Major mode. Each file will and must have one Major Mode</p></li><li><p>Bonus (org-mode basics)</p></li></ul><ul><li>use * to define headings</li><li>C-c C-t to toggle TODO states
-GTD (getting things done)</li></ul><h2 id=day-two>Day Two</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>recentf-mode</span> <span class=no>t</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=emacs-package-system-in-the-first-glance>Emacs package system in the first glance.</h2>
+<ul>
+<li>How to use the build-in Package system of Emacs.
+Options -> Mangage Emacs Package -> search -> install</li>
+<li>Install company mode and active it.</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>M-x company-mode
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>global-company-mode</span> <span class=no>t</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>Major mode and Minor mode (C-h m)
+Only allow one Major mode. Each file will and must have one Major Mode</p>
+</li>
+<li>
+<p>Bonus (org-mode basics)</p>
+</li>
+</ul>
+<ul>
+<li>use * to define headings</li>
+<li>C-c C-t to toggle TODO states
+GTD (getting things done)</li>
+</ul>
+<h2 id=day-two>Day Two</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=k>setq</span> <span class=nv>cursor-type</span> <span class=ss>&#39;bar</span><span class=p>)</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=k>setq</span> <span class=nv>cursor-type</span> <span class=ss>&#39;bar</span><span class=p>)</span>
 <span class=p>(</span><span class=nv>setq-default</span> <span class=nv>cursor-type</span> <span class=ss>&#39;bar</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p><strong>NOTE:</strong>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>NOTE:</strong>
 The different between setq and setq-default
-<a href=https://stackoverflow.com/questions/18172728/the-difference-between-setq-and-setq-default-in-emacs-lisp>https://stackoverflow.com/questions/18172728/the-difference-between-setq-and-setq-default-in-emacs-lisp</a></p><p>disable backup file</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>setq</span> <span class=nv>make-backup-files</span> <span class=no>nil</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>NOTE: use C-c ’ (C-c and sigle quota) to open another buffer to edit source code. Make source code fancy in the org file.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+<a href=https://stackoverflow.com/questions/18172728/the-difference-between-setq-and-setq-default-in-emacs-lisp target=_blank rel="noopener noreferrer">https://stackoverflow.com/questions/18172728/the-difference-between-setq-and-setq-default-in-emacs-lisp</a></p>
+<p>disable backup file</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>setq</span> <span class=nv>make-backup-files</span> <span class=no>nil</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>NOTE: use C-c ’ (C-c and sigle quota) to open another buffer to edit source code. Make source code fancy in the org file.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nf>require</span> <span class=ss>&#39;org</span><span class=p>)</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nf>require</span> <span class=ss>&#39;org</span><span class=p>)</span>
 <span class=p>(</span><span class=k>setq</span> <span class=nv>org-src-fontify-natively</span> <span class=no>t</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>enable recentf-mode</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><p>enable recentf-mode</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>require</span> <span class=ss>&#39;recentf</span><span class=p>)</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>require</span> <span class=ss>&#39;recentf</span><span class=p>)</span>
 <span class=p>(</span><span class=nv>recentf-mode</span> <span class=mi>1</span><span class=p>)</span>			
 <span class=p>(</span><span class=nb>setq</span> <span class=nv>recentf-max-menu-items</span> <span class=mi>25</span><span class=p>)</span>
 <span class=p>(</span><span class=nv>global-set-key</span> <span class=s>&#34;\C-x\ \C-r&#34;</span> <span class=ss>&#39;recentf-open-files</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>NOTE: require mean load it from FILENAME.</p><p>M-x eval-buffer for execute all of lisp&rsquo;code in buffer.</p><p>add delete selection mode</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>delete-selection-mode</span> <span class=no>t</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>Make Emacs more fancy</p><ol><li>Open with full screen</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=k>setq</span>  <span class=nv>initial-frame-alist</span> <span class=p>(</span><span class=k>quote</span> <span class=p>((</span><span class=nv>fullscreen</span> <span class=o>.</span> <span class=nv>maximized</span><span class=p>))))</span>
-</code></pre></td></tr></table></div></div><ol start=2><li>show match parents</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>add-hook</span> <span class=ss>&#39;emacs-lisp-mode-hook</span> <span class=ss>&#39;show-paren-mode</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p><strong>NOTE:</strong> add-hook mean run show-pareb-mode after emacs-lisp-mode</p><ol start=3><li>Highlight current line (global-hl-line-mode)</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>global-hl-line-mode</span> <span class=no>t</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><h3 id=improve-built-in-package-system>Improve built-in package system</h3><p>make package system more powerful with <a href=https://melpa.org/ target=_blank rel="noopener noreferrer">Melpa</a></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</code></pre></td></tr></table>
+</div>
+</div><p>NOTE: require mean load it from FILENAME.</p>
+<p>M-x eval-buffer for execute all of lisp&rsquo;code in buffer.</p>
+<p>add delete selection mode</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>delete-selection-mode</span> <span class=no>t</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Make Emacs more fancy</p>
+<ol>
+<li>Open with full screen</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=k>setq</span>  <span class=nv>initial-frame-alist</span> <span class=p>(</span><span class=k>quote</span> <span class=p>((</span><span class=nv>fullscreen</span> <span class=o>.</span> <span class=nv>maximized</span><span class=p>))))</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start=2>
+<li>show match parents</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>add-hook</span> <span class=ss>&#39;emacs-lisp-mode-hook</span> <span class=ss>&#39;show-paren-mode</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>NOTE:</strong> add-hook mean run show-pareb-mode after emacs-lisp-mode</p>
+<ol start=3>
+<li>Highlight current line (global-hl-line-mode)</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>global-hl-line-mode</span> <span class=no>t</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=improve-built-in-package-system>Improve built-in package system</h3>
+<p>make package system more powerful with <a href=https://melpa.org/ target=_blank rel="noopener noreferrer">Melpa</a></p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -139,7 +515,9 @@ The different between setq and setq-default
 </span><span class=lnt>31
 </span><span class=lnt>32
 </span><span class=lnt>33
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nb>when</span> <span class=p>(</span><span class=nf>&gt;=</span> <span class=nv>emacs-major-version</span> <span class=mi>24</span><span class=p>)</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nb>when</span> <span class=p>(</span><span class=nf>&gt;=</span> <span class=nv>emacs-major-version</span> <span class=mi>24</span><span class=p>)</span>
   <span class=p>(</span><span class=nf>require</span> <span class=ss>&#39;package</span><span class=p>)</span>
   <span class=p>(</span><span class=nv>package-initialize</span><span class=p>)</span>
   <span class=p>(</span><span class=nv>add-to-list</span> <span class=ss>&#39;package-archives</span> <span class=o>&#39;</span><span class=p>(</span><span class=s>&#34;melpa&#34;</span> <span class=o>.</span> <span class=s>&#34;http://melpa.org/packages/&#34;</span><span class=p>)</span> <span class=no>t</span><span class=p>)</span>
@@ -172,18 +550,47 @@ The different between setq and setq-default
     <span class=p>(</span><span class=nb>when</span> <span class=p>(</span><span class=nf>not</span> <span class=p>(</span><span class=nv>package-installed-p</span> <span class=nv>pkg</span><span class=p>))</span>
       <span class=p>(</span><span class=nv>package-install</span> <span class=nv>pkg</span><span class=p>))))</span>
       
-</code></pre></td></tr></table></div></div><p>install a theme (monokai)</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>load-theme</span> <span class=ss>&#39;monokai</span> <span class=no>t</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>install hungry delete mode</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><p>install a theme (monokai)</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>load-theme</span> <span class=ss>&#39;monokai</span> <span class=no>t</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>install hungry delete mode</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nf>require</span> <span class=ss>&#39;hungry-delete</span><span class=p>)</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nf>require</span> <span class=ss>&#39;hungry-delete</span><span class=p>)</span>
 <span class=p>(</span><span class=nv>global-hungry-delete-mode</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>package-list-packages (add/delete/update packages)</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>M-x package-list-packages
-</code></pre></td></tr></table></div></div><p>add <strong>i</strong>
+</code></pre></td></tr></table>
+</div>
+</div><p>package-list-packages (add/delete/update packages)</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>M-x package-list-packages
+</code></pre></td></tr></table>
+</div>
+</div><p>add <strong>i</strong>
 delete <strong>D - > X</strong>
-update <strong>U</strong></p><p>install and configure counsel and ivy mode(swiper)</p><p><a href=https://github.com/abo-abo/swiper/tree/040d458bce4a88f37359192061bcea5ebe87007c>https://github.com/abo-abo/swiper/tree/040d458bce4a88f37359192061bcea5ebe87007c</a></p><p>swiper for search by text in minibuffer C-s
-find-file C-x C-f</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+update <strong>U</strong></p>
+<p>install and configure counsel and ivy mode(swiper)</p>
+<p><a href=https://github.com/abo-abo/swiper/tree/040d458bce4a88f37359192061bcea5ebe87007c target=_blank rel="noopener noreferrer">https://github.com/abo-abo/swiper/tree/040d458bce4a88f37359192061bcea5ebe87007c</a></p>
+<p>swiper for search by text in minibuffer C-s
+find-file C-x C-f</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -205,7 +612,9 @@ find-file C-x C-f</p><div class=highlight><div class=chroma><table class=lntable
 </span><span class=lnt>20
 </span><span class=lnt>21
 </span><span class=lnt>22
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>ivy-mode</span><span class=p>)</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>ivy-mode</span><span class=p>)</span>
 <span class=p>(</span><span class=k>setq</span> <span class=nv>ivy-use-virtual-buffers</span> <span class=no>t</span><span class=p>)</span>
 <span class=p>(</span><span class=k>setq</span> <span class=nv>enable-recursive-minibuffers</span> <span class=no>t</span><span class=p>)</span>
 <span class=c1>;; enable this if you want `swiper&#39; to use it</span>
@@ -227,49 +636,141 @@ find-file C-x C-f</p><div class=highlight><div class=chroma><table class=lntable
 <span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;C-x l&#34;</span><span class=p>)</span> <span class=ss>&#39;counsel-locate</span><span class=p>)</span>
 <span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;C-S-o&#34;</span><span class=p>)</span> <span class=ss>&#39;counsel-rhythmbox</span><span class=p>)</span>
 <span class=p>(</span><span class=nv>define-key</span> <span class=nv>minibuffer-local-map</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;C-r&#34;</span><span class=p>)</span> <span class=ss>&#39;counsel-minibuffer-history</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>use customize-group to customize the package settings</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>M-x customize-group
-</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=nv>custom-set-variable</span>
-</code></pre></td></tr></table></div></div><p>install and configure smartparens mode
+</code></pre></td></tr></table>
+</div>
+</div><p>use customize-group to customize the package settings</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>M-x customize-group
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=nv>custom-set-variable</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>install and configure smartparens mode
 Smartparens is a minor mode for dealing with pairs in Emacs.
-It can automatically insert pairs</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+It can automatically insert pairs</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nf>require</span> <span class=ss>&#39;smartparens-config</span><span class=p>)</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nf>require</span> <span class=ss>&#39;smartparens-config</span><span class=p>)</span>
 <span class=c1>;;You can now use smartparens with M-x smartparens-mode.</span>
 <span class=p>(</span><span class=nv>smartparens-global-mode</span> <span class=no>t</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>Don’t try to update the package daily, the updating process might failed.
-(tips: press M-RET to fix the order, you could also use M-RET to add new headings, cheers!)</p><ol><li><p>xection</p></li><li><p>daily</p></li><li><p>ocker</p></li><li><p>ach</p></li><li><p>xection</p></li><li><p>daily</p></li><li><p>ocker</p></li><li><p>ach</p></li></ol><h3 id=setup-a-javascript-ide>Setup a javascript IDE</h3><p>Install js2-mode and start to write javascript</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><p>Don’t try to update the package daily, the updating process might failed.
+(tips: press M-RET to fix the order, you could also use M-RET to add new headings, cheers!)</p>
+<ol>
+<li>
+<p>xection</p>
+</li>
+<li>
+<p>daily</p>
+</li>
+<li>
+<p>ocker</p>
+</li>
+<li>
+<p>ach</p>
+</li>
+<li>
+<p>xection</p>
+</li>
+<li>
+<p>daily</p>
+</li>
+<li>
+<p>ocker</p>
+</li>
+<li>
+<p>ach</p>
+</li>
+</ol>
+<h3 id=setup-a-javascript-ide>Setup a javascript IDE</h3>
+<p>Install js2-mode and start to write javascript</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=k>setq</span> <span class=nv>auto-mode-alist</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=k>setq</span> <span class=nv>auto-mode-alist</span>
 <span class=p>(</span><span class=nf>append</span>
 <span class=o>&#39;</span><span class=p>((</span><span class=s>&#34;\\.js\\&#39;&#34;</span> <span class=o>.</span> <span class=nv>js2-mode</span><span class=p>))</span>
 <span class=nv>auto-mode-alist</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>Install nodejs-repl to execute code inside Emacs
-exec-path-from-shell</p><h3 id=learn-more-from-emacs-itself>Learn more from Emacs itself</h3><p>c-h c-f(find-function), c-h c-v(find-variable), c-h c-k(find-function-on-key)
-Tell users to learn more about elisp(M-x info)</p><h3 id=org-modebonus-time>Org-mode(Bonus Time)</h3><p>Agenda files and agenda view
-one gtd.org file</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><p>Install nodejs-repl to execute code inside Emacs
+exec-path-from-shell</p>
+<h3 id=learn-more-from-emacs-itself>Learn more from Emacs itself</h3>
+<p>c-h c-f(find-function), c-h c-v(find-variable), c-h c-k(find-function-on-key)
+Tell users to learn more about elisp(M-x info)</p>
+<h3 id=org-modebonus-time>Org-mode(Bonus Time)</h3>
+<p>Agenda files and agenda view
+one gtd.org file</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=k>setq</span> <span class=nv>org-agenda-files</span> <span class=o>&#39;</span><span class=p>(</span><span class=s>&#34;~/org&#34;</span><span class=p>))</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=k>setq</span> <span class=nv>org-agenda-files</span> <span class=o>&#39;</span><span class=p>(</span><span class=s>&#34;~/org&#34;</span><span class=p>))</span>
 <span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;C-c a&#34;</span><span class=p>)</span> <span class=ss>&#39;org-agenda</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>Learn how to schedule items and set deadline
+</code></pre></td></tr></table>
+</div>
+</div><p>Learn how to schedule items and set deadline
 c-c c-s to schedule item
-c-c c-d to set deadline of item.</p><h2 id=day-3>Day 3</h2><p>help window is anoyying..</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+c-c c-d to set deadline of item.</p>
+<h2 id=day-3>Day 3</h2>
+<p>help window is anoyying..</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=c1>;; add popwin mode</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=c1>;; add popwin mode</span>
 <span class=c1>;; why this line is needed</span>
 <span class=p>(</span><span class=nf>require</span> <span class=ss>&#39;popwin</span><span class=p>)</span> <span class=p>(</span><span class=nf>require</span> <span class=ss>&#39;init-packages</span><span class=p>)</span>
    <span class=c1>;;when require, wh(setq company-minimum-prefix-length 1)en not require</span>
 <span class=p>(</span><span class=nv>popwin-mode</span> <span class=no>t</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><ol><li>load-file, load-path and load</li><li>features, provide and require, autoload</li></ol><p>C-h v</p><ol start=3><li><p>naming conventions
+</code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>load-file, load-path and load</li>
+<li>features, provide and require, autoload</li>
+</ol>
+<p>C-h v</p>
+<ol start=3>
+<li>
+<p>naming conventions
 all of the names should have a prefix, such that the naming conflicts could be minimal. All of variable is global variable
-zilongshanren/xxxx minor mode or major mode. niubi-mode niubi-xxx</p></li><li><p>define your abbrevs</p></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+zilongshanren/xxxx minor mode or major mode. niubi-mode niubi-xxx</p>
+</li>
+<li>
+<p>define your abbrevs</p>
+</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -277,7 +778,9 @@ zilongshanren/xxxx minor mode or major mode. niubi-mode niubi-xxx</p></li><li><p
 </span><span class=lnt>6
 </span><span class=lnt>7
 </span><span class=lnt>8
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>setq-default</span> <span class=nv>abbrev-mode</span> <span class=no>t</span><span class=p>)</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>setq-default</span> <span class=nv>abbrev-mode</span> <span class=no>t</span><span class=p>)</span>
 
 <span class=p>(</span><span class=nv>define-abbrev-table</span> <span class=ss>&#39;global-abbrev-table</span> <span class=o>&#39;</span><span class=p>(</span>
                                             <span class=c1>;; signature</span>
@@ -285,22 +788,61 @@ zilongshanren/xxxx minor mode or major mode. niubi-mode niubi-xxx</p></li><li><p
                                             <span class=c1>;; emacs regex</span>
                                             
                                             <span class=p>))</span>
-</code></pre></td></tr></table></div></div><ol start=5><li>how to organize your configs
-Put all of your into a new folder, such as <strong>lisp</strong></li><li>init-packages.el
-at the end of file</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nf>provide</span> <span class=ss>&#39;init-packages</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><ol start=2><li>init-ui.el</li><li>init-better-defaults.el</li><li>init-keybindings.el</li><li>custom.el</li></ol><p>In your init.el file</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><ol start=5>
+<li>how to organize your configs
+Put all of your into a new folder, such as <strong>lisp</strong></li>
+<li>init-packages.el
+at the end of file</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nf>provide</span> <span class=ss>&#39;init-packages</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start=2>
+<li>init-ui.el</li>
+<li>init-better-defaults.el</li>
+<li>init-keybindings.el</li>
+<li>custom.el</li>
+</ol>
+<p>In your init.el file</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>add-to-list</span> <span class=ss>&#39;load-path</span> <span class=s>&#34;~/.emacs.d/lisp/&#34;</span><span class=p>)</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>add-to-list</span> <span class=ss>&#39;load-path</span> <span class=s>&#34;~/.emacs.d/lisp/&#34;</span><span class=p>)</span>
 <span class=p>(</span><span class=nf>require</span> <span class=ss>&#39;init-packages</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=k>setq</span> <span class=nv>custom-file</span> <span class=p>(</span><span class=nv>expand-file-name</span> <span class=s>&#34;custom.el&#34;</span> <span class=nv>user-emacs-directory</span><span class=p>))</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=k>setq</span> <span class=nv>custom-file</span> <span class=p>(</span><span class=nv>expand-file-name</span> <span class=s>&#34;custom.el&#34;</span> <span class=nv>user-emacs-directory</span><span class=p>))</span>
 <span class=p>(</span><span class=nv>load-file</span> <span class=nv>custom-file</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>use <code>counsel-git</code> to find file in git managed project.
-(global-set-key (kbd &ldquo;C-c p f&rdquo;) &lsquo;counsel-git)</p><p>Major mode and minor mode in details
+</code></pre></td></tr></table>
+</div>
+</div><p>use <code>counsel-git</code> to find file in git managed project.
+(global-set-key (kbd &ldquo;C-c p f&rdquo;) &lsquo;counsel-git)</p>
+<p>Major mode and minor mode in details
 conventions
-text-mode/special-mode/prog-mode naming: xxx-mode, xxx-mode-key-map xxx-mode-hook</p><h1 id=day-4>Day 4</h1><p>load, load-file, require, provide and auto-load</p><h2 id=better-defaults>Better defaults</h2><p>Indent-region or buffer</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+text-mode/special-mode/prog-mode naming: xxx-mode, xxx-mode-key-map xxx-mode-hook</p>
+<h1 id=day-4>Day 4</h1>
+<p>load, load-file, require, provide and auto-load</p>
+<h2 id=better-defaults>Better defaults</h2>
+<p>Indent-region or buffer</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -319,7 +861,9 @@ text-mode/special-mode/prog-mode naming: xxx-mode, xxx-mode-key-map xxx-mode-hoo
 </span><span class=lnt>17
 </span><span class=lnt>18
 </span><span class=lnt>19
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp>  <span class=p>(</span><span class=nb>defun</span> <span class=nv>indent-buffer</span> <span class=p>()</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp>  <span class=p>(</span><span class=nb>defun</span> <span class=nv>indent-buffer</span> <span class=p>()</span>
     <span class=s>&#34;Indent the currently visited buffer.&#34;</span>
     <span class=p>(</span><span class=nv>interactive</span><span class=p>)</span>
  <span class=nv>reveal-in-osx-finder</span>   <span class=nv>It</span> <span class=nv>is</span> <span class=nv>bound</span> <span class=nv>to</span> <span class=nv>RET,</span> <span class=nv>a.</span>
@@ -338,7 +882,12 @@ text-mode/special-mode/prog-mode naming: xxx-mode, xxx-mode-key-map xxx-mode-hoo
           <span class=p>(</span><span class=nv>message</span> <span class=s>&#34;Indented buffer.&#34;</span><span class=p>)))))</span>
 
   <span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;C-M-\\&#34;</span><span class=p>)</span> <span class=ss>&#39;indent-region-or-buffer</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>another way to complete things in Emacs.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</code></pre></td></tr></table>
+</div>
+</div><p>another way to complete things in Emacs.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -352,7 +901,9 @@ text-mode/special-mode/prog-mode naming: xxx-mode, xxx-mode-key-map xxx-mode-hoo
 </span><span class=lnt>12
 </span><span class=lnt>13
 </span><span class=lnt>14
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp>  <span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;s-/&#34;</span><span class=p>)</span> <span class=ss>&#39;hippie-expand</span><span class=p>)</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp>  <span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;s-/&#34;</span><span class=p>)</span> <span class=ss>&#39;hippie-expand</span><span class=p>)</span>
 
 <span class=c1>;; hippie expand is dabbrev expand on steroids</span>
 <span class=p>(</span><span class=k>setq</span> <span class=nv>hippie-expand-try-functions-list</span> <span class=o>&#39;</span><span class=p>(</span><span class=nv>try-expand-dabbrev</span>
@@ -366,15 +917,22 @@ text-mode/special-mode/prog-mode naming: xxx-mode, xxx-mode-key-map xxx-mode-hoo
                                          <span class=nv>try-complete-lisp-symbol-partially</span>
                                          <span class=nv>try-complete-lisp-symbol</span><span class=p>))</span>
 
-</code></pre></td></tr></table></div></div><p>Dired mode and file related operations</p><p><strong>C-x d</strong>
+</code></pre></td></tr></table>
+</div>
+</div><p>Dired mode and file related operations</p>
+<p><strong>C-x d</strong>
 copy, delete and rename file
-Copy/Delete/Rname files and folders</p><p>+: to create directory
+Copy/Delete/Rname files and folders</p>
+<p>+: to create directory
 C-x C-f: to create file
 g: to refersh dired buffer
 C: copy file
 d: delete file
 D: delete after confirm
-R: rename files</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+R: rename files</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -392,7 +950,9 @@ R: rename files</p><div class=highlight><div class=chroma><table class=lntable><
 </span><span class=lnt>16
 </span><span class=lnt>17
 </span><span class=lnt>18
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp>  <span class=c1>;; dired - reuse current buffer by pressing &#39;a&#39;</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp>  <span class=c1>;; dired - reuse current buffer by pressing &#39;a&#39;</span>
   <span class=p>(</span><span class=nv>put</span> <span class=ss>&#39;dired-find-alternate-file</span> <span class=ss>&#39;disabled</span> <span class=no>nil</span><span class=p>)</span>
 
   <span class=c1>;; always delete and copy recursively</span>
@@ -410,16 +970,39 @@ R: rename files</p><div class=highlight><div class=chroma><table class=lntable><
 
 <span class=c1>;; less typing when Emacs ask you yes or no</span>
   <span class=p>(</span><span class=nv>fset</span> <span class=ss>&#39;yes-or-no-p</span> <span class=ss>&#39;y-or-n-p</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>open dired of current buffer</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nf>require</span> <span class=ss>&#39;dired-x</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>after applying this setting, we could press <code>C-x C-j</code> to jump to the dired buffer of current file.</p><p>open finder on Mac. (optional)
-Packages:</p><p>reveal-in-osx-finder for openning the finder of the current file.</p><p>Bonus Time. Use Org-mode literate programming to organize your Emacs configurations.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><p>open dired of current buffer</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nf>require</span> <span class=ss>&#39;dired-x</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>after applying this setting, we could press <code>C-x C-j</code> to jump to the dired buffer of current file.</p>
+<p>open finder on Mac. (optional)
+Packages:</p>
+<p>reveal-in-osx-finder for openning the finder of the current file.</p>
+<p>Bonus Time. Use Org-mode literate programming to organize your Emacs configurations.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nf>require</span> <span class=ss>&#39;org-install</span><span class=p>)</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nf>require</span> <span class=ss>&#39;org-install</span><span class=p>)</span>
 <span class=p>(</span><span class=nf>require</span> <span class=ss>&#39;ob-tangle</span><span class=p>)</span>
 <span class=p>(</span><span class=nv>org-babel-load-file</span> <span class=p>(</span><span class=nv>expand-file-name</span> <span class=s>&#34;zilongshanren.org&#34;</span> <span class=nv>user-emacs-directory</span><span class=p>))</span>
-</code></pre></td></tr></table></div></div><h1 id=day-5>Day 5</h1><p>Fix smartparen quote issue</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><h1 id=day-5>Day 5</h1>
+<p>Fix smartparen quote issue</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -427,7 +1010,9 @@ Packages:</p><p>reveal-in-osx-finder for openning the finder of the current file
 </span><span class=lnt>6
 </span><span class=lnt>7
 </span><span class=lnt>8
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>define-advice</span> <span class=nv>show-paren-function</span> <span class=p>(</span><span class=nb>:around</span> <span class=p>(</span><span class=nv>fn</span><span class=p>)</span> <span class=nv>fix-show-paren-function</span><span class=p>)</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>define-advice</span> <span class=nv>show-paren-function</span> <span class=p>(</span><span class=nb>:around</span> <span class=p>(</span><span class=nv>fn</span><span class=p>)</span> <span class=nv>fix-show-paren-function</span><span class=p>)</span>
   <span class=s>&#34;Highlight enclosing parens.&#34;</span>
   <span class=p>(</span><span class=nb>cond</span> <span class=p>((</span><span class=nv>looking-at-p</span> <span class=s>&#34;\\s(&#34;</span><span class=p>)</span> <span class=p>(</span><span class=nf>funcall</span> <span class=nv>fn</span><span class=p>))</span>
         <span class=p>(</span><span class=no>t</span> <span class=p>(</span><span class=nb>save-excursion</span>
@@ -435,7 +1020,12 @@ Packages:</p><p>reveal-in-osx-finder for openning the finder of the current file
              <span class=p>(</span><span class=nf>funcall</span> <span class=nv>fn</span><span class=p>)))))</span>
 
   <span class=p>(</span><span class=nv>sp-local-pair</span> <span class=ss>&#39;emacs-lisp-mode</span> <span class=s>&#34;&#39;&#34;</span> <span class=no>nil</span> <span class=nb>:actions</span> <span class=no>nil</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>Replace or hidden DOS eolns</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</code></pre></td></tr></table>
+</div>
+</div><p>Replace or hidden DOS eolns</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -446,7 +1036,9 @@ Packages:</p><p>reveal-in-osx-finder for openning the finder of the current file
 </span><span class=lnt> 9
 </span><span class=lnt>10
 </span><span class=lnt>11
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>defun</span> <span class=nv>remove-dos-eol</span> <span class=p>()</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>defun</span> <span class=nv>remove-dos-eol</span> <span class=p>()</span>
   <span class=s>&#34;Replace DOS eolns CR LF with Unix eolns CR&#34;</span>
   <span class=p>(</span><span class=nb>interactive</span><span class=p>)</span>
   <span class=p>(</span><span class=nf>goto-char</span> <span class=p>(</span><span class=nf>point-min</span><span class=p>))</span>
@@ -457,20 +1049,32 @@ Packages:</p><p>reveal-in-osx-finder for openning the finder of the current file
   <span class=p>(</span><span class=nb>interactive</span><span class=p>)</span>
   <span class=p>(</span><span class=nb>setq</span> <span class=nv>buffer-display-table</span> <span class=p>(</span><span class=nv>make-display-table</span><span class=p>))</span>
   <span class=p>(</span><span class=nf>aset</span> <span class=nv>buffer-display-table</span> <span class=sc>?\^</span><span class=nv>M</span> <span class=p>[]))</span>
-</code></pre></td></tr></table></div></div><p>Add more useful packages for web development</p><p>web-mode
-toggle indent in web-mode</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><p>Add more useful packages for web development</p>
+<p>web-mode
+toggle indent in web-mode</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>setq</span> <span class=nv>auto-mode-alist</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>setq</span> <span class=nv>auto-mode-alist</span>
 <span class=p>(</span><span class=nf>append</span>
 <span class=o>&#39;</span><span class=p>((</span><span class=s>&#34;\\.js\\&#39;&#34;</span> <span class=o>.</span> <span class=nv>js2-mode</span><span class=p>)</span>
 <span class=p>(</span><span class=s>&#34;\\.html\\&#39;&#34;</span><span class=p>))</span>
 <span class=nv>auto-mode-alist</span><span class=p>)</span>
 
-</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -496,7 +1100,9 @@ toggle indent in web-mode</p><div class=highlight><div class=chroma><table class
 </span><span class=lnt>24
 </span><span class=lnt>25
 </span><span class=lnt>26
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>defun</span> <span class=nv>my-web-mode-indent-setup</span> <span class=p>()</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>defun</span> <span class=nv>my-web-mode-indent-setup</span> <span class=p>()</span>
   <span class=p>(</span><span class=nb>setq</span> <span class=nv>web-mode-markup-indent-offset</span> <span class=mi>2</span><span class=p>)</span> <span class=c1>; web-mode, html tag in html file</span>
   <span class=p>(</span><span class=nb>setq</span> <span class=nv>web-mode-css-indent-offset</span> <span class=mi>2</span><span class=p>)</span>    <span class=c1>; web-mode, css in html file</span>
   <span class=p>(</span><span class=nb>setq</span> <span class=nv>web-mode-code-indent-offset</span> <span class=mi>2</span><span class=p>)</span>   <span class=c1>; web-mode, js code in html file</span>
@@ -522,16 +1128,35 @@ toggle indent in web-mode</p><div class=highlight><div class=chroma><table class
   <span class=p>(</span><span class=nb>setq</span> <span class=nv>indent-tabs-mode</span> <span class=no>nil</span><span class=p>))</span>
 
 <span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;C-c t i&#34;</span><span class=p>)</span> <span class=ss>&#39;my-toggle-web-indent</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>js2-refactor
-<a href=https://github.com/js-emacs/js2-refactor.el>https://github.com/js-emacs/js2-refactor.el</a></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nv>add-hook</span> <span class=ss>&#39;js2-mode-hook</span> <span class=nf>#&#39;</span><span class=nv>js2-refactor-mode</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nv>js2r-add-keybindings-with-prefix</span> <span class=s>&#34;C-c C-m&#34;</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>extract method
+</code></pre></td></tr></table>
+</div>
+</div><p>js2-refactor
+<a href=https://github.com/js-emacs/js2-refactor.el target=_blank rel="noopener noreferrer">https://github.com/js-emacs/js2-refactor.el</a></p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nv>add-hook</span> <span class=ss>&#39;js2-mode-hook</span> <span class=nf>#&#39;</span><span class=nv>js2-refactor-mode</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nv>js2r-add-keybindings-with-prefix</span> <span class=s>&#34;C-c C-m&#34;</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>extract method
 em is extract-method: Extracts the marked expressions out into a new named method in an object literal.
 extract function
-ef is extract-function: Extracts the marked expressions out into a new named function.</p><p>occur and imenu
-improve occur</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+ef is extract-function: Extracts the marked expressions out into a new named function.</p>
+<p>occur and imenu
+improve occur</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -544,7 +1169,9 @@ improve occur</p><div class=highlight><div class=chroma><table class=lntable><tr
 </span><span class=lnt>11
 </span><span class=lnt>12
 </span><span class=lnt>13
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>defun</span> <span class=nv>occur-dwim</span> <span class=p>()</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>defun</span> <span class=nv>occur-dwim</span> <span class=p>()</span>
   <span class=s>&#34;Call </span><span class=ss>`occur&#39;</span><span class=s> with a sane default.&#34;</span>
   <span class=p>(</span><span class=nb>interactive</span><span class=p>)</span>
   <span class=p>(</span><span class=nb>push</span> <span class=p>(</span><span class=nb>if</span> <span class=p>(</span><span class=nv>region-active-p</span><span class=p>)</span>
@@ -557,7 +1184,12 @@ improve occur</p><div class=highlight><div class=chroma><table class=lntable><tr
         <span class=nv>regexp-history</span><span class=p>)</span>
   <span class=p>(</span><span class=nf>call-interactively</span> <span class=ss>&#39;occur</span><span class=p>))</span>
 <span class=p>(</span><span class=nv>global-set-key</span> <span class=s>&#34;M-s o&#34;</span> <span class=ss>&#39;occur-dwim</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>improve imenu</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</code></pre></td></tr></table>
+</div>
+</div><p>improve imenu</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -577,7 +1209,9 @@ improve occur</p><div class=highlight><div class=chroma><table class=lntable><tr
 </span><span class=lnt>18
 </span><span class=lnt>19
 </span><span class=lnt>20
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>defun</span> <span class=nv>js2-imenu-make-index</span> <span class=p>()</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>defun</span> <span class=nv>js2-imenu-make-index</span> <span class=p>()</span>
       <span class=p>(</span><span class=nb>interactive</span><span class=p>)</span>
       <span class=p>(</span><span class=nb>save-excursion</span>
         <span class=c1>;; (setq imenu-generic-expression &#39;((nil &#34;describe\\(\&#34;\\(.+\\)\&#34;&#34; 1)))</span>
@@ -597,15 +1231,37 @@ improve occur</p><div class=highlight><div class=chroma><table class=lntable><tr
                 <span class=p>(</span><span class=nb>setq</span> <span class=nv>imenu-create-index-function</span> <span class=ss>&#39;js2-imenu-make-index</span><span class=p>)))</span>
 
 <span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;M-s i&#34;</span><span class=p>)</span> <span class=ss>&#39;counsel-imenu</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>expand-region and iedit mode
-<a href=https://github.com/magnars/expand-region.el>https://github.com/magnars/expand-region.el</a></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><p>expand-region and iedit mode
+<a href=https://github.com/magnars/expand-region.el target=_blank rel="noopener noreferrer">https://github.com/magnars/expand-region.el</a></p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>require</span> <span class=ss>&#39;expand-region</span><span class=p>)</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>require</span> <span class=ss>&#39;expand-region</span><span class=p>)</span>
 <span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;C-=&#34;</span><span class=p>)</span> <span class=ss>&#39;er/expand-region</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p><a href=https://github.com/victorhge/iedit>https://github.com/victorhge/iedit</a></p><p>Bonus Time. Org export
-export to html, you could also export to pdf</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>C-x C-e
-</code></pre></td></tr></table></div></div><h2 id=day-6>Day 6</h2><h3 id=org-mode>Org-mode</h3><p>Use org-capture to take notes</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</code></pre></td></tr></table>
+</div>
+</div><p><a href=https://github.com/victorhge/iedit target=_blank rel="noopener noreferrer">https://github.com/victorhge/iedit</a></p>
+<p>Bonus Time. Org export
+export to html, you could also export to pdf</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>C-x C-e
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=day-6>Day 6</h2>
+<h3 id=org-mode>Org-mode</h3>
+<p>Use org-capture to take notes</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -618,7 +1274,9 @@ export to html, you could also export to pdf</p><div class=highlight><div class=
 </span><span class=lnt>11
 </span><span class=lnt>12
 </span><span class=lnt>13
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>require</span> <span class=ss>&#39;init-org</span><span class=p>)</span>
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>require</span> <span class=ss>&#39;init-org</span><span class=p>)</span>
 <span class=p>(</span><span class=nb>with-eval-after-load</span> <span class=ss>&#39;org</span>
 <span class=p>(</span><span class=nb>setq</span> <span class=nv>org-src-fontify-natively</span> <span class=no>t</span><span class=p>)</span>
 
@@ -631,14 +1289,79 @@ export to html, you could also export to pdf</p><div class=highlight><div class=
 
 <span class=c1>;; r aka remember</span>
 <span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;C-c r&#34;</span><span class=p>)</span> <span class=ss>&#39;org-capture</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>set default encoding system to UTF-8</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nv>set-language-environment</span> <span class=s>&#34;UTF-8&#34;</span><span class=p>)</span>
-</code></pre></td></tr></table></div></div><p>Install Org pomodoro to track my time
+</code></pre></td></tr></table>
+</div>
+</div><p>set default encoding system to UTF-8</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nv>set-language-environment</span> <span class=s>&#34;UTF-8&#34;</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Install Org pomodoro to track my time
 clean up configs
 move keybindings into one place
-make c-n and c-p to select company condicate</p><h2 id=spacemacs-config>Spacemacs Config</h2><p>Find the ~/.spacemacs file by pressing SPC f e d</p><h2 id=creating-a-spacemacs-layer>Creating a Spacemacs Layer</h2><ol><li>Create a new Spacemacs layer.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>M-x configuration-layer/create-layer
-</code></pre></td></tr></table></div></div><ol start=2><li>Configuration layer path.
-This will then give you the option of where to place the layer, but you can just use the default of **.spacemacs.d/layers/</li><li>Name of the layer.</li><li>Creating readme file or not.</li></ol></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2021-04-04</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=/spacemacs/index.md target=_blank rel="noopener noreferrer">Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/spacemacs/ data-title="Getting Started with Spacemacs/Emacs" data-hashtags=spacemacs,emacs><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/spacemacs/ data-hashtag=spacemacs><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/spacemacs/ data-title="Getting Started with Spacemacs/Emacs" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/spacemacs/ data-title="Getting Started with Spacemacs/Emacs"><i data-svg-src=/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/spacemacs/ data-title="Getting Started with Spacemacs/Emacs"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/spacemacs/ data-title="Getting Started with Spacemacs/Emacs" data-description><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/spacemacs/ data-title="Getting Started with Spacemacs/Emacs" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/spacemacs/ data-title="Getting Started with Spacemacs/Emacs"><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/spacemacs/>spacemacs</a>,&nbsp;<a href=/tags/emacs/>Emacs</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/writingmathematicfomular/ class=prev rel=prev title="Writing Mathematic Fomular"><i class="fas fa-angle-left fa-fw"></i>Writing Mathematic Fomular</a>
-<a href=/flink/ class=next rel=next title="Getting Started with Flink">Getting Started with Flink<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.85.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript src=/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script></body></html>
+make c-n and c-p to select company condicate</p>
+<h2 id=spacemacs-config>Spacemacs Config</h2>
+<p>Find the ~/.spacemacs file by pressing SPC f e d</p>
+<h2 id=creating-a-spacemacs-layer>Creating a Spacemacs Layer</h2>
+<ol>
+<li>Create a new Spacemacs layer.</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>M-x configuration-layer/create-layer
+</code></pre></td></tr></table>
+</div>
+</div><ol start=2>
+<li>Configuration layer path.
+This will then give you the option of where to place the layer, but you can just use the default of **.spacemacs.d/layers/</li>
+<li>Name of the layer.</li>
+<li>Creating readme file or not.</li>
+</ol>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>Updated on 2021-04-04</span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/spacemacs/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
+</span></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/spacemacs/ data-title="Getting Started with Spacemacs/Emacs" data-hashtags=spacemacs,emacs><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/spacemacs/ data-hashtag=spacemacs><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/spacemacs/ data-title="Getting Started with Spacemacs/Emacs" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/spacemacs/ data-title="Getting Started with Spacemacs/Emacs"><i data-svg-src=/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/spacemacs/ data-title="Getting Started with Spacemacs/Emacs"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/spacemacs/ data-title="Getting Started with Spacemacs/Emacs" data-description><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/spacemacs/ data-title="Getting Started with Spacemacs/Emacs" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/spacemacs/ data-title="Getting Started with Spacemacs/Emacs"><i class="fab fa-evernote fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/spacemacs/>spacemacs</a>,&nbsp;<a href=/tags/emacs/>Emacs</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/writingmathematicfomular/ class=prev rel=prev title="Writing Mathematic Fomular"><i class="fas fa-angle-left fa-fw"></i>Writing Mathematic Fomular</a>
+<a href=/flink/ class=next rel=next title="Getting Started with Flink">Getting Started with Flink<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id=comments><div id=disqus_thread class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments">
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript src=/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>

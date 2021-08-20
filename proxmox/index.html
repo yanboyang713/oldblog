@@ -1,19 +1,155 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Get Started with Proxmox - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Get Started with Proxmox"><meta property="og:description" content="Introduction Proxmox Virtual Environment is an open source server virtualization management solution based on QEMU/KVM and LXC. Proxmox VE is based on Debian. You can manage virtual machines, containers, highly available clusters, storage and networks with an integrated, easy-to-use web interface or via CLI.
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Get Started with Proxmox - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Get Started with Proxmox">
+<meta property="og:description" content="Introduction Proxmox Virtual Environment is an open source server virtualization management solution based on QEMU/KVM and LXC. Proxmox VE is based on Debian. You can manage virtual machines, containers, highly available clusters, storage and networks with an integrated, easy-to-use web interface or via CLI.
 Install I recommend you use USB Flash Drive as Installation Medium because it is the faster option.
-Download the installer ISO image You can download ISO image from: https://www."><meta property="og:type" content="article"><meta property="og:url" content="https://yanboyang.com/proxmox/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-02-03T06:11:32+10:00"><meta property="article:modified_time" content="2020-02-03T06:11:32+10:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://yanboyang.com/logo.png"><meta name=twitter:title content="Get Started with Proxmox"><meta name=twitter:description content="Introduction Proxmox Virtual Environment is an open source server virtualization management solution based on QEMU/KVM and LXC. Proxmox VE is based on Debian. You can manage virtual machines, containers, highly available clusters, storage and networks with an integrated, easy-to-use web interface or via CLI.
+Download the installer ISO image You can download ISO image from: https://www.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yanboyang.com/proxmox/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2020-02-03T06:11:32+10:00">
+<meta property="article:modified_time" content="2020-02-03T06:11:32+10:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://yanboyang.com/logo.png">
+<meta name=twitter:title content="Get Started with Proxmox">
+<meta name=twitter:description content="Introduction Proxmox Virtual Environment is an open source server virtualization management solution based on QEMU/KVM and LXC. Proxmox VE is based on Debian. You can manage virtual machines, containers, highly available clusters, storage and networks with an integrated, easy-to-use web interface or via CLI.
 Install I recommend you use USB Flash Drive as Installation Medium because it is the faster option.
-Download the installer ISO image You can download ISO image from: https://www."><meta name=application-name content="LoveIt"><meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/proxmox/><link rel=prev href=https://yanboyang.com/kubervsdocker/><link rel=next href=https://yanboyang.com/pfsense/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Get Started with Proxmox","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/proxmox\/"},"genre":"posts","keywords":"QEMU, KVM, LXC","wordcount":2999,"url":"https:\/\/yanboyang.com\/proxmox\/","datePublished":"2020-02-03T06:11:32+10:00","dateModified":"2020-02-03T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-wrapper><div class=header-title><a href=/ title="Boyang Yan's Tech Blog"></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/>Home </a><a class=menu-item href=/posts/>Posts </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><a class=menu-item href=/about/>About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop><input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
-<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
-</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="Boyang Yan's Tech Blog"></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
-<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/ title>Home</a><a class=menu-item href=/posts/ title>Posts</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><a class=menu-item href=/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Get Started with Proxmox</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/virtual-environment/><i class="far fa-folder fa-fw"></i>virtual environment</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-02-03>2020-02-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2999 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;15 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true><div class="details-summary toc-title"><span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#introduction>Introduction</a></li><li><a href=#install>Install</a><ul><li><a href=#download-the-installer-iso-image>Download the installer ISO image</a></li><li><a href=#prepare-a-usb-flash-drive-as-installation-medium>Prepare a USB Flash Drive as Installation Medium</a><ul><li><a href=#linux>Linux</a><ul><li><a href=#find-the-correct-usb-device-name>Find the Correct USB Device Name</a></li><li><a href=#make-a-bootable-usb-using-dd>Make a bootable USB using DD</a></li></ul></li></ul></li><li><a href=#start-installion>Start Installion</a><ul><li><a href=#step-1>Step 1:</a></li><li><a href=#step-2>Step 2:</a></li><li><a href=#step-3>Step 3:</a></li><li><a href=#step-4>Step 4:</a></li><li><a href=#step-5>Step 5:</a></li><li><a href=#advanced-lvm-configuration-options>Advanced LVM Configuration Options</a></li></ul></li></ul></li><li><a href=#how-to-update-proxmox-without-buying-a-subscription>How to update Proxmox without buying a subscription</a></li><li><a href=#renaming-a-pve-node>Renaming a PVE node</a></li><li><a href=#backup>Backup</a></li></ul></nav></div></div><div class=content id=content><h2 id=introduction>Introduction</h2><p>Proxmox Virtual Environment is an open source server virtualization management solution based on QEMU/KVM and LXC. Proxmox VE is based on Debian. You can manage virtual machines, containers, highly available clusters, storage and networks with an integrated, easy-to-use web interface or via CLI.</p><h2 id=install>Install</h2><p>I recommend you use USB Flash Drive as Installation Medium because it is the faster option.</p><h3 id=download-the-installer-iso-image>Download the installer ISO image</h3><p>You can download ISO image from: <a href=https://www.proxmox.com/en/downloads/category/iso-images-pve>https://www.proxmox.com/en/downloads/category/iso-images-pve</a>
-Currently, the latest version is 6.3-1.</p><h3 id=prepare-a-usb-flash-drive-as-installation-medium>Prepare a USB Flash Drive as Installation Medium</h3><p>Official link: <a href=https://pve.proxmox.com/wiki/Prepare_Installation_Media>https://pve.proxmox.com/wiki/Prepare_Installation_Media</a></p><h4 id=linux>Linux</h4><h5 id=find-the-correct-usb-device-name>Find the Correct USB Device Name</h5><p>There are two ways to find out the name of the USB flash drive. The first one is use <strong>lsblk</strong> (strong recommend). The second way is to compare the output of the <em>fdisk -l</em> command. Both example at the below.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+Download the installer ISO image You can download ISO image from: https://www.">
+<meta name=application-name content="LoveIt">
+<meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/proxmox/><link rel=prev href=https://yanboyang.com/kubervsdocker/><link rel=next href=https://yanboyang.com/pfsense/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Get Started with Proxmox","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/proxmox\/"},"genre":"posts","keywords":"QEMU, KVM, LXC","wordcount":2999,"url":"https:\/\/yanboyang.com\/proxmox\/","datePublished":"2020-02-03T06:11:32+10:00","dateModified":"2020-02-03T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title="Boyang Yan's Tech Blog"></a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/> Home </a><a class=menu-item href=/posts/> Posts </a><a class=menu-item href=/tags/> Tags </a><a class=menu-item href=/categories/> Categories </a><a class=menu-item href=/about/> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title="Boyang Yan's Tech Blog"></a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+Cancel
+</a>
+</div><a class=menu-item href=/ title>Home</a><a class=menu-item href=/posts/ title>Posts</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><a class=menu-item href=/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>Contents</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Get Started with Proxmox</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/virtual-environment/><i class="far fa-folder fa-fw"></i>virtual environment</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-02-03>2020-02-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2999 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;15 minutes&nbsp;</div>
+</div><div class="details toc" id=toc-static kept=true>
+<div class="details-summary toc-title">
+<span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#introduction>Introduction</a></li>
+<li><a href=#install>Install</a>
+<ul>
+<li><a href=#download-the-installer-iso-image>Download the installer ISO image</a></li>
+<li><a href=#prepare-a-usb-flash-drive-as-installation-medium>Prepare a USB Flash Drive as Installation Medium</a>
+<ul>
+<li><a href=#linux>Linux</a>
+<ul>
+<li><a href=#find-the-correct-usb-device-name>Find the Correct USB Device Name</a></li>
+<li><a href=#make-a-bootable-usb-using-dd>Make a bootable USB using DD</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#start-installion>Start Installion</a>
+<ul>
+<li><a href=#step-1>Step 1:</a></li>
+<li><a href=#step-2>Step 2:</a></li>
+<li><a href=#step-3>Step 3:</a></li>
+<li><a href=#step-4>Step 4:</a></li>
+<li><a href=#step-5>Step 5:</a></li>
+<li><a href=#advanced-lvm-configuration-options>Advanced LVM Configuration Options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#how-to-update-proxmox-without-buying-a-subscription>How to update Proxmox without buying a subscription</a></li>
+<li><a href=#renaming-a-pve-node>Renaming a PVE node</a></li>
+<li><a href=#backup>Backup</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h2 id=introduction>Introduction</h2>
+<p>Proxmox Virtual Environment is an open source server virtualization management solution based on QEMU/KVM and LXC. Proxmox VE is based on Debian. You can manage virtual machines, containers, highly available clusters, storage and networks with an integrated, easy-to-use web interface or via CLI.</p>
+<h2 id=install>Install</h2>
+<p>I recommend you use USB Flash Drive as Installation Medium because it is the faster option.</p>
+<h3 id=download-the-installer-iso-image>Download the installer ISO image</h3>
+<p>You can download ISO image from: <a href=https://www.proxmox.com/en/downloads/category/iso-images-pve target=_blank rel="noopener noreferrer">https://www.proxmox.com/en/downloads/category/iso-images-pve</a>
+Currently, the latest version is 6.3-1.</p>
+<h3 id=prepare-a-usb-flash-drive-as-installation-medium>Prepare a USB Flash Drive as Installation Medium</h3>
+<p>Official link: <a href=https://pve.proxmox.com/wiki/Prepare_Installation_Media target=_blank rel="noopener noreferrer">https://pve.proxmox.com/wiki/Prepare_Installation_Media</a></p>
+<h4 id=linux>Linux</h4>
+<h5 id=find-the-correct-usb-device-name>Find the Correct USB Device Name</h5>
+<p>There are two ways to find out the name of the USB flash drive. The first one is use <strong>lsblk</strong> (strong recommend). The second way is to compare the output of the <em>fdisk -l</em> command. Both example at the below.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -47,7 +183,9 @@ Currently, the latest version is 6.3-1.</p><h3 id=prepare-a-usb-flash-drive-as-i
 </span><span class=lnt>32
 </span><span class=lnt>33
 </span><span class=lnt>34
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ lsblk
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ lsblk
 NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 loop0         7:0    0 290.4M  1 loop /snap/vlc/1700
 loop1         7:1    0   956K  1 loop /snap/gnome-logs/100
@@ -81,7 +219,12 @@ sda           8:0    1   3.8G  0 disk
 nvme0n1     259:0    0 465.8G  0 disk 
 ├─nvme0n1p1 259:1    0   512M  0 part /boot/efi
 └─nvme0n1p2 259:2    0 465.3G  0 part /
-</code></pre></td></tr></table></div></div><p>OR</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>  1
+</code></pre></td></tr></table>
+</div>
+</div><p>OR</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>  1
 </span><span class=lnt>  2
 </span><span class=lnt>  3
 </span><span class=lnt>  4
@@ -251,7 +394,9 @@ nvme0n1     259:0    0 465.8G  0 disk
 </span><span class=lnt>168
 </span><span class=lnt>169
 </span><span class=lnt>170
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ sudo fdisk -l
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ sudo fdisk -l
 [sudo] password for yanboyang713: 
 Disk /dev/loop0: 290.4 MiB, 304545792 bytes, 594816 sectors
 Units: sectors of 1 * 512 = 512 bytes
@@ -421,43 +566,181 @@ Device       Start     End Sectors   Size Type
 /dev/sda2      548    6307    5760   2.8M EFI System
 /dev/sda3     6308 1765843 1759536 859.2M Apple HFS/HFS+
 /dev/sda4  1765844 1766443     600   300K Microsoft basic data
-</code></pre></td></tr></table></div></div><h5 id=make-a-bootable-usb-using-dd>Make a bootable USB using DD</h5><p>On Unix-like operating system use the dd command to copy the ISO image to the USB flash drive. First find the correct device name of the USB flash drive (see above). Then run the dd command.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</code></pre></td></tr></table>
+</div>
+</div><h5 id=make-a-bootable-usb-using-dd>Make a bootable USB using DD</h5>
+<p>On Unix-like operating system use the dd command to copy the ISO image to the USB flash drive. First find the correct device name of the USB flash drive (see above). Then run the dd command.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ sudo dd bs=1M conv=fdatasync if=~/Downloads/proxmox-ve_6.3-1.iso of=/dev/sda
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ sudo dd bs=1M conv=fdatasync if=~/Downloads/proxmox-ve_6.3-1.iso of=/dev/sda
 812+1 records in
 812+1 records out
 852299776 bytes (852 MB, 813 MiB) copied, 185.781 s, 4.6 MB/s
-</code></pre></td></tr></table></div></div><h3 id=start-installion>Start Installion</h3><p>Office Website: <a href=https://pve.proxmox.com/wiki/Installation>https://pve.proxmox.com/wiki/Installation</a></p><h4 id=step-1>Step 1:</h4><p>When you boot from USB, You will see the below image.
-<img class=lazyload src=/svg/loading.min.svg data-src=https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png data-srcset="https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png, https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png 1.5x, https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png 2x" data-sizes=auto alt=https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png title=https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png></p><ul><li><p>Install Proxmox VE
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=start-installion>Start Installion</h3>
+<p>Office Website: <a href=https://pve.proxmox.com/wiki/Installation target=_blank rel="noopener noreferrer">https://pve.proxmox.com/wiki/Installation</a></p>
+<h4 id=step-1>Step 1:</h4>
+<p>When you boot from USB, You will see the below image.
+<img class=lazyload src=/svg/loading.min.svg data-src=https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png data-srcset="https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png, https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png 1.5x, https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png 2x" data-sizes=auto alt=https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png title=https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png></p>
+<ul>
+<li>
+<p>Install Proxmox VE
 Starts the normal installation.
-<strong>NOTE:</strong> It’s possible to use the installation wizard with a keyboard only. Buttons can be clicked by pressing the ALT key combined with the underlined character from the respective button. For example, ALT + N to press a Next button.</p></li><li><p>Install Proxmox VE (Debug mode)
-Starts the installation in debug mode. A console will be opened at several installation steps. This helps to debug the situation if something goes wrong. To exit a debug console, press CTRL-D. This option can be used to boot a live system with all basic tools available. You can use it, for example, to repair a degraded ZFS rpool or fix the bootloader for an existing Proxmox VE setup.</p></li><li><p>Rescue Boot
-With this option you can boot an existing installation. It searches all attached hard disks. If it finds an existing installation, it boots directly into that disk using the Linux kernel from the ISO. This can be useful if there are problems with the boot block (grub) or the BIOS is unable to read the boot block from the disk.</p></li><li><p>Test Memory
-Runs memtest86+. This is useful to check if the memory is functional and free of errors.</p></li></ul><p>After selecting Install Proxmox VE and accepting the EULA, the prompt to select the target hard disk(s) will appear. The Options button opens the dialog to select the target file system.</p><p>The default file system is ext4. The Logical Volume Manager (LVM) is used when ext4 or xfs is selected. Additional options to restrict LVM space can be set (see below).</p><p>Proxmox VE can be installed on ZFS. As ZFS offers several software RAID levels, this is an option for systems that don’t have a hardware RAID controller. The target disks must be selected in the Options dialog. More ZFS specific settings can be changed under Advanced Options.</p><p>I choose Install Proxmox VE for new install.</p><h4 id=step-2>Step 2:</h4><p><img class=lazyload src=/svg/loading.min.svg data-src=https://pve.proxmox.com/pve-docs/images/screenshot/pve-select-location.png data-srcset="https://pve.proxmox.com/pve-docs/images/screenshot/pve-select-location.png, https://pve.proxmox.com/pve-docs/images/screenshot/pve-select-location.png 1.5x, https://pve.proxmox.com/pve-docs/images/screenshot/pve-select-location.png 2x" data-sizes=auto alt=https://pve.proxmox.com/pve-docs/images/screenshot/pve-select-location.png title=https://pve.proxmox.com/pve-docs/images/screenshot/pve-select-location.png>
-The next page asks for basic configuration options like the location, the time zone, and keyboard layout. The location is used to select a download server close by to speed up updates. The installer usually auto-detects these settings. They only need to be changed in the rare case that auto detection fails or a different keyboard layout should be used.</p><h4 id=step-3>Step 3:</h4><p><img class=lazyload src=/svg/loading.min.svg data-src=https://pve.proxmox.com/pve-docs/images/screenshot/pve-set-password.png data-srcset="https://pve.proxmox.com/pve-docs/images/screenshot/pve-set-password.png, https://pve.proxmox.com/pve-docs/images/screenshot/pve-set-password.png 1.5x, https://pve.proxmox.com/pve-docs/images/screenshot/pve-set-password.png 2x" data-sizes=auto alt=https://pve.proxmox.com/pve-docs/images/screenshot/pve-set-password.png title=https://pve.proxmox.com/pve-docs/images/screenshot/pve-set-password.png>
-Next the password of the superuser (root) and an email address needs to be specified. The password must consist of at least 5 characters. It’s highly recommended to use a stronger password. Some guidelines are:</p><ul><li><p>Use a minimum password length of 12 to 14 characters.</p></li><li><p>Include lowercase and uppercase alphabetic characters, numbers, and symbols.</p></li><li><p>Avoid character repetition, keyboard patterns, common dictionary words, letter or number sequences, usernames, relative or pet names, romantic links (current or past), and biographical information (for example ID numbers, ancestors' names or dates).</p></li></ul><p>The email address is used to send notifications to the system administrator. For example:</p><ul><li><p>Information about available package updates.</p></li><li><p>Error messages from periodic CRON jobs.</p></li></ul><h4 id=step-4>Step 4:</h4><p><img class=lazyload src=/svg/loading.min.svg data-src=https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png data-srcset="https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png, https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png 1.5x, https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png 2x" data-sizes=auto alt=https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png title=https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png>
-The last step is the network configuration. Please note that during installation you can either use an IPv4 or IPv6 address, but not both. To configure a dual stack node, add additional IP addresses after the installation.</p><h4 id=step-5>Step 5:</h4><p><img class=lazyload src=/svg/loading.min.svg data-src=https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png data-srcset="https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png, https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png 1.5x, https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png 2x" data-sizes=auto alt=https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png title=https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png>
-The next step shows a summary of the previously selected options. Re-check every setting and use the Previous button if a setting needs to be changed. To accept, press Install. The installation starts to format disks and copies packages to the target. Please wait until this step has finished; then remove the installation medium and restart your system.</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://pve.proxmox.com/pve-docs/images/screenshot/pve-installation.png data-srcset="https://pve.proxmox.com/pve-docs/images/screenshot/pve-installation.png, https://pve.proxmox.com/pve-docs/images/screenshot/pve-installation.png 1.5x, https://pve.proxmox.com/pve-docs/images/screenshot/pve-installation.png 2x" data-sizes=auto alt=https://pve.proxmox.com/pve-docs/images/screenshot/pve-installation.png title=https://pve.proxmox.com/pve-docs/images/screenshot/pve-installation.png></p><p>If the installation failed check out specific errors on the second TTY (‘CTRL + ALT + F2’), ensure that the systems meets the minimum requirements. If the installation is still not working look at the how to get help chapter.</p><p>Further configuration is done via the Proxmox web interface. Point your browser to the IP address given during installation (https://youripaddress:8006).</p><h4 id=advanced-lvm-configuration-options>Advanced LVM Configuration Options</h4><p>The installer creates a Volume Group (VG) called pve, and additional Logical Volumes (LVs) called root, data, and swap. To control the size of these volumes use:</p><ul><li>hdsize
-Defines the total hard disk size to be used. This way you can reserve free space on the hard disk for further partitioning (for example for an additional PV and VG on the same hard disk that can be used for LVM storage).</li><li>swapsize
-Defines the size of the swap volume. The default is the size of the installed memory, minimum 4 GB and maximum 8 GB. The resulting value cannot be greater than hdsize/8.</li></ul><p><strong>NOTE:</strong> If set to 0, no swap volume will be created.</p><ul><li>maxroot
-Defines the maximum size of the root volume, which stores the operation system. The maximum limit of the root volume size is hdsize/4.</li><li>maxvz
-Defines the maximum size of the data volume. The actual size of the data volume is:</li></ul><p><em><strong>datasize = hdsize - rootsize - swapsize - minfree</strong></em></p><p>Where datasize cannot be bigger than maxvz.</p><p><strong>NOTE:</strong> In case of LVM thin, the data pool will only be created if datasize is bigger than 4GB.
-<strong>NOTE:</strong> If set to 0, no data volume will be created and the storage configuration will be adapted accordingly.</p><ul><li>minfree
+<strong>NOTE:</strong> It’s possible to use the installation wizard with a keyboard only. Buttons can be clicked by pressing the ALT key combined with the underlined character from the respective button. For example, ALT + N to press a Next button.</p>
+</li>
+<li>
+<p>Install Proxmox VE (Debug mode)
+Starts the installation in debug mode. A console will be opened at several installation steps. This helps to debug the situation if something goes wrong. To exit a debug console, press CTRL-D. This option can be used to boot a live system with all basic tools available. You can use it, for example, to repair a degraded ZFS rpool or fix the bootloader for an existing Proxmox VE setup.</p>
+</li>
+<li>
+<p>Rescue Boot
+With this option you can boot an existing installation. It searches all attached hard disks. If it finds an existing installation, it boots directly into that disk using the Linux kernel from the ISO. This can be useful if there are problems with the boot block (grub) or the BIOS is unable to read the boot block from the disk.</p>
+</li>
+<li>
+<p>Test Memory
+Runs memtest86+. This is useful to check if the memory is functional and free of errors.</p>
+</li>
+</ul>
+<p>After selecting Install Proxmox VE and accepting the EULA, the prompt to select the target hard disk(s) will appear. The Options button opens the dialog to select the target file system.</p>
+<p>The default file system is ext4. The Logical Volume Manager (LVM) is used when ext4 or xfs is selected. Additional options to restrict LVM space can be set (see below).</p>
+<p>Proxmox VE can be installed on ZFS. As ZFS offers several software RAID levels, this is an option for systems that don’t have a hardware RAID controller. The target disks must be selected in the Options dialog. More ZFS specific settings can be changed under Advanced Options.</p>
+<p>I choose Install Proxmox VE for new install.</p>
+<h4 id=step-2>Step 2:</h4>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://pve.proxmox.com/pve-docs/images/screenshot/pve-select-location.png data-srcset="https://pve.proxmox.com/pve-docs/images/screenshot/pve-select-location.png, https://pve.proxmox.com/pve-docs/images/screenshot/pve-select-location.png 1.5x, https://pve.proxmox.com/pve-docs/images/screenshot/pve-select-location.png 2x" data-sizes=auto alt=https://pve.proxmox.com/pve-docs/images/screenshot/pve-select-location.png title=https://pve.proxmox.com/pve-docs/images/screenshot/pve-select-location.png>
+The next page asks for basic configuration options like the location, the time zone, and keyboard layout. The location is used to select a download server close by to speed up updates. The installer usually auto-detects these settings. They only need to be changed in the rare case that auto detection fails or a different keyboard layout should be used.</p>
+<h4 id=step-3>Step 3:</h4>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://pve.proxmox.com/pve-docs/images/screenshot/pve-set-password.png data-srcset="https://pve.proxmox.com/pve-docs/images/screenshot/pve-set-password.png, https://pve.proxmox.com/pve-docs/images/screenshot/pve-set-password.png 1.5x, https://pve.proxmox.com/pve-docs/images/screenshot/pve-set-password.png 2x" data-sizes=auto alt=https://pve.proxmox.com/pve-docs/images/screenshot/pve-set-password.png title=https://pve.proxmox.com/pve-docs/images/screenshot/pve-set-password.png>
+Next the password of the superuser (root) and an email address needs to be specified. The password must consist of at least 5 characters. It’s highly recommended to use a stronger password. Some guidelines are:</p>
+<ul>
+<li>
+<p>Use a minimum password length of 12 to 14 characters.</p>
+</li>
+<li>
+<p>Include lowercase and uppercase alphabetic characters, numbers, and symbols.</p>
+</li>
+<li>
+<p>Avoid character repetition, keyboard patterns, common dictionary words, letter or number sequences, usernames, relative or pet names, romantic links (current or past), and biographical information (for example ID numbers, ancestors' names or dates).</p>
+</li>
+</ul>
+<p>The email address is used to send notifications to the system administrator. For example:</p>
+<ul>
+<li>
+<p>Information about available package updates.</p>
+</li>
+<li>
+<p>Error messages from periodic CRON jobs.</p>
+</li>
+</ul>
+<h4 id=step-4>Step 4:</h4>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png data-srcset="https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png, https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png 1.5x, https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png 2x" data-sizes=auto alt=https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png title=https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png>
+The last step is the network configuration. Please note that during installation you can either use an IPv4 or IPv6 address, but not both. To configure a dual stack node, add additional IP addresses after the installation.</p>
+<h4 id=step-5>Step 5:</h4>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png data-srcset="https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png, https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png 1.5x, https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png 2x" data-sizes=auto alt=https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png title=https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png>
+The next step shows a summary of the previously selected options. Re-check every setting and use the Previous button if a setting needs to be changed. To accept, press Install. The installation starts to format disks and copies packages to the target. Please wait until this step has finished; then remove the installation medium and restart your system.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://pve.proxmox.com/pve-docs/images/screenshot/pve-installation.png data-srcset="https://pve.proxmox.com/pve-docs/images/screenshot/pve-installation.png, https://pve.proxmox.com/pve-docs/images/screenshot/pve-installation.png 1.5x, https://pve.proxmox.com/pve-docs/images/screenshot/pve-installation.png 2x" data-sizes=auto alt=https://pve.proxmox.com/pve-docs/images/screenshot/pve-installation.png title=https://pve.proxmox.com/pve-docs/images/screenshot/pve-installation.png></p>
+<p>If the installation failed check out specific errors on the second TTY (‘CTRL + ALT + F2’), ensure that the systems meets the minimum requirements. If the installation is still not working look at the how to get help chapter.</p>
+<p>Further configuration is done via the Proxmox web interface. Point your browser to the IP address given during installation (https://youripaddress:8006).</p>
+<h4 id=advanced-lvm-configuration-options>Advanced LVM Configuration Options</h4>
+<p>The installer creates a Volume Group (VG) called pve, and additional Logical Volumes (LVs) called root, data, and swap. To control the size of these volumes use:</p>
+<ul>
+<li>hdsize
+Defines the total hard disk size to be used. This way you can reserve free space on the hard disk for further partitioning (for example for an additional PV and VG on the same hard disk that can be used for LVM storage).</li>
+<li>swapsize
+Defines the size of the swap volume. The default is the size of the installed memory, minimum 4 GB and maximum 8 GB. The resulting value cannot be greater than hdsize/8.</li>
+</ul>
+<p><strong>NOTE:</strong> If set to 0, no swap volume will be created.</p>
+<ul>
+<li>maxroot
+Defines the maximum size of the root volume, which stores the operation system. The maximum limit of the root volume size is hdsize/4.</li>
+<li>maxvz
+Defines the maximum size of the data volume. The actual size of the data volume is:</li>
+</ul>
+<p><em><strong>datasize = hdsize - rootsize - swapsize - minfree</strong></em></p>
+<p>Where datasize cannot be bigger than maxvz.</p>
+<p><strong>NOTE:</strong> In case of LVM thin, the data pool will only be created if datasize is bigger than 4GB.
+<strong>NOTE:</strong> If set to 0, no data volume will be created and the storage configuration will be adapted accordingly.</p>
+<ul>
+<li>minfree
 Defines the amount of free space left in the LVM volume group pve. With more than 128GB storage available the default is 16GB, else hdsize/8 will be used.
-<strong>NOTE:</strong> LVM requires free space in the VG for snapshot creation (not required for lvmthin snapshots).</li></ul><p><a href=https://linuxhint.com/zfs_vs_xfs/>https://linuxhint.com/zfs_vs_xfs/</a></p><p><a href=https://www.salvagedata.com/btrfs-zfs-xfs-ext4-how-are-they-different/>https://www.salvagedata.com/btrfs-zfs-xfs-ext4-how-are-they-different/</a></p><h2 id=how-to-update-proxmox-without-buying-a-subscription>How to update Proxmox without buying a subscription</h2><p>On the Proxmox website, they say: “Proxmox VE is a complete open-source platform for enterprise virtualization.” And typically you can’t charge for open source software; but the folks at Proxmox have done their best to scare most of us into buying a subscription — or, at least, to make us feel guilty for not having one.</p><p>Now, Proxmox is great software; and developing great software takes great resources, great developers… and great money. As such, I encourage you to purchase a subscription if you’re using Proxmox in a business environment. However, some of you may be interested in using it for home usage, or just to tinker around, and for any of a variety of reasons you may not wish to, or may not be able to, purchase a subscription. This section is for you.</p><p>To be clear, Proxmox works just fine without a license. The non-licensed version is just as functional as the paid version, with one exception: it doesn’t have access to the tested “enterprise” update repositories. As such (without the changes I’m about to show you), you can’t update the Debian software. Oh and of course, there’s that little nag screen each time you log in.</p><p>SSH into the Proxmox host, or access its console through the web interface, and make a copy of the pve-enterprise.list sources file, like so:</p><ol><li>Step 1:</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>root@pve ~# <span class=nb>cd</span> /etc/apt/sources.list.d/
-</code></pre></td></tr></table></div></div><ol start=2><li>Step 2:</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>root@pve ~# cp pve-enterprise.list pve-no-subscription.list
-</code></pre></td></tr></table></div></div><ol start=3><li><p>Step 3:
-OK, so now we have a copy of the original file. If we ever purchase a subscription later and want to use the enterprise repositories, we’ll be able to revert what we’ve done very easily. For now, edit the original file and comment out its one line; save and close the file.</p></li><li><p>Step 4:
-Open the copied file, pve-no-subscription.list, and change the line ever so slightly. The original line looks something like this:</p></li></ol><p>deb <a href=https://enterprise.proxmox.com/debian/pve>https://enterprise.proxmox.com/debian/pve</a> buster pve-enterprise</p><p>The parts to note are https (change it to http,) enterprise.proxmox.com (change enterprise to download), and the end of the string — pve-enterprise (change to pve-no-subscription ). Do not edit the word stretch or buster, or any other word that appears in that position; that’s the Debian version code name. Your edited line should look like this:</p><p>deb <a href=http://download.proxmox.com/debian/pve>http://download.proxmox.com/debian/pve</a> buster pve-no-subscription</p><p>Save and close the file. Now, update the package lists:
-5. Step 5:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>root@pve ~# apt-get update
-</code></pre></td></tr></table></div></div><ol start=6><li>Step 6: And when that’s done, run software upgrades!</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>root@pve ~# apt-get dist-upgrade
-</code></pre></td></tr></table></div></div><p><strong>Note:</strong> Always run dist-upgrade, not just “apt-get upgrade.” Dist-upgrade ensures that all packages and their dependencies are updated; if you just run “apt-get upgrade” things may break.</p><h2 id=renaming-a-pve-node>Renaming a PVE node</h2><p><a href=https://pve.proxmox.com/wiki/Renaming_a_PVE_node>https://pve.proxmox.com/wiki/Renaming_a_PVE_node</a></p><p>/etc/hosts</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+<strong>NOTE:</strong> LVM requires free space in the VG for snapshot creation (not required for lvmthin snapshots).</li>
+</ul>
+<p><a href=https://linuxhint.com/zfs_vs_xfs/ target=_blank rel="noopener noreferrer">https://linuxhint.com/zfs_vs_xfs/</a></p>
+<p><a href=https://www.salvagedata.com/btrfs-zfs-xfs-ext4-how-are-they-different/ target=_blank rel="noopener noreferrer">https://www.salvagedata.com/btrfs-zfs-xfs-ext4-how-are-they-different/</a></p>
+<h2 id=how-to-update-proxmox-without-buying-a-subscription>How to update Proxmox without buying a subscription</h2>
+<p>On the Proxmox website, they say: “Proxmox VE is a complete open-source platform for enterprise virtualization.” And typically you can’t charge for open source software; but the folks at Proxmox have done their best to scare most of us into buying a subscription — or, at least, to make us feel guilty for not having one.</p>
+<p>Now, Proxmox is great software; and developing great software takes great resources, great developers… and great money. As such, I encourage you to purchase a subscription if you’re using Proxmox in a business environment. However, some of you may be interested in using it for home usage, or just to tinker around, and for any of a variety of reasons you may not wish to, or may not be able to, purchase a subscription. This section is for you.</p>
+<p>To be clear, Proxmox works just fine without a license. The non-licensed version is just as functional as the paid version, with one exception: it doesn’t have access to the tested “enterprise” update repositories. As such (without the changes I’m about to show you), you can’t update the Debian software. Oh and of course, there’s that little nag screen each time you log in.</p>
+<p>SSH into the Proxmox host, or access its console through the web interface, and make a copy of the pve-enterprise.list sources file, like so:</p>
+<ol>
+<li>Step 1:</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>root@pve ~# <span class=nb>cd</span> /etc/apt/sources.list.d/
+</code></pre></td></tr></table>
+</div>
+</div><ol start=2>
+<li>Step 2:</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>root@pve ~# cp pve-enterprise.list pve-no-subscription.list
+</code></pre></td></tr></table>
+</div>
+</div><ol start=3>
+<li>
+<p>Step 3:
+OK, so now we have a copy of the original file. If we ever purchase a subscription later and want to use the enterprise repositories, we’ll be able to revert what we’ve done very easily. For now, edit the original file and comment out its one line; save and close the file.</p>
+</li>
+<li>
+<p>Step 4:
+Open the copied file, pve-no-subscription.list, and change the line ever so slightly. The original line looks something like this:</p>
+</li>
+</ol>
+<p>deb <a href=https://enterprise.proxmox.com/debian/pve target=_blank rel="noopener noreferrer">https://enterprise.proxmox.com/debian/pve</a> buster pve-enterprise</p>
+<p>The parts to note are https (change it to http,) enterprise.proxmox.com (change enterprise to download), and the end of the string — pve-enterprise (change to pve-no-subscription ). Do not edit the word stretch or buster, or any other word that appears in that position; that’s the Debian version code name. Your edited line should look like this:</p>
+<p>deb <a href=http://download.proxmox.com/debian/pve target=_blank rel="noopener noreferrer">http://download.proxmox.com/debian/pve</a> buster pve-no-subscription</p>
+<p>Save and close the file. Now, update the package lists:
+5. Step 5:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>root@pve ~# apt-get update
+</code></pre></td></tr></table>
+</div>
+</div><ol start=6>
+<li>Step 6: And when that’s done, run software upgrades!</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>root@pve ~# apt-get dist-upgrade
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Note:</strong> Always run dist-upgrade, not just “apt-get upgrade.” Dist-upgrade ensures that all packages and their dependencies are updated; if you just run “apt-get upgrade” things may break.</p>
+<h2 id=renaming-a-pve-node>Renaming a PVE node</h2>
+<p><a href=https://pve.proxmox.com/wiki/Renaming_a_PVE_node target=_blank rel="noopener noreferrer">https://pve.proxmox.com/wiki/Renaming_a_PVE_node</a></p>
+<p>/etc/hosts</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -468,7 +751,9 @@ Open the copied file, pve-no-subscription.list, and change the line ever so slig
 </span><span class=lnt> 9
 </span><span class=lnt>10
 </span><span class=lnt>11
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>127.0.0.1 localhost.localdomain localhost
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>127.0.0.1 localhost.localdomain localhost
 10.172.14.61 pve.richie.corp.microsoft.com richie
 
 ## The following lines are desirable for IPv6 capable hosts
@@ -479,8 +764,56 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
-</code></pre></td></tr></table></div></div><p>/etc/hostname</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>richie
-</code></pre></td></tr></table></div></div><h2 id=backup>Backup</h2></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2020-02-03</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=/proxmox/index.md target=_blank rel="noopener noreferrer">Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/proxmox/ data-title="Get Started with Proxmox" data-hashtags=QEMU,KVM,LXC><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/proxmox/ data-hashtag=QEMU><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/proxmox/ data-title="Get Started with Proxmox" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/proxmox/ data-title="Get Started with Proxmox"><i data-svg-src=/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/proxmox/ data-title="Get Started with Proxmox"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/proxmox/ data-title="Get Started with Proxmox" data-description><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/proxmox/ data-title="Get Started with Proxmox" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/proxmox/ data-title="Get Started with Proxmox"><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/qemu/>QEMU</a>,&nbsp;<a href=/tags/kvm/>KVM</a>,&nbsp;<a href=/tags/lxc/>LXC</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/kubervsdocker/ class=prev rel=prev title="Kubernetes vs Docker Swarm"><i class="fas fa-angle-left fa-fw"></i>Kubernetes vs Docker Swarm</a>
-<a href=/pfsense/ class=next rel=next title="pfSense with Proxmox">pfSense with Proxmox<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.85.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript src=/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script></body></html>
+</code></pre></td></tr></table>
+</div>
+</div><p>/etc/hostname</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>richie
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=backup>Backup</h2>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>Updated on 2020-02-03</span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/proxmox/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
+</span></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/proxmox/ data-title="Get Started with Proxmox" data-hashtags=QEMU,KVM,LXC><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/proxmox/ data-hashtag=QEMU><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/proxmox/ data-title="Get Started with Proxmox" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/proxmox/ data-title="Get Started with Proxmox"><i data-svg-src=/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/proxmox/ data-title="Get Started with Proxmox"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/proxmox/ data-title="Get Started with Proxmox" data-description><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/proxmox/ data-title="Get Started with Proxmox" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/proxmox/ data-title="Get Started with Proxmox"><i class="fab fa-evernote fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/qemu/>QEMU</a>,&nbsp;<a href=/tags/kvm/>KVM</a>,&nbsp;<a href=/tags/lxc/>LXC</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/kubervsdocker/ class=prev rel=prev title="Kubernetes vs Docker Swarm"><i class="fas fa-angle-left fa-fw"></i>Kubernetes vs Docker Swarm</a>
+<a href=/pfsense/ class=next rel=next title="pfSense with Proxmox">pfSense with Proxmox<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id=comments><div id=disqus_thread class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments">
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript src=/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>
