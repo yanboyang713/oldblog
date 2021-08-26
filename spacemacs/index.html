@@ -21,7 +21,7 @@ Usage Console 1  docker run -it --rm silex/emacs   GUI 1 2  xhost +local:root # 
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/spacemacs/><link rel=prev href=https://yanboyang.com/writingmathematicfomular/><link rel=next href=https://yanboyang.com/flink/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Spacemacs/Emacs","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/spacemacs\/"},"genre":"posts","keywords":"spacemacs, emacs","wordcount":2181,"url":"https:\/\/yanboyang.com\/spacemacs\/","datePublished":"2021-04-04T06:11:32+10:00","dateModified":"2021-04-04T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/spacemacs/><link rel=prev href=https://yanboyang.com/writingmathematicfomular/><link rel=next href=https://yanboyang.com/flink/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Spacemacs/Emacs","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/spacemacs\/"},"genre":"posts","keywords":"spacemacs, emacs","wordcount":2962,"url":"https:\/\/yanboyang.com\/spacemacs\/","datePublished":"2021-04-04T06:11:32+10:00","dateModified":"2021-04-04T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -95,8 +95,8 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting Started with Spacemacs/Emacs</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/emacs/><i class="far fa-folder fa-fw"></i>emacs</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-04-04>2021-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2181 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-04-04>2021-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2962 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;14 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -143,6 +143,10 @@ Cancel
 <li><a href=#org-mode>Org-mode</a></li>
 </ul>
 </li>
+<li><a href=#day-7>Day 7</a></li>
+<li><a href=#day-8>Day 8</a></li>
+<li><a href=#day-9>Day 9</a></li>
+<li><a href=#day-10>Day 10</a></li>
 <li><a href=#spacemacs-config>Spacemacs Config</a></li>
 <li><a href=#creating-a-spacemacs-layer>Creating a Spacemacs Layer</a></li>
 </ul>
@@ -1304,6 +1308,358 @@ export to html, you could also export to pdf</p>
 clean up configs
 move keybindings into one place
 make c-n and c-p to select company condicate</p>
+<p>Batch rename files
+press <code>C-x C-q</code> in dired mode
+use expand-region and iedit to batch change files</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;M-s e&#34;</span><span class=p>)</span> <span class=ss>&#39;iedit-mode</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>search and replace
+install helm-ag</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;C-c ps&#34;</span><span class=p>)</span> <span class=ss>&#39;helm-do-ag-project-root</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>at first, you should install ag
+search speed: ag > pt > ack > grep</p>
+<p>brew install the_silver_searcher
+apt-get install silversearcher-ag</p>
+<p>Show javascript errors with flycheck
+flycheck-checkers
+eslint</p>
+<p>Snippets and auto snippet
+exercises
+give <code>helm-swoop</code> package a try: <a href=https://github.com/ShingoFukuyama/helm-swoop target=_blank rel="noopener noreferrer">https://github.com/ShingoFukuyama/helm-swoop</a>
+Give <code>org-mac-link</code> package a try: <a href=http://melpa.org/#/org-mac-link target=_blank rel="noopener noreferrer">http://melpa.org/#/org-mac-link</a></p>
+<h2 id=day-7>Day 7</h2>
+<p>Tweak C-w to delete backward</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kdb</span> <span class=s>&#34;C-w&#34;</span><span class=p>)</span> <span class=ss>&#39;backward-kill-word</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Evil (It’s not Baidu!) Turn Emacs into Vim in one second</p>
+<ol>
+<li>install Evil plugin</li>
+<li>tell the different between Evil and Vim Universal args</li>
+<li>Evil state = Vim mode
+evil normal state evil insert state evil visual state evil motion state evil emacs state evil operator state (diw)</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nv>evil-mode</span> <span class=mi>1</span><span class=p>)</span>
+
+<span class=p>(</span><span class=nb>setq</span> <span class=nv>evil-want-C-u-scroll</span> <span class=no>t</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start=4>
+<li>configure Evil leader key
+press <code>C-z</code> to toggle between Normal and Emacs state ??</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>Made some modes to use emacs-state</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>dolist</span> <span class=p>(</span><span class=nv>mode</span> <span class=o>&#39;</span><span class=p>(</span><span class=nv>ag-mode</span>
+                 <span class=nv>flycheck-error-list-mode</span>
+                 <span class=nv>git-rebase-mode</span><span class=p>))</span>
+   <span class=p>(</span><span class=nv>add-to-list</span> <span class=ss>&#39;evil-emacs-state-modes</span> <span class=nv>mode</span><span class=p>))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>binding h/j/k/l key</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nv>add-hook</span> <span class=ss>&#39;occur-mode-hook</span>
+          <span class=p>(</span><span class=nb>lambda</span> <span class=p>()</span>
+            <span class=p>(</span><span class=nv>evil-add-hjkl-bindings</span> <span class=nv>occur-mode-map</span> <span class=ss>&#39;emacs</span>
+              <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;/&#34;</span><span class=p>)</span>       <span class=ss>&#39;evil-search-forward</span>
+              <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;n&#34;</span><span class=p>)</span>       <span class=ss>&#39;evil-search-next</span>
+              <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;N&#34;</span><span class=p>)</span>       <span class=ss>&#39;evil-search-previous</span>
+              <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;C-d&#34;</span><span class=p>)</span>     <span class=ss>&#39;evil-scroll-down</span>
+              <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;C-u&#34;</span><span class=p>)</span>     <span class=ss>&#39;evil-scroll-up</span>
+              <span class=p>))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Add this to Dired mode, ibuffer mode?</p>
+<p>Which key
+Design your own key bindings
+Use SPC as the leader key
+Use comma as the major mode leader key
+Use SPC : to list all available commands
+Use which key to group key bindings
+Yeah! You got a minimal Spacemacs!
+Bonus Time: Search Org notes
+References
+<a href=https://www.emacswiki.org/emacs/Evil target=_blank rel="noopener noreferrer">https://www.emacswiki.org/emacs/Evil</a>
+<a href=http://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/ target=_blank rel="noopener noreferrer">http://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/</a>
+<a href=http://nathantypanski.com/blog/2014-08-03-a-vim-like-emacs-config.html target=_blank rel="noopener noreferrer">http://nathantypanski.com/blog/2014-08-03-a-vim-like-emacs-config.html</a>
+<a href=http://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html target=_blank rel="noopener noreferrer">http://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html</a>
+<a href=http://blog.jakubarnold.cz/2014/06/23/evil-mode-how-to-switch-from-vim-to-emacs.html target=_blank rel="noopener noreferrer">http://blog.jakubarnold.cz/2014/06/23/evil-mode-how-to-switch-from-vim-to-emacs.html</a>
+Exercises
+Install hydra and begin to add your own hydras!</p>
+<h2 id=day-8>Day 8</h2>
+<p>mwe-log-commands</p>
+<p>elpa mirros
+Cask and pallet</p>
+<p>You can’t start different versions of Emacs with the single config
+Troubleshootings
+Emacs 24.5: Dependency flycheck failed to install: Package `let-alist-1.0.4’ is unavailable
+define-advice is not defined for Emacs 24.5</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>if</span> <span class=p>(</span><span class=nf>&gt;=</span> <span class=nv>emacs-major-version</span> <span class=mi>25</span><span class=p>)</span>
+<span class=p>(</span><span class=nb>define-advice</span> <span class=nv>show-paren-function</span> <span class=p>(</span><span class=nb>:around</span> <span class=p>(</span><span class=nv>fn</span><span class=p>)</span> <span class=nv>fix-show-paren-function</span><span class=p>)</span>
+  <span class=s>&#34;Highlight enclosing parens.&#34;</span>
+  <span class=p>(</span><span class=nb>cond</span> <span class=p>((</span><span class=nv>looking-at-p</span> <span class=s>&#34;\\s(&#34;</span><span class=p>)</span> <span class=p>(</span><span class=nf>funcall</span> <span class=nv>fn</span><span class=p>))</span>
+	<span class=p>(</span><span class=no>t</span> <span class=p>(</span><span class=nb>save-excursion</span>
+	     <span class=p>(</span><span class=nb>ignore-errors</span> <span class=p>(</span><span class=nv>backward-up-list</span><span class=p>))</span>
+	     <span class=p>(</span><span class=nf>funcall</span> <span class=nv>fn</span><span class=p>))))</span>
+  <span class=p>)</span>
+<span class=p>(</span><span class=nb>defadvice</span> <span class=nv>show-paren-function</span> <span class=p>(</span><span class=nv>around</span> <span class=nv>fix-show-paren-function</span> <span class=nv>activate</span><span class=p>)</span>
+  <span class=p>(</span><span class=nb>cond</span> <span class=p>((</span><span class=nv>looking-at-p</span> <span class=s>&#34;\\s(&#34;</span><span class=p>)</span> <span class=nv>ad-do-it</span><span class=p>)</span>
+	<span class=p>(</span><span class=no>t</span> <span class=p>(</span><span class=nb>save-excursion</span>
+	     <span class=p>(</span><span class=nb>ignore-errors</span> <span class=p>(</span><span class=nv>backward-up-list</span><span class=p>))</span>
+	     <span class=nv>ad-do-it</span><span class=p>)))</span>
+  <span class=p>)</span>
+<span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=day-9>Day 9</h2>
+<p>Topic: Macro and Use-package</p>
+<p>What is macro?
+Code which generate code?</p>
+<p>(setq my-var 1)
+(setq my-var (+ 1 my-var))</p>
+<p>(defmacro inc (var)
+(list &lsquo;setq var (list &lsquo;1+ var)))</p>
+<p>(inc my-var) ;;add a new language</p>
+<p>(macroexpand &lsquo;(inc my-var))</p>
+<p>(defun inc-v2 (var)
+(setq var (1+ var)))</p>
+<p>(inc-v2 my-var)
+(setq my-var 1)
+(macroexpand &lsquo;(inc my-var))
+Write macro is almost the same as writing function in elisp.</p>
+<p>What’s the different betwwen function and macro?
+Evaluation: the macro arguments are the actual expressions appearing in the macro call.
+Expansion: the value returned by the macro body is an alternate Lisp expression, also known as the expansion of the macro
+examples:
+back quote matters.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nv>sp-local-pair</span> <span class=ss>&#39;emacs-lisp-mode</span> <span class=s>&#34;`&#34;</span> <span class=no>nil</span> <span class=nb>:actions</span> <span class=no>nil</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>defun</span> <span class=nv>my-print</span> <span class=p>(</span><span class=nv>number</span><span class=p>)</span>
+  <span class=p>(</span><span class=nf>message</span> <span class=s>&#34;This is a number: %d&#34;</span> <span class=nv>number</span><span class=p>))</span>
+
+<span class=p>(</span><span class=nv>my-print</span> <span class=mi>2</span><span class=p>)</span>
+
+<span class=p>(</span><span class=nv>my-print</span> <span class=p>(</span><span class=nf>+</span> <span class=mi>2</span> <span class=mi>3</span><span class=p>))</span>
+
+<span class=p>(</span><span class=nb>quote</span> <span class=p>(</span><span class=nf>+</span> <span class=mi>1</span> <span class=mi>1</span><span class=p>))</span>
+<span class=c1>;; return a list</span>
+
+
+<span class=p>(</span><span class=nb>defmacro</span> <span class=nv>my-print-2</span> <span class=p>(</span><span class=nv>number</span><span class=p>)</span>
+  <span class=o>`</span><span class=p>(</span><span class=nf>message</span> <span class=s>&#34;This is a number; %d&#34;</span> <span class=o>,</span><span class=nv>number</span><span class=p>))</span>
+
+<span class=p>(</span><span class=nv>my-print-2</span> <span class=mi>2</span><span class=p>)</span>
+
+<span class=p>(</span><span class=nv>my-print-2</span> <span class=p>(</span><span class=nf>+</span> <span class=mi>2</span> <span class=mi>3</span><span class=p>))</span>
+
+<span class=p>(</span><span class=nb>setq</span> <span class=nv>my-var</span> <span class=mi>2</span><span class=p>)</span>
+<span class=p>(</span><span class=nv>inc</span> <span class=nv>my-var</span><span class=p>)</span>
+
+<span class=p>(</span><span class=nb>defmacro</span> <span class=nv>inc2</span> <span class=p>(</span><span class=nv>var1</span> <span class=nv>var2</span><span class=p>)</span>
+  <span class=p>(</span><span class=nf>list</span> <span class=ss>&#39;progn</span> <span class=p>(</span><span class=nf>list</span> <span class=ss>&#39;inc</span> <span class=nv>var1</span><span class=p>)</span> <span class=p>(</span><span class=nf>list</span> <span class=ss>&#39;inc</span> <span class=nv>var2</span><span class=p>)))</span>
+
+
+<span class=p>(</span><span class=nf>macroexpand</span> <span class=o>&#39;</span><span class=p>(</span><span class=nv>inc2</span> <span class=nv>my-var</span> <span class=nv>my-var</span><span class=p>))</span>
+<span class=p>(</span><span class=nv>macroexpand-all</span> <span class=o>&#39;</span><span class=p>(</span><span class=nv>inc2</span> <span class=nv>my-var</span> <span class=nv>my-var</span><span class=p>))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Why Macro?
+A more useful example of Elisp macro</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>defun</span> <span class=nv>prelude-search</span> <span class=p>(</span><span class=nv>query-url</span> <span class=nv>prompt</span><span class=p>)</span>
+  <span class=s>&#34;Open the search url constructed with the QUERY-URL.
+</span><span class=s>PROMPT sets the `read-string prompt.&#34;</span>
+  <span class=p>(</span><span class=nv>browse-url</span>
+   <span class=p>(</span><span class=nf>concat</span> <span class=nv>query-url</span>
+           <span class=p>(</span><span class=nv>url-hexify-string</span>
+            <span class=p>(</span><span class=nb>if</span> <span class=nv>mark-active</span>
+                <span class=p>(</span><span class=nf>buffer-substring</span> <span class=p>(</span><span class=nf>region-beginning</span><span class=p>)</span> <span class=p>(</span><span class=nf>region-end</span><span class=p>))</span>
+              <span class=p>(</span><span class=nf>read-string</span> <span class=nv>prompt</span><span class=p>))))))</span>
+
+<span class=p>(</span><span class=nb>defmacro</span> <span class=nv>prelude-install-search-engine</span> <span class=p>(</span><span class=nv>search-engine-name</span> <span class=nv>search-engine-url</span> <span class=nv>search-engine-prompt</span><span class=p>)</span>
+  <span class=s>&#34;Given some information regarding a search engine, install the interactive command to search through them&#34;</span>
+  <span class=o>`</span><span class=p>(</span><span class=nb>defun</span> <span class=o>,</span><span class=p>(</span><span class=nf>intern</span> <span class=p>(</span><span class=nf>format</span> <span class=s>&#34;prelude-%s&#34;</span> <span class=nv>search-engine-name</span><span class=p>))</span> <span class=p>()</span>
+       <span class=o>,</span><span class=p>(</span><span class=nf>format</span> <span class=s>&#34;Search %s with a query or region if any.&#34;</span> <span class=nv>search-engine-name</span><span class=p>)</span>
+       <span class=p>(</span><span class=nb>interactive</span><span class=p>)</span>
+       <span class=p>(</span><span class=nv>prelude-search</span> <span class=o>,</span><span class=nv>search-engine-url</span> <span class=o>,</span><span class=nv>search-engine-prompt</span><span class=p>)))</span>
+
+
+
+<span class=p>(</span><span class=nv>prelude-install-search-engine</span> <span class=s>&#34;google&#34;</span>     <span class=s>&#34;http://www.google.com/search?q=&#34;</span>              <span class=s>&#34;Google: &#34;</span><span class=p>)</span>
+<span class=p>(</span><span class=nv>prelude-install-search-engine</span> <span class=s>&#34;youtube&#34;</span>    <span class=s>&#34;http://www.youtube.com/results?search_query=&#34;</span> <span class=s>&#34;Search YouTube: &#34;</span><span class=p>)</span>
+<span class=p>(</span><span class=nv>prelude-install-search-engine</span> <span class=s>&#34;github&#34;</span>     <span class=s>&#34;https://github.com/search?q=&#34;</span>                 <span class=s>&#34;Search GitHub: &#34;</span><span class=p>)</span>
+<span class=p>(</span><span class=nv>prelude-install-search-engine</span> <span class=s>&#34;duckduckgo&#34;</span> <span class=s>&#34;https://duckduckgo.com/?t=lm&amp;q=&#34;</span>              <span class=s>&#34;Search DuckDuckGo: &#34;</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Use-package and basic usage
+a more safe require
+group config into one place
+autoload and bind keys easily
+make your config load faster
+and more? Spacemacs use it a lot.
+Bonus Time
+pretty print the lisp Object</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nv>pp</span> <span class=p>(</span><span class=nf>macroexpand</span> <span class=err>‘</span><span class=p>(</span><span class=nb>use-package</span> <span class=nv>company-mode</span><span class=p>)))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>fuck your brain?</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>defmacro</span> <span class=nv>defsynonym</span> <span class=p>(</span><span class=nv>old-name</span> <span class=nv>new-name</span><span class=p>)</span>
+  <span class=o>`</span><span class=p>(</span><span class=nb>defmacro</span> <span class=o>,</span><span class=nv>new-name</span> <span class=p>(</span><span class=kp>&amp;rest</span> <span class=nv>args</span><span class=p>)</span>
+     <span class=o>`</span><span class=p>(</span><span class=o>,</span> <span class=ss>&#39;,old-name</span> <span class=o>,@</span><span class=nv>args</span><span class=p>)))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>more discussion: <a href=https://emacs-china.org/t/lisp/357 target=_blank rel="noopener noreferrer">https://emacs-china.org/t/lisp/357</a></p>
+<p>Reference
+Readme more about macro: <a href=https://www.gnu.org/software/emacs/manual/html_node/elisp/Macros.html#Macros target=_blank rel="noopener noreferrer">https://www.gnu.org/software/emacs/manual/html_node/elisp/Macros.html#Macros</a></p>
+<h2 id=day-10>Day 10</h2>
 <h2 id=spacemacs-config>Spacemacs Config</h2>
 <p>Find the ~/.spacemacs file by pressing SPC f e d</p>
 <h2 id=creating-a-spacemacs-layer>Creating a Spacemacs Layer</h2>

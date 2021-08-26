@@ -664,6 +664,243 @@ clean up configs
 move keybindings into one place
 make c-n and c-p to select company condicate
 
+Batch rename files
+press `C-x C-q` in dired mode
+use expand-region and iedit to batch change files
+
+```emacs-lisp
+(global-set-key (kbd "M-s e") 'iedit-mode)
+```
+
+search and replace
+install helm-ag
+```emacs-lisp
+(global-set-key (kbd "C-c ps") 'helm-do-ag-project-root)
+```
+
+at first, you should install ag
+search speed: ag > pt > ack > grep
+
+brew install the_silver_searcher
+apt-get install silversearcher-ag
+
+
+
+Show javascript errors with flycheck
+flycheck-checkers
+eslint
+
+
+
+Snippets and auto snippet
+exercises
+give `helm-swoop` package a try: https://github.com/ShingoFukuyama/helm-swoop
+Give `org-mac-link` package a try: http://melpa.org/#/org-mac-link
+
+## Day 7
+Tweak C-w to delete backward
+
+```emacs-lisp
+(global-set-key (kdb "C-w") 'backward-kill-word)
+```
+Evil (It’s not Baidu!) Turn Emacs into Vim in one second
+1. install Evil plugin
+2. tell the different between Evil and Vim Universal args
+3. Evil state = Vim mode
+evil normal state evil insert state evil visual state evil motion state evil emacs state evil operator state (diw)
+
+```emacs-lisp
+(evil-mode 1)
+
+(setq evil-want-C-u-scroll t)
+```
+4. configure Evil leader key
+press `C-z` to toggle between Normal and Emacs state ??
+
+```emacs-lisp
+
+
+```
+Made some modes to use emacs-state
+```emacs-lisp
+(dolist (mode '(ag-mode
+                 flycheck-error-list-mode
+                 git-rebase-mode))
+   (add-to-list 'evil-emacs-state-modes mode))
+```
+binding h/j/k/l key
+```emacs-lisp
+(add-hook 'occur-mode-hook
+          (lambda ()
+            (evil-add-hjkl-bindings occur-mode-map 'emacs
+              (kbd "/")       'evil-search-forward
+              (kbd "n")       'evil-search-next
+              (kbd "N")       'evil-search-previous
+              (kbd "C-d")     'evil-scroll-down
+              (kbd "C-u")     'evil-scroll-up
+              ))
+```
+Add this to Dired mode, ibuffer mode?
+
+Which key
+Design your own key bindings
+Use SPC as the leader key
+Use comma as the major mode leader key
+Use SPC : to list all available commands
+Use which key to group key bindings
+Yeah! You got a minimal Spacemacs!
+Bonus Time: Search Org notes
+References
+https://www.emacswiki.org/emacs/Evil
+http://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/
+http://nathantypanski.com/blog/2014-08-03-a-vim-like-emacs-config.html
+http://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html
+http://blog.jakubarnold.cz/2014/06/23/evil-mode-how-to-switch-from-vim-to-emacs.html
+Exercises
+Install hydra and begin to add your own hydras!
+
+## Day 8
+mwe-log-commands
+
+elpa mirros
+Cask and pallet
+
+You can’t start different versions of Emacs with the single config
+Troubleshootings
+Emacs 24.5: Dependency flycheck failed to install: Package `let-alist-1.0.4’ is unavailable
+define-advice is not defined for Emacs 24.5
+```emacs-lisp
+(if (>= emacs-major-version 25)
+(define-advice show-paren-function (:around (fn) fix-show-paren-function)
+  "Highlight enclosing parens."
+  (cond ((looking-at-p "\\s(") (funcall fn))
+	(t (save-excursion
+	     (ignore-errors (backward-up-list))
+	     (funcall fn))))
+  )
+(defadvice show-paren-function (around fix-show-paren-function activate)
+  (cond ((looking-at-p "\\s(") ad-do-it)
+	(t (save-excursion
+	     (ignore-errors (backward-up-list))
+	     ad-do-it)))
+  )
+)
+```
+
+## Day 9
+Topic: Macro and Use-package
+
+What is macro?
+Code which generate code?
+
+(setq my-var 1)
+(setq my-var (+ 1 my-var))
+
+(defmacro inc (var)
+  (list 'setq var (list '1+ var)))
+
+(inc my-var) ;;add a new language
+
+(macroexpand '(inc my-var))
+
+(defun inc-v2 (var)
+  (setq var (1+ var)))
+
+(inc-v2 my-var)
+(setq my-var 1)
+(macroexpand '(inc my-var))
+Write macro is almost the same as writing function in elisp.
+
+What’s the different betwwen function and macro?
+Evaluation: the macro arguments are the actual expressions appearing in the macro call.
+Expansion: the value returned by the macro body is an alternate Lisp expression, also known as the expansion of the macro
+examples:
+back quote matters.
+```emacs-lisp
+(sp-local-pair 'emacs-lisp-mode "`" nil :actions nil)
+```
+
+```emacs-lisp
+(defun my-print (number)
+  (message "This is a number: %d" number))
+
+(my-print 2)
+
+(my-print (+ 2 3))
+
+(quote (+ 1 1))
+;; return a list
+
+
+(defmacro my-print-2 (number)
+  `(message "This is a number; %d" ,number))
+
+(my-print-2 2)
+
+(my-print-2 (+ 2 3))
+
+(setq my-var 2)
+(inc my-var)
+
+(defmacro inc2 (var1 var2)
+  (list 'progn (list 'inc var1) (list 'inc var2)))
+
+
+(macroexpand '(inc2 my-var my-var))
+(macroexpand-all '(inc2 my-var my-var))
+```
+Why Macro?
+A more useful example of Elisp macro
+```emacs-lisp
+(defun prelude-search (query-url prompt)
+  "Open the search url constructed with the QUERY-URL.
+PROMPT sets the `read-string prompt."
+  (browse-url
+   (concat query-url
+           (url-hexify-string
+            (if mark-active
+                (buffer-substring (region-beginning) (region-end))
+              (read-string prompt))))))
+
+(defmacro prelude-install-search-engine (search-engine-name search-engine-url search-engine-prompt)
+  "Given some information regarding a search engine, install the interactive command to search through them"
+  `(defun ,(intern (format "prelude-%s" search-engine-name)) ()
+       ,(format "Search %s with a query or region if any." search-engine-name)
+       (interactive)
+       (prelude-search ,search-engine-url ,search-engine-prompt)))
+
+
+
+(prelude-install-search-engine "google"     "http://www.google.com/search?q="              "Google: ")
+(prelude-install-search-engine "youtube"    "http://www.youtube.com/results?search_query=" "Search YouTube: ")
+(prelude-install-search-engine "github"     "https://github.com/search?q="                 "Search GitHub: ")
+(prelude-install-search-engine "duckduckgo" "https://duckduckgo.com/?t=lm&q="              "Search DuckDuckGo: ")
+```
+Use-package and basic usage
+a more safe require
+group config into one place
+autoload and bind keys easily
+make your config load faster
+and more? Spacemacs use it a lot.
+Bonus Time
+pretty print the lisp Object
+```emacs-lisp
+(pp (macroexpand ‘(use-package company-mode)))
+```
+
+fuck your brain?
+```emacs-lisp
+(defmacro defsynonym (old-name new-name)
+  `(defmacro ,new-name (&rest args)
+     `(, ',old-name ,@args)))
+```
+more discussion: https://emacs-china.org/t/lisp/357
+
+Reference
+Readme more about macro: https://www.gnu.org/software/emacs/manual/html_node/elisp/Macros.html#Macros
+
+## Day 10
+
 ## Spacemacs Config
 Find the ~/.spacemacs file by pressing SPC f e d
 
