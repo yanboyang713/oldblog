@@ -900,11 +900,88 @@ Reference
 Readme more about macro: https://www.gnu.org/software/emacs/manual/html_node/elisp/Macros.html#Macros
 
 ## Day 10
+Topic: Company-mode and auto-completion Cask and macro/use-package
 
+Fix previous issues
+```emacs-lisp
+(use-package exec-path-from-shell
+  :ensure t
+  :if (and (eq system-type 'darwin) (display-graphic-p))
+  :config
+  (progn
+     (when (string-match-p "/zsh$" (getenv "SHELL"))
+      ;; Use a non-interactive login shell.  A login shell, because my
+      ;; environment variables are mostly set in `.zprofile'.
+       (setq exec-path-from-shell-arguments '("-l")))
+
+     (exec-path-from-shell-initialize)
+    )
+  )
+
+;; (use-package monokai-theme
+;; :ensure t)
+```
+
+### How company-mode works?
+backend for the completion sources and front end to display the candidates
+C-h v company-backends
+try company-file and company-ispell, M-x
+C-h C-f to view the backend implementation
+### Why my company sucks?
+Python anaconda-mode not works
+some backend require build with a server-client architecture: company-anaconda, company-jedi, company-ycmd, company-tern etc
+At first, you should make sure the server side is working properly and then you want to make sure you use the right backend
+how to fix anaconda on Mac
+### Group backend
+Write a Simple company backend
+http://sixty-north.com/blog/writing-the-simplest-emacs-company-mode-backend
+
+### reference
+http://sixty-north.com/blog/series/how-to-write-company-mode-backends
+https://www.emacswiki.org/emacs/CompanyMode
+
+## Day 11
+Topic: Spacemacs introduction and installation
+
+### Why Spacemacs?
+You have your own Emacs configuration and you have used it for a long time. My suggest: Try Spacemacs, use it and learn from it. Then consider to use Spacemacs daily or stick to your own Emacs config.
+It’s a bundle of meta configs, it’s very easy to add/remove features & packages. The default package system is poor.
+It’s very friendly for Vim users.(I’m not sure whether normal Emacs users like it or not.) But I know some people also use Emacs and Hybrid editing style.
+It’s has a very nice UI(spaceline) and very active community. I know spaceline has some nasty bugs, but I still can’t resist to use it… it’s beautiful.
+### Start to use Spacemacs today
+Installation
+choose editing style, I choose Vim
+choose completion style, helm or ivy. We choose ivy and helm.
+choose distribution, spacemacs or spacemacs-base
+make your configs in .spacemacs.d folder and use Github to management it
+Add some built-in layers
+better defaults osx github git color markdown org javascript
+
+little tweak
+fullscreen
+Exclude some unwanted packages
+evil-lisp-state spray doc-view lorem-ipsum
+
+Easy way to Add packages with default package settings
+Add your own configs in user-config (Port the previous configs to Spacemacs)
+Fix helm tramp mode issue
+```emacs-lisp
+(setq tramp-ssh-controlmaster-options "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+```
+Make customize-group configs in its own file
+```emacs-lisp
+(setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
+(load custom-file 'no-error 'no-message)
+```
+
+monokai
+
+Read the docs and Use Spacemacs every day!
 ## Spacemacs Config
 Find the ~/.spacemacs file by pressing SPC f e d
 
-## Creating a Spacemacs Layer
+## day 12 
+### Creating a Spacemacs Layer
 1. Create a new Spacemacs layer.
 ```bash
 M-x configuration-layer/create-layer
@@ -913,4 +990,23 @@ M-x configuration-layer/create-layer
 This will then give you the option of where to place the layer, but you can just use the default of **.spacemacs.d/layers/
 3. Name of the layer.
 4. Creating readme file or not.
+
+## Day 13
+Topic: More tweaks of your own layers
+
+Fix ivy 0.8 issues
+post-init and pre-init
+location: builtin, elpa and github
+
+github
+
+```emacs-lisp
+(gulpjs :location (recipe :fetcher github :repo "zilongshanren/emacs-gulpjs"))
+
+(defun zilongshanren/init-gulpjs()
+(use-package gulpjs
+  :init))
+
+```
+layers.el
 

@@ -21,7 +21,7 @@ Usage Console 1  docker run -it --rm silex/emacs   GUI 1 2  xhost +local:root # 
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/spacemacs/><link rel=prev href=https://yanboyang.com/writingmathematicfomular/><link rel=next href=https://yanboyang.com/flink/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Spacemacs/Emacs","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/spacemacs\/"},"genre":"posts","keywords":"spacemacs, emacs","wordcount":2962,"url":"https:\/\/yanboyang.com\/spacemacs\/","datePublished":"2021-04-04T06:11:32+10:00","dateModified":"2021-04-04T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/spacemacs/><link rel=prev href=https://yanboyang.com/writingmathematicfomular/><link rel=next href=https://yanboyang.com/flink/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Spacemacs/Emacs","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/spacemacs\/"},"genre":"posts","keywords":"spacemacs, emacs","wordcount":3419,"url":"https:\/\/yanboyang.com\/spacemacs\/","datePublished":"2021-04-04T06:11:32+10:00","dateModified":"2021-04-04T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -95,8 +95,8 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting Started with Spacemacs/Emacs</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/emacs/><i class="far fa-folder fa-fw"></i>emacs</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-04-04>2021-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2962 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;14 minutes&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-04-04>2021-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3419 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;17 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -146,9 +146,27 @@ Cancel
 <li><a href=#day-7>Day 7</a></li>
 <li><a href=#day-8>Day 8</a></li>
 <li><a href=#day-9>Day 9</a></li>
-<li><a href=#day-10>Day 10</a></li>
+<li><a href=#day-10>Day 10</a>
+<ul>
+<li><a href=#how-company-mode-works>How company-mode works?</a></li>
+<li><a href=#why-my-company-sucks>Why my company sucks?</a></li>
+<li><a href=#group-backend>Group backend</a></li>
+<li><a href=#reference>reference</a></li>
+</ul>
+</li>
+<li><a href=#day-11>Day 11</a>
+<ul>
+<li><a href=#why-spacemacs>Why Spacemacs?</a></li>
+<li><a href=#start-to-use-spacemacs-today>Start to use Spacemacs today</a></li>
+</ul>
+</li>
 <li><a href=#spacemacs-config>Spacemacs Config</a></li>
+<li><a href=#day-12>day 12</a>
+<ul>
 <li><a href=#creating-a-spacemacs-layer>Creating a Spacemacs Layer</a></li>
+</ul>
+</li>
+<li><a href=#day-13>Day 13</a></li>
 </ul>
 </nav></div>
 </div><div class=content id=content><h2 id=installation>Installation</h2>
@@ -1660,9 +1678,109 @@ pretty print the lisp Object</p>
 <p>Reference
 Readme more about macro: <a href=https://www.gnu.org/software/emacs/manual/html_node/elisp/Macros.html#Macros target=_blank rel="noopener noreferrer">https://www.gnu.org/software/emacs/manual/html_node/elisp/Macros.html#Macros</a></p>
 <h2 id=day-10>Day 10</h2>
+<p>Topic: Company-mode and auto-completion Cask and macro/use-package</p>
+<p>Fix previous issues</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>use-package</span> <span class=nv>exec-path-from-shell</span>
+  <span class=nb>:ensure</span> <span class=no>t</span>
+  <span class=nb>:if</span> <span class=p>(</span><span class=nb>and</span> <span class=p>(</span><span class=nf>eq</span> <span class=nv>system-type</span> <span class=ss>&#39;darwin</span><span class=p>)</span> <span class=p>(</span><span class=nv>display-graphic-p</span><span class=p>))</span>
+  <span class=nb>:config</span>
+  <span class=p>(</span><span class=nb>progn</span>
+     <span class=p>(</span><span class=nb>when</span> <span class=p>(</span><span class=nv>string-match-p</span> <span class=s>&#34;/zsh$&#34;</span> <span class=p>(</span><span class=nv>getenv</span> <span class=s>&#34;SHELL&#34;</span><span class=p>))</span>
+      <span class=c1>;; Use a non-interactive login shell.  A login shell, because my</span>
+      <span class=c1>;; environment variables are mostly set in `.zprofile&#39;.</span>
+       <span class=p>(</span><span class=nb>setq</span> <span class=nv>exec-path-from-shell-arguments</span> <span class=o>&#39;</span><span class=p>(</span><span class=s>&#34;-l&#34;</span><span class=p>)))</span>
+
+     <span class=p>(</span><span class=nv>exec-path-from-shell-initialize</span><span class=p>)</span>
+    <span class=p>)</span>
+  <span class=p>)</span>
+
+<span class=c1>;; (use-package monokai-theme</span>
+<span class=c1>;; :ensure t)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=how-company-mode-works>How company-mode works?</h3>
+<p>backend for the completion sources and front end to display the candidates
+C-h v company-backends
+try company-file and company-ispell, M-x
+C-h C-f to view the backend implementation</p>
+<h3 id=why-my-company-sucks>Why my company sucks?</h3>
+<p>Python anaconda-mode not works
+some backend require build with a server-client architecture: company-anaconda, company-jedi, company-ycmd, company-tern etc
+At first, you should make sure the server side is working properly and then you want to make sure you use the right backend
+how to fix anaconda on Mac</p>
+<h3 id=group-backend>Group backend</h3>
+<p>Write a Simple company backend
+<a href=http://sixty-north.com/blog/writing-the-simplest-emacs-company-mode-backend target=_blank rel="noopener noreferrer">http://sixty-north.com/blog/writing-the-simplest-emacs-company-mode-backend</a></p>
+<h3 id=reference>reference</h3>
+<p><a href=http://sixty-north.com/blog/series/how-to-write-company-mode-backends target=_blank rel="noopener noreferrer">http://sixty-north.com/blog/series/how-to-write-company-mode-backends</a>
+<a href=https://www.emacswiki.org/emacs/CompanyMode target=_blank rel="noopener noreferrer">https://www.emacswiki.org/emacs/CompanyMode</a></p>
+<h2 id=day-11>Day 11</h2>
+<p>Topic: Spacemacs introduction and installation</p>
+<h3 id=why-spacemacs>Why Spacemacs?</h3>
+<p>You have your own Emacs configuration and you have used it for a long time. My suggest: Try Spacemacs, use it and learn from it. Then consider to use Spacemacs daily or stick to your own Emacs config.
+It’s a bundle of meta configs, it’s very easy to add/remove features & packages. The default package system is poor.
+It’s very friendly for Vim users.(I’m not sure whether normal Emacs users like it or not.) But I know some people also use Emacs and Hybrid editing style.
+It’s has a very nice UI(spaceline) and very active community. I know spaceline has some nasty bugs, but I still can’t resist to use it… it’s beautiful.</p>
+<h3 id=start-to-use-spacemacs-today>Start to use Spacemacs today</h3>
+<p>Installation
+choose editing style, I choose Vim
+choose completion style, helm or ivy. We choose ivy and helm.
+choose distribution, spacemacs or spacemacs-base
+make your configs in .spacemacs.d folder and use Github to management it
+Add some built-in layers
+better defaults osx github git color markdown org javascript</p>
+<p>little tweak
+fullscreen
+Exclude some unwanted packages
+evil-lisp-state spray doc-view lorem-ipsum</p>
+<p>Easy way to Add packages with default package settings
+Add your own configs in user-config (Port the previous configs to Spacemacs)
+Fix helm tramp mode issue</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>setq</span> <span class=nv>tramp-ssh-controlmaster-options</span> <span class=s>&#34;-o ControlMaster=auto -o ControlPath=&#39;tramp.%%C&#39; -o ControlPersist=no&#34;</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Make customize-group configs in its own file</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>setq</span> <span class=nv>custom-file</span> <span class=p>(</span><span class=nf>expand-file-name</span> <span class=s>&#34;custom.el&#34;</span> <span class=nv>dotspacemacs-directory</span><span class=p>))</span>
+<span class=p>(</span><span class=nf>load</span> <span class=nv>custom-file</span> <span class=ss>&#39;no-error</span> <span class=ss>&#39;no-message</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>monokai</p>
+<p>Read the docs and Use Spacemacs every day!</p>
 <h2 id=spacemacs-config>Spacemacs Config</h2>
 <p>Find the ~/.spacemacs file by pressing SPC f e d</p>
-<h2 id=creating-a-spacemacs-layer>Creating a Spacemacs Layer</h2>
+<h2 id=day-12>day 12</h2>
+<h3 id=creating-a-spacemacs-layer>Creating a Spacemacs Layer</h3>
 <ol>
 <li>Create a new Spacemacs layer.</li>
 </ol>
@@ -1680,6 +1798,31 @@ This will then give you the option of where to place the layer, but you can just
 <li>Name of the layer.</li>
 <li>Creating readme file or not.</li>
 </ol>
+<h2 id=day-13>Day 13</h2>
+<p>Topic: More tweaks of your own layers</p>
+<p>Fix ivy 0.8 issues
+post-init and pre-init
+location: builtin, elpa and github</p>
+<p>github</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nv>gulpjs</span> <span class=nb>:location</span> <span class=p>(</span><span class=nv>recipe</span> <span class=nb>:fetcher</span> <span class=nv>github</span> <span class=nb>:repo</span> <span class=s>&#34;zilongshanren/emacs-gulpjs&#34;</span><span class=p>))</span>
+
+<span class=p>(</span><span class=nb>defun</span> <span class=nv>zilongshanren/init-gulpjs</span><span class=p>()</span>
+<span class=p>(</span><span class=nb>use-package</span> <span class=nv>gulpjs</span>
+  <span class=nb>:init</span><span class=p>))</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>layers.el</p>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
