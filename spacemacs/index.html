@@ -21,7 +21,7 @@ Usage Console 1  docker run -it --rm silex/emacs   GUI 1 2  xhost +local:root # 
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/spacemacs/><link rel=prev href=https://yanboyang.com/writingmathematicfomular/><link rel=next href=https://yanboyang.com/flink/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Spacemacs/Emacs","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/spacemacs\/"},"genre":"posts","keywords":"spacemacs, emacs","wordcount":3419,"url":"https:\/\/yanboyang.com\/spacemacs\/","datePublished":"2021-04-04T06:11:32+10:00","dateModified":"2021-04-04T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/spacemacs/><link rel=prev href=https://yanboyang.com/writingmathematicfomular/><link rel=next href=https://yanboyang.com/flink/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Spacemacs/Emacs","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/spacemacs\/"},"genre":"posts","keywords":"spacemacs, emacs","wordcount":3860,"url":"https:\/\/yanboyang.com\/spacemacs\/","datePublished":"2021-04-04T06:11:32+10:00","dateModified":"2021-04-04T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -95,8 +95,8 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting Started with Spacemacs/Emacs</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/emacs/><i class="far fa-folder fa-fw"></i>emacs</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-04-04>2021-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3419 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;17 minutes&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-04-04>2021-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3860 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;19 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -167,6 +167,7 @@ Cancel
 </ul>
 </li>
 <li><a href=#day-13>Day 13</a></li>
+<li><a href=#day-14>Day 14</a></li>
 </ul>
 </nav></div>
 </div><div class=content id=content><h2 id=installation>Installation</h2>
@@ -1348,8 +1349,17 @@ install helm-ag</p>
 </code></pre></td></tr></table>
 </div>
 </div><p>at first, you should install ag
-search speed: ag > pt > ack > grep</p>
-<p>brew install the_silver_searcher
+search speed: ag > pt > ack > grep
+<a href=https://github.com/ggreer/the_silver_searcher target=_blank rel="noopener noreferrer">https://github.com/ggreer/the_silver_searcher</a></p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yay -S the_silver_searcher
+</code></pre></td></tr></table>
+</div>
+</div><p>brew install the_silver_searcher
 apt-get install silversearcher-ag</p>
 <p>Show javascript errors with flycheck
 flycheck-checkers
@@ -1823,6 +1833,109 @@ location: builtin, elpa and github</p>
 </code></pre></td></tr></table>
 </div>
 </div><p>layers.el</p>
+<h2 id=day-14>Day 14</h2>
+<p>Topic: File and Buffer operations</p>
+<p>** Talk the difference between the configs of mine and spacemacs</p>
+<p>** File related operations</p>
+<ol>
+<li>=SPC p f= (find a file in current project, it looks like the Ctrl-p plugin in Vim)</li>
+</ol>
+<p>I also do some hacks to enhance the =SPC p f=</p>
+<p>#+BEGIN_SRC emacs-lisp
+(defun zilongshanren/open-file-with-projectile-or-counsel-git ()
+(interactive)
+(if (zilongshanren/vcs-project-root)
+(counsel-git)
+(if (projectile-project-p)
+(projectile-find-file)
+(ido-find-file))))
+#+END_SRC</p>
+<p>If it is in a Git repository, I use =counsel-git= to find file. Why not projectile? Becuase I think ivy-mode is much faster.
+If it is in a proctile project, say it has a =.projectile= file in your project&rsquo;s root.
+Otherwise, you =ido-find-file=</p>
+<ol start=2>
+<li>
+<p>=SPC f f= to find a file start from the current directory</p>
+</li>
+<li>
+<p>=SPC f L= find the file across the whole Mac system</p>
+</li>
+<li>
+<p>=SPC f l= find file literally(I also enhance this func with ffap)</p>
+</li>
+<li>
+<p>=SPC f h= find file in hex mode(I also enhance this func with ffap)</p>
+</li>
+<li>
+<p>=SPC f o= open with external program</p>
+</li>
+<li>
+<p>=SPC f E= sudo edit</p>
+</li>
+<li>
+<p>=SPC f D= delete current file and buffer</p>
+</li>
+<li>
+<p>=SPC f j= open the current file&rsquo;s dired mode</p>
+</li>
+<li>
+<p>=SPC f r= find the recent file with ivy</p>
+</li>
+<li>
+<p>=SPC f R= rename the current file</p>
+</li>
+<li>
+<p>=SPC f v= add local variables</p>
+</li>
+<li>
+<p>=SPC f y= yank current buffer&rsquo;s full path</p>
+</li>
+<li>
+<p>=SPC f a d= find the current visited directory with fasd.</p>
+</li>
+<li>
+<p>=SPC f C d/u= convert file encoding between unix and dos</p>
+</li>
+<li>
+<p>=SPC f e d= find the .spacemacs/.spacemacs.d/init.el file</p>
+</li>
+<li>
+<p>=SPC f e i= find the .emacs/.emacs.d/init.el init file</p>
+</li>
+<li>
+<p>=SPC f e l= helm locate library file</p>
+</li>
+<li>
+<p>=SPC f c= copy file</p>
+</li>
+<li>
+<p>=SPC f b= show bookmarks</p>
+</li>
+<li>
+<p>=SPC f s/S= save buffers</p>
+</li>
+</ol>
+<p>** buffer related operations</p>
+<ol>
+<li>=SPC b .= buffer micro state (hydra)</li>
+<li>=SPC b b= switch buffers, i rebind it to =ivy-switch-buffer=, because I could see recent use file in buffer</li>
+<li>=SPC b d= kill a buffer</li>
+<li>=SPC b f= find buffer file in finder</li>
+<li>=SPC b B/i= I bind it to ibuffer</li>
+<li>=SPC b h= go to home</li>
+<li>=SPC b k= kill matching buffers</li>
+<li>=SPC b N= new empty buffer</li>
+<li>=SPC b m= kill others</li>
+<li>=SPC b R= safe revert buffer</li>
+<li>=SPC b s= switch to scratch buffer</li>
+<li>=SPC b w= toggle buffer read-only</li>
+<li>=SPC b Y= copy the whole buffer to clipboard, the content could be used in other programs</li>
+<li>=SPC b P= paste to the whole buffer</li>
+<li>=SPC <tab>= switch between the current buffer and the last opened buffer</li>
+</ol>
+<p>** Sometimes I also use the =Dired= mode to do all the files operations
+I think I have talked about it in the previous videos.</p>
+<p>** Happy hacking!</p>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
@@ -1841,7 +1954,7 @@ location: builtin, elpa and github</p>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/spacemacs/>spacemacs</a>,&nbsp;<a href=/tags/emacs/>Emacs</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/spacemacs/>spacemacs</a>,&nbsp;<a href=/tags/emacs/>emacs</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>

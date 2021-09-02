@@ -4,22 +4,20 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Getting started with UML (Unified Modeling Language) - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Getting started with UML (Unified Modeling Language)">
-<meta property="og:description" content="Introduction This post document will brief introduct UML at the begining. After, will talk how using PlantUML for drawing UML diagrams. At the end, how does PlantUML integrate with Markdown and Emacs(Spacemacs).
-UML Basics PlantUML Basics Reasons for using PlantUML Markdown Emacs (Spacemacs) Summary ">
+<title>An introduction to Magit, an Emacs mode for Git - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="An introduction to Magit, an Emacs mode for Git">
+<meta property="og:description" content>
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://yanboyang.com/plantuml/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2020-09-01T06:11:32+10:00">
-<meta property="article:modified_time" content="2020-09-01T06:11:32+10:00">
+<meta property="og:url" content="https://yanboyang.com/magit/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-09-02T06:11:32+10:00">
+<meta property="article:modified_time" content="2021-09-02T06:11:32+10:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
-<meta name=twitter:title content="Getting started with UML (Unified Modeling Language)">
-<meta name=twitter:description content="Introduction This post document will brief introduct UML at the begining. After, will talk how using PlantUML for drawing UML diagrams. At the end, how does PlantUML integrate with Markdown and Emacs(Spacemacs).
-UML Basics PlantUML Basics Reasons for using PlantUML Markdown Emacs (Spacemacs) Summary ">
+<meta name=twitter:title content="An introduction to Magit, an Emacs mode for Git">
+<meta name=twitter:description content>
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/plantuml/><link rel=prev href=https://yanboyang.com/machinelearningfileformats/><link rel=next href=https://yanboyang.com/baslerwithopencv/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting started with UML (Unified Modeling Language)","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/plantuml\/"},"genre":"posts","keywords":"UML, plantuml, Markdown, Emacs, spacemacs","wordcount":44,"url":"https:\/\/yanboyang.com\/plantuml\/","datePublished":"2020-09-01T06:11:32+10:00","dateModified":"2020-09-01T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/magit/><link rel=prev href=https://yanboyang.com/roam/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"An introduction to Magit, an Emacs mode for Git","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/magit\/"},"genre":"posts","keywords":"spacemacs, emacs, magit","wordcount":0,"url":"https:\/\/yanboyang.com\/magit\/","datePublished":"2021-09-02T06:11:32+10:00","dateModified":"2021-09-02T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -91,62 +89,40 @@ Cancel
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Getting started with UML (Unified Modeling Language)</h1><h2 class=single-subtitle>based on Plantuml (UML Diagrams from simple textual description) integrate with Markdown and Emacs (Spacemacs)</h2><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/uml/><i class="far fa-folder fa-fw"></i>UML</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-09-01>2020-09-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;44 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+</div><article class="page single"><h1 class="single-title animated flipInX">An introduction to Magit, an Emacs mode for Git</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/emacs/><i class="far fa-folder fa-fw"></i>emacs</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-09-02>2021-09-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;0 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;0 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
 <span><i class="details-icon fas fa-angle-right"></i></span>
 </div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
-<ul>
-<li><a href=#introduction>Introduction</a></li>
-<li><a href=#uml-basics>UML Basics</a></li>
-<li><a href=#plantuml-basics>PlantUML Basics</a>
-<ul>
-<li><a href=#reasons-for-using-plantuml>Reasons for using PlantUML</a></li>
-</ul>
-</li>
-<li><a href=#markdown>Markdown</a></li>
-<li><a href=#emacs-spacemacs>Emacs (Spacemacs)</a></li>
-<li><a href=#summary>Summary</a></li>
-</ul>
-</nav></div>
-</div><div class=content id=content><h2 id=introduction>Introduction</h2>
-<p>This post document will brief introduct UML at the begining. After, will talk how using PlantUML for drawing UML diagrams. At the end, how does PlantUML integrate with Markdown and Emacs(Spacemacs).</p>
-<h2 id=uml-basics>UML Basics</h2>
-<h2 id=plantuml-basics>PlantUML Basics</h2>
-<h3 id=reasons-for-using-plantuml>Reasons for using PlantUML</h3>
-<h2 id=markdown>Markdown</h2>
-<h2 id=emacs-spacemacs>Emacs (Spacemacs)</h2>
-<h2 id=summary>Summary</h2>
-</div><div class=post-footer id=post-footer>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents></nav></div>
+</div><div class=content id=content></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2020-09-01</span>
+<span>Updated on 2021-09-02</span>
 </div>
 <div class=post-info-license></div>
 </div>
 <div class=post-info-line>
 <div class=post-info-md><span>
-<a class=link-to-markdown href=/plantuml/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
+<a class=link-to-markdown href=/magit/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/plantuml/ data-title="Getting started with UML (Unified Modeling Language)" data-hashtags=UML,plantuml,Markdown,Emacs,spacemacs><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/plantuml/ data-hashtag=UML><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/plantuml/ data-title="Getting started with UML (Unified Modeling Language)" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/plantuml/ data-title="Getting started with UML (Unified Modeling Language)"><i data-svg-src=/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/plantuml/ data-title="Getting started with UML (Unified Modeling Language)"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/plantuml/ data-title="Getting started with UML (Unified Modeling Language)" data-description><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/plantuml/ data-title="Getting started with UML (Unified Modeling Language)" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/plantuml/ data-title="Getting started with UML (Unified Modeling Language)"><i class="fab fa-evernote fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/magit/ data-title="An introduction to Magit, an Emacs mode for Git" data-hashtags=spacemacs,emacs,magit><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/magit/ data-hashtag=spacemacs><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/magit/ data-title="An introduction to Magit, an Emacs mode for Git" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/magit/ data-title="An introduction to Magit, an Emacs mode for Git"><i data-svg-src=/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/magit/ data-title="An introduction to Magit, an Emacs mode for Git"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/magit/ data-title="An introduction to Magit, an Emacs mode for Git" data-description><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/magit/ data-title="An introduction to Magit, an Emacs mode for Git" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/magit/ data-title="An introduction to Magit, an Emacs mode for Git"><i class="fab fa-evernote fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/uml/>UML</a>,&nbsp;<a href=/tags/plantuml/>plantuml</a>,&nbsp;<a href=/tags/markdown/>Markdown</a>,&nbsp;<a href=/tags/emacs/>emacs</a>,&nbsp;<a href=/tags/spacemacs/>spacemacs</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/spacemacs/>spacemacs</a>,&nbsp;<a href=/tags/emacs/>emacs</a>,&nbsp;<a href=/tags/magit/>magit</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>
 </div>
-<div class=post-nav><a href=/machinelearningfileformats/ class=prev rel=prev title="Guide to File Formats for Machine Learning"><i class="fas fa-angle-left fa-fw"></i>Guide to File Formats for Machine Learning</a>
-<a href=/baslerwithopencv/ class=next rel=next title="Getting started with Basler Camera With Opencv on Python">Getting started with Basler Camera With Opencv on Python<i class="fas fa-angle-right fa-fw"></i></a></div>
+<div class=post-nav><a href=/roam/ class=prev rel=prev title="Getting Started with Org Roam - Build a Second Brain in Emacs"><i class="fas fa-angle-left fa-fw"></i>Getting Started with Org Roam - Build a Second Brain in Emacs</a></div>
 </div>
 <div id=comments><div id=disqus_thread class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
