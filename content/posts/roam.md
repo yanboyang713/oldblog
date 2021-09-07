@@ -3,6 +3,7 @@ title: "Getting Started with Org Roam - Build a Second Brain in Emacs"
 date: 2021-09-02T06:11:32+10:00
 tags: [ "spacemacs", "emacs", "org roam" ]
 categories: [ "emacs" ]
+draft: true
 ---
 
 ## Reference List
