@@ -1,0 +1,640 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>An introduction to Magit, an Emacs mode for Git - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="An introduction to Magit, an Emacs mode for Git">
+<meta property="og:description" content="Introduction Virtual environments. What are they and what are they used for? This article will be a beginner’s guide to virtual environments and dependency managers in Python. We will also look at five of the most used dependency managers in Python.
+A virtual environment is an isolated Python environment where a project’s dependencies are installed in a different directory from those installed in the system’s default Python path and other virtual environments.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yanboyang.com/pythonvirtualenvironments/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-09-02T06:11:32+10:00">
+<meta property="article:modified_time" content="2021-09-02T06:11:32+10:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://yanboyang.com/logo.png">
+<meta name=twitter:title content="An introduction to Magit, an Emacs mode for Git">
+<meta name=twitter:description content="Introduction Virtual environments. What are they and what are they used for? This article will be a beginner’s guide to virtual environments and dependency managers in Python. We will also look at five of the most used dependency managers in Python.
+A virtual environment is an isolated Python environment where a project’s dependencies are installed in a different directory from those installed in the system’s default Python path and other virtual environments.">
+<meta name=application-name content="LoveIt">
+<meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/pythonvirtualenvironments/><link rel=prev href=https://yanboyang.com/note/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"An introduction to Magit, an Emacs mode for Git","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/pythonvirtualenvironments\/"},"genre":"posts","keywords":"spacemacs, emacs, magit","wordcount":1909,"url":"https:\/\/yanboyang.com\/pythonvirtualenvironments\/","datePublished":"2021-09-02T06:11:32+10:00","dateModified":"2021-09-02T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title="Boyang Yan's Tech Blog"></a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/> Home </a><a class=menu-item href=/posts/> Posts </a><a class=menu-item href=/tags/> Tags </a><a class=menu-item href=/categories/> Categories </a><a class=menu-item href=/about/> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title="Boyang Yan's Tech Blog"></a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+Cancel
+</a>
+</div><a class=menu-item href=/ title>Home</a><a class=menu-item href=/posts/ title>Posts</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><a class=menu-item href=/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>Contents</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">An introduction to Magit, an Emacs mode for Git</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/emacs/><i class="far fa-folder fa-fw"></i>emacs</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-09-02>2021-09-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1909 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
+</div><div class="details toc" id=toc-static kept=true>
+<div class="details-summary toc-title">
+<span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#introduction>Introduction</a></li>
+<li><a href=#overview>Overview</a></li>
+<li><a href=#venv>Venv</a>
+<ul>
+<li><a href=#features>Features</a></li>
+<li><a href=#installation>Installation</a></li>
+<li><a href=#creating-a-virtual-environment>Creating a virtual environment</a></li>
+<li><a href=#activating-the-virtual-environment>Activating the virtual environment</a></li>
+<li><a href=#configuring-the-virtual-environment>Configuring the virtual environment</a></li>
+<li><a href=#deactivating-a-virtual-environment>Deactivating a virtual environment</a></li>
+<li><a href=#deleting-the-virtual-environment>Deleting the virtual environment</a></li>
+</ul>
+</li>
+<li><a href=#virtualenv>Virtualenv</a>
+<ul>
+<li><a href=#the-cons>The cons</a></li>
+<li><a href=#installation-1>Installation</a></li>
+<li><a href=#creating-a-virtual-environment-1>Creating a virtual environment</a></li>
+<li><a href=#installing-dependencies>Installing dependencies</a></li>
+</ul>
+</li>
+<li><a href=#pipenv>Pipenv</a>
+<ul>
+<li><a href=#installation-2>Installation</a></li>
+<li><a href=#creating-a-virtual-environment-2>Creating a virtual environment</a></li>
+<li><a href=#activating-the-virtual-environment-1>Activating the virtual environment</a></li>
+<li><a href=#uninstalling-packages>Uninstalling packages</a></li>
+<li><a href=#deleting-a-virtual-environment>Deleting a virtual environment</a></li>
+</ul>
+</li>
+<li><a href=#conda>Conda</a>
+<ul>
+<li><a href=#features-1>Features</a></li>
+<li><a href=#installation-3>Installation</a></li>
+<li><a href=#creating-an-environment>Creating an environment</a></li>
+<li><a href=#activating-an-environment>Activating an environment</a></li>
+<li><a href=#deactivating-an-environment>Deactivating an environment</a></li>
+</ul>
+</li>
+<li><a href=#poetry>Poetry</a>
+<ul>
+<li><a href=#features-2>Features</a></li>
+<li><a href=#installation-4>Installation</a></li>
+</ul>
+</li>
+<li><a href=#reference>Reference</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h2 id=introduction>Introduction</h2>
+<p>Virtual environments. What are they and what are they used for? This article will be a beginner’s guide to virtual environments and dependency managers in Python. We will also look at five of the most used dependency managers in Python.</p>
+<p>A virtual environment is an isolated Python environment where a project’s dependencies are installed in a different directory from those installed in the system’s default Python path and other virtual environments.</p>
+<p>Dependency managers are tools that enable easy management of a project’s dependencies.</p>
+<h2 id=overview>Overview</h2>
+<p>This article will look at the following most used virtual environments and dependency managers in Python, how to use them and their pros and cons.</p>
+<ol>
+<li>Venv</li>
+<li>Virtualenv</li>
+<li>Pipenv</li>
+<li>Conda</li>
+<li>Poetry</li>
+</ol>
+<h2 id=venv>Venv</h2>
+<p>Venv is a Python’s module that is used to create light weight virtual environments. It is the default virtual environment module for Python 3. It is one of the easiest modules around for creating virtual environments.</p>
+<h3 id=features>Features</h3>
+<ul>
+<li>Python 3’s default virtual environment tool.</li>
+<li>It is a light weight module.</li>
+<li>Stores all dependencies in a Scripts folder or bin sub-folder (on linux).</li>
+</ul>
+<h3 id=installation>Installation</h3>
+<p>Since Venv comes pre-installed in Python 3 or newer, there’s no need to install it.</p>
+<p>So, we will go ahead and create a virtual environment.</p>
+<h3 id=creating-a-virtual-environment>Creating a virtual environment</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>mkdir pythonTestEnvironment
+python -m venv ./pythonTestEnvironment/
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@Boyang-PC ~]$ cd pythonTestEnvironment/
+[yanboyang713@Boyang-PC pythonTestEnvironment]$ ls -la
+total 24
+drwxr-xr-x  5 yanboyang713 yanboyang713 4096 Sep  8 15:15 .
+drwx------ 52 yanboyang713 yanboyang713 4096 Sep  8 15:12 ..
+drwxr-xr-x  2 yanboyang713 yanboyang713 4096 Sep  8 15:15 bin
+drwxr-xr-x  2 yanboyang713 yanboyang713 4096 Sep  8 15:15 include
+drwxr-xr-x  3 yanboyang713 yanboyang713 4096 Sep  8 15:15 lib
+lrwxrwxrwx  1 yanboyang713 yanboyang713    3 Sep  8 15:15 lib64 -&gt; lib
+-rw-r--r--  1 yanboyang713 yanboyang713   69 Sep  8 15:15 pyvenv.cfg
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=activating-the-virtual-environment>Activating the virtual environment</h3>
+<p>Before using the virtual environment, we need to activate it. This makes the current virtual environment you’re working on to temporarily function as the default Python interpreter.</p>
+<p><strong>NOTE:</strong>
+Before activating your virtual environment, always make sure that you are working from your project’s directory.</p>
+<p>Once a virtual environment has been created, it can be “activated” using a script in the virtual environment’s binary directory. The invocation of the script is platform-specific (<venv> must be replaced by the path of the directory containing the virtual environment):</p>
+<p>| Platform | Shell | Command to activate virtual environment |
+| POSIX | bash/zsh | $ source <venv>/bin/activate |
+| | fish | $ source <venv>/bin/activate.fish |
+| | csh/tcsh | $ source <venv>/bin/activate.csh |
+| | PowerShell Core | $ <venv>/bin/Activate.ps1 |
+| Windows | cmd.exe | C:> <venv>\Scripts\activate.bat |
+| | PowerShell | PS C:> <venv>\Scripts\Activate.ps1 |</p>
+<p>When a virtual environment is active, the VIRTUAL_ENV environment variable is set to the path of the virtual environment. This can be used to check if one is running inside a virtual environment.</p>
+<p>For example:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@Boyang-PC pythonTestEnvironment]$ cd bin
+[yanboyang713@Boyang-PC bin]$ ls -la
+total 44
+drwxr-xr-x 2 yanboyang713 yanboyang713 4096 Sep  8 15:15 .
+drwxr-xr-x 5 yanboyang713 yanboyang713 4096 Sep  8 15:15 ..
+-rw-r--r-- 1 yanboyang713 yanboyang713 1932 Sep  8 15:15 activate
+-rw-r--r-- 1 yanboyang713 yanboyang713  881 Sep  8 15:15 activate.csh
+-rw-r--r-- 1 yanboyang713 yanboyang713 2021 Sep  8 15:15 activate.fish
+-rw-r--r-- 1 yanboyang713 yanboyang713 8834 Sep  8 15:15 Activate.ps1
+-rwxr-xr-x 1 yanboyang713 yanboyang713  256 Sep  8 15:15 pip
+-rwxr-xr-x 1 yanboyang713 yanboyang713  256 Sep  8 15:15 pip3
+-rwxr-xr-x 1 yanboyang713 yanboyang713  256 Sep  8 15:15 pip3.9
+lrwxrwxrwx 1 yanboyang713 yanboyang713   15 Sep  8 15:15 python -&gt; /usr/bin/python
+lrwxrwxrwx 1 yanboyang713 yanboyang713    6 Sep  8 15:15 python3 -&gt; python
+lrwxrwxrwx 1 yanboyang713 yanboyang713    6 Sep  8 15:15 python3.9 -&gt; python
+[yanboyang713@Boyang-PC bin]$ source activate
+(pythonTestEnvironment) [yanboyang713@Boyang-PC bin]$ 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=configuring-the-virtual-environment>Configuring the virtual environment</h3>
+<p>After activating the virtual environment, you can now start installing modules and packages by using the great pip install command.</p>
+<p>For example:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>(pythonTestEnvironment) [yanboyang713@Boyang-PC bin]$ cd ..
+(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ pwd
+/home/yanboyang713/pythonTestEnvironment
+(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ pip install Django
+Collecting Django
+  Downloading Django-3.2.7-py3-none-any.whl (7.9 MB)
+     |████████████████████████████████| 7.9 MB 12.2 MB/s 
+Collecting asgiref&lt;4,&gt;=3.3.2
+  Downloading asgiref-3.4.1-py3-none-any.whl (25 kB)
+Collecting sqlparse&gt;=0.2.2
+  Downloading sqlparse-0.4.1-py3-none-any.whl (42 kB)
+     |████████████████████████████████| 42 kB 488 kB/s 
+Collecting pytz
+  Downloading pytz-2021.1-py2.py3-none-any.whl (510 kB)
+     |████████████████████████████████| 510 kB 882 kB/s 
+Installing collected packages: sqlparse, pytz, asgiref, Django
+Successfully installed Django-3.2.7 asgiref-3.4.1 pytz-2021.1 sqlparse-0.4.1
+WARNING: You are using pip version 21.1.3; however, version 21.2.4 is available.
+You should consider upgrading via the &#39;/home/yanboyang713/pythonTestEnvironment/bin/python -m pip install --upgrade pip&#39; command.
+</code></pre></td></tr></table>
+</div>
+</div><p>You can check the version of Pip you’re using and directory with the following command:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ pip -V
+pip 21.1.3 from /home/yanboyang713/pythonTestEnvironment/lib/python3.9/site-packages/pip (python 3.9)
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>TIPS:</strong>
+It is a good practice to always work with a requirements.txt file for easy collaboration since it stores a list of all installed packages in your environment.</p>
+<p>To create a requirements.txt, use:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>python -m pip freeze &gt; requirements.txt
+</code></pre></td></tr></table>
+</div>
+</div><p>For example:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ ls -la
+total 24
+drwxr-xr-x  5 yanboyang713 yanboyang713 4096 Sep  8 15:15 .
+drwx------ 52 yanboyang713 yanboyang713 4096 Sep  8 15:12 ..
+drwxr-xr-x  3 yanboyang713 yanboyang713 4096 Sep  8 15:28 bin
+drwxr-xr-x  2 yanboyang713 yanboyang713 4096 Sep  8 15:15 include
+drwxr-xr-x  3 yanboyang713 yanboyang713 4096 Sep  8 15:15 lib
+lrwxrwxrwx  1 yanboyang713 yanboyang713    3 Sep  8 15:15 lib64 -&gt; lib
+-rw-r--r--  1 yanboyang713 yanboyang713   69 Sep  8 15:15 pyvenv.cfg
+(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ python -m pip freeze &gt; requirements.txt
+(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ ls -la
+total 28
+drwxr-xr-x  5 yanboyang713 yanboyang713 4096 Sep  8 15:31 .
+drwx------ 52 yanboyang713 yanboyang713 4096 Sep  8 15:12 ..
+drwxr-xr-x  3 yanboyang713 yanboyang713 4096 Sep  8 15:28 bin
+drwxr-xr-x  2 yanboyang713 yanboyang713 4096 Sep  8 15:15 include
+drwxr-xr-x  3 yanboyang713 yanboyang713 4096 Sep  8 15:15 lib
+lrwxrwxrwx  1 yanboyang713 yanboyang713    3 Sep  8 15:15 lib64 -&gt; lib
+-rw-r--r--  1 yanboyang713 yanboyang713   69 Sep  8 15:15 pyvenv.cfg
+-rw-r--r--  1 yanboyang713 yanboyang713   58 Sep  8 15:31 requirements.txt
+(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ cat requirements.txt 
+asgiref==3.4.1
+Django==3.2.7
+pytz==2021.1
+sqlparse==0.4.1
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=deactivating-a-virtual-environment>Deactivating a virtual environment</h3>
+<p>After you finish with the environment, deactivate it by using:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ deactivate
+[yanboyang713@Boyang-PC pythonTestEnvironment]$ 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=deleting-the-virtual-environment>Deleting the virtual environment</h3>
+<p>Since virtual environments are self-contained, when no longer needed, just delete the project’s virtual environment directory.</p>
+<h2 id=virtualenv>Virtualenv</h2>
+<p>Virtualenv is a third-party dependency manager tool used for creating and managing Python projects. It is the most used and most popular virtual environment module for the Python 2 language.</p>
+<p><strong>Note</strong> virtual environments do not come as a native feature for Python 2.</p>
+<h3 id=the-cons>The cons</h3>
+<ul>
+<li>It cannot be upgraded using pip.</li>
+<li>It cannot create and discover virtual environments for randomly installed Python versions.</li>
+</ul>
+<h3 id=installation-1>Installation</h3>
+<p>In order to use Virtualenv, we first need to install it using the following command:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ pip install virtualenv
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=creating-a-virtual-environment-1>Creating a virtual environment</h3>
+<p>To create a virtual environment, run the following command:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ virtualenv venv
+</code></pre></td></tr></table>
+</div>
+</div><p>Use venv as the name of your project’s virtual environment. To activate and deactivate the virtual environment, use the same commands as Venv.</p>
+<h3 id=installing-dependencies>Installing dependencies</h3>
+<p>To install additional packages and libraries, use:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ pip install &lt;package name&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=pipenv>Pipenv</h2>
+<p>Pipenv is a package manager that is used to manage Python projects dependencies. It is good for the common typical workflow of using dependencies like pip, requirements.txt, etc.</p>
+<p>Under the hood, Pipenv generally combines the use of pip and Virtualenv into a simple command-line tool.</p>
+<p>Features</p>
+<ol>
+<li>It automatically creates and manages a virtual environment for your projects.</li>
+<li>It generates the Pipfile.lock file which helps in deterministic builds.</li>
+<li>It adds and removes packages from a Pipfile as you install and uninstall packages.</li>
+<li>It automatically locates you project by looking for a Pipfile.</li>
+<li>Provides insights into your dependency graph. Try pipenv graph.</li>
+<li>Smooth development workflow by loading .env files.</li>
+</ol>
+<h3 id=installation-2>Installation</h3>
+<p>Before we use Pipenv, let’s first install it. Run the following command on a terminal.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ pip install pipenv
+</code></pre></td></tr></table>
+</div>
+</div><p>After running this, Pipenv will be installed on your machine. Here’s the part where we now say goodbye to pip. It has been a journey indeed!</p>
+<h3 id=creating-a-virtual-environment-2>Creating a virtual environment</h3>
+<p>After installation, we just need to install a Python module using Pipenv and boom!, we have a virtual environment.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ pipenv install <span class=nv>Django</span><span class=o>==</span>2.0.13
+</code></pre></td></tr></table>
+</div>
+</div><p>The command above automatically creates a Pipfile and a Pipfile.lock file in your project’s virtual environment. These files are where your project dependencies are saved.</p>
+<p>If you wish to change the dependencies, you could change the default Pipenv configurations.</p>
+<h3 id=activating-the-virtual-environment-1>Activating the virtual environment</h3>
+<p>After creating our virtual environment, we can activate it by running the command below in the project directory.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ pipenv shell
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=uninstalling-packages>Uninstalling packages</h3>
+<p>You can uninstall a package from your project by running the following command:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ pipenv uninstall Django
+</code></pre></td></tr></table>
+</div>
+</div><p>Here, you don’t need to specify the package version. The package is also removed from the Pipfile and Pipfile.lock file.</p>
+<h3 id=deleting-a-virtual-environment>Deleting a virtual environment</h3>
+<p>For whatever reason you feel the need to remove a virtual environment, you can do that with Pipenv using the command below.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ pipenv --rm
+</code></pre></td></tr></table>
+</div>
+</div><p>Note that with Pipenv, you can specify the version of Python to use, using the command below:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ pipenv --python path/to/python
+</code></pre></td></tr></table>
+</div>
+</div><p>Note: You can get the specific Python version using Pyenv.</p>
+<h2 id=conda>Conda</h2>
+<p>Conda is a package management and environment management system that not only supports Python but also other languages like Ruby, Scala, R and C/C++. It is used to create, save, load and switch between environments in your local machine.</p>
+<p>Conda comes pre-installed in anaconda and miniconda.</p>
+<h3 id=features-1>Features</h3>
+<ul>
+<li>You can share environments.</li>
+<li>Finding and installing packages - Since Conda is also an environment manager, you can set up another environment to run a different version of Python, without interfering with the environment that runs your usual version of Python.</li>
+</ul>
+<h3 id=installation-3>Installation</h3>
+<p>Installing Conda is a bit different from other dependency managers. The easiest way to install it is by installing Anaconda or Miniconda - a mini version of anaconda that contains only Conda and its dependencies.</p>
+<h3 id=creating-an-environment>Creating an environment</h3>
+<p>To create a virtual environment using Conda, run the following command on a terminal.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ conda create --venv
+</code></pre></td></tr></table>
+</div>
+</div><p>There are several other ways of creating a conda environment that goes beyond the scope of this article.</p>
+<h3 id=activating-an-environment>Activating an environment</h3>
+<p>To activate an environment, run:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>conda activate venv
+</code></pre></td></tr></table>
+</div>
+</div><p>Or you can run the following in the Anaconda prompt:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ activate base
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=deactivating-an-environment>Deactivating an environment</h3>
+<p>To deactivate a virtual environment, run:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ conda deactivate
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=poetry>Poetry</h2>
+<p><a href=https://python-poetry.org/docs/ target=_blank rel="noopener noreferrer">https://python-poetry.org/docs/</a></p>
+<p><a href=https://github.com/python-poetry/poetry target=_blank rel="noopener noreferrer">Poetry</a> is popularly known as a very feature-rich Python tool for project dependency management. It comes wrapped with a powerful CLI for creating and managing Python projects.</p>
+<h3 id=features-2>Features</h3>
+<ul>
+<li>It comes with a pyproject.toml file that contains a tool.poetry section that is composed of several sections like README.md, name, author, etc for project documentation.</li>
+<li>It is faster than most virtual environment tools.</li>
+<li>It allows libraries declaration and auto updating of dependencies.</li>
+</ul>
+<h3 id=installation-4>Installation</h3>
+<p>Unlike other project dependency tools, Poetry comes with a custom installer that isolates it from the rest of your system by seperating its dependencies.</p>
+<ul>
+<li>osx / linux / bashonwindows install instructions</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py <span class=p>|</span> python -
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Warning</strong>: The previous get-poetry.py installer is now deprecated, if you are currently using it you should migrate to the new, supported, install-poetry.py installer.</p>
+<h2 id=reference>Reference</h2>
+<ol>
+<li><a href=https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/ target=_blank rel="noopener noreferrer">https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/</a></li>
+<li><a href=https://docs.python.org/3/library/venv.html target=_blank rel="noopener noreferrer">https://docs.python.org/3/library/venv.html</a></li>
+</ol>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>Updated on 2021-09-02</span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/pythonvirtualenvironments/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
+</span></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="An introduction to Magit, an Emacs mode for Git" data-hashtags=spacemacs,emacs,magit><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/pythonvirtualenvironments/ data-hashtag=spacemacs><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="An introduction to Magit, an Emacs mode for Git" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="An introduction to Magit, an Emacs mode for Git"><i data-svg-src=/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="An introduction to Magit, an Emacs mode for Git"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="An introduction to Magit, an Emacs mode for Git" data-description><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="An introduction to Magit, an Emacs mode for Git" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="An introduction to Magit, an Emacs mode for Git"><i class="fab fa-evernote fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/spacemacs/>spacemacs</a>,&nbsp;<a href=/tags/emacs/>Emacs</a>,&nbsp;<a href=/tags/magit/>magit</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/note/ class=prev rel=prev title="A Beginner’s Guide to the Zettelkasten Method"><i class="fas fa-angle-left fa-fw"></i>A Beginner’s Guide to the Zettelkasten Method</a></div>
+</div>
+<div id=comments><div id=disqus_thread class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments">
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><link rel=stylesheet href=/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript src=/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>
