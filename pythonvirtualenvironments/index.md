@@ -1,4 +1,4 @@
-# An introduction to Magit, an Emacs mode for Git
+# Introduction to Python Virtual Environments and Dependency Managers
 
 
 ## Introduction
@@ -321,6 +321,32 @@ Unlike other project dependency tools, Poetry comes with a custom installer that
 + osx / linux / bashonwindows install instructions
 ```bash
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
+```
+
+```console
+yanboyang713@Boyang-PC ~> curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
+Retrieving Poetry metadata
+
+# Welcome to Poetry!
+
+This will download and install the latest version of Poetry,
+a dependency and package manager for Python.
+
+It will add the `poetry` command to Poetry's bin directory, located at:
+
+/home/yanboyang713/.local/bin
+
+You can uninstall at any time by executing this script with the --uninstall option,
+and these changes will be reverted.
+
+Installing Poetry (1.1.8): Done
+
+Poetry (1.1.8) is installed now. Great!
+
+You can test that everything is set up by executing:
+
+`poetry --version`
+
 ```
 
 **Warning**: The previous get-poetry.py installer is now deprecated, if you are currently using it you should migrate to the new, supported, install-poetry.py installer.

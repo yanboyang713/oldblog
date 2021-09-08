@@ -4,22 +4,22 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>An introduction to Magit, an Emacs mode for Git - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="An introduction to Magit, an Emacs mode for Git">
+<title>Introduction to Python Virtual Environments and Dependency Managers - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Introduction to Python Virtual Environments and Dependency Managers">
 <meta property="og:description" content="Introduction Virtual environments. What are they and what are they used for? This article will be a beginner’s guide to virtual environments and dependency managers in Python. We will also look at five of the most used dependency managers in Python.
 A virtual environment is an isolated Python environment where a project’s dependencies are installed in a different directory from those installed in the system’s default Python path and other virtual environments.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/pythonvirtualenvironments/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-09-02T06:11:32+10:00">
-<meta property="article:modified_time" content="2021-09-02T06:11:32+10:00">
+<meta property="article:published_time" content="2021-09-08T06:11:32+10:00">
+<meta property="article:modified_time" content="2021-09-08T06:11:32+10:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
-<meta name=twitter:title content="An introduction to Magit, an Emacs mode for Git">
+<meta name=twitter:title content="Introduction to Python Virtual Environments and Dependency Managers">
 <meta name=twitter:description content="Introduction Virtual environments. What are they and what are they used for? This article will be a beginner’s guide to virtual environments and dependency managers in Python. We will also look at five of the most used dependency managers in Python.
 A virtual environment is an isolated Python environment where a project’s dependencies are installed in a different directory from those installed in the system’s default Python path and other virtual environments.">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/pythonvirtualenvironments/><link rel=prev href=https://yanboyang.com/note/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"An introduction to Magit, an Emacs mode for Git","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/pythonvirtualenvironments\/"},"genre":"posts","keywords":"spacemacs, emacs, magit","wordcount":1909,"url":"https:\/\/yanboyang.com\/pythonvirtualenvironments\/","datePublished":"2021-09-02T06:11:32+10:00","dateModified":"2021-09-02T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/pythonvirtualenvironments/><link rel=prev href=https://yanboyang.com/note/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Introduction to Python Virtual Environments and Dependency Managers","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/pythonvirtualenvironments\/"},"genre":"posts","keywords":"Python","wordcount":1984,"url":"https:\/\/yanboyang.com\/pythonvirtualenvironments\/","datePublished":"2021-09-08T06:11:32+10:00","dateModified":"2021-09-08T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -91,10 +91,10 @@ Cancel
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">An introduction to Magit, an Emacs mode for Git</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/emacs/><i class="far fa-folder fa-fw"></i>emacs</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-09-02>2021-09-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1909 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Introduction to Python Virtual Environments and Dependency Managers</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/virtual-environment/><i class="far fa-folder fa-fw"></i>virtual environment</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-09-08>2021-09-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1984 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;10 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -592,6 +592,58 @@ sqlparse==0.4.1
 <pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py <span class=p>|</span> python -
 </code></pre></td></tr></table>
 </div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=n>yanboyang713</span><span class=o>@</span><span class=n>Boyang</span><span class=o>-</span><span class=n>PC</span><span class=w> </span><span class=o>~&gt;</span><span class=w> </span><span class=n>curl</span><span class=w> </span><span class=o>-</span><span class=k>sSL</span><span class=w> </span><span class=n>https</span><span class=p>:</span><span class=o>//</span><span class=n>raw</span><span class=p>.</span><span class=n>githubusercontent</span><span class=p>.</span><span class=n>com</span><span class=o>/</span><span class=n>python</span><span class=o>-</span><span class=n>poetry</span><span class=o>/</span><span class=n>poetry</span><span class=o>/</span><span class=n>master</span><span class=o>/</span><span class=n>install</span><span class=o>-</span><span class=n>poetry</span><span class=p>.</span><span class=n>py</span><span class=w> </span><span class=o>|</span><span class=w> </span><span class=n>python</span><span class=w> </span><span class=o>-</span><span class=w>
+</span><span class=w></span><span class=n>Retrieving</span><span class=w> </span><span class=n>Poetry</span><span class=w> </span><span class=n>metadata</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=c1># Welcome to Poetry!
+</span><span class=c1></span><span class=w>
+</span><span class=w></span><span class=n>This</span><span class=w> </span><span class=n>will</span><span class=w> </span><span class=n>download</span><span class=w> </span><span class=k>and</span><span class=w> </span><span class=n>install</span><span class=w> </span><span class=n>the</span><span class=w> </span><span class=n>latest</span><span class=w> </span><span class=n>version</span><span class=w> </span><span class=n>of</span><span class=w> </span><span class=n>Poetry</span><span class=p>,</span><span class=w>
+</span><span class=w></span><span class=n>a</span><span class=w> </span><span class=n>dependency</span><span class=w> </span><span class=k>and</span><span class=w> </span><span class=n>package</span><span class=w> </span><span class=n>manager</span><span class=w> </span><span class=k>for</span><span class=w> </span><span class=n>Python</span><span class=p>.</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=n>It</span><span class=w> </span><span class=n>will</span><span class=w> </span><span class=k>add</span><span class=w> </span><span class=n>the</span><span class=w> </span><span class=o>`</span><span class=n>poetry</span><span class=o>`</span><span class=w> </span><span class=n>command</span><span class=w> </span><span class=k>to</span><span class=w> </span><span class=n>Poetry</span><span class=s1>&#39;s bin directory, located at:
+</span><span class=s1>
+</span><span class=s1>/home/yanboyang713/.local/bin
+</span><span class=s1>
+</span><span class=s1>You can uninstall at any time by executing this script with the --uninstall option,
+</span><span class=s1>and these changes will be reverted.
+</span><span class=s1>
+</span><span class=s1>Installing Poetry (1.1.8): Done
+</span><span class=s1>
+</span><span class=s1>Poetry (1.1.8) is installed now. Great!
+</span><span class=s1>
+</span><span class=s1>You can test that everything is set up by executing:
+</span><span class=s1>
+</span><span class=s1>`poetry --version`
+</span><span class=s1>
+</span></code></pre></td></tr></table>
+</div>
 </div><p><strong>Warning</strong>: The previous get-poetry.py installer is now deprecated, if you are currently using it you should migrate to the new, supported, install-poetry.py installer.</p>
 <h2 id=reference>Reference</h2>
 <ol>
@@ -602,7 +654,7 @@ sqlparse==0.4.1
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-09-02</span>
+<span>Updated on 2021-09-08</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -611,12 +663,12 @@ sqlparse==0.4.1
 <a class=link-to-markdown href=/pythonvirtualenvironments/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="An introduction to Magit, an Emacs mode for Git" data-hashtags=spacemacs,emacs,magit><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/pythonvirtualenvironments/ data-hashtag=spacemacs><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="An introduction to Magit, an Emacs mode for Git" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="An introduction to Magit, an Emacs mode for Git"><i data-svg-src=/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="An introduction to Magit, an Emacs mode for Git"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="An introduction to Magit, an Emacs mode for Git" data-description><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="An introduction to Magit, an Emacs mode for Git" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="An introduction to Magit, an Emacs mode for Git"><i class="fab fa-evernote fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="Introduction to Python Virtual Environments and Dependency Managers" data-hashtags=Python><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/pythonvirtualenvironments/ data-hashtag=Python><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="Introduction to Python Virtual Environments and Dependency Managers" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="Introduction to Python Virtual Environments and Dependency Managers"><i data-svg-src=/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="Introduction to Python Virtual Environments and Dependency Managers"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="Introduction to Python Virtual Environments and Dependency Managers" data-description><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="Introduction to Python Virtual Environments and Dependency Managers" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/pythonvirtualenvironments/ data-title="Introduction to Python Virtual Environments and Dependency Managers"><i class="fab fa-evernote fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/spacemacs/>spacemacs</a>,&nbsp;<a href=/tags/emacs/>Emacs</a>,&nbsp;<a href=/tags/magit/>magit</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/python/>Python</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>
