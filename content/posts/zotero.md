@@ -1,6 +1,8 @@
 ---
 title: "Getting Started with Zotero"
-date: 2021-04-00T06:11:32+10:00
+date: 2021-09-12T06:11:32+10:00
+tags: ["research"]
+categories: ["research"]
 ---
 ## Introduction
 
