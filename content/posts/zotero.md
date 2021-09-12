@@ -39,6 +39,42 @@ Enter your username and password into the Sync preferences and click “Set Up S
 Zotero Connector
 https://chrome.google.com/webstore/detail/zotero-connector/ekhagklcjbdpajgpjgmbionohlpdbjgc
 
+## Better Bibtex
+Install by downloading the [latest release](https://github.com/retorquere/zotero-better-bibtex/releases/tag/v5.4.29) and save the XPI file, just clicking it – and then in Zotero:
+
+1. In the main menu go to Tools > Add-ons
+2. Select ‘Extensions’
+3. Click on the gear in the top-right corner and choose ‘Install Add-on From File…’
+4. Choose .xpi that you’ve just downloaded, click ‘Install’
+5. Restart Zotero
+
+## Zotfile
+Install by downloading the [latest release](https://github.com/jlegewie/zotfile/releases/)  and save the XPI file, just clicking it – and then in Zotero:
+
+1. In the main menu go to Tools > Add-ons
+2. Select ‘Extensions’
+3. Click on the gear in the top-right corner and choose ‘Install Add-on From File…’
+4. Choose .xpi that you’ve just downloaded, click ‘Install’
+5. Restart Zotero
+
+
+## Scite
+
+
+Install by downloading the [latest release](https://github.com/scitedotai/scite-zotero-plugin/releases)  and save the XPI file, just clicking it – and then in Zotero:
+
+1. In the main menu go to Tools > Add-ons
+2. Select ‘Extensions’
+3. Click on the gear in the top-right corner and choose ‘Install Add-on From File…’
+4. Choose .xpi that you’ve just downloaded, click ‘Install’
+5. Restart Zotero
+
+## Reference List
+1. http://zotfile.com/
+2. https://github.com/scitedotai/scite-zotero-plugin
+3. https://retorque.re/zotero-better-bibtex/
+
+
 
 
 
