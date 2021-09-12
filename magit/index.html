@@ -5,7 +5,11 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>An introduction to Magit, an Emacs mode for Git - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="An introduction to Magit, an Emacs mode for Git">
-<meta property="og:description" content>
+<meta property="og:description" content="Introduction Magit is arguably the best Git tool out there and also my favorite. It is a package in Emacs, and it is text based.
+Magit init, commit and commit messages Init create a repositories from a floder SPC g i(magit-init)
+Add all of files to staged SPC u S
+Checking staged files changed contect Move cursor to staged files, click TAB check what is changed
+Commit c c then use c-c c-c to finish commit">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/magit/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-09-02T06:11:32+10:00">
@@ -13,11 +17,15 @@
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="An introduction to Magit, an Emacs mode for Git">
-<meta name=twitter:description content>
+<meta name=twitter:description content="Introduction Magit is arguably the best Git tool out there and also my favorite. It is a package in Emacs, and it is text based.
+Magit init, commit and commit messages Init create a repositories from a floder SPC g i(magit-init)
+Add all of files to staged SPC u S
+Checking staged files changed contect Move cursor to staged files, click TAB check what is changed
+Commit c c then use c-c c-c to finish commit">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/magit/><link rel=prev href=https://yanboyang.com/roam/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"An introduction to Magit, an Emacs mode for Git","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/magit\/"},"genre":"posts","keywords":"spacemacs, emacs, magit","wordcount":0,"url":"https:\/\/yanboyang.com\/magit\/","datePublished":"2021-09-02T06:11:32+10:00","dateModified":"2021-09-02T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/magit/><link rel=prev href=https://yanboyang.com/roam/><link rel=next href=https://yanboyang.com/pythonvirtualenvironments/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"An introduction to Magit, an Emacs mode for Git","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/magit\/"},"genre":"posts","keywords":"spacemacs, emacs, magit","wordcount":884,"url":"https:\/\/yanboyang.com\/magit\/","datePublished":"2021-09-02T06:11:32+10:00","dateModified":"2021-09-02T06:11:32+10:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -91,15 +99,207 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">An introduction to Magit, an Emacs mode for Git</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/emacs/><i class="far fa-folder fa-fw"></i>emacs</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-09-02>2021-09-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;0 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;0 minutes&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-09-02>2021-09-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;884 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
 <span><i class="details-icon fas fa-angle-right"></i></span>
 </div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents></nav></div>
-</div><div class=content id=content></div><div class=post-footer id=post-footer>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#introduction>Introduction</a></li>
+<li><a href=#magit-init-commit-and-commit-messages>Magit init, commit and commit messages</a>
+<ul>
+<li><a href=#init-create-a-repositories-from-a-floder>Init create a repositories from a floder</a></li>
+<li><a href=#add-all-of-files-to-staged>Add all of files to staged</a></li>
+<li><a href=#checking-staged-files-changed-contect>Checking staged files changed contect</a></li>
+<li><a href=#commit>Commit</a></li>
+<li><a href=#open-magit-ststus>Open Magit Ststus</a></li>
+</ul>
+</li>
+<li><a href=#commits-in-action>Commits in Action</a></li>
+<li><a href=#pull-push--send-pull-request>pull, push & send Pull request</a></li>
+<li><a href=#push>push</a>
+<ul>
+<li><a href=#add-remote>add remote</a></li>
+<li><a href=#set-upstream>set upstream</a></li>
+</ul>
+</li>
+<li><a href=#rebase>Rebase</a>
+<ul>
+<li><a href=#rewording-commit>Rewording commit</a></li>
+<li><a href=#squashing-commits>Squashing commits</a></li>
+<li><a href=#splitting-commit-does-not-work-yet>Splitting commit (does NOT work yet)</a></li>
+</ul>
+</li>
+<li><a href=#reset-commits>Reset commits</a></li>
+<li><a href=#revert-commits>Revert commits</a></li>
+<li><a href=#branching-basics>Branching Basics</a></li>
+<li><a href=#reference-list>Reference List</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h2 id=introduction>Introduction</h2>
+<p><a href=https://magit.vc/ target=_blank rel="noopener noreferrer">Magit</a> is arguably the best Git tool out there and also my favorite. It is a package in Emacs, and it is text based.</p>
+<h2 id=magit-init-commit-and-commit-messages>Magit init, commit and commit messages</h2>
+<h3 id=init-create-a-repositories-from-a-floder>Init create a repositories from a floder</h3>
+<p>SPC g i(magit-init)</p>
+<h3 id=add-all-of-files-to-staged>Add all of files to staged</h3>
+<p>SPC u S</p>
+<h3 id=checking-staged-files-changed-contect>Checking staged files changed contect</h3>
+<p>Move cursor to staged files, click TAB check what is changed</p>
+<h3 id=commit>Commit</h3>
+<p>c c then use c-c c-c to finish commit</p>
+<h3 id=open-magit-ststus>Open Magit Ststus</h3>
+<p>SPC g s(magit-status)
+s-1 (goto unstaged section) - does not working
+s to stage changes in a sigle file - cursor in single file
+if cursor in Untracked files, type s will stage all of files.</p>
+<p>press tab to view diffs in staged file</p>
+<p>editing the commit message and the diff on the right</p>
+<h2 id=commits-in-action>Commits in Action</h2>
+<ol>
+<li>Ammend ( c a)
+ammend mean add new change to last commit.</li>
+</ol>
+<p>write good commit messages
+commit summary msg could not long than 72 char (first line)
+if you add more commit msg, skip a line to write more details</p>
+<p>check commit log (l l), type Enter to check commit details</p>
+<p>squash unpushed commits (r l)
+<a href=http://www.howardism.org/Technical/Emacs/magit-squashing.html target=_blank rel="noopener noreferrer">http://www.howardism.org/Technical/Emacs/magit-squashing.html</a></p>
+<p>reset commits (l l #)
+select a few line to commits
+discard changes, file wide or line wide
+revert commits</p>
+<h2 id=pull-push--send-pull-request>pull, push & send Pull request</h2>
+<p>P P
+f f / f o to fetch branch
+F to pull
+s-g to send pull request</p>
+<h2 id=push>push</h2>
+<h3 id=add-remote>add remote</h3>
+<p>M a ( (magit-remote-add))
+Enter name and URL</p>
+<h3 id=set-upstream>set upstream</h3>
+<p>p u</p>
+<p><strong>TIPS:</strong> when you want to paste into minibuffer, C-y</p>
+<p>128 git … push -v &ndash;set-upstream origin master:refs/heads/master
+Pushing to <a href=https://github.com/yanboyang713/testMagit.git target=_blank rel="noopener noreferrer">https://github.com/yanboyang713/testMagit.git</a>
+Username for &lsquo;<a href=https://github.com target=_blank rel="noopener noreferrer">https://github.com</a>&rsquo;: Password for &lsquo;<a href=https://yanboyang713@github.com target=_blank rel="noopener noreferrer">https://yanboyang713@github.com</a>&rsquo;:
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see <a href=https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ target=_blank rel="noopener noreferrer">https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/</a> for more information.
+fatal: Authentication failed for &lsquo;<a href=https://github.com/yanboyang713/testMagit.git/%27 target=_blank rel="noopener noreferrer">https://github.com/yanboyang713/testMagit.git/'</a></p>
+<h2 id=rebase>Rebase</h2>
+<p>Let’s create an empty repository and add one empty file to it.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git init
+touch file.txt
+git add .
+git commit -m <span class=s1>&#39;first commit&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=rewording-commit>Rewording commit</h3>
+<p>Now let’s add some fruits in the file. Open the file and add a new line</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>apple
+</code></pre></td></tr></table>
+</div>
+</div><p>Open Magit, commit the change with a message says</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>Add apple
+</code></pre></td></tr></table>
+</div>
+</div><p>Then add a new line</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>pear
+</code></pre></td></tr></table>
+</div>
+</div><p>with commit message</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>apple again, wrong commit message
+</code></pre></td></tr></table>
+</div>
+</div><p>Then add a new line</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>peach
+</code></pre></td></tr></table>
+</div>
+</div><p>with a commit message</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>peach
+</code></pre></td></tr></table>
+</div>
+</div><p>Now it is clear that we need to fix the second commit message. But since this is not the last one we cannot use <strong>git commit &ndash;amend</strong>. But we can still use <strong>rebase</strong> to change it.</p>
+<p>In Magit, press <strong>ll</strong> to open the log history. Put the cursor under the wrong commit.
+<img class=lazyload src=/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017008/git/Rewording_s2foua.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017008/git/Rewording_s2foua.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017008/git/Rewording_s2foua.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017008/git/Rewording_s2foua.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017008/git/Rewording_s2foua.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017008/git/Rewording_s2foua.png></p>
+<p>Then press <strong>r(rebase)</strong> and <strong>w(to reword a commit)</strong>.
+Now enter the correct commit message pear and press <strong>C-c C-c</strong>. Now you should see the commit messages updates.</p>
+<h3 id=squashing-commits>Squashing commits</h3>
+<p>It appears that the last 3 commits should really be 1 commit with a message like add fruits. We can use rebase to squash them into one commit like this:</p>
+<p>In the commit history, put the cursor on the oldest of the 3 commits that we want to squash, and press <strong>r(rebase)</strong> <strong>i(interactively)</strong>. We now see the interactive rebase page.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017472/git/Squashing_nfufkr.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017472/git/Squashing_nfufkr.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017472/git/Squashing_nfufkr.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017472/git/Squashing_nfufkr.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017472/git/Squashing_nfufkr.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017472/git/Squashing_nfufkr.png></p>
+<p>The good thing about this page is that it contains a cheatsheet already, so you can just see what kind things can be done here.</p>
+<p>Notice that the order of the commits now is reversed, the latest commit being at the bottom.</p>
+<p>As the cheatsheet says, we can put the cursor on the pear commit and press s, this means that we want this commit to be squashed into its previous commit. And then we do the same for the peach commit.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017669/git/Squashing2_rfht8t.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017669/git/Squashing2_rfht8t.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017669/git/Squashing2_rfht8t.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017669/git/Squashing2_rfht8t.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017669/git/Squashing2_rfht8t.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017669/git/Squashing2_rfht8t.png></p>
+<p>We can see that the two commits are marked as squash now, then we can press C-c C-c to make the squash happen. It will prompt you to enter the new commit and also hint you the previous commit messages. Type Add fruits and press C-c C-c.</p>
+<p>Now we can see from the history that the 3 previous commits become one now.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017873/git/Squashing3_zchjry.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017873/git/Squashing3_zchjry.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017873/git/Squashing3_zchjry.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017873/git/Squashing3_zchjry.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017873/git/Squashing3_zchjry.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017873/git/Squashing3_zchjry.png>
+<img class=lazyload src=/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631018028/git/Squashing4_n9ry27.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631018028/git/Squashing4_n9ry27.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631018028/git/Squashing4_n9ry27.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631018028/git/Squashing4_n9ry27.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631018028/git/Squashing4_n9ry27.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631018028/git/Squashing4_n9ry27.png></p>
+<h3 id=splitting-commit-does-not-work-yet>Splitting commit (does NOT work yet)</h3>
+<p>It will come at times that we want to split a big commit into smaller ones. This can also be achieved by using rebase.</p>
+<p>Let’s add a new file file2.txt and modify the file.txt to add some animal names. Commit the changes with message add animals to file and create file2. So we want to split this commit into 2 commits, one for adding animals and one for creating file2.</p>
+<p>As always, we go to the commits history page, put the cursor on the last commit, and press r, then press m(to edit a commit).</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631018477/git/Splitting1_ij6vvu.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631018477/git/Splitting1_ij6vvu.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631018477/git/Splitting1_ij6vvu.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631018477/git/Splitting1_ij6vvu.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631018477/git/Splitting1_ij6vvu.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631018477/git/Splitting1_ij6vvu.png></p>
+<p>Notice that there is a @ sign in front of the commit, meaning the HEAD now is at this commit. And then, we want to move the HEAD one step before the current by git reset. Move the cursor to previous commit Add fruits and press x, then choose master. Now go back to the main screen you should see this:</p>
+<p><strong>TIPS:</strong> You can switch between Vim and Emacs per buffer with C-z
+<img class=lazyload src=/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631019252/git/Splitting2_i6p9cr.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631019252/git/Splitting2_i6p9cr.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631019252/git/Splitting2_i6p9cr.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631019252/git/Splitting2_i6p9cr.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631019252/git/Splitting2_i6p9cr.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631019252/git/Splitting2_i6p9cr.png></p>
+<h2 id=reset-commits>Reset commits</h2>
+<p>ll #</p>
+<h2 id=revert-commits>Revert commits</h2>
+<h2 id=branching-basics>Branching Basics</h2>
+<p>b B to create branch</p>
+<p>m m to merge</p>
+<p>b b to switch branch</p>
+<h2 id=reference-list>Reference List</h2>
+<ol>
+<li><a href=https://github.com/emacs-china/Spacemacs-rocks/tree/master/Season1#magit-workflow target=_blank rel="noopener noreferrer">https://github.com/emacs-china/Spacemacs-rocks/tree/master/Season1#magit-workflow</a></li>
+<li><a href=https://www.lvguowei.me/post/magit-rebase/ target=_blank rel="noopener noreferrer">https://www.lvguowei.me/post/magit-rebase/</a></li>
+<li><a href=https://www.lvguowei.me/post/magit-rebase-2/ target=_blank rel="noopener noreferrer">https://www.lvguowei.me/post/magit-rebase-2/</a></li>
+</ol>
+</div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
@@ -122,13 +322,14 @@ Cancel
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>
 </div>
-<div class=post-nav><a href=/roam/ class=prev rel=prev title="Getting Started with Org Roam - Build a Second Brain in Emacs"><i class="fas fa-angle-left fa-fw"></i>Getting Started with Org Roam - Build a Second Brain in Emacs</a></div>
+<div class=post-nav><a href=/roam/ class=prev rel=prev title="Getting Started with Org Roam - Build a Second Brain in Emacs"><i class="fas fa-angle-left fa-fw"></i>Getting Started with Org Roam - Build a Second Brain in Emacs</a>
+<a href=/pythonvirtualenvironments/ class=next rel=next title="Introduction to Python Virtual Environments and Dependency Managers">Introduction to Python Virtual Environments and Dependency Managers<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id=comments><div id=disqus_thread class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>
