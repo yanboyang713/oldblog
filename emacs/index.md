@@ -19,29 +19,6 @@ docker run -it --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix silex/emacs
 yay -S emacs
 ```
 
-```bash
-yay -S adobe-source-code-pro-fonts
-```
-
-clone spacemacs repo and use develop branch
-
-```bash
-git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d -b develop
-```
-
-clone zilongshanren layer and checkout develop branch
-
-```bash
-git clone https://github.com/yanboyang713/spacemacs-private.git ~/.spacemacs.d/
-```
-
-```console
-[yanboyang713@boyang ~]$ gpg --homedir ~/.emacs.d/elpa/gnupg --receive-keys 066DAFCB81E42C40
-gpg: key 066DAFCB81E42C40: "GNU ELPA Signing Agent (2019) <elpasign@elpa.gnu.org>" not changed
-gpg: Total number processed: 1
-gpg:              unchanged: 1
-```
-
 ## Go over the Emacs tutorial at least once
 - C-h t to open the tutorial.
 - You should be familiar with M(meta), s(uper, command key), S(hift) and C(trl)
