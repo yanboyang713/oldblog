@@ -589,6 +589,6 @@ googleAnalytics = "UA-101949995-1"
 [frontmatter]
   date = ['date', 'publishDate', 'lastmod']
   expiryDate = ['expiryDate']
-  lastmod = [':git', 'lastmod', 'date', 'publishDate']
+  lastmod = ['lastmod', ':fileModTime', ':default']
   publishDate = ['publishDate', 'date']
 
