@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with Spacemacs/Emacs"
+title: "Getting Started with Spacemacs"
 date: 2021-04-04T06:11:32+10:00
 tags: [ "spacemacs", "emacs" ]
 categories: [ "emacs" ]

@@ -8,6 +8,11 @@ categories: [ "Ham Radio" ]
 ## Coaxial Cable
 1. http://www.m5bxb.com/coaxlengthcalc.htm
 
+### Connector
+https://shop33395161.taobao.com/p/rd262982.htm
+https://shop33395161.taobao.com/p/rd770430.htm
+
+
 ## Dummy load
 ![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632030091/ham%20radio/1260594278_phjlkh.jpg)
 ![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632030110/ham%20radio/654019499_if4td0.jpg)
