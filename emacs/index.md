@@ -19,6 +19,32 @@ docker run -it --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix silex/emacs
 yay -S emacs
 ```
 
+### macOS
+#### Prerequisites
+```bash
+# Installs clang
+xcode-select --install
+```
+
+#### emacs-mac. It offers good integration with macOS, native emojis and better childframe support
+```bash
+brew tap railwaycat/emacsmacport
+brew install emacs-mac --with-modules
+ln -s /usr/local/opt/emacs-mac/Emacs.app /Applications/Emacs.app
+```
+
+#### emacs-plus
+```bash
+brew tap d12frosted/emacs-plus
+brew install emacs-plus
+ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app
+```
+
+#### emacs is another acceptable option, **but does not provide a Emacs.app
+```bash
+brew install emacs
+```
+
 ## Go over the Emacs tutorial at least once
 - C-h t to open the tutorial.
 - You should be familiar with M(meta), s(uper, command key), S(hift) and C(trl)

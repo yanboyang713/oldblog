@@ -1,4 +1,4 @@
-# Getting Started with Spacemacs/Emacs
+# Getting Started with Spacemacs
 
 ## Prerequisites
 
