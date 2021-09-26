@@ -154,5 +154,7 @@ Step 5:
 ```
 
 
-
+## Submodule
+### add a submodule to a directory
+git submodule add <git@github ...> dir
 
