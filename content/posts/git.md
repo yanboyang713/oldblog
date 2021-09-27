@@ -99,8 +99,37 @@ Step 5:
 ✓ Logged in as yanboyang713
 [yanboyang713@Boyang-PC dotfiles]$ 
 ```
+## Repository
+A repository contains all of your project's files and each file's revision history. You can discuss and manage your project's work within the repository.
 
-### create a repository
++ You can own repositories individually, or you can share ownership of repositories with other people in an organization.
++ You can restrict who has access to a repository by choosing the repository's visibility.
++ For user-owned repositories, you can give other people collaborator access so that they can collaborate on your project. If a repository is owned by an organization, you can give organization members access permissions to collaborate on your repository.
++ You can use repositories to manage your work and collaborate with others.
++ You can use issues to collect user feedback, report software bugs, and organize tasks you'd like to accomplish.
++ You can use GitHub Discussions to ask and answer questions, share information, make announcements, and conduct or participate in conversations about a project.
++ You can use pull requests to propose changes to a repository.
++ You can use project boards to organize and prioritize your issues and pull requests.
+
+
+## Create a repository
+### GUI
+1. In the upper-right corner of any page, use the **+** drop-down menu, and select **New repository**.
+![](https://docs.github.com/assets/images/help/repository/repo-create.png)
+2. Type a short, memorable name for your repository. For example, "hello-world".
+![](https://docs.github.com/assets/images/help/repository/create-repository-name.png)
+3. Optionally, add a description of your repository. For example, "My first repository on GitHub."
+![](https://docs.github.com/assets/images/help/repository/create-repository-desc.png)
+4. Choose a repository visibility. For more information, see "[About repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#about-repository-visibility)."
+![](https://docs.github.com/assets/images/help/repository/create-repository-public-private.png)
+5. Select **Initialize this repository with a README**.
+![](https://docs.github.com/assets/images/help/repository/initialize-with-readme.png)
+6. Click **Create repository**.
+![](https://docs.github.com/assets/images/help/repository/create-repository-button.png)
+
+Congratulations! You've successfully created your first repository, and initialized it with a README file.
+
+### CLI
 ```console
 [yanboyang713@Boyang-PC dotfiles]$ gh repo create DotFiles
 ? Visibility  [Use arrows to move, type to filter]
