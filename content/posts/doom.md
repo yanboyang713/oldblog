@@ -12,37 +12,6 @@ GNU find
 OPTIONAL: fd 7.3.0+ (improves file indexing performance for some commands)
 
 ## Instation
-### Install Emacs
-#### Mac
-
-#### Arch Linux
-```bash
-# required dependencies
-pacman -S git emacs ripgrep
-# optional dependencies
-pacman -S fd
-```
-
-#### ubuntu
-```bash
-# Ubuntu emacs
-sudo add-apt-repository ppa:kelleyk/emacs
-sudo apt-get update
-sudo apt install emacs27
-```
-
-### Install Doom Emacs
-
-```bash
-# Clone Doom Eemacs
-rm -r ~/.emacs.d
-git clone https://github.com/hlissner/doom-emacs -b develop ~/.config/emacs
-
-# Clone my config
-git clone https://github.com/ztlevi/doom-config ~/.config/doom
-
-~/.config/emacs/bin/doom install
-```
 
 
 Receive and send email (.mbsyncrc)
