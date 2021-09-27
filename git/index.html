@@ -11,7 +11,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/git/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-09-24T06:11:32+10:00">
-<meta property="article:modified_time" content="2021-09-27T08:23:18+00:00">
+<meta property="article:modified_time" content="2021-09-27T08:31:56+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="An introduction for Git">
@@ -21,7 +21,7 @@
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/git/><link rel=prev href=https://yanboyang.com/dotfiles/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"An introduction for Git","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/git\/"},"genre":"posts","keywords":"git, git-cli","wordcount":890,"url":"https:\/\/yanboyang.com\/git\/","datePublished":"2021-09-24T06:11:32+10:00","dateModified":"2021-09-27T08:23:18+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/git/><link rel=prev href=https://yanboyang.com/dotfiles/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"An introduction for Git","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/git\/"},"genre":"posts","keywords":"git, git-cli","wordcount":1140,"url":"https:\/\/yanboyang.com\/git\/","datePublished":"2021-09-24T06:11:32+10:00","dateModified":"2021-09-27T08:31:56+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -95,8 +95,8 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">An introduction for Git</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/version-contrl/><i class="far fa-folder fa-fw"></i>version contrl</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-09-24>2021-09-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;890 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-09-24>2021-09-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1140 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -108,7 +108,13 @@ Cancel
 <ul>
 <li><a href=#install>Install</a></li>
 <li><a href=#login>Login</a></li>
-<li><a href=#create-a-repository>create a repository</a></li>
+</ul>
+</li>
+<li><a href=#repository>Repository</a></li>
+<li><a href=#create-a-repository>Create a repository</a>
+<ul>
+<li><a href=#gui>GUI</a></li>
+<li><a href=#cli>CLI</a></li>
 </ul>
 </li>
 <li><a href=#inviting-collaborators>Inviting collaborators</a></li>
@@ -285,7 +291,36 @@ Cancel
 [yanboyang713@Boyang-PC dotfiles]$ 
 </code></pre></td></tr></table>
 </div>
-</div><h3 id=create-a-repository>create a repository</h3>
+</div><h2 id=repository>Repository</h2>
+<p>A repository contains all of your project&rsquo;s files and each file&rsquo;s revision history. You can discuss and manage your project&rsquo;s work within the repository.</p>
+<ul>
+<li>You can own repositories individually, or you can share ownership of repositories with other people in an organization.</li>
+<li>You can restrict who has access to a repository by choosing the repository&rsquo;s visibility.</li>
+<li>For user-owned repositories, you can give other people collaborator access so that they can collaborate on your project. If a repository is owned by an organization, you can give organization members access permissions to collaborate on your repository.</li>
+<li>You can use repositories to manage your work and collaborate with others.</li>
+<li>You can use issues to collect user feedback, report software bugs, and organize tasks you&rsquo;d like to accomplish.</li>
+<li>You can use GitHub Discussions to ask and answer questions, share information, make announcements, and conduct or participate in conversations about a project.</li>
+<li>You can use pull requests to propose changes to a repository.</li>
+<li>You can use project boards to organize and prioritize your issues and pull requests.</li>
+</ul>
+<h2 id=create-a-repository>Create a repository</h2>
+<h3 id=gui>GUI</h3>
+<ol>
+<li>In the upper-right corner of any page, use the <strong>+</strong> drop-down menu, and select <strong>New repository</strong>.
+<img class=lazyload src=/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/repo-create.png data-srcset="https://docs.github.com/assets/images/help/repository/repo-create.png, https://docs.github.com/assets/images/help/repository/repo-create.png 1.5x, https://docs.github.com/assets/images/help/repository/repo-create.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/repo-create.png title=https://docs.github.com/assets/images/help/repository/repo-create.png></li>
+<li>Type a short, memorable name for your repository. For example, &ldquo;hello-world&rdquo;.
+<img class=lazyload src=/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/create-repository-name.png data-srcset="https://docs.github.com/assets/images/help/repository/create-repository-name.png, https://docs.github.com/assets/images/help/repository/create-repository-name.png 1.5x, https://docs.github.com/assets/images/help/repository/create-repository-name.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/create-repository-name.png title=https://docs.github.com/assets/images/help/repository/create-repository-name.png></li>
+<li>Optionally, add a description of your repository. For example, &ldquo;My first repository on GitHub.&rdquo;
+<img class=lazyload src=/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/create-repository-desc.png data-srcset="https://docs.github.com/assets/images/help/repository/create-repository-desc.png, https://docs.github.com/assets/images/help/repository/create-repository-desc.png 1.5x, https://docs.github.com/assets/images/help/repository/create-repository-desc.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/create-repository-desc.png title=https://docs.github.com/assets/images/help/repository/create-repository-desc.png></li>
+<li>Choose a repository visibility. For more information, see &ldquo;<a href=https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#about-repository-visibility target=_blank rel="noopener noreferrer">About repositories</a>.&rdquo;
+<img class=lazyload src=/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/create-repository-public-private.png data-srcset="https://docs.github.com/assets/images/help/repository/create-repository-public-private.png, https://docs.github.com/assets/images/help/repository/create-repository-public-private.png 1.5x, https://docs.github.com/assets/images/help/repository/create-repository-public-private.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/create-repository-public-private.png title=https://docs.github.com/assets/images/help/repository/create-repository-public-private.png></li>
+<li>Select <strong>Initialize this repository with a README</strong>.
+<img class=lazyload src=/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/initialize-with-readme.png data-srcset="https://docs.github.com/assets/images/help/repository/initialize-with-readme.png, https://docs.github.com/assets/images/help/repository/initialize-with-readme.png 1.5x, https://docs.github.com/assets/images/help/repository/initialize-with-readme.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/initialize-with-readme.png title=https://docs.github.com/assets/images/help/repository/initialize-with-readme.png></li>
+<li>Click <strong>Create repository</strong>.
+<img class=lazyload src=/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/create-repository-button.png data-srcset="https://docs.github.com/assets/images/help/repository/create-repository-button.png, https://docs.github.com/assets/images/help/repository/create-repository-button.png 1.5x, https://docs.github.com/assets/images/help/repository/create-repository-button.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/create-repository-button.png title=https://docs.github.com/assets/images/help/repository/create-repository-button.png></li>
+</ol>
+<p>Congratulations! You&rsquo;ve successfully created your first repository, and initialized it with a README file.</p>
+<h3 id=cli>CLI</h3>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
