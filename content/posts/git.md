@@ -158,6 +158,21 @@ Step 5:
 ✓ Added remote https://github.com/yanboyang713/DotFiles.git
 ```
 
+## Inviting collaborators
+You can invite users to become collaborators to your personal repository.
+1. Ask for the username of the person you're inviting as a collaborator. If they don't have a username yet, they can sign up for GitHub
+2. On GitHub, navigate to the main page of the repository.
+3. Under your repository name, click **Settings**.
+![](https://docs.github.com/assets/images/help/repository/repo-actions-settings.png)
+4. In the left sidebar, click **Manage access**.
+![](https://docs.github.com/assets/images/help/repository/manage-access-tab.png)
+5. Click **Invite a collaborator**.
+![](https://docs.github.com/assets/images/help/repository/invite-a-collaborator-button.png)
+6. In the search field, start typing the name of person you want to invite, then click a name in the list of matches.
+![](https://docs.github.com/assets/images/help/repository/manage-access-invite-search-field-user.png)
+7. Click **Add NAME to REPOSITORY**.
+![](https://docs.github.com/assets/images/help/repository/add-collaborator-user-repo.png)
+8. The user will receive an email inviting them to the repository. Once they accept your invitation, they will have collaborator access to your repository.
 
 ## Submodule
 ### add a submodule to a directory
