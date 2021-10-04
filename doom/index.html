@@ -5,23 +5,23 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Getting Started with Doom Emacs - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Getting Started with Doom Emacs">
-<meta property="og:description" content="Prerequisites Git 2.23+ Emacs 27.1+ (27.2 is recommended, or native-comp). ripgrep 11.0+ GNU find OPTIONAL: fd 7.3.0+ (improves file indexing performance for some commands)
-Instation Receive and send email (.mbsyncrc) install Install the isync package yaourt -S isync
-Using GPG for mbsync passwords The basic idea is that every time a password is needed, an particular file is decrypted and loaded. The key for the decryption can be prompted for and be stashed by gpg-agent.">
+<meta property="og:description" content="Prerequisites Instation Dependencies Arch Linux 1 2 3 4 5  # required dependencies pacman -S git emacs ripgrep # optional dependencies pacman -S fd yay -S emacs-pdf-tools-git   With Emacs and Doom’s dependencies installed, next is to install Doom Emacs itself:
+Receive and send email (.mbsyncrc) install Install the isync package yaourt -S isync
+Using GPG for mbsync passwords The basic idea is that every time a password is needed, an particular file is decrypted and loaded.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/doom/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-09-15T06:11:32+10:00">
-<meta property="article:modified_time" content="2021-09-27T08:31:56+00:00">
+<meta property="article:modified_time" content="2021-10-04T17:37:32+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting Started with Doom Emacs">
-<meta name=twitter:description content="Prerequisites Git 2.23+ Emacs 27.1+ (27.2 is recommended, or native-comp). ripgrep 11.0+ GNU find OPTIONAL: fd 7.3.0+ (improves file indexing performance for some commands)
-Instation Receive and send email (.mbsyncrc) install Install the isync package yaourt -S isync
-Using GPG for mbsync passwords The basic idea is that every time a password is needed, an particular file is decrypted and loaded. The key for the decryption can be prompted for and be stashed by gpg-agent.">
+<meta name=twitter:description content="Prerequisites Instation Dependencies Arch Linux 1 2 3 4 5  # required dependencies pacman -S git emacs ripgrep # optional dependencies pacman -S fd yay -S emacs-pdf-tools-git   With Emacs and Doom’s dependencies installed, next is to install Doom Emacs itself:
+Receive and send email (.mbsyncrc) install Install the isync package yaourt -S isync
+Using GPG for mbsync passwords The basic idea is that every time a password is needed, an particular file is decrypted and loaded.">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/doom/><link rel=prev href=https://yanboyang.com/emacs/><link rel=next href=https://yanboyang.com/ham/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Doom Emacs","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/doom\/"},"genre":"posts","keywords":"emacs","wordcount":171,"url":"https:\/\/yanboyang.com\/doom\/","datePublished":"2021-09-15T06:11:32+10:00","dateModified":"2021-09-27T08:31:56+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/doom/><link rel=prev href=https://yanboyang.com/emacs/><link rel=next href=https://yanboyang.com/ham/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Doom Emacs","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/doom\/"},"genre":"posts","keywords":"emacs","wordcount":186,"url":"https:\/\/yanboyang.com\/doom\/","datePublished":"2021-09-15T06:11:32+10:00","dateModified":"2021-10-04T17:37:32+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -95,7 +95,7 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting Started with Doom Emacs</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/emacs/><i class="far fa-folder fa-fw"></i>emacs</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-09-15>2021-09-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;171 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-09-15>2021-09-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;186 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
@@ -104,17 +104,37 @@ Cancel
 </div>
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
-<li><a href=#prerequisites>Prerequisites</a></li>
-<li><a href=#instation>Instation</a></li>
+<li><a href=#prerequisites>Prerequisites</a>
+<ul>
+<li><a href=#instation-dependencies>Instation Dependencies</a>
+<ul>
+<li><a href=#arch-linux>Arch Linux</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </nav></div>
 </div><div class=content id=content><h2 id=prerequisites>Prerequisites</h2>
-<p>Git 2.23+
-Emacs 27.1+ (27.2 is recommended, or native-comp).
-ripgrep 11.0+
-GNU find
-OPTIONAL: fd 7.3.0+ (improves file indexing performance for some commands)</p>
-<h2 id=instation>Instation</h2>
+<h3 id=instation-dependencies>Instation Dependencies</h3>
+<h4 id=arch-linux>Arch Linux</h4>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># required dependencies</span>
+pacman -S git emacs ripgrep
+<span class=c1># optional dependencies</span>
+pacman -S fd
+yay -S emacs-pdf-tools-git
+</code></pre></td></tr></table>
+</div>
+</div><p>With Emacs and Doom’s dependencies installed, next is to install Doom Emacs itself:</p>
 <p>Receive and send email (.mbsyncrc)
 install
 Install the isync package yaourt -S isync</p>
@@ -125,7 +145,7 @@ The basic idea is that every time a password is needed, an particular file is de
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-09-27</span>
+<span>Updated on 2021-10-04</span>
 </div>
 <div class=post-info-license></div>
 </div>

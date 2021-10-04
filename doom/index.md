@@ -1,13 +1,17 @@
 # Getting Started with Doom Emacs
 
 ## Prerequisites
-Git 2.23+
-Emacs 27.1+ (27.2 is recommended, or native-comp).
-ripgrep 11.0+
-GNU find
-OPTIONAL: fd 7.3.0+ (improves file indexing performance for some commands)
+### Instation Dependencies
+#### Arch Linux
+```bash
+# required dependencies
+pacman -S git emacs ripgrep
+# optional dependencies
+pacman -S fd
+yay -S emacs-pdf-tools-git
+```
 
-## Instation
+With Emacs and Doom’s dependencies installed, next is to install Doom Emacs itself:
 
 
 Receive and send email (.mbsyncrc)
