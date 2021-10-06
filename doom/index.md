@@ -1,18 +1,23 @@
 # Getting Started with Doom Emacs
 
-## Prerequisites
-### Instation Dependencies
-#### Arch Linux
-```bash
+
+## Prerequisites {#prerequisites}
+
+
+### Instation Dependencies {#instation-dependencies}
+
+\#### Arch Linux
+
+````bash
 # required dependencies
 pacman -S git emacs ripgrep
 # optional dependencies
 pacman -S fd
 yay -S emacs-pdf-tools-git
 ```
+````
 
 With Emacs and Doom’s dependencies installed, next is to install Doom Emacs itself:
-
 
 Receive and send email (.mbsyncrc)
 install
