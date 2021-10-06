@@ -329,3 +329,90 @@ I had quite the time figuring out why I couldn’t see any activity on my site. 
 
 This also blocks the tracking I do want, wouldn’t you know. I switched over to a private window without plugins and the traffic was instantly visible!
 
+## Write Blog with Emacs and ox-hugo package
+[ox-hugo](https://ox-hugo.scripter.co/) is an awesome way to blog from org-mode. It makes it possible for posts in org-mode format to kept separate, and it generates the Markdown files for Hugo. Hugo supports org files, but using ox-hugo has multiple advantages:
+
++ Parsing is done by org-mode natively, not by an external library. Although goorgeous (used by Hugo) is very good, it still lacks in many areas, which leads to text being interpreted differently as by org-mode.
++ Hugo is left to parse a native Markdown file, which means that many of its features such as shortcodes, TOC generation, etc., can still be used on the generated file.
+
+### Prerequisites
+Currently, I am using Doom Emacs, which includes and configures ox-hugo as part of its **(:lang org +hugo)** module, so all that’s left is to configure some parameters to my liking.
+
+I set org-hugo-use-code-for-kbd so that I can apply a custom style to keyboard bindings in my blog.
+
+```emacs-lisp
+(after! ox-hugo
+  (setq org-hugo-use-code-for-kbd t))
+```
+
+### Auto-export the whole project on Saving
+#### Step 1: Enable minor mode org-hugo-auto-export-mode
+This minor mode is disabled by default. It can be enabled separately at project level or file level.
+
+**Note** that once you update the .dir-locals.el file or file-local Variables as shown below, you will be prompted by Emacs to tell it if those settings are safe. Hit ! in that prompt to says yes and to save that choice for future Emacs sessions.
+
+#### Step 2: Enable for the whole project
+If you want to enable auto-exporting for the whole project, add this to the **.dir-locals.el** file in the project root:
+```emacs-lisp
+(("content-org/"
+  . ((org-mode . ((eval . (org-hugo-auto-export-mode)))))))
+```
+
+Above assumes that the Org files are in the “content-org"/ directory (at any nested level in there) relative to that .dir-locals.el file:
+
+```file
+<HUGO_BASE_DIR>
+  ├── config.toml
+  ├── content
+  ├── content-org      <-- Org files in there
+  ├── static
+  ├── themes
+  └── .dir-locals.el
+```
+
+#### Step 3: Create a post with org mode
+In contents directory, create a xxx.org file.
+
+```file
+#+title: Boyang Yan's Blog
+#+hugo_base_dir: ~/blog/
+#+hugo_section: posts
+#+hugo_front_matter_format: yaml
+
+* Emacs :@Emacs:
+** DONE Getting Started with Doom Emacs
+CLOSED: [2021-10-05 Tue 03:44]
+:PROPERTIES:
+:EXPORT_FILE_NAME: doom
+:EXPORT_OPTIONS: author:nil
+:END:
+*** Prerequisites
+**** Instation Dependencies
+#### Arch Linux
+#+begin_src bash
+# required dependencies
+pacman -S git emacs ripgrep
+# optional dependencies
+pacman -S fd
+yay -S emacs-pdf-tools-git
+#+end_src
+```
+When you save this file, you will found there are doom file created in your blog->content->posts automately.
+
+### Export bindings
+The common ox-hugo export bindings are:
+
+#### For both one-post-per-subtree and one-post-per-file flows
++ **C-c C-e H H**
+Export “What I Mean”.
+If point is in a valid Hugo post subtree, export that subtree to a Hugo post in Markdown.
+A valid Hugo post subtree is an Org subtree that has the **EXPORT_FILE_NAME** property set.
+If the file is intended to be exported as a whole (i.e. has the #+title keyword), export the whole Org file to a Hugo post in Markdown.
+
++ **C-c C-e H A**
+Export all “What I Mean”
+If the Org file has one or more ‘valid Hugo post subtrees’, export them to Hugo posts in Markdown.
+If the file is intended to be exported as a whole (i.e. no ‘valid Hugo post subtrees’ at all, and has the **#+title** keyword), export the whole Org file to a Hugo post in Markdown.
+#### For only the one-post-per-file flow
++ **C-c C-e H h**
+Export the Org file to a Hugo post in Markdown.
