@@ -117,3 +117,31 @@ machine imap.gmail.com login MyAccountName@gmail.com password MYPASSWORD machine
 
 
 * Computer Vision :@ComputerVision:
+** DONE Beginning Explore artificial intelligence and computer vision
+CLOSED: [2021-10-07 Thu 19:17]
+:PROPERTIES:
+:EXPORT_FILE_NAME: firstExploreAIandComputerVision
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** What is artificial intelligence?
+**** Explore into artificial intelligence
+For the definition of artificial intelligence, academic research area always have different understandings. The widely accepted definition is:
+
++ *Artificial intelligence is the use of machines to simulate human cognitive abilities technology*.
+
+Artificial intelligence involves a wide range of insights, learning, reasoning and decision-making.
+
+From the perspective of industry application, the core ability of artificial intelligence ability is to make judgments or predictions based on given input.
+
+The rise of deep learning and the three booms of AI.
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633594626/cv/MLThreeBooms_xnexn3.png]]
+
+**** Three core elements of artificial intelligence
+**** Artificial intelligence relationship circle
+**** The foreseeable future of artificial intelligence
+*** Computer vision (CV)
+**** What is CV
+**** Deep learning and CV
+**** Application of CV
+**** CV skills tree construction
