@@ -5,25 +5,25 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Getting Started with Doom Emacs - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Getting Started with Doom Emacs">
-<meta property="og:description" content="Prerequisites Instation Dependencies #### Arch Linux
-1 2 3 4 5 6  # required dependencies pacman -S git emacs ripgrep # optional dependencies pacman -S fd yay -S emacs-pdf-tools-git ```   With Emacs and Doom’s dependencies installed, next is to install Doom Emacs itself:
-Receive and send email (.mbsyncrc) install Install the isync package yaourt -S isync
-Using GPG for mbsync passwords The basic idea is that every time a password is needed, an particular file is decrypted and loaded.">
+<meta property="og:description" content="Prerequisites Instation Arch Linux 1 2 3 4 5 6  # required dependencies pacman -S git emacs ripgrep # optional dependencies pacman -S fd yay -S emacs-pdf-tools-git ```   With Emacs and Doom’s dependencies installed, next is to install Doom Emacs itself:
+1 2  git clone https://github.com/hlissner/doom-emacs ~/.emacs.d ~/.emacs.d/bin/doom install   Sart-up https://zzamboni.org/post/my-doom-emacs-configuration-with-commentary/
+Install the icons to avoid having weird symbols. M-x all-the-icons-install-fonts
+Note: M-x is SPC :">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/doom/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-10-05T03:44:00+11:00">
-<meta property="article:modified_time" content="2021-10-06T11:46:45+00:00">
+<meta property="article:modified_time" content="2021-10-07T06:40:05+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting Started with Doom Emacs">
-<meta name=twitter:description content="Prerequisites Instation Dependencies #### Arch Linux
-1 2 3 4 5 6  # required dependencies pacman -S git emacs ripgrep # optional dependencies pacman -S fd yay -S emacs-pdf-tools-git ```   With Emacs and Doom’s dependencies installed, next is to install Doom Emacs itself:
-Receive and send email (.mbsyncrc) install Install the isync package yaourt -S isync
-Using GPG for mbsync passwords The basic idea is that every time a password is needed, an particular file is decrypted and loaded.">
+<meta name=twitter:description content="Prerequisites Instation Arch Linux 1 2 3 4 5 6  # required dependencies pacman -S git emacs ripgrep # optional dependencies pacman -S fd yay -S emacs-pdf-tools-git ```   With Emacs and Doom’s dependencies installed, next is to install Doom Emacs itself:
+1 2  git clone https://github.com/hlissner/doom-emacs ~/.emacs.d ~/.emacs.d/bin/doom install   Sart-up https://zzamboni.org/post/my-doom-emacs-configuration-with-commentary/
+Install the icons to avoid having weird symbols. M-x all-the-icons-install-fonts
+Note: M-x is SPC :">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/doom/><link rel=prev href=https://yanboyang.com/git/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Doom Emacs","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/doom\/"},"genre":"posts","wordcount":189,"url":"https:\/\/yanboyang.com\/doom\/","datePublished":"2021-10-05T03:44:00+11:00","dateModified":"2021-10-06T11:46:45+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/doom/><link rel=prev href=https://yanboyang.com/git/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Doom Emacs","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/doom\/"},"genre":"posts","wordcount":674,"url":"https:\/\/yanboyang.com\/doom\/","datePublished":"2021-10-05T03:44:00+11:00","dateModified":"2021-10-07T06:40:05+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -97,8 +97,8 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting Started with Doom Emacs</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/emacs/><i class="far fa-folder fa-fw"></i>Emacs</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-10-05>2021-10-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;189 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-10-05>2021-10-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;674 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -108,14 +108,27 @@ Cancel
 <ul>
 <li><a href=#prerequisites>Prerequisites</a>
 <ul>
-<li><a href=#instation-dependencies>Instation Dependencies</a></li>
+<li><a href=#instation>Instation</a>
+<ul>
+<li><a href=#arch-linux>Arch Linux</a></li>
 </ul>
 </li>
 </ul>
+</li>
+<li><a href=#sart-up>Sart-up</a></li>
+<li><a href=#the-bin-doom-utility>The bin/doom utility</a></li>
+<li><a href=#doom-config-file-overview>Doom config file overview</a>
+<ul>
+<li><a href=#config-file-headers>Config file headers</a></li>
+<li><a href=#customized-variables>Customized variables</a></li>
+</ul>
+</li>
+<li><a href=#general-configuration>General configuration</a></li>
+</ul>
 </nav></div>
 </div><div class=content id=content><h2 id=prerequisites>Prerequisites</h2>
-<h3 id=instation-dependencies>Instation Dependencies</h3>
-<p>#### Arch Linux</p>
+<h3 id=instation>Instation</h3>
+<h4 id=arch-linux>Arch Linux</h4>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -135,17 +148,102 @@ yay -S emacs-pdf-tools-git
 </code></pre></td></tr></table>
 </div>
 </div><p>With Emacs and Doom’s dependencies installed, next is to install Doom Emacs itself:</p>
-<p>Receive and send email (.mbsyncrc)
-install
-Install the isync package yaourt -S isync</p>
-<p>Using GPG for mbsync passwords
-The basic idea is that every time a password is needed, an particular file is decrypted and loaded. The key for the decryption can be prompted for and be stashed by gpg-agent. The first step is to create a GPG key, which is covered very well elsewhere. The standard authentication mechanism for gnus and smtpmail can be reused to store login information for mbsync. For any one account, the password for IMAP access and the password for sending email (usually the same) can be added to ~/.authinfo.gpg:</p>
-<p>machine imap.gmail.com login <a href=mailto:MyAccountName@gmail.com rel>MyAccountName@gmail.com</a> password MYPASSWORD machine smtp.gmail.com login <a href=mailto:MyAccountName@gmail.com rel>MyAccountName@gmail.com</a> password MYPASSWORD The first line is used by mbsync and the second by smtpmail. The line: PassCmd “gpg2 -q –for-your-eyes-only –no-tty -d ~/.authinfo.gpg | awk ’machine imap.gmail.com login <a href=mailto:MyAccountName@gmail.com rel>MyAccountName@gmail.com</a> {print $NF}’”</p>
-</div><div class=post-footer id=post-footer>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=sart-up>Sart-up</h2>
+<p><a href=https://zzamboni.org/post/my-doom-emacs-configuration-with-commentary/ target=_blank rel="noopener noreferrer">https://zzamboni.org/post/my-doom-emacs-configuration-with-commentary/</a></p>
+<p>Install the icons to avoid having weird symbols.
+<strong>M-x all-the-icons-install-fonts</strong></p>
+<p><strong>Note</strong>: M-x is SPC :</p>
+<p>Open a file</p>
+<p><strong>SPC f f</strong></p>
+<h2 id=the-bin-doom-utility>The bin/doom utility</h2>
+<p>This utility is your new best friend. It won’t spot you a beer, but it’ll shoulder much of the work associated with managing and maintaining your Doom Emacs configuration, and then some. Not least of which is installation of and updating Doom and your installed packages.</p>
+<p>It exposes a variety of commands. <strong>bin/doom</strong> help will list them all, but here is a summary of the most important ones:</p>
+<ul>
+<li><strong>doom sync</strong>: This synchronizes your config with Doom Emacs. It ensures that needed packages are installed, orphaned packages are removed and necessary metadata correctly generated. Run this whenever you modify your doom! block or packages.el file. You’ll need doom sync -u if you override the recipe of package installed by another module.</li>
+<li><strong>doom upgrade</strong>: Updates Doom Emacs (if available) and all its packages.</li>
+</ul>
+<p>doom env: (Re)generates an “envvar file”, which is a snapshot of your shell environment that Doom loads at startup. If your app launcher or OS launches Emacs in the wrong environment you will need this. <strong><strong>This is required for GUI Emacs users on MacOS.</strong></strong></p>
+<ul>
+<li><strong>doom doctor</strong>: If Doom misbehaves, the doc will diagnose common issues with your installation, system and environment.</li>
+<li><strong>doom purge</strong>: Over time, the repositories for Doom’s plugins will accumulate. Run this command from time to time to delete old, orphaned packages, and with the -g switch to compact existing package repos.</li>
+</ul>
+<p>Use doom help to see an overview of the available commands that doom provides, and doom help COMMAND to display documentation for a particular COMMAND.</p>
+<p>I recommend you add a couple of <strong>alias</strong> to your ZSH configuration.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text># Doom Emacs
+alias doomsync=&#34;$HOME/.emacs.d/bin/doom sync&#34;
+alias doomupgrade=&#34;$HOME/.emacs.d/bin/doom upgrade&#34;
+alias doomdoctor=&#34;$HOME/.emacs.d/bin/doom doctor&#34;
+alias doompurge=&#34;$HOME/.emacs.d/bin/doom purge&#34;
+alias doomclean=&#34;$HOME/.emacs.d/bin/doom clean&#34;
+alias doombuild=&#34;$HOME/.emacs.d/bin/doom build&#34;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=doom-config-file-overview>Doom config file overview</h2>
+<p>We already know how to open a file and how to use doom utility, so let&rsquo;s we take a overview for Doom configuration.</p>
+<p>Doom Emacs at the least uses three config files.</p>
+<ul>
+<li><strong>init.el</strong> defines which of the existing Doom modules are loaded. A Doom module is a bundle of packages, configuration and commands, organized into a unit that can be toggled easily from this file. You also can design your own <strong>Module</strong>.</li>
+<li><strong>packages.el</strong> defines which packages should be installed, beyond those that are installed and loaded as part of the enabled modules.</li>
+<li><strong>config.el</strong> contains all custom configuration and code. when you have get so many configuration contains, you may need seperate for each category. There is a example. Click <a href=https://github.com/yanboyang713/doom.git target=_blank rel="noopener noreferrer">Here</a></li>
+</ul>
+<p>There are other files that can be loaded, but theses are the main ones. The load order of different files is defined depending on the type of session being started.</p>
+<h3 id=config-file-headers>Config file headers</h3>
+<p>We start by simply defining the standard headers used by the three files. These headers come from the initial files generated by doom install, and contain either some Emacs-LISP relevant indicators like lexical-binding, or instructions about the contents of the file.</p>
+<ul>
+<li>init.el</li>
+<li>packages.el</li>
+<li>config.el</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>;;; ../../dotfiles/doom/+research.el -*- lexical-binding: t; -*-
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=customized-variables>Customized variables</h3>
+<p>Doom <a href=https://github.com/hlissner/doom-emacs/blob/develop/docs/getting%5Fstarted.org#configure target=_blank rel="noopener noreferrer">does not recommend the Emacs customize mechanism</a> :</p>
+<p><strong>Note</strong>: do not use M-x customize or the customize API in general. Doom is designed to be configured programmatically from your config.el, which can conflict with Customize’s way of modifying variables.</p>
+<p>All necessary settings are therefore set by hand as part of this configuration file. The only exceptions are “safe variable” and “safe theme” settings, which are automatically saved by Emacs in custom.el, but this is OK as they don’t conflict with anything else from the config.</p>
+<h2 id=general-configuration>General configuration</h2>
+<p>My user information.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=p>(</span><span class=nb>setq</span> <span class=nf>user-full-name</span> <span class=s>&#34;Boyang Yan&#34;</span>
+      <span class=nv>user-mail-address</span> <span class=s>&#34;yanboyang713@gamil.com&#34;</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-10-06</span>
+<span>Updated on 2021-10-07</span>
 </div>
 <div class=post-info-license></div>
 </div>

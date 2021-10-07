@@ -367,7 +367,7 @@ Above assumes that the Org files are in the “content-org"/ directory (at any n
 ```
 
 #### Step 3: Create a post with org mode
-In contents directory, create a xxx.org file.
+In content-org directory, create a xxx.org file.
 
 ```file
 #+title: Boyang Yan's Blog
