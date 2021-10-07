@@ -72,6 +72,8 @@ testConnectionAndDeploy () {
     fi
 }
 
+# Go to blog
+cd ~/blog
 
 # Have ssh key
 if [ "$(ls -A ~/.ssh 2>/dev/null)" ]; then
