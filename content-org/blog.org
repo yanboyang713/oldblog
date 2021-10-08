@@ -288,6 +288,66 @@ Chatbot, smart assistant, smart customer service, video Frequency understanding,
 
 *** Computer vision (CV)
 **** What is CV
+Several more rigorous definitions:
+
++ "Construct a clear and meaningful description of the objective objects in the image" (Ballard & Brown, 1982)
+
++ "Calculate the characteristics of the three-dimensional world from one or more digital images" (Trucco & Verri, 1998)
+
++ "Based on perceptual images to make useful decisions for objective objects and scenes" (Sockman & Shapiro, 2001)
+
+Overview in one sentence:
+
+It means that the computer has the ability to see, know, and think. It can be said that the computer has vision, that is, computer vision.
+
 **** Deep learning and CV
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633674756/cv/computerVisionOne_kjgmyf.png]]
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633674755/cv/computerVisionTwo_l2tvqa.png]]
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633674756/cv/computerVisionThree_rdqpta.png]]
+
 **** Application of CV
+***** Image Classification
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678185/cv/classificationOne_lqnjcd.png]]
+
+Image Classification - Neural Neural Network (CNN)
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678184/cv/classificationTwo_pu6kuc.png]]
+
+Linear rectifier layer--RELU
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678183/cv/classificationThree_zhnzgk.png]]
+
+Pooling layer-pool
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678183/cv/classificationFour_k9lyy9.png]]
+
+***** Target Detection
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678492/cv/detactionOne_rsz53f.png]]
+
+R-CNN
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678492/cv/detactionTwo_lnellb.png]]
+
+***** Target Tracking
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678587/cv/tracking_rjkb2z.png]]
+
+***** Semantic Image Segmentation
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678681/cv/SegmentationOne_zfgix9.png]]
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678681/cv/SegmentationTwo_orkdal.png]]
+
+***** Instance Segmentation
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678767/cv/instanceOne_duswl8.png]]
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678767/cv/instanceTwo_osehjy.png]]
+
 **** CV skills tree construction
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633680105/cv/treeOne_kbmiwg.png]]
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633680106/cv/treeTwo_wchdqb.png]]
