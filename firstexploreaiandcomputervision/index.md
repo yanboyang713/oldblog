@@ -206,12 +206,79 @@ Chatbot, smart assistant, smart customer service, video Frequency understanding,
 
 ### What is CV {#what-is-cv}
 
+Several more rigorous definitions:
+
+-   "Construct a clear and meaningful description of the objective objects in the image" (Ballard & Brown, 1982)
+
+-   "Calculate the characteristics of the three-dimensional world from one or more digital images" (Trucco & Verri, 1998)
+
+-   "Based on perceptual images to make useful decisions for objective objects and scenes" (Sockman & Shapiro, 2001)
+
+Overview in one sentence:
+
+It means that the computer has the ability to see, know, and think. It can be said that the computer has vision, that is, computer vision.
+
 
 ### Deep learning and CV {#deep-learning-and-cv}
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633674756/cv/computerVisionOne%5Fkjgmyf.png" >}}
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633674755/cv/computerVisionTwo%5Fl2tvqa.png" >}}
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633674756/cv/computerVisionThree%5Frdqpta.png" >}}
 
 
 ### Application of CV {#application-of-cv}
 
 
+#### Image Classification {#image-classification}
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678185/cv/classificationOne%5Flqnjcd.png" >}}
+
+Image Classification - Neural Neural Network (CNN)
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678184/cv/classificationTwo%5Fpu6kuc.png" >}}
+
+Linear rectifier layer--RELU
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678183/cv/classificationThree%5Fzhnzgk.png" >}}
+
+Pooling layer-pool
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678183/cv/classificationFour%5Fk9lyy9.png" >}}
+
+
+#### Target Detection {#target-detection}
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678492/cv/detactionOne%5Frsz53f.png" >}}
+
+R-CNN
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678492/cv/detactionTwo%5Flnellb.png" >}}
+
+
+#### Target Tracking {#target-tracking}
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678587/cv/tracking%5Frjkb2z.png" >}}
+
+
+#### Semantic Image Segmentation {#semantic-image-segmentation}
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678681/cv/SegmentationOne%5Fzfgix9.png" >}}
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678681/cv/SegmentationTwo%5Forkdal.png" >}}
+
+
+#### Instance Segmentation {#instance-segmentation}
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678767/cv/instanceOne%5Fduswl8.png" >}}
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678767/cv/instanceTwo%5Fosehjy.png" >}}
+
+
 ### CV skills tree construction {#cv-skills-tree-construction}
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633680105/cv/treeOne%5Fkbmiwg.png" >}}
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633680106/cv/treeTwo%5Fwchdqb.png" >}}
 
