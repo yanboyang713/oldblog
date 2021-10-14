@@ -37,7 +37,7 @@ Install the icons to avoid having weird symbols.
 
 Open a file
 
-**SPC f f**
+****SPC f f**** OR **SPC .**
 
 
 ## The bin/doom utility {#the-bin-doom-utility}
@@ -114,4 +114,25 @@ My user information.
 (setq user-full-name "Boyang Yan"
       user-mail-address "yanboyang713@gamil.com")
 ````
+
+
+## Projects with Projectile, File Explorer with Treemacs & EShell {#projects-with-projectile-file-explorer-with-treemacs-and-eshell}
+
+
+### Projectile {#projectile}
+
+Doom Emacs have used package [Projectile](https://github.com/bbatsov/projectile) to management our project.
+
+**SPC p p** - Switch to project.
+**SPC SPC** - Find a File in a project
+
+````emacs-lisp
+projectile-project-search-path '("~/Project/" "~/dotfiles/" "~/blog/content-org/")
+````
+
+
+### Treemacs {#treemacs}
+
+SPC o p - Open
+SPC o p again - Close
 
