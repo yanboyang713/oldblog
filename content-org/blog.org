@@ -38,7 +38,7 @@ Install the icons to avoid having weird symbols.
 
 Open a file
 
-*SPC f f*
+**SPC f f** OR *SPC .*
 
 *** The bin/doom utility
 This utility is your new best friend. It won’t spot you a beer, but it’ll shoulder much of the work associated with managing and maintaining your Doom Emacs configuration, and then some. Not least of which is installation of and updating Doom and your installed packages.
@@ -98,6 +98,21 @@ My user information.
 (setq user-full-name "Boyang Yan"
       user-mail-address "yanboyang713@gamil.com")
 #+end_src
+
+*** Projects with Projectile, File Explorer with Treemacs & EShell
+**** Projectile
+Doom Emacs have used package [[https://github.com/bbatsov/projectile][Projectile]] to management our project.
+
+*SPC p p* - Switch to project.
+*SPC SPC* - Find a File in a project
+
+#+begin_src emacs-lisp
+projectile-project-search-path '("~/Project/" "~/dotfiles/" "~/blog/content-org/")
+#+end_src
+
+**** Treemacs
+SPC o p - Open
+When Treemacs is opened, you can type *q* to close.
 
 
 ** TODO Getting Started with send and receive Email with Doom Emacs
