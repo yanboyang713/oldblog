@@ -120,18 +120,133 @@ When Treemacs is opened, you can type *q* to close.
 :EXPORT_FILE_NAME: sendAndReceiveEmailWithdoom
 :EXPORT_OPTIONS: author:nil
 :END:
-Receive and send email (.mbsyncrc)
-install
-Install the isync package yaourt -S isync
+*** Receive Email
+#+begin_src console
+yay -S mu mbsync-git
+#+end_src
+
+https://devanswers.co/create-application-specific-password-gmail/
+
+#+begin_src console
+gpg2 -c xxxxxxx
+#+end_src
+
+#+begin_src console
+time mu init --maildir=~/MailDir --my-address='yanboyang713@gmail.com'
+mu index
+
+time mbsync -c ~/.config/mu4e/mbsyncrc -a
+
+#+end_src
+
+[yanboyang713@Boyang-PC] ➜ ~ time mu init --maildir=~/MailDir --my-address='yanboyang713@gmail.com'
+error: failed to open store @ /home/yanboyang713/.cache/mu/xapian: Unable to get write lock on /home/yanboyang713/.cache/mu/xapian: already locked
+mu init --maildir=~/MailDir --my-address='yanboyang713@gmail.com'  0.00s user 0.00s system 66% cpu 0.006 total
+[yanboyang713@Boyang-PC] ➜ ~ mu index
+error: failed to open store @ /home/yanboyang713/.cache/mu/xapian: Unable to get write lock on /home/yanboyang713/.cache/mu/xapian: already locked
+
+
+pkill -2 -u $UID mu
+sleep 1
+mu index
+
+
 
 Using GPG for mbsync passwords
 The basic idea is that every time a password is needed, an particular file is decrypted and loaded. The key for the decryption can be prompted for and be stashed by gpg-agent. The first step is to create a GPG key, which is covered very well elsewhere. The standard authentication mechanism for gnus and smtpmail can be reused to store login information for mbsync. For any one account, the password for IMAP access and the password for sending email (usually the same) can be added to ~/.authinfo.gpg:
 
 machine imap.gmail.com login MyAccountName@gmail.com password MYPASSWORD machine smtp.gmail.com login MyAccountName@gmail.com password MYPASSWORD The first line is used by mbsync and the second by smtpmail. The line: PassCmd “gpg2 -q –for-your-eyes-only –no-tty -d ~/.authinfo.gpg | awk ’machine imap.gmail.com login MyAccountName@gmail.com {print $NF}’”
 
+*** Send Email
 
+#+begin_src console
+yay -S msmtp msmtp-mta s-nail
+#+end_src
+echo "hello there username." | msmtp -a default username@domain.com
+
+~/.mailrc
+set mta=/usr/bin/msmtp
+
+
+*** Doom Emacs Set-up
+(package! mu4e)
+
+*** Usage
+https://cheatography.com/ddoherty03/cheat-sheets/mu4e-with-gmail-hints/
 
 * Computer Vision :@ComputerVision:
+
+** DONE Getting started with FFmpeg
+CLOSED: [2021-11-01 Mon 15:03]
+:PROPERTIES:
+:EXPORT_FILE_NAME: ffmpeg
+:EXPORT_OPTIONS: author:nil
+:END:
+*** Overview
+FFmpeg is a free software project and is the leading software for everything related to multimedia like video encoding, streaming and muxing.
+
+FFmpeg - "FF" mean "Fast Forward", "mpeg" mean "Moving Picture Expers Group"
+
+*** Installation
+https://github.com/jrottenberg/ffmpeg
+
+https://www.whoishostingthis.com/compare/ffmpeg/resources/
+
+alias ffmpeg='docker run -v=`pwd`:/tmp/ffmpeg opencoconut/ffmpeg'
+
+#+begin_src bash
+yay -S ffmpeg
+#+end_src
+
+*** Using Linux Terminal to Install VLC in Ubuntu
+sudo snap install vlc
+
+*** Invert the video stream to a virtual video camera
+If your video stream is inverted, you can make a new virtual video camera which inverts the inverted video. You need to install v4l-utils and also v4l2loopback-dkms.
+
+#+begin_src bash
+yay -S v4l-utils v4l2loopback-dkms
+#+end_src
+
+*** Create the virtual video camera:
+#+begin_src bash
+modprobe v4l2loopback
+#+end_src
+https://askubuntu.com/questions/881305/is-there-any-way-ffmpeg-send-video-to-dev-video0-on-ubuntu
+
+Check the name of the newly created camera:
+
+#+begin_src console
+[yanboyang713@boyang ~]$ v4l2-ctl --list-devices
+Dummy video device (0x0000) (platform:v4l2loopback-000):
+	/dev/video0
+#+end_src
+
+*** Image to virtual camera
+ffmpeg -re -loop 1 -i input.jpg -vf format=yuv420p -f v4l2 /dev/video0
+
+
+Then you can run ffmpeg to read from your actual webcam (here /dev/video0) and invert it and feed it to the virtual camera:
+
+$ ffmpeg -f v4l2 -i /dev/video0 -vf "vflip" -f v4l2 /dev/video1
+You can use the "Dummy" camera in your applications instead of the "Integrated" camera.
+
+Bad image quality
+If you experience images being too bright, too dark, too exposed or any other, you can install v4l2ucpAUR to tweak your image output.
+
+
+** TODO Image Compression Based on Principal Component Analysis (PCA)
+:PROPERTIES:
+:EXPORT_FILE_NAME: PCAforImage
+:EXPORT_OPTIONS: author:nil
+:END:
+*** Introduction
+Principal Component Analysis (PCA) is a linear dimensionality reduction technique (algorithm) that transform a set of correlated variables (p) into a smaller k (k<p) number of uncorrelated variables called principal components while keeping as much of the variability in the original data as possible.
+
+One of the use cases of PCA is that it can be used for image compression — a technique that minimizes the size in bytes of an image while keeping as much of the quality of the image as possible.
+
+
+
 ** DONE Beginning Explore artificial intelligence and computer vision
 CLOSED: [2021-10-07 Thu 19:17]
 :PROPERTIES:
@@ -366,3 +481,65 @@ R-CNN
 [[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633680105/cv/treeOne_kbmiwg.png]]
 
 [[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633680106/cv/treeTwo_wchdqb.png]]
+
+
+** TODO Gettting Started SRS(Simple Realtime Server)
+:PROPERTIES:
+:EXPORT_FILE_NAME: srs
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Overview
+SRS is a simple, high efficiency and realtime video server, supports RTMP/WebRTC/HLS/HTTP-FLV/SRT.
+
+
+** DONE Getting Started ROS and Openwrt with Proxmox
+CLOSED: [2021-11-05 Fri 19:52]
+:PROPERTIES:
+:EXPORT_FILE_NAME: ROSandOpenwrtWithProxmox
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Install Open vSwitch
+Update the package index and then install the Open vSwitch packages by executing:
+
+#+begin_src console
+ apt update
+ apt install openvswitch-switch
+#+end_src
+
+root@pve-home:~# cat /etc/network/interfaces
+
+#+begin_src file
+auto lo
+iface lo inet loopback
+
+iface enp6s0 inet manual
+
+# Bond Intel nics together
+allow-vmbr0 bond0
+iface bond0 inet manual
+        ovs_bridge vmbr0
+        ovs_type OVSBond
+        ovs_bonds enp1s0 enp2s0 enp3s0 ens9 enp5s0
+        ovs_options bond_mode=balance-slb vlan_mode=native-untagged
+
+# Bridge for our bond and vlan virtual interfaces (our VMs attach to this bridge)
+auto vmbr0
+allow-ovs vmbr0
+iface vmbr0 inet manual
+        ovs_type OVSBridge
+        ovs_ports bond0 vlan1
+
+# Virtual interface untagged traffic
+allow-vmbr0 vlan1
+iface vlan1 inet static
+        ovs_type OVSIntPort
+        ovs_bridge vmbr0
+        ovs_options vlan_mode=access
+        ovs_extra set interface ${IFACE} external-ids:iface-id=$(hostname -s)-${IFACE}-vif
+        address 192.168.1.2
+        netmask 255.255.255.0
+        gateway 192.168.1.1
+        dns-nameservers 192.168.1.1 8.8.8.8 8.8.4.4
+#+end_src
