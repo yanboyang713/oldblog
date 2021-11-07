@@ -7,7 +7,7 @@ I see myself advancing with strong ability, and passion for new technology and a
 
 **Areas of Interest**: Machine Learning, Computer Graphics, Simultaneous localization and mapping (SLAM)
 
-[PDF CV download HERE!!!](/static/cvEN.pdf)
+[PDF CV download HERE!!!](/cvEN.pdf)
 
 ## Working Experience
 1. 2020.3 - 2021.6
