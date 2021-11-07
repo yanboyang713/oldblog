@@ -11,7 +11,7 @@ The main reason you may find yourself needing to install kernel headers is if yo
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/kernel/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2020-02-06T06:11:32+10:00">
-<meta property="article:modified_time" content="2021-10-14T14:03:52+00:00">
+<meta property="article:modified_time" content="2021-11-07T13:55:52+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Manjaro Linux kernel headers installation">
@@ -21,7 +21,7 @@ The main reason you may find yourself needing to install kernel headers is if yo
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/kernel/><link rel=prev href=https://yanboyang.com/manjaro/><link rel=next href=https://yanboyang.com/istio/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Manjaro Linux kernel headers installation","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/kernel\/"},"genre":"posts","keywords":"kernel, manjaro","wordcount":1016,"url":"https:\/\/yanboyang.com\/kernel\/","datePublished":"2020-02-06T06:11:32+10:00","dateModified":"2021-10-14T14:03:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/kernel/><link rel=prev href=https://yanboyang.com/manjaro/><link rel=next href=https://yanboyang.com/istio/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Manjaro Linux kernel headers installation","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/kernel\/"},"genre":"posts","keywords":"kernel, manjaro","wordcount":1016,"url":"https:\/\/yanboyang.com\/kernel\/","datePublished":"2020-02-06T06:11:32+10:00","dateModified":"2021-11-07T13:55:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -94,7 +94,7 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Manjaro Linux kernel headers installation</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/linux/><i class="far fa-folder fa-fw"></i>Linux</a></span></div>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/linux/><i class="far fa-folder fa-fw"></i>Linux</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-02-06>2020-02-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1016 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
@@ -139,9 +139,9 @@ Cancel
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ pacman -Q | grep headers
-linux-api-headers 5.8-1
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ pacman -Q | grep headers
+</span><span class=go>linux-api-headers 5.8-1
+</span></code></pre></td></tr></table>
 </div>
 </div><p>We have a fresh install of Manjaro on our test system and pacman shows us that there aren&rsquo;t any kernel headers currently installed. Again, the <strong>linux-api-headers</strong> package is not the kernel headers.</p>
 <p>If your system does have kernel headers installed, you&rsquo;ll see the version in that output.</p>
@@ -154,9 +154,9 @@ linux-api-headers 5.8-1
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ uname -r
-5.9.11-3-MANJARO
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ uname -r
+</span><span class=go>5.9.11-3-MANJARO
+</span></code></pre></td></tr></table>
 </div>
 </div><p>As you&rsquo;ll see in the output, the version of the kernel on our test system is 5.9.11-3. The first two numbers are what&rsquo;s important here, so let&rsquo;s remember 5.9.</p>
 <div class=highlight><div class=chroma>
@@ -197,41 +197,41 @@ linux-api-headers 5.8-1
 </span><span class=lnt>34
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=p>[</span><span class=nx>yanboyang713</span><span class=err>@</span><span class=nx>boyang</span> <span class=err>~</span><span class=p>]</span><span class=err>$</span> <span class=nx>sudo</span> <span class=nx>pacman</span> <span class=o>-</span><span class=nx>S</span> <span class=nx>linux</span><span class=o>-</span><span class=nx>headers</span>
-<span class=p>[</span><span class=nx>sudo</span><span class=p>]</span> <span class=nx>password</span> <span class=k>for</span> <span class=nx>yanboyang713</span><span class=p>:</span> 
-<span class=p>::</span> <span class=nx>There</span> <span class=nx>are</span> <span class=mi>11</span> <span class=nx>providers</span> <span class=nx>available</span> <span class=k>for</span> <span class=nx>linux</span><span class=o>-</span><span class=nx>headers</span><span class=p>:</span>
-<span class=p>::</span> <span class=nx>Repository</span> <span class=nx>core</span>
-   <span class=mi>1</span><span class=p>)</span> <span class=nx>linux414</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>2</span><span class=p>)</span> <span class=nx>linux419</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>3</span><span class=p>)</span> <span class=nx>linux44</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>4</span><span class=p>)</span> <span class=nx>linux49</span><span class=o>-</span><span class=nx>headers</span>
-   <span class=mi>5</span><span class=p>)</span> <span class=nx>linux510</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>6</span><span class=p>)</span> <span class=nx>linux54</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>7</span><span class=p>)</span> <span class=nx>linux57</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>8</span><span class=p>)</span> <span class=nx>linux58</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>9</span><span class=p>)</span> <span class=nx>linux59</span><span class=o>-</span><span class=nx>headers</span>
-<span class=p>::</span> <span class=nx>Repository</span> <span class=nx>community</span>
-   <span class=mi>10</span><span class=p>)</span> <span class=nx>linux54</span><span class=o>-</span><span class=nx>rt</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>11</span><span class=p>)</span> <span class=nx>linux59</span><span class=o>-</span><span class=nx>rt</span><span class=o>-</span><span class=nx>headers</span>
-
-<span class=nx>Enter</span> <span class=nx>a</span> <span class=nf>number</span> <span class=p>(</span><span class=k>default</span><span class=p>=</span><span class=mi>1</span><span class=p>):</span> <span class=mi>9</span>
-<span class=nx>resolving</span> <span class=nx>dependencies</span><span class=o>...</span>
-<span class=nx>looking</span> <span class=k>for</span> <span class=nx>conflicting</span> <span class=nx>packages</span><span class=o>...</span>
-
-<span class=nf>Packages</span> <span class=p>(</span><span class=mi>1</span><span class=p>)</span> <span class=nx>linux59</span><span class=o>-</span><span class=nx>headers</span><span class=o>-</span><span class=mf>5.9.11</span><span class=o>-</span><span class=mi>3</span>
-
-<span class=nx>Total</span> <span class=nx>Download</span> <span class=nx>Size</span><span class=p>:</span>    <span class=mf>9.68</span> <span class=nx>MiB</span>
-<span class=nx>Total</span> <span class=nx>Installed</span> <span class=nx>Size</span><span class=p>:</span>  <span class=mf>48.25</span> <span class=nx>MiB</span>
-
-<span class=p>::</span> <span class=nx>Proceed</span> <span class=nx>with</span> <span class=nx>installation</span><span class=err>?</span> <span class=p>[</span><span class=nx>Y</span><span class=o>/</span><span class=nx>n</span><span class=p>]</span> <span class=nx>Y</span>
-<span class=p>::</span> <span class=nx>Retrieving</span> <span class=nx>packages</span><span class=o>...</span>
- <span class=nx>linux59</span><span class=o>-</span><span class=nx>headers</span><span class=o>-</span><span class=mf>5.9.11</span><span class=o>-</span><span class=mi>3</span><span class=o>-</span><span class=nx>x86_64</span>    <span class=mf>9.7</span> <span class=nx>MiB</span>  <span class=mf>4.14</span> <span class=nx>MiB</span><span class=o>/</span><span class=nx>s</span> <span class=mo>00</span><span class=p>:</span><span class=mo>02</span> <span class=p>[</span><span class=err>##################################</span><span class=p>]</span> <span class=mi>100</span><span class=o>%</span>
-<span class=p>(</span><span class=mi>1</span><span class=o>/</span><span class=mi>1</span><span class=p>)</span> <span class=nx>checking</span> <span class=nx>keys</span> <span class=nx>in</span> <span class=nx>keyring</span>                                <span class=p>[</span><span class=err>##################################</span><span class=p>]</span> <span class=mi>100</span><span class=o>%</span>
-<span class=p>(</span><span class=mi>1</span><span class=o>/</span><span class=mi>1</span><span class=p>)</span> <span class=nx>checking</span> <span class=kn>package</span> <span class=nx>integrity</span>                              <span class=p>[</span><span class=err>##################################</span><span class=p>]</span> <span class=mi>100</span><span class=o>%</span>
-<span class=p>(</span><span class=mi>1</span><span class=o>/</span><span class=mi>1</span><span class=p>)</span> <span class=nx>loading</span> <span class=kn>package</span> <span class=nx>files</span>                                   <span class=p>[</span><span class=err>##################################</span><span class=p>]</span> <span class=mi>100</span><span class=o>%</span>
-<span class=p>(</span><span class=mi>1</span><span class=o>/</span><span class=mi>1</span><span class=p>)</span> <span class=nx>checking</span> <span class=k>for</span> <span class=nx>file</span> <span class=nx>conflicts</span>                             <span class=p>[</span><span class=err>##################################</span><span class=p>]</span> <span class=mi>100</span><span class=o>%</span>
-<span class=p>(</span><span class=mi>1</span><span class=o>/</span><span class=mi>1</span><span class=p>)</span> <span class=nx>checking</span> <span class=nx>available</span> <span class=nx>disk</span> <span class=nx>space</span>                           <span class=p>[</span><span class=err>##################################</span><span class=p>]</span> <span class=mi>100</span><span class=o>%</span>
-<span class=p>::</span> <span class=nx>Processing</span> <span class=kn>package</span> <span class=nx>changes</span><span class=o>...</span>
-<span class=p>(</span><span class=mi>1</span><span class=o>/</span><span class=mi>1</span><span class=p>)</span> <span class=nx>installing</span> <span class=nx>linux59</span><span class=o>-</span><span class=nx>headers</span>                              <span class=p>[</span><span class=err>##################################</span><span class=p>]</span> <span class=mi>100</span><span class=o>%</span>
-<span class=p>::</span> <span class=nx>Running</span> <span class=nx>post</span><span class=o>-</span><span class=nx>transaction</span> <span class=nx>hooks</span><span class=o>...</span>
-<span class=p>(</span><span class=mi>1</span><span class=o>/</span><span class=mi>3</span><span class=p>)</span> <span class=nx>Arming</span> <span class=nx>ConditionNeedsUpdate</span><span class=o>...</span>
-<span class=p>(</span><span class=mi>2</span><span class=o>/</span><span class=mi>3</span><span class=p>)</span> <span class=nx>Updating</span> <span class=nx>module</span> <span class=nx>dependencies</span><span class=o>...</span>
-<span class=p>(</span><span class=mi>3</span><span class=o>/</span><span class=mi>3</span><span class=p>)</span> <span class=nx>Install</span> <span class=nx>DKMS</span> <span class=nx>modules</span>
-<span class=o>==</span><span class=p>&gt;</span> <span class=nx>dkms</span> <span class=nx>install</span> <span class=o>--</span><span class=nx>no</span><span class=o>-</span><span class=nx>depmod</span> <span class=o>-</span><span class=nx>m</span> <span class=nx>v4l2loopback</span> <span class=o>-</span><span class=nx>v</span> <span class=mf>0.12.5</span> <span class=o>-</span><span class=nx>k</span> <span class=mf>5.9.11</span><span class=o>-</span><span class=mi>3</span><span class=o>-</span><span class=nx>MANJARO</span>
-<span class=o>==</span><span class=p>&gt;</span> <span class=nx>depmod</span> <span class=mf>5.9.11</span><span class=o>-</span><span class=mi>3</span><span class=o>-</span><span class=nx>MANJARO</span>
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ sudo pacman -S linux-headers
+</span><span class=go>[sudo] password for yanboyang713: 
+</span><span class=go>:: There are 11 providers available for linux-headers:
+</span><span class=go>:: Repository core
+</span><span class=go>   1) linux414-headers  2) linux419-headers  3) linux44-headers  4) linux49-headers
+</span><span class=go>   5) linux510-headers  6) linux54-headers  7) linux57-headers  8) linux58-headers  9) linux59-headers
+</span><span class=go>:: Repository community
+</span><span class=go>   10) linux54-rt-headers  11) linux59-rt-headers
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Enter a number (default=1): 9
+</span><span class=go>resolving dependencies...
+</span><span class=go>looking for conflicting packages...
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Packages (1) linux59-headers-5.9.11-3
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Total Download Size:    9.68 MiB
+</span><span class=go>Total Installed Size:  48.25 MiB
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>:: Proceed with installation? [Y/n] Y
+</span><span class=go>:: Retrieving packages...
+</span><span class=go> linux59-headers-5.9.11-3-x86_64    9.7 MiB  4.14 MiB/s 00:02 [##################################] 100%
+</span><span class=go>(1/1) checking keys in keyring                                [##################################] 100%
+</span><span class=go>(1/1) checking package integrity                              [##################################] 100%
+</span><span class=go>(1/1) loading package files                                   [##################################] 100%
+</span><span class=go>(1/1) checking for file conflicts                             [##################################] 100%
+</span><span class=go>(1/1) checking available disk space                           [##################################] 100%
+</span><span class=go>:: Processing package changes...
+</span><span class=go>(1/1) installing linux59-headers                              [##################################] 100%
+</span><span class=go>:: Running post-transaction hooks...
+</span><span class=go>(1/3) Arming ConditionNeedsUpdate...
+</span><span class=go>(2/3) Updating module dependencies...
+</span><span class=go>(3/3) Install DKMS modules
+</span><span class=go>==&gt; dkms install --no-depmod -m v4l2loopback -v 0.12.5 -k 5.9.11-3-MANJARO
+</span><span class=go>==&gt; depmod 5.9.11-3-MANJARO
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Now, let&rsquo;s update our kernel headers to be on par with the kernel itself. Or, if you don&rsquo;t have kernel headers installed at all, this command will install them for you. Type the following command in your terminal:</p>
 <p>If you already have kernel headers installed, pacman will proceed to update them. Otherwise, pacman will present you with a few options. Unless you have a unique circumstance, we want to choose from among the repository core options. We have seven different choices here. As discussed, there are a few situations where you may want to install older kernel headers, but generally, you&rsquo;ll want them on the same version as the kernel itself.</p>
@@ -244,10 +244,10 @@ linux-api-headers 5.8-1
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ sudo pacman -Q | grep headers
-linux-api-headers 5.8-1
-linux59-headers 5.9.11-3
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ sudo pacman -Q | grep headers
+</span><span class=go>linux-api-headers 5.8-1
+</span><span class=go>linux59-headers 5.9.11-3
+</span></code></pre></td></tr></table>
 </div>
 </div><p>You may need to reboot your system to start using the kernel headers.</p>
 <div class=highlight><div class=chroma>
@@ -293,7 +293,7 @@ linux59-headers 5.9.11-3
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-10-14</span>
+<span>Updated on 2021-11-07</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -319,7 +319,7 @@ linux59-headers 5.9.11-3
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.89.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>

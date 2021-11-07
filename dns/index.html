@@ -9,7 +9,7 @@
 So in this tutorial, we are going to install and configure DNS on Ubuntu. Through this tutorial, we will use one of the most common programs used for handling the name server on Ubuntu that is BIND (which is an abbreviation for Berkley Internet Naming Daemon).">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/dns/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:modified_time" content="2021-10-14T14:03:52+00:00">
+<meta property="article:modified_time" content="2021-11-07T13:55:52+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="dns">
@@ -18,7 +18,7 @@ So in this tutorial, we are going to install and configure DNS on Ubuntu. Throug
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/dns/><link rel=prev href=https://yanboyang.com/dockeraslocaldevelopmentenvironment/><link rel=next href=https://yanboyang.com/databaseconcepts/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"dns","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dns\/"},"genre":"posts","wordcount":4647,"url":"https:\/\/yanboyang.com\/dns\/","dateModified":"2021-10-14T14:03:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/dns/><link rel=prev href=https://yanboyang.com/dockeraslocaldevelopmentenvironment/><link rel=next href=https://yanboyang.com/databaseconcepts/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"dns","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dns\/"},"genre":"posts","wordcount":4647,"url":"https:\/\/yanboyang.com\/dns\/","dateModified":"2021-11-07T13:55:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -91,7 +91,7 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">dns</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span></div>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4647 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;22 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
@@ -329,27 +329,27 @@ For example, in Figure 28-3, com is a parent domain to the Acme, Ajax, and AAA d
 </span><span class=lnt>20
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>yanboyang713@boyang:~$ sudo netstat -pna | grep 53
-[sudo] password for yanboyang713: 
-tcp        0      0 172.17.0.1:53           0.0.0.0:*               LISTEN      1504/named          
-tcp        0      0 172.18.0.1:53           0.0.0.0:*               LISTEN      1504/named          
-tcp        0      0 192.168.1.1:53          0.0.0.0:*               LISTEN      1504/named          
-tcp        0      0 10.172.1.51:53          0.0.0.0:*               LISTEN      1504/named          
-tcp        0      0 127.0.0.1:53            0.0.0.0:*               LISTEN      1504/named          
-tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      1141/systemd-resolv 
-tcp        0      0 127.0.0.1:953           0.0.0.0:*               LISTEN      1504/named          
-tcp6       0      0 2404:f801:18:402::49883 2a01:111:f102:8001::443 ESTABLISHED 17794/537.36 --node 
-udp        0      0 0.0.0.0:5353            0.0.0.0:*                           845/avahi-daemon: r 
-udp        0      0 172.17.0.1:53           0.0.0.0:*                           1504/named          
-udp        0      0 172.18.0.1:53           0.0.0.0:*                           1504/named          
-udp        0      0 192.168.1.1:53          0.0.0.0:*                           1504/named          
-udp        0      0 10.172.1.51:53          0.0.0.0:*                           1504/named          
-udp        0      0 127.0.0.1:53            0.0.0.0:*                           1504/named          
-udp        0      0 127.0.0.53:53           0.0.0.0:*                           1141/systemd-resolv 
-udp6       0      0 :::60590                :::*                                17794/537.36 --node 
-udp6       0      0 :::5353                 :::*                                845/avahi-daemon: r 
-udp6       0      0 :::42321                :::*                                17794/537.36 --node 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>yanboyang713@boyang:~$ sudo netstat -pna | grep 53
+</span><span class=go>[sudo] password for yanboyang713: 
+</span><span class=go>tcp        0      0 172.17.0.1:53           0.0.0.0:*               LISTEN      1504/named          
+</span><span class=go>tcp        0      0 172.18.0.1:53           0.0.0.0:*               LISTEN      1504/named          
+</span><span class=go>tcp        0      0 192.168.1.1:53          0.0.0.0:*               LISTEN      1504/named          
+</span><span class=go>tcp        0      0 10.172.1.51:53          0.0.0.0:*               LISTEN      1504/named          
+</span><span class=go>tcp        0      0 127.0.0.1:53            0.0.0.0:*               LISTEN      1504/named          
+</span><span class=go>tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      1141/systemd-resolv 
+</span><span class=go>tcp        0      0 127.0.0.1:953           0.0.0.0:*               LISTEN      1504/named          
+</span><span class=go>tcp6       0      0 2404:f801:18:402::49883 2a01:111:f102:8001::443 ESTABLISHED 17794/537.36 --node 
+</span><span class=go>udp        0      0 0.0.0.0:5353            0.0.0.0:*                           845/avahi-daemon: r 
+</span><span class=go>udp        0      0 172.17.0.1:53           0.0.0.0:*                           1504/named          
+</span><span class=go>udp        0      0 172.18.0.1:53           0.0.0.0:*                           1504/named          
+</span><span class=go>udp        0      0 192.168.1.1:53          0.0.0.0:*                           1504/named          
+</span><span class=go>udp        0      0 10.172.1.51:53          0.0.0.0:*                           1504/named          
+</span><span class=go>udp        0      0 127.0.0.1:53            0.0.0.0:*                           1504/named          
+</span><span class=go>udp        0      0 127.0.0.53:53           0.0.0.0:*                           1141/systemd-resolv 
+</span><span class=go>udp6       0      0 :::60590                :::*                                17794/537.36 --node 
+</span><span class=go>udp6       0      0 :::5353                 :::*                                845/avahi-daemon: r 
+</span><span class=go>udp6       0      0 :::42321                :::*                                17794/537.36 --node 
+</span></code></pre></td></tr></table>
 </div>
 </div><p><a href=https://moss.sh/name-resolution-issue-systemd-resolved/ target=_blank rel="noopener noreferrer">https://moss.sh/name-resolution-issue-systemd-resolved/</a></p>
 <p>systemd-resolved
@@ -390,31 +390,31 @@ docker exec -it bind bash</p>
 </span><span class=lnt>24
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>yanboyang713@boyang:~$ sudo systemctl status systemd-resolved
-● systemd-resolved.service - Network Name Resolution
-   Loaded: loaded (/lib/systemd/system/systemd-resolved.service; enabled; vendor preset: enabled)
-   Active: active (running) since Sat 2020-11-14 12:56:49 CST; 8h ago
-     Docs: man:systemd-resolved.service(8)
-           https://www.freedesktop.org/wiki/Software/systemd/resolved
-           https://www.freedesktop.org/wiki/Software/systemd/writing-network-configuration-managers
-           https://www.freedesktop.org/wiki/Software/systemd/writing-resolver-clients
- Main PID: 1141 (systemd-resolve)
-   Status: &#34;Processing requests...&#34;
-    Tasks: 1 (limit: 4915)
-   CGroup: /system.slice/systemd-resolved.service
-           └─1141 /lib/systemd/systemd-resolved
-
-Nov 14 12:56:49 boyang systemd-resolved[1141]: . IN DS 19036 8 2 49aac11d7b6f6446702e54a1607371607a1a41855200fd2ce1cdde32f24e8fb5
-Nov 14 12:56:49 boyang systemd-resolved[1141]: . IN DS 20326 8 2 e06d44b80b8f1d39a95c0b0d7c65d08458e880409bbc683457104237c7f8ec8d
-Nov 14 12:56:49 boyang systemd-resolved[1141]: Negative trust anchors: 10.in-addr.arpa 16.172.in-addr.arpa 17.172.in-addr.arpa 18.172.in-addr.arpa 19.172.in-addr.arpa 20.172.in-addr.arpa 21.172.in-addr.ar
-Nov 14 12:56:49 boyang systemd-resolved[1141]: Using system hostname &#39;boyang&#39;.
-Nov 14 12:56:49 boyang systemd[1]: Started Network Name Resolution.
-Nov 14 15:39:22 boyang systemd-resolved[1141]: Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 10.50.50.50.
-Nov 14 16:03:27 boyang systemd-resolved[1141]: Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 10.50.10.50.
-Nov 14 17:32:02 boyang systemd-resolved[1141]: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.
-Nov 14 17:32:02 boyang systemd-resolved[1141]: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.
-Nov 14 17:44:01 boyang systemd-resolved[1141]: Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 10.50.50.50.
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>yanboyang713@boyang:~$ sudo systemctl status systemd-resolved
+</span><span class=go>● systemd-resolved.service - Network Name Resolution
+</span><span class=go>   Loaded: loaded (/lib/systemd/system/systemd-resolved.service; enabled; vendor preset: enabled)
+</span><span class=go>   Active: active (running) since Sat 2020-11-14 12:56:49 CST; 8h ago
+</span><span class=go>     Docs: man:systemd-resolved.service(8)
+</span><span class=go>           https://www.freedesktop.org/wiki/Software/systemd/resolved
+</span><span class=go>           https://www.freedesktop.org/wiki/Software/systemd/writing-network-configuration-managers
+</span><span class=go>           https://www.freedesktop.org/wiki/Software/systemd/writing-resolver-clients
+</span><span class=go> Main PID: 1141 (systemd-resolve)
+</span><span class=go>   Status: &#34;Processing requests...&#34;
+</span><span class=go>    Tasks: 1 (limit: 4915)
+</span><span class=go>   CGroup: /system.slice/systemd-resolved.service
+</span><span class=go>           └─1141 /lib/systemd/systemd-resolved
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Nov 14 12:56:49 boyang systemd-resolved[1141]: . IN DS 19036 8 2 49aac11d7b6f6446702e54a1607371607a1a41855200fd2ce1cdde32f24e8fb5
+</span><span class=go>Nov 14 12:56:49 boyang systemd-resolved[1141]: . IN DS 20326 8 2 e06d44b80b8f1d39a95c0b0d7c65d08458e880409bbc683457104237c7f8ec8d
+</span><span class=go>Nov 14 12:56:49 boyang systemd-resolved[1141]: Negative trust anchors: 10.in-addr.arpa 16.172.in-addr.arpa 17.172.in-addr.arpa 18.172.in-addr.arpa 19.172.in-addr.arpa 20.172.in-addr.arpa 21.172.in-addr.ar
+</span><span class=go>Nov 14 12:56:49 boyang systemd-resolved[1141]: Using system hostname &#39;boyang&#39;.
+</span><span class=go>Nov 14 12:56:49 boyang systemd[1]: Started Network Name Resolution.
+</span><span class=go>Nov 14 15:39:22 boyang systemd-resolved[1141]: Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 10.50.50.50.
+</span><span class=go>Nov 14 16:03:27 boyang systemd-resolved[1141]: Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 10.50.10.50.
+</span><span class=go>Nov 14 17:32:02 boyang systemd-resolved[1141]: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.
+</span><span class=go>Nov 14 17:32:02 boyang systemd-resolved[1141]: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.
+</span><span class=go>Nov 14 17:44:01 boyang systemd-resolved[1141]: Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 10.50.50.50.
+</span></code></pre></td></tr></table>
 </div>
 </div><p>DNS servers perform one or more functions:</p>
 <ol>
@@ -509,12 +509,12 @@ Text that is highlighted in red is important! It will often be used to denote so
 </span><span class=lnt>5
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sudo apt-get update 
-
-sudo apt-get upgrade 
-
-sudo apt-get dist-upgrade
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sudo apt-get update 
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>sudo apt-get upgrade 
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>sudo apt-get dist-upgrade
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id=step-2--install-dns-package>Step 2 – Install DNS package</h3>
 <p>Use the following command:</p>
@@ -631,33 +631,33 @@ forwarders {
 </span><span class=lnt>20
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>yanboyang713@boyang:~$ cat /etc/resolv.conf
-## This file is managed by man:systemd-resolved(8). Do not edit.
-##
-## This is a dynamic resolv.conf file for connecting local clients to the
-## internal DNS stub resolver of systemd-resolved. This file lists all
-## configured search domains.
-##
-## Run &#34;systemd-resolve --status&#34; to see details about the uplink DNS servers
-## currently in use.
-##
-## Third party programs must not access this file directly, but only through the
-## symlink at /etc/resolv.conf. To manage man:resolv.conf(5) in a different way,
-## replace this symlink by a static file or a different symlink.
-##
-## See man:systemd-resolved.service(8) for details about the supported modes of
-## operation for /etc/resolv.conf.
-
-nameserver 127.0.0.53
-options edns0
-search corp.microsoft.com
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>yanboyang713@boyang:~$ cat /etc/resolv.conf
+</span><span class=go></span><span class=gp>#</span><span class=c1># This file is managed by man:systemd-resolved(8). Do not edit.</span>
+<span class=gp>#</span><span class=c1>#</span>
+<span class=gp>#</span><span class=c1># This is a dynamic resolv.conf file for connecting local clients to the</span>
+<span class=gp>#</span><span class=c1># internal DNS stub resolver of systemd-resolved. This file lists all</span>
+<span class=gp>#</span><span class=c1># configured search domains.</span>
+<span class=gp>#</span><span class=c1>#</span>
+<span class=gp>#</span><span class=c1># Run &#34;systemd-resolve --status&#34; to see details about the uplink DNS servers</span>
+<span class=gp>#</span><span class=c1># currently in use.</span>
+<span class=gp>#</span><span class=c1>#</span>
+<span class=gp>#</span><span class=c1># Third party programs must not access this file directly, but only through the</span>
+<span class=gp>#</span><span class=c1># symlink at /etc/resolv.conf. To manage man:resolv.conf(5) in a different way,</span>
+<span class=gp>#</span><span class=c1># replace this symlink by a static file or a different symlink.</span>
+<span class=gp>#</span><span class=c1>#</span>
+<span class=gp>#</span><span class=c1># See man:systemd-resolved.service(8) for details about the supported modes of</span>
+<span class=gp>#</span><span class=c1># operation for /etc/resolv.conf.</span>
+<span class=err>
+</span><span class=err></span><span class=go>nameserver 127.0.0.53
+</span><span class=go>options edns0
+</span><span class=go>search corp.microsoft.com
+</span></code></pre></td></tr></table>
 </div>
 </div></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-10-14</span>
+<span>Updated on 2021-11-07</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -683,7 +683,7 @@ search corp.microsoft.com
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.89.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>

@@ -11,7 +11,7 @@ lscpu The lscpu command reports information about the cpu and processing units."
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/linux/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2020-09-06T06:11:32+10:00">
-<meta property="article:modified_time" content="2021-10-14T14:03:52+00:00">
+<meta property="article:modified_time" content="2021-11-07T13:55:52+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="linux basic commands and common tools">
@@ -21,7 +21,7 @@ lscpu The lscpu command reports information about the cpu and processing units."
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/linux/><link rel=prev href=https://yanboyang.com/amlworkspaceauthentication/><link rel=next href=https://yanboyang.com/frp/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"linux basic commands and common tools","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/linux\/"},"genre":"posts","keywords":"Linux command","wordcount":2184,"url":"https:\/\/yanboyang.com\/linux\/","datePublished":"2020-09-06T06:11:32+10:00","dateModified":"2021-10-14T14:03:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/linux/><link rel=prev href=https://yanboyang.com/amlworkspaceauthentication/><link rel=next href=https://yanboyang.com/frp/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"linux basic commands and common tools","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/linux\/"},"genre":"posts","keywords":"Linux command","wordcount":2184,"url":"https:\/\/yanboyang.com\/linux\/","datePublished":"2020-09-06T06:11:32+10:00","dateModified":"2021-11-07T13:55:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -94,7 +94,7 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">linux basic commands and common tools</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/linux/><i class="far fa-folder fa-fw"></i>Linux</a></span></div>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/linux/><i class="far fa-folder fa-fw"></i>Linux</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-09-06>2020-09-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2184 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
@@ -175,34 +175,34 @@ Cancel
 </span><span class=lnt>27
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ lscpu
-Architecture:        x86_64
-CPU op-mode(s):      32-bit, 64-bit
-Byte Order:          Little Endian
-CPU(s):              8
-On-line CPU(s) list: 0-7
-Thread(s) per core:  1
-Core(s) per socket:  8
-Socket(s):           1
-NUMA node(s):        1
-Vendor ID:           GenuineIntel
-CPU family:          6
-Model:               158
-Model name:          Intel(R) Core(TM) i7-9700F CPU @ 3.00GHz
-Stepping:            13
-CPU MHz:             3710.930
-CPU max MHz:         4700.0000
-CPU min MHz:         800.0000
-BogoMIPS:            6000.00
-Virtualization:      VT-x
-L1d cache:           32K
-L1i cache:           32K
-L2 cache:            256K
-L3 cache:            12288K
-NUMA node0 CPU(s):   0-7
-Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
-
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>lscpu
+<span class=go>Architecture:        x86_64
+</span><span class=go>CPU op-mode(s):      32-bit, 64-bit
+</span><span class=go>Byte Order:          Little Endian
+</span><span class=go>CPU(s):              8
+</span><span class=go>On-line CPU(s) list: 0-7
+</span><span class=go>Thread(s) per core:  1
+</span><span class=go>Core(s) per socket:  8
+</span><span class=go>Socket(s):           1
+</span><span class=go>NUMA node(s):        1
+</span><span class=go>Vendor ID:           GenuineIntel
+</span><span class=go>CPU family:          6
+</span><span class=go>Model:               158
+</span><span class=go>Model name:          Intel(R) Core(TM) i7-9700F CPU @ 3.00GHz
+</span><span class=go>Stepping:            13
+</span><span class=go>CPU MHz:             3710.930
+</span><span class=go>CPU max MHz:         4700.0000
+</span><span class=go>CPU min MHz:         800.0000
+</span><span class=go>BogoMIPS:            6000.00
+</span><span class=go>Virtualization:      VT-x
+</span><span class=go>L1d cache:           32K
+</span><span class=go>L1i cache:           32K
+</span><span class=go>L2 cache:            256K
+</span><span class=go>L3 cache:            12288K
+</span><span class=go>NUMA node0 CPU(s):   0-7
+</span><span class=go>Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+</span><span class=go></span><span class=err>
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id=lshw---list-hardware>lshw - List Hardware</h3>
 <p>A general purpose utility, that reports detailed and brief information about multiple different hardware units such as cpu, memory, disk, usb controllers, network adapters etc. Lshw extracts the information from different /proc files.</p>
@@ -273,58 +273,58 @@ Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cm
 </span><span class=lnt>51
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>yanboyang713@boyang$ sudo lshw -short
-H/W path         Device    Class          Description
-=====================================================
-                           system         MS-7C22 (Default string)
-/0                         bus            Z390 PLUS (MS-7C22)
-/0/0                       memory         64KiB BIOS
-/0/39                      memory         16GiB System Memory
-/0/39/0                    memory         [empty]
-/0/39/1                    memory         8GiB DIMM DDR4 Synchronous 2667 MHz (0.4 ns)
-/0/39/2                    memory         [empty]
-/0/39/3                    memory         8GiB DIMM DDR4 Synchronous 2667 MHz (0.4 ns)
-/0/43                      memory         512KiB L1 cache
-/0/44                      memory         2MiB L2 cache
-/0/45                      memory         12MiB L3 cache
-/0/46                      processor      Intel(R) Core(TM) i7-9700F CPU @ 3.00GHz
-/0/100                     bridge         Intel Corporation
-/0/100/1                   bridge         Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor PCIe Cont
-/0/100/1/0                 display        NVIDIA Corporation
-/0/100/1/0.1               multimedia     NVIDIA Corporation
-/0/100/1/0.2               bus            NVIDIA Corporation
-/0/100/1/0.2/0   usb3      bus            xHCI Host Controller
-/0/100/1/0.2/1   usb4      bus            xHCI Host Controller
-/0/100/1/0.3               bus            NVIDIA Corporation
-/0/100/8                   generic        Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th Gen Core Processo
-/0/100/12                  generic        Cannon Lake PCH Thermal Controller
-/0/100/14                  bus            Cannon Lake PCH USB 3.1 xHCI Host Controller
-/0/100/14/0      usb1      bus            xHCI Host Controller
-/0/100/14/0/2              input          HP Basic USB Keyboard
-/0/100/14/0/8              input          2.4G Mouse
-/0/100/14/1      usb2      bus            xHCI Host Controller
-/0/100/14.2                memory         RAM memory
-/0/100/16                  communication  Cannon Lake PCH HECI Controller
-/0/100/17                  storage        Cannon Lake PCH SATA AHCI Controller
-/0/100/1b                  bridge         Intel Corporation
-/0/100/1b.4                bridge         Cannon Lake PCH PCI Express Root Port 21
-/0/100/1b.4/0    enp3s0f0  network        I350 Gigabit Network Connection
-/0/100/1b.4/0.1  enp3s0f1  network        I350 Gigabit Network Connection
-/0/100/1b.4/0.2  enp3s0f2  network        I350 Gigabit Network Connection
-/0/100/1b.4/0.3  enp3s0f3  network        I350 Gigabit Network Connection
-/0/100/1c                  bridge         Intel Corporation
-/0/100/1c.4                bridge         Intel Corporation
-/0/100/1c.4/0    enp5s0    network        RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller
-/0/100/1d                  bridge         Cannon Lake PCH PCI Express Root Port 9
-/0/100/1d/0                storage        Micron/Crucial Technology
-/0/100/1f                  bridge         Intel Corporation
-/0/100/1f.3                multimedia     Cannon Lake PCH cAVS
-/0/100/1f.4                bus            Cannon Lake PCH SMBus Controller
-/0/100/1f.5                bus            Cannon Lake PCH SPI Controller
-/1                         power          To Be Filled By O.E.M.
-/2               docker0   network        Ethernet interface
-/3               br0       network        Ethernet interface
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>yanboyang713@boyang$ sudo lshw -short
+</span><span class=go>H/W path         Device    Class          Description
+</span><span class=go>=====================================================
+</span><span class=go>                           system         MS-7C22 (Default string)
+</span><span class=go>/0                         bus            Z390 PLUS (MS-7C22)
+</span><span class=go>/0/0                       memory         64KiB BIOS
+</span><span class=go>/0/39                      memory         16GiB System Memory
+</span><span class=go>/0/39/0                    memory         [empty]
+</span><span class=go>/0/39/1                    memory         8GiB DIMM DDR4 Synchronous 2667 MHz (0.4 ns)
+</span><span class=go>/0/39/2                    memory         [empty]
+</span><span class=go>/0/39/3                    memory         8GiB DIMM DDR4 Synchronous 2667 MHz (0.4 ns)
+</span><span class=go>/0/43                      memory         512KiB L1 cache
+</span><span class=go>/0/44                      memory         2MiB L2 cache
+</span><span class=go>/0/45                      memory         12MiB L3 cache
+</span><span class=go>/0/46                      processor      Intel(R) Core(TM) i7-9700F CPU @ 3.00GHz
+</span><span class=go>/0/100                     bridge         Intel Corporation
+</span><span class=go>/0/100/1                   bridge         Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor PCIe Cont
+</span><span class=go>/0/100/1/0                 display        NVIDIA Corporation
+</span><span class=go>/0/100/1/0.1               multimedia     NVIDIA Corporation
+</span><span class=go>/0/100/1/0.2               bus            NVIDIA Corporation
+</span><span class=go>/0/100/1/0.2/0   usb3      bus            xHCI Host Controller
+</span><span class=go>/0/100/1/0.2/1   usb4      bus            xHCI Host Controller
+</span><span class=go>/0/100/1/0.3               bus            NVIDIA Corporation
+</span><span class=go>/0/100/8                   generic        Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th Gen Core Processo
+</span><span class=go>/0/100/12                  generic        Cannon Lake PCH Thermal Controller
+</span><span class=go>/0/100/14                  bus            Cannon Lake PCH USB 3.1 xHCI Host Controller
+</span><span class=go>/0/100/14/0      usb1      bus            xHCI Host Controller
+</span><span class=go>/0/100/14/0/2              input          HP Basic USB Keyboard
+</span><span class=go>/0/100/14/0/8              input          2.4G Mouse
+</span><span class=go>/0/100/14/1      usb2      bus            xHCI Host Controller
+</span><span class=go>/0/100/14.2                memory         RAM memory
+</span><span class=go>/0/100/16                  communication  Cannon Lake PCH HECI Controller
+</span><span class=go>/0/100/17                  storage        Cannon Lake PCH SATA AHCI Controller
+</span><span class=go>/0/100/1b                  bridge         Intel Corporation
+</span><span class=go>/0/100/1b.4                bridge         Cannon Lake PCH PCI Express Root Port 21
+</span><span class=go>/0/100/1b.4/0    enp3s0f0  network        I350 Gigabit Network Connection
+</span><span class=go>/0/100/1b.4/0.1  enp3s0f1  network        I350 Gigabit Network Connection
+</span><span class=go>/0/100/1b.4/0.2  enp3s0f2  network        I350 Gigabit Network Connection
+</span><span class=go>/0/100/1b.4/0.3  enp3s0f3  network        I350 Gigabit Network Connection
+</span><span class=go>/0/100/1c                  bridge         Intel Corporation
+</span><span class=go>/0/100/1c.4                bridge         Intel Corporation
+</span><span class=go>/0/100/1c.4/0    enp5s0    network        RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller
+</span><span class=go>/0/100/1d                  bridge         Cannon Lake PCH PCI Express Root Port 9
+</span><span class=go>/0/100/1d/0                storage        Micron/Crucial Technology
+</span><span class=go>/0/100/1f                  bridge         Intel Corporation
+</span><span class=go>/0/100/1f.3                multimedia     Cannon Lake PCH cAVS
+</span><span class=go>/0/100/1f.4                bus            Cannon Lake PCH SMBus Controller
+</span><span class=go>/0/100/1f.5                bus            Cannon Lake PCH SPI Controller
+</span><span class=go>/1                         power          To Be Filled By O.E.M.
+</span><span class=go>/2               docker0   network        Ethernet interface
+</span><span class=go>/3               br0       network        Ethernet interface
+</span></code></pre></td></tr></table>
 </div>
 </div><h4 id=display-only-memory-information>Display only memory information</h4>
 <p>To display information about the memory, specify the memory class.</p>
@@ -345,20 +345,20 @@ H/W path         Device    Class          Description
 </span><span class=lnt>13
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>yanboyang713@boyang $ sudo lshw -short -class memory
-H/W path         Device    Class          Description
-=====================================================
-/0/0                       memory         64KiB BIOS
-/0/39                      memory         16GiB System Memory
-/0/39/0                    memory         [empty]
-/0/39/1                    memory         8GiB DIMM DDR4 Synchronous 2667 MHz (0.4 ns)
-/0/39/2                    memory         [empty]
-/0/39/3                    memory         8GiB DIMM DDR4 Synchronous 2667 MHz (0.4 ns)
-/0/43                      memory         512KiB L1 cache
-/0/44                      memory         2MiB L2 cache
-/0/45                      memory         12MiB L3 cache
-/0/100/14.2                memory         RAM memory
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>yanboyang713@boyang $ sudo lshw -short -class memory
+</span><span class=go>H/W path         Device    Class          Description
+</span><span class=go>=====================================================
+</span><span class=go>/0/0                       memory         64KiB BIOS
+</span><span class=go>/0/39                      memory         16GiB System Memory
+</span><span class=go>/0/39/0                    memory         [empty]
+</span><span class=go>/0/39/1                    memory         8GiB DIMM DDR4 Synchronous 2667 MHz (0.4 ns)
+</span><span class=go>/0/39/2                    memory         [empty]
+</span><span class=go>/0/39/3                    memory         8GiB DIMM DDR4 Synchronous 2667 MHz (0.4 ns)
+</span><span class=go>/0/43                      memory         512KiB L1 cache
+</span><span class=go>/0/44                      memory         2MiB L2 cache
+</span><span class=go>/0/45                      memory         12MiB L3 cache
+</span><span class=go>/0/100/14.2                memory         RAM memory
+</span></code></pre></td></tr></table>
 </div>
 </div><h4 id=display-processor-information>Display processor information</h4>
 <p>With class processor, lshw would display information about the cpu. It is better to not use the short option and get full details about the processor.</p>
@@ -382,23 +382,23 @@ H/W path         Device    Class          Description
 </span><span class=lnt>16
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>yanboyang713@boyang$ sudo lshw -class processor
-  *-cpu                     
-       description: CPU
-       product: Intel(R) Core(TM) i7-9700F CPU @ 3.00GHz
-       vendor: Intel Corp.
-       physical id: 46
-       bus info: cpu@0
-       version: Intel(R) Core(TM) i7-9700F CPU @ 3.00GHz
-       serial: To Be Filled By O.E.M.
-       slot: U3E1
-       size: 4631MHz
-       capacity: 4700MHz
-       width: 64 bits
-       clock: 100MHz
-       capabilities: x86-64 fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities cpufreq
-       configuration: cores=8 enabledcores=8 threads=8
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>yanboyang713@boyang$ sudo lshw -class processor
+</span><span class=go>  *-cpu                     
+</span><span class=go>       description: CPU
+</span><span class=go>       product: Intel(R) Core(TM) i7-9700F CPU @ 3.00GHz
+</span><span class=go>       vendor: Intel Corp.
+</span><span class=go>       physical id: 46
+</span><span class=go>       bus info: cpu@0
+</span><span class=go>       version: Intel(R) Core(TM) i7-9700F CPU @ 3.00GHz
+</span><span class=go>       serial: To Be Filled By O.E.M.
+</span><span class=go>       slot: U3E1
+</span><span class=go>       size: 4631MHz
+</span><span class=go>       capacity: 4700MHz
+</span><span class=go>       width: 64 bits
+</span><span class=go>       clock: 100MHz
+</span><span class=go>       capabilities: x86-64 fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities cpufreq
+</span><span class=go>       configuration: cores=8 enabledcores=8 threads=8
+</span></code></pre></td></tr></table>
 </div>
 </div><p>It should be noted that lshw does not accurately tell about the number of cores or processing units available. The above system for example is a quadcore processor with 4 processing units. Another command called lscpu gives more accurate information about the cpu.</p>
 <h4 id=disk-drives>Disk drives</h4>
@@ -496,35 +496,35 @@ The vga adapter, graphics card, network adapter, usb ports, sata controllers, et
 </span><span class=lnt>28
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>yanboyang713@boyang$ lspci
-00:00.0 Host bridge: Intel Corporation Device 3e30 (rev 0d)
-00:01.0 PCI bridge: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor PCIe Controller (x16) (rev 0d)
-00:08.0 System peripheral: Intel Corporation Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th Gen Core Processor Gaussian Mixture Model
-00:12.0 Signal processing controller: Intel Corporation Cannon Lake PCH Thermal Controller (rev 10)
-00:14.0 USB controller: Intel Corporation Cannon Lake PCH USB 3.1 xHCI Host Controller (rev 10)
-00:14.2 RAM memory: Intel Corporation Cannon Lake PCH Shared SRAM (rev 10)
-00:16.0 Communication controller: Intel Corporation Cannon Lake PCH HECI Controller (rev 10)
-00:17.0 SATA controller: Intel Corporation Cannon Lake PCH SATA AHCI Controller (rev 10)
-00:1b.0 PCI bridge: Intel Corporation Device a340 (rev f0)
-00:1b.4 PCI bridge: Intel Corporation Cannon Lake PCH PCI Express Root Port 21 (rev f0)
-00:1c.0 PCI bridge: Intel Corporation Device a338 (rev f0)
-00:1c.4 PCI bridge: Intel Corporation Device a33c (rev f0)
-00:1d.0 PCI bridge: Intel Corporation Cannon Lake PCH PCI Express Root Port 9 (rev f0)
-00:1f.0 ISA bridge: Intel Corporation Device a305 (rev 10)
-00:1f.3 Audio device: Intel Corporation Cannon Lake PCH cAVS (rev 10)
-00:1f.4 SMBus: Intel Corporation Cannon Lake PCH SMBus Controller (rev 10)
-00:1f.5 Serial bus controller [0c80]: Intel Corporation Cannon Lake PCH SPI Controller (rev 10)
-01:00.0 VGA compatible controller: NVIDIA Corporation Device 1f02 (rev a1)
-01:00.1 Audio device: NVIDIA Corporation Device 10f9 (rev a1)
-01:00.2 USB controller: NVIDIA Corporation Device 1ada (rev a1)
-01:00.3 Serial bus controller [0c80]: NVIDIA Corporation Device 1adb (rev a1)
-03:00.0 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)
-03:00.1 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)
-03:00.2 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)
-03:00.3 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)
-05:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 15)
-06:00.0 Non-Volatile memory controller: Micron/Crucial Technology Device 2263 (rev 03)
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>yanboyang713@boyang$ lspci
+</span><span class=go>00:00.0 Host bridge: Intel Corporation Device 3e30 (rev 0d)
+</span><span class=go>00:01.0 PCI bridge: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor PCIe Controller (x16) (rev 0d)
+</span><span class=go>00:08.0 System peripheral: Intel Corporation Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th Gen Core Processor Gaussian Mixture Model
+</span><span class=go>00:12.0 Signal processing controller: Intel Corporation Cannon Lake PCH Thermal Controller (rev 10)
+</span><span class=go>00:14.0 USB controller: Intel Corporation Cannon Lake PCH USB 3.1 xHCI Host Controller (rev 10)
+</span><span class=go>00:14.2 RAM memory: Intel Corporation Cannon Lake PCH Shared SRAM (rev 10)
+</span><span class=go>00:16.0 Communication controller: Intel Corporation Cannon Lake PCH HECI Controller (rev 10)
+</span><span class=go>00:17.0 SATA controller: Intel Corporation Cannon Lake PCH SATA AHCI Controller (rev 10)
+</span><span class=go>00:1b.0 PCI bridge: Intel Corporation Device a340 (rev f0)
+</span><span class=go>00:1b.4 PCI bridge: Intel Corporation Cannon Lake PCH PCI Express Root Port 21 (rev f0)
+</span><span class=go>00:1c.0 PCI bridge: Intel Corporation Device a338 (rev f0)
+</span><span class=go>00:1c.4 PCI bridge: Intel Corporation Device a33c (rev f0)
+</span><span class=go>00:1d.0 PCI bridge: Intel Corporation Cannon Lake PCH PCI Express Root Port 9 (rev f0)
+</span><span class=go>00:1f.0 ISA bridge: Intel Corporation Device a305 (rev 10)
+</span><span class=go>00:1f.3 Audio device: Intel Corporation Cannon Lake PCH cAVS (rev 10)
+</span><span class=go>00:1f.4 SMBus: Intel Corporation Cannon Lake PCH SMBus Controller (rev 10)
+</span><span class=go>00:1f.5 Serial bus controller [0c80]: Intel Corporation Cannon Lake PCH SPI Controller (rev 10)
+</span><span class=go>01:00.0 VGA compatible controller: NVIDIA Corporation Device 1f02 (rev a1)
+</span><span class=go>01:00.1 Audio device: NVIDIA Corporation Device 10f9 (rev a1)
+</span><span class=go>01:00.2 USB controller: NVIDIA Corporation Device 1ada (rev a1)
+</span><span class=go>01:00.3 Serial bus controller [0c80]: NVIDIA Corporation Device 1adb (rev a1)
+</span><span class=go>03:00.0 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)
+</span><span class=go>03:00.1 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)
+</span><span class=go>03:00.2 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)
+</span><span class=go>03:00.3 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)
+</span><span class=go>05:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 15)
+</span><span class=go>06:00.0 Non-Volatile memory controller: Micron/Crucial Technology Device 2263 (rev 03)
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Filter out specific device information with grep.</p>
 <div class=highlight><div class=chroma>
@@ -716,7 +716,7 @@ Linux version 3.11.0-12-generic <span class=o>(</span>buildd@allspice<span class
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-10-14</span>
+<span>Updated on 2021-11-07</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -742,7 +742,7 @@ Linux version 3.11.0-12-generic <span class=o>(</span>buildd@allspice<span class
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.89.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>

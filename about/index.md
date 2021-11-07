@@ -1,84 +1,79 @@
 # About Me
 
-# Personal Evaluation
-I see myself advancing with a strong ability and interesting in new technology and academic research. I successfully participated two international academic conferences, one published paper and one patent. In the University study, I got undergraduate scholarships and the best prize for final project. The final project is related to swipe card system. My insteresting research area on computer graphic, softerware testing and machine learning.
 
-# Working Experience
+## Overview
+
+I see myself advancing with strong ability, and passion for new technology and academic research. I have three years of working experience in Machine Learning and Software Testing at Microsoft and research institution. Also, I like to write my blog every week to  share some of my new readings and findings.
+
+**Areas of Interest**: Machine Learning, Computer Graphics, Simultaneous localization and mapping (SLAM)
+
+[PDF CV download HERE!!!](/static/cvEN.pdf)
+
+## Working Experience
 1. 2020.3 - 2021.6
 	* Support Engineer
 	* Microsoft, China
 	* Azure Machine Learning CSS Team
+	* The architecture of Azure public cloud to support Machine Learning algorithm, based on different Azure Service such as Azure Data Lake, Azure Batch, Azure Kubernetes, Azure Edge and Azure Networking etc.
+
 2. 2018.12 - 2020.3
 	* Algorithm Engineer
 	* Peng Chen Laboratory, China
 	* Network Communication Research Center
+	* Flight Control System Testing for fixed-wing UAV (Ardupilot), 3D Printing
+
 3. 2018.1 - 2018.11
 	* Research Assistant (Computer Science)
 	* University of Wollongong, Australia
 	* Metamorphic Testing - Software Testing
+	* Metamorphic Testing - Software Testing, Big Data Analysis, Natural Language Processing
 
-# Education
+## Education
 1. 2021.3 - now
-    * Master of Statistics and Operations Research
-    * Royal Melbourne Institute of Technology (RMIT), Australia
-1. 2019.3 - 2020
-	* Netmath
+	* Master of Statistics and Operations Research
+	* Royal Melbourne Institute of Technology (RMIT), Australia
+2. 2019.3 - 2020
+	* Netmath (non-degree Courses)
 	* University of Illinois (Urbana–Champaign)
 	* Major in Mathematics
-2. 2014.3 - 2017.12
+3. 2014.3 - 2017.12
 	* Bachelor of Computer Science
 	* University of Wollongong, Australia
 	* Major in Software Engineering
-	* Main Achievement:
-		1. The best final project prize (Human Research Management System base on Web)
-		2. First Three Semester had: Undergraduate Excellence Scholarship
-3. 2013.3 - 2014.3
+4. 2013.3 - 2014.3
 	* English for Tertiary Studies
 	* University of Wollongong College, Australia
 	* Main subjects: Academic English
-4. 2011.9 - 2013.3
+5. 2011.9 - 2013.3
 	* Bachelor of Business Management
 	* China University Of Mining And Technology
-	* Average mark of 91\% . Most of courses got High Distinction
-# Publications
-* Boyang Yan, Brian Yecies, Zhi Quan Zhou: Metamorphic Relations for Data Validation: A Case Study of Translated Text Messages. IEEE/ACM 4th International Workshop on Metamorphic Testing (MET '19), in conjunction with the 41st International Conference on Software Engineering (ICSE '19), Montreal, Canada; 05/2019
 
-# Patents
-1. June 2, 2020
+## Publications
+* 2019 Boyang Yan, Brian Yecies, Zhi Quan Zhou: Metamorphic Relations for Data Validation: A Case Study of Translated Text Messages. IEEE/ACM 4th International Workshop on Metamorphic Testing (MET '19), in conjunction with the 41st International Conference on Software Engineering (ICSE '19).
+
+## Patents
+1. 2020.6
 	* An automated text difference analysis and verification system/method
 	* China Patent Office Application ID: 202010489931.8
 
-# Academy Congress and Conference
-1. May 26, 2019
-	* Paper Presentation - Title: Metamorphic Relations for Data Validation: A Case Study of Translated Text Messages
-	* ICSE, Montreal, Canada
-
-2. August 11, 2017
-	* showing my final year project about Human Resource Management System based on Web (whole swap card subsystem and database are finish independently)
-	* IEEE Sections Congress (SC2017), Sydney, Australia
-
-# Certifications
-1. 2019
+## Awards and Achievements
+1. 2020.3
+	* Microsoft Hackathon Prize
+2. 2019.26
 	* First Aid CPR AED
 	* American Heart Association
-2. 2017
+3. 2018.12
+	* The best undergraduate final project prize
+	* University of Wollongong, Australia
+4. 2018.3
+	* Publicly acknowledged in the “Acknowledgements” section of following research paper
+	* ICSE
+	* 2018 D. Pesu, Z. Q. Zhou\*, J. Zhen, and D. Towey: A Monte Carlo method for metamorphic testing of machine translation services,” in Proceedings of the IEEE/ACM 3rd International Workshop on Metamorphic Testing (MET ’18), in conjunction with the 40th International Conference on Software Engineering (ICSE ’18).
+5. 2017.3
 	* Amateur Radio Operator's certificate of proficiency (Standard)
 	* The Wireless Institute of Australia (WIA)
-3. 2016
-	* Ross a. Hull memorial Vhf-Uhf contest
-	* The Wireless Institute of Australia (WIA)
-	* Twelfth Place in Section A (Analog Modes, Best 7 Days) and Twelfth Place in Section C (Analog Modes, Best 2 Days)
-
-4. 2014
-	* Amateur Radio Operator's certificate of proficiency (Foundation)
-	* The Wireless Institute of Australia (WIA)
-5. 2010
-	* The Second Place Prize Awarded, Tianjin School Sports Competition Award "92" National Games Tianjin
-	* Tianjin Basketball Tryouts, China
-	* High school men's Group B. Primary and Secondary (Vocational) School Basketball Games. Have got the second grading certificate and title
-
-
-
-
+6. 2014, 2015
+	* Undergraduate Excellence Scholarship
+	* University of Wollongong, Australia
 
 

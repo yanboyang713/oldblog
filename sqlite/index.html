@@ -10,7 +10,7 @@ Getting started with SQLite You should go through this section if this is the fi
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/sqlite/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-03-01T06:11:32+10:00">
-<meta property="article:modified_time" content="2021-10-14T14:03:52+00:00">
+<meta property="article:modified_time" content="2021-11-07T13:55:52+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting started SQLite">
@@ -19,7 +19,7 @@ Getting started with SQLite You should go through this section if this is the fi
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/sqlite/><link rel=prev href=https://yanboyang.com/rstudio/><link rel=next href=https://yanboyang.com/bigdataarchitectures/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting started SQLite","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/sqlite\/"},"genre":"posts","wordcount":32620,"url":"https:\/\/yanboyang.com\/sqlite\/","datePublished":"2021-03-01T06:11:32+10:00","dateModified":"2021-10-14T14:03:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/sqlite/><link rel=prev href=https://yanboyang.com/rstudio/><link rel=next href=https://yanboyang.com/bigdataarchitectures/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting started SQLite","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/sqlite\/"},"genre":"posts","wordcount":32620,"url":"https:\/\/yanboyang.com\/sqlite\/","datePublished":"2021-03-01T06:11:32+10:00","dateModified":"2021-11-07T13:55:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -92,7 +92,7 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting started SQLite</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/isys1055/><i class="far fa-folder fa-fw"></i>ISYS1055</a></span></div>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/isys1055/><i class="far fa-folder fa-fw"></i>ISYS1055</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-03-01>2021-03-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;32620 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;154 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
@@ -686,13 +686,13 @@ SQLite provides various tools for working across platforms e.g., Windows, Linux,
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ sqlite3
-SQLite version 3.35.1 2021-03-15 16:53:57
-Enter &#34;.help&#34; for usage hints.
-Connected to a transient in-memory database.
-Use &#34;.open FILENAME&#34; to reopen on a persistent database.
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ sqlite3
+</span><span class=go>SQLite version 3.35.1 2021-03-15 16:53:57
+</span><span class=go>Enter &#34;.help&#34; for usage hints.
+</span><span class=go>Connected to a transient in-memory database.
+</span><span class=go>Use &#34;.open FILENAME&#34; to reopen on a persistent database.
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><ol start=2>
 <li>You can type the .help command from the sqlite> prompt to see all available commands in sqlite3.2. you can type the .help command from the sqlite> prompt to see all available commands in sqlite3.</li>
@@ -707,13 +707,13 @@ sqlite&gt;
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .help
-.archive ...             Manage SQL archives
-.auth ON|OFF             Show authorizer callbacks
-.backup ?DB? FILE        Backup DB (default &#34;main&#34;) to FILE
-.bail on|off             Stop after hitting an error.  Default OFF
-.binary on|off           Turn binary output on or off.  Default OFF
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .help
+</span><span class=go>.archive ...             Manage SQL archives
+</span><span class=go>.auth ON|OFF             Show authorizer callbacks
+</span><span class=go>.backup ?DB? FILE        Backup DB (default &#34;main&#34;) to FILE
+</span><span class=go>.bail on|off             Stop after hitting an error.  Default OFF
+</span><span class=go>.binary on|off           Turn binary output on or off.  Default OFF
+</span></code></pre></td></tr></table>
 </div>
 </div><ol start=3>
 <li>To quit the sqlite>, you use .quit command as follows:</li>
@@ -724,9 +724,9 @@ sqlite&gt;
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .quit
-[yanboyang713@boyang ~]$ 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .quit
+</span><span class=go>[yanboyang713@boyang ~]$ 
+</span></code></pre></td></tr></table>
 </div>
 </div><h4 id=install-sqlite-gui-tool>Install SQLite GUI tool</h4>
 <p>The sqlite3 shell is excellent…</p>
@@ -770,13 +770,13 @@ sqlite&gt;
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang chinook]$ pwd
-/home/yanboyang713/Documents/study/ISYS1055-DatabaseConcepts/chinook
-[yanboyang713@boyang chinook]$ sqlite3 ./chinook.db 
-SQLite version 3.35.1 2021-03-15 16:53:57
-Enter &#34;.help&#34; for usage hints.
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang chinook]$ pwd
+</span><span class=go>/home/yanboyang713/Documents/study/ISYS1055-DatabaseConcepts/chinook
+</span><span class=go>[yanboyang713@boyang chinook]$ sqlite3 ./chinook.db 
+</span><span class=go>SQLite version 3.35.1 2021-03-15 16:53:57
+</span><span class=go>Enter &#34;.help&#34; for usage hints.
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Trying a simple command e.g., .tables to view all the tables available in the sample database.</p>
 <div class=highlight><div class=chroma>
@@ -787,11 +787,11 @@ sqlite&gt;
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .tables
-albums          employees       invoices        playlists     
-artists         genres          media_types     tracks        
-customers       invoice_items   playlist_track
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .tables
+</span><span class=go>albums          employees       invoices        playlists     
+</span><span class=go>artists         genres          media_types     tracks        
+</span><span class=go>customers       invoice_items   playlist_track
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id=finally-guide-you-on-how-to-use-the-sqlite3-commands>Finally, guide you on how to use the sqlite3 commands</h3>
 <h4 id=connect-to-an-sqlite-database>Connect to an SQLite database</h4>
@@ -806,13 +806,13 @@ customers       invoice_items   playlist_track
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang chinook]$ sqlite3
-SQLite version 3.35.1 2021-03-15 16:53:57
-Enter &#34;.help&#34; for usage hints.
-Connected to a transient in-memory database.
-Use &#34;.open FILENAME&#34; to reopen on a persistent database.
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang chinook]$ sqlite3
+</span><span class=go>SQLite version 3.35.1 2021-03-15 16:53:57
+</span><span class=go>Enter &#34;.help&#34; for usage hints.
+</span><span class=go>Connected to a transient in-memory database.
+</span><span class=go>Use &#34;.open FILENAME&#34; to reopen on a persistent database.
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>By default, an SQLite session uses the in-memory database, therefore, all changes will be gone when the session ends.</p>
 <p>To open a database file, you use the .open FILENAME command. The following statement opens the chinook.db database:</p>
@@ -821,8 +821,8 @@ sqlite&gt;
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .open ./chinook.db
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .open ./chinook.db
+</span></code></pre></td></tr></table>
 </div>
 </div><p>If you want to open a specific database file when you connect to the SQlite database, you use the following command:</p>
 <div class=highlight><div class=chroma>
@@ -833,11 +833,11 @@ sqlite&gt;
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang chinook]$ sqlite3 ./chinook.db 
-SQLite version 3.35.1 2021-03-15 16:53:57
-Enter &#34;.help&#34; for usage hints.
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang chinook]$ sqlite3 ./chinook.db 
+</span><span class=go>SQLite version 3.35.1 2021-03-15 16:53:57
+</span><span class=go>Enter &#34;.help&#34; for usage hints.
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>If you start a session with a database name that does not exist, the sqlite3 tool will create the database file.</p>
 <p>For example, the following command creates a database named <strong>boyang</strong></p>
@@ -848,10 +848,10 @@ sqlite&gt;
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang chinook]$ sqlite3 boyang.db
-SQLite version 3.35.1 2021-03-15 16:53:57
-Enter &#34;.help&#34; for usage hints.
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang chinook]$ sqlite3 boyang.db
+</span><span class=go>SQLite version 3.35.1 2021-03-15 16:53:57
+</span><span class=go>Enter &#34;.help&#34; for usage hints.
+</span></code></pre></td></tr></table>
 </div>
 </div><h4 id=show-all-available-commands-and-their-purposes>Show all available commands and their purposes</h4>
 <p>To show all available commands and their purpose, you use the .help command as follows:</p>
@@ -922,15 +922,15 @@ chinook: /home/yanboyang713/Documents/study/ISYS1055-DatabaseConcepts/chinook/ch
 </span><span class=lnt>8
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang chinook]$ sqlite3 ./chinook.db 
-SQLite version 3.35.1 2021-03-15 16:53:57
-Enter &#34;.help&#34; for usage hints.
-sqlite&gt; .table
-albums          employees       invoices        playlists     
-artists         genres          media_types     tracks        
-customers       invoice_items   playlist_track
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang chinook]$ sqlite3 ./chinook.db 
+</span><span class=go>SQLite version 3.35.1 2021-03-15 16:53:57
+</span><span class=go>Enter &#34;.help&#34; for usage hints.
+</span><span class=go>sqlite&gt; .table
+</span><span class=go>albums          employees       invoices        playlists     
+</span><span class=go>artists         genres          media_types     tracks        
+</span><span class=go>customers       invoice_items   playlist_track
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>If you want to find tables based on a specific pattern, you use the .table pattern command. The sqlite3 uses the LIKE operator for pattern matching.</p>
 <p>For example, the following statement returns the table that ends with the string es.</p>
@@ -1067,14 +1067,14 @@ sqlite&gt;
 </span><span class=lnt>7
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang chinook]$ pwd
-/home/yanboyang713/Documents/study/ISYS1055-DatabaseConcepts/chinook
-[yanboyang713@boyang chinook]$ cat commands.txt 
-SELECT albumid, title
-FROM albums
-ORDER BY title
-LIMIT 10;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang chinook]$ pwd
+</span><span class=go>/home/yanboyang713/Documents/study/ISYS1055-DatabaseConcepts/chinook
+</span><span class=go>[yanboyang713@boyang chinook]$ cat commands.txt 
+</span><span class=go>SELECT albumid, title
+</span><span class=go>FROM albums
+</span><span class=go>ORDER BY title
+</span><span class=go>LIMIT 10;
+</span></code></pre></td></tr></table>
 </div>
 </div><p>To execute the SQL statements in the commands.txt file, you use the .read FILENAME command as follows:</p>
 <div class=highlight><div class=chroma>
@@ -1130,11 +1130,11 @@ sqlite&gt;
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT  1 + 1;
-1 + 1
------
-2    
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT  1 + 1;
+</span><span class=go>1 + 1
+</span><span class=go>-----
+</span><span class=go>2    
+</span></code></pre></td></tr></table>
 </div>
 </div><p>You can use multiple expressions in the SELECT statement as follows:</p>
 <div class=highlight><div class=chroma>
@@ -1148,14 +1148,14 @@ sqlite&gt;
 </span><span class=lnt>7
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT 
-   10 / 5, 
-   2 * 4 ;
-10 / 5  2 * 4
-------  -----
-2       8    
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT 
+</span><span class=go>   10 / 5, 
+</span><span class=go>   2 * 4 ;
+</span><span class=go>10 / 5  2 * 4
+</span><span class=go>------  -----
+</span><span class=go>2       8    
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><h4 id=querying-data-from-a-table-using-the-select-statement>Querying data from a table using the SELECT statement</h4>
 <p>We often use the SELECT statement to query data from one or more table. The syntax of the SELECT statement is as follows:</p>
@@ -1551,27 +1551,27 @@ If you don’t specify the ASC or DESC keyword, SQLite sorts the result set usin
 </span><span class=lnt>20
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT city
-FROM customers
-ORDER BY city;
-City               
--------------------
-Amsterdam          
-Bangalore          
-Berlin             
-Berlin             
-Bordeaux           
-Boston             
-Brasília           
-Brussels           
-Budapest           
-Buenos Aires       
-Chicago            
-Copenhagen         
-Cupertino          
-Delhi              
-...
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT city
+</span><span class=go>FROM customers
+</span><span class=go>ORDER BY city;
+</span><span class=go>City               
+</span><span class=go>-------------------
+</span><span class=go>Amsterdam          
+</span><span class=go>Bangalore          
+</span><span class=go>Berlin             
+</span><span class=go>Berlin             
+</span><span class=go>Bordeaux           
+</span><span class=go>Boston             
+</span><span class=go>Brasília           
+</span><span class=go>Brussels           
+</span><span class=go>Budapest           
+</span><span class=go>Buenos Aires       
+</span><span class=go>Chicago            
+</span><span class=go>Copenhagen         
+</span><span class=go>Cupertino          
+</span><span class=go>Delhi              
+</span><span class=go>...
+</span></code></pre></td></tr></table>
 </div>
 </div><p>It returns 59 rows. There are few duplicate rows such as Berlin London, and Mountain View To remove these duplicate rows, you use the DISTINCT clause as follows:</p>
 <div class=highlight><div class=chroma>
@@ -1611,25 +1611,25 @@ Delhi
 </span><span class=lnt>18
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT
-        city,
-        country
-FROM
-        customers
-ORDER BY
-        country;
-City                 Country       
--------------------  --------------
-Buenos Aires         Argentina     
-Sidney               Australia     
-Vienne               Austria       
-Brussels             Belgium       
-São José dos Campos  Brazil        
-São Paulo            Brazil        
-São Paulo            Brazil        
-Rio de Janeiro       Brazil        
-...
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT
+</span><span class=go>        city,
+</span><span class=go>        country
+</span><span class=go>FROM
+</span><span class=go>        customers
+</span><span class=go>ORDER BY
+</span><span class=go>        country;
+</span><span class=go>City                 Country       
+</span><span class=go>-------------------  --------------
+</span><span class=go>Buenos Aires         Argentina     
+</span><span class=go>Sidney               Australia     
+</span><span class=go>Vienne               Austria       
+</span><span class=go>Brussels             Belgium       
+</span><span class=go>São José dos Campos  Brazil        
+</span><span class=go>São Paulo            Brazil        
+</span><span class=go>São Paulo            Brazil        
+</span><span class=go>Rio de Janeiro       Brazil        
+</span><span class=go>...
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The result set contains duplicate city and country e.g., Sao Paulo in Brazil as shown in the screenshot above.</p>
 <p>To remove duplicate the city and country, you apply the DISTINCT clause to both city and country columns as shown in the following query:</p>
@@ -1656,26 +1656,26 @@ Rio de Janeiro       Brazil
 </span><span class=lnt>19
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT  DISTINCT
-        city,
-        country
-FROM
-        customers
-ORDER BY
-        country;
-City                 Country       
--------------------  --------------
-Buenos Aires         Argentina     
-Sidney               Australia     
-Vienne               Austria       
-Brussels             Belgium       
-São José dos Campos  Brazil        
-São Paulo            Brazil        
-Rio de Janeiro       Brazil        
-Brasília             Brazil        
-Montréal             Canada        
-...
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT  DISTINCT
+</span><span class=go>        city,
+</span><span class=go>        country
+</span><span class=go>FROM
+</span><span class=go>        customers
+</span><span class=go>ORDER BY
+</span><span class=go>        country;
+</span><span class=go>City                 Country       
+</span><span class=go>-------------------  --------------
+</span><span class=go>Buenos Aires         Argentina     
+</span><span class=go>Sidney               Australia     
+</span><span class=go>Vienne               Austria       
+</span><span class=go>Brussels             Belgium       
+</span><span class=go>São José dos Campos  Brazil        
+</span><span class=go>São Paulo            Brazil        
+</span><span class=go>Rio de Janeiro       Brazil        
+</span><span class=go>Brasília             Brazil        
+</span><span class=go>Montréal             Canada        
+</span><span class=go>...
+</span></code></pre></td></tr></table>
 </div>
 </div><p>As mentioned earlier, SQLite uses the combination of city and country to evaluate the duplicate.</p>
 <h5 id=sqlite-select-distinct-with-null-example>SQLite SELECT DISTINCT with NULL example</h5>
@@ -1708,31 +1708,31 @@ Montréal             Canada
 </span><span class=lnt>24
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT company
-FROM customers;
-Company                                         
-------------------------------------------------
-Embraer - Empresa Brasileira de Aeronáutica S.A.
-                                                
-                                                
-                                                
-JetBrains s.r.o.                                
-                                                
-                                                
-                                                
-                                                
-Woodstock Discos                                
-Banco do Brasil S.A.                            
-Riotur                                          
-                                                
-Telus                                           
-Rogers Canada                                   
-Google Inc.                                     
-Microsoft Corporation                           
-                                                
-Apple Inc.                                      
-...
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT company
+</span><span class=go>FROM customers;
+</span><span class=go>Company                                         
+</span><span class=go>------------------------------------------------
+</span><span class=go>Embraer - Empresa Brasileira de Aeronáutica S.A.
+</span><span class=go>                                                
+</span><span class=go>                                                
+</span><span class=go>                                                
+</span><span class=go>JetBrains s.r.o.                                
+</span><span class=go>                                                
+</span><span class=go>                                                
+</span><span class=go>                                                
+</span><span class=go>                                                
+</span><span class=go>Woodstock Discos                                
+</span><span class=go>Banco do Brasil S.A.                            
+</span><span class=go>Riotur                                          
+</span><span class=go>                                                
+</span><span class=go>Telus                                           
+</span><span class=go>Rogers Canada                                   
+</span><span class=go>Google Inc.                                     
+</span><span class=go>Microsoft Corporation                           
+</span><span class=go>                                                
+</span><span class=go>Apple Inc.                                      
+</span><span class=go>...
+</span></code></pre></td></tr></table>
 </div>
 </div><p>It returns 59 rows with many NULL values.</p>
 <p>Now, if you apply the DISTINCT clause to the statement, it will keep only one row with a NULL value.</p>
@@ -1757,23 +1757,23 @@ Apple Inc.
 </span><span class=lnt>16
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT DISTINCT company
-FROM customers;
-Company                                         
-------------------------------------------------
-Embraer - Empresa Brasileira de Aeronáutica S.A.
-                                                
-JetBrains s.r.o.                                
-Woodstock Discos                                
-Banco do Brasil S.A.                            
-Riotur                                          
-Telus                                           
-Rogers Canada                                   
-Google Inc.                                     
-Microsoft Corporation                           
-Apple Inc.                                      
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT DISTINCT company
+</span><span class=go>FROM customers;
+</span><span class=go>Company                                         
+</span><span class=go>------------------------------------------------
+</span><span class=go>Embraer - Empresa Brasileira de Aeronáutica S.A.
+</span><span class=go>                                                
+</span><span class=go>JetBrains s.r.o.                                
+</span><span class=go>Woodstock Discos                                
+</span><span class=go>Banco do Brasil S.A.                            
+</span><span class=go>Riotur                                          
+</span><span class=go>Telus                                           
+</span><span class=go>Rogers Canada                                   
+</span><span class=go>Google Inc.                                     
+</span><span class=go>Microsoft Corporation                           
+</span><span class=go>Apple Inc.                                      
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The statement returns 11 rows with one NULL value.</p>
 <p>Note that if you select a list of columns from a table and want to get a unique combination of some columns, you can use the GROUP BY clause.</p>
@@ -1951,29 +1951,29 @@ sqlite&gt;
 </span><span class=lnt>22
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT
-   name,
-   milliseconds,
-   bytes,
-   albumid
-FROM
-   tracks
-WHERE
-   albumid = 1;
-Name                                     Milliseconds  Bytes     AlbumId
----------------------------------------  ------------  --------  -------
-For Those About To Rock (We Salute You)  343719        11170334  1      
-Put The Finger On You                    205662        6713451   1      
-Let&#39;s Get It Up                          233926        7636561   1      
-Inject The Venom                         210834        6852860   1      
-Snowballed                               203102        6599424   1      
-Evil Walks                               263497        8611245   1      
-C.O.D.                                   199836        6566314   1      
-Breaking The Rules                       263288        8596840   1      
-Night Of The Long Knives                 205688        6706347   1      
-Spellbound                               270863        8817038   1      
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT
+</span><span class=go>   name,
+</span><span class=go>   milliseconds,
+</span><span class=go>   bytes,
+</span><span class=go>   albumid
+</span><span class=go>FROM
+</span><span class=go>   tracks
+</span><span class=go>WHERE
+</span><span class=go>   albumid = 1;
+</span><span class=go>Name                                     Milliseconds  Bytes     AlbumId
+</span><span class=go>---------------------------------------  ------------  --------  -------
+</span><span class=go>For Those About To Rock (We Salute You)  343719        11170334  1      
+</span><span class=go>Put The Finger On You                    205662        6713451   1      
+</span><span class=go>Let&#39;s Get It Up                          233926        7636561   1      
+</span><span class=go>Inject The Venom                         210834        6852860   1      
+</span><span class=go>Snowballed                               203102        6599424   1      
+</span><span class=go>Evil Walks                               263497        8611245   1      
+</span><span class=go>C.O.D.                                   199836        6566314   1      
+</span><span class=go>Breaking The Rules                       263288        8596840   1      
+</span><span class=go>Night Of The Long Knives                 205688        6706347   1      
+</span><span class=go>Spellbound                               270863        8817038   1      
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>SQLite compares the values stored in the AlbumId column with a literal value 1 to test if they are equal. Only the rows that satisfy the condition are returned.</p>
 <p>When you compare two values, you must ensure that they are the same data type. You should compare numbers with numbers, string with strings, etc.</p>
@@ -2000,24 +2000,24 @@ sqlite&gt;
 </span><span class=lnt>17
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT            
-        name,
-        milliseconds,
-        bytes,
-        albumid
-FROM
-        tracks
-WHERE
-        albumid = 1
-AND milliseconds &gt; 250000;
-Name                                     Milliseconds  Bytes     AlbumId
----------------------------------------  ------------  --------  -------
-For Those About To Rock (We Salute You)  343719        11170334  1      
-Evil Walks                               263497        8611245   1      
-Breaking The Rules                       263288        8596840   1      
-Spellbound                               270863        8817038   1      
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT            
+</span><span class=go>        name,
+</span><span class=go>        milliseconds,
+</span><span class=go>        bytes,
+</span><span class=go>        albumid
+</span><span class=go>FROM
+</span><span class=go>        tracks
+</span><span class=go>WHERE
+</span><span class=go>        albumid = 1
+</span><span class=go>AND milliseconds &gt; 250000;
+</span><span class=go>Name                                     Milliseconds  Bytes     AlbumId
+</span><span class=go>---------------------------------------  ------------  --------  -------
+</span><span class=go>For Those About To Rock (We Salute You)  343719        11170334  1      
+</span><span class=go>Evil Walks                               263497        8611245   1      
+</span><span class=go>Breaking The Rules                       263288        8596840   1      
+</span><span class=go>Spellbound                               270863        8817038   1      
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The statement used two expressions albumid = 1 and milliseconds > 250000. It uses the AND logical operator to combine these expressions.</p>
 <h5 id=sqlite-where-clause-with-like-operator-example>SQLite WHERE clause with LIKE operator example</h5>
@@ -2122,26 +2122,26 @@ sqlite&gt;
 </span><span class=lnt>19
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT
-        trackId,
-        name
-FROM
-        tracks
-LIMIT 10;
-TrackId  Name                                   
--------  ---------------------------------------
-1        For Those About To Rock (We Salute You)
-2        Balls to the Wall                      
-3        Fast As a Shark                        
-4        Restless and Wild                      
-5        Princess of the Dawn                   
-6        Put The Finger On You                  
-7        Let&#39;s Get It Up                        
-8        Inject The Venom                       
-9        Snowballed                             
-10       Evil Walks                             
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT
+</span><span class=go>        trackId,
+</span><span class=go>        name
+</span><span class=go>FROM
+</span><span class=go>        tracks
+</span><span class=go>LIMIT 10;
+</span><span class=go>TrackId  Name                                   
+</span><span class=go>-------  ---------------------------------------
+</span><span class=go>1        For Those About To Rock (We Salute You)
+</span><span class=go>2        Balls to the Wall                      
+</span><span class=go>3        Fast As a Shark                        
+</span><span class=go>4        Restless and Wild                      
+</span><span class=go>5        Princess of the Dawn                   
+</span><span class=go>6        Put The Finger On You                  
+</span><span class=go>7        Let&#39;s Get It Up                        
+</span><span class=go>8        Inject The Venom                       
+</span><span class=go>9        Snowballed                             
+</span><span class=go>10       Evil Walks                             
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>If you want to get the first 10 rows starting from the 10th row of the result set, you use OFFSET keyword as the following:</p>
 <div class=highlight><div class=chroma>
@@ -2201,26 +2201,26 @@ sqlite&gt;
 </span><span class=lnt>19
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT     
-        trackId,
-        name
-FROM
-        tracks
-LIMIT 10 OFFSET 10;
-TrackId  Name                    
--------  ------------------------
-11       C.O.D.                  
-12       Breaking The Rules      
-13       Night Of The Long Knives
-14       Spellbound              
-15       Go Down                 
-16       Dog Eat Dog             
-17       Let There Be Rock       
-18       Bad Boy Boogie          
-19       Problem Child           
-20       Overdose                
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT     
+</span><span class=go>        trackId,
+</span><span class=go>        name
+</span><span class=go>FROM
+</span><span class=go>        tracks
+</span><span class=go>LIMIT 10 OFFSET 10;
+</span><span class=go>TrackId  Name                    
+</span><span class=go>-------  ------------------------
+</span><span class=go>11       C.O.D.                  
+</span><span class=go>12       Breaking The Rules      
+</span><span class=go>13       Night Of The Long Knives
+</span><span class=go>14       Spellbound              
+</span><span class=go>15       Go Down                 
+</span><span class=go>16       Dog Eat Dog             
+</span><span class=go>17       Let There Be Rock       
+</span><span class=go>18       Bad Boy Boogie          
+</span><span class=go>19       Problem Child           
+</span><span class=go>20       Overdose                
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>You often find the uses of OFFSET in web applications for paginating result sets.</p>
 <h5 id=sqlite-limit-and-order-by-clause>SQLite LIMIT and ORDER BY clause</h5>
@@ -2271,29 +2271,29 @@ sqlite&gt;
 </span><span class=lnt>22
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT
-        trackid,
-        name,
-        bytes
-FROM
-        tracks
-ORDER BY
-        bytes DESC
-LIMIT 10;
-TrackId  Name                         Bytes     
--------  ---------------------------  ----------
-3224     Through a Looking Glass      1059546140
-2820     Occupation / Precipice       1054423946
-3236     The Young Lords              587051735 
-3242     The Man With Nine Lives      577829804 
-2910     Dave                         574325829 
-3235     The Magnificent Warriors     570152232 
-3231     The Lost Warrior             558872190 
-2902     Maternity Leave              555244214 
-3228     Battlestar Galactica, Pt. 3  554509033 
-2832     The Woman King               552893447 
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT
+</span><span class=go>        trackid,
+</span><span class=go>        name,
+</span><span class=go>        bytes
+</span><span class=go>FROM
+</span><span class=go>        tracks
+</span><span class=go>ORDER BY
+</span><span class=go>        bytes DESC
+</span><span class=go>LIMIT 10;
+</span><span class=go>TrackId  Name                         Bytes     
+</span><span class=go>-------  ---------------------------  ----------
+</span><span class=go>3224     Through a Looking Glass      1059546140
+</span><span class=go>2820     Occupation / Precipice       1054423946
+</span><span class=go>3236     The Young Lords              587051735 
+</span><span class=go>3242     The Man With Nine Lives      577829804 
+</span><span class=go>2910     Dave                         574325829 
+</span><span class=go>3235     The Magnificent Warriors     570152232 
+</span><span class=go>3231     The Lost Warrior             558872190 
+</span><span class=go>2902     Maternity Leave              555244214 
+</span><span class=go>3228     Battlestar Galactica, Pt. 3  554509033 
+</span><span class=go>2832     The Woman King               552893447 
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>To get the 5 shortest tracks, you sort the tracks by the length specified by milliseconds column using ORDER BY clause and get the first 5 rows using LIMIT clause.</p>
 <div class=highlight><div class=chroma>
@@ -2317,24 +2317,24 @@ sqlite&gt;
 </span><span class=lnt>17
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT
-        trackid,
-        name,
-        milliseconds
-FROM
-        tracks
-ORDER BY
-        milliseconds ASC
-LIMIT 5;
-TrackId  Name                      Milliseconds
--------  ------------------------  ------------
-2461     É Uma Partida De Futebol  1071        
-168      Now Sports                4884        
-170      A Statistic               6373        
-178      Oprah                     6635        
-3304     Commercial 1              7941        
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT
+</span><span class=go>        trackid,
+</span><span class=go>        name,
+</span><span class=go>        milliseconds
+</span><span class=go>FROM
+</span><span class=go>        tracks
+</span><span class=go>ORDER BY
+</span><span class=go>        milliseconds ASC
+</span><span class=go>LIMIT 5;
+</span><span class=go>TrackId  Name                      Milliseconds
+</span><span class=go>-------  ------------------------  ------------
+</span><span class=go>2461     É Uma Partida De Futebol  1071        
+</span><span class=go>168      Now Sports                4884        
+</span><span class=go>170      A Statistic               6373        
+</span><span class=go>178      Oprah                     6635        
+</span><span class=go>3304     Commercial 1              7941        
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id=getting-the-nth-highest-and-the-lowest-value>Getting the nth highest and the lowest value</h5>
 <p>You can use the ORDER BY and LIMIT clauses to get the nth highest or lowest value rows. For example, you may want to know the second-longest track, the third smallest track, etc.</p>
@@ -2361,20 +2361,20 @@ sqlite&gt;
 </span><span class=lnt>13
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT
-        trackid,
-        name,
-        milliseconds
-FROM
-        tracks
-ORDER BY
-        milliseconds DESC
-LIMIT 1 OFFSET 1;
-TrackId  Name                     Milliseconds
--------  -----------------------  ------------
-3224     Through a Looking Glass  5088838     
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT
+</span><span class=go>        trackid,
+</span><span class=go>        name,
+</span><span class=go>        milliseconds
+</span><span class=go>FROM
+</span><span class=go>        tracks
+</span><span class=go>ORDER BY
+</span><span class=go>        milliseconds DESC
+</span><span class=go>LIMIT 1 OFFSET 1;
+</span><span class=go>TrackId  Name                     Milliseconds
+</span><span class=go>-------  -----------------------  ------------
+</span><span class=go>3224     Through a Looking Glass  5088838     
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The following statement gets the third smallest track on the tracks table.</p>
 <div class=highlight><div class=chroma>
@@ -2394,20 +2394,20 @@ sqlite&gt;
 </span><span class=lnt>13
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT
-        trackid,
-        name,
-        bytes
-FROM
-        tracks
-ORDER BY
-        bytes
-LIMIT 1 OFFSET 2;
-TrackId  Name         Bytes 
--------  -----------  ------
-170      A Statistic  211997
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT
+</span><span class=go>        trackid,
+</span><span class=go>        name,
+</span><span class=go>        bytes
+</span><span class=go>FROM
+</span><span class=go>        tracks
+</span><span class=go>ORDER BY
+</span><span class=go>        bytes
+</span><span class=go>LIMIT 1 OFFSET 2;
+</span><span class=go>TrackId  Name         Bytes 
+</span><span class=go>-------  -----------  ------
+</span><span class=go>170      A Statistic  211997
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><h4 id=between--test-whether-a-value-is-in-a-range-of-values>Between – test whether a value is in a range of values.</h4>
 <h5 id=ntroduction-to-sqlite-between-operator>ntroduction to SQLite BETWEEN Operator</h5>
@@ -2486,28 +2486,28 @@ sqlite&gt;
 </span><span class=lnt>21
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT
-    InvoiceId,
-    BillingAddress,
-    Total
-FROM
-    invoices
-WHERE
-    Total BETWEEN 14.91 and 18.86    
-ORDER BY
-    Total;
-InvoiceId  BillingAddress                        Total
----------  ------------------------------------  -----
-193        Berger Straße 10                      14.91
-103        162 E Superior Street                 15.86
-208        Ullevålsveien 14                      15.86
-306        Klanova 9/506                         16.86
-313        68, Rue Jouvence                      16.86
-88         Calle Lira, 198                       17.91
-89         Rotenturmstraße 4, 1010 Innere Stadt  18.86
-201        319 N. Frances Street                 18.86
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT
+</span><span class=go>    InvoiceId,
+</span><span class=go>    BillingAddress,
+</span><span class=go>    Total
+</span><span class=go>FROM
+</span><span class=go>    invoices
+</span><span class=go>WHERE
+</span><span class=go>    Total BETWEEN 14.91 and 18.86    
+</span><span class=go>ORDER BY
+</span><span class=go>    Total;
+</span><span class=go>InvoiceId  BillingAddress                        Total
+</span><span class=go>---------  ------------------------------------  -----
+</span><span class=go>193        Berger Straße 10                      14.91
+</span><span class=go>103        162 E Superior Street                 15.86
+</span><span class=go>208        Ullevålsveien 14                      15.86
+</span><span class=go>306        Klanova 9/506                         16.86
+</span><span class=go>313        68, Rue Jouvence                      16.86
+</span><span class=go>88         Calle Lira, 198                       17.91
+</span><span class=go>89         Rotenturmstraße 4, 1010 Innere Stadt  18.86
+</span><span class=go>201        319 N. Frances Street                 18.86
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>As you can see, the invoices whose total is 14.91 or 18.86 are included in the result set.</p>
 <h6 id=sqlite-not-between-numeric-values-example>SQLite NOT BETWEEN numeric values example</h6>
@@ -2544,35 +2544,35 @@ sqlite&gt;
 </span><span class=lnt>28
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT
-    InvoiceId,
-    BillingAddress,
-    Total
-FROM
-    invoices
-WHERE
-    Total NOT BETWEEN 1 and 20
-ORDER BY
-    Total;
-InvoiceId  BillingAddress                            Total
----------  ----------------------------------------  -----
-6          Berger Straße 10                          0.99 
-13         1600 Amphitheatre Parkway                 0.99 
-20         110 Raeburn Pl                            0.99 
-27         5112 48 Street                            0.99 
-34         Praça Pio X, 119                          0.99 
-41         C/ San Bernardo 85                        0.99 
-48         796 Dundas Street West                    0.99 
-55         Grétrystraat 63                           0.99 
-62         3 Chatham Street                          0.99 
-69         319 N. Frances Street                     0.99 
-76         Ullevålsveien 14                          0.99 
-83         9, Place Louis Barthou                    0.99 
-90         801 W 4th Street                          0.99 
-104        Barbarossastraße 19                       0.99 
-111        1 Microsoft Way                           0.99 
-...
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT
+</span><span class=go>    InvoiceId,
+</span><span class=go>    BillingAddress,
+</span><span class=go>    Total
+</span><span class=go>FROM
+</span><span class=go>    invoices
+</span><span class=go>WHERE
+</span><span class=go>    Total NOT BETWEEN 1 and 20
+</span><span class=go>ORDER BY
+</span><span class=go>    Total;
+</span><span class=go>InvoiceId  BillingAddress                            Total
+</span><span class=go>---------  ----------------------------------------  -----
+</span><span class=go>6          Berger Straße 10                          0.99 
+</span><span class=go>13         1600 Amphitheatre Parkway                 0.99 
+</span><span class=go>20         110 Raeburn Pl                            0.99 
+</span><span class=go>27         5112 48 Street                            0.99 
+</span><span class=go>34         Praça Pio X, 119                          0.99 
+</span><span class=go>41         C/ San Bernardo 85                        0.99 
+</span><span class=go>48         796 Dundas Street West                    0.99 
+</span><span class=go>55         Grétrystraat 63                           0.99 
+</span><span class=go>62         3 Chatham Street                          0.99 
+</span><span class=go>69         319 N. Frances Street                     0.99 
+</span><span class=go>76         Ullevålsveien 14                          0.99 
+</span><span class=go>83         9, Place Louis Barthou                    0.99 
+</span><span class=go>90         801 W 4th Street                          0.99 
+</span><span class=go>104        Barbarossastraße 19                       0.99 
+</span><span class=go>111        1 Microsoft Way                           0.99 
+</span><span class=go>...
+</span></code></pre></td></tr></table>
 </div>
 </div><p>As clearly shown in the output, the result includes the invoices whose total is less than 1 and greater than 20.</p>
 <h6 id=sqlite-between-dates-example>SQLite BETWEEN dates example</h6>
@@ -2602,28 +2602,28 @@ InvoiceId  BillingAddress                            Total
 </span><span class=lnt>21
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT
-    InvoiceId,
-    BillingAddress,
-    InvoiceDate,
-    Total
-FROM
-    invoices
-WHERE
-    InvoiceDate BETWEEN &#39;2010-01-01&#39; AND &#39;2010-01-31&#39;
-ORDER BY
-    InvoiceDate;
-InvoiceId  BillingAddress                        InvoiceDate          Total
----------  ------------------------------------  -------------------  -----
-84         68, Rue Jouvence                      2010-01-08 00:00:00  1.98 
-85         Erzsébet krt. 58.                     2010-01-08 00:00:00  1.98 
-86         Via Degli Scipioni, 43                2010-01-09 00:00:00  3.96 
-87         Celsiusg. 9                           2010-01-10 00:00:00  6.94 
-88         Calle Lira, 198                       2010-01-13 00:00:00  17.91
-89         Rotenturmstraße 4, 1010 Innere Stadt  2010-01-18 00:00:00  18.86
-90         801 W 4th Street                      2010-01-26 00:00:00  0.99 
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT
+</span><span class=go>    InvoiceId,
+</span><span class=go>    BillingAddress,
+</span><span class=go>    InvoiceDate,
+</span><span class=go>    Total
+</span><span class=go>FROM
+</span><span class=go>    invoices
+</span><span class=go>WHERE
+</span><span class=go>    InvoiceDate BETWEEN &#39;2010-01-01&#39; AND &#39;2010-01-31&#39;
+</span><span class=go>ORDER BY
+</span><span class=go>    InvoiceDate;
+</span><span class=go>InvoiceId  BillingAddress                        InvoiceDate          Total
+</span><span class=go>---------  ------------------------------------  -------------------  -----
+</span><span class=go>84         68, Rue Jouvence                      2010-01-08 00:00:00  1.98 
+</span><span class=go>85         Erzsébet krt. 58.                     2010-01-08 00:00:00  1.98 
+</span><span class=go>86         Via Degli Scipioni, 43                2010-01-09 00:00:00  3.96 
+</span><span class=go>87         Celsiusg. 9                           2010-01-10 00:00:00  6.94 
+</span><span class=go>88         Calle Lira, 198                       2010-01-13 00:00:00  17.91
+</span><span class=go>89         Rotenturmstraße 4, 1010 Innere Stadt  2010-01-18 00:00:00  18.86
+</span><span class=go>90         801 W 4th Street                      2010-01-26 00:00:00  0.99 
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><h6 id=sqlite-not-between-dates-example>SQLite NOT BETWEEN dates example</h6>
 <p>The following statement finds invoices whose dates are not between January 03, 2009, and December 01, 2013:</p>
@@ -2654,30 +2654,30 @@ sqlite&gt;
 </span><span class=lnt>23
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT
-    InvoiceId,
-    BillingAddress,
-    date(InvoiceDate) InvoiceDate,
-    Total
-FROM
-    invoices
-WHERE
-    InvoiceDate NOT BETWEEN &#39;2009-01-03&#39; AND &#39;2013-12-01&#39;
-ORDER BY
-    InvoiceDate;
-InvoiceId  BillingAddress                            InvoiceDate  Total
----------  ----------------------------------------  -----------  -----
-1          Theodor-Heuss-Straße 34                   2009-01-01   1.98 
-2          Ullevålsveien 14                          2009-01-02   3.96 
-406        801 W 4th Street                          2013-12-04   1.98 
-407        69 Salem Street                           2013-12-04   1.98 
-408        319 N. Frances Street                     2013-12-05   3.96 
-409        796 Dundas Street West                    2013-12-06   5.94 
-410        Rua dos Campeões Europeus de Viena, 4350  2013-12-09   8.91 
-411        Porthaninkatu 9                           2013-12-14   13.86
-412        12,Community Centre                       2013-12-22   1.99 
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT
+</span><span class=go>    InvoiceId,
+</span><span class=go>    BillingAddress,
+</span><span class=go>    date(InvoiceDate) InvoiceDate,
+</span><span class=go>    Total
+</span><span class=go>FROM
+</span><span class=go>    invoices
+</span><span class=go>WHERE
+</span><span class=go>    InvoiceDate NOT BETWEEN &#39;2009-01-03&#39; AND &#39;2013-12-01&#39;
+</span><span class=go>ORDER BY
+</span><span class=go>    InvoiceDate;
+</span><span class=go>InvoiceId  BillingAddress                            InvoiceDate  Total
+</span><span class=go>---------  ----------------------------------------  -----------  -----
+</span><span class=go>1          Theodor-Heuss-Straße 34                   2009-01-01   1.98 
+</span><span class=go>2          Ullevålsveien 14                          2009-01-02   3.96 
+</span><span class=go>406        801 W 4th Street                          2013-12-04   1.98 
+</span><span class=go>407        69 Salem Street                           2013-12-04   1.98 
+</span><span class=go>408        319 N. Frances Street                     2013-12-05   3.96 
+</span><span class=go>409        796 Dundas Street West                    2013-12-06   5.94 
+</span><span class=go>410        Rua dos Campeões Europeus de Viena, 4350  2013-12-09   8.91 
+</span><span class=go>411        Porthaninkatu 9                           2013-12-14   13.86
+</span><span class=go>412        12,Community Centre                       2013-12-22   1.99 
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><h4 id=in--check-if-a-value-matches-any-value-in-a-list-of-values-or-subquery>In – check if a value matches any value in a list of values or subquery.</h4>
 <h5 id=introduction-to-the-sqlite-in-operator>Introduction to the SQLite IN operator</h5>
@@ -2767,15 +2767,15 @@ sqlite&gt;
 </span><span class=lnt>8
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT albumid
-FROM albums
-WHERE artistid = 12;
-AlbumId
--------
-16     
-17     
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT albumid
+</span><span class=go>FROM albums
+</span><span class=go>WHERE artistid = 12;
+</span><span class=go>AlbumId
+</span><span class=go>-------
+</span><span class=go>16     
+</span><span class=go>17     
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>To get the tracks that belong to the artist id 12, you can combine the IN operator with a subquery as follows:</p>
 <div class=highlight><div class=chroma>
@@ -2824,49 +2824,49 @@ sqlite&gt;
 </span><span class=lnt>42
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT albumid
-FROM albums
-WHERE artistid = 12;
-AlbumId
--------
-16     
-17     
-sqlite&gt; SELECT
-        TrackId, 
-        Name, 
-        AlbumId
-FROM
-        Tracks
-WHERE
-        AlbumId IN (
-                SELECT
-                        AlbumId
-                FROM
-                        Albums
-                WHERE
-                        ArtistId = 12
-        );
-TrackId  Name                                    AlbumId
--------  --------------------------------------  -------
-149      Black Sabbath                           16     
-150      The Wizard                              16     
-151      Behind The Wall Of Sleep                16     
-152      N.I.B.                                  16     
-153      Evil Woman                              16     
-154      Sleeping Village                        16     
-155      Warning                                 16     
-156      Wheels Of Confusion / The Straightener  17     
-157      Tomorrow&#39;s Dream                        17     
-158      Changes                                 17     
-159      FX                                      17     
-160      Supernaut                               17     
-161      Snowblind                               17     
-162      Cornucopia                              17     
-163      Laguna Sunrise                          17     
-164      St. Vitus Dance                         17     
-165      Under The Sun/Every Day Comes and Goes  17     
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT albumid
+</span><span class=go>FROM albums
+</span><span class=go>WHERE artistid = 12;
+</span><span class=go>AlbumId
+</span><span class=go>-------
+</span><span class=go>16     
+</span><span class=go>17     
+</span><span class=go>sqlite&gt; SELECT
+</span><span class=go>        TrackId, 
+</span><span class=go>        Name, 
+</span><span class=go>        AlbumId
+</span><span class=go>FROM
+</span><span class=go>        Tracks
+</span><span class=go>WHERE
+</span><span class=go>        AlbumId IN (
+</span><span class=go>                SELECT
+</span><span class=go>                        AlbumId
+</span><span class=go>                FROM
+</span><span class=go>                        Albums
+</span><span class=go>                WHERE
+</span><span class=go>                        ArtistId = 12
+</span><span class=go>        );
+</span><span class=go>TrackId  Name                                    AlbumId
+</span><span class=go>-------  --------------------------------------  -------
+</span><span class=go>149      Black Sabbath                           16     
+</span><span class=go>150      The Wizard                              16     
+</span><span class=go>151      Behind The Wall Of Sleep                16     
+</span><span class=go>152      N.I.B.                                  16     
+</span><span class=go>153      Evil Woman                              16     
+</span><span class=go>154      Sleeping Village                        16     
+</span><span class=go>155      Warning                                 16     
+</span><span class=go>156      Wheels Of Confusion / The Straightener  17     
+</span><span class=go>157      Tomorrow&#39;s Dream                        17     
+</span><span class=go>158      Changes                                 17     
+</span><span class=go>159      FX                                      17     
+</span><span class=go>160      Supernaut                               17     
+</span><span class=go>161      Snowblind                               17     
+</span><span class=go>162      Cornucopia                              17     
+</span><span class=go>163      Laguna Sunrise                          17     
+</span><span class=go>164      St. Vitus Dance                         17     
+</span><span class=go>165      Under The Sun/Every Day Comes and Goes  17     
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>In this example:</p>
 <ul>
@@ -2966,22 +2966,22 @@ In case you want to make LIKE operator works case-sensitively, you need to use t
 </span><span class=lnt>15
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT           
-        trackid,
-        name    
-FROM
-        tracks
-WHERE
-        name LIKE &#39;Wild%&#39;;
-TrackId  Name            
--------  ----------------
-1245     Wildest Dreams  
-1973     Wild Side       
-2627     Wild Hearted Son
-2633     Wild Flower     
-2944     Wild Honey      
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT           
+</span><span class=go>        trackid,
+</span><span class=go>        name    
+</span><span class=go>FROM
+</span><span class=go>        tracks
+</span><span class=go>WHERE
+</span><span class=go>        name LIKE &#39;Wild%&#39;;
+</span><span class=go>TrackId  Name            
+</span><span class=go>-------  ----------------
+</span><span class=go>1245     Wildest Dreams  
+</span><span class=go>1973     Wild Side       
+</span><span class=go>2627     Wild Hearted Son
+</span><span class=go>2633     Wild Flower     
+</span><span class=go>2944     Wild Honey      
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>To find the tracks whose names end with Wild word, you use % wildcard at the beginning of the pattern.</p>
 <div class=highlight><div class=chroma>
@@ -3002,21 +3002,21 @@ sqlite&gt;
 </span><span class=lnt>14
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT           
-        trackid,
-        name
-FROM
-        tracks
-WHERE
-        name LIKE &#39;%Wild&#39;;
-TrackId  Name             
--------  -----------------
-4        Restless and Wild
-32       Deuces Are Wild  
-775      Call Of The Wild 
-2697     I Go Wild        
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT           
+</span><span class=go>        trackid,
+</span><span class=go>        name
+</span><span class=go>FROM
+</span><span class=go>        tracks
+</span><span class=go>WHERE
+</span><span class=go>        name LIKE &#39;%Wild&#39;;
+</span><span class=go>TrackId  Name             
+</span><span class=go>-------  -----------------
+</span><span class=go>4        Restless and Wild
+</span><span class=go>32       Deuces Are Wild  
+</span><span class=go>775      Call Of The Wild 
+</span><span class=go>2697     I Go Wild        
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>To find the tracks whose names contain the Wild literal string, you use % wildcard at the beginning and end of the pattern:</p>
 <div class=highlight><div class=chroma>
@@ -3045,29 +3045,29 @@ sqlite&gt;
 </span><span class=lnt>22
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT             
-        trackid,
-        name    
-FROM
-        tracks
-WHERE
-        name LIKE &#39;%Wild%&#39;;
-TrackId  Name                             
--------  ---------------------------------
-4        Restless and Wild                
-32       Deuces Are Wild                  
-775      Call Of The Wild                 
-1245     Wildest Dreams                   
-1869     Where The Wild Things Are        
-1973     Wild Side                        
-2312     Near Wild Heaven                 
-2627     Wild Hearted Son                 
-2633     Wild Flower                      
-2697     I Go Wild                        
-2930     Who&#39;s Gonna Ride Your Wild Horses
-2944     Wild Honey                       
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT             
+</span><span class=go>        trackid,
+</span><span class=go>        name    
+</span><span class=go>FROM
+</span><span class=go>        tracks
+</span><span class=go>WHERE
+</span><span class=go>        name LIKE &#39;%Wild%&#39;;
+</span><span class=go>TrackId  Name                             
+</span><span class=go>-------  ---------------------------------
+</span><span class=go>4        Restless and Wild                
+</span><span class=go>32       Deuces Are Wild                  
+</span><span class=go>775      Call Of The Wild                 
+</span><span class=go>1245     Wildest Dreams                   
+</span><span class=go>1869     Where The Wild Things Are        
+</span><span class=go>1973     Wild Side                        
+</span><span class=go>2312     Near Wild Heaven                 
+</span><span class=go>2627     Wild Hearted Son                 
+</span><span class=go>2633     Wild Flower                      
+</span><span class=go>2697     I Go Wild                        
+</span><span class=go>2930     Who&#39;s Gonna Ride Your Wild Horses
+</span><span class=go>2944     Wild Honey                       
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The following statement finds the tracks whose names contain: zero or more characters (%), followed by Br, followed by a character (_), followed by wn, and followed by zero or more characters ( %).</p>
 <div class=highlight><div class=chroma>
@@ -3086,19 +3086,19 @@ sqlite&gt;
 </span><span class=lnt>12
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT              
-        trackid,
-        name
-FROM
-        tracks
-WHERE
-        name LIKE &#39;%Br_wn%&#39;;
-TrackId  Name                
--------  --------------------
-1053     Bad, Bad Leroy Brown
-1150     Mr. Brownstone      
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT              
+</span><span class=go>        trackid,
+</span><span class=go>        name
+</span><span class=go>FROM
+</span><span class=go>        tracks
+</span><span class=go>WHERE
+</span><span class=go>        name LIKE &#39;%Br_wn%&#39;;
+</span><span class=go>TrackId  Name                
+</span><span class=go>-------  --------------------
+</span><span class=go>1053     Bad, Bad Leroy Brown
+</span><span class=go>1150     Mr. Brownstone      
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id=sqlite-like-with-escape-clause>SQLite LIKE with ESCAPE clause</h5>
 <p>If the pattern that you want to match contains % or _, you must use an escape character in an optional ESCAPE clause as follows:</p>
@@ -3167,15 +3167,15 @@ sqlite&gt;
 </span><span class=lnt>8
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT * FROM t;
-c                     
-----------------------
-10% increase          
-10 times decrease     
-100% vs. last year    
-20% increase next year
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT * FROM t;
+</span><span class=go>c                     
+</span><span class=go>----------------------
+</span><span class=go>10% increase          
+</span><span class=go>10 times decrease     
+</span><span class=go>100% vs. last year    
+</span><span class=go>20% increase next year
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Fourth, attempt to find the row whose value in the c column contains the 10% literal string:</p>
 <div class=highlight><div class=chroma>
@@ -3191,16 +3191,16 @@ sqlite&gt;
 </span><span class=lnt>9
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT c     
-FROM t 
-WHERE c LIKE &#39;%10%%&#39;;
-c                 
-------------------
-10% increase      
-10 times decrease 
-100% vs. last year
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT c     
+</span><span class=go>FROM t 
+</span><span class=go>WHERE c LIKE &#39;%10%%&#39;;
+</span><span class=go>c                 
+</span><span class=go>------------------
+</span><span class=go>10% increase      
+</span><span class=go>10 times decrease 
+</span><span class=go>100% vs. last year
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>However, it returns rows whose values in the c column contains 10.</p>
 <p>Fifth, to get the correct result, you use the ESCAPE clause as shown in the following query:</p>
@@ -3215,14 +3215,14 @@ sqlite&gt;
 </span><span class=lnt>7
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT c                 
-FROM t 
-WHERE c LIKE &#39;%10\%%&#39; ESCAPE &#39;\&#39;;
-c           
-------------
-10% increase
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT c                 
+</span><span class=go>FROM t 
+</span><span class=go>WHERE c LIKE &#39;%10\%%&#39; ESCAPE &#39;\&#39;;
+</span><span class=go>c           
+</span><span class=go>------------
+</span><span class=go>10% increase
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><h4 id=glob--determine-whether-a-string-matches-a-specific-unix-pattern>Glob – determine whether a string matches a specific UNIX-pattern.</h4>
 <h5 id=introduction-to-the-sqlite-glob-operator>Introduction to the SQLite GLOB operator</h5>
@@ -3263,28 +3263,28 @@ sqlite&gt;
 </span><span class=lnt>21
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT           
-        trackid,
-        name
-FROM
-        tracks
-WHERE
-        name GLOB &#39;Man*&#39;;
-TrackId  Name                                   
--------  ---------------------------------------
-52       Man In The Box                         
-106      Man Or Animal                          
-257      Manguetown                             
-358      Man With The Woman Head                
-562      Mangueira                              
-584      Manuel                                 
-1397     Man On The Edge                        
-1459     Manifest Destiny                       
-1480     Manic Depression                       
-2046     Manguetown                             
-2859     Man of Science, Man of Faith (Premiere)
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT           
+</span><span class=go>        trackid,
+</span><span class=go>        name
+</span><span class=go>FROM
+</span><span class=go>        tracks
+</span><span class=go>WHERE
+</span><span class=go>        name GLOB &#39;Man*&#39;;
+</span><span class=go>TrackId  Name                                   
+</span><span class=go>-------  ---------------------------------------
+</span><span class=go>52       Man In The Box                         
+</span><span class=go>106      Man Or Animal                          
+</span><span class=go>257      Manguetown                             
+</span><span class=go>358      Man With The Woman Head                
+</span><span class=go>562      Mangueira                              
+</span><span class=go>584      Manuel                                 
+</span><span class=go>1397     Man On The Edge                        
+</span><span class=go>1459     Manifest Destiny                       
+</span><span class=go>1480     Manic Depression                       
+</span><span class=go>2046     Manguetown                             
+</span><span class=go>2859     Man of Science, Man of Faith (Premiere)
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The following statement gets the tracks whose names end with Man. The pattern *Man matches any string that ends with Man.</p>
 <div class=highlight><div class=chroma>
@@ -3329,45 +3329,45 @@ sqlite&gt;
 </span><span class=lnt>38
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT           
-        trackid,
-        name
-FROM
-        tracks
-WHERE
-        name GLOB &#39;*Man&#39;;
-TrackId  Name                        
--------  ----------------------------
-31       Blind Man                   
-359      Muffin Man                  
-431      The Invisible Man           
-760      Hard Lovin&#39; Man             
-809      Holy Man                    
-821      Ramshackle Man              
-836      Make Love Like A Man        
-962      Just A Man                  
-1235     The Wicker Man              
-1353     The Wicker Man              
-1457     Half The Man                
-1573     2,000 Man                   
-1809     Of Wolf And Man             
-2107     Iron Man                    
-2162     Better Man                  
-2224     Mystic Man                  
-2228     Equal Rights Downpresser Man
-2372     My Lovely Man               
-2645     Back Door Man               
-2854     Company Man                 
-2855     Company Man                 
-2880     Confidence Man              
-2986     Wake Up Dead Man            
-3022     Drowning Man                
-3090     Ice Cream Man               
-3223     How to Stop an Exploding Man
-3379     She&#39;ll Never Be Your Man    
-3427     Fanfare for the Common Man  
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT           
+</span><span class=go>        trackid,
+</span><span class=go>        name
+</span><span class=go>FROM
+</span><span class=go>        tracks
+</span><span class=go>WHERE
+</span><span class=go>        name GLOB &#39;*Man&#39;;
+</span><span class=go>TrackId  Name                        
+</span><span class=go>-------  ----------------------------
+</span><span class=go>31       Blind Man                   
+</span><span class=go>359      Muffin Man                  
+</span><span class=go>431      The Invisible Man           
+</span><span class=go>760      Hard Lovin&#39; Man             
+</span><span class=go>809      Holy Man                    
+</span><span class=go>821      Ramshackle Man              
+</span><span class=go>836      Make Love Like A Man        
+</span><span class=go>962      Just A Man                  
+</span><span class=go>1235     The Wicker Man              
+</span><span class=go>1353     The Wicker Man              
+</span><span class=go>1457     Half The Man                
+</span><span class=go>1573     2,000 Man                   
+</span><span class=go>1809     Of Wolf And Man             
+</span><span class=go>2107     Iron Man                    
+</span><span class=go>2162     Better Man                  
+</span><span class=go>2224     Mystic Man                  
+</span><span class=go>2228     Equal Rights Downpresser Man
+</span><span class=go>2372     My Lovely Man               
+</span><span class=go>2645     Back Door Man               
+</span><span class=go>2854     Company Man                 
+</span><span class=go>2855     Company Man                 
+</span><span class=go>2880     Confidence Man              
+</span><span class=go>2986     Wake Up Dead Man            
+</span><span class=go>3022     Drowning Man                
+</span><span class=go>3090     Ice Cream Man               
+</span><span class=go>3223     How to Stop an Exploding Man
+</span><span class=go>3379     She&#39;ll Never Be Your Man    
+</span><span class=go>3427     Fanfare for the Common Man  
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The following query finds the tracks whose names start with any single character (?), followed by the string ere and then any number of character (*).</p>
 <div class=highlight><div class=chroma>
@@ -3393,26 +3393,26 @@ sqlite&gt;
 </span><span class=lnt>19
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT            
-        trackid,
-        name
-FROM
-        tracks
-WHERE
-        name GLOB &#39;?ere*&#39;;
-TrackId  Name                        
--------  ----------------------------
-324      Pererê                      
-1132     Serenity                    
-1452     Were Do We Go From Here     
-1740     Sereia                      
-2198     Jeremy                      
-2479     Here&#39;s To The Atom Bomb     
-2791     Hereditário                 
-3042     Here I Am (Come And Take Me)
-3133     Here I Go Again             
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT            
+</span><span class=go>        trackid,
+</span><span class=go>        name
+</span><span class=go>FROM
+</span><span class=go>        tracks
+</span><span class=go>WHERE
+</span><span class=go>        name GLOB &#39;?ere*&#39;;
+</span><span class=go>TrackId  Name                        
+</span><span class=go>-------  ----------------------------
+</span><span class=go>324      Pererê                      
+</span><span class=go>1132     Serenity                    
+</span><span class=go>1452     Were Do We Go From Here     
+</span><span class=go>1740     Sereia                      
+</span><span class=go>2198     Jeremy                      
+</span><span class=go>2479     Here&#39;s To The Atom Bomb     
+</span><span class=go>2791     Hereditário                 
+</span><span class=go>3042     Here I Am (Come And Take Me)
+</span><span class=go>3133     Here I Go Again             
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>To find the tracks whose names contain numbers, you can use the list wildcard [0-9] as follows:</p>
 <div class=highlight><div class=chroma>
@@ -6683,17 +6683,17 @@ VALUES (&#39;DBA&#39;, 120000),
 </span><span class=lnt>10
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT       
-        typeof(100),
-        typeof(10.0),
-        typeof(&#39;100&#39;),
-        typeof(x&#39;1000&#39;),
-        typeof(NULL);
-typeof(100)  typeof(10.0)  typeof(&#39;100&#39;)  typeof(x&#39;1000&#39;)  typeof(NULL)
------------  ------------  -------------  ---------------  ------------
-integer      real          text           blob             null        
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT       
+</span><span class=go>        typeof(100),
+</span><span class=go>        typeof(10.0),
+</span><span class=go>        typeof(&#39;100&#39;),
+</span><span class=go>        typeof(x&#39;1000&#39;),
+</span><span class=go>        typeof(NULL);
+</span><span class=go>typeof(100)  typeof(10.0)  typeof(&#39;100&#39;)  typeof(x&#39;1000&#39;)  typeof(NULL)
+</span><span class=go>-----------  ------------  -------------  ---------------  ------------
+</span><span class=go>integer      real          text           blob             null        
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>A single column in SQLite can store mixed data types. See the following example.</p>
 <p>First, create a new table named test_datatypes for testing.</p>
@@ -6762,24 +6762,24 @@ sqlite&gt;
 </span><span class=lnt>17
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT         
-        id,
-        val,
-        typeof(val)
-FROM
-        test_datatypes;
-id  val   typeof(val)
---  ----  -----------
-1   1     integer    
-2   2     integer    
-3   10.1  real       
-4   20.5  real       
-5   A     text       
-6   B     text       
-7         null       
-8         blob       
-9         blob
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT         
+</span><span class=go>        id,
+</span><span class=go>        val,
+</span><span class=go>        typeof(val)
+</span><span class=go>FROM
+</span><span class=go>        test_datatypes;
+</span><span class=go>id  val   typeof(val)
+</span><span class=go>--  ----  -----------
+</span><span class=go>1   1     integer    
+</span><span class=go>2   2     integer    
+</span><span class=go>3   10.1  real       
+</span><span class=go>4   20.5  real       
+</span><span class=go>5   A     text       
+</span><span class=go>6   B     text       
+</span><span class=go>7         null       
+</span><span class=go>8         blob       
+</span><span class=go>9         blob
+</span></code></pre></td></tr></table>
 </div>
 </div><p>You may ask how SQLite sorts data in a column with different storage classes like val column above.</p>
 <p>To resolve this, SQLite provides the following set of rules when it comes to sorting:</p>
@@ -6827,35 +6827,35 @@ id  val   typeof(val)
 </span><span class=lnt>28
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT
-        id,
-        val,
-        typeof(val)
-FROM
-        test_datatypes
-ORDER BY val;
-id  val   typeof(val)
---  ----  -----------
-7         null       
-16        null       
-1   1     integer    
-10  1     integer    
-2   2     integer    
-11  2     integer    
-3   10.1  real       
-12  10.1  real       
-4   20.5  real       
-13  20.5  real       
-5   A     text       
-14  A     text       
-6   B     text       
-15  B     text       
-8         blob       
-17        blob       
-9         blob       
-18        blob       
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT
+</span><span class=go>        id,
+</span><span class=go>        val,
+</span><span class=go>        typeof(val)
+</span><span class=go>FROM
+</span><span class=go>        test_datatypes
+</span><span class=go>ORDER BY val;
+</span><span class=go>id  val   typeof(val)
+</span><span class=go>--  ----  -----------
+</span><span class=go>7         null       
+</span><span class=go>16        null       
+</span><span class=go>1   1     integer    
+</span><span class=go>10  1     integer    
+</span><span class=go>2   2     integer    
+</span><span class=go>11  2     integer    
+</span><span class=go>3   10.1  real       
+</span><span class=go>12  10.1  real       
+</span><span class=go>4   20.5  real       
+</span><span class=go>13  20.5  real       
+</span><span class=go>5   A     text       
+</span><span class=go>14  A     text       
+</span><span class=go>6   B     text       
+</span><span class=go>15  B     text       
+</span><span class=go>8         blob       
+</span><span class=go>17        blob       
+</span><span class=go>9         blob       
+</span><span class=go>18        blob       
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id=sqlite-manifest-typing--type-affinity>SQLite manifest typing & type affinity</h5>
 <p>Other important concepts related to SQLite data types are manifest typing and type affinity:</p>
@@ -7319,12 +7319,12 @@ Type affinity of a column is the recommended type for data stored in that column
 </span><span class=lnt>5
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT * FROM users;
-UserId  FirstName  LastName  Email                 Phone       
-------  ---------  --------  --------------------  ------------
-1       John       Doe       john.doe@example.com  408-234-3456
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT * FROM users;
+</span><span class=go>UserId  FirstName  LastName  Email                 Phone       
+</span><span class=go>------  ---------  --------  --------------------  ------------
+</span><span class=go>1       John       Doe       john.doe@example.com  408-234-3456
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>And the following statement returns the data from the favorites table:</p>
 <div class=highlight><div class=chroma>
@@ -7336,12 +7336,12 @@ sqlite&gt;
 </span><span class=lnt>5
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; SELECT * FROM favorites;
-UserId  PlaylistId
-------  ----------
-1       1         
-sqlite&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; SELECT * FROM favorites;
+</span><span class=go>UserId  PlaylistId
+</span><span class=go>------  ----------
+</span><span class=go>1       1         
+</span><span class=go>sqlite&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Suppose, you want to drop the column phone of the users table.</p>
 <p>First, disable the foreign key constraint check:</p>
@@ -10322,13 +10322,13 @@ You can use the Boolean operator e.g., NOT, OR, or AND to combine queries.</p>
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>&gt;sqlite3
-SQLite version 3.29.0 2019-07-10 17:32:03
-Enter &#34;.help&#34; for usage hints.
-Connected to a transient in-memory database.
-Use &#34;.open FILENAME&#34; to reopen on a persistent database.
-sqlite&gt;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>&gt;</span>sqlite3
+<span class=go>SQLite version 3.29.0 2019-07-10 17:32:03
+</span><span class=go>Enter &#34;.help&#34; for usage hints.
+</span><span class=go>Connected to a transient in-memory database.
+</span><span class=go>Use &#34;.open FILENAME&#34; to reopen on a persistent database.
+</span><span class=go>sqlite&gt;
+</span></code></pre></td></tr></table>
 </div>
 </div><p>By default, an SQLite session uses the in-memory database, therefore, all changes will be gone when the session ends.</p>
 <p>To open a database file, you use the .open FILENAME command. The following statement opens the chinook.db database:</p>
@@ -10337,8 +10337,8 @@ sqlite&gt;
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .open c:\sqlite\db\chinook.db
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .open c:\sqlite\db\chinook.db
+</span></code></pre></td></tr></table>
 </div>
 </div><p>If you want to open a specific database file when you connect to the SQlite database, you use the following command:</p>
 <div class=highlight><div class=chroma>
@@ -10349,11 +10349,11 @@ sqlite&gt;
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>&gt;sqlite3 c:\sqlite\db\chinook.db
-SQLite version 3.13.0 2016-05-18 10:57:30
-Enter &#34;.help&#34; for usage hints.
-sqlite&gt;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>&gt;</span>sqlite3 c:<span class=se>\s</span>qlite<span class=se>\d</span>b<span class=se>\c</span>hinook.db
+<span class=go>SQLite version 3.13.0 2016-05-18 10:57:30
+</span><span class=go>Enter &#34;.help&#34; for usage hints.
+</span><span class=go>sqlite&gt;
+</span></code></pre></td></tr></table>
 </div>
 </div><p>If you start a session with a database name that does not exist, the sqlite3 tool will create the database file.</p>
 <p>For example, the following command creates a database named sales in the C:\sqlite\db\ directory:</p>
@@ -10365,11 +10365,11 @@ sqlite&gt;
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>&gt;sqlite3 c:\sqlite\db\sales.db
-SQLite version 3.29.0 2019-07-10 17:32:03
-Enter &#34;.help&#34; for usage hints.
-sqlite&gt;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>&gt;</span>sqlite3 c:<span class=se>\s</span>qlite<span class=se>\d</span>b<span class=se>\s</span>ales.db
+<span class=go>SQLite version 3.29.0 2019-07-10 17:32:03
+</span><span class=go>Enter &#34;.help&#34; for usage hints.
+</span><span class=go>sqlite&gt;
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id=show-all-available-commands-and-their-purposes-1>Show all available commands and their purposes</h5>
 <p>To show all available commands and their purpose, you use the .help command as follows:</p>
@@ -10378,8 +10378,8 @@ sqlite&gt;
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>.help
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>.help
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id=show-databases-in-the-current-database-connection-1>Show databases in the current database connection</h5>
 <p>To show all databases in the current connection, you use the .databases command. The .databases command displays at least one database with the name: main.</p>
@@ -10393,12 +10393,12 @@ sqlite&gt;
 </span><span class=lnt>5
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .database
-seq  name             file
----  ---------------  --------------------------
-0    main             c:\sqlite\db\sales.db
-sqlite&gt;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .database
+</span><span class=go>seq  name             file
+</span><span class=go>---  ---------------  --------------------------
+</span><span class=go>0    main             c:\sqlite\db\sales.db
+</span><span class=go>sqlite&gt;
+</span></code></pre></td></tr></table>
 </div>
 </div><p>To add an additional database in the current connection, you use the statement ATTACH DATABASE. The following statement adds the chinook database to the current connection.</p>
 <div class=highlight><div class=chroma>
@@ -10406,8 +10406,8 @@ sqlite&gt;
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; ATTACH DATABASE &#34;c:\sqlite\db\chinook.db&#34; AS chinook;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; ATTACH DATABASE &#34;c:\sqlite\db\chinook.db&#34; AS chinook;
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Now if you run the .database command again, the sqlite3 returns two databases: main and chinook.</p>
 <div class=highlight><div class=chroma>
@@ -10419,12 +10419,12 @@ sqlite&gt;
 </span><span class=lnt>5
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .databases
-seq  name             file
----  ---------------  ---------------------
-0    main             c:\sqlite\db\sales.db
-2    chinook          c:\sqlite\db\chinook.db
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .databases
+</span><span class=go>seq  name             file
+</span><span class=go>---  ---------------  ---------------------
+</span><span class=go>0    main             c:\sqlite\db\sales.db
+</span><span class=go>2    chinook          c:\sqlite\db\chinook.db
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id=exit-sqlite3-tool-1>Exit sqlite3 tool</h5>
 <p>To exit the sqlite3 program, you use the .exit command.</p>
@@ -10433,8 +10433,8 @@ seq  name             file
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt;.exit
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt;.exit
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Show tables in a database
 To display all the tables in the current database, you use the .tables command. The following commands open a new database connection to the chinook database and display the tables in the database.</p>
@@ -10450,15 +10450,15 @@ To display all the tables in the current database, you use the .tables command. 
 </span><span class=lnt>8
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>&gt;sqlite3 c:\sqlite\db\chinook.db
-SQLite version 3.29.0 2019-07-10 17:32:03
-Enter &#34;.help&#34; for usage hints.
-sqlite&gt; .tables
-albums          employees       invoices        playlists
-artists         genres          media_types     tracks
-customers       invoice_items   playlist_track
-sqlite&gt;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>&gt;</span>sqlite3 c:<span class=se>\s</span>qlite<span class=se>\d</span>b<span class=se>\c</span>hinook.db
+<span class=go>SQLite version 3.29.0 2019-07-10 17:32:03
+</span><span class=go>Enter &#34;.help&#34; for usage hints.
+</span><span class=go>sqlite&gt; .tables
+</span><span class=go>albums          employees       invoices        playlists
+</span><span class=go>artists         genres          media_types     tracks
+</span><span class=go>customers       invoice_items   playlist_track
+</span><span class=go>sqlite&gt;
+</span></code></pre></td></tr></table>
 </div>
 </div><p>If you want to find tables based on a specific pattern, you use the .table pattern command. The sqlite3 uses the LIKE operator for pattern matching.</p>
 <p>For example, the following statement returns the table that ends with the string es.</p>
@@ -10469,10 +10469,10 @@ sqlite&gt;
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .table &#39;%es&#39;
-employees    genres       invoices     media_types
-sqlite&gt;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .table &#39;%es&#39;
+</span><span class=go>employees    genres       invoices     media_types
+</span><span class=go>sqlite&gt;
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id=show-the-structure-of-a-table-1>Show the structure of a table</h5>
 <p>To display the structure of a table, you use the .schema TABLE command. The TABLE argument could be a pattern. If you omit it, the .schema command will show the structures of all the tables.</p>
@@ -10492,18 +10492,18 @@ sqlite&gt;
 </span><span class=lnt>11
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .schema albums
-CREATE TABLE &#34;albums&#34;
-(
-    [AlbumId] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    [Title] NVARCHAR(160)  NOT NULL,
-    [ArtistId] INTEGER  NOT NULL,
-    FOREIGN KEY ([ArtistId]) REFERENCES &#34;artists&#34; ([ArtistId])
-                ON DELETE NO ACTION ON UPDATE NO ACTION
-);
-CREATE INDEX [IFK_AlbumArtistId] ON &#34;albums&#34; ([ArtistId]);
-sqlite&gt;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .schema albums
+</span><span class=go>CREATE TABLE &#34;albums&#34;
+</span><span class=go>(
+</span><span class=go>    [AlbumId] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+</span><span class=go>    [Title] NVARCHAR(160)  NOT NULL,
+</span><span class=go>    [ArtistId] INTEGER  NOT NULL,
+</span><span class=go>    FOREIGN KEY ([ArtistId]) REFERENCES &#34;artists&#34; ([ArtistId])
+</span><span class=go>                ON DELETE NO ACTION ON UPDATE NO ACTION
+</span><span class=go>);
+</span><span class=go>CREATE INDEX [IFK_AlbumArtistId] ON &#34;albums&#34; ([ArtistId]);
+</span><span class=go>sqlite&gt;
+</span></code></pre></td></tr></table>
 </div>
 </div><p>To show the schema and the content of the sqlite_stat tables, you use the .fullschema command.</p>
 <div class=highlight><div class=chroma>
@@ -10511,8 +10511,8 @@ sqlite&gt;
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt;.fullschema
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt;.fullschema
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id=show-indexes-1>Show indexes</h5>
 <p>To show all indexes of the current database, you use the .indexes command as follows:</p>
@@ -10531,18 +10531,18 @@ sqlite&gt;
 </span><span class=lnt>11
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .indexes
-IFK_AlbumArtistId
-IFK_CustomerSupportRepId
-IFK_EmployeeReportsTo
-IFK_InvoiceCustomerId
-IFK_InvoiceLineInvoiceId
-IFK_InvoiceLineTrackId
-IFK_PlaylistTrackTrackId
-IFK_TrackAlbumId
-IFK_TrackGenreId
-IFK_TrackMediaTypeId
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .indexes
+</span><span class=go>IFK_AlbumArtistId
+</span><span class=go>IFK_CustomerSupportRepId
+</span><span class=go>IFK_EmployeeReportsTo
+</span><span class=go>IFK_InvoiceCustomerId
+</span><span class=go>IFK_InvoiceLineInvoiceId
+</span><span class=go>IFK_InvoiceLineTrackId
+</span><span class=go>IFK_PlaylistTrackTrackId
+</span><span class=go>IFK_TrackAlbumId
+</span><span class=go>IFK_TrackGenreId
+</span><span class=go>IFK_TrackMediaTypeId
+</span></code></pre></td></tr></table>
 </div>
 </div><p>To show the indexes of a specific table, you use the .indexes TABLE command. For example, to show indexes of the albums table, you use the following command:</p>
 <div class=highlight><div class=chroma>
@@ -10551,9 +10551,9 @@ IFK_TrackMediaTypeId
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .indexes albums
-IFK_AlbumArtistId
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .indexes albums
+</span><span class=go>IFK_AlbumArtistId
+</span></code></pre></td></tr></table>
 </div>
 </div><p>To show indexes of the tables whose names end with es, you use a pattern of the LIKE operator.</p>
 <div class=highlight><div class=chroma>
@@ -10563,10 +10563,10 @@ IFK_AlbumArtistId
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .indexes %es
-IFK_EmployeeReportsTo
-IFK_InvoiceCustomerId
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .indexes %es
+</span><span class=go>IFK_EmployeeReportsTo
+</span><span class=go>IFK_InvoiceCustomerId
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id=save-the-result-of-a-query-into-a-file-2>Save the result of a query into a file</h5>
 <p>To save the result of a query into a file, you use the .output FILENAME command. Once you issue the .output command, all the results of the subsequent queries will be saved to the file that you specified in the FILENAME argument. If you want to save the result of the next single query only to the file, you issue the .once FILENAME command.</p>
@@ -10578,9 +10578,9 @@ IFK_InvoiceCustomerId
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .output albums.txt
-sqlite&gt; SELECT title FROM albums;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .output albums.txt
+</span><span class=go>sqlite&gt; SELECT title FROM albums;
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id=execute-sql-statements-from-a-file-1>Execute SQL statements from a file</h5>
 <p>Suppose we have a file named commands.txt in the c:\sqlite\ folder with the following content:</p>
@@ -10618,22 +10618,22 @@ sqlite&gt; SELECT title FROM albums;
 </span><span class=lnt>15
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .mode column
-sqlite&gt; .header on
-sqlite&gt; .read c:/sqlite/commands.txt
-AlbumId     Title
-----------  ----------------------
-156         ...And Justice For All
-257         20th Century Masters -
-296         A Copland Celebration,
-94          A Matter of Life and D
-95          A Real Dead One
-96          A Real Live One
-285         A Soprano Inspired
-139         A TempestadeTempestade
-203         A-Sides
-160         Ace Of Spades
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .mode column
+</span><span class=go>sqlite&gt; .header on
+</span><span class=go>sqlite&gt; .read c:/sqlite/commands.txt
+</span><span class=go>AlbumId     Title
+</span><span class=go>----------  ----------------------
+</span><span class=go>156         ...And Justice For All
+</span><span class=go>257         20th Century Masters -
+</span><span class=go>296         A Copland Celebration,
+</span><span class=go>94          A Matter of Life and D
+</span><span class=go>95          A Real Dead One
+</span><span class=go>96          A Real Live One
+</span><span class=go>285         A Soprano Inspired
+</span><span class=go>139         A TempestadeTempestade
+</span><span class=go>203         A-Sides
+</span><span class=go>160         Ace Of Spades
+</span></code></pre></td></tr></table>
 </div>
 </div><p>In this section, you have learned many useful commands in the sqlite3 tool to perform various tasks that deal with the SQLite database.</p>
 <h4 id=sqlite-show-tables--list-all-tables-in-a-database>SQLite Show Tables – list all tables in a database.</h4>
@@ -10645,7 +10645,7 @@ AlbumId     Title
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>&gt; sqlite3 c:\sqlite\db\chinook.db
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>&gt; </span>sqlite3 c:<span class=se>\s</span>qlite<span class=se>\d</span>b<span class=se>\c</span>hinook.db
 </code></pre></td></tr></table>
 </div>
 </div><p>The above statement opened the database named chinook.db that locates in the c:\sqlite\db directory.</p>
@@ -10655,8 +10655,8 @@ AlbumId     Title
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .tables
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .tables
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The .tables command lists all tables in the chinook database</p>
 <div class=highlight><div class=chroma>
@@ -10666,10 +10666,10 @@ AlbumId     Title
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>albums          employees       invoices        playlists
-artists         genres          media_types     tracks
-customers       invoice_items   playlist_track
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>albums          employees       invoices        playlists
+</span><span class=go>artists         genres          media_types     tracks
+</span><span class=go>customers       invoice_items   playlist_track
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Note that both .tables, .table have the same effect. In addition, the command .ta should work too.</p>
 <p>The .tables command also can be used to show temporary tables. See the following example:</p>
@@ -10679,8 +10679,8 @@ customers       invoice_items   playlist_track
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; CREATE TEMPORARY TABLE temp_table1( name TEXT );
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; CREATE TEMPORARY TABLE temp_table1( name TEXT );
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Second, list all tables from the database:</p>
 <div class=highlight><div class=chroma>
@@ -10688,8 +10688,8 @@ customers       invoice_items   playlist_track
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .tables
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .tables
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The following shows the output:</p>
 <div class=highlight><div class=chroma>
@@ -10699,10 +10699,10 @@ customers       invoice_items   playlist_track
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>albums            employees         invoices          playlists
-artists           genres            media_types       temp.temp_table1
-customers         invoice_items     playlist_track    tracks
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>albums            employees         invoices          playlists
+</span><span class=go>artists           genres            media_types       temp.temp_table1
+</span><span class=go>customers         invoice_items     playlist_track    tracks
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Because the schema of temporary tables is temp, the command showed the names of schema and table of the temporary table such as temp.temp_table1.</p>
 <p>If you want to show tables with the specific name, you can add a matching pattern:</p>
@@ -10711,8 +10711,8 @@ customers         invoice_items     playlist_track    tracks
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>.tables pattern
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>.tables pattern
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The command works the same as LIKE operator. The pattern must be surrounded by single quotation marks ( &lsquo;).</p>
 <p>For example, to find tables whose names start with the letter ‘a’, you use the following command:</p>
@@ -10721,8 +10721,8 @@ customers         invoice_items     playlist_track    tracks
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .table &#39;a%&#39;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .table &#39;a%&#39;
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Here is the output:</p>
 <div class=highlight><div class=chroma>
@@ -10730,8 +10730,8 @@ customers         invoice_items     playlist_track    tracks
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>albums   artists
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>albums   artists
+</span></code></pre></td></tr></table>
 </div>
 </div><p>To shows the tables whose name contains the string ck, you use the %ck% pattern as shown in the following command:</p>
 <div class=highlight><div class=chroma>
@@ -10739,8 +10739,8 @@ customers         invoice_items     playlist_track    tracks
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .tables &#39;%ck%&#39;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .tables &#39;%ck%&#39;
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The output is as follows:</p>
 <div class=highlight><div class=chroma>
@@ -10748,8 +10748,8 @@ customers         invoice_items     playlist_track    tracks
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>playlist_track  tracks
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>playlist_track  tracks
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id=showing-tables-using-sql-statement>Showing tables using SQL statement</h5>
 <p>Another way to list all tables in a database is to query them from the sqlite_master table.</p>
@@ -10786,7 +10786,7 @@ customers         invoice_items     playlist_track    tracks
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>&gt; sqlite3 c:\sqlite\db\chinook.db
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>&gt; </span>sqlite3 c:<span class=se>\s</span>qlite<span class=se>\d</span>b<span class=se>\c</span>hinook.db
 </code></pre></td></tr></table>
 </div>
 </div><p>Then, issue the following command:</p>
@@ -10795,8 +10795,8 @@ customers         invoice_items     playlist_track    tracks
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>.schema table_name
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>.schema table_name
+</span></code></pre></td></tr></table>
 </div>
 </div><p>For example, to show the statement that created the albums table, you use the following command:</p>
 <div class=highlight><div class=chroma>
@@ -10804,8 +10804,8 @@ customers         invoice_items     playlist_track    tracks
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .schema albums
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .schema albums
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Notice that there is no semicolon (;) after the table name. If you add a semicolon (;), the .schema will consider the albums; as the table name and returns nothing because the table albums; does not exist.</p>
 <p>Here is the output:</p>
@@ -10841,10 +10841,10 @@ customers         invoice_items     playlist_track    tracks
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .header on
-sqlite&gt; .mode column
-sqlite&gt; pragma table_info(&#39;albums&#39;);
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .header on
+</span><span class=go>sqlite&gt; .mode column
+</span><span class=go>sqlite&gt; pragma table_info(&#39;albums&#39;);
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Note that the first two commands are used to format the output nicely.</p>
 <p>The following picture shows the output:</p>
@@ -10878,17 +10878,17 @@ sqlite&gt; pragma table_info(&#39;albums&#39;);
 </span><span class=lnt>10
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sql
-------------
-CREATE TABLE &#34;albums&#34;
-(
-    [AlbumId] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    [Title] NVARCHAR(160)  NOT NULL,
-    [ArtistId] INTEGER  NOT NULL,
-    FOREIGN KEY ([ArtistId]) REFERENCES &#34;artists&#34; ([ArtistId])
-                ON DELETE NO ACTION ON UPDATE NO ACTION
-)
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sql
+</span><span class=go>------------
+</span><span class=go>CREATE TABLE &#34;albums&#34;
+</span><span class=go>(
+</span><span class=go>    [AlbumId] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+</span><span class=go>    [Title] NVARCHAR(160)  NOT NULL,
+</span><span class=go>    [ArtistId] INTEGER  NOT NULL,
+</span><span class=go>    FOREIGN KEY ([ArtistId]) REFERENCES &#34;artists&#34; ([ArtistId])
+</span><span class=go>                ON DELETE NO ACTION ON UPDATE NO ACTION
+</span><span class=go>)
+</span></code></pre></td></tr></table>
 </div>
 </div><p>In this section, you have learned how to show the structure of a table in SQLite via command-line shell program or SQL statement.</p>
 <h4 id=sqlite-dump--how-to-use-dump-command-to-backup-and-restore-a-database>SQLite Dump – how to use dump command to backup and restore a database.</h4>
@@ -10904,11 +10904,11 @@ CREATE TABLE &#34;albums&#34;
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>C:\sqlite&gt;sqlite3 c:/sqlite/chinook.db
-SQLite version 3.13.0 2016-05-18 10:57:30
-Enter &#34;.help&#34; for usage hints.
-sqlite&gt;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>C:\sqlite&gt;sqlite3 c:/sqlite/chinook.db
+</span><span class=go>SQLite version 3.13.0 2016-05-18 10:57:30
+</span><span class=go>Enter &#34;.help&#34; for usage hints.
+</span><span class=go>sqlite&gt;
+</span></code></pre></td></tr></table>
 </div>
 </div><p>To dump a database into a file, you use the .dump command. The .dump command converts the entire structure and data of an SQLite database into a single text file.</p>
 <p>By default, the .dump command outputs the SQL statements on screen. To issue the output to a file, you use the .output FILENAME command.</p>
@@ -10920,10 +10920,10 @@ sqlite&gt;
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .output c:/sqlite/chinook.sql
-sqlite&gt; .dump
-sqlite&gt; .exit
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .output c:/sqlite/chinook.sql
+</span><span class=go>sqlite&gt; .dump
+</span><span class=go>sqlite&gt; .exit
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id=dump-a-specific-table-using-the-sqlite-dump-command>Dump a specific table using the SQLite dump command</h5>
 <p>If you want to dump a specific table, you need to specify the table name followed the .dump command. For example, the following command saves the albums table to the albums.sql file.</p>
@@ -10934,10 +10934,10 @@ sqlite&gt; .exit
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .output c:/sqlite/albums.sql
-sqlite&gt; .dump albums
-sqlite&gt; .quit
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .output c:/sqlite/albums.sql
+</span><span class=go>sqlite&gt; .dump albums
+</span><span class=go>sqlite&gt; .quit
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The following picture shows the content of the albums.sql file.</p>
 <p><img class=lazyload src=/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725283/SQLite/SQLite-dump-example_es5kc0.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725283/SQLite/SQLite-dump-example_es5kc0.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725283/SQLite/SQLite-dump-example_es5kc0.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725283/SQLite/SQLite-dump-example_es5kc0.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725283/SQLite/SQLite-dump-example_es5kc0.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725283/SQLite/SQLite-dump-example_es5kc0.png></p>
@@ -10950,10 +10950,10 @@ sqlite&gt; .quit
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .output c:/sqlite/chinook_structure.sql
-sqlite&gt; .schema
-sqlite&gt; .quit
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .output c:/sqlite/chinook_structure.sql
+</span><span class=go>sqlite&gt; .schema
+</span><span class=go>sqlite&gt; .quit
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The following picture shows the content of the chinook_structure.sql file.</p>
 <p><img class=lazyload src=/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725377/SQLite/SQLite-dump-structure_d4vwug.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725377/SQLite/SQLite-dump-structure_d4vwug.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725377/SQLite/SQLite-dump-structure_d4vwug.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725377/SQLite/SQLite-dump-structure_d4vwug.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725377/SQLite/SQLite-dump-structure_d4vwug.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725377/SQLite/SQLite-dump-structure_d4vwug.png></p>
@@ -10965,8 +10965,8 @@ sqlite&gt; .quit
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .mode insert
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .mode insert
+</span></code></pre></td></tr></table>
 </div>
 </div><p>From now on, every SELECT statement will issue the result as the INSERT statements instead of pure text data.</p>
 <p>Second, set the output to a text file instead of the default standard output. The following command sets the output file to the data.sql file.</p>
@@ -10975,8 +10975,8 @@ sqlite&gt; .quit
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .output data.sql
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .output data.sql
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Third, issue the SELECT statements to query data from a table that you want to dump. The following command returns data from the artists table.</p>
 <div class=highlight><div class=chroma>
@@ -10984,8 +10984,8 @@ sqlite&gt; .quit
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; select * from artists;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; select * from artists;
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Check the content of the data.sql file, if everything is fine, you will see the following output:</p>
 <p><img class=lazyload src=/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725508/SQLite/SQLite-dump-data-only_voif1e.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725508/SQLite/SQLite-dump-data-only_voif1e.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725508/SQLite/SQLite-dump-data-only_voif1e.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725508/SQLite/SQLite-dump-data-only_voif1e.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725508/SQLite/SQLite-dump-data-only_voif1e.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617725508/SQLite/SQLite-dump-data-only_voif1e.png></p>
@@ -11007,8 +11007,8 @@ sqlite&gt; .quit
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .mode csv
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .mode csv
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Second, use the command .import FILE TABLE to import the data from the city.csv file into the cities table.</p>
 <div class=highlight><div class=chroma>
@@ -11016,8 +11016,8 @@ sqlite&gt; .quit
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt;.import c:/sqlite/city.csv cities
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt;.import c:/sqlite/city.csv cities
+</span></code></pre></td></tr></table>
 </div>
 </div><p>To verify the import, you use the command .schema to display the structure of the cities table.</p>
 <div class=highlight><div class=chroma>
@@ -11029,12 +11029,12 @@ sqlite&gt; .quit
 </span><span class=lnt>5
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .schema cities
-CREATE TABLE cities(
-  &#34;name&#34; TEXT,
-  &#34;population&#34; TEXT
-);
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .schema cities
+</span><span class=go>CREATE TABLE cities(
+</span><span class=go>  &#34;name&#34; TEXT,
+</span><span class=go>  &#34;population&#34; TEXT
+</span><span class=go>);
+</span></code></pre></td></tr></table>
 </div>
 </div><p>To view the data of the cities table, you use the following SELECT statement.</p>
 <div class=highlight><div class=chroma>
@@ -11086,9 +11086,9 @@ CREATE TABLE cities(
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>sqlite&gt; .mode csv
-sqlite&gt; .import c:/sqlite/city_no_header.csv cities
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sqlite&gt; .mode csv
+</span><span class=go>sqlite&gt; .import c:/sqlite/city_no_header.csv cities
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id=import-a-csv-file-into-a-table-using-sqlite-studio>Import a CSV file into a table using SQLite Studio</h5>
 <p>Most SQLite GUI tools provide the import function that allows you to import data from a file in CSV format, tab-delimited format, etc., into a table.</p>
@@ -11125,17 +11125,17 @@ sqlite&gt; .import c:/sqlite/city_no_header.csv cities
 </span><span class=lnt>10
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>&gt;sqlite3 c:/sqlite/chinook.db
-sqlite&gt; .headers on
-sqlite&gt; .mode csv
-sqlite&gt; .output data.csv
-sqlite&gt; SELECT customerid,
-   ...&gt;        firstname,
-   ...&gt;        lastname,
-   ...&gt;        company
-   ...&gt;   FROM customers;
-sqlite&gt; .quit
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>&gt;</span>sqlite3 c:/sqlite/chinook.db
+<span class=go>sqlite&gt; .headers on
+</span><span class=go>sqlite&gt; .mode csv
+</span><span class=go>sqlite&gt; .output data.csv
+</span><span class=go>sqlite&gt; SELECT customerid,
+</span><span class=go>   ...&gt;        firstname,
+</span><span class=go>   ...&gt;        lastname,
+</span><span class=go>   ...&gt;        company
+</span><span class=go>   ...&gt;   FROM customers;
+</span><span class=go>sqlite&gt; .quit
+</span></code></pre></td></tr></table>
 </div>
 </div><p>If you check the data.csv file, you will see the following output.</p>
 <p><img class=lazyload src=/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617726311/SQLite/SQLite-Export-CSV-example_u2rq3f.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617726311/SQLite/SQLite-Export-CSV-example_u2rq3f.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617726311/SQLite/SQLite-Export-CSV-example_u2rq3f.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617726311/SQLite/SQLite-Export-CSV-example_u2rq3f.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617726311/SQLite/SQLite-Export-CSV-example_u2rq3f.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617726311/SQLite/SQLite-Export-CSV-example_u2rq3f.png></p>
@@ -11146,7 +11146,7 @@ sqlite&gt; .quit
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>&gt;sqlite3 -header -csv c:/sqlite/chinook.db &#34;select * from tracks;&#34; &gt; tracks.csv
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>&gt;</span>sqlite3 -header -csv c:/sqlite/chinook.db <span class=s2>&#34;select * from tracks;&#34;</span> &gt; tracks.csv
 </code></pre></td></tr></table>
 </div>
 </div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617726389/SQLite/SQLite-Export-CSV-one-liner-option_lbijbb.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617726389/SQLite/SQLite-Export-CSV-one-liner-option_lbijbb.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617726389/SQLite/SQLite-Export-CSV-one-liner-option_lbijbb.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617726389/SQLite/SQLite-Export-CSV-one-liner-option_lbijbb.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617726389/SQLite/SQLite-Export-CSV-one-liner-option_lbijbb.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1617726389/SQLite/SQLite-Export-CSV-one-liner-option_lbijbb.png></p>
@@ -11156,7 +11156,7 @@ sqlite&gt; .quit
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>&gt;sqlite3 -header -csv c:/sqlite/chinook.db &lt; query.sql &gt; data.csv
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>&gt;</span>sqlite3 -header -csv c:/sqlite/chinook.db &lt; query.sql &gt; data.csv
 </code></pre></td></tr></table>
 </div>
 </div><h5 id=export-sqlite-database-to-a-csv-file-using-sqlitestudio>Export SQLite database to a CSV file using SQliteStudio</h5>
@@ -11177,7 +11177,7 @@ sqlite&gt; .quit
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-10-14</span>
+<span>Updated on 2021-11-07</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -11203,7 +11203,7 @@ sqlite&gt; .quit
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.89.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>

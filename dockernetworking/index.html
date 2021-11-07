@@ -9,7 +9,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/dockernetworking/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2020-01-05T06:11:32+10:00">
-<meta property="article:modified_time" content="2021-10-14T14:03:52+00:00">
+<meta property="article:modified_time" content="2021-11-07T13:55:52+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting started with Docker Networking">
@@ -17,7 +17,7 @@
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/dockernetworking/><link rel=prev href=https://yanboyang.com/wechat/><link rel=next href=https://yanboyang.com/acr/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting started with Docker Networking","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dockernetworking\/"},"genre":"posts","keywords":"Docker, Networking","wordcount":6023,"url":"https:\/\/yanboyang.com\/dockernetworking\/","datePublished":"2020-01-05T06:11:32+10:00","dateModified":"2021-10-14T14:03:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/dockernetworking/><link rel=prev href=https://yanboyang.com/wechat/><link rel=next href=https://yanboyang.com/acr/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting started with Docker Networking","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dockernetworking\/"},"genre":"posts","keywords":"Docker, Networking","wordcount":6023,"url":"https:\/\/yanboyang.com\/dockernetworking\/","datePublished":"2020-01-05T06:11:32+10:00","dateModified":"2021-11-07T13:55:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -90,7 +90,7 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting started with Docker Networking</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/networking/><i class="far fa-folder fa-fw"></i>Networking</a></span></div>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/networking/><i class="far fa-folder fa-fw"></i>Networking</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-01-05>2020-01-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;6023 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;29 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
@@ -184,12 +184,12 @@ Cancel
 </span><span class=lnt>5
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ docker network ls
-NETWORK ID          NAME                                DRIVER              SCOPE
-9180da752799        bridge                              bridge              local
-67c7f5587624        host                                host                local
-d15c7dd51668        none                                null                local
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyang:~$ docker network ls
+</span><span class=go>NETWORK ID          NAME                                DRIVER              SCOPE
+</span><span class=go>9180da752799        bridge                              bridge              local
+</span><span class=go>67c7f5587624        host                                host                local
+</span><span class=go>d15c7dd51668        none                                null                local
+</span></code></pre></td></tr></table>
 </div>
 </div><p>This topic defines some basic Docker networking concepts and prepares you to design and deploy your applications to take full advantage of these capabilities.</p>
 <h2 id=network-drivers>Network drivers</h2>
@@ -239,7 +239,7 @@ Containers on the default bridge network can only access each other by IP addres
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ docker network create my-net
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>docker network create my-net
 </code></pre></td></tr></table>
 </div>
 </div><p>You can specify the subnet, the IP address range, the gateway, and other options. See the docker network create reference or the output of <em><strong>docker network create &ndash;help</strong></em> for details.</p>
@@ -249,7 +249,7 @@ Containers on the default bridge network can only access each other by IP addres
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ docker network rm my-net
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>docker network rm my-net
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>What’s really happening?</strong>
@@ -264,11 +264,11 @@ When you create or remove a user-defined bridge or connect or disconnect a conta
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ docker create --name my-nginx \
-  --network my-net \
-  --publish 8080:80 \
-  nginx:latest
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>docker create --name my-nginx <span class=se>\
+</span><span class=se></span><span class=go>  --network my-net \
+</span><span class=go>  --publish 8080:80 \
+</span><span class=go>  nginx:latest
+</span></code></pre></td></tr></table>
 </div>
 </div><p>To connect a running container to an existing user-defined bridge, use the docker network connect command. The following command connects an already-running my-nginx container to an already-existing my-net network:</p>
 <div class=highlight><div class=chroma>
@@ -276,7 +276,7 @@ When you create or remove a user-defined bridge or connect or disconnect a conta
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ docker network connect my-net my-nginx
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>docker network connect my-net my-nginx
 </code></pre></td></tr></table>
 </div>
 </div><h4 id=disconnect-a-container-from-a-user-defined-bridge>Disconnect a container from a user-defined bridge</h4>
@@ -286,7 +286,7 @@ When you create or remove a user-defined bridge or connect or disconnect a conta
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ docker network disconnect my-net my-nginx
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>docker network disconnect my-net my-nginx
 </code></pre></td></tr></table>
 </div>
 </div><h4 id=use-ipv6>Use IPv6</h4>
@@ -302,7 +302,7 @@ When you create or remove a user-defined bridge or connect or disconnect a conta
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ sysctl net.ipv4.conf.all.forwarding=1
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>sysctl net.ipv4.conf.all.forwarding<span class=o>=</span><span class=m>1</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start=2>
@@ -313,7 +313,7 @@ When you create or remove a user-defined bridge or connect or disconnect a conta
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ sudo iptables -P FORWARD ACCEPT
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>sudo iptables -P FORWARD ACCEPT
 </code></pre></td></tr></table>
 </div>
 </div><p>These settings do not persist across a reboot, so you may need to add them to a start-up script.</p>
@@ -413,7 +413,7 @@ the &ndash;advertise-addr is the address other nodes in the Docker swarm use to 
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ docker swarm init --advertise-addr=&lt;IP-ADDRESS-OF-MANAGER&gt;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>docker swarm init --advertise-addr<span class=o>=</span>&lt;IP-ADDRESS-OF-MANAGER&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p>Or</p>
@@ -429,15 +429,15 @@ the &ndash;advertise-addr is the address other nodes in the Docker swarm use to 
 </span><span class=lnt>8
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ docker swarm init
-Swarm initialized: current node (fw5wqlml3lqteplml6l187t1s) is now a manager.
-
-To add a worker to this swarm, run the following command:
-
-    docker swarm join --token SWMTKN-1-2hxfhny2wxcp8yzrbb24q7fojsdzmse893tmye19zl7vadvlu5-26jolbhw2yxuzpam991x0k5lt 10.172.0.35:2377
-
-To add a manager to this swarm, run &#39;docker swarm join-token manager&#39; and follow the instructions.
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyang:~$ docker swarm init
+</span><span class=go>Swarm initialized: current node (fw5wqlml3lqteplml6l187t1s) is now a manager.
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>To add a worker to this swarm, run the following command:
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>    docker swarm join --token SWMTKN-1-2hxfhny2wxcp8yzrbb24q7fojsdzmse893tmye19zl7vadvlu5-26jolbhw2yxuzpam991x0k5lt 10.172.0.35:2377
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>To add a manager to this swarm, run &#39;docker swarm join-token manager&#39; and follow the instructions.
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Make a note of the text that is printed, as this contains the token that you will use to join <strong>worker-1</strong> and <strong>worker-2</strong> to the swarm. It is a good idea to store the token in a password manager.</p>
 <ol start=2>
@@ -450,10 +450,10 @@ To add a manager to this swarm, run &#39;docker swarm join-token manager&#39; an
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ docker swarm join --token &lt;TOKEN&gt; \
-  --advertise-addr &lt;IP-ADDRESS-OF-WORKER-1&gt; \
-  &lt;IP-ADDRESS-OF-MANAGER&gt;:2377
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>docker swarm join --token &lt;TOKEN&gt; <span class=se>\
+</span><span class=se></span><span class=go>  --advertise-addr &lt;IP-ADDRESS-OF-WORKER-1&gt; \
+</span><span class=go>  &lt;IP-ADDRESS-OF-MANAGER&gt;:2377
+</span></code></pre></td></tr></table>
 </div>
 </div><ol start=3>
 <li>On worker-2, join the swarm. If the host only has one network interface, the &ndash;advertise-addr flag is optional.</li>
@@ -465,10 +465,10 @@ To add a manager to this swarm, run &#39;docker swarm join-token manager&#39; an
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ docker swarm join --token &lt;TOKEN&gt; \
-  --advertise-addr &lt;IP-ADDRESS-OF-WORKER-2&gt; \
-  &lt;IP-ADDRESS-OF-MANAGER&gt;:2377
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>docker swarm join --token &lt;TOKEN&gt; <span class=se>\
+</span><span class=se></span><span class=go>  --advertise-addr &lt;IP-ADDRESS-OF-WORKER-2&gt; \
+</span><span class=go>  &lt;IP-ADDRESS-OF-MANAGER&gt;:2377
+</span></code></pre></td></tr></table>
 </div>
 </div><ol start=4>
 <li>On <strong>manager</strong>, list all the nodes. This command can only be done from a manager.</li>
@@ -482,12 +482,12 @@ To add a manager to this swarm, run &#39;docker swarm join-token manager&#39; an
 </span><span class=lnt>5
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ docker node ls
-ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
-fw5wqlml3lqteplml6l187t1s *   boyang              Ready               Active              Leader              19.03.13
-390whrgv9nhjtgsq2egocru59     docker-desktop      Down                Active                                  19.03.13
-sis0p2wgug8ex4xa894pgilux     docker-desktop      Ready               Active                                  19.03.13
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyang:~$ docker node ls
+</span><span class=go>ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+</span><span class=go>fw5wqlml3lqteplml6l187t1s *   boyang              Ready               Active              Leader              19.03.13
+</span><span class=go>390whrgv9nhjtgsq2egocru59     docker-desktop      Down                Active                                  19.03.13
+</span><span class=go>sis0p2wgug8ex4xa894pgilux     docker-desktop      Ready               Active                                  19.03.13
+</span></code></pre></td></tr></table>
 </div>
 </div><p>You can also use the <strong>&ndash;filter</strong> flag to filter by role:</p>
 <div class=highlight><div class=chroma>
@@ -497,10 +497,10 @@ sis0p2wgug8ex4xa894pgilux     docker-desktop      Ready               Active    
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ docker node ls --filter role=manager
-ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
-fw5wqlml3lqteplml6l187t1s *   boyang              Ready               Active              Leader              19.03.13
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyang:~$ docker node ls --filter role=manager
+</span><span class=go>ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+</span><span class=go>fw5wqlml3lqteplml6l187t1s *   boyang              Ready               Active              Leader              19.03.13
+</span></code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
@@ -510,11 +510,11 @@ fw5wqlml3lqteplml6l187t1s *   boyang              Ready               Active    
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ docker node ls --filter role=worker
-ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
-390whrgv9nhjtgsq2egocru59     docker-desktop      Down                Active                                  19.03.13
-sis0p2wgug8ex4xa894pgilux     docker-desktop      Ready               Active                                  19.03.13
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyang:~$ docker node ls --filter role=worker
+</span><span class=go>ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+</span><span class=go>390whrgv9nhjtgsq2egocru59     docker-desktop      Down                Active                                  19.03.13
+</span><span class=go>sis0p2wgug8ex4xa894pgilux     docker-desktop      Ready               Active                                  19.03.13
+</span></code></pre></td></tr></table>
 </div>
 </div><ol start=5>
 <li>List the Docker networks on <strong>manager</strong>, <strong>worker-1</strong>, and <strong>worker-2</strong> and notice that each of them now has an overlay network called <strong>ingress</strong> and a bridge network called <strong>docker_gwbridge</strong>. Only the listing for manager is shown here:</li>
@@ -530,14 +530,14 @@ sis0p2wgug8ex4xa894pgilux     docker-desktop      Ready               Active    
 </span><span class=lnt>7
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ docker network ls
-NETWORK ID          NAME                                DRIVER              SCOPE
-a4fcdb4a1130        bridge                              bridge              local
-cb5178dbb630        docker-as-dev-environment_default   bridge              local
-67c7f5587624        host                                host                local
-p8tnia46u002        ingress                             overlay             swarm
-d15c7dd51668        none                                null                local
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyang:~$ docker network ls
+</span><span class=go>NETWORK ID          NAME                                DRIVER              SCOPE
+</span><span class=go>a4fcdb4a1130        bridge                              bridge              local
+</span><span class=go>cb5178dbb630        docker-as-dev-environment_default   bridge              local
+</span><span class=go>67c7f5587624        host                                host                local
+</span><span class=go>p8tnia46u002        ingress                             overlay             swarm
+</span><span class=go>d15c7dd51668        none                                null                local
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The <strong>docker_gwbridge</strong> connects the <strong>ingress</strong> network to the Docker host’s network interface so that traffic can flow to and from swarm managers and workers. If you create swarm services and do not specify a network, they are connected to the ingress network. It is recommended that you use separate overlay networks for each application or group of applications which will work together. In the next procedure, you will create two overlay networks and connect a service to each of them.</p>
 <h6 id=create-the-services>Create the services</h6>
@@ -550,9 +550,9 @@ d15c7dd51668        none                                null                loca
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ docker network create -d overlay nginx-net
-zph4h9bddrj0loajnvqyit5q0
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyang:~$ docker network create -d overlay nginx-net
+</span><span class=go>zph4h9bddrj0loajnvqyit5q0
+</span></code></pre></td></tr></table>
 </div>
 </div><p>ou don’t need to create the overlay network on the other nodes, because it will be automatically created when one of those nodes starts running a service task which requires it.
 2. On manager, create a 5-replica Nginx service connected to nginx-net. The service will publish port 80 to the outside world. All of the service task containers can communicate with each other without opening any ports.
@@ -575,21 +575,21 @@ zph4h9bddrj0loajnvqyit5q0
 </span><span class=lnt>14
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ docker service create \
-&gt;   --name my-nginx \
-&gt;   --publish target=80,published=80 \
-&gt;   --replicas=5 \
-&gt;   --network nginx-net \
-&gt;   nginx
-9cl5n3ja6kbjjwnzuzzsya6hq
-overall progress: 5 out of 5 tasks 
-1/5: running   
-2/5: running   
-3/5: running   
-4/5: running   
-5/5: running   
-verify: Service converged 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyang:~$ docker service create \
+</span><span class=go></span><span class=gp>&gt;   </span>--name my-nginx <span class=se>\
+</span><span class=se></span><span class=gp>&gt;   </span>--publish <span class=nv>target</span><span class=o>=</span>80,published<span class=o>=</span><span class=m>80</span> <span class=se>\
+</span><span class=se></span><span class=gp>&gt;   </span>--replicas<span class=o>=</span><span class=m>5</span> <span class=se>\
+</span><span class=se></span><span class=gp>&gt;   </span>--network nginx-net <span class=se>\
+</span><span class=se></span><span class=gp>&gt;   </span>nginx
+<span class=go>9cl5n3ja6kbjjwnzuzzsya6hq
+</span><span class=go>overall progress: 5 out of 5 tasks 
+</span><span class=go>1/5: running   
+</span><span class=go>2/5: running   
+</span><span class=go>3/5: running   
+</span><span class=go>4/5: running   
+</span><span class=go>5/5: running   
+</span><span class=go>verify: Service converged 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The default publish mode of <strong>ingress</strong>, which is used when you do not specify a <strong>mode</strong> for the <strong>&ndash;publish</strong> flag, means that if you browse to port 80 on <strong>manager</strong>, <strong>worker-1</strong>, or <strong>worker-2</strong>, you will be connected to port 80 on one of the 5 service tasks, even if no tasks are currently running on the node you browse to. If you want to publish the port using <strong>host</strong> mode, you can add <strong>mode=host</strong> to the <strong>&ndash;publish</strong> output. However, you should also use <strong>&ndash;mode global</strong> instead of <strong>&ndash;replicas=5</strong> in this case, since only one service task can bind a given port on a given node.
 3. Run <strong>docker service ls</strong> to monitor the progress of service bring-up, which may take a few seconds.</p>
@@ -600,10 +600,10 @@ verify: Service converged
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ docker service ls
-ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
-9cl5n3ja6kbj        my-nginx            replicated          5/5                 nginx:latest        *:80-&gt;80/tcp
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyang:~$ docker service ls
+</span><span class=go>ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
+</span><span class=go>9cl5n3ja6kbj        my-nginx            replicated          5/5                 nginx:latest        *:80-&gt;80/tcp
+</span></code></pre></td></tr></table>
 </div>
 </div><ol start=4>
 <li>Inspect the <strong>nginx-net</strong> network on <strong>manager</strong>, <strong>worker-1</strong>, and <strong>worker-2</strong>. Remember that you did not need to create it manually on <strong>worker-1</strong> and <strong>worker-2</strong> because Docker created it for you. The output will be long, but notice the <strong>Containers</strong> and <strong>Peers</strong> sections. <strong>Containers</strong> lists all service tasks (or standalone containers) connected to the overlay network from that host.</li>
@@ -616,9 +616,9 @@ ID                  NAME                MODE                REPLICAS            
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ docker network create -d overlay nginx-net-2
-ceg90igxgtqtp2dpnkq6xhcvf
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyang:~$ docker network create -d overlay nginx-net-2
+</span><span class=go>ceg90igxgtqtp2dpnkq6xhcvf
+</span></code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
@@ -685,17 +685,17 @@ qf6fthvw6f7dth9ek8x2z9ybf
 </span><span class=lnt>10
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ docker service create \
-&gt;   --name my-nginx \
-&gt;   --network my-overlay \
-&gt;   --replicas 1 \
-&gt;   --publish published=8080,target=80 \
-&gt;   nginx:latest
-222stypuvo2kdfvth4qrntwce
-overall progress: 1 out of 1 tasks 
-1/1: running   
-verify: Service converged 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyang:~$ docker service create \
+</span><span class=go></span><span class=gp>&gt;   </span>--name my-nginx <span class=se>\
+</span><span class=se></span><span class=gp>&gt;   </span>--network my-overlay <span class=se>\
+</span><span class=se></span><span class=gp>&gt;   </span>--replicas <span class=m>1</span> <span class=se>\
+</span><span class=se></span><span class=gp>&gt;   </span>--publish <span class=nv>published</span><span class=o>=</span>8080,target<span class=o>=</span><span class=m>80</span> <span class=se>\
+</span><span class=se></span><span class=gp>&gt;   </span>nginx:latest
+<span class=go>222stypuvo2kdfvth4qrntwce
+</span><span class=go>overall progress: 1 out of 1 tasks 
+</span><span class=go>1/1: running   
+</span><span class=go>verify: Service converged 
+</span></code></pre></td></tr></table>
 </div>
 </div><ol start=3>
 <li>Run <strong>docker network inspect my-overlay</strong> and verify that the <strong>my-nginx</strong> service task is connected to it, by looking at the <strong>Containers</strong> section.</li>
@@ -764,9 +764,9 @@ a. On <strong>host1</strong>, initialize a swarm (and if prompted, use <strong>&
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ docker network create --driver=overlay --attachable test-net
-94xusd2l3mvr6nt7k5k6d5utj
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyang:~$ docker network create --driver=overlay --attachable test-net
+</span><span class=go>94xusd2l3mvr6nt7k5k6d5utj
+</span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Notice</strong> the returned NETWORK ID &ndash; you will see it again when you connect to it from <strong>host2</strong>.
 3. On <strong>host1</strong>, start an interactive (<strong>-it</strong>) container (<strong>alpine1</strong>) that connects to <strong>test-net</strong>:</p>
@@ -841,8 +841,8 @@ a. On <strong>host1</strong>, initialize a swarm (and if prompted, use <strong>&
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>/ # exit
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>/ # exit
+</span></code></pre></td></tr></table>
 </div>
 </div><ol start=9>
 <li>Clean up your containers and networks:</li>
@@ -887,13 +887,13 @@ $ docker network rm test-net
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ docker network ls
-
-NETWORK ID          NAME                DRIVER              SCOPE
-17e324f45964        bridge              bridge              local
-6ed54d316334        host                host                local
-7092879f2cc8        none                null                local
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>docker network ls
+<span class=err>
+</span><span class=err></span><span class=go>NETWORK ID          NAME                DRIVER              SCOPE
+</span><span class=go>17e324f45964        bridge              bridge              local
+</span><span class=go>6ed54d316334        host                host                local
+</span><span class=go>7092879f2cc8        none                null                local
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The default <strong>bridge</strong> network is listed, along with <strong>host</strong> and <strong>none</strong>. The latter two are not fully-fledged networks, but are used to start a container connected directly to the Docker daemon host’s networking stack, or to start a container with no network devices. This tutorial will connect two containers to the bridge network.</p>
 <ol start=2>
@@ -920,11 +920,11 @@ $ docker run -dit --name alpine2 alpine ash
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ docker container ls
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-289df352d7a5        alpine              &#34;ash&#34;               9 seconds ago       Up 8 seconds                            alpine2
-f290d44a25c0        alpine              &#34;ash&#34;               21 seconds ago      Up 21 seconds                           alpine1
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyang:~$ docker container ls
+</span><span class=go>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+</span><span class=go>289df352d7a5        alpine              &#34;ash&#34;               9 seconds ago       Up 8 seconds                            alpine2
+</span><span class=go>f290d44a25c0        alpine              &#34;ash&#34;               21 seconds ago      Up 21 seconds                           alpine1
+</span></code></pre></td></tr></table>
 </div>
 </div><ol start=3>
 <li>Inspect the <strong>bridge</strong> network to see what containers are connected to it.</li>
@@ -986,60 +986,60 @@ f290d44a25c0        alpine              &#34;ash&#34;               21 seconds a
 </span><span class=lnt>53
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ docker network inspect bridge
-[
-    {
-        &#34;Name&#34;: &#34;bridge&#34;,
-        &#34;Id&#34;: &#34;26457e3bc6552ecfe3a0ccee3f49dcdf729895551253cd2e1a20409794b7c664&#34;,
-        &#34;Created&#34;: &#34;2020-12-02T14:30:59.20531188+08:00&#34;,
-        &#34;Scope&#34;: &#34;local&#34;,
-        &#34;Driver&#34;: &#34;bridge&#34;,
-        &#34;EnableIPv6&#34;: false,
-        &#34;IPAM&#34;: {
-            &#34;Driver&#34;: &#34;default&#34;,
-            &#34;Options&#34;: null,
-            &#34;Config&#34;: [
-                {
-                    &#34;Subnet&#34;: &#34;172.17.0.0/16&#34;,
-                    &#34;Gateway&#34;: &#34;172.17.0.1&#34;
-                }
-            ]
-        },
-        &#34;Internal&#34;: false,
-        &#34;Attachable&#34;: false,
-        &#34;Ingress&#34;: false,
-        &#34;ConfigFrom&#34;: {
-            &#34;Network&#34;: &#34;&#34;
-        },
-        &#34;ConfigOnly&#34;: false,
-        &#34;Containers&#34;: {
-            &#34;289df352d7a5420a0976ff3580ad375833d8d507ff65de801966e58fcc6ecd67&#34;: {
-                &#34;Name&#34;: &#34;alpine2&#34;,
-                &#34;EndpointID&#34;: &#34;99efbc2b3657fc2d92c91760f1d2bb2eabc3760fcf3e8ccefef89537d9faea67&#34;,
-                &#34;MacAddress&#34;: &#34;02:42:ac:11:00:03&#34;,
-                &#34;IPv4Address&#34;: &#34;172.17.0.3/16&#34;,
-                &#34;IPv6Address&#34;: &#34;&#34;
-            },
-            &#34;f290d44a25c05ce1940ab72c49d5be2bdfe16f2780624f3968b6e1fdfa4f91ab&#34;: {
-                &#34;Name&#34;: &#34;alpine1&#34;,
-                &#34;EndpointID&#34;: &#34;d210fe84902f4278188257074f5be4d0e6dab86baac146a4067af415734a01a5&#34;,
-                &#34;MacAddress&#34;: &#34;02:42:ac:11:00:02&#34;,
-                &#34;IPv4Address&#34;: &#34;172.17.0.2/16&#34;,
-                &#34;IPv6Address&#34;: &#34;&#34;
-            }
-        },
-        &#34;Options&#34;: {
-            &#34;com.docker.network.bridge.default_bridge&#34;: &#34;true&#34;,
-            &#34;com.docker.network.bridge.enable_icc&#34;: &#34;true&#34;,
-            &#34;com.docker.network.bridge.enable_ip_masquerade&#34;: &#34;true&#34;,
-            &#34;com.docker.network.bridge.host_binding_ipv4&#34;: &#34;0.0.0.0&#34;,
-            &#34;com.docker.network.bridge.name&#34;: &#34;docker0&#34;,
-            &#34;com.docker.network.driver.mtu&#34;: &#34;1500&#34;
-        },
-        &#34;Labels&#34;: {}
-    }
-]
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyang:~$ docker network inspect bridge
+</span><span class=go>[
+</span><span class=go>    {
+</span><span class=go>        &#34;Name&#34;: &#34;bridge&#34;,
+</span><span class=go>        &#34;Id&#34;: &#34;26457e3bc6552ecfe3a0ccee3f49dcdf729895551253cd2e1a20409794b7c664&#34;,
+</span><span class=go>        &#34;Created&#34;: &#34;2020-12-02T14:30:59.20531188+08:00&#34;,
+</span><span class=go>        &#34;Scope&#34;: &#34;local&#34;,
+</span><span class=go>        &#34;Driver&#34;: &#34;bridge&#34;,
+</span><span class=go>        &#34;EnableIPv6&#34;: false,
+</span><span class=go>        &#34;IPAM&#34;: {
+</span><span class=go>            &#34;Driver&#34;: &#34;default&#34;,
+</span><span class=go>            &#34;Options&#34;: null,
+</span><span class=go>            &#34;Config&#34;: [
+</span><span class=go>                {
+</span><span class=go>                    &#34;Subnet&#34;: &#34;172.17.0.0/16&#34;,
+</span><span class=go>                    &#34;Gateway&#34;: &#34;172.17.0.1&#34;
+</span><span class=go>                }
+</span><span class=go>            ]
+</span><span class=go>        },
+</span><span class=go>        &#34;Internal&#34;: false,
+</span><span class=go>        &#34;Attachable&#34;: false,
+</span><span class=go>        &#34;Ingress&#34;: false,
+</span><span class=go>        &#34;ConfigFrom&#34;: {
+</span><span class=go>            &#34;Network&#34;: &#34;&#34;
+</span><span class=go>        },
+</span><span class=go>        &#34;ConfigOnly&#34;: false,
+</span><span class=go>        &#34;Containers&#34;: {
+</span><span class=go>            &#34;289df352d7a5420a0976ff3580ad375833d8d507ff65de801966e58fcc6ecd67&#34;: {
+</span><span class=go>                &#34;Name&#34;: &#34;alpine2&#34;,
+</span><span class=go>                &#34;EndpointID&#34;: &#34;99efbc2b3657fc2d92c91760f1d2bb2eabc3760fcf3e8ccefef89537d9faea67&#34;,
+</span><span class=go>                &#34;MacAddress&#34;: &#34;02:42:ac:11:00:03&#34;,
+</span><span class=go>                &#34;IPv4Address&#34;: &#34;172.17.0.3/16&#34;,
+</span><span class=go>                &#34;IPv6Address&#34;: &#34;&#34;
+</span><span class=go>            },
+</span><span class=go>            &#34;f290d44a25c05ce1940ab72c49d5be2bdfe16f2780624f3968b6e1fdfa4f91ab&#34;: {
+</span><span class=go>                &#34;Name&#34;: &#34;alpine1&#34;,
+</span><span class=go>                &#34;EndpointID&#34;: &#34;d210fe84902f4278188257074f5be4d0e6dab86baac146a4067af415734a01a5&#34;,
+</span><span class=go>                &#34;MacAddress&#34;: &#34;02:42:ac:11:00:02&#34;,
+</span><span class=go>                &#34;IPv4Address&#34;: &#34;172.17.0.2/16&#34;,
+</span><span class=go>                &#34;IPv6Address&#34;: &#34;&#34;
+</span><span class=go>            }
+</span><span class=go>        },
+</span><span class=go>        &#34;Options&#34;: {
+</span><span class=go>            &#34;com.docker.network.bridge.default_bridge&#34;: &#34;true&#34;,
+</span><span class=go>            &#34;com.docker.network.bridge.enable_icc&#34;: &#34;true&#34;,
+</span><span class=go>            &#34;com.docker.network.bridge.enable_ip_masquerade&#34;: &#34;true&#34;,
+</span><span class=go>            &#34;com.docker.network.bridge.host_binding_ipv4&#34;: &#34;0.0.0.0&#34;,
+</span><span class=go>            &#34;com.docker.network.bridge.name&#34;: &#34;docker0&#34;,
+</span><span class=go>            &#34;com.docker.network.driver.mtu&#34;: &#34;1500&#34;
+</span><span class=go>        },
+</span><span class=go>        &#34;Labels&#34;: {}
+</span><span class=go>    }
+</span><span class=go>]
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Near the top, information about the <strong>bridge</strong> network is listed, including the IP address of the gateway between the Docker host and the <strong>bridge</strong> network (<strong>172.17.0.1</strong>). Under the <strong>Containers</strong> key, each connected container is listed, along with information about its IP address (<strong>172.17.0.2</strong> for <strong>alpine1</strong> and <strong>172.17.0.3</strong> for <strong>alpine2</strong>).</p>
 <ol start=4>
@@ -1051,9 +1051,9 @@ f290d44a25c0        alpine              &#34;ash&#34;               21 seconds a
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyang:~$ docker attach alpine1
-/ # 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyang:~$ docker attach alpine1
+</span><span class=go>/ # 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The prompt changes to <strong>#</strong> to indicate that you are the <strong>root</strong> user within the container. Use the <strong>ip addr show</strong> command to show the network interfaces for <strong>alpine1</strong> as they look from within the container:</p>
 <div class=highlight><div class=chroma>
@@ -1069,16 +1069,16 @@ f290d44a25c0        alpine              &#34;ash&#34;               21 seconds a
 </span><span class=lnt>9
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>## ip addr show
-1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
-6024: eth0@if6025: &lt;BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN&gt; mtu 1500 qdisc noqueue state UP 
-    link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff
-    inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0
-       valid_lft forever preferred_lft forever
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1># ip addr show</span>
+<span class=go>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
+</span><span class=go>    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+</span><span class=go>    inet 127.0.0.1/8 scope host lo
+</span><span class=go>       valid_lft forever preferred_lft forever
+</span><span class=go>6024: eth0@if6025: &lt;BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN&gt; mtu 1500 qdisc noqueue state UP 
+</span><span class=go>    link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff
+</span><span class=go>    inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0
+</span><span class=go>       valid_lft forever preferred_lft forever
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The first interface is the loopback device. Ignore it for now. Notice that the second interface has the IP address <strong>172.17.0.2</strong>, which is the same address shown for <strong>alpine1</strong> in the previous step.</p>
 <ol start=5>
@@ -1096,15 +1096,15 @@ f290d44a25c0        alpine              &#34;ash&#34;               21 seconds a
 </span><span class=lnt>8
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>## ping -c 2 google.com
-PING google.com (172.217.194.113): 56 data bytes
-64 bytes from 172.217.194.113: seq=0 ttl=49 time=60.069 ms
-64 bytes from 172.217.194.113: seq=1 ttl=49 time=60.103 ms
-
---- google.com ping statistics ---
-2 packets transmitted, 2 packets received, 0% packet loss
-round-trip min/avg/max = 60.069/60.086/60.103 ms
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1># ping -c 2 google.com</span>
+<span class=go>PING google.com (172.217.194.113): 56 data bytes
+</span><span class=go>64 bytes from 172.217.194.113: seq=0 ttl=49 time=60.069 ms
+</span><span class=go>64 bytes from 172.217.194.113: seq=1 ttl=49 time=60.103 ms
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>--- google.com ping statistics ---
+</span><span class=go>2 packets transmitted, 2 packets received, 0% packet loss
+</span><span class=go>round-trip min/avg/max = 60.069/60.086/60.103 ms
+</span></code></pre></td></tr></table>
 </div>
 </div><ol start=6>
 <li>Now try to ping the second container. First, ping it by its IP address, <strong>172.17.0.3</strong>:</li>
@@ -1121,15 +1121,15 @@ round-trip min/avg/max = 60.069/60.086/60.103 ms
 </span><span class=lnt>8
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>## ping -c 2 172.17.0.3
-PING 172.17.0.3 (172.17.0.3): 56 data bytes
-64 bytes from 172.17.0.3: seq=0 ttl=64 time=0.058 ms
-64 bytes from 172.17.0.3: seq=1 ttl=64 time=0.131 ms
-
---- 172.17.0.3 ping statistics ---
-2 packets transmitted, 2 packets received, 0% packet loss
-round-trip min/avg/max = 0.058/0.094/0.131 ms
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1># ping -c 2 172.17.0.3</span>
+<span class=go>PING 172.17.0.3 (172.17.0.3): 56 data bytes
+</span><span class=go>64 bytes from 172.17.0.3: seq=0 ttl=64 time=0.058 ms
+</span><span class=go>64 bytes from 172.17.0.3: seq=1 ttl=64 time=0.131 ms
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>--- 172.17.0.3 ping statistics ---
+</span><span class=go>2 packets transmitted, 2 packets received, 0% packet loss
+</span><span class=go>round-trip min/avg/max = 0.058/0.094/0.131 ms
+</span></code></pre></td></tr></table>
 </div>
 </div><p>This succeeds. Next, try pinging the <strong>alpine2</strong> container by container name. This will fail.</p>
 <div class=highlight><div class=chroma>
@@ -1138,9 +1138,9 @@ round-trip min/avg/max = 0.058/0.094/0.131 ms
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>## ping -c 2 alpine2
-ping: bad address &#39;alpine2&#39;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1># ping -c 2 alpine2</span>
+<span class=go>ping: bad address &#39;alpine2&#39;
+</span></code></pre></td></tr></table>
 </div>
 </div><ol start=7>
 <li>
@@ -1195,11 +1195,11 @@ $ docker container rm alpine1 alpine2
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ docker network create -d macvlan \
-  --subnet=172.16.86.0/24 \
-  --gateway=172.16.86.1 \
-  -o parent=eth0 pub_net
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>docker network create -d macvlan <span class=se>\
+</span><span class=se></span><span class=go>  --subnet=172.16.86.0/24 \
+</span><span class=go>  --gateway=172.16.86.1 \
+</span><span class=go>  -o parent=eth0 pub_net
+</span></code></pre></td></tr></table>
 </div>
 </div><p>If you need to exclude IP addresses from being used in the macvlan network, such as when a given IP address is already in use, use &ndash;aux-addresses:</p>
 <div class=highlight><div class=chroma>
@@ -1212,13 +1212,13 @@ $ docker container rm alpine1 alpine2
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ docker network create -d macvlan \
-  --subnet=192.168.32.0/24 \
-  --ip-range=192.168.32.128/25 \
-  --gateway=192.168.32.254 \
-  --aux-address=&#34;my-router=192.168.32.129&#34; \
-  -o parent=eth0 macnet32
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>docker network create -d macvlan <span class=se>\
+</span><span class=se></span><span class=go>  --subnet=192.168.32.0/24 \
+</span><span class=go>  --ip-range=192.168.32.128/25 \
+</span><span class=go>  --gateway=192.168.32.254 \
+</span><span class=go>  --aux-address=&#34;my-router=192.168.32.129&#34; \
+</span><span class=go>  -o parent=eth0 macnet32
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id=8021q-trunk-bridge-mode>802.1q trunk bridge mode</h5>
 <p>If you specify a parent interface name with a dot included, such as eth0.50, Docker interprets that as a sub-interface of eth0 and creates the sub-interface automatically.</p>
@@ -1230,11 +1230,11 @@ $ docker container rm alpine1 alpine2
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ docker network create -d macvlan \
-    --subnet=192.168.50.0/24 \
-    --gateway=192.168.50.1 \
-    -o parent=eth0.50 macvlan50
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>docker network create -d macvlan <span class=se>\
+</span><span class=se></span><span class=go>    --subnet=192.168.50.0/24 \
+</span><span class=go>    --gateway=192.168.50.1 \
+</span><span class=go>    -o parent=eth0.50 macvlan50
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id=use-an-ipvlan-instead-of-macvlan>Use an ipvlan instead of macvlan</h5>
 <p>In the above example, you are still using a L3 bridge. You can use ipvlan instead, and get an L2 bridge. Specify -o ipvlan_mode=l2.</p>
@@ -1248,13 +1248,13 @@ $ docker container rm alpine1 alpine2
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ docker network create -d ipvlan \
-    --subnet=192.168.210.0/24 \
-    --subnet=192.168.212.0/24 \
-    --gateway=192.168.210.254 \
-    --gateway=192.168.212.254 \
-     -o ipvlan_mode=l2 ipvlan210
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>docker network create -d ipvlan <span class=se>\
+</span><span class=se></span><span class=go>    --subnet=192.168.210.0/24 \
+</span><span class=go>    --subnet=192.168.212.0/24 \
+</span><span class=go>    --gateway=192.168.210.254 \
+</span><span class=go>    --gateway=192.168.212.254 \
+</span><span class=go>     -o ipvlan_mode=l2 ipvlan210
+</span></code></pre></td></tr></table>
 </div>
 </div><h5 id=use-ipv6-1>Use IPv6</h5>
 <p>If you have configured the Docker daemon to allow IPv6, you can use dual-stack IPv4/IPv6 macvlan networks.</p>
@@ -1268,13 +1268,13 @@ $ docker container rm alpine1 alpine2
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ docker network create -d macvlan \
-    --subnet=192.168.216.0/24 --subnet=192.168.218.0/24 \
-    --gateway=192.168.216.1 --gateway=192.168.218.1 \
-    --subnet=2001:db8:abc8::/64 --gateway=2001:db8:abc8::10 \
-     -o parent=eth0.218 \
-     -o macvlan_mode=bridge macvlan216
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>docker network create -d macvlan <span class=se>\
+</span><span class=se></span><span class=go>    --subnet=192.168.216.0/24 --subnet=192.168.218.0/24 \
+</span><span class=go>    --gateway=192.168.216.1 --gateway=192.168.218.1 \
+</span><span class=go>    --subnet=2001:db8:abc8::/64 --gateway=2001:db8:abc8::10 \
+</span><span class=go>     -o parent=eth0.218 \
+</span><span class=go>     -o macvlan_mode=bridge macvlan216
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id=none>None</h3>
 <p>For this container, disable all networking. Usually used in conjunction with a custom network driver. none is not available for swarm services. See disable container networking.</p>
@@ -1284,7 +1284,7 @@ $ docker container rm alpine1 alpine2
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-10-14</span>
+<span>Updated on 2021-11-07</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -1310,7 +1310,7 @@ $ docker container rm alpine1 alpine2
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.89.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>

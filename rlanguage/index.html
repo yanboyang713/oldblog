@@ -11,7 +11,7 @@ Learning Objectives By the end of this course, you will have covered the followi
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/rlanguage/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-03-04T06:11:32+10:00">
-<meta property="article:modified_time" content="2021-10-14T14:03:52+00:00">
+<meta property="article:modified_time" content="2021-11-07T13:55:52+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting Started with R language">
@@ -21,7 +21,7 @@ Learning Objectives By the end of this course, you will have covered the followi
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/rlanguage/><link rel=prev href=https://yanboyang.com/introductiontostatistics-appliedanalytics/><link rel=next href=https://yanboyang.com/datapreprocessing/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with R language","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/rlanguage\/"},"genre":"posts","keywords":"r, r language","wordcount":7618,"url":"https:\/\/yanboyang.com\/rlanguage\/","datePublished":"2021-03-04T06:11:32+10:00","dateModified":"2021-10-14T14:03:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/rlanguage/><link rel=prev href=https://yanboyang.com/introductiontostatistics-appliedanalytics/><link rel=next href=https://yanboyang.com/datapreprocessing/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with R language","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/rlanguage\/"},"genre":"posts","keywords":"r, r language","wordcount":7618,"url":"https:\/\/yanboyang.com\/rlanguage\/","datePublished":"2021-03-04T06:11:32+10:00","dateModified":"2021-11-07T13:55:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -94,7 +94,7 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting Started with R language</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/r/><i class="far fa-folder fa-fw"></i>r</a></span></div>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/r/><i class="far fa-folder fa-fw"></i>r</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-03-04>2021-03-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;7618 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;36 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
@@ -246,7 +246,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 5
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 5</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id=code-commands-and-syntax>Code, Commands and Syntax</h3>
@@ -274,7 +274,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] FALSE
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] FALSE</span>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id=command-separation-and-grouping>Command Separation and Grouping</h4>
@@ -296,7 +296,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] -0.01520157
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] -0.01520157</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -355,7 +355,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] -0.01520157
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] -0.01520157</span>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id=vectors>Vectors</h4>
@@ -375,7 +375,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 170.2
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 170.2</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -391,7 +391,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 6.300794
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 6.300794</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Shortly you will learn to store datasets as data frame objects which is an even more powerful way to work with data.</p>
@@ -439,7 +439,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 11
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 11</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -457,7 +457,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 3
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 3</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -475,7 +475,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 28
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 28</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -493,7 +493,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 0.5714286
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 0.5714286</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -511,7 +511,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 3
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 3</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -529,7 +529,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 81
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 81</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -547,7 +547,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 0.9998963
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 0.9998963</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -565,7 +565,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 2.718282
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 2.718282</span>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id=logical-operators>Logical Operators</h4>
@@ -585,7 +585,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] TRUE
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] TRUE</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -603,7 +603,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] TRUE
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] TRUE</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -621,7 +621,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] TRUE
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] TRUE</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -639,7 +639,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] TRUE
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] TRUE</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -657,7 +657,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] FALSE
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] FALSE</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -675,7 +675,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] TRUE
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] TRUE</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -693,7 +693,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] TRUE
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] TRUE</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -711,7 +711,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] TRUE
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] TRUE</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -731,7 +731,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1]  TRUE  TRUE  TRUE  TRUE FALSE  TRUE
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1]  TRUE  TRUE  TRUE  TRUE FALSE  TRUE</span>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id=missing-values>Missing Values</h4>
@@ -751,7 +751,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] NA
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] NA</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Sometimes we need to tell R how to deal with the missing values…</p>
@@ -768,7 +768,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 168.5
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 168.5</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The na.rm=TRUE option tells R to remove missing values from the mean() function.</p>
@@ -787,7 +787,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### Error in eval(expr, envir, enclos): object &#39;male&#39; not found
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## Error in eval(expr, envir, enclos): object &#39;male&#39; not found</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -844,7 +844,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 1.386294
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 1.386294</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -860,7 +860,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 1.386294
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 1.386294</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Pipes work best when functions are optimised to take the first argument from a preceding function. However, preceding functions can still be passed to second, third or fourth arguments quite easily using a .. For example, the rnorm() function can be used to generate normally distributed data. The first argument is always the number of values to generate and the second and third values are the population mean and standard deviation, rnorm(x, mu, sd). Let’s say we want to pass a value of 15 to the third argument using a pipe. This is how we would do it:</p>
@@ -942,19 +942,19 @@ Cancel
 </span><span class=lnt>13
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### # A tibble: 10 x 3
-###       ID Group Score
-###    &lt;dbl&gt; &lt;fct&gt; &lt;dbl&gt;
-###  1     1 A     -0.88
-###  2     2 A      1.11
-###  3     3 A      0.69
-###  4     4 A      0.92
-###  5     5 A      0.41
-###  6     6 B      0.24
-###  7     7 B     -0.47
-###  8     8 B     -0.3 
-###  9     9 B      1.22
-### 10    10 B     -1.59
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## # A tibble: 10 x 3</span>
+<span class=gp>#</span><span class=c1>##       ID Group Score</span>
+<span class=gp>#</span><span class=c1>##    &lt;dbl&gt; &lt;fct&gt; &lt;dbl&gt;</span>
+<span class=gp>#</span><span class=c1>##  1     1 A     -0.88</span>
+<span class=gp>#</span><span class=c1>##  2     2 A      1.11</span>
+<span class=gp>#</span><span class=c1>##  3     3 A      0.69</span>
+<span class=gp>#</span><span class=c1>##  4     4 A      0.92</span>
+<span class=gp>#</span><span class=c1>##  5     5 A      0.41</span>
+<span class=gp>#</span><span class=c1>##  6     6 B      0.24</span>
+<span class=gp>#</span><span class=c1>##  7     7 B     -0.47</span>
+<span class=gp>#</span><span class=c1>##  8     8 B     -0.3 </span>
+<span class=gp>#</span><span class=c1>##  9     9 B      1.22</span>
+<span class=gp>#</span><span class=c1>## 10    10 B     -1.59</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Data frames are easy to work with and also recognise matrix commands.</p>
@@ -973,7 +973,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###  [1] -0.88  1.11  0.69  0.92  0.41  0.24 -0.47 -0.30  1.22 -1.59
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##  [1] -0.88  1.11  0.69  0.92  0.41  0.24 -0.47 -0.30  1.22 -1.59</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -1003,19 +1003,19 @@ Cancel
 </span><span class=lnt>13
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### # A tibble: 10 x 1
-###    Group
-###    &lt;fct&gt;
-###  1 A    
-###  2 A    
-###  3 A    
-###  4 A    
-###  5 A    
-###  6 B    
-###  7 B    
-###  8 B    
-###  9 B    
-### 10 B
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## # A tibble: 10 x 1</span>
+<span class=gp>#</span><span class=c1>##    Group</span>
+<span class=gp>#</span><span class=c1>##    &lt;fct&gt;</span>
+<span class=gp>#</span><span class=c1>##  1 A    </span>
+<span class=gp>#</span><span class=c1>##  2 A    </span>
+<span class=gp>#</span><span class=c1>##  3 A    </span>
+<span class=gp>#</span><span class=c1>##  4 A    </span>
+<span class=gp>#</span><span class=c1>##  5 A    </span>
+<span class=gp>#</span><span class=c1>##  6 B    </span>
+<span class=gp>#</span><span class=c1>##  7 B    </span>
+<span class=gp>#</span><span class=c1>##  8 B    </span>
+<span class=gp>#</span><span class=c1>##  9 B    </span>
+<span class=gp>#</span><span class=c1>## 10 B</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -1036,10 +1036,10 @@ Cancel
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### # A tibble: 1 x 3
-###      ID Group Score
-###   &lt;dbl&gt; &lt;fct&gt; &lt;dbl&gt;
-### 1     5 A      0.41
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## # A tibble: 1 x 3</span>
+<span class=gp>#</span><span class=c1>##      ID Group Score</span>
+<span class=gp>#</span><span class=c1>##   &lt;dbl&gt; &lt;fct&gt; &lt;dbl&gt;</span>
+<span class=gp>#</span><span class=c1>## 1     5 A      0.41</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Data imported into R defaults to data.frames. Data frames can also be readily converted to other object types. The best data manipulation packages also assume you are using data frames.</p>
@@ -1164,40 +1164,40 @@ Cancel
 </span><span class=lnt>34
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###  [1] &#34;(BIKE LANE)BRIGHTON RD N BD 50M S OF MOZART ST&#34;                                  
-###  [2] &#34;(BIKE LANE)BRIGHTON RD S BD 50M N OF DICKENS ST&#34;                                 
-###  [3] &#34;(BIKE LANE)FLEMINGTON RD NW BD 10M SE OF DRYBURGH ST&#34;                            
-###  [4] &#34;(BIKE LANE)FLEMINGTON RD SE BD 25M NW OF ABBOTSFORD ST&#34;                          
-###  [5] &#34;(BIKE LANE)ROYAL PDE N BD 10M N OF GATEHOUSE ST&#34;                                 
-###  [6] &#34;(BIKE LANE)ROYAL PDE S BD 20M S OF GATEHOUSE ST&#34;                                 
-###  [7] &#34;(BIKE LANE)ST. KILDA RD N BD 25M N OF CONVENTRY ST&#34;                              
-###  [8] &#34;(BIKE LANE)ST. KILDA RD S BD 30M S OF ANZAC AVE&#34;                                 
-###  [9] &#34;(BIKE PATH)ANN TRAIL NO:1 2WAY 104M SOUTH OF OF WHITEHORSE RD&#34;                   
-### [10] &#34;(BIKE PATH)ANN TRAIL NO:2 2WAY 300M EAST OF PRINCESS ST&#34;                         
-### [11] &#34;(BIKE PATH)BAY TRAIL 2WAY 100M N BLESSINGTON ST OPP NO 20 MARINE PDE&#34;            
-### [12] &#34;(BIKE PATH)CANNING ST 2WAY PRINCESS ST OUTSIDE DAN O&#39;CONNELL&#34;                    
-### [13] &#34;(BIKE PATH)CAPITAL CITY TRAIL 2WAY 25M W OF BOWEN CRES&#34;                          
-### [14] &#34;(BIKE PATH)CAPITAL CITY TRAIL 2WAY FOOTSCRAY RD SE OF EXIT RAMP FROM CITY LINK&#34;  
-### [15] &#34;(BIKE PATH)GARDINERS CREEK TRAIL 2WAY 66M W OF CITYLINK OVERPASS&#34;                
-### [16] &#34;(BIKE PATH)GARDNERS CREEK TRAIL NO.2 2WAY ADJ ESTELLA ST&#34;                        
-### [17] &#34;(BIKE PATH)KOONUNG TRAIL 2WAY 44M NE OF CLIFTON ST&#34;                              
-### [18] &#34;(BIKE PATH)MAIN YARRA TRAIL NO:1 2WAY ALONG YARRA BVD 66M W OF OF C&#39;LINK OPASS&#34;  
-### [19] &#34;(BIKE PATH)NORTH BANK 2WAY 14M E OF MORRELL BRIDGE OF ADJACENT TO PUNT RD O&#34;     
-### [20] &#34;(BIKE PATH)NORTH BANK 2WAY 75M W OF MORELL BRIDGE ADJACENT TO PUNT RD OVERPASS&#34;  
-### [21] &#34;(BIKE PATH)SCOTCHMANS CREEK TRAIL 52M E OF 61 SMYTH ST&#34;                          
-### [22] &#34;(BIKE PATH)SOUTH BANK 2WAY UNDER PUNT RD BRIDGE&#34;                                 
-### [23] &#34;(BIKE PATH)ST. GEORGES RD 2WAY 28M S OF SUMNER AV&#34;                               
-### [24] &#34;(BIKE PATH)ST. GEORGES RD NO.2 2W N OF BELL ST&#34;                                  
-### [25] &#34;(BIKE PATH)ST. GEORGES ST 2WAY 50M S OF HAWTHORN RD TEST SITE&#34;                   
-### [26] &#34;(BIKE PATH)TRAM 109 TRAIL 2WAY 10M NE OF ACCESS PATH CNR WOODGATE &amp; BOUNDARY STS&#34;
-### [27] &#34;(BIKE PATH)UPFIELD RAILWAY LIN 2WAY 10M S OF PARK ST&#34;                            
-### [28] &#34;(BIKELANE) ALBERT ST EB 50M E OF MORRISON PL&#34;                                    
-### [29] &#34;(BIKELANE) ALBERT ST WB 50M W OF LANSDOWN ST&#34;                                    
-### [30] &#34;(BIKEPATH) FEDERATION TRAIL 170M SE OF PRINCESS HWY BTW CYPRESS AV &amp; CONIFER AV&#34; 
-### [31] &#34;(BIKEPATH) MERRIE CREEK TRAIL 2WAY S OF MORELAND RD&#34;                             
-### [32] &#34;(BIKEPATH) MORELAND ST PATH 2WAY 50 M N OF PARKER ST&#34;                            
-### [33] &#34;(BIKEPATH) NAPIER ST PATH 2WAY 100M N OF GREEVES ST&#34;                             
-### [34] &#34;(BIKEPATH) PHILLIP ISLAND RD PATH BTW BUNVEGAN CR &amp; GLEN ST&#34;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##  [1] &#34;(BIKE LANE)BRIGHTON RD N BD 50M S OF MOZART ST&#34;                                  </span>
+<span class=gp>#</span><span class=c1>##  [2] &#34;(BIKE LANE)BRIGHTON RD S BD 50M N OF DICKENS ST&#34;                                 </span>
+<span class=gp>#</span><span class=c1>##  [3] &#34;(BIKE LANE)FLEMINGTON RD NW BD 10M SE OF DRYBURGH ST&#34;                            </span>
+<span class=gp>#</span><span class=c1>##  [4] &#34;(BIKE LANE)FLEMINGTON RD SE BD 25M NW OF ABBOTSFORD ST&#34;                          </span>
+<span class=gp>#</span><span class=c1>##  [5] &#34;(BIKE LANE)ROYAL PDE N BD 10M N OF GATEHOUSE ST&#34;                                 </span>
+<span class=gp>#</span><span class=c1>##  [6] &#34;(BIKE LANE)ROYAL PDE S BD 20M S OF GATEHOUSE ST&#34;                                 </span>
+<span class=gp>#</span><span class=c1>##  [7] &#34;(BIKE LANE)ST. KILDA RD N BD 25M N OF CONVENTRY ST&#34;                              </span>
+<span class=gp>#</span><span class=c1>##  [8] &#34;(BIKE LANE)ST. KILDA RD S BD 30M S OF ANZAC AVE&#34;                                 </span>
+<span class=gp>#</span><span class=c1>##  [9] &#34;(BIKE PATH)ANN TRAIL NO:1 2WAY 104M SOUTH OF OF WHITEHORSE RD&#34;                   </span>
+<span class=gp>#</span><span class=c1>## [10] &#34;(BIKE PATH)ANN TRAIL NO:2 2WAY 300M EAST OF PRINCESS ST&#34;                         </span>
+<span class=gp>#</span><span class=c1>## [11] &#34;(BIKE PATH)BAY TRAIL 2WAY 100M N BLESSINGTON ST OPP NO 20 MARINE PDE&#34;            </span>
+<span class=gp>#</span><span class=c1>## [12] &#34;(BIKE PATH)CANNING ST 2WAY PRINCESS ST OUTSIDE DAN O&#39;CONNELL&#34;                    </span>
+<span class=gp>#</span><span class=c1>## [13] &#34;(BIKE PATH)CAPITAL CITY TRAIL 2WAY 25M W OF BOWEN CRES&#34;                          </span>
+<span class=gp>#</span><span class=c1>## [14] &#34;(BIKE PATH)CAPITAL CITY TRAIL 2WAY FOOTSCRAY RD SE OF EXIT RAMP FROM CITY LINK&#34;  </span>
+<span class=gp>#</span><span class=c1>## [15] &#34;(BIKE PATH)GARDINERS CREEK TRAIL 2WAY 66M W OF CITYLINK OVERPASS&#34;                </span>
+<span class=gp>#</span><span class=c1>## [16] &#34;(BIKE PATH)GARDNERS CREEK TRAIL NO.2 2WAY ADJ ESTELLA ST&#34;                        </span>
+<span class=gp>#</span><span class=c1>## [17] &#34;(BIKE PATH)KOONUNG TRAIL 2WAY 44M NE OF CLIFTON ST&#34;                              </span>
+<span class=gp>#</span><span class=c1>## [18] &#34;(BIKE PATH)MAIN YARRA TRAIL NO:1 2WAY ALONG YARRA BVD 66M W OF OF C&#39;LINK OPASS&#34;  </span>
+<span class=gp>#</span><span class=c1>## [19] &#34;(BIKE PATH)NORTH BANK 2WAY 14M E OF MORRELL BRIDGE OF ADJACENT TO PUNT RD O&#34;     </span>
+<span class=gp>#</span><span class=c1>## [20] &#34;(BIKE PATH)NORTH BANK 2WAY 75M W OF MORELL BRIDGE ADJACENT TO PUNT RD OVERPASS&#34;  </span>
+<span class=gp>#</span><span class=c1>## [21] &#34;(BIKE PATH)SCOTCHMANS CREEK TRAIL 52M E OF 61 SMYTH ST&#34;                          </span>
+<span class=gp>#</span><span class=c1>## [22] &#34;(BIKE PATH)SOUTH BANK 2WAY UNDER PUNT RD BRIDGE&#34;                                 </span>
+<span class=gp>#</span><span class=c1>## [23] &#34;(BIKE PATH)ST. GEORGES RD 2WAY 28M S OF SUMNER AV&#34;                               </span>
+<span class=gp>#</span><span class=c1>## [24] &#34;(BIKE PATH)ST. GEORGES RD NO.2 2W N OF BELL ST&#34;                                  </span>
+<span class=gp>#</span><span class=c1>## [25] &#34;(BIKE PATH)ST. GEORGES ST 2WAY 50M S OF HAWTHORN RD TEST SITE&#34;                   </span>
+<span class=gp>#</span><span class=c1>## [26] &#34;(BIKE PATH)TRAM 109 TRAIL 2WAY 10M NE OF ACCESS PATH CNR WOODGATE &amp; BOUNDARY STS&#34;</span>
+<span class=gp>#</span><span class=c1>## [27] &#34;(BIKE PATH)UPFIELD RAILWAY LIN 2WAY 10M S OF PARK ST&#34;                            </span>
+<span class=gp>#</span><span class=c1>## [28] &#34;(BIKELANE) ALBERT ST EB 50M E OF MORRISON PL&#34;                                    </span>
+<span class=gp>#</span><span class=c1>## [29] &#34;(BIKELANE) ALBERT ST WB 50M W OF LANSDOWN ST&#34;                                    </span>
+<span class=gp>#</span><span class=c1>## [30] &#34;(BIKEPATH) FEDERATION TRAIL 170M SE OF PRINCESS HWY BTW CYPRESS AV &amp; CONIFER AV&#34; </span>
+<span class=gp>#</span><span class=c1>## [31] &#34;(BIKEPATH) MERRIE CREEK TRAIL 2WAY S OF MORELAND RD&#34;                             </span>
+<span class=gp>#</span><span class=c1>## [32] &#34;(BIKEPATH) MORELAND ST PATH 2WAY 50 M N OF PARKER ST&#34;                            </span>
+<span class=gp>#</span><span class=c1>## [33] &#34;(BIKEPATH) NAPIER ST PATH 2WAY 100M N OF GREEVES ST&#34;                             </span>
+<span class=gp>#</span><span class=c1>## [34] &#34;(BIKEPATH) PHILLIP ISLAND RD PATH BTW BUNVEGAN CR &amp; GLEN ST&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Sometimes R imports data without knowing what it really means. For example, <strong>NB_TRAFFIC_SURVEY</strong> has been imported as an integer, <strong>int</strong>.</p>
@@ -1214,7 +1214,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] &#34;integer&#34;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] &#34;integer&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>However, this variable corresponds to a survey identifier, or nominal variable. The nominal scale of this variable is not meaningful, in the same way as a credit card number. We cannot meaningfully apply mathematical operations. We can tell R to treat this variable as a factor using the following code:</p>
@@ -1233,7 +1233,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] &#34;factor&#34;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] &#34;factor&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The first part of the code selects the Bicycle object and we use the $ sign to signal the selection of a variable, in this case <strong>NB_Traffic_Survey</strong>. We then instruct R to copy over this variable using the same values from <strong>Bicycle$NB_TRAFFIC_SURVEY</strong> columns, but as a factor, using the as.factor() function. If you’re successful, the <strong>NB_TRAFFIC_SURVEY</strong> variable will be updated as a Factor with 29 levels. Now R will treat this variable as a numeric label and not a meaningful integer.</p>
@@ -1251,7 +1251,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] &#34;Fri&#34; &#34;Mon&#34; &#34;Sat&#34; &#34;Sun&#34; &#34;Thu&#34; &#34;Tue&#34; &#34;Wed&#34;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] &#34;Fri&#34; &#34;Mon&#34; &#34;Sat&#34; &#34;Sun&#34; &#34;Thu&#34; &#34;Tue&#34; &#34;Wed&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>So, R will treat Fri = 1, Mon = 2, Sat = 3 etc. This isn’t good and this is why you need to pay careful attention to factors in your dataset.</p>
@@ -1276,7 +1276,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] &#34;Sun&#34; &#34;Mon&#34; &#34;Tue&#34; &#34;Wed&#34; &#34;Thu&#34; &#34;Fri&#34; &#34;Sat&#34;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] &#34;Sun&#34; &#34;Mon&#34; &#34;Tue&#34; &#34;Wed&#34; &#34;Thu&#34; &#34;Fri&#34; &#34;Sat&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>So, Sun = 1, Mon = 2, etc. Nice work. The ordered = TRUE option ensures the ordering of days is meaningful.</p>
@@ -1298,7 +1298,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] &#34;Mon&#34; &#34;Tue&#34; &#34;Wed&#34; &#34;Thu&#34; &#34;Fri&#34; &#34;Sat&#34; &#34;Sun&#34;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] &#34;Mon&#34; &#34;Tue&#34; &#34;Wed&#34; &#34;Thu&#34; &#34;Fri&#34; &#34;Sat&#34; &#34;Sun&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h5 id=assigning-labels>Assigning Labels</h5>
@@ -1318,7 +1318,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] &#34;FALSE&#34; &#34;TRUE&#34;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] &#34;FALSE&#34; &#34;TRUE&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -1338,7 +1338,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] &#34;Weekday&#34; &#34;Weekend&#34;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] &#34;Weekday&#34; &#34;Weekend&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Had we used the forcats package instead (don’t run this code if you ran the previous):</p>
@@ -1391,8 +1391,8 @@ Cancel
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### Autumn Spring Summer Winter 
-###      0      0  13757      0
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## Autumn Spring Summer Winter </span>
+<span class=gp>#</span><span class=c1>##      0      0  13757      0</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>This code will create a new data frame object, called <strong>Bicycle_Summer</strong> by selecting only the cases where season is equal to “Summer”. Note the use of the logical operator “==”, which means “equal to”.</p>
@@ -1419,8 +1419,8 @@ Cancel
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### Autumn Spring Summer Winter 
-###      0  15254  13757      0
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## Autumn Spring Summer Winter </span>
+<span class=gp>#</span><span class=c1>##      0  15254  13757      0</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Note</strong> the use of the “|” logical operator which means “or”.</p>
@@ -1454,12 +1454,12 @@ Cancel
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###         
-###          2005 2006 2007 2008 2009 2010 2011 2012 2013
-###   Autumn   14 1028 1480 1566 1781 1557 2457 3317    0
-###   Spring   40 1335 1508 1815 1597 1671 3697 3591    0
-###   Summer  238 1244 1472 1578 1669 1671 2574 3059  252
-###   Winter   20 1020 1518 1868 1643 1765 3592 3366    0
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##         </span>
+<span class=gp>#</span><span class=c1>##          2005 2006 2007 2008 2009 2010 2011 2012 2013</span>
+<span class=gp>#</span><span class=c1>##   Autumn   14 1028 1480 1566 1781 1557 2457 3317    0</span>
+<span class=gp>#</span><span class=c1>##   Spring   40 1335 1508 1815 1597 1671 3697 3591    0</span>
+<span class=gp>#</span><span class=c1>##   Summer  238 1244 1472 1578 1669 1671 2574 3059  252</span>
+<span class=gp>#</span><span class=c1>##   Winter   20 1020 1518 1868 1643 1765 3592 3366    0</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -1484,12 +1484,12 @@ Cancel
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###         
-###          2009 2010 2011 2012 2013
-###   Autumn    0    0    0    0    0
-###   Spring 1597 1671 3697 3591    0
-###   Summer 1669 1671 2574 3059  252
-###   Winter    0    0    0    0    0
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##         </span>
+<span class=gp>#</span><span class=c1>##          2009 2010 2011 2012 2013</span>
+<span class=gp>#</span><span class=c1>##   Autumn    0    0    0    0    0</span>
+<span class=gp>#</span><span class=c1>##   Spring 1597 1671 3697 3591    0</span>
+<span class=gp>#</span><span class=c1>##   Summer 1669 1671 2574 3059  252</span>
+<span class=gp>#</span><span class=c1>##   Winter    0    0    0    0    0</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Always confirm your filter by checking the new data frame object.</p>
@@ -1531,10 +1531,10 @@ Cancel
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###          
-###            Mon  Tue  Wed  Thu  Fri  Sat  Sun
-###   weekday 8109 8125 8131 8087 8098    0    0
-###   weekend    0    0    0    0    0 8267 8186
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##          </span>
+<span class=gp>#</span><span class=c1>##            Mon  Tue  Wed  Thu  Fri  Sat  Sun</span>
+<span class=gp>#</span><span class=c1>##   weekday 8109 8125 8131 8087 8098    0    0</span>
+<span class=gp>#</span><span class=c1>##   weekend    0    0    0    0    0 8267 8186</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>You can also add new variables as transformation of existing variables. For example we can create a total “peak” proportion tragic variable by adding the <strong>CT_VOLUME_AMPEAK</strong> and <strong>CT_VOLUME_PM_PEAK</strong> values and dividing by <strong>CT_VOLUME_24HOUR</strong>. Or…</p>
@@ -1585,15 +1585,15 @@ Cancel
 </span><span class=lnt>9
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### # A tibble: 6 x 3
-###   Sort.Des                    DT_ANALYSIS_SUMMARY CT_VOLUME_24HOUR
-###   &lt;fct&gt;                       &lt;fct&gt;                          &lt;int&gt;
-### 1 St Georges St Hawthorn      09/06/2007                       480
-### 2 Flemington Rd NW Bound Lane 17/03/2008                       654
-### 3 Flemington Rd NW Bound Lane 19/03/2008                       794
-### 4 Flemington Rd NW Bound Lane 20/03/2008                       732
-### 5 Flemington Rd NW Bound Lane 21/03/2008                       221
-### 6 Flemington Rd NW Bound Lane 22/03/2008                       271
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## # A tibble: 6 x 3</span>
+<span class=gp>#</span><span class=c1>##   Sort.Des                    DT_ANALYSIS_SUMMARY CT_VOLUME_24HOUR</span>
+<span class=gp>#</span><span class=c1>##   &lt;fct&gt;                       &lt;fct&gt;                          &lt;int&gt;</span>
+<span class=gp>#</span><span class=c1>## 1 St Georges St Hawthorn      09/06/2007                       480</span>
+<span class=gp>#</span><span class=c1>## 2 Flemington Rd NW Bound Lane 17/03/2008                       654</span>
+<span class=gp>#</span><span class=c1>## 3 Flemington Rd NW Bound Lane 19/03/2008                       794</span>
+<span class=gp>#</span><span class=c1>## 4 Flemington Rd NW Bound Lane 20/03/2008                       732</span>
+<span class=gp>#</span><span class=c1>## 5 Flemington Rd NW Bound Lane 21/03/2008                       221</span>
+<span class=gp>#</span><span class=c1>## 6 Flemington Rd NW Bound Lane 22/03/2008                       271</span>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id=ordering-datasets>Ordering Datasets</h4>
@@ -1628,22 +1628,22 @@ Cancel
 </span><span class=lnt>16
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### # A tibble: 6 x 25
-###   Unique_ID NB_TRAFFIC_SURV~ NB_LOCATION_TRA~ Sort.Des DS_LOCATION
-###       &lt;int&gt; &lt;fct&gt;                       &lt;int&gt; &lt;fct&gt;    &lt;fct&gt;      
-### 1     17386 9316                            1 Albert ~ (BIKELANE)~
-### 2     17387 9316                            1 Albert ~ (BIKELANE)~
-### 3     17388 9316                            1 Albert ~ (BIKELANE)~
-### 4     17389 9316                            1 Albert ~ (BIKELANE)~
-### 5     17390 9316                            1 Albert ~ (BIKELANE)~
-### 6     17391 9316                            1 Albert ~ (BIKELANE)~
-### # ... with 20 more variables: DT_ANALYSIS_SUMMARY &lt;fct&gt;, NB_YEAR &lt;int&gt;,
-### #   NB_MONTH &lt;int&gt;, NB_WEEKDAY_NONHOL_QTR &lt;int&gt;, CT_VOLUME_AMPEAK &lt;int&gt;,
-### #   CT_VOLUME_PMPEAK &lt;int&gt;, CT_VOLUME_4HOUR_OFFPEAK &lt;int&gt;,
-### #   CT_VOLUME_12HOUR &lt;int&gt;, CT_VOLUME_24HOUR &lt;int&gt;, DS_HOLIDAY &lt;fct&gt;,
-### #   NB_SEASONALITY_PERIOD &lt;int&gt;, NB_TYPE_PERIOD &lt;int&gt;, Primary &lt;lgl&gt;,
-### #   weekend &lt;fct&gt;, Quarter &lt;ord&gt;, Season &lt;fct&gt;, Cyclying.Season &lt;fct&gt;,
-### #   day &lt;ord&gt;, New_weekday_variable &lt;ord&gt;, peak &lt;dbl&gt;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## # A tibble: 6 x 25</span>
+<span class=gp>#</span><span class=c1>##   Unique_ID NB_TRAFFIC_SURV~ NB_LOCATION_TRA~ Sort.Des DS_LOCATION</span>
+<span class=gp>#</span><span class=c1>##       &lt;int&gt; &lt;fct&gt;                       &lt;int&gt; &lt;fct&gt;    &lt;fct&gt;      </span>
+<span class=gp>#</span><span class=c1>## 1     17386 9316                            1 Albert ~ (BIKELANE)~</span>
+<span class=gp>#</span><span class=c1>## 2     17387 9316                            1 Albert ~ (BIKELANE)~</span>
+<span class=gp>#</span><span class=c1>## 3     17388 9316                            1 Albert ~ (BIKELANE)~</span>
+<span class=gp>#</span><span class=c1>## 4     17389 9316                            1 Albert ~ (BIKELANE)~</span>
+<span class=gp>#</span><span class=c1>## 5     17390 9316                            1 Albert ~ (BIKELANE)~</span>
+<span class=gp>#</span><span class=c1>## 6     17391 9316                            1 Albert ~ (BIKELANE)~</span>
+<span class=gp>#</span><span class=c1>## # ... with 20 more variables: DT_ANALYSIS_SUMMARY &lt;fct&gt;, NB_YEAR &lt;int&gt;,</span>
+<span class=gp>#</span><span class=c1>## #   NB_MONTH &lt;int&gt;, NB_WEEKDAY_NONHOL_QTR &lt;int&gt;, CT_VOLUME_AMPEAK &lt;int&gt;,</span>
+<span class=gp>#</span><span class=c1>## #   CT_VOLUME_PMPEAK &lt;int&gt;, CT_VOLUME_4HOUR_OFFPEAK &lt;int&gt;,</span>
+<span class=gp>#</span><span class=c1>## #   CT_VOLUME_12HOUR &lt;int&gt;, CT_VOLUME_24HOUR &lt;int&gt;, DS_HOLIDAY &lt;fct&gt;,</span>
+<span class=gp>#</span><span class=c1>## #   NB_SEASONALITY_PERIOD &lt;int&gt;, NB_TYPE_PERIOD &lt;int&gt;, Primary &lt;lgl&gt;,</span>
+<span class=gp>#</span><span class=c1>## #   weekend &lt;fct&gt;, Quarter &lt;ord&gt;, Season &lt;fct&gt;, Cyclying.Season &lt;fct&gt;,</span>
+<span class=gp>#</span><span class=c1>## #   day &lt;ord&gt;, New_weekday_variable &lt;ord&gt;, peak &lt;dbl&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id=working-with-dates-and-times>Working with Dates and Times</h4>
@@ -1661,7 +1661,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] &#34;factor&#34;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] &#34;factor&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>This is wrong because the values refer to dates:</p>
@@ -1679,8 +1679,8 @@ Cancel
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 09/06/2007 17/03/2008 19/03/2008 20/03/2008 21/03/2008 22/03/2008
-### 2637 Levels: 01/01/2006 01/01/2007 01/01/2008 01/01/2009 ... Thursday, 24 February 2011
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 09/06/2007 17/03/2008 19/03/2008 20/03/2008 21/03/2008 22/03/2008</span>
+<span class=gp>#</span><span class=c1>## 2637 Levels: 01/01/2006 01/01/2007 01/01/2008 01/01/2009 ... Thursday, 24 February 2011</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The dates are in dd/mm/yyyy. The lubridate package provides a powerful set of functions for working with dates. Let’s fix the <strong>DT_ANALYSIS_SUMMARY</strong> variable.</p>
@@ -1701,7 +1701,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] &#34;Date&#34;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] &#34;Date&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Excellent. As you can see, the dmy() function tells R the format of the date according to dd/mm/yyyy. You can use other combination like ymd, mdy, etc.</p>
@@ -1724,8 +1724,8 @@ Cancel
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] Sat Mon Wed Thu Fri Sat
-### Levels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] Sat Mon Wed Thu Fri Sat</span>
+<span class=gp>#</span><span class=c1>## Levels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -1746,8 +1746,8 @@ Cancel
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] Jun Mar Mar Mar Mar Mar
-### 12 Levels: Jan &lt; Feb &lt; Mar &lt; Apr &lt; May &lt; Jun &lt; Jul &lt; Aug &lt; Sep &lt; ... &lt; Dec
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] Jun Mar Mar Mar Mar Mar</span>
+<span class=gp>#</span><span class=c1>## 12 Levels: Jan &lt; Feb &lt; Mar &lt; Apr &lt; May &lt; Jun &lt; Jul &lt; Aug &lt; Sep &lt; ... &lt; Dec</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -1767,7 +1767,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 2007 2008 2008 2008 2008 2008
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 2007 2008 2008 2008 2008 2008</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>lubridate</strong> is also excellent at handling time. For example, let’s consider the following top 5, marathon times in a common <strong>hh:mm:ss</strong> format.</p>
@@ -1786,7 +1786,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] &#34;character&#34;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] &#34;character&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Now we can convert them to time format:</p>
@@ -1807,9 +1807,9 @@ Cancel
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] &#34;Period&#34;
-### attr(,&#34;package&#34;)
-### [1] &#34;lubridate&#34;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] &#34;Period&#34;</span>
+<span class=gp>#</span><span class=c1>## attr(,&#34;package&#34;)</span>
+<span class=gp>#</span><span class=c1>## [1] &#34;lubridate&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>We can do a wide range of useful transformations of time once we have the data in a time format.</p>
@@ -1828,7 +1828,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 57  3  5 13 13
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 57  3  5 13 13</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -1848,7 +1848,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 2 3 3 3 3
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 2 3 3 3 3</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -1868,7 +1868,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] &#34;7377S&#34; &#34;7383S&#34; &#34;7385S&#34; &#34;7393S&#34; &#34;7393S&#34;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] &#34;7377S&#34; &#34;7383S&#34; &#34;7385S&#34; &#34;7393S&#34; &#34;7393S&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -1888,7 +1888,7 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] &#34;6S&#34;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] &#34;6S&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id=r-markdown>R Markdown</h2>
@@ -2105,10 +2105,10 @@ Distance|42.98|36.0
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>```{r}
-library(knitr)
-knitr::kable(anscombe, caption = &#34;Anscombe&#39;s Quartet Data&#34;)
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>```{r}
+</span><span class=go>library(knitr)
+</span><span class=go>knitr::kable(anscombe, caption = &#34;Anscombe&#39;s Quartet Data&#34;)
+</span></code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
@@ -2177,7 +2177,7 @@ There is a lot of amazing things you can do with [RStudio and R Markdown](http:/
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-10-14</span>
+<span>Updated on 2021-11-07</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -2203,7 +2203,7 @@ There is a lot of amazing things you can do with [RStudio and R Markdown](http:/
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.89.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>

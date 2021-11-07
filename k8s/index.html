@@ -9,7 +9,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/k8s/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2020-02-05T06:11:32+10:00">
-<meta property="article:modified_time" content="2021-10-14T14:03:52+00:00">
+<meta property="article:modified_time" content="2021-11-07T13:55:52+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting started with Setup A Kubernetes Cluster">
@@ -17,7 +17,7 @@
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/k8s/><link rel=prev href=https://yanboyang.com/chineseinputmethod/><link rel=next href=https://yanboyang.com/enableusbsoundcardonandroid/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting started with Setup A Kubernetes Cluster","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/k8s\/"},"genre":"posts","keywords":"kubernetes","wordcount":7738,"url":"https:\/\/yanboyang.com\/k8s\/","datePublished":"2020-02-05T06:11:32+10:00","dateModified":"2021-10-14T14:03:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/k8s/><link rel=prev href=https://yanboyang.com/chineseinputmethod/><link rel=next href=https://yanboyang.com/enableusbsoundcardonandroid/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting started with Setup A Kubernetes Cluster","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/k8s\/"},"genre":"posts","keywords":"kubernetes","wordcount":7738,"url":"https:\/\/yanboyang.com\/k8s\/","datePublished":"2020-02-05T06:11:32+10:00","dateModified":"2021-11-07T13:55:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -90,7 +90,7 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting started with Setup A Kubernetes Cluster</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span></div>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-02-05>2020-02-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;7738 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;37 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
@@ -325,11 +325,11 @@ In order to install these packages, follow the steps mentioned below on Master a
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>root@k8s-master-ct:~# cat &lt;&lt;EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
-&gt; deb https://apt.kubernetes.io/ kubernetes-xenial main
-&gt; EOF
-deb https://apt.kubernetes.io/ kubernetes-xenial main
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>root@k8s-master-ct:~# cat &lt;&lt;EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
+</span><span class=go></span><span class=gp>&gt; </span>deb https://apt.kubernetes.io/ kubernetes-xenial main
+<span class=gp>&gt; </span>EOF
+<span class=go>deb https://apt.kubernetes.io/ kubernetes-xenial main
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id=step-7>Step 7</h3>
 <p>Before installing the packages, update the apt-get command:</p>
@@ -445,19 +445,19 @@ minikube can be deployed as a VM, a container, or bare-metal.</li>
 </span><span class=lnt>12
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ yay -S virtualbox
-[sudo] password for yanboyang713: 
-resolving dependencies...
-:: There are 10 providers available for VIRTUALBOX-HOST-MODULES:
-:: Repository extra
-   1) linux414-virtualbox-host-modules  2) linux419-virtualbox-host-modules
-   3) linux44-virtualbox-host-modules  4) linux49-virtualbox-host-modules
-   5) linux510-virtualbox-host-modules  6) linux54-virtualbox-host-modules
-   7) linux59-virtualbox-host-modules
-:: Repository community
-   8) linux54-rt-virtualbox-host-modules  9) linux59-rt-virtualbox-host-modules
-   10) virtualbox-host-dkms
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ yay -S virtualbox
+</span><span class=go>[sudo] password for yanboyang713: 
+</span><span class=go>resolving dependencies...
+</span><span class=go>:: There are 10 providers available for VIRTUALBOX-HOST-MODULES:
+</span><span class=go>:: Repository extra
+</span><span class=go>   1) linux414-virtualbox-host-modules  2) linux419-virtualbox-host-modules
+</span><span class=go>   3) linux44-virtualbox-host-modules  4) linux49-virtualbox-host-modules
+</span><span class=go>   5) linux510-virtualbox-host-modules  6) linux54-virtualbox-host-modules
+</span><span class=go>   7) linux59-virtualbox-host-modules
+</span><span class=go>:: Repository community
+</span><span class=go>   8) linux54-rt-virtualbox-host-modules  9) linux59-rt-virtualbox-host-modules
+</span><span class=go>   10) virtualbox-host-dkms
+</span></code></pre></td></tr></table>
 </div>
 </div><p><strong>NOTE:</strong> You virtualbox should match your linux kernel. If you don&rsquo;t know your kernel version. Please, open a terminal and type the following command to check the version of your Manjaro system’s kernel:</p>
 <div class=highlight><div class=chroma>
@@ -466,9 +466,9 @@ resolving dependencies...
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ uname -r
-5.9.11-3-MANJARO
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ uname -r
+</span><span class=go>5.9.11-3-MANJARO
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>minikube will work with Kubernetes via kubectl – install it as well:</li>
@@ -504,22 +504,22 @@ resolving dependencies...
 </span><span class=lnt>15
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang714@boyang ~]$ minikube start --driver=virtualbox
-😄  minikube v1.16.0 on Arch 20.2.1
-✨  Using the virtualbox driver based on user configuration
-💿  Downloading VM boot image ...
-    &gt; minikube-v1.16.0.iso.sha256: 65 B / 65 B [-------------] 100.00% ? p/s 0s
-    &gt; minikube-v1.16.0.iso: 212.62 MiB / 212.62 MiB [] 100.00% 25.68 MiB p/s 8s
-👍  Starting control plane node minikube in cluster minikube
-🔥  Creating virtualbox VM (CPUs=2, Memory=3900MB, Disk=20000MB) ...
-🐳  Preparing Kubernetes v1.20.0 on Docker 20.10.0 ...
-    ▪ Generating certificates and keys ...
-    ▪ Booting up control plane ...
-    ▪ Configuring RBAC rules ...
-🔎  Verifying Kubernetes components...
-🌟  Enabled addons: storage-provisioner, default-storageclass
-🏄  Done! kubectl is now configured to use &#34;minikube&#34; cluster and &#34;default&#34; namespace by default
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang714@boyang ~]$ minikube start --driver=virtualbox
+</span><span class=go>😄  minikube v1.16.0 on Arch 20.2.1
+</span><span class=go>✨  Using the virtualbox driver based on user configuration
+</span><span class=go>💿  Downloading VM boot image ...
+</span><span class=go>    &gt; minikube-v1.16.0.iso.sha256: 65 B / 65 B [-------------] 100.00% ? p/s 0s
+</span><span class=go>    &gt; minikube-v1.16.0.iso: 212.62 MiB / 212.62 MiB [] 100.00% 25.68 MiB p/s 8s
+</span><span class=go>👍  Starting control plane node minikube in cluster minikube
+</span><span class=go>🔥  Creating virtualbox VM (CPUs=2, Memory=3900MB, Disk=20000MB) ...
+</span><span class=go>🐳  Preparing Kubernetes v1.20.0 on Docker 20.10.0 ...
+</span><span class=go>    ▪ Generating certificates and keys ...
+</span><span class=go>    ▪ Booting up control plane ...
+</span><span class=go>    ▪ Configuring RBAC rules ...
+</span><span class=go>🔎  Verifying Kubernetes components...
+</span><span class=go>🌟  Enabled addons: storage-provisioner, default-storageclass
+</span><span class=go>🏄  Done! kubectl is now configured to use &#34;minikube&#34; cluster and &#34;default&#34; namespace by default
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>To make virtualbox the default driver:</li>
@@ -563,9 +563,9 @@ minikube start supports some VirtualBox specific flags:</p>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ kubectl run hello-minikube --image=gcr.io/google_containers/echoserver:1.4 --port=8080
-deployment.apps/hello-minikube created
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ kubectl run hello-minikube --image=gcr.io/google_containers/echoserver:1.4 --port=8080
+</span><span class=go>deployment.apps/hello-minikube created
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>List pods</li>
@@ -577,10 +577,10 @@ deployment.apps/hello-minikube created
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ kubectl get pod
-NAME             READY   STATUS    RESTARTS   AGE
-hello-minikube   1/1     Running   0          2m32s
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ kubectl get pod
+</span><span class=go>NAME             READY   STATUS    RESTARTS   AGE
+</span><span class=go>hello-minikube   1/1     Running   0          2m32s
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Delete Pods</li>
@@ -591,9 +591,9 @@ hello-minikube   1/1     Running   0          2m32s
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ kubectl delete pods hello-minikube
-pod &#34;hello-minikube&#34; deleted
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ kubectl delete pods hello-minikube
+</span><span class=go>pod &#34;hello-minikube&#34; deleted
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id=deployment>Deployment</h3>
 <ul>
@@ -655,14 +655,14 @@ pod &#34;hello-minikube&#34; deleted
 </span><span class=lnt>7
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ minikube service list
-|-------------|------------|--------------|-----|
-|  NAMESPACE  |    NAME    | TARGET PORT  | URL |
-|-------------|------------|--------------|-----|
-| default     | kubernetes | No node port |
-| kube-system | kube-dns   | No node port |
-|-------------|------------|--------------|-----|
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ minikube service list
+</span><span class=go>|-------------|------------|--------------|-----|
+</span><span class=go>|  NAMESPACE  |    NAME    | TARGET PORT  | URL |
+</span><span class=go>|-------------|------------|--------------|-----|
+</span><span class=go>| default     | kubernetes | No node port |
+</span><span class=go>| kube-system | kube-dns   | No node port |
+</span><span class=go>|-------------|------------|--------------|-----|
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Check the service itself</li>
@@ -688,15 +688,15 @@ pod &#34;hello-minikube&#34; deleted
 </span><span class=lnt>8
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ minikube dashboard &amp;
-[1] 9782
-[yanboyang713@boyang ~]$ 🤔  Verifying dashboard health ...
-🚀  Launching proxy ...
-🤔  Verifying proxy health ...
-🎉  Opening http://127.0.0.1:43353/api/v1/namespaces/kubernetes-dashboard:/proxy/ in your default browser...
-/usr/bin/xdg-mime: line 323: [: /home/yanboyang713/.local/share/appltor expected
-/usr/bin/xdg-mime: line 325: [: /home/yanboyang713/.local/share/applpected
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ minikube dashboard &amp;
+</span><span class=go>[1] 9782
+</span><span class=go>[yanboyang713@boyang ~]$ 🤔  Verifying dashboard health ...
+</span><span class=go>🚀  Launching proxy ...
+</span><span class=go>🤔  Verifying proxy health ...
+</span><span class=go>🎉  Opening http://127.0.0.1:43353/api/v1/namespaces/kubernetes-dashboard:/proxy/ in your default browser...
+</span><span class=go>/usr/bin/xdg-mime: line 323: [: /home/yanboyang713/.local/share/appltor expected
+</span><span class=go>/usr/bin/xdg-mime: line 325: [: /home/yanboyang713/.local/share/applpected
+</span></code></pre></td></tr></table>
 </div>
 </div><p><strong>NOTE:</strong> If hangs on &ldquo;Verifying proxy health&rdquo; or show &ldquo;Exiting due to SVC_URL_TIMEOUT: http://127.0.0.1:39481/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ is not accessible: Temporary Error: unexpected response code: 503&rdquo;
 Please, check your Minikube driver set-up: <a href=https://minikube.sigs.k8s.io/docs/drivers/ target=_blank rel="noopener noreferrer">https://minikube.sigs.k8s.io/docs/drivers/</a></p>
@@ -711,13 +711,13 @@ Please, check your Minikube driver set-up: <a href=https://minikube.sigs.k8s.io/
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ kubectl get pods -o wide
-No resources found in default namespace.
-[yanboyang713@boyang ~]$ minikube stop
-✋  Stopping node &#34;minikube&#34;  ...
-🛑  Powering off &#34;minikube&#34; via SSH ...
-🛑  1 nodes stopped.
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ kubectl get pods -o wide
+</span><span class=go>No resources found in default namespace.
+</span><span class=go>[yanboyang713@boyang ~]$ minikube stop
+</span><span class=go>✋  Stopping node &#34;minikube&#34;  ...
+</span><span class=go>🛑  Powering off &#34;minikube&#34; via SSH ...
+</span><span class=go>🛑  1 nodes stopped.
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id=run-an-application-on-kubernetes>Run an Application on Kubernetes</h2>
 <p>We have our Kubernetes cluster ready, so let’s try to deploy an application on it and understand how it happens.</p>
@@ -737,14 +737,14 @@ No resources found in default namespace.
 </span><span class=lnt>7
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ tree .
-.
-├── app.py
-├── Dockerfile
-└── requirement.txt
-
-0 directories, 3 files
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ tree .
+</span><span class=go>.
+</span><span class=go>├── app.py
+</span><span class=go>├── Dockerfile
+</span><span class=go>└── requirement.txt
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>0 directories, 3 files
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Let’s create a project called WebApp with app.py inside to handle web requests:</li>
@@ -831,14 +831,14 @@ No resources found in default namespace.
 </span><span class=lnt>8
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ minikube docker-env
-export DOCKER_TLS_VERIFY=&#34;1&#34;
-export DOCKER_HOST=&#34;tcp://192.168.99.100:2376&#34;
-export DOCKER_CERT_PATH=&#34;/home/yanboyang713/.minikube/certs&#34;
-export MINIKUBE_ACTIVE_DOCKERD=&#34;minikube&#34;
-
-## To point your shell to minikube&#39;s docker-daemon, run:
-## eval $(minikube -p minikube docker-env)
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ minikube docker-env
+</span><span class=go>export DOCKER_TLS_VERIFY=&#34;1&#34;
+</span><span class=go>export DOCKER_HOST=&#34;tcp://192.168.99.100:2376&#34;
+</span><span class=go>export DOCKER_CERT_PATH=&#34;/home/yanboyang713/.minikube/certs&#34;
+</span><span class=go>export MINIKUBE_ACTIVE_DOCKERD=&#34;minikube&#34;
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=gp>#</span><span class=c1># To point your shell to minikube&#39;s docker-daemon, run:</span>
+<span class=gp>#</span><span class=c1># eval $(minikube -p minikube docker-env)</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>When using a container or VM driver (all drivers except none), you can reuse the Docker daemon inside minikube cluster. These variables will help your docker CLI (where you write docker commands) to connect with docker daemon in the VM created by minikube !</p>
@@ -966,9 +966,9 @@ spec:
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ kubectl apply -f webapp-deployment.yaml
-deployment.apps/webapp-deployment created
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ kubectl apply -f webapp-deployment.yaml
+</span><span class=go>deployment.apps/webapp-deployment created
+</span></code></pre></td></tr></table>
 </div>
 </div><p>This command applies the configuration defined in YAML on the Kubernetes cluster. In other words, it creates a deployment named webapp-deployment.</p>
 <p><strong>NOTE:</strong> Use older version of Kubernetes (1.15) when validator accept extensions as apiVersion for Deployment and StatefulSet. We are using 1.15, so apiVersion should be apps/v1.
@@ -989,10 +989,10 @@ To convert an older Deployment to apps/v1, you can run:</p>
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ kubectl get deployment
-NAME                READY   UP-TO-DATE   AVAILABLE   AGE
-webapp-deployment   1/1     1            1           27m
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ kubectl get deployment
+</span><span class=go>NAME                READY   UP-TO-DATE   AVAILABLE   AGE
+</span><span class=go>webapp-deployment   1/1     1            1           27m
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The figure shows there is a pod running the WebApp application. The deployment spawns a ReplicaSet, which tries to maintain the state of having one pod running at all times. You can use the command at the below, show the running ReplicaSets and pods on the cluster.</p>
 <div class=highlight><div class=chroma>
@@ -1002,10 +1002,10 @@ webapp-deployment   1/1     1            1           27m
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ kubectl get replicaset -o wide
-NAME                           DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES        SELECTOR
-webapp-deployment-6c4c85876d   1         1         1       33m   webapp       web-app:1.0   app=webapp,pod-template-hash=6c4c85876d
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ kubectl get replicaset -o wide
+</span><span class=go>NAME                           DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES        SELECTOR
+</span><span class=go>webapp-deployment-6c4c85876d   1         1         1       33m   webapp       web-app:1.0   app=webapp,pod-template-hash=6c4c85876d
+</span></code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
@@ -1014,10 +1014,10 @@ webapp-deployment-6c4c85876d   1         1         1       33m   webapp       we
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ kubectl get pods -o wide
-NAME                                 READY   STATUS    RESTARTS   AGE   IP           NODE       NOMINATED NODE   READINESS GATES
-webapp-deployment-6c4c85876d-wj8t2   1/1     Running   0          34m   172.17.0.5   minikube   &lt;none&gt;           &lt;none&gt;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ kubectl get pods -o wide
+</span><span class=go>NAME                                 READY   STATUS    RESTARTS   AGE   IP           NODE       NOMINATED NODE   READINESS GATES
+</span><span class=go>webapp-deployment-6c4c85876d-wj8t2   1/1     Running   0          34m   172.17.0.5   minikube   &lt;none&gt;           &lt;none&gt;
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The pod details include an IP address. The pod is accessible to the internal network using this IP address, but as stated earlier, accessing pods directly via IP addresses is discouraged since pods are expendables and a new pod might have a different IP address. It is clear from the IP address that though the pod is accessible through this IP address inside the Kubernetes network, one may not be able to access it from the host machine. Kubectl provides a way to use a proxy for the pod and access the application from the host machine.</p>
 <div class=highlight><div class=chroma>
@@ -1027,10 +1027,10 @@ webapp-deployment-6c4c85876d-wj8t2   1/1     Running   0          34m   172.17.0
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$  kubectl port-forward webapp-deployment-6c4c85876d-wj8t2 5000:5000
-Forwarding from 127.0.0.1:5000 -&gt; 5000
-Forwarding from [::1]:5000 -&gt; 5000
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$  kubectl port-forward webapp-deployment-6c4c85876d-wj8t2 5000:5000
+</span><span class=go>Forwarding from 127.0.0.1:5000 -&gt; 5000
+</span><span class=go>Forwarding from [::1]:5000 -&gt; 5000
+</span></code></pre></td></tr></table>
 </div>
 </div><p><strong>NOTE:</strong> webapp-deployment-6c4c85876d-wj8t2 is our pod name, and 5000 is the port exposed on the pod to access the application.</p>
 <p>Now the application is accessible from the host machine. The application running on the host machine browser.</p>
@@ -1051,18 +1051,18 @@ Forwarding from [::1]:5000 -&gt; 5000
 </span><span class=lnt>11
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ kubectl logs -f webapp-deployment-6c4c85876d-wj8t2
- * Serving Flask app &#34;app&#34; (lazy loading)
- * Environment: production
-   WARNING: This is a development server. Do not use it in a production deployment.
-   Use a production WSGI server instead.
- * Debug mode: off
- * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
-127.0.0.1 - - [17/Jan/2021 18:01:56] &#34;GET / HTTP/1.1&#34; 200 -
-127.0.0.1 - - [17/Jan/2021 18:01:56] &#34;GET /favicon.ico HTTP/1.1&#34; 404 -
-127.0.0.1 - - [17/Jan/2021 18:02:43] &#34;GET / HTTP/1.1&#34; 200 -
-127.0.0.1 - - [17/Jan/2021 18:02:43] &#34;GET /favicon.ico HTTP/1.1&#34; 404 -
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ kubectl logs -f webapp-deployment-6c4c85876d-wj8t2
+</span><span class=go> * Serving Flask app &#34;app&#34; (lazy loading)
+</span><span class=go> * Environment: production
+</span><span class=go>   WARNING: This is a development server. Do not use it in a production deployment.
+</span><span class=go>   Use a production WSGI server instead.
+</span><span class=go> * Debug mode: off
+</span><span class=go> * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+</span><span class=go>127.0.0.1 - - [17/Jan/2021 18:01:56] &#34;GET / HTTP/1.1&#34; 200 -
+</span><span class=go>127.0.0.1 - - [17/Jan/2021 18:01:56] &#34;GET /favicon.ico HTTP/1.1&#34; 404 -
+</span><span class=go>127.0.0.1 - - [17/Jan/2021 18:02:43] &#34;GET / HTTP/1.1&#34; 200 -
+</span><span class=go>127.0.0.1 - - [17/Jan/2021 18:02:43] &#34;GET /favicon.ico HTTP/1.1&#34; 404 -
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id=kubernetes-service>Kubernetes Service</h2>
 <p>Kubernetes pods are expendable. ReplicaSet creates and destroys pods in the process of scaling up and down; therefore, accessing the pods via an IP address is not a reliable solution. Then how do microservices inside Kubernetes communicate with other microservices? The answer is Kubernetes services. Let’s try to understand the concept of services. Kubernetes services provide a virtual IP-based bridge to access the pods. One may access a single pod or may refer to a group of pods at the same time. There can be two types of interactions.</p>
@@ -1108,9 +1108,9 @@ Before explaining this, let’s expose our web application via a service.</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ kubectl apply -f webapp-service.yaml
-service/webservice created
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ kubectl apply -f webapp-service.yaml
+</span><span class=go>service/webservice created
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Verify that the service is created successfully using this:</p>
 <div class=highlight><div class=chroma>
@@ -1130,20 +1130,20 @@ service/webservice created
 </span><span class=lnt>13
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ kubectl describe service webservice
-Name:              webservice
-Namespace:         default
-Labels:            &lt;none&gt;
-Annotations:       &lt;none&gt;
-Selector:          app=webapp
-Type:              ClusterIP
-IP:                10.100.103.159
-Port:              &lt;unset&gt;  80/TCP
-TargetPort:        5000/TCP
-Endpoints:         172.17.0.5:5000
-Session Affinity:  None
-Events:            &lt;none&gt;
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ kubectl describe service webservice
+</span><span class=go>Name:              webservice
+</span><span class=go>Namespace:         default
+</span><span class=go>Labels:            &lt;none&gt;
+</span><span class=go>Annotations:       &lt;none&gt;
+</span><span class=go>Selector:          app=webapp
+</span><span class=go>Type:              ClusterIP
+</span><span class=go>IP:                10.100.103.159
+</span><span class=go>Port:              &lt;unset&gt;  80/TCP
+</span><span class=go>TargetPort:        5000/TCP
+</span><span class=go>Endpoints:         172.17.0.5:5000
+</span><span class=go>Session Affinity:  None
+</span><span class=go>Events:            &lt;none&gt;
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The service is assigned a cluster IP address of 10.100.103.159. Any microservice inside the cluster will be able to access the service using this IP address via port 80.</p>
 <p>Now, let’s try to understand the two types of service interactions possible in a Kubernetes cluster.</p>
@@ -1177,26 +1177,26 @@ When a pod is launched in a node, Kubectl declares all the running services to b
 </span><span class=lnt>19
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ kubectl exec --stdin --tty webapp-deployment-6c4c85876d-wj8t2 -- /bin/bash
-root@webapp-deployment-6c4c85876d-wj8t2:/app# env
-LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
-HOSTNAME=webapp-deployment-6c4c85876d-wj8t2
-KUBERNETES_PORT_443_TCP_PROTO=tcp
-KUBERNETES_PORT_443_TCP_ADDR=10.96.0.1
-KUBERNETES_PORT=tcp://10.96.0.1:443
-PWD=/app
-HOME=/root
-KUBERNETES_SERVICE_PORT_HTTPS=443
-KUBERNETES_PORT_443_TCP_PORT=443
-KUBERNETES_PORT_443_TCP=tcp://10.96.0.1:443
-TERM=xterm
-SHLVL=1
-KUBERNETES_SERVICE_PORT=443
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-KUBERNETES_SERVICE_HOST=10.96.0.1
-_=/usr/bin/env
-root@webapp-deployment-6c4c85876d-wj8t2:/app# 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ kubectl exec --stdin --tty webapp-deployment-6c4c85876d-wj8t2 -- /bin/bash
+</span><span class=go>root@webapp-deployment-6c4c85876d-wj8t2:/app# env
+</span><span class=go>LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+</span><span class=go>HOSTNAME=webapp-deployment-6c4c85876d-wj8t2
+</span><span class=go>KUBERNETES_PORT_443_TCP_PROTO=tcp
+</span><span class=go>KUBERNETES_PORT_443_TCP_ADDR=10.96.0.1
+</span><span class=go>KUBERNETES_PORT=tcp://10.96.0.1:443
+</span><span class=go>PWD=/app
+</span><span class=go>HOME=/root
+</span><span class=go>KUBERNETES_SERVICE_PORT_HTTPS=443
+</span><span class=go>KUBERNETES_PORT_443_TCP_PORT=443
+</span><span class=go>KUBERNETES_PORT_443_TCP=tcp://10.96.0.1:443
+</span><span class=go>TERM=xterm
+</span><span class=go>SHLVL=1
+</span><span class=go>KUBERNETES_SERVICE_PORT=443
+</span><span class=go>PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+</span><span class=go>KUBERNETES_SERVICE_HOST=10.96.0.1
+</span><span class=go>_=/usr/bin/env
+</span><span class=go>root@webapp-deployment-6c4c85876d-wj8t2:/app# 
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li><strong>DNS</strong>:
@@ -1262,20 +1262,20 @@ Though this is not a default setup, it is an optional but recommended add-on for
 </span><span class=lnt>13
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ cat webapp-service-loadbalancer.yaml 
-apiVersion: v1
-kind: Service
-metadata:
-  name: webservice
-spec:
-  type: LoadBalancer
-  selector:
-    app: webapp
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 5000
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ cat webapp-service-loadbalancer.yaml 
+</span><span class=go>apiVersion: v1
+</span><span class=go>kind: Service
+</span><span class=go>metadata:
+</span><span class=go>  name: webservice
+</span><span class=go>spec:
+</span><span class=go>  type: LoadBalancer
+</span><span class=go>  selector:
+</span><span class=go>    app: webapp
+</span><span class=go>  ports:
+</span><span class=go>  - protocol: TCP
+</span><span class=go>    port: 80
+</span><span class=go>    targetPort: 5000
+</span></code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
@@ -1284,10 +1284,10 @@ spec:
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ kubectl get service webservice
-NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
-webservice   ClusterIP   10.100.103.159   &lt;none&gt;        80/TCP    38h
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ kubectl get service webservice
+</span><span class=go>NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+</span><span class=go>webservice   ClusterIP   10.100.103.159   &lt;none&gt;        80/TCP    38h
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Once a service is created using this configuration, a developer can check the external IP address of the service using this:</p>
 <div class=highlight><div class=chroma>
@@ -1299,12 +1299,12 @@ webservice   ClusterIP   10.100.103.159   &lt;none&gt;        80/TCP    38h
 </span><span class=lnt>5
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ kubectl apply -f webapp-service-loadbalancer.yaml 
-service/webservice configured
-[yanboyang713@boyang WebApp]$ kubectl get service webservice
-NAME         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
-webservice   LoadBalancer   10.100.103.159   &lt;pending&gt;     80:32302/TCP   38h
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ kubectl apply -f webapp-service-loadbalancer.yaml 
+</span><span class=go>service/webservice configured
+</span><span class=go>[yanboyang713@boyang WebApp]$ kubectl get service webservice
+</span><span class=go>NAME         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+</span><span class=go>webservice   LoadBalancer   10.100.103.159   &lt;pending&gt;     80:32302/TCP   38h
+</span></code></pre></td></tr></table>
 </div>
 </div><p>We do not get the external IP address since we are running our application on Minikube. On the cloud, the external IP is populated with a value.</p>
 <div class=highlight><div class=chroma>
@@ -1329,25 +1329,25 @@ webservice   LoadBalancer   10.100.103.159   &lt;pending&gt;     80:32302/TCP   
 </span><span class=lnt>18
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ kubectl describe service webservice
-Name:                     webservice
-Namespace:                default
-Labels:                   &lt;none&gt;
-Annotations:              &lt;none&gt;
-Selector:                 app=webapp
-Type:                     LoadBalancer
-IP:                       10.100.103.159
-Port:                     &lt;unset&gt;  80/TCP
-TargetPort:               5000/TCP
-NodePort:                 &lt;unset&gt;  32302/TCP
-Endpoints:                172.17.0.5:5000
-Session Affinity:         None
-External Traffic Policy:  Cluster
-Events:
-  Type    Reason  Age   From                Message
-  ----    ------  ----  ----                -------
-  Normal  Type    91s   service-controller  ClusterIP -&gt; LoadBalancer
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ kubectl describe service webservice
+</span><span class=go>Name:                     webservice
+</span><span class=go>Namespace:                default
+</span><span class=go>Labels:                   &lt;none&gt;
+</span><span class=go>Annotations:              &lt;none&gt;
+</span><span class=go>Selector:                 app=webapp
+</span><span class=go>Type:                     LoadBalancer
+</span><span class=go>IP:                       10.100.103.159
+</span><span class=go>Port:                     &lt;unset&gt;  80/TCP
+</span><span class=go>TargetPort:               5000/TCP
+</span><span class=go>NodePort:                 &lt;unset&gt;  32302/TCP
+</span><span class=go>Endpoints:                172.17.0.5:5000
+</span><span class=go>Session Affinity:         None
+</span><span class=go>External Traffic Policy:  Cluster
+</span><span class=go>Events:
+</span><span class=go>  Type    Reason  Age   From                Message
+</span><span class=go>  ----    ------  ----  ----                -------
+</span><span class=go>  Normal  Type    91s   service-controller  ClusterIP -&gt; LoadBalancer
+</span></code></pre></td></tr></table>
 </div>
 </div><h4 id=externalname>ExternalName</h4>
 <p>This simply maps the service to an address using a CNAME record. These are typically used when using an external service from within a cluster and abstracting out the actual link of the external service. There are a example shows a simple service with the type ExternalName.</p>
@@ -1363,15 +1363,15 @@ Events:
 </span><span class=lnt>8
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ cat database-external-name.yaml 
-apiVersion: v1
-kind: Service
-metadata:
-  name: db1
-spec:
-  type: ExternalName
-  externalName: mysql01.database.test.com
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ cat database-external-name.yaml 
+</span><span class=go>apiVersion: v1
+</span><span class=go>kind: Service
+</span><span class=go>metadata:
+</span><span class=go>  name: db1
+</span><span class=go>spec:
+</span><span class=go>  type: ExternalName
+</span><span class=go>  externalName: mysql01.database.test.com
+</span></code></pre></td></tr></table>
 </div>
 </div><p>When internal pods look for the service db1, they receive a CNAME record of mysql01.database.text.com. There is no forwarding involved; only a single redirection happens at the DNS level. ExternalName also allows a developer to add a custom IP address to a service through which the service can be accessed by clients. The IP assignment is the sole responsibility of the cluster manager; it doesn’t come from Kubernetes. There is an example of an external IP assignment to a service.</p>
 <div class=highlight><div class=chroma>
@@ -1393,22 +1393,22 @@ spec:
 </span><span class=lnt>15
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ cat externalIpAssignedService.yaml 
-apiVersion: v1
-kind: Service
-metadata:
-  name: externalIpAssignedService
-spec:
-  selector:
-    app: externalIpService
-  ports:
-  - name: http
-    protocol: TCP
-    port: 80
-    targetPort: 9000
-  externalIPs:
-  - 70.34.1.23
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ cat externalIpAssignedService.yaml 
+</span><span class=go>apiVersion: v1
+</span><span class=go>kind: Service
+</span><span class=go>metadata:
+</span><span class=go>  name: externalIpAssignedService
+</span><span class=go>spec:
+</span><span class=go>  selector:
+</span><span class=go>    app: externalIpService
+</span><span class=go>  ports:
+</span><span class=go>  - name: http
+</span><span class=go>    protocol: TCP
+</span><span class=go>    port: 80
+</span><span class=go>    targetPort: 9000
+</span><span class=go>  externalIPs:
+</span><span class=go>  - 70.34.1.23
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Kubernetes, as defined earlier, is a self-healing platform. Let’s try to play around a bit with the cluster and see the role of Kubernetes services in it.</p>
 <h3 id=kubernetes-is-self-healing>Kubernetes Is Self-Healing</h3>
@@ -1429,19 +1429,19 @@ spec:
 </span><span class=lnt>12
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ kubectl get deployments
-NAME                READY   UP-TO-DATE   AVAILABLE   AGE
-webapp-deployment   1/1     1            1           40h
-[yanboyang713@boyang WebApp]$ kubectl scale --replicas=2 deployment webapp-deployment
-deployment.apps/webapp-deployment scaled
-[yanboyang713@boyang WebApp]$ kubectl get deployments
-NAME                READY   UP-TO-DATE   AVAILABLE   AGE
-webapp-deployment   2/2     2            2           40h
-[yanboyang713@boyang WebApp]$ kubectl get pods
-NAME                                 READY   STATUS    RESTARTS   AGE
-webapp-deployment-6c4c85876d-h4qgg   1/1     Running   0          27s
-webapp-deployment-6c4c85876d-wj8t2   1/1     Running   0          40h
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ kubectl get deployments
+</span><span class=go>NAME                READY   UP-TO-DATE   AVAILABLE   AGE
+</span><span class=go>webapp-deployment   1/1     1            1           40h
+</span><span class=go>[yanboyang713@boyang WebApp]$ kubectl scale --replicas=2 deployment webapp-deployment
+</span><span class=go>deployment.apps/webapp-deployment scaled
+</span><span class=go>[yanboyang713@boyang WebApp]$ kubectl get deployments
+</span><span class=go>NAME                READY   UP-TO-DATE   AVAILABLE   AGE
+</span><span class=go>webapp-deployment   2/2     2            2           40h
+</span><span class=go>[yanboyang713@boyang WebApp]$ kubectl get pods
+</span><span class=go>NAME                                 READY   STATUS    RESTARTS   AGE
+</span><span class=go>webapp-deployment-6c4c85876d-h4qgg   1/1     Running   0          27s
+</span><span class=go>webapp-deployment-6c4c85876d-wj8t2   1/1     Running   0          40h
+</span></code></pre></td></tr></table>
 </div>
 </div><p>If one tries to kill any of the pods, the replication controller tries to reinstate the state and spawn a new pod. Let’s try killing one of the pods to see the state of the application.</p>
 <div class=highlight><div class=chroma>
@@ -1454,13 +1454,13 @@ webapp-deployment-6c4c85876d-wj8t2   1/1     Running   0          40h
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ kubectl delete pod webapp-deployment-6c4c85876d-h4qgg
-pod &#34;webapp-deployment-6c4c85876d-h4qgg&#34; deleted
-[yanboyang713@boyang WebApp]$ kubectl get pods
-NAME                                 READY   STATUS    RESTARTS   AGE
-webapp-deployment-6c4c85876d-jnf7r   1/1     Running   0          42s
-webapp-deployment-6c4c85876d-wj8t2   1/1     Running   0          40h
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ kubectl delete pod webapp-deployment-6c4c85876d-h4qgg
+</span><span class=go>pod &#34;webapp-deployment-6c4c85876d-h4qgg&#34; deleted
+</span><span class=go>[yanboyang713@boyang WebApp]$ kubectl get pods
+</span><span class=go>NAME                                 READY   STATUS    RESTARTS   AGE
+</span><span class=go>webapp-deployment-6c4c85876d-jnf7r   1/1     Running   0          42s
+</span><span class=go>webapp-deployment-6c4c85876d-wj8t2   1/1     Running   0          40h
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Through this, Kubernetes tries to keep the service available at all times.</p>
 <h2 id=add-a-microservice>Add a Microservice</h2>
@@ -1508,44 +1508,44 @@ webapp-deployment-6c4c85876d-wj8t2   1/1     Running   0          40h
 </span><span class=lnt>37
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ cat frontend-deployment.yaml 
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: frontend-deployment
-  labels:
-    app: frontend
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: frontend
-    template:
-      metadata:
-        labels:
-          app: frontend
-      spec:
-        containers:
-        - name: frontend
-        image: frontend:1.0
-        imagePullPolicy: Never
-        ports:
-        - containerPort: 8080
-
-[yanboyang713@boyang WebApp]$ cat frontend-service.yaml 
-apiVersion: v1
-kind: Service
-metadata:
-  name: frontendservice
-spec:
-  selector:
-    app: frontend
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8080
-
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ cat frontend-deployment.yaml 
+</span><span class=go>apiVersion: apps/v1
+</span><span class=go>kind: Deployment
+</span><span class=go>metadata:
+</span><span class=go>  name: frontend-deployment
+</span><span class=go>  labels:
+</span><span class=go>    app: frontend
+</span><span class=go>spec:
+</span><span class=go>  replicas: 1
+</span><span class=go>  selector:
+</span><span class=go>    matchLabels:
+</span><span class=go>      app: frontend
+</span><span class=go>    template:
+</span><span class=go>      metadata:
+</span><span class=go>        labels:
+</span><span class=go>          app: frontend
+</span><span class=go>      spec:
+</span><span class=go>        containers:
+</span><span class=go>        - name: frontend
+</span><span class=go>        image: frontend:1.0
+</span><span class=go>        imagePullPolicy: Never
+</span><span class=go>        ports:
+</span><span class=go>        - containerPort: 8080
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>[yanboyang713@boyang WebApp]$ cat frontend-service.yaml 
+</span><span class=go>apiVersion: v1
+</span><span class=go>kind: Service
+</span><span class=go>metadata:
+</span><span class=go>  name: frontendservice
+</span><span class=go>spec:
+</span><span class=go>  selector:
+</span><span class=go>    app: frontend
+</span><span class=go>  ports:
+</span><span class=go>  - protocol: TCP
+</span><span class=go>    port: 80
+</span><span class=go>    targetPort: 8080
+</span><span class=go></span><span class=err>
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Let’s try to proxy to the new service to get the app running.</p>
 <p>Reducing the replica count to 0 for the webapp service.</p>
@@ -1579,21 +1579,21 @@ To minimize downtime, multiple deployment techniques are used, such as blue-gree
 </span><span class=lnt>14
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ cat appV2.py 
-from flask import Flask
-import datetime
-
-app = Flask(__name__)
-
-@app.route(&#34;/&#34;)
-def main():
-    currentDT = datetime.datetime.now()
-    return &#34;Welcome user! current time is &#34; + str(currentDT)
-
-if __name__ == &#34;__main__&#34;:
-    app.run(host=&#39;0.0.0.0&#39;)
-
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ cat appV2.py 
+</span><span class=go>from flask import Flask
+</span><span class=go>import datetime
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>app = Flask(__name__)
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>@app.route(&#34;/&#34;)
+</span><span class=go>def main():
+</span><span class=go>    currentDT = datetime.datetime.now()
+</span><span class=go>    return &#34;Welcome user! current time is &#34; + str(currentDT)
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>if __name__ == &#34;__main__&#34;:
+</span><span class=go>    app.run(host=&#39;0.0.0.0&#39;)
+</span><span class=go></span><span class=err>
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Create a new container by following the same process as stated earlier. Below shows the modified deployment file with the upgraded container details.</p>
 <div class=highlight><div class=chroma>
@@ -1624,31 +1624,31 @@ if __name__ == &#34;__main__&#34;:
 </span><span class=lnt>24
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ cat webapp-deployment-v2.yaml 
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: webapp-deployment
-  labels:
-    app: webapp
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: webapp
-  template:
-    metadata:
-      labels:
-        app: webapp
-    spec:
-      containers:
-      - name: webapp
-        image: web-app:2.0
-        imagePullPolicy: Never
-        ports:
-        - containerPort: 5000
-
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ cat webapp-deployment-v2.yaml 
+</span><span class=go>apiVersion: apps/v1
+</span><span class=go>kind: Deployment
+</span><span class=go>metadata:
+</span><span class=go>  name: webapp-deployment
+</span><span class=go>  labels:
+</span><span class=go>    app: webapp
+</span><span class=go>spec:
+</span><span class=go>  replicas: 1
+</span><span class=go>  selector:
+</span><span class=go>    matchLabels:
+</span><span class=go>      app: webapp
+</span><span class=go>  template:
+</span><span class=go>    metadata:
+</span><span class=go>      labels:
+</span><span class=go>        app: webapp
+</span><span class=go>    spec:
+</span><span class=go>      containers:
+</span><span class=go>      - name: webapp
+</span><span class=go>        image: web-app:2.0
+</span><span class=go>        imagePullPolicy: Never
+</span><span class=go>        ports:
+</span><span class=go>        - containerPort: 5000
+</span><span class=go></span><span class=err>
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Let’s deploy the application on a cluster using this:</p>
 <div class=highlight><div class=chroma>
@@ -1688,27 +1688,27 @@ spec:
 </span><span class=lnt>20
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ cat appV3.py 
-from flask import Flask
-import datetime
-import time
-
-time.sleep(60)
-app = Flask(__name__)
-
-@app.route(&#34;/&#34;)
-def main():
-    currentDT = datetime.datetime.now()
-    return &#34;Welcome user! current time in v3 is &#34; + str(currentDT)
-
-@app.route(&#34;/health&#34;)
-def health():
-    return &#34;OK&#34;
-
-if __name__ == &#34;__main__&#34;:
-    app.run(host=&#39;0.0.0.0&#39;)
-
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ cat appV3.py 
+</span><span class=go>from flask import Flask
+</span><span class=go>import datetime
+</span><span class=go>import time
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>time.sleep(60)
+</span><span class=go>app = Flask(__name__)
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>@app.route(&#34;/&#34;)
+</span><span class=go>def main():
+</span><span class=go>    currentDT = datetime.datetime.now()
+</span><span class=go>    return &#34;Welcome user! current time in v3 is &#34; + str(currentDT)
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>@app.route(&#34;/health&#34;)
+</span><span class=go>def health():
+</span><span class=go>    return &#34;OK&#34;
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>if __name__ == &#34;__main__&#34;:
+</span><span class=go>    app.run(host=&#39;0.0.0.0&#39;)
+</span><span class=go></span><span class=err>
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Create a new container with the tag web-app:3.0 and add it to the deployment file.</p>
 <div class=highlight><div class=chroma>
@@ -1744,36 +1744,36 @@ if __name__ == &#34;__main__&#34;:
 </span><span class=lnt>29
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ cat webapp-deployment-v3.yaml 
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: webapp-deployment
-  labels:
-    app: webapp
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: webapp
-  template:
-    metadata:
-      labels:
-        app: webapp
-    spec:
-      containers:
-      - name: webapp
-        image: web-app:3.0
-        imagePullPolicy: Never
-        ports:
-        - containerPort: 5000
-        readinessProbe:
-          httpGet:
-            path: /health
-            port: 5000
-          initialDelaySeconds: 40
-
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ cat webapp-deployment-v3.yaml 
+</span><span class=go>apiVersion: apps/v1
+</span><span class=go>kind: Deployment
+</span><span class=go>metadata:
+</span><span class=go>  name: webapp-deployment
+</span><span class=go>  labels:
+</span><span class=go>    app: webapp
+</span><span class=go>spec:
+</span><span class=go>  replicas: 1
+</span><span class=go>  selector:
+</span><span class=go>    matchLabels:
+</span><span class=go>      app: webapp
+</span><span class=go>  template:
+</span><span class=go>    metadata:
+</span><span class=go>      labels:
+</span><span class=go>        app: webapp
+</span><span class=go>    spec:
+</span><span class=go>      containers:
+</span><span class=go>      - name: webapp
+</span><span class=go>        image: web-app:3.0
+</span><span class=go>        imagePullPolicy: Never
+</span><span class=go>        ports:
+</span><span class=go>        - containerPort: 5000
+</span><span class=go>        readinessProbe:
+</span><span class=go>          httpGet:
+</span><span class=go>            path: /health
+</span><span class=go>            port: 5000
+</span><span class=go>          initialDelaySeconds: 40
+</span><span class=go></span><span class=err>
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The readiness probe initializes with an initial delay of 40 seconds. If one already knows that an application deployment takes some time, this can be stated in initialDelaySeconds to avoid unnecessary checks on the application. After the initial delay, Kubelet does regular checks on the /health link, and when the link is up, the pod is moved to a ready state to accept traffic. There shows the status of deployment at different times.</p>
 <p>Let’s see what happened in the background.</p>
@@ -1818,35 +1818,35 @@ spec:
 </span><span class=lnt>28
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ cat appStopAfter60sec.py 
-from flask import Flask
-import datetime
-import time
-import threading
-import os
-
-time.sleep(60)
-app = Flask(__name__)
-
-@app.route(&#34;/&#34;)
-def main():
-    currentDT = datetime.datetime.now()
-    return &#34;Welcome user! current time is &#34; + str(currentDT)
-
-@app.route(&#34;/health&#34;)
-def health():
-    return &#34;OK&#34;
-
-def exit_after():
-    time.sleep(60)
-    os._exit(1)
-
-exit_thread = threading.Thread(target=exit_after)
-exit_thread.start()
-
-if __name__ == &#34;__main__&#34;:
-    app.run(host=&#39;0.0.0.0&#39;)
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ cat appStopAfter60sec.py 
+</span><span class=go>from flask import Flask
+</span><span class=go>import datetime
+</span><span class=go>import time
+</span><span class=go>import threading
+</span><span class=go>import os
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>time.sleep(60)
+</span><span class=go>app = Flask(__name__)
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>@app.route(&#34;/&#34;)
+</span><span class=go>def main():
+</span><span class=go>    currentDT = datetime.datetime.now()
+</span><span class=go>    return &#34;Welcome user! current time is &#34; + str(currentDT)
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>@app.route(&#34;/health&#34;)
+</span><span class=go>def health():
+</span><span class=go>    return &#34;OK&#34;
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>def exit_after():
+</span><span class=go>    time.sleep(60)
+</span><span class=go>    os._exit(1)
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>exit_thread = threading.Thread(target=exit_after)
+</span><span class=go>exit_thread.start()
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>if __name__ == &#34;__main__&#34;:
+</span><span class=go>    app.run(host=&#39;0.0.0.0&#39;)
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Create a new container with the tag web-app:4.0 and add it to deployment file.</p>
 <div class=highlight><div class=chroma>
@@ -1887,41 +1887,41 @@ if __name__ == &#34;__main__&#34;:
 </span><span class=lnt>34
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang WebApp]$ cat webapp-deployment-v4.yaml 
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: webapp-deployment
-  labels:
-    app: webapp
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: webapp
-  template:
-    metadata:
-      labels:
-        app: webapp
-    spec:
-      containers:
-      - name: webapp
-        image: web-app:4.0
-        imagePullPolicy: Never
-        ports:
-        - containerPort: 5000
-        readinessProbe:
-          httpGet:
-            path: /health
-            port: 5000
-          initialDelaySeconds: 40
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 5000
-          initialDelaySeconds: 120
-
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang WebApp]$ cat webapp-deployment-v4.yaml 
+</span><span class=go>apiVersion: apps/v1
+</span><span class=go>kind: Deployment
+</span><span class=go>metadata:
+</span><span class=go>  name: webapp-deployment
+</span><span class=go>  labels:
+</span><span class=go>    app: webapp
+</span><span class=go>spec:
+</span><span class=go>  replicas: 1
+</span><span class=go>  selector:
+</span><span class=go>    matchLabels:
+</span><span class=go>      app: webapp
+</span><span class=go>  template:
+</span><span class=go>    metadata:
+</span><span class=go>      labels:
+</span><span class=go>        app: webapp
+</span><span class=go>    spec:
+</span><span class=go>      containers:
+</span><span class=go>      - name: webapp
+</span><span class=go>        image: web-app:4.0
+</span><span class=go>        imagePullPolicy: Never
+</span><span class=go>        ports:
+</span><span class=go>        - containerPort: 5000
+</span><span class=go>        readinessProbe:
+</span><span class=go>          httpGet:
+</span><span class=go>            path: /health
+</span><span class=go>            port: 5000
+</span><span class=go>          initialDelaySeconds: 40
+</span><span class=go>        livenessProbe:
+</span><span class=go>          httpGet:
+</span><span class=go>            path: /health
+</span><span class=go>            port: 5000
+</span><span class=go>          initialDelaySeconds: 120
+</span><span class=go></span><span class=err>
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The liveness probe initializes with a delay of 120 seconds. Since we already know the application bootup time takes 60 seconds, it’s no use to restart the app before it even boots up. The same process as redinessProbe is followed to check the health of the application.</p>
 <p>Assuming our application fails at some point after the deployment, this is how Kubernetes tries to recover it:</p>
@@ -1937,7 +1937,7 @@ spec:
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-10-14</span>
+<span>Updated on 2021-11-07</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -1963,7 +1963,7 @@ spec:
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.89.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>

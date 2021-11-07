@@ -9,7 +9,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/esxi/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-04-09T06:11:32+10:00">
-<meta property="article:modified_time" content="2021-10-14T14:03:52+00:00">
+<meta property="article:modified_time" content="2021-11-07T13:55:52+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="ESXi">
@@ -17,7 +17,7 @@
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/esxi/><link rel=prev href=https://yanboyang.com/flink/><link rel=next href=https://yanboyang.com/scala/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"ESXi","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/esxi\/"},"genre":"posts","wordcount":1041,"url":"https:\/\/yanboyang.com\/esxi\/","datePublished":"2021-04-09T06:11:32+10:00","dateModified":"2021-10-14T14:03:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/esxi/><link rel=prev href=https://yanboyang.com/flink/><link rel=next href=https://yanboyang.com/scala/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"ESXi","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/esxi\/"},"genre":"posts","wordcount":1041,"url":"https:\/\/yanboyang.com\/esxi\/","datePublished":"2021-04-09T06:11:32+10:00","dateModified":"2021-11-07T13:55:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -90,7 +90,7 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">ESXi</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span></div>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-04-09>2021-04-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1041 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
@@ -139,21 +139,21 @@ Cancel
 </span><span class=lnt>14
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ sudo fdisk -l
-[sudo] password for yanboyang713: 
-Disk /dev/nvme0n1: 465.76 GiB, 500107862016 bytes, 976773168 sectors
-Disk model: CT500P1SSD8                             
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disklabel type: gpt
-Disk identifier: 0B01F91F-D62C-6A4F-BDED-D81DB5D8A3F6
-
-Device             Start       End   Sectors   Size Type
-/dev/nvme0n1p1      4096    618495    614400   300M EFI System
-/dev/nvme0n1p2    618496 940843216 940224721 448.3G Linux filesystem
-/dev/nvme0n1p3 940843217 976768064  35924848  17.1G Linux swap
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ sudo fdisk -l
+</span><span class=go>[sudo] password for yanboyang713: 
+</span><span class=go>Disk /dev/nvme0n1: 465.76 GiB, 500107862016 bytes, 976773168 sectors
+</span><span class=go>Disk model: CT500P1SSD8                             
+</span><span class=go>Units: sectors of 1 * 512 = 512 bytes
+</span><span class=go>Sector size (logical/physical): 512 bytes / 512 bytes
+</span><span class=go>I/O size (minimum/optimal): 512 bytes / 512 bytes
+</span><span class=go>Disklabel type: gpt
+</span><span class=go>Disk identifier: 0B01F91F-D62C-6A4F-BDED-D81DB5D8A3F6
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Device             Start       End   Sectors   Size Type
+</span><span class=go>/dev/nvme0n1p1      4096    618495    614400   300M EFI System
+</span><span class=go>/dev/nvme0n1p2    618496 940843216 940224721 448.3G Linux filesystem
+</span><span class=go>/dev/nvme0n1p3 940843217 976768064  35924848  17.1G Linux swap
+</span></code></pre></td></tr></table>
 </div>
 </div><p>(2). Plug in your USB flash drive.
 (3). list disk again</p>
@@ -186,32 +186,32 @@ Device             Start       End   Sectors   Size Type
 </span><span class=lnt>25
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ sudo fdisk -l
-Disk /dev/nvme0n1: 465.76 GiB, 500107862016 bytes, 976773168 sectors
-Disk model: CT500P1SSD8                             
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disklabel type: gpt
-Disk identifier: 0B01F91F-D62C-6A4F-BDED-D81DB5D8A3F6
-
-Device             Start       End   Sectors   Size Type
-/dev/nvme0n1p1      4096    618495    614400   300M EFI System
-/dev/nvme0n1p2    618496 940843216 940224721 448.3G Linux filesystem
-/dev/nvme0n1p3 940843217 976768064  35924848  17.1G Linux swap
-
-
-Disk /dev/sda: 3.8 GiB, 4081057792 bytes, 7970816 sectors
-Disk model: USB Flash Disk  
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disklabel type: dos
-Disk identifier: 0x673666e2
-
-Device     Boot Start     End Sectors  Size Id Type
-/dev/sda1        2048 7970815 7968768  3.8G  b W95 FAT32
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ sudo fdisk -l
+</span><span class=go>Disk /dev/nvme0n1: 465.76 GiB, 500107862016 bytes, 976773168 sectors
+</span><span class=go>Disk model: CT500P1SSD8                             
+</span><span class=go>Units: sectors of 1 * 512 = 512 bytes
+</span><span class=go>Sector size (logical/physical): 512 bytes / 512 bytes
+</span><span class=go>I/O size (minimum/optimal): 512 bytes / 512 bytes
+</span><span class=go>Disklabel type: gpt
+</span><span class=go>Disk identifier: 0B01F91F-D62C-6A4F-BDED-D81DB5D8A3F6
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Device             Start       End   Sectors   Size Type
+</span><span class=go>/dev/nvme0n1p1      4096    618495    614400   300M EFI System
+</span><span class=go>/dev/nvme0n1p2    618496 940843216 940224721 448.3G Linux filesystem
+</span><span class=go>/dev/nvme0n1p3 940843217 976768064  35924848  17.1G Linux swap
+</span><span class=go></span><span class=err>
+</span><span class=err>
+</span><span class=err></span><span class=go>Disk /dev/sda: 3.8 GiB, 4081057792 bytes, 7970816 sectors
+</span><span class=go>Disk model: USB Flash Disk  
+</span><span class=go>Units: sectors of 1 * 512 = 512 bytes
+</span><span class=go>Sector size (logical/physical): 512 bytes / 512 bytes
+</span><span class=go>I/O size (minimum/optimal): 512 bytes / 512 bytes
+</span><span class=go>Disklabel type: dos
+</span><span class=go>Disk identifier: 0x673666e2
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Device     Boot Start     End Sectors  Size Id Type
+</span><span class=go>/dev/sda1        2048 7970815 7968768  3.8G  b W95 FAT32
+</span></code></pre></td></tr></table>
 </div>
 </div><p><strong>NOTE:</strong> As you can see your disk is <em><strong>/dev/sda</strong></em>.</p>
 <ol start=2>
@@ -229,15 +229,15 @@ Device     Boot Start     End Sectors  Size Id Type
 </span><span class=lnt>8
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ sudo fdisk /dev/sda
-
-Welcome to fdisk (util-linux 2.36.2).
-Changes will remain in memory only, until you decide to write them.
-Be careful before using the write command.
-
-
-Command (m for help): 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ sudo fdisk /dev/sda
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Welcome to fdisk (util-linux 2.36.2).
+</span><span class=go>Changes will remain in memory only, until you decide to write them.
+</span><span class=go>Be careful before using the write command.
+</span><span class=go></span><span class=err>
+</span><span class=err>
+</span><span class=err></span><span class=go>Command (m for help): 
+</span></code></pre></td></tr></table>
 </div>
 </div><p>a. Enter d to delete partitions until they are all deleted.
 b. Enter n to create a primary partition 1 that extends over the entire disk.
@@ -327,85 +327,85 @@ f. Enter w to write the partition table and exit the program.</p>
 </span><span class=lnt>78
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ sudo fdisk /dev/sda
-
-Welcome to fdisk (util-linux 2.36.2).
-Changes will remain in memory only, until you decide to write them.
-Be careful before using the write command.
-
-
-Command (m for help): d
-Selected partition 1
-Partition 1 has been deleted.
-
-Command (m for help): p
-Disk /dev/sda: 3.8 GiB, 4081057792 bytes, 7970816 sectors
-Disk model: USB Flash Disk  
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disklabel type: dos
-Disk identifier: 0x673666e2
-
-Command (m for help): n
-Partition type
-   p   primary (0 primary, 0 extended, 4 free)
-   e   extended (container for logical partitions)
-Select (default p): p
-Partition number (1-4, default 1): 
-First sector (2048-7970815, default 2048): 
-Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-7970815, default 7970815): 
-
-Created a new partition 1 of type &#39;Linux&#39; and of size 3.8 GiB.
-Partition #1 contains a vfat signature.
-
-Do you want to remove the signature? [Y]es/[N]o: Y
-
-The signature will be removed by a write command.
-
-Command (m for help): p
-Disk /dev/sda: 3.8 GiB, 4081057792 bytes, 7970816 sectors
-Disk model: USB Flash Disk  
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disklabel type: dos
-Disk identifier: 0x673666e2
-
-Device     Boot Start     End Sectors  Size Id Type
-/dev/sda1        2048 7970815 7968768  3.8G 83 Linux
-
-Filesystem/RAID signature on partition 1 will be wiped.
-
-Command (m for help): t
-Selected partition 1
-Hex code or alias (type L to list all): c
-Changed type of partition &#39;Linux&#39; to &#39;W95 FAT32 (LBA)&#39;.
-
-Command (m for help): a
-Selected partition 1
-The bootable flag on partition 1 is enabled now.
-
-Command (m for help): p
-Disk /dev/sda: 3.8 GiB, 4081057792 bytes, 7970816 sectors
-Disk model: USB Flash Disk  
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disklabel type: dos
-Disk identifier: 0x673666e2
-
-Device     Boot Start     End Sectors  Size Id Type
-/dev/sda1  *     2048 7970815 7968768  3.8G  c W95 FAT32 (LBA)
-
-Filesystem/RAID signature on partition 1 will be wiped.
-
-Command (m for help): w
-The partition table has been altered.
-Syncing disks.
-
-[yanboyang713@boyang ~]$
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ sudo fdisk /dev/sda
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Welcome to fdisk (util-linux 2.36.2).
+</span><span class=go>Changes will remain in memory only, until you decide to write them.
+</span><span class=go>Be careful before using the write command.
+</span><span class=go></span><span class=err>
+</span><span class=err>
+</span><span class=err></span><span class=go>Command (m for help): d
+</span><span class=go>Selected partition 1
+</span><span class=go>Partition 1 has been deleted.
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Command (m for help): p
+</span><span class=go>Disk /dev/sda: 3.8 GiB, 4081057792 bytes, 7970816 sectors
+</span><span class=go>Disk model: USB Flash Disk  
+</span><span class=go>Units: sectors of 1 * 512 = 512 bytes
+</span><span class=go>Sector size (logical/physical): 512 bytes / 512 bytes
+</span><span class=go>I/O size (minimum/optimal): 512 bytes / 512 bytes
+</span><span class=go>Disklabel type: dos
+</span><span class=go>Disk identifier: 0x673666e2
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Command (m for help): n
+</span><span class=go>Partition type
+</span><span class=go>   p   primary (0 primary, 0 extended, 4 free)
+</span><span class=go>   e   extended (container for logical partitions)
+</span><span class=go>Select (default p): p
+</span><span class=go>Partition number (1-4, default 1): 
+</span><span class=go>First sector (2048-7970815, default 2048): 
+</span><span class=go>Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-7970815, default 7970815): 
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Created a new partition 1 of type &#39;Linux&#39; and of size 3.8 GiB.
+</span><span class=go>Partition #1 contains a vfat signature.
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Do you want to remove the signature? [Y]es/[N]o: Y
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>The signature will be removed by a write command.
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Command (m for help): p
+</span><span class=go>Disk /dev/sda: 3.8 GiB, 4081057792 bytes, 7970816 sectors
+</span><span class=go>Disk model: USB Flash Disk  
+</span><span class=go>Units: sectors of 1 * 512 = 512 bytes
+</span><span class=go>Sector size (logical/physical): 512 bytes / 512 bytes
+</span><span class=go>I/O size (minimum/optimal): 512 bytes / 512 bytes
+</span><span class=go>Disklabel type: dos
+</span><span class=go>Disk identifier: 0x673666e2
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Device     Boot Start     End Sectors  Size Id Type
+</span><span class=go>/dev/sda1        2048 7970815 7968768  3.8G 83 Linux
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Filesystem/RAID signature on partition 1 will be wiped.
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Command (m for help): t
+</span><span class=go>Selected partition 1
+</span><span class=go>Hex code or alias (type L to list all): c
+</span><span class=go>Changed type of partition &#39;Linux&#39; to &#39;W95 FAT32 (LBA)&#39;.
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Command (m for help): a
+</span><span class=go>Selected partition 1
+</span><span class=go>The bootable flag on partition 1 is enabled now.
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Command (m for help): p
+</span><span class=go>Disk /dev/sda: 3.8 GiB, 4081057792 bytes, 7970816 sectors
+</span><span class=go>Disk model: USB Flash Disk  
+</span><span class=go>Units: sectors of 1 * 512 = 512 bytes
+</span><span class=go>Sector size (logical/physical): 512 bytes / 512 bytes
+</span><span class=go>I/O size (minimum/optimal): 512 bytes / 512 bytes
+</span><span class=go>Disklabel type: dos
+</span><span class=go>Disk identifier: 0x673666e2
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Device     Boot Start     End Sectors  Size Id Type
+</span><span class=go>/dev/sda1  *     2048 7970815 7968768  3.8G  c W95 FAT32 (LBA)
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Filesystem/RAID signature on partition 1 will be wiped.
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Command (m for help): w
+</span><span class=go>The partition table has been altered.
+</span><span class=go>Syncing disks.
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>[yanboyang713@boyang ~]$
+</span></code></pre></td></tr></table>
 </div>
 </div><ol start=3>
 <li>Format the USB flash drive with the Fat32 file system.</li>
@@ -416,9 +416,9 @@ Syncing disks.
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ sudo mkfs.vfat -F 32 -n USB /dev/sda1
-mkfs.fat 4.2 (2021-01-31)
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ sudo mkfs.vfat -F 32 -n USB /dev/sda1
+</span><span class=go>mkfs.fat 4.2 (2021-01-31)
+</span></code></pre></td></tr></table>
 </div>
 </div><p>On Linux run the command:</p>
 <div class=highlight><div class=chroma>
@@ -429,11 +429,11 @@ mkfs.fat 4.2 (2021-01-31)
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang Downloads]$ sudo dd if=./VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso of=/dev/sda bs=500MB
-0+1 records in
-0+1 records out
-367314944 bytes (367 MB, 350 MiB) copied, 96.6084 s, 3.8 MB/s
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang Downloads]$ sudo dd if=./VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso of=/dev/sda bs=500MB
+</span><span class=go>0+1 records in
+</span><span class=go>0+1 records out
+</span><span class=go>367314944 bytes (367 MB, 350 MiB) copied, 96.6084 s, 3.8 MB/s
+</span></code></pre></td></tr></table>
 </div>
 </div><p>You can verify that the image was written correctly with md5sum. For Linux run the below commands and the 2 values generated by md5sum should match.</p>
 <div class=highlight><div class=chroma>
@@ -444,11 +444,11 @@ mkfs.fat 4.2 (2021-01-31)
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang Downloads]$ md5sum ./VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso 
-220d2e87290f50c3508214cadf66b737  ./VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso
-[yanboyang713@boyang Downloads]$ ls -l VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso 
--rw-r--r-- 1 yanboyang713 yanboyang713 367314944 Apr 19 03:06 VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang Downloads]$ md5sum ./VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso 
+</span><span class=go>220d2e87290f50c3508214cadf66b737  ./VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso
+</span><span class=go>[yanboyang713@boyang Downloads]$ ls -l VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso 
+</span><span class=go>-rw-r--r-- 1 yanboyang713 yanboyang713 367314944 Apr 19 03:06 VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso
+</span></code></pre></td></tr></table>
 </div>
 </div><p>In the output of the ls command, you’ll see the size of the file. Use that in the following command (367314944 is the below example).</p>
 <div class=highlight><div class=chroma>
@@ -457,15 +457,15 @@ mkfs.fat 4.2 (2021-01-31)
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang Downloads]$ dd if=/dev/sda bs=367314944 count=1 2&gt; /dev/null | md5sum
-d41d8cd98f00b204e9800998ecf8427e  -
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang Downloads]$ dd if=/dev/sda bs=367314944 count=1 2&gt; /dev/null | md5sum
+</span><span class=go>d41d8cd98f00b204e9800998ecf8427e  -
+</span></code></pre></td></tr></table>
 </div>
 </div></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-10-14</span>
+<span>Updated on 2021-11-07</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -491,7 +491,7 @@ d41d8cd98f00b204e9800998ecf8427e  -
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.89.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>

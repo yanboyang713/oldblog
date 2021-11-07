@@ -11,7 +11,7 @@ Mininet:
  Provides a simple and inexpensive network testbed for developing OpenFlow applications Enables multiple concurrent developers to work independently on the same topology Supports system-level regression tests, which are repeatable and easily packaged Enables complex topology testing, without the need to wire up a physical network Includes a CLI that is topology-aware and OpenFlow-aware, for debugging or running network-wide tests Supports arbitrary custom topologies, and includes a basic set of parametrized topologies is usable out of the box without programming, but also Provides a straightforward and extensible Python API for network creation and experimentation.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/mininet/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:modified_time" content="2021-10-14T14:03:52+00:00">
+<meta property="article:modified_time" content="2021-11-07T13:55:52+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting Started Mininet">
@@ -22,7 +22,7 @@ Mininet:
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/mininet/><link rel=prev href=https://yanboyang.com/ffmpeg/><link rel=next href=https://yanboyang.com/essentialmathematics/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started Mininet","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/mininet\/"},"genre":"posts","keywords":"mininet, SDN","wordcount":1047,"url":"https:\/\/yanboyang.com\/mininet\/","dateModified":"2021-10-14T14:03:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/mininet/><link rel=prev href=https://yanboyang.com/passwordmaster/><link rel=next href=https://yanboyang.com/essentialmathematics/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started Mininet","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/mininet\/"},"genre":"posts","keywords":"mininet, SDN","wordcount":1047,"url":"https:\/\/yanboyang.com\/mininet\/","dateModified":"2021-11-07T13:55:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -95,7 +95,7 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting Started Mininet</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/networking/><i class="far fa-folder fa-fw"></i>Networking</a></span></div>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/networking/><i class="far fa-folder fa-fw"></i>Networking</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1047 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
@@ -195,24 +195,24 @@ Cancel
 </span><span class=lnt>17
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ sudo mn
-*** Creating network
-*** Adding controller
-*** Adding hosts:
-h1 h2 
-*** Adding switches:
-s1 
-*** Adding links:
-(h1, s1) (h2, s1) 
-*** Configuring hosts
-h1 h2 
-*** Starting controller
-c0 
-*** Starting 1 switches
-s1 ...
-*** Starting CLI:
-mininet&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ sudo mn
+</span><span class=go>*** Creating network
+</span><span class=go>*** Adding controller
+</span><span class=go>*** Adding hosts:
+</span><span class=go>h1 h2 
+</span><span class=go>*** Adding switches:
+</span><span class=go>s1 
+</span><span class=go>*** Adding links:
+</span><span class=go>(h1, s1) (h2, s1) 
+</span><span class=go>*** Configuring hosts
+</span><span class=go>h1 h2 
+</span><span class=go>*** Starting controller
+</span><span class=go>c0 
+</span><span class=go>*** Starting 1 switches
+</span><span class=go>s1 ...
+</span><span class=go>*** Starting CLI:
+</span><span class=go>mininet&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><p><strong>NOTE:</strong>
 If you faced &ldquo;ovs-vsctl: unix:/run/openvswitch/db.sock: database connection failed (No such file or directory) ovs-vsctl exited with code 1 Error connecting to ovs-db with ovs-vsctl Make sure that Open vSwitch is installed, that ovsdb-server is running, and that &ldquo;ovs-vsctl show&rdquo; works correctly.</p>
@@ -237,13 +237,13 @@ sudo systemctl <span class=nb>enable</span> ovs-vswitchd.service
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>mininet&gt; net
-h1 h1-eth0:s1-eth1
-h2 h2-eth0:s1-eth2
-s1 lo:  s1-eth1:h1-eth0 s1-eth2:h2-eth0
-c0
-mininet&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>mininet&gt; net
+</span><span class=go>h1 h1-eth0:s1-eth1
+</span><span class=go>h2 h2-eth0:s1-eth2
+</span><span class=go>s1 lo:  s1-eth1:h1-eth0 s1-eth2:h2-eth0
+</span><span class=go>c0
+</span><span class=go>mininet&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
@@ -253,11 +253,11 @@ mininet&gt;
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>mininet&gt; links
-h1-eth0&lt;-&gt;s1-eth1 (OK OK) 
-h2-eth0&lt;-&gt;s1-eth2 (OK OK) 
-mininet&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>mininet&gt; links
+</span><span class=go>h1-eth0&lt;-&gt;s1-eth1 (OK OK) 
+</span><span class=go>h2-eth0&lt;-&gt;s1-eth2 (OK OK) 
+</span><span class=go>mininet&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
@@ -274,18 +274,18 @@ mininet&gt;
 </span><span class=lnt>11
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>mininet&gt; exit
-*** Stopping 1 controllers
-c0 
-*** Stopping 2 links
-..
-*** Stopping 1 switches
-s1 
-*** Stopping 2 hosts
-h1 h2 
-*** Done
-completed in 896.731 seconds
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>mininet&gt; exit
+</span><span class=go>*** Stopping 1 controllers
+</span><span class=go>c0 
+</span><span class=go>*** Stopping 2 links
+</span><span class=go>..
+</span><span class=go>*** Stopping 1 switches
+</span><span class=go>s1 
+</span><span class=go>*** Stopping 2 hosts
+</span><span class=go>h1 h2 
+</span><span class=go>*** Done
+</span><span class=go>completed in 896.731 seconds
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id=practice-two>Practice Two</h2>
 <p><img class=lazyload src=/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1616950557/mininet/practiceTwo_idqc3a.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1616950557/mininet/practiceTwo_idqc3a.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1616950557/mininet/practiceTwo_idqc3a.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1616950557/mininet/practiceTwo_idqc3a.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1616950557/mininet/practiceTwo_idqc3a.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1616950557/mininet/practiceTwo_idqc3a.png></p>
@@ -310,24 +310,24 @@ completed in 896.731 seconds
 </span><span class=lnt>17
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ sudo mn --topo=single,3
-*** Creating network
-*** Adding controller
-*** Adding hosts:
-h1 h2 h3 
-*** Adding switches:
-s1 
-*** Adding links:
-(h1, s1) (h2, s1) (h3, s1) 
-*** Configuring hosts
-h1 h2 h3 
-*** Starting controller
-c0 
-*** Starting 1 switches
-s1 ...
-*** Starting CLI:
-mininet&gt; 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ sudo mn --topo=single,3
+</span><span class=go>*** Creating network
+</span><span class=go>*** Adding controller
+</span><span class=go>*** Adding hosts:
+</span><span class=go>h1 h2 h3 
+</span><span class=go>*** Adding switches:
+</span><span class=go>s1 
+</span><span class=go>*** Adding links:
+</span><span class=go>(h1, s1) (h2, s1) (h3, s1) 
+</span><span class=go>*** Configuring hosts
+</span><span class=go>h1 h2 h3 
+</span><span class=go>*** Starting controller
+</span><span class=go>c0 
+</span><span class=go>*** Starting 1 switches
+</span><span class=go>s1 ...
+</span><span class=go>*** Starting CLI:
+</span><span class=go>mininet&gt; 
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id=practice-three>Practice Three</h2>
 <div class=highlight><div class=chroma>
@@ -359,32 +359,32 @@ mininet&gt;
 </span><span class=lnt>25
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ sudo mn -c
-[sudo] password for yanboyang713: 
-*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
-killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2&gt; /dev/null
-killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2&gt; /dev/null
-pkill -9 -f &#34;sudo mnexec&#34;
-*** Removing junk from /tmp
-rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
-*** Removing old X11 tunnels
-*** Removing excess kernel datapaths
-ps ax | egrep -o &#39;dp[0-9]+&#39; | sed &#39;s/dp/nl:/&#39;
-***  Removing OVS datapaths
-ovs-vsctl --timeout=1 list-br
-ovs-vsctl --timeout=1 list-br
-*** Removing all links of the pattern foo-ethX
-ip link show | egrep -o &#39;([-_.[:alnum:]]+-eth[[:digit:]]+)&#39;
-ip link show
-*** Killing stale mininet node processes
-pkill -9 -f mininet:
-*** Shutting down stale tunnels
-pkill -9 -f Tunnel=Ethernet
-pkill -9 -f .ssh/mn
-rm -f ~/.ssh/mn/*
-*** Cleanup complete.
-[yanboyang713@boyang ~]$ 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ sudo mn -c
+</span><span class=go>[sudo] password for yanboyang713: 
+</span><span class=go>*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+</span><span class=go>killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2&gt; /dev/null
+</span><span class=go>killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2&gt; /dev/null
+</span><span class=go>pkill -9 -f &#34;sudo mnexec&#34;
+</span><span class=go>*** Removing junk from /tmp
+</span><span class=go>rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+</span><span class=go>*** Removing old X11 tunnels
+</span><span class=go>*** Removing excess kernel datapaths
+</span><span class=go>ps ax | egrep -o &#39;dp[0-9]+&#39; | sed &#39;s/dp/nl:/&#39;
+</span><span class=go>***  Removing OVS datapaths
+</span><span class=go>ovs-vsctl --timeout=1 list-br
+</span><span class=go>ovs-vsctl --timeout=1 list-br
+</span><span class=go>*** Removing all links of the pattern foo-ethX
+</span><span class=go>ip link show | egrep -o &#39;([-_.[:alnum:]]+-eth[[:digit:]]+)&#39;
+</span><span class=go>ip link show
+</span><span class=go>*** Killing stale mininet node processes
+</span><span class=go>pkill -9 -f mininet:
+</span><span class=go>*** Shutting down stale tunnels
+</span><span class=go>pkill -9 -f Tunnel=Ethernet
+</span><span class=go>pkill -9 -f .ssh/mn
+</span><span class=go>rm -f ~/.ssh/mn/*
+</span><span class=go>*** Cleanup complete.
+</span><span class=go>[yanboyang713@boyang ~]$ 
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id=practice-four>Practice Four</h2>
 <ul>
@@ -407,7 +407,7 @@ sudo mn &ndash;custom file.py &ndash;topo mytopo</li>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-10-14</span>
+<span>Updated on 2021-11-07</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -426,14 +426,14 @@ sudo mn &ndash;custom file.py &ndash;topo mytopo</li>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>
 </div>
-<div class=post-nav><a href=/ffmpeg/ class=prev rel=prev title="Getting started with FFmpeg"><i class="fas fa-angle-left fa-fw"></i>Getting started with FFmpeg</a>
+<div class=post-nav><a href=/passwordmaster/ class=prev rel=prev title="Getting Started with Password Master (Bitwarden)"><i class="fas fa-angle-left fa-fw"></i>Getting Started with Password Master (Bitwarden)</a>
 <a href=/essentialmathematics/ class=next rel=next title="Essential Mathematics">Essential Mathematics<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id=comments><div id=disqus_thread class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.89.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>

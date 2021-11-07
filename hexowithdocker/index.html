@@ -11,7 +11,7 @@ Why we choose Hexo After comparing a multitude of offerings, I settled on the ex
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/hexowithdocker/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2020-02-05T06:11:32+10:00">
-<meta property="article:modified_time" content="2021-10-14T14:03:52+00:00">
+<meta property="article:modified_time" content="2021-11-07T13:55:52+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Creating a Hexo blog with Docker">
@@ -21,7 +21,7 @@ Why we choose Hexo After comparing a multitude of offerings, I settled on the ex
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/hexowithdocker/><link rel=prev href=https://yanboyang.com/hugo/><link rel=next href=https://yanboyang.com/manjaro/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Creating a Hexo blog with Docker","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/hexowithdocker\/"},"genre":"posts","keywords":"Hexo, Blog","wordcount":1798,"url":"https:\/\/yanboyang.com\/hexowithdocker\/","datePublished":"2020-02-05T06:11:32+10:00","dateModified":"2021-10-14T14:03:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/hexowithdocker/><link rel=prev href=https://yanboyang.com/hugo/><link rel=next href=https://yanboyang.com/manjaro/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Creating a Hexo blog with Docker","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/hexowithdocker\/"},"genre":"posts","keywords":"Hexo, Blog","wordcount":1798,"url":"https:\/\/yanboyang.com\/hexowithdocker\/","datePublished":"2020-02-05T06:11:32+10:00","dateModified":"2021-11-07T13:55:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -94,7 +94,7 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Creating a Hexo blog with Docker</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/blog/><i class="far fa-folder fa-fw"></i>Blog</a></span></div>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/blog/><i class="far fa-folder fa-fw"></i>Blog</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-02-05>2020-02-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1798 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
@@ -191,15 +191,15 @@ Cancel
 </span><span class=lnt>8
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang Documents]$ git clone https://github.com/yanboyang713/yanboyang.github.io.git
-Cloning into &#39;yanboyang.github.io&#39;...
-remote: Enumerating objects: 760, done.
-remote: Counting objects: 100% (760/760), done.
-remote: Compressing objects: 100% (148/148), done.
-remote: Total 760 (delta 289), reused 743 (delta 276), pack-reused 0
-Receiving objects: 100% (760/760), 4.13 MiB | 1.88 MiB/s, done.
-Resolving deltas: 100% (289/289), done.
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang Documents]$ git clone https://github.com/yanboyang713/yanboyang.github.io.git
+</span><span class=go>Cloning into &#39;yanboyang.github.io&#39;...
+</span><span class=go>remote: Enumerating objects: 760, done.
+</span><span class=go>remote: Counting objects: 100% (760/760), done.
+</span><span class=go>remote: Compressing objects: 100% (148/148), done.
+</span><span class=go>remote: Total 760 (delta 289), reused 743 (delta 276), pack-reused 0
+</span><span class=go>Receiving objects: 100% (760/760), 4.13 MiB | 1.88 MiB/s, done.
+</span><span class=go>Resolving deltas: 100% (289/289), done.
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id=docker-image-build>Docker image build</h3>
 <div class=highlight><div class=chroma>
@@ -250,20 +250,20 @@ You can run:</p>
 </span><span class=lnt>13
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang yanboyang.github.io]$ docker create --name=yanboyang.com \
-&gt; -e HEXO_SERVER_PORT=4001 \
-&gt; -e GIT_USER=&#34;Boyang Yan&#34; \
-&gt; -e GIT_EMAIL=&#34;yanboyang713@gmail.com&#34; \
-&gt; -v /home/yanboyang713/Documents/yanboyang.github.io:/app \
-&gt; -p 4001:4001 \
-&gt; spurin/hexo
-782be92ed7722d81f496c06b5cd350f38b570679ccd444c0cf07fdfbdcba24d6
-
-[yanboyang713@boyang yanboyang.github.io]$ docker container ls -a
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
-782be92ed772        spurin/hexo         &#34;docker-entrypoint.s…&#34;   10 seconds ago      Created                                 yanboyang.com
-
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang yanboyang.github.io]$ docker create --name=yanboyang.com \
+</span><span class=go></span><span class=gp>&gt; </span>-e <span class=nv>HEXO_SERVER_PORT</span><span class=o>=</span><span class=m>4001</span> <span class=se>\
+</span><span class=se></span><span class=gp>&gt; </span>-e <span class=nv>GIT_USER</span><span class=o>=</span><span class=s2>&#34;Boyang Yan&#34;</span> <span class=se>\
+</span><span class=se></span><span class=gp>&gt; </span>-e <span class=nv>GIT_EMAIL</span><span class=o>=</span><span class=s2>&#34;yanboyang713@gmail.com&#34;</span> <span class=se>\
+</span><span class=se></span><span class=gp>&gt; </span>-v /home/yanboyang713/Documents/yanboyang.github.io:/app <span class=se>\
+</span><span class=se></span><span class=gp>&gt; </span>-p 4001:4001 <span class=se>\
+</span><span class=se></span><span class=gp>&gt; </span>spurin/hexo
+<span class=go>782be92ed7722d81f496c06b5cd350f38b570679ccd444c0cf07fdfbdcba24d6
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>[yanboyang713@boyang yanboyang.github.io]$ docker container ls -a
+</span><span class=go>CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+</span><span class=go>782be92ed772        spurin/hexo         &#34;docker-entrypoint.s…&#34;   10 seconds ago      Created                                 yanboyang.com
+</span><span class=go></span><span class=err>
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id=start-yanboyangcom>Start yanboyang.com</h3>
 <div class=highlight><div class=chroma>
@@ -312,22 +312,22 @@ a</p>
 </span><span class=lnt>15
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang newBlog]$ docker exec -it yanboyang.com bash
-root@6e0c33f789be:/app# ls
-_config.landscape.yml  db.json	     package-lock.json	scaffolds  themes
-_config.yml	       node_modules  package.json	source	   yarn.lock
-root@6e0c33f789be:/app# git clone https://github.com/theme-next/hexo-theme-next themes/next
-Cloning into &#39;themes/next&#39;...
-remote: Enumerating objects: 12564, done.
-remote: Total 12564 (delta 0), reused 0 (delta 0), pack-reused 12564
-Receiving objects: 100% (12564/12564), 8.00 MiB | 2.59 MiB/s, done.
-Resolving deltas: 100% (7996/7996), done.
-root@6e0c33f789be:/app# ls
-_config.landscape.yml  db.json	     package-lock.json	scaffolds  themes
-_config.yml	       node_modules  package.json	source	   yarn.lock
-root@6e0c33f789be:/app# exit
-exit
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang newBlog]$ docker exec -it yanboyang.com bash
+</span><span class=go>root@6e0c33f789be:/app# ls
+</span><span class=go>_config.landscape.yml  db.json	     package-lock.json	scaffolds  themes
+</span><span class=go>_config.yml	       node_modules  package.json	source	   yarn.lock
+</span><span class=go>root@6e0c33f789be:/app# git clone https://github.com/theme-next/hexo-theme-next themes/next
+</span><span class=go>Cloning into &#39;themes/next&#39;...
+</span><span class=go>remote: Enumerating objects: 12564, done.
+</span><span class=go>remote: Total 12564 (delta 0), reused 0 (delta 0), pack-reused 12564
+</span><span class=go>Receiving objects: 100% (12564/12564), 8.00 MiB | 2.59 MiB/s, done.
+</span><span class=go>Resolving deltas: 100% (7996/7996), done.
+</span><span class=go>root@6e0c33f789be:/app# ls
+</span><span class=go>_config.landscape.yml  db.json	     package-lock.json	scaffolds  themes
+</span><span class=go>_config.yml	       node_modules  package.json	source	   yarn.lock
+</span><span class=go>root@6e0c33f789be:/app# exit
+</span><span class=go>exit
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id=blog-configuration>Blog Configuration</h3>
 <p>The next change, is to our blog configuration file which again, is now accessible in two ways</p>
@@ -367,14 +367,14 @@ sudo chmod <span class=m>777</span> ./next/
 </span><span class=lnt>7
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang newBlog]$ docker exec -it yanboyang.com bash
-root@6e0c33f789be:/app# ls
-_config.landscape.yml  _config.yml.old	node_modules	   package.json  scaffolds  themes
-_config.yml	       db.json		package-lock.json  public	 source     yarn.lock
-root@6e0c33f789be:/app# echo hexo-deployer-git &gt;&gt; requirements.txt
-root@6e0c33f789be:/app# exit
-exit
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang newBlog]$ docker exec -it yanboyang.com bash
+</span><span class=go>root@6e0c33f789be:/app# ls
+</span><span class=go>_config.landscape.yml  _config.yml.old	node_modules	   package.json  scaffolds  themes
+</span><span class=go>_config.yml	       db.json		package-lock.json  public	 source     yarn.lock
+</span><span class=go>root@6e0c33f789be:/app# echo hexo-deployer-git &gt;&gt; requirements.txt
+</span><span class=go>root@6e0c33f789be:/app# exit
+</span><span class=go>exit
+</span></code></pre></td></tr></table>
 </div>
 </div><p>After making these change, if you’re in the running container, exit and then restart the Docker container.</p>
 <div class=highlight><div class=chroma>
@@ -382,8 +382,8 @@ exit
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang newBlog]$ docker restart yanboyang.com &amp;&amp; docker logs --follow yanboyang.com
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang newBlog]$ docker restart yanboyang.com &amp;&amp; docker logs --follow yanboyang.com
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id=using-the-ssh-deploy-key>Using the SSH Deploy Key</h3>
 <p>We’re going to use SSH keys to deploy our site to Github, this is conveniently done as part of the application generation and we can use the SSH key generated, i.e.</p>
@@ -435,10 +435,10 @@ Please, check &ldquo;Allow write sccess&rdquo;</p>
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ docker exec -it yanboyang.com bash
-root@b3feb661344f:/app# echo www.yanboyang.com &gt; source/CNAME
-exit
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>docker <span class=nb>exec</span> -it yanboyang.com bash
+<span class=go>root@b3feb661344f:/app# echo www.yanboyang.com &gt; source/CNAME
+</span><span class=go>exit
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Edit _config.yml and update the deployment section with your own github settings.</p>
 <div class=highlight><div class=chroma>
@@ -503,10 +503,10 @@ $ docker <span class=nb>exec</span> yanboyang.com hexo generate
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang yanboyang.github.io]$ echo /public/* &gt;&gt; .gitignore
-[yanboyang713@boyang yanboyang.github.io]$ cat .gitignore 
-/public/*
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang yanboyang.github.io]$ echo /public/* &gt;&gt; .gitignore
+</span><span class=go>[yanboyang713@boyang yanboyang.github.io]$ cat .gitignore 
+</span><span class=go>/public/*
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id=commit-and-push-develop-code-to-github-main-branch>Commit and Push develop code to Github main branch</h3>
 <div class=highlight><div class=chroma>
@@ -603,7 +603,7 @@ git push
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-10-14</span>
+<span>Updated on 2021-11-07</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -629,7 +629,7 @@ git push
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.89.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>

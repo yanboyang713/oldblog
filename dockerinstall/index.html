@@ -10,7 +10,7 @@ Step 1 — Installing Docker The Docker installation package available in the of
 First, update your existing list of packages:">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/dockerinstall/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:modified_time" content="2021-10-14T14:03:52+00:00">
+<meta property="article:modified_time" content="2021-11-07T13:55:52+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="How to install Docker, Nvidia Docker and Docker Compose">
@@ -20,7 +20,7 @@ First, update your existing list of packages:">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/dockerinstall/><link rel=prev href=https://yanboyang.com/tensorflowgpusupport/><link rel=next href=https://yanboyang.com/passwordmaster/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"How to install Docker, Nvidia Docker and Docker Compose","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dockerinstall\/"},"genre":"posts","keywords":"Docker","wordcount":2880,"url":"https:\/\/yanboyang.com\/dockerinstall\/","dateModified":"2021-10-14T14:03:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/dockerinstall/><link rel=prev href=https://yanboyang.com/tensorflowgpusupport/><link rel=next href=https://yanboyang.com/passwordmaster/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"How to install Docker, Nvidia Docker and Docker Compose","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dockerinstall\/"},"genre":"posts","keywords":"Docker","wordcount":2880,"url":"https:\/\/yanboyang.com\/dockerinstall\/","dateModified":"2021-11-07T13:55:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -93,7 +93,7 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">How to install Docker, Nvidia Docker and Docker Compose</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/virtual-environment/><i class="far fa-folder fa-fw"></i>virtual environment</a></span></div>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/virtual-environment/><i class="far fa-folder fa-fw"></i>virtual environment</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2880 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;14 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
@@ -190,9 +190,9 @@ Cancel
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyyan-ms:~$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-OK
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyyan-ms:~$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+</span><span class=go>OK
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Verify that you now have the key with the fingerprint 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88, by searching for the last 8 characters of the fingerprint.</p>
 <div class=highlight><div class=chroma>
@@ -204,12 +204,12 @@ OK
 </span><span class=lnt>5
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>boyyan-ms:~$ sudo apt-key fingerprint 0EBFCD88
-pub   rsa4096 2017-02-22 [SCEA]
-      9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
-uid           [ unknown] Docker Release (CE deb) &lt;docker@docker.com&gt;
-sub   rsa4096 2017-02-22 [S]
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyyan-ms:~$ sudo apt-key fingerprint 0EBFCD88
+</span><span class=go>pub   rsa4096 2017-02-22 [SCEA]
+</span><span class=go>      9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+</span><span class=go>uid           [ unknown] Docker Release (CE deb) &lt;docker@docker.com&gt;
+</span><span class=go>sub   rsa4096 2017-02-22 [S]
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Add the Docker repository to APT sources:
 <strong>For x86_64 / amd64:</strong></p>
@@ -228,18 +228,18 @@ sub   rsa4096 2017-02-22 [S]
 </span><span class=lnt>11
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=nx>boyyan</span><span class=o>-</span><span class=nx>ms</span><span class=p>:</span><span class=err>~$</span> <span class=nx>sudo</span> <span class=nx>add</span><span class=o>-</span><span class=nx>apt</span><span class=o>-</span><span class=nx>repository</span> \
-<span class=p>&gt;</span>    <span class=s>&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-</span><span class=s>&gt;    $(lsb_release -cs) \
-</span><span class=s>&gt;    stable&#34;</span>
-<span class=nx>Get</span><span class=p>:</span><span class=mi>1</span> <span class=nx>https</span><span class=p>:</span><span class=c1>//download.docker.com/linux/ubuntu focal InRelease [36.2 kB]
-</span><span class=c1></span><span class=nx>Get</span><span class=p>:</span><span class=mi>2</span> <span class=nx>https</span><span class=p>:</span><span class=c1>//download.docker.com/linux/ubuntu focal/stable amd64 Packages [4226 B]
-</span><span class=c1></span><span class=nx>Hit</span><span class=p>:</span><span class=mi>3</span> <span class=nx>http</span><span class=p>:</span><span class=c1>//archive.ubuntu.com/ubuntu focal InRelease
-</span><span class=c1></span><span class=nx>Get</span><span class=p>:</span><span class=mi>4</span> <span class=nx>http</span><span class=p>:</span><span class=c1>//archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
-</span><span class=c1></span><span class=nx>Get</span><span class=p>:</span><span class=mi>5</span> <span class=nx>http</span><span class=p>:</span><span class=c1>//archive.ubuntu.com/ubuntu focal-security InRelease [109 kB]
-</span><span class=c1></span><span class=nx>Fetched</span> <span class=mi>263</span> <span class=nx>kB</span> <span class=nx>in</span> <span class=mi>2</span><span class=nf>s</span> <span class=p>(</span><span class=mi>128</span> <span class=nx>kB</span><span class=o>/</span><span class=nx>s</span><span class=p>)</span>  
-<span class=nx>Reading</span> <span class=kn>package</span> <span class=nx>lists</span><span class=o>...</span> <span class=nx>Done</span>
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>boyyan-ms:~$ sudo add-apt-repository \
+</span><span class=go></span><span class=gp>&gt;    </span><span class=s2>&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+</span><span class=s2></span><span class=gp>&gt;    </span><span class=k>$(</span>lsb_release -cs<span class=k>)</span> <span class=se>\
+</span><span class=se></span><span class=gp>&gt;    </span>stable<span class=s2>&#34;
+</span><span class=s2></span><span class=go>Get:1 https://download.docker.com/linux/ubuntu focal InRelease [36.2 kB]
+</span><span class=go>Get:2 https://download.docker.com/linux/ubuntu focal/stable amd64 Packages [4226 B]
+</span><span class=go>Hit:3 http://archive.ubuntu.com/ubuntu focal InRelease
+</span><span class=go>Get:4 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+</span><span class=go>Get:5 http://archive.ubuntu.com/ubuntu focal-security InRelease [109 kB]
+</span><span class=go>Fetched 263 kB in 2s (128 kB/s)  
+</span><span class=go>Reading package lists... Done
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Next, update the package database with the Docker packages from the newly added repo:</p>
 <div class=highlight><div class=chroma>
@@ -284,27 +284,27 @@ sub   rsa4096 2017-02-22 [S]
 </span><span class=lnt>20
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>(base) yanboyang713@boyang:~/Documents/docker-as-dev-environment$ sudo systemctl status docker
-● docker.service - Docker Application Container Engine
-   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
-   Active: active (running) since Fri 2020-10-09 15:28:29 CST; 1 day 2h ago
-     Docs: https://docs.docker.com
- Main PID: 1701 (dockerd)
-    Tasks: 21
-   CGroup: /system.slice/docker.service
-           └─1701 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
-
-Oct 09 15:28:28 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:28.951155226+08:00&#34; level=warning msg=&#34;Y
-Oct 09 15:28:28 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:28.951158322+08:00&#34; level=warning msg=&#34;Y
-Oct 09 15:28:28 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:28.951164075+08:00&#34; level=warning msg=&#34;Y
-Oct 09 15:28:28 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:28.951254105+08:00&#34; level=info msg=&#34;Load
-Oct 09 15:28:29 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:29.081341203+08:00&#34; level=info msg=&#34;Defa
-Oct 09 15:28:29 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:29.106837782+08:00&#34; level=info msg=&#34;Load
-Oct 09 15:28:29 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:29.138925271+08:00&#34; level=info msg=&#34;Dock
-Oct 09 15:28:29 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:29.139550992+08:00&#34; level=info msg=&#34;Daem
-Oct 09 15:28:29 boyang systemd[1]: Started Docker Application Container Engine.
-Oct 09 15:28:29 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:29.151309815+08:00&#34; level=info msg=&#34;API
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>(base) yanboyang713@boyang:~/Documents/docker-as-dev-environment$ sudo systemctl status docker
+</span><span class=go>● docker.service - Docker Application Container Engine
+</span><span class=go>   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+</span><span class=go>   Active: active (running) since Fri 2020-10-09 15:28:29 CST; 1 day 2h ago
+</span><span class=go>     Docs: https://docs.docker.com
+</span><span class=go> Main PID: 1701 (dockerd)
+</span><span class=go>    Tasks: 21
+</span><span class=go>   CGroup: /system.slice/docker.service
+</span><span class=go>           └─1701 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Oct 09 15:28:28 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:28.951155226+08:00&#34; level=warning msg=&#34;Y
+</span><span class=go>Oct 09 15:28:28 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:28.951158322+08:00&#34; level=warning msg=&#34;Y
+</span><span class=go>Oct 09 15:28:28 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:28.951164075+08:00&#34; level=warning msg=&#34;Y
+</span><span class=go>Oct 09 15:28:28 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:28.951254105+08:00&#34; level=info msg=&#34;Load
+</span><span class=go>Oct 09 15:28:29 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:29.081341203+08:00&#34; level=info msg=&#34;Defa
+</span><span class=go>Oct 09 15:28:29 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:29.106837782+08:00&#34; level=info msg=&#34;Load
+</span><span class=go>Oct 09 15:28:29 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:29.138925271+08:00&#34; level=info msg=&#34;Dock
+</span><span class=go>Oct 09 15:28:29 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:29.139550992+08:00&#34; level=info msg=&#34;Daem
+</span><span class=go>Oct 09 15:28:29 boyang systemd[1]: Started Docker Application Container Engine.
+</span><span class=go>Oct 09 15:28:29 boyang dockerd[1701]: time=&#34;2020-10-09T15:28:29.151309815+08:00&#34; level=info msg=&#34;API
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Verify that Docker Engine is installed correctly by running the hello-world image.</p>
 <div class=highlight><div class=chroma>
@@ -379,10 +379,10 @@ See &#39;docker run --help&#39;.
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>(base) yanboyang713@boyang:~/Documents/docker-as-dev-environment$ id -nG
-yanboyang713 adm cdrom sudo dip plugdev lpadmin sambashare microk8s docker
-
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>(base) yanboyang713@boyang:~/Documents/docker-as-dev-environment$ id -nG
+</span><span class=go>yanboyang713 adm cdrom sudo dip plugdev lpadmin sambashare microk8s docker
+</span><span class=go></span><span class=err>
+</span></code></pre></td></tr></table>
 </div>
 </div><p>If you need to add a user to the docker group that you’re not logged in as, declare that username explicitly using:</p>
 <div class=highlight><div class=chroma>
@@ -628,29 +628,29 @@ sudo apt-get install -y nvidia-docker2
 </span><span class=lnt>22
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>(base) yanboyang713@boyang:~$ sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
-[sudo] password for yanboyang713: 
-Sun Oct 11 11:24:35 2020       
-+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 455.23.05    Driver Version: 455.23.05    CUDA Version: 11.1     |
-|-------------------------------|----------------------|----------------------+
-| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|                               |                      |               MIG M. |
-|===============================+======================+======================|
-|   0  GeForce RTX 2070    On   | 00000000:01:00.0  On |                  N/A |
-| 33%   36C    P8    11W / 175W |    293MiB /  7979MiB |      0%      Default |
-|                               |                      |                  N/A |
-+-------------------------------|----------------------|----------------------+
-                                                                               
-+-----------------------------------------------------------------------------+
-| Processes:                                                                  |
-|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
-|        ID   ID                                                   Usage      |
-|=============================================================================|
-+-----------------------------------------------------------------------------+
-
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>(base) yanboyang713@boyang:~$ sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
+</span><span class=go>[sudo] password for yanboyang713: 
+</span><span class=go>Sun Oct 11 11:24:35 2020       
+</span><span class=go>+-----------------------------------------------------------------------------+
+</span><span class=go>| NVIDIA-SMI 455.23.05    Driver Version: 455.23.05    CUDA Version: 11.1     |
+</span><span class=go>|-------------------------------|----------------------|----------------------+
+</span><span class=go>| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+</span><span class=go>| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+</span><span class=go>|                               |                      |               MIG M. |
+</span><span class=go>|===============================+======================+======================|
+</span><span class=go>|   0  GeForce RTX 2070    On   | 00000000:01:00.0  On |                  N/A |
+</span><span class=go>| 33%   36C    P8    11W / 175W |    293MiB /  7979MiB |      0%      Default |
+</span><span class=go>|                               |                      |                  N/A |
+</span><span class=go>+-------------------------------|----------------------|----------------------+
+</span><span class=go>                                                                               
+</span><span class=go>+-----------------------------------------------------------------------------+
+</span><span class=go>| Processes:                                                                  |
+</span><span class=go>|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+</span><span class=go>|        ID   ID                                                   Usage      |
+</span><span class=go>|=============================================================================|
+</span><span class=go>+-----------------------------------------------------------------------------+
+</span><span class=go></span><span class=err>
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id=install-docker-in-arch-linux>Install Docker in Arch Linux</h2>
 <h3 id=step-1>Step 1:</h3>
@@ -695,16 +695,16 @@ Sun Oct 11 11:24:35 2020
 </span><span class=lnt>9
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@boyang ~]$ sudo docker run -it --rm archlinux bash -c &#34;echo hello world&#34;
-[sudo] password for yanboyang713: 
-Unable to find image &#39;archlinux:latest&#39; locally
-latest: Pulling from library/archlinux
-cc7ff1c0e722: Pull complete 
-503b62125c98: Pull complete 
-Digest: sha256:3af015abc04cb71af3d9eb97d6c8c8c1d46a89e729a122251451e4b94d2710cd
-Status: Downloaded newer image for archlinux:latest
-hello world
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@boyang ~]$ sudo docker run -it --rm archlinux bash -c &#34;echo hello world&#34;
+</span><span class=go>[sudo] password for yanboyang713: 
+</span><span class=go>Unable to find image &#39;archlinux:latest&#39; locally
+</span><span class=go>latest: Pulling from library/archlinux
+</span><span class=go>cc7ff1c0e722: Pull complete 
+</span><span class=go>503b62125c98: Pull complete 
+</span><span class=go>Digest: sha256:3af015abc04cb71af3d9eb97d6c8c8c1d46a89e729a122251451e4b94d2710cd
+</span><span class=go>Status: Downloaded newer image for archlinux:latest
+</span><span class=go>hello world
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id=step-5>Step 5:</h3>
 <div class=highlight><div class=chroma>
@@ -819,30 +819,30 @@ hello world
 </span><span class=lnt>23
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@Boyang-PC ~]$ nvidia-smi
-Fri May 21 01:30:15 2021       
-+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 460.73.01    Driver Version: 460.73.01    CUDA Version: 11.2     |
-|-------------------------------|----------------------|----------------------+
-| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|                               |                      |               MIG M. |
-|===============================+======================+======================|
-|   0  GeForce RTX 2070    Off  | 00000000:01:00.0  On |                  N/A |
-| 31%   34C    P8    17W / 175W |    267MiB /  7979MiB |      9%      Default |
-|                               |                      |                  N/A |
-+-------------------------------|----------------------|----------------------+
-                                                                               
-+-----------------------------------------------------------------------------+
-| Processes:                                                                  |
-|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
-|        ID   ID                                                   Usage      |
-|=============================================================================|
-|    0   N/A  N/A       484      G   /usr/lib/Xorg                     227MiB |
-|    0   N/A  N/A      1051      G   picom                              12MiB |
-|    0   N/A  N/A      1159      G   palemoon                           24MiB |
-+-----------------------------------------------------------------------------+
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@Boyang-PC ~]$ nvidia-smi
+</span><span class=go>Fri May 21 01:30:15 2021       
+</span><span class=go>+-----------------------------------------------------------------------------+
+</span><span class=go>| NVIDIA-SMI 460.73.01    Driver Version: 460.73.01    CUDA Version: 11.2     |
+</span><span class=go>|-------------------------------|----------------------|----------------------+
+</span><span class=go>| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+</span><span class=go>| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+</span><span class=go>|                               |                      |               MIG M. |
+</span><span class=go>|===============================+======================+======================|
+</span><span class=go>|   0  GeForce RTX 2070    Off  | 00000000:01:00.0  On |                  N/A |
+</span><span class=go>| 31%   34C    P8    17W / 175W |    267MiB /  7979MiB |      9%      Default |
+</span><span class=go>|                               |                      |                  N/A |
+</span><span class=go>+-------------------------------|----------------------|----------------------+
+</span><span class=go>                                                                               
+</span><span class=go>+-----------------------------------------------------------------------------+
+</span><span class=go>| Processes:                                                                  |
+</span><span class=go>|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+</span><span class=go>|        ID   ID                                                   Usage      |
+</span><span class=go>|=============================================================================|
+</span><span class=go>|    0   N/A  N/A       484      G   /usr/lib/Xorg                     227MiB |
+</span><span class=go>|    0   N/A  N/A      1051      G   picom                              12MiB |
+</span><span class=go>|    0   N/A  N/A      1159      G   palemoon                           24MiB |
+</span><span class=go>+-----------------------------------------------------------------------------+
+</span></code></pre></td></tr></table>
 </div>
 </div><p>Manual Install using the Official Nvidia.com driver</p>
 <ol>
@@ -874,10 +874,10 @@ Fri May 21 01:30:15 2021
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@Boyang-PC ~]$ lspci -vnn | grep VGA
-lspci: Unable to load libkmod resources: error -2
-01:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU106 [GeForce RTX 2070] [10de:1f02] (rev a1) (prog-if 00 [VGA controller])
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@Boyang-PC ~]$ lspci -vnn | grep VGA
+</span><span class=go>lspci: Unable to load libkmod resources: error -2
+</span><span class=go>01:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU106 [GeForce RTX 2070] [10de:1f02] (rev a1) (prog-if 00 [VGA controller])
+</span></code></pre></td></tr></table>
 </div>
 </div><ol start=3>
 <li>Download the Official Nvidia Driver. Using your web browser navigate to the <a href=http://www.nvidia.com/Download/index.aspx target=_blank rel="noopener noreferrer">official Nvidia</a> website and download an appropriate driver for your Nvidia graphic card. Save the file into your home directory. Example:</li>
@@ -889,10 +889,10 @@ lspci: Unable to load libkmod resources: error -2
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@Boyang-PC ~]$ cd ~/Downloads/
-[yanboyang713@Boyang-PC Downloads]$ ls
-NVIDIA-Linux-x86_64-465.31.run
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@Boyang-PC ~]$ cd ~/Downloads/
+</span><span class=go>[yanboyang713@Boyang-PC Downloads]$ ls
+</span><span class=go>NVIDIA-Linux-x86_64-465.31.run
+</span></code></pre></td></tr></table>
 </div>
 </div><ol start=4>
 <li>Install Prerequisites. Development tools and kernel headers are required to compile and install Nvidia driver. Let' s start by installation of kernel headers. First, we need to detect currently loaded kernel. For example:</li>
@@ -903,9 +903,9 @@ NVIDIA-Linux-x86_64-465.31.run
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@Boyang-PC Downloads]$ uname -r
-5.10.34-1-MANJARO
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@Boyang-PC Downloads]$ uname -r
+</span><span class=go>5.10.34-1-MANJARO
+</span></code></pre></td></tr></table>
 </div>
 </div><p>The kernel headers we need to install are</p>
 <div class=highlight><div class=chroma>
@@ -942,37 +942,37 @@ NVIDIA-Linux-x86_64-465.31.run
 </span><span class=lnt>30
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=p>[</span><span class=nx>yanboyang713</span><span class=err>@</span><span class=nx>Boyang</span><span class=o>-</span><span class=nx>PC</span> <span class=nx>Downloads</span><span class=p>]</span><span class=err>$</span> <span class=nx>sudo</span> <span class=nx>pacman</span> <span class=o>-</span><span class=nx>S</span> <span class=nx>linux</span><span class=o>-</span><span class=nx>headers</span>
-<span class=p>[</span><span class=nx>sudo</span><span class=p>]</span> <span class=nx>password</span> <span class=k>for</span> <span class=nx>yanboyang713</span><span class=p>:</span> 
-<span class=p>::</span> <span class=nx>There</span> <span class=nx>are</span> <span class=mi>11</span> <span class=nx>providers</span> <span class=nx>available</span> <span class=k>for</span> <span class=nx>linux</span><span class=o>-</span><span class=nx>headers</span><span class=p>:</span>
-<span class=p>::</span> <span class=nx>Repository</span> <span class=nx>core</span>
-   <span class=mi>1</span><span class=p>)</span> <span class=nx>linux414</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>2</span><span class=p>)</span> <span class=nx>linux419</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>3</span><span class=p>)</span> <span class=nx>linux44</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>4</span><span class=p>)</span> <span class=nx>linux49</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>5</span><span class=p>)</span> <span class=nx>linux510</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>6</span><span class=p>)</span> <span class=nx>linux511</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>7</span><span class=p>)</span> <span class=nx>linux512</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>8</span><span class=p>)</span> <span class=nx>linux513</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>9</span><span class=p>)</span> <span class=nx>linux54</span><span class=o>-</span><span class=nx>headers</span>
-<span class=p>::</span> <span class=nx>Repository</span> <span class=nx>community</span>
-   <span class=mi>10</span><span class=p>)</span> <span class=nx>linux54</span><span class=o>-</span><span class=nx>rt</span><span class=o>-</span><span class=nx>headers</span>  <span class=mi>11</span><span class=p>)</span> <span class=nx>linux59</span><span class=o>-</span><span class=nx>rt</span><span class=o>-</span><span class=nx>headers</span>
-
-<span class=nx>Enter</span> <span class=nx>a</span> <span class=nf>number</span> <span class=p>(</span><span class=k>default</span><span class=p>=</span><span class=mi>1</span><span class=p>):</span> <span class=mi>5</span>
-<span class=nx>resolving</span> <span class=nx>dependencies</span><span class=o>...</span>
-<span class=nx>looking</span> <span class=k>for</span> <span class=nx>conflicting</span> <span class=nx>packages</span><span class=o>...</span>
-
-<span class=nf>Packages</span> <span class=p>(</span><span class=mi>1</span><span class=p>)</span> <span class=nx>linux510</span><span class=o>-</span><span class=nx>headers</span><span class=o>-</span><span class=mf>5.10.36</span><span class=o>-</span><span class=mi>2</span>
-
-<span class=nx>Total</span> <span class=nx>Download</span> <span class=nx>Size</span><span class=p>:</span>    <span class=mf>9.46</span> <span class=nx>MiB</span>
-<span class=nx>Total</span> <span class=nx>Installed</span> <span class=nx>Size</span><span class=p>:</span>  <span class=mf>47.74</span> <span class=nx>MiB</span>
-
-<span class=p>::</span> <span class=nx>Proceed</span> <span class=nx>with</span> <span class=nx>installation</span><span class=err>?</span> <span class=p>[</span><span class=nx>Y</span><span class=o>/</span><span class=nx>n</span><span class=p>]</span> <span class=nx>Y</span>
-<span class=p>::</span> <span class=nx>Retrieving</span> <span class=nx>packages</span><span class=o>...</span>
- <span class=nx>linux510</span><span class=o>-</span><span class=nx>headers</span><span class=o>-</span><span class=mf>5.10.36</span><span class=o>-</span><span class=mi>2</span><span class=o>-</span><span class=nx>x86_64</span>                                                                    <span class=mf>9.5</span> <span class=nx>MiB</span>   <span class=mi>157</span> <span class=nx>KiB</span><span class=o>/</span><span class=nx>s</span> <span class=mo>01</span><span class=p>:</span><span class=mo>02</span> <span class=p>[</span><span class=err>#############################################################################</span><span class=p>]</span> <span class=mi>100</span><span class=o>%</span>
-<span class=p>(</span><span class=mi>1</span><span class=o>/</span><span class=mi>1</span><span class=p>)</span> <span class=nx>checking</span> <span class=nx>keys</span> <span class=nx>in</span> <span class=nx>keyring</span>                                                                                                  <span class=p>[</span><span class=err>#############################################################################</span><span class=p>]</span> <span class=mi>100</span><span class=o>%</span>
-<span class=p>(</span><span class=mi>1</span><span class=o>/</span><span class=mi>1</span><span class=p>)</span> <span class=nx>checking</span> <span class=kn>package</span> <span class=nx>integrity</span>                                                                                                <span class=p>[</span><span class=err>#############################################################################</span><span class=p>]</span> <span class=mi>100</span><span class=o>%</span>
-<span class=p>(</span><span class=mi>1</span><span class=o>/</span><span class=mi>1</span><span class=p>)</span> <span class=nx>loading</span> <span class=kn>package</span> <span class=nx>files</span>                                                                                                     <span class=p>[</span><span class=err>#############################################################################</span><span class=p>]</span> <span class=mi>100</span><span class=o>%</span>
-<span class=p>(</span><span class=mi>1</span><span class=o>/</span><span class=mi>1</span><span class=p>)</span> <span class=nx>checking</span> <span class=k>for</span> <span class=nx>file</span> <span class=nx>conflicts</span>                                                                                               <span class=p>[</span><span class=err>#############################################################################</span><span class=p>]</span> <span class=mi>100</span><span class=o>%</span>
-<span class=p>(</span><span class=mi>1</span><span class=o>/</span><span class=mi>1</span><span class=p>)</span> <span class=nx>checking</span> <span class=nx>available</span> <span class=nx>disk</span> <span class=nx>space</span>                                                                                             <span class=p>[</span><span class=err>#############################################################################</span><span class=p>]</span> <span class=mi>100</span><span class=o>%</span>
-<span class=p>::</span> <span class=nx>Processing</span> <span class=kn>package</span> <span class=nx>changes</span><span class=o>...</span>
-<span class=p>(</span><span class=mi>1</span><span class=o>/</span><span class=mi>1</span><span class=p>)</span> <span class=nx>installing</span> <span class=nx>linux510</span><span class=o>-</span><span class=nx>headers</span>                                                                                               <span class=p>[</span><span class=err>#############################################################################</span><span class=p>]</span> <span class=mi>100</span><span class=o>%</span>
-<span class=p>::</span> <span class=nx>Running</span> <span class=nx>post</span><span class=o>-</span><span class=nx>transaction</span> <span class=nx>hooks</span><span class=o>...</span>
-<span class=p>(</span><span class=mi>1</span><span class=o>/</span><span class=mi>2</span><span class=p>)</span> <span class=nx>Arming</span> <span class=nx>ConditionNeedsUpdate</span><span class=o>...</span>
-<span class=p>(</span><span class=mi>2</span><span class=o>/</span><span class=mi>2</span><span class=p>)</span> <span class=nx>Updating</span> <span class=nx>module</span> <span class=nx>dependencies</span><span class=o>...</span>
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@Boyang-PC Downloads]$ sudo pacman -S linux-headers
+</span><span class=go>[sudo] password for yanboyang713: 
+</span><span class=go>:: There are 11 providers available for linux-headers:
+</span><span class=go>:: Repository core
+</span><span class=go>   1) linux414-headers  2) linux419-headers  3) linux44-headers  4) linux49-headers  5) linux510-headers  6) linux511-headers  7) linux512-headers  8) linux513-headers  9) linux54-headers
+</span><span class=go>:: Repository community
+</span><span class=go>   10) linux54-rt-headers  11) linux59-rt-headers
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Enter a number (default=1): 5
+</span><span class=go>resolving dependencies...
+</span><span class=go>looking for conflicting packages...
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Packages (1) linux510-headers-5.10.36-2
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Total Download Size:    9.46 MiB
+</span><span class=go>Total Installed Size:  47.74 MiB
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>:: Proceed with installation? [Y/n] Y
+</span><span class=go>:: Retrieving packages...
+</span><span class=go> linux510-headers-5.10.36-2-x86_64                                                                    9.5 MiB   157 KiB/s 01:02 [#############################################################################] 100%
+</span><span class=go>(1/1) checking keys in keyring                                                                                                  [#############################################################################] 100%
+</span><span class=go>(1/1) checking package integrity                                                                                                [#############################################################################] 100%
+</span><span class=go>(1/1) loading package files                                                                                                     [#############################################################################] 100%
+</span><span class=go>(1/1) checking for file conflicts                                                                                               [#############################################################################] 100%
+</span><span class=go>(1/1) checking available disk space                                                                                             [#############################################################################] 100%
+</span><span class=go>:: Processing package changes...
+</span><span class=go>(1/1) installing linux510-headers                                                                                               [#############################################################################] 100%
+</span><span class=go>:: Running post-transaction hooks...
+</span><span class=go>(1/2) Arming ConditionNeedsUpdate...
+</span><span class=go>(2/2) Updating module dependencies...
+</span></code></pre></td></tr></table>
 </div>
 </div><p><strong>NOTE:</strong> Match with kernel version.</p>
 <p>Next task is to install development tools. Execute the bellow command and hit ENTER to install all:</p>
@@ -1078,7 +1078,7 @@ Would you like to run the nvidia-xconfig utility? -&gt; YES
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-10-14</span>
+<span>Updated on 2021-11-07</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -1104,7 +1104,7 @@ Would you like to run the nvidia-xconfig utility? -&gt; YES
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.89.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>

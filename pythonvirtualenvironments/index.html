@@ -10,7 +10,7 @@ A virtual environment is an isolated Python environment where a project’s depe
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/pythonvirtualenvironments/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-09-08T06:11:32+10:00">
-<meta property="article:modified_time" content="2021-10-14T14:03:52+00:00">
+<meta property="article:modified_time" content="2021-11-07T13:55:52+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Introduction to Python Virtual Environments and Dependency Managers">
@@ -19,7 +19,7 @@ A virtual environment is an isolated Python environment where a project’s depe
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/pythonvirtualenvironments/><link rel=prev href=https://yanboyang.com/magit/><link rel=next href=https://yanboyang.com/zotero/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Introduction to Python Virtual Environments and Dependency Managers","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/pythonvirtualenvironments\/"},"genre":"posts","keywords":"Python","wordcount":1984,"url":"https:\/\/yanboyang.com\/pythonvirtualenvironments\/","datePublished":"2021-09-08T06:11:32+10:00","dateModified":"2021-10-14T14:03:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/pythonvirtualenvironments/><link rel=prev href=https://yanboyang.com/magit/><link rel=next href=https://yanboyang.com/zotero/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Introduction to Python Virtual Environments and Dependency Managers","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/pythonvirtualenvironments\/"},"genre":"posts","keywords":"Python","wordcount":2019,"url":"https:\/\/yanboyang.com\/pythonvirtualenvironments\/","datePublished":"2021-09-08T06:11:32+10:00","dateModified":"2021-11-07T13:55:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -92,8 +92,8 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Introduction to Python Virtual Environments and Dependency Managers</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/virtual-environment/><i class="far fa-folder fa-fw"></i>virtual environment</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-09-08>2021-09-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1984 words&nbsp;
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/virtual-environment/><i class="far fa-folder fa-fw"></i>virtual environment</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-09-08>2021-09-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2019 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;10 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
@@ -199,17 +199,17 @@ python -m venv ./pythonTestEnvironment/
 </span><span class=lnt>10
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@Boyang-PC ~]$ cd pythonTestEnvironment/
-[yanboyang713@Boyang-PC pythonTestEnvironment]$ ls -la
-total 24
-drwxr-xr-x  5 yanboyang713 yanboyang713 4096 Sep  8 15:15 .
-drwx------ 52 yanboyang713 yanboyang713 4096 Sep  8 15:12 ..
-drwxr-xr-x  2 yanboyang713 yanboyang713 4096 Sep  8 15:15 bin
-drwxr-xr-x  2 yanboyang713 yanboyang713 4096 Sep  8 15:15 include
-drwxr-xr-x  3 yanboyang713 yanboyang713 4096 Sep  8 15:15 lib
-lrwxrwxrwx  1 yanboyang713 yanboyang713    3 Sep  8 15:15 lib64 -&gt; lib
--rw-r--r--  1 yanboyang713 yanboyang713   69 Sep  8 15:15 pyvenv.cfg
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@Boyang-PC ~]$ cd pythonTestEnvironment/
+</span><span class=go>[yanboyang713@Boyang-PC pythonTestEnvironment]$ ls -la
+</span><span class=go>total 24
+</span><span class=go>drwxr-xr-x  5 yanboyang713 yanboyang713 4096 Sep  8 15:15 .
+</span><span class=go>drwx------ 52 yanboyang713 yanboyang713 4096 Sep  8 15:12 ..
+</span><span class=go>drwxr-xr-x  2 yanboyang713 yanboyang713 4096 Sep  8 15:15 bin
+</span><span class=go>drwxr-xr-x  2 yanboyang713 yanboyang713 4096 Sep  8 15:15 include
+</span><span class=go>drwxr-xr-x  3 yanboyang713 yanboyang713 4096 Sep  8 15:15 lib
+</span><span class=go>lrwxrwxrwx  1 yanboyang713 yanboyang713    3 Sep  8 15:15 lib64 -&gt; lib
+</span><span class=go>-rw-r--r--  1 yanboyang713 yanboyang713   69 Sep  8 15:15 pyvenv.cfg
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id=activating-the-virtual-environment>Activating the virtual environment</h3>
 <p>Before using the virtual environment, we need to activate it. This makes the current virtual environment you’re working on to temporarily function as the default Python interpreter.</p>
@@ -246,24 +246,24 @@ Before activating your virtual environment, always make sure that you are workin
 </span><span class=lnt>17
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>[yanboyang713@Boyang-PC pythonTestEnvironment]$ cd bin
-[yanboyang713@Boyang-PC bin]$ ls -la
-total 44
-drwxr-xr-x 2 yanboyang713 yanboyang713 4096 Sep  8 15:15 .
-drwxr-xr-x 5 yanboyang713 yanboyang713 4096 Sep  8 15:15 ..
--rw-r--r-- 1 yanboyang713 yanboyang713 1932 Sep  8 15:15 activate
--rw-r--r-- 1 yanboyang713 yanboyang713  881 Sep  8 15:15 activate.csh
--rw-r--r-- 1 yanboyang713 yanboyang713 2021 Sep  8 15:15 activate.fish
--rw-r--r-- 1 yanboyang713 yanboyang713 8834 Sep  8 15:15 Activate.ps1
--rwxr-xr-x 1 yanboyang713 yanboyang713  256 Sep  8 15:15 pip
--rwxr-xr-x 1 yanboyang713 yanboyang713  256 Sep  8 15:15 pip3
--rwxr-xr-x 1 yanboyang713 yanboyang713  256 Sep  8 15:15 pip3.9
-lrwxrwxrwx 1 yanboyang713 yanboyang713   15 Sep  8 15:15 python -&gt; /usr/bin/python
-lrwxrwxrwx 1 yanboyang713 yanboyang713    6 Sep  8 15:15 python3 -&gt; python
-lrwxrwxrwx 1 yanboyang713 yanboyang713    6 Sep  8 15:15 python3.9 -&gt; python
-[yanboyang713@Boyang-PC bin]$ source activate
-(pythonTestEnvironment) [yanboyang713@Boyang-PC bin]$ 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@Boyang-PC pythonTestEnvironment]$ cd bin
+</span><span class=go>[yanboyang713@Boyang-PC bin]$ ls -la
+</span><span class=go>total 44
+</span><span class=go>drwxr-xr-x 2 yanboyang713 yanboyang713 4096 Sep  8 15:15 .
+</span><span class=go>drwxr-xr-x 5 yanboyang713 yanboyang713 4096 Sep  8 15:15 ..
+</span><span class=go>-rw-r--r-- 1 yanboyang713 yanboyang713 1932 Sep  8 15:15 activate
+</span><span class=go>-rw-r--r-- 1 yanboyang713 yanboyang713  881 Sep  8 15:15 activate.csh
+</span><span class=go>-rw-r--r-- 1 yanboyang713 yanboyang713 2021 Sep  8 15:15 activate.fish
+</span><span class=go>-rw-r--r-- 1 yanboyang713 yanboyang713 8834 Sep  8 15:15 Activate.ps1
+</span><span class=go>-rwxr-xr-x 1 yanboyang713 yanboyang713  256 Sep  8 15:15 pip
+</span><span class=go>-rwxr-xr-x 1 yanboyang713 yanboyang713  256 Sep  8 15:15 pip3
+</span><span class=go>-rwxr-xr-x 1 yanboyang713 yanboyang713  256 Sep  8 15:15 pip3.9
+</span><span class=go>lrwxrwxrwx 1 yanboyang713 yanboyang713   15 Sep  8 15:15 python -&gt; /usr/bin/python
+</span><span class=go>lrwxrwxrwx 1 yanboyang713 yanboyang713    6 Sep  8 15:15 python3 -&gt; python
+</span><span class=go>lrwxrwxrwx 1 yanboyang713 yanboyang713    6 Sep  8 15:15 python3.9 -&gt; python
+</span><span class=go>[yanboyang713@Boyang-PC bin]$ source activate
+</span><span class=go>(pythonTestEnvironment) [yanboyang713@Boyang-PC bin]$ 
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id=configuring-the-virtual-environment>Configuring the virtual environment</h3>
 <p>After activating the virtual environment, you can now start installing modules and packages by using the great pip install command.</p>
@@ -291,26 +291,26 @@ lrwxrwxrwx 1 yanboyang713 yanboyang713    6 Sep  8 15:15 python3.9 -&gt; python
 </span><span class=lnt>19
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>(pythonTestEnvironment) [yanboyang713@Boyang-PC bin]$ cd ..
-(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ pwd
-/home/yanboyang713/pythonTestEnvironment
-(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ pip install Django
-Collecting Django
-  Downloading Django-3.2.7-py3-none-any.whl (7.9 MB)
-     |████████████████████████████████| 7.9 MB 12.2 MB/s 
-Collecting asgiref&lt;4,&gt;=3.3.2
-  Downloading asgiref-3.4.1-py3-none-any.whl (25 kB)
-Collecting sqlparse&gt;=0.2.2
-  Downloading sqlparse-0.4.1-py3-none-any.whl (42 kB)
-     |████████████████████████████████| 42 kB 488 kB/s 
-Collecting pytz
-  Downloading pytz-2021.1-py2.py3-none-any.whl (510 kB)
-     |████████████████████████████████| 510 kB 882 kB/s 
-Installing collected packages: sqlparse, pytz, asgiref, Django
-Successfully installed Django-3.2.7 asgiref-3.4.1 pytz-2021.1 sqlparse-0.4.1
-WARNING: You are using pip version 21.1.3; however, version 21.2.4 is available.
-You should consider upgrading via the &#39;/home/yanboyang713/pythonTestEnvironment/bin/python -m pip install --upgrade pip&#39; command.
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>(pythonTestEnvironment) [yanboyang713@Boyang-PC bin]$ cd ..
+</span><span class=go>(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ pwd
+</span><span class=go>/home/yanboyang713/pythonTestEnvironment
+</span><span class=go>(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ pip install Django
+</span><span class=go>Collecting Django
+</span><span class=go>  Downloading Django-3.2.7-py3-none-any.whl (7.9 MB)
+</span><span class=go>     |████████████████████████████████| 7.9 MB 12.2 MB/s 
+</span><span class=go>Collecting asgiref&lt;4,&gt;=3.3.2
+</span><span class=go>  Downloading asgiref-3.4.1-py3-none-any.whl (25 kB)
+</span><span class=go>Collecting sqlparse&gt;=0.2.2
+</span><span class=go>  Downloading sqlparse-0.4.1-py3-none-any.whl (42 kB)
+</span><span class=go>     |████████████████████████████████| 42 kB 488 kB/s 
+</span><span class=go>Collecting pytz
+</span><span class=go>  Downloading pytz-2021.1-py2.py3-none-any.whl (510 kB)
+</span><span class=go>     |████████████████████████████████| 510 kB 882 kB/s 
+</span><span class=go>Installing collected packages: sqlparse, pytz, asgiref, Django
+</span><span class=go>Successfully installed Django-3.2.7 asgiref-3.4.1 pytz-2021.1 sqlparse-0.4.1
+</span><span class=go>WARNING: You are using pip version 21.1.3; however, version 21.2.4 is available.
+</span><span class=go>You should consider upgrading via the &#39;/home/yanboyang713/pythonTestEnvironment/bin/python -m pip install --upgrade pip&#39; command.
+</span></code></pre></td></tr></table>
 </div>
 </div><p>You can check the version of Pip you’re using and directory with the following command:</p>
 <div class=highlight><div class=chroma>
@@ -319,9 +319,9 @@ You should consider upgrading via the &#39;/home/yanboyang713/pythonTestEnvironm
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ pip -V
-pip 21.1.3 from /home/yanboyang713/pythonTestEnvironment/lib/python3.9/site-packages/pip (python 3.9)
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ pip -V
+</span><span class=go>pip 21.1.3 from /home/yanboyang713/pythonTestEnvironment/lib/python3.9/site-packages/pip (python 3.9)
+</span></code></pre></td></tr></table>
 </div>
 </div><p><strong>TIPS:</strong>
 It is a good practice to always work with a requirements.txt file for easy collaboration since it stores a list of all installed packages in your environment.</p>
@@ -364,32 +364,32 @@ It is a good practice to always work with a requirements.txt file for easy colla
 </span><span class=lnt>25
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ ls -la
-total 24
-drwxr-xr-x  5 yanboyang713 yanboyang713 4096 Sep  8 15:15 .
-drwx------ 52 yanboyang713 yanboyang713 4096 Sep  8 15:12 ..
-drwxr-xr-x  3 yanboyang713 yanboyang713 4096 Sep  8 15:28 bin
-drwxr-xr-x  2 yanboyang713 yanboyang713 4096 Sep  8 15:15 include
-drwxr-xr-x  3 yanboyang713 yanboyang713 4096 Sep  8 15:15 lib
-lrwxrwxrwx  1 yanboyang713 yanboyang713    3 Sep  8 15:15 lib64 -&gt; lib
--rw-r--r--  1 yanboyang713 yanboyang713   69 Sep  8 15:15 pyvenv.cfg
-(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ python -m pip freeze &gt; requirements.txt
-(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ ls -la
-total 28
-drwxr-xr-x  5 yanboyang713 yanboyang713 4096 Sep  8 15:31 .
-drwx------ 52 yanboyang713 yanboyang713 4096 Sep  8 15:12 ..
-drwxr-xr-x  3 yanboyang713 yanboyang713 4096 Sep  8 15:28 bin
-drwxr-xr-x  2 yanboyang713 yanboyang713 4096 Sep  8 15:15 include
-drwxr-xr-x  3 yanboyang713 yanboyang713 4096 Sep  8 15:15 lib
-lrwxrwxrwx  1 yanboyang713 yanboyang713    3 Sep  8 15:15 lib64 -&gt; lib
--rw-r--r--  1 yanboyang713 yanboyang713   69 Sep  8 15:15 pyvenv.cfg
--rw-r--r--  1 yanboyang713 yanboyang713   58 Sep  8 15:31 requirements.txt
-(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ cat requirements.txt 
-asgiref==3.4.1
-Django==3.2.7
-pytz==2021.1
-sqlparse==0.4.1
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ ls -la
+</span><span class=go>total 24
+</span><span class=go>drwxr-xr-x  5 yanboyang713 yanboyang713 4096 Sep  8 15:15 .
+</span><span class=go>drwx------ 52 yanboyang713 yanboyang713 4096 Sep  8 15:12 ..
+</span><span class=go>drwxr-xr-x  3 yanboyang713 yanboyang713 4096 Sep  8 15:28 bin
+</span><span class=go>drwxr-xr-x  2 yanboyang713 yanboyang713 4096 Sep  8 15:15 include
+</span><span class=go>drwxr-xr-x  3 yanboyang713 yanboyang713 4096 Sep  8 15:15 lib
+</span><span class=go>lrwxrwxrwx  1 yanboyang713 yanboyang713    3 Sep  8 15:15 lib64 -&gt; lib
+</span><span class=go>-rw-r--r--  1 yanboyang713 yanboyang713   69 Sep  8 15:15 pyvenv.cfg
+</span><span class=go>(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ python -m pip freeze &gt; requirements.txt
+</span><span class=go>(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ ls -la
+</span><span class=go>total 28
+</span><span class=go>drwxr-xr-x  5 yanboyang713 yanboyang713 4096 Sep  8 15:31 .
+</span><span class=go>drwx------ 52 yanboyang713 yanboyang713 4096 Sep  8 15:12 ..
+</span><span class=go>drwxr-xr-x  3 yanboyang713 yanboyang713 4096 Sep  8 15:28 bin
+</span><span class=go>drwxr-xr-x  2 yanboyang713 yanboyang713 4096 Sep  8 15:15 include
+</span><span class=go>drwxr-xr-x  3 yanboyang713 yanboyang713 4096 Sep  8 15:15 lib
+</span><span class=go>lrwxrwxrwx  1 yanboyang713 yanboyang713    3 Sep  8 15:15 lib64 -&gt; lib
+</span><span class=go>-rw-r--r--  1 yanboyang713 yanboyang713   69 Sep  8 15:15 pyvenv.cfg
+</span><span class=go>-rw-r--r--  1 yanboyang713 yanboyang713   58 Sep  8 15:31 requirements.txt
+</span><span class=go>(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ cat requirements.txt 
+</span><span class=go>asgiref==3.4.1
+</span><span class=go>Django==3.2.7
+</span><span class=go>pytz==2021.1
+</span><span class=go>sqlparse==0.4.1
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id=deactivating-a-virtual-environment>Deactivating a virtual environment</h3>
 <p>After you finish with the environment, deactivate it by using:</p>
@@ -399,9 +399,9 @@ sqlparse==0.4.1
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ deactivate
-[yanboyang713@Boyang-PC pythonTestEnvironment]$ 
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>(pythonTestEnvironment) [yanboyang713@Boyang-PC pythonTestEnvironment]$ deactivate
+</span><span class=go>[yanboyang713@Boyang-PC pythonTestEnvironment]$ 
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id=deleting-the-virtual-environment>Deleting the virtual environment</h3>
 <p>Since virtual environments are self-contained, when no longer needed, just delete the project’s virtual environment directory.</p>
@@ -619,29 +619,29 @@ sqlparse==0.4.1
 </span><span class=lnt>23
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=n>yanboyang713</span><span class=o>@</span><span class=n>Boyang</span><span class=o>-</span><span class=n>PC</span><span class=w> </span><span class=o>~&gt;</span><span class=w> </span><span class=n>curl</span><span class=w> </span><span class=o>-</span><span class=k>sSL</span><span class=w> </span><span class=n>https</span><span class=p>:</span><span class=o>//</span><span class=n>raw</span><span class=p>.</span><span class=n>githubusercontent</span><span class=p>.</span><span class=n>com</span><span class=o>/</span><span class=n>python</span><span class=o>-</span><span class=n>poetry</span><span class=o>/</span><span class=n>poetry</span><span class=o>/</span><span class=n>master</span><span class=o>/</span><span class=n>install</span><span class=o>-</span><span class=n>poetry</span><span class=p>.</span><span class=n>py</span><span class=w> </span><span class=o>|</span><span class=w> </span><span class=n>python</span><span class=w> </span><span class=o>-</span><span class=w>
-</span><span class=w></span><span class=n>Retrieving</span><span class=w> </span><span class=n>Poetry</span><span class=w> </span><span class=n>metadata</span><span class=w>
-</span><span class=w>
-</span><span class=w></span><span class=c1># Welcome to Poetry!
-</span><span class=c1></span><span class=w>
-</span><span class=w></span><span class=n>This</span><span class=w> </span><span class=n>will</span><span class=w> </span><span class=n>download</span><span class=w> </span><span class=k>and</span><span class=w> </span><span class=n>install</span><span class=w> </span><span class=n>the</span><span class=w> </span><span class=n>latest</span><span class=w> </span><span class=n>version</span><span class=w> </span><span class=n>of</span><span class=w> </span><span class=n>Poetry</span><span class=p>,</span><span class=w>
-</span><span class=w></span><span class=n>a</span><span class=w> </span><span class=n>dependency</span><span class=w> </span><span class=k>and</span><span class=w> </span><span class=n>package</span><span class=w> </span><span class=n>manager</span><span class=w> </span><span class=k>for</span><span class=w> </span><span class=n>Python</span><span class=p>.</span><span class=w>
-</span><span class=w>
-</span><span class=w></span><span class=n>It</span><span class=w> </span><span class=n>will</span><span class=w> </span><span class=k>add</span><span class=w> </span><span class=n>the</span><span class=w> </span><span class=o>`</span><span class=n>poetry</span><span class=o>`</span><span class=w> </span><span class=n>command</span><span class=w> </span><span class=k>to</span><span class=w> </span><span class=n>Poetry</span><span class=s1>&#39;s bin directory, located at:
-</span><span class=s1>
-</span><span class=s1>/home/yanboyang713/.local/bin
-</span><span class=s1>
-</span><span class=s1>You can uninstall at any time by executing this script with the --uninstall option,
-</span><span class=s1>and these changes will be reverted.
-</span><span class=s1>
-</span><span class=s1>Installing Poetry (1.1.8): Done
-</span><span class=s1>
-</span><span class=s1>Poetry (1.1.8) is installed now. Great!
-</span><span class=s1>
-</span><span class=s1>You can test that everything is set up by executing:
-</span><span class=s1>
-</span><span class=s1>`poetry --version`
-</span><span class=s1>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>yanboyang713@Boyang-PC ~&gt; curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
+</span><span class=go>Retrieving Poetry metadata
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=gp># </span>Welcome to Poetry!
+<span class=err>
+</span><span class=err></span><span class=go>This will download and install the latest version of Poetry,
+</span><span class=go>a dependency and package manager for Python.
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>It will add the `poetry` command to Poetry&#39;s bin directory, located at:
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>/home/yanboyang713/.local/bin
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>You can uninstall at any time by executing this script with the --uninstall option,
+</span><span class=go>and these changes will be reverted.
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Installing Poetry (1.1.8): Done
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Poetry (1.1.8) is installed now. Great!
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>You can test that everything is set up by executing:
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>`poetry --version`
+</span><span class=go></span><span class=err>
 </span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Warning</strong>: The previous get-poetry.py installer is now deprecated, if you are currently using it you should migrate to the new, supported, install-poetry.py installer.</p>
@@ -654,7 +654,7 @@ sqlparse==0.4.1
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-10-14</span>
+<span>Updated on 2021-11-07</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -680,7 +680,7 @@ sqlparse==0.4.1
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.89.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>

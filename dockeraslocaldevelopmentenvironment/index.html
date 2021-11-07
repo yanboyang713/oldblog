@@ -10,7 +10,7 @@ Perrequires  Install Docker Install Docker Compose  Docker Docker is a tool desi
 Docker container To form a mental picture, for the time being just consider a Docker Container as an extremely light weight isolated linux based virtual machine inside which we will run our application service (although containers are not exactly VMs).">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/dockeraslocaldevelopmentenvironment/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:modified_time" content="2021-10-14T14:03:52+00:00">
+<meta property="article:modified_time" content="2021-11-07T13:55:52+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Docker as Local Development Environment">
@@ -20,7 +20,7 @@ Docker container To form a mental picture, for the time being just consider a Do
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/dockeraslocaldevelopmentenvironment/><link rel=prev href=https://yanboyang.com/essentialmathematics/><link rel=next href=https://yanboyang.com/dns/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Docker as Local Development Environment","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dockeraslocaldevelopmentenvironment\/"},"genre":"posts","keywords":"Docker","wordcount":1556,"url":"https:\/\/yanboyang.com\/dockeraslocaldevelopmentenvironment\/","dateModified":"2021-10-14T14:03:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/dockeraslocaldevelopmentenvironment/><link rel=prev href=https://yanboyang.com/essentialmathematics/><link rel=next href=https://yanboyang.com/dns/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Docker as Local Development Environment","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dockeraslocaldevelopmentenvironment\/"},"genre":"posts","keywords":"Docker","wordcount":1706,"url":"https:\/\/yanboyang.com\/dockeraslocaldevelopmentenvironment\/","dateModified":"2021-11-07T13:55:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -93,9 +93,9 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Docker as Local Development Environment</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/virtual-environment/><i class="far fa-folder fa-fw"></i>virtual environment</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1556 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/virtual-environment/><i class="far fa-folder fa-fw"></i>virtual environment</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1706 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -217,31 +217,31 @@ git checkout -b tryingout
 </span><span class=lnt>24
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>(base) yanboyang713@boyang:~/Documents/docker-as-dev-environment$ tree .
-.
-├── go1
-│   ├── main.go
-│   └── README.md
-├── njs1
-│   ├── index.js
-│   ├── package.json
-│   ├── package-lock.json
-│   └── README.md
-├── njs2
-│   ├── index.js
-│   ├── package.json
-│   ├── package-lock.json
-│   └── README.md
-└── py1
-    ├── README.md
-    ├── requirements.txt
-    └── server
-        ├── __init__.py
-        └── __main__.py
-
-5 directories, 14 files
-
-</code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>(base) yanboyang713@boyang:~/Documents/docker-as-dev-environment$ tree .
+</span><span class=go>.
+</span><span class=go>├── go1
+</span><span class=go>│   ├── main.go
+</span><span class=go>│   └── README.md
+</span><span class=go>├── njs1
+</span><span class=go>│   ├── index.js
+</span><span class=go>│   ├── package.json
+</span><span class=go>│   ├── package-lock.json
+</span><span class=go>│   └── README.md
+</span><span class=go>├── njs2
+</span><span class=go>│   ├── index.js
+</span><span class=go>│   ├── package.json
+</span><span class=go>│   ├── package-lock.json
+</span><span class=go>│   └── README.md
+</span><span class=go>└── py1
+</span><span class=go>    ├── README.md
+</span><span class=go>    ├── requirements.txt
+</span><span class=go>    └── server
+</span><span class=go>        ├── __init__.py
+</span><span class=go>        └── __main__.py
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>5 directories, 14 files
+</span><span class=go></span><span class=err>
+</span></code></pre></td></tr></table>
 </div>
 </div><p>You could browse through each project inside and read the README to understand how to run those projects induvidually.</p>
 <h3 id=enter-docker>Enter docker</h3>
@@ -458,37 +458,37 @@ njs1/package.json</p>
 </span><span class=lnt>31
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=p>(</span><span class=n>base</span><span class=p>)</span><span class=w> </span><span class=n>yanboyang713</span><span class=o>@</span><span class=n>boyang</span><span class=p>:</span><span class=o>~/</span><span class=n>Documents</span><span class=o>/</span><span class=n>docker</span><span class=o>-</span><span class=k>as</span><span class=o>-</span><span class=n>dev</span><span class=o>-</span><span class=n>environment</span><span class=err>$</span><span class=w> </span><span class=n>docker</span><span class=o>-</span><span class=n>compose</span><span class=w> </span><span class=n>up</span><span class=w> </span><span class=o>--</span><span class=n>build</span><span class=w>
-</span><span class=w></span><span class=n>Building</span><span class=w> </span><span class=n>njs1</span><span class=w>
-</span><span class=w></span><span class=n>Step</span><span class=w> </span><span class=mi>1</span><span class=o>/</span><span class=mi>1</span><span class=w> </span><span class=p>:</span><span class=w> </span><span class=k>FROM</span><span class=w> </span><span class=n>node</span><span class=p>:</span><span class=n>latest</span><span class=w>
-</span><span class=w> </span><span class=o>---&gt;</span><span class=w> </span><span class=n>f47907840247</span><span class=w>
-</span><span class=w>
-</span><span class=w></span><span class=n>Successfully</span><span class=w> </span><span class=n>built</span><span class=w> </span><span class=n>f47907840247</span><span class=w>
-</span><span class=w></span><span class=n>Successfully</span><span class=w> </span><span class=n>tagged</span><span class=w> </span><span class=n>docker</span><span class=o>-</span><span class=k>as</span><span class=o>-</span><span class=n>dev</span><span class=o>-</span><span class=n>environment_njs1</span><span class=p>:</span><span class=n>latest</span><span class=w>
-</span><span class=w></span><span class=k>Starting</span><span class=w> </span><span class=n>docker</span><span class=o>-</span><span class=k>as</span><span class=o>-</span><span class=n>dev</span><span class=o>-</span><span class=n>environment_njs1_1</span><span class=w> </span><span class=p>...</span><span class=w> </span><span class=n>done</span><span class=w>
-</span><span class=w></span><span class=n>Attaching</span><span class=w> </span><span class=k>to</span><span class=w> </span><span class=n>docker</span><span class=o>-</span><span class=k>as</span><span class=o>-</span><span class=n>dev</span><span class=o>-</span><span class=n>environment_njs1_1</span><span class=w>
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> </span><span class=n>npm</span><span class=w> </span><span class=n>WARN</span><span class=w> </span><span class=n>njs1</span><span class=o>@</span><span class=mi>1</span><span class=p>.</span><span class=mi>0</span><span class=p>.</span><span class=mi>0</span><span class=w> </span><span class=n>No</span><span class=w> </span><span class=n>repository</span><span class=w> </span><span class=n>field</span><span class=p>.</span><span class=w>
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> </span><span class=n>npm</span><span class=w> </span><span class=n>WARN</span><span class=w> </span><span class=n>optional</span><span class=w> </span><span class=n>SKIPPING</span><span class=w> </span><span class=n>OPTIONAL</span><span class=w> </span><span class=n>DEPENDENCY</span><span class=p>:</span><span class=w> </span><span class=n>fsevents</span><span class=o>@</span><span class=mi>2</span><span class=p>.</span><span class=mi>1</span><span class=p>.</span><span class=mi>3</span><span class=w> </span><span class=p>(</span><span class=n>node_modules</span><span class=o>/</span><span class=n>fsevents</span><span class=p>):</span><span class=w>
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> </span><span class=n>npm</span><span class=w> </span><span class=n>WARN</span><span class=w> </span><span class=n>notsup</span><span class=w> </span><span class=n>SKIPPING</span><span class=w> </span><span class=n>OPTIONAL</span><span class=w> </span><span class=n>DEPENDENCY</span><span class=p>:</span><span class=w> </span><span class=n>Unsupported</span><span class=w> </span><span class=n>platform</span><span class=w> </span><span class=k>for</span><span class=w> </span><span class=n>fsevents</span><span class=o>@</span><span class=mi>2</span><span class=p>.</span><span class=mi>1</span><span class=p>.</span><span class=mi>3</span><span class=p>:</span><span class=w> </span><span class=n>wanted</span><span class=w> </span><span class=err>{</span><span class=s2>&#34;os&#34;</span><span class=p>:</span><span class=s2>&#34;darwin&#34;</span><span class=p>,</span><span class=s2>&#34;arch&#34;</span><span class=p>:</span><span class=s2>&#34;any&#34;</span><span class=err>}</span><span class=w> </span><span class=p>(</span><span class=n>current</span><span class=p>:</span><span class=w> </span><span class=err>{</span><span class=s2>&#34;os&#34;</span><span class=p>:</span><span class=s2>&#34;linux&#34;</span><span class=p>,</span><span class=s2>&#34;arch&#34;</span><span class=p>:</span><span class=s2>&#34;x64&#34;</span><span class=err>}</span><span class=p>)</span><span class=w>
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> 
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> </span><span class=n>audited</span><span class=w> </span><span class=mi>171</span><span class=w> </span><span class=n>packages</span><span class=w> </span><span class=k>in</span><span class=w> </span><span class=mi>1</span><span class=p>.</span><span class=mi>633</span><span class=n>s</span><span class=w>
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> 
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> </span><span class=mi>10</span><span class=w> </span><span class=n>packages</span><span class=w> </span><span class=n>are</span><span class=w> </span><span class=n>looking</span><span class=w> </span><span class=k>for</span><span class=w> </span><span class=n>funding</span><span class=w>
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w>   </span><span class=n>run</span><span class=w> </span><span class=o>`</span><span class=n>npm</span><span class=w> </span><span class=n>fund</span><span class=o>`</span><span class=w> </span><span class=k>for</span><span class=w> </span><span class=n>details</span><span class=w>
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> 
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> </span><span class=n>found</span><span class=w> </span><span class=mi>0</span><span class=w> </span><span class=n>vulnerabilities</span><span class=w>
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> 
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> 
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> </span><span class=o>&gt;</span><span class=w> </span><span class=n>njs1</span><span class=o>@</span><span class=mi>1</span><span class=p>.</span><span class=mi>0</span><span class=p>.</span><span class=mi>0</span><span class=w> </span><span class=n>start</span><span class=w> </span><span class=o>/</span><span class=n>root</span><span class=o>/</span><span class=n>njs1</span><span class=w>
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> </span><span class=o>&gt;</span><span class=w> </span><span class=n>nodemon</span><span class=w> </span><span class=k>index</span><span class=p>.</span><span class=n>js</span><span class=w>
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> 
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> </span><span class=p>[</span><span class=n>nodemon</span><span class=p>]</span><span class=w> </span><span class=mi>2</span><span class=p>.</span><span class=mi>0</span><span class=p>.</span><span class=mi>4</span><span class=w>
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> </span><span class=p>[</span><span class=n>nodemon</span><span class=p>]</span><span class=w> </span><span class=k>to</span><span class=w> </span><span class=n>restart</span><span class=w> </span><span class=n>at</span><span class=w> </span><span class=n>any</span><span class=w> </span><span class=kt>time</span><span class=p>,</span><span class=w> </span><span class=n>enter</span><span class=w> </span><span class=o>`</span><span class=n>rs</span><span class=o>`</span><span class=w>
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> </span><span class=p>[</span><span class=n>nodemon</span><span class=p>]</span><span class=w> </span><span class=n>watching</span><span class=w> </span><span class=nf>path</span><span class=p>(</span><span class=n>s</span><span class=p>):</span><span class=w> </span><span class=o>*</span><span class=p>.</span><span class=o>*</span><span class=w>
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> </span><span class=p>[</span><span class=n>nodemon</span><span class=p>]</span><span class=w> </span><span class=n>watching</span><span class=w> </span><span class=n>extensions</span><span class=p>:</span><span class=w> </span><span class=n>js</span><span class=p>,</span><span class=n>mjs</span><span class=p>,</span><span class=n>json</span><span class=w>
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> </span><span class=p>[</span><span class=n>nodemon</span><span class=p>]</span><span class=w> </span><span class=k>starting</span><span class=w> </span><span class=o>`</span><span class=n>node</span><span class=w> </span><span class=k>index</span><span class=p>.</span><span class=n>js</span><span class=o>`</span><span class=w>
-</span><span class=w></span><span class=n>njs1_1</span><span class=w>  </span><span class=o>|</span><span class=w> </span><span class=n>NJS1</span><span class=w> </span><span class=n>app</span><span class=w> </span><span class=n>listening</span><span class=w> </span><span class=k>on</span><span class=w> </span><span class=n>port</span><span class=w> </span><span class=mi>7000</span><span class=o>!</span><span class=w>
-</span><span class=w>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>(base) yanboyang713@boyang:~/Documents/docker-as-dev-environment$ docker-compose up --build
+</span><span class=go>Building njs1
+</span><span class=go>Step 1/1 : FROM node:latest
+</span><span class=go> ---&gt; f47907840247
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>Successfully built f47907840247
+</span><span class=go>Successfully tagged docker-as-dev-environment_njs1:latest
+</span><span class=go>Starting docker-as-dev-environment_njs1_1 ... done
+</span><span class=go>Attaching to docker-as-dev-environment_njs1_1
+</span><span class=go>njs1_1  | npm WARN njs1@1.0.0 No repository field.
+</span><span class=go>njs1_1  | npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.3 (node_modules/fsevents):
+</span><span class=go>njs1_1  | npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {&#34;os&#34;:&#34;darwin&#34;,&#34;arch&#34;:&#34;any&#34;} (current: {&#34;os&#34;:&#34;linux&#34;,&#34;arch&#34;:&#34;x64&#34;})
+</span><span class=go>njs1_1  | 
+</span><span class=go>njs1_1  | audited 171 packages in 1.633s
+</span><span class=go>njs1_1  | 
+</span><span class=go>njs1_1  | 10 packages are looking for funding
+</span><span class=go>njs1_1  |   run `npm fund` for details
+</span><span class=go>njs1_1  | 
+</span><span class=go>njs1_1  | found 0 vulnerabilities
+</span><span class=go>njs1_1  | 
+</span><span class=go>njs1_1  | 
+</span><span class=go>njs1_1  | &gt; njs1@1.0.0 start /root/njs1
+</span><span class=go>njs1_1  | &gt; nodemon index.js
+</span><span class=go>njs1_1  | 
+</span><span class=go>njs1_1  | [nodemon] 2.0.4
+</span><span class=go>njs1_1  | [nodemon] to restart at any time, enter `rs`
+</span><span class=go>njs1_1  | [nodemon] watching path(s): *.*
+</span><span class=go>njs1_1  | [nodemon] watching extensions: js,mjs,json
+</span><span class=go>njs1_1  | [nodemon] starting `node index.js`
+</span><span class=go>njs1_1  | NJS1 app listening on port 7000!
+</span><span class=go></span><span class=err>
 </span></code></pre></td></tr></table>
 </div>
 </div><p>The &ndash;build tells docker-compose to rebuild the images.</p>
@@ -696,7 +696,7 @@ njs1/package.json</p>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-10-14</span>
+<span>Updated on 2021-11-07</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -722,7 +722,7 @@ njs1/package.json</p>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.89.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>

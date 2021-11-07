@@ -11,7 +11,7 @@ Some informal definitions of statistics, provided by various well-known statisti
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/introductiontostatistics-appliedanalytics/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-03-03T06:11:32+10:00">
-<meta property="article:modified_time" content="2021-10-14T14:03:52+00:00">
+<meta property="article:modified_time" content="2021-11-07T13:55:52+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Introduction to Statistics (Applied Analytics)">
@@ -21,7 +21,7 @@ Some informal definitions of statistics, provided by various well-known statisti
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/introductiontostatistics-appliedanalytics/><link rel=prev href=https://yanboyang.com/bigdataarchitectures/><link rel=next href=https://yanboyang.com/rlanguage/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Introduction to Statistics (Applied Analytics)","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/introductiontostatistics-appliedanalytics\/"},"genre":"posts","wordcount":38992,"url":"https:\/\/yanboyang.com\/introductiontostatistics-appliedanalytics\/","datePublished":"2021-03-03T06:11:32+10:00","dateModified":"2021-10-14T14:03:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/introductiontostatistics-appliedanalytics/><link rel=prev href=https://yanboyang.com/bigdataarchitectures/><link rel=next href=https://yanboyang.com/rlanguage/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Introduction to Statistics (Applied Analytics)","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/introductiontostatistics-appliedanalytics\/"},"genre":"posts","wordcount":38992,"url":"https:\/\/yanboyang.com\/introductiontostatistics-appliedanalytics\/","datePublished":"2021-03-03T06:11:32+10:00","dateModified":"2021-11-07T13:55:52+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -94,7 +94,7 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Introduction to Statistics (Applied Analytics)</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/math1324/><i class="far fa-folder fa-fw"></i>MATH1324</a></span></div>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/math1324/><i class="far fa-folder fa-fw"></i>MATH1324</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-03-03>2021-03-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;38992 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;184 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
@@ -996,9 +996,9 @@ Here’s some information about the dataset, Diamonds. The dataset includes the 
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### .
-###      Fair      Good Very Good   Premium     Ideal 
-###      1610      4906     12082     13791     21551
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## .</span>
+<span class=gp>#</span><span class=c1>##      Fair      Good Very Good   Premium     Ideal </span>
+<span class=gp>#</span><span class=c1>##      1610      4906     12082     13791     21551</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Reading the output, we find the “ideal”, 21,551, cut is the most frequently occurring value. The most frequently occurring qualitative value for a variable is called the <strong>mode</strong>. There, we just covered two types of descriptive statistics in no time.</p>
@@ -1019,9 +1019,9 @@ Here’s some information about the dataset, Diamonds. The dataset includes the 
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### .
-###       Fair       Good  Very Good    Premium      Ideal 
-### 0.02984798 0.09095291 0.22398962 0.25567297 0.39953652
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## .</span>
+<span class=gp>#</span><span class=c1>##       Fair       Good  Very Good    Premium      Ideal </span>
+<span class=gp>#</span><span class=c1>## 0.02984798 0.09095291 0.22398962 0.25567297 0.39953652</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>or, percentages:</p>
@@ -1040,9 +1040,9 @@ Here’s some information about the dataset, Diamonds. The dataset includes the 
 </span><span class=lnt>3
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### .
-###      Fair      Good Very Good   Premium     Ideal 
-###  2.984798  9.095291 22.398962 25.567297 39.953652
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## .</span>
+<span class=gp>#</span><span class=c1>##      Fair      Good Very Good   Premium     Ideal </span>
+<span class=gp>#</span><span class=c1>##  2.984798  9.095291 22.398962 25.567297 39.953652</span>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id=bar-charts>Bar Charts</h4>
@@ -1109,13 +1109,13 @@ Here’s some information about the dataset, Diamonds. The dataset includes the 
 </span><span class=lnt>7
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###            
-###               I1  SI2  SI1  VS2  VS1 VVS2 VVS1   IF
-###   Fair       210  466  408  261  170   69   17    9
-###   Good        96 1081 1560  978  648  286  186   71
-###   Very Good   84 2100 3240 2591 1775 1235  789  268
-###   Premium    205 2949 3575 3357 1989  870  616  230
-###   Ideal      146 2598 4282 5071 3589 2606 2047 1212
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##            </span>
+<span class=gp>#</span><span class=c1>##               I1  SI2  SI1  VS2  VS1 VVS2 VVS1   IF</span>
+<span class=gp>#</span><span class=c1>##   Fair       210  466  408  261  170   69   17    9</span>
+<span class=gp>#</span><span class=c1>##   Good        96 1081 1560  978  648  286  186   71</span>
+<span class=gp>#</span><span class=c1>##   Very Good   84 2100 3240 2591 1775 1235  789  268</span>
+<span class=gp>#</span><span class=c1>##   Premium    205 2949 3575 3357 1989  870  616  230</span>
+<span class=gp>#</span><span class=c1>##   Ideal      146 2598 4282 5071 3589 2606 2047 1212</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>However, because there are differences between the row and column totals for each category, it makes looking at trends difficult. We can calculate the conditional column percentages using the following code. Notice how the round() function has been included to reduce the size of the probabilities in the table cells. Otherwise, R will round to six decimal places and the table will be too large.</p>
@@ -1138,13 +1138,13 @@ Here’s some information about the dataset, Diamonds. The dataset includes the 
 </span><span class=lnt>7
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###            
-###                I1   SI2   SI1   VS2   VS1  VVS2  VVS1    IF
-###   Fair      0.283 0.051 0.031 0.021 0.021 0.014 0.005 0.005
-###   Good      0.130 0.118 0.119 0.080 0.079 0.056 0.051 0.040
-###   Very Good 0.113 0.228 0.248 0.211 0.217 0.244 0.216 0.150
-###   Premium   0.277 0.321 0.274 0.274 0.243 0.172 0.169 0.128
-###   Ideal     0.197 0.283 0.328 0.414 0.439 0.514 0.560 0.677
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##            </span>
+<span class=gp>#</span><span class=c1>##                I1   SI2   SI1   VS2   VS1  VVS2  VVS1    IF</span>
+<span class=gp>#</span><span class=c1>##   Fair      0.283 0.051 0.031 0.021 0.021 0.014 0.005 0.005</span>
+<span class=gp>#</span><span class=c1>##   Good      0.130 0.118 0.119 0.080 0.079 0.056 0.051 0.040</span>
+<span class=gp>#</span><span class=c1>##   Very Good 0.113 0.228 0.248 0.211 0.217 0.244 0.216 0.150</span>
+<span class=gp>#</span><span class=c1>##   Premium   0.277 0.321 0.274 0.274 0.243 0.172 0.169 0.128</span>
+<span class=gp>#</span><span class=c1>##   Ideal     0.197 0.283 0.328 0.414 0.439 0.514 0.560 0.677</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>These are conditional column probabilities, determined by margin = 2, because if we add all the probabilities for a column together, they will equal 1, e.g. sum(0.283, 0.130, 0.113, 0.227, 0.197) = 1.00. Let me prove it:</p>
@@ -1164,8 +1164,8 @@ Here’s some information about the dataset, Diamonds. The dataset includes the 
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###      Fair      Good Very Good   Premium     Ideal 
-###     0.283     0.130     0.113     0.277     0.197
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##      Fair      Good Very Good   Premium     Ideal </span>
+<span class=gp>#</span><span class=c1>##     0.283     0.130     0.113     0.277     0.197</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -1181,7 +1181,7 @@ Here’s some information about the dataset, Diamonds. The dataset includes the 
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 1
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 1</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>If we had set margin = 1 we would get row proportions:</p>
@@ -1204,13 +1204,13 @@ Here’s some information about the dataset, Diamonds. The dataset includes the 
 </span><span class=lnt>7
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###            
-###                I1   SI2   SI1   VS2   VS1  VVS2  VVS1    IF
-###   Fair      0.130 0.289 0.253 0.162 0.106 0.043 0.011 0.006
-###   Good      0.020 0.220 0.318 0.199 0.132 0.058 0.038 0.014
-###   Very Good 0.007 0.174 0.268 0.214 0.147 0.102 0.065 0.022
-###   Premium   0.015 0.214 0.259 0.243 0.144 0.063 0.045 0.017
-###   Ideal     0.007 0.121 0.199 0.235 0.167 0.121 0.095 0.056
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##            </span>
+<span class=gp>#</span><span class=c1>##                I1   SI2   SI1   VS2   VS1  VVS2  VVS1    IF</span>
+<span class=gp>#</span><span class=c1>##   Fair      0.130 0.289 0.253 0.162 0.106 0.043 0.011 0.006</span>
+<span class=gp>#</span><span class=c1>##   Good      0.020 0.220 0.318 0.199 0.132 0.058 0.038 0.014</span>
+<span class=gp>#</span><span class=c1>##   Very Good 0.007 0.174 0.268 0.214 0.147 0.102 0.065 0.022</span>
+<span class=gp>#</span><span class=c1>##   Premium   0.015 0.214 0.259 0.243 0.144 0.063 0.045 0.017</span>
+<span class=gp>#</span><span class=c1>##   Ideal     0.007 0.121 0.199 0.235 0.167 0.121 0.095 0.056</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>If we had left margin blank, we would get cell proportions:</p>
@@ -1233,13 +1233,13 @@ Here’s some information about the dataset, Diamonds. The dataset includes the 
 </span><span class=lnt>7
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###            
-###                I1   SI2   SI1   VS2   VS1  VVS2  VVS1    IF
-###   Fair      0.004 0.009 0.008 0.005 0.003 0.001 0.000 0.000
-###   Good      0.002 0.020 0.029 0.018 0.012 0.005 0.003 0.001
-###   Very Good 0.002 0.039 0.060 0.048 0.033 0.023 0.015 0.005
-###   Premium   0.004 0.055 0.066 0.062 0.037 0.016 0.011 0.004
-###   Ideal     0.003 0.048 0.079 0.094 0.067 0.048 0.038 0.022
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##            </span>
+<span class=gp>#</span><span class=c1>##                I1   SI2   SI1   VS2   VS1  VVS2  VVS1    IF</span>
+<span class=gp>#</span><span class=c1>##   Fair      0.004 0.009 0.008 0.005 0.003 0.001 0.000 0.000</span>
+<span class=gp>#</span><span class=c1>##   Good      0.002 0.020 0.029 0.018 0.012 0.005 0.003 0.001</span>
+<span class=gp>#</span><span class=c1>##   Very Good 0.002 0.039 0.060 0.048 0.033 0.023 0.015 0.005</span>
+<span class=gp>#</span><span class=c1>##   Premium   0.004 0.055 0.066 0.062 0.037 0.016 0.011 0.004</span>
+<span class=gp>#</span><span class=c1>##   Ideal     0.003 0.048 0.079 0.094 0.067 0.048 0.038 0.022</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Summing all the cells together would now equal 1. We will spend more time in Module 3 looking at the interpretation of large contingency tables. Now, let’s interpret the column probabilities. Recall:</p>
@@ -1262,13 +1262,13 @@ Here’s some information about the dataset, Diamonds. The dataset includes the 
 </span><span class=lnt>7
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###            
-###                I1   SI2   SI1   VS2   VS1  VVS2  VVS1    IF
-###   Fair      0.283 0.051 0.031 0.021 0.021 0.014 0.005 0.005
-###   Good      0.130 0.118 0.119 0.080 0.079 0.056 0.051 0.040
-###   Very Good 0.113 0.228 0.248 0.211 0.217 0.244 0.216 0.150
-###   Premium   0.277 0.321 0.274 0.274 0.243 0.172 0.169 0.128
-###   Ideal     0.197 0.283 0.328 0.414 0.439 0.514 0.560 0.677
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##            </span>
+<span class=gp>#</span><span class=c1>##                I1   SI2   SI1   VS2   VS1  VVS2  VVS1    IF</span>
+<span class=gp>#</span><span class=c1>##   Fair      0.283 0.051 0.031 0.021 0.021 0.014 0.005 0.005</span>
+<span class=gp>#</span><span class=c1>##   Good      0.130 0.118 0.119 0.080 0.079 0.056 0.051 0.040</span>
+<span class=gp>#</span><span class=c1>##   Very Good 0.113 0.228 0.248 0.211 0.217 0.244 0.216 0.150</span>
+<span class=gp>#</span><span class=c1>##   Premium   0.277 0.321 0.274 0.274 0.243 0.172 0.169 0.128</span>
+<span class=gp>#</span><span class=c1>##   Ideal     0.197 0.283 0.328 0.414 0.439 0.514 0.560 0.677</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Let’s contrast the worst clarity I1 with the best, IF (Flawless). For I1, we find that the probability for a fair, good, very good, premium and ideal cut are 0.283, 0.130, 0.113, 0.227, and 0.197 respectively. However, for IF, the same probabilities are 0.005, 0.040, 0.150, 0.128 and 0.677 respectively. We can see that IF diamonds are far more likely to have superior cuts, which makes perfect sense. You don’t give the best diamonds to the cutting apprentice!</p>
@@ -1440,8 +1440,8 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###  [1]     0  1000  2000  3000  4000  5000  6000  7000  8000  9000 10000 11000
-### [13] 12000 13000 14000 15000 16000 17000 18000 19000
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##  [1]     0  1000  2000  3000  4000  5000  6000  7000  8000  9000 10000 11000</span>
+<span class=gp>#</span><span class=c1>## [13] 12000 13000 14000 15000 16000 17000 18000 19000</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -1458,8 +1458,8 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###  [1] 14524  9683  6129  4225  4665  3163  2278  1668  1307  1076   934   825
-### [13]   701   603   504   513   425   405   312
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##  [1] 14524  9683  6129  4225  4665  3163  2278  1668  1307  1076   934   825</span>
+<span class=gp>#</span><span class=c1>## [13]   701   603   504   513   425   405   312</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Using this information, we can create the table to the below which explains how the data were plotted in the histogram above.</p>
@@ -1498,27 +1498,27 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 </span><span class=lnt>21
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###    Breaks Counts
-### 1       0      0
-### 2    1000  14524
-### 3    2000   9683
-### 4    3000   6129
-### 5    4000   4225
-### 6    5000   4665
-### 7    6000   3163
-### 8    7000   2278
-### 9    8000   1668
-### 10   9000   1307
-### 11  10000   1076
-### 12  11000    934
-### 13  12000    825
-### 14  13000    701
-### 15  14000    603
-### 16  15000    504
-### 17  16000    513
-### 18  17000    425
-### 19  18000    405
-### 20  19000    312
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##    Breaks Counts</span>
+<span class=gp>#</span><span class=c1>## 1       0      0</span>
+<span class=gp>#</span><span class=c1>## 2    1000  14524</span>
+<span class=gp>#</span><span class=c1>## 3    2000   9683</span>
+<span class=gp>#</span><span class=c1>## 4    3000   6129</span>
+<span class=gp>#</span><span class=c1>## 5    4000   4225</span>
+<span class=gp>#</span><span class=c1>## 6    5000   4665</span>
+<span class=gp>#</span><span class=c1>## 7    6000   3163</span>
+<span class=gp>#</span><span class=c1>## 8    7000   2278</span>
+<span class=gp>#</span><span class=c1>## 9    8000   1668</span>
+<span class=gp>#</span><span class=c1>## 10   9000   1307</span>
+<span class=gp>#</span><span class=c1>## 11  10000   1076</span>
+<span class=gp>#</span><span class=c1>## 12  11000    934</span>
+<span class=gp>#</span><span class=c1>## 13  12000    825</span>
+<span class=gp>#</span><span class=c1>## 14  13000    701</span>
+<span class=gp>#</span><span class=c1>## 15  14000    603</span>
+<span class=gp>#</span><span class=c1>## 16  15000    504</span>
+<span class=gp>#</span><span class=c1>## 17  16000    513</span>
+<span class=gp>#</span><span class=c1>## 18  17000    425</span>
+<span class=gp>#</span><span class=c1>## 19  18000    405</span>
+<span class=gp>#</span><span class=c1>## 20  19000    312</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Even with histograms and large data, we must be careful with how the choice of bins can change the appearance of a histogram. Consider the following histogram to see how much change can occur when reducing or increasing the number of bins from the default values.</p>
@@ -1582,7 +1582,7 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 61.77667
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 61.77667</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Fortunately, R has statistical functions that make this easier.</p>
@@ -1599,7 +1599,7 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 61.77667
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 61.77667</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The mean is a measure of central tendency that can be used to describe the average or typical value for a dataset. It takes all values into account and is therefore sensitive to all values in a dataset. This can create problems in <strong>skewed distributions</strong> or <strong>distributions with unusual or outlying values</strong>.</p>
@@ -1619,7 +1619,7 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 5.7
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 5.7</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -1635,7 +1635,7 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 58.2 63.9
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 58.2 63.9</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The <strong>range</strong> is not very useful. It is based on only two data points and misses all the interesting stuff happening in between. A better indicator of variation is the sample variance, $$s^2$$ and sample standard deviation, <strong>s</strong>. The sample variance is calculated using the following formula:</p>
@@ -1657,7 +1657,7 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 2.106678
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 2.106678</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -1673,7 +1673,7 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 1.45144
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 1.45144</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The following code walks through the computational steps of these two formulae. First we compute the variance, var().</p>
@@ -1727,37 +1727,37 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 </span><span class=lnt>31
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###    Depth     Mean   Deviation
-### 1   61.9 61.77667  0.12333333
-### 2   59.3 61.77667 -2.47666667
-### 3   59.6 61.77667 -2.17666667
-### 4   59.5 61.77667 -2.27666667
-### 5   61.6 61.77667 -0.17666667
-### 6   62.2 61.77667  0.42333333
-### 7   61.6 61.77667 -0.17666667
-### 8   62.5 61.77667  0.72333333
-### 9   63.4 61.77667  1.62333333
-### 10  63.4 61.77667  1.62333333
-### 11  60.6 61.77667 -1.17666667
-### 12  63.9 61.77667  2.12333333
-### 13  61.2 61.77667 -0.57666667
-### 14  62.5 61.77667  0.72333333
-### 15  62.2 61.77667  0.42333333
-### 16  59.8 61.77667 -1.97666667
-### 17  61.8 61.77667  0.02333333
-### 18  58.2 61.77667 -3.57666667
-### 19  63.7 61.77667  1.92333333
-### 20  62.7 61.77667  0.92333333
-### 21  61.2 61.77667 -0.57666667
-### 22  63.8 61.77667  2.02333333
-### 23  62.5 61.77667  0.72333333
-### 24  61.0 61.77667 -0.77666667
-### 25  62.8 61.77667  1.02333333
-### 26  61.0 61.77667 -0.77666667
-### 27  62.3 61.77667  0.52333333
-### 28  62.6 61.77667  0.82333333
-### 29  61.2 61.77667 -0.57666667
-### 30  63.3 61.77667  1.52333333
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##    Depth     Mean   Deviation</span>
+<span class=gp>#</span><span class=c1>## 1   61.9 61.77667  0.12333333</span>
+<span class=gp>#</span><span class=c1>## 2   59.3 61.77667 -2.47666667</span>
+<span class=gp>#</span><span class=c1>## 3   59.6 61.77667 -2.17666667</span>
+<span class=gp>#</span><span class=c1>## 4   59.5 61.77667 -2.27666667</span>
+<span class=gp>#</span><span class=c1>## 5   61.6 61.77667 -0.17666667</span>
+<span class=gp>#</span><span class=c1>## 6   62.2 61.77667  0.42333333</span>
+<span class=gp>#</span><span class=c1>## 7   61.6 61.77667 -0.17666667</span>
+<span class=gp>#</span><span class=c1>## 8   62.5 61.77667  0.72333333</span>
+<span class=gp>#</span><span class=c1>## 9   63.4 61.77667  1.62333333</span>
+<span class=gp>#</span><span class=c1>## 10  63.4 61.77667  1.62333333</span>
+<span class=gp>#</span><span class=c1>## 11  60.6 61.77667 -1.17666667</span>
+<span class=gp>#</span><span class=c1>## 12  63.9 61.77667  2.12333333</span>
+<span class=gp>#</span><span class=c1>## 13  61.2 61.77667 -0.57666667</span>
+<span class=gp>#</span><span class=c1>## 14  62.5 61.77667  0.72333333</span>
+<span class=gp>#</span><span class=c1>## 15  62.2 61.77667  0.42333333</span>
+<span class=gp>#</span><span class=c1>## 16  59.8 61.77667 -1.97666667</span>
+<span class=gp>#</span><span class=c1>## 17  61.8 61.77667  0.02333333</span>
+<span class=gp>#</span><span class=c1>## 18  58.2 61.77667 -3.57666667</span>
+<span class=gp>#</span><span class=c1>## 19  63.7 61.77667  1.92333333</span>
+<span class=gp>#</span><span class=c1>## 20  62.7 61.77667  0.92333333</span>
+<span class=gp>#</span><span class=c1>## 21  61.2 61.77667 -0.57666667</span>
+<span class=gp>#</span><span class=c1>## 22  63.8 61.77667  2.02333333</span>
+<span class=gp>#</span><span class=c1>## 23  62.5 61.77667  0.72333333</span>
+<span class=gp>#</span><span class=c1>## 24  61.0 61.77667 -0.77666667</span>
+<span class=gp>#</span><span class=c1>## 25  62.8 61.77667  1.02333333</span>
+<span class=gp>#</span><span class=c1>## 26  61.0 61.77667 -0.77666667</span>
+<span class=gp>#</span><span class=c1>## 27  62.3 61.77667  0.52333333</span>
+<span class=gp>#</span><span class=c1>## 28  62.6 61.77667  0.82333333</span>
+<span class=gp>#</span><span class=c1>## 29  61.2 61.77667 -0.57666667</span>
+<span class=gp>#</span><span class=c1>## 30  63.3 61.77667  1.52333333</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Now square the deviations, $$ (x_i − bar{x}) ^ 2:</p>
@@ -1808,37 +1808,37 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 </span><span class=lnt>31
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###    Depth     Mean   Deviation        DevSq
-### 1   61.9 61.77667  0.12333333 1.521111e-02
-### 2   59.3 61.77667 -2.47666667 6.133878e+00
-### 3   59.6 61.77667 -2.17666667 4.737878e+00
-### 4   59.5 61.77667 -2.27666667 5.183211e+00
-### 5   61.6 61.77667 -0.17666667 3.121111e-02
-### 6   62.2 61.77667  0.42333333 1.792111e-01
-### 7   61.6 61.77667 -0.17666667 3.121111e-02
-### 8   62.5 61.77667  0.72333333 5.232111e-01
-### 9   63.4 61.77667  1.62333333 2.635211e+00
-### 10  63.4 61.77667  1.62333333 2.635211e+00
-### 11  60.6 61.77667 -1.17666667 1.384544e+00
-### 12  63.9 61.77667  2.12333333 4.508544e+00
-### 13  61.2 61.77667 -0.57666667 3.325444e-01
-### 14  62.5 61.77667  0.72333333 5.232111e-01
-### 15  62.2 61.77667  0.42333333 1.792111e-01
-### 16  59.8 61.77667 -1.97666667 3.907211e+00
-### 17  61.8 61.77667  0.02333333 5.444444e-04
-### 18  58.2 61.77667 -3.57666667 1.279254e+01
-### 19  63.7 61.77667  1.92333333 3.699211e+00
-### 20  62.7 61.77667  0.92333333 8.525444e-01
-### 21  61.2 61.77667 -0.57666667 3.325444e-01
-### 22  63.8 61.77667  2.02333333 4.093878e+00
-### 23  62.5 61.77667  0.72333333 5.232111e-01
-### 24  61.0 61.77667 -0.77666667 6.032111e-01
-### 25  62.8 61.77667  1.02333333 1.047211e+00
-### 26  61.0 61.77667 -0.77666667 6.032111e-01
-### 27  62.3 61.77667  0.52333333 2.738778e-01
-### 28  62.6 61.77667  0.82333333 6.778778e-01
-### 29  61.2 61.77667 -0.57666667 3.325444e-01
-### 30  63.3 61.77667  1.52333333 2.320544e+00
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##    Depth     Mean   Deviation        DevSq</span>
+<span class=gp>#</span><span class=c1>## 1   61.9 61.77667  0.12333333 1.521111e-02</span>
+<span class=gp>#</span><span class=c1>## 2   59.3 61.77667 -2.47666667 6.133878e+00</span>
+<span class=gp>#</span><span class=c1>## 3   59.6 61.77667 -2.17666667 4.737878e+00</span>
+<span class=gp>#</span><span class=c1>## 4   59.5 61.77667 -2.27666667 5.183211e+00</span>
+<span class=gp>#</span><span class=c1>## 5   61.6 61.77667 -0.17666667 3.121111e-02</span>
+<span class=gp>#</span><span class=c1>## 6   62.2 61.77667  0.42333333 1.792111e-01</span>
+<span class=gp>#</span><span class=c1>## 7   61.6 61.77667 -0.17666667 3.121111e-02</span>
+<span class=gp>#</span><span class=c1>## 8   62.5 61.77667  0.72333333 5.232111e-01</span>
+<span class=gp>#</span><span class=c1>## 9   63.4 61.77667  1.62333333 2.635211e+00</span>
+<span class=gp>#</span><span class=c1>## 10  63.4 61.77667  1.62333333 2.635211e+00</span>
+<span class=gp>#</span><span class=c1>## 11  60.6 61.77667 -1.17666667 1.384544e+00</span>
+<span class=gp>#</span><span class=c1>## 12  63.9 61.77667  2.12333333 4.508544e+00</span>
+<span class=gp>#</span><span class=c1>## 13  61.2 61.77667 -0.57666667 3.325444e-01</span>
+<span class=gp>#</span><span class=c1>## 14  62.5 61.77667  0.72333333 5.232111e-01</span>
+<span class=gp>#</span><span class=c1>## 15  62.2 61.77667  0.42333333 1.792111e-01</span>
+<span class=gp>#</span><span class=c1>## 16  59.8 61.77667 -1.97666667 3.907211e+00</span>
+<span class=gp>#</span><span class=c1>## 17  61.8 61.77667  0.02333333 5.444444e-04</span>
+<span class=gp>#</span><span class=c1>## 18  58.2 61.77667 -3.57666667 1.279254e+01</span>
+<span class=gp>#</span><span class=c1>## 19  63.7 61.77667  1.92333333 3.699211e+00</span>
+<span class=gp>#</span><span class=c1>## 20  62.7 61.77667  0.92333333 8.525444e-01</span>
+<span class=gp>#</span><span class=c1>## 21  61.2 61.77667 -0.57666667 3.325444e-01</span>
+<span class=gp>#</span><span class=c1>## 22  63.8 61.77667  2.02333333 4.093878e+00</span>
+<span class=gp>#</span><span class=c1>## 23  62.5 61.77667  0.72333333 5.232111e-01</span>
+<span class=gp>#</span><span class=c1>## 24  61.0 61.77667 -0.77666667 6.032111e-01</span>
+<span class=gp>#</span><span class=c1>## 25  62.8 61.77667  1.02333333 1.047211e+00</span>
+<span class=gp>#</span><span class=c1>## 26  61.0 61.77667 -0.77666667 6.032111e-01</span>
+<span class=gp>#</span><span class=c1>## 27  62.3 61.77667  0.52333333 2.738778e-01</span>
+<span class=gp>#</span><span class=c1>## 28  62.6 61.77667  0.82333333 6.778778e-01</span>
+<span class=gp>#</span><span class=c1>## 29  61.2 61.77667 -0.57666667 3.325444e-01</span>
+<span class=gp>#</span><span class=c1>## 30  63.3 61.77667  1.52333333 2.320544e+00</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Now sum the squared deviations, $$ \sum_{i = 1}^{n} (x_i − bar{x})^2 $$</p>
@@ -1857,7 +1857,7 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 61.09367
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 61.09367</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Now divide by n−1 (Bessel’s correction):</p>
@@ -1876,7 +1876,7 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 2.106678
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 2.106678</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Correct! Square root the variance, $$\sqrt{s^2} $$ to get the sample standard deviation, s:</p>
@@ -1893,7 +1893,7 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 1.45144
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 1.45144</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Correct again! The variance for the depth data was 1.45. As the variance represents an averaged squared value, it is unit-less. The standard deviation corrects this by taking the square root of the variance in order to convert it back to its original scale. The standard deviation uses all the values in a dataset and is therefore a much more useful indicator of variability. The standard deviation represents the average deviation from the mean. For example, we could state that diamond depth percentages variaed by 1.45% on average. In other words, very littl variation. The mean of the depth data was calculated to be 61.78. The following info-graphic depicts the mean, range and standard deviation for diamond depth data according to a dot plot.</p>
@@ -1913,8 +1913,8 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-###     326     950    2401    3933    5324   18823
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
+<span class=gp>#</span><span class=c1>##     326     950    2401    3933    5324   18823</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>This is missing the standard deviation. We can use the summarise() function from the dplyr package to produce a similar summary. There are many other packages that make this easier, however, I believe learning to use dplyr to build these tables gives you far more flexibility and prevents the need to install another package. I’ll prove this shortly. Let’s have a look at a basic summarised table.</p>
@@ -1934,8 +1934,8 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###     Mean      SD
-### 1 3932.8 3989.44
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##     Mean      SD</span>
+<span class=gp>#</span><span class=c1>## 1 3932.8 3989.44</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Note how we include <strong>na.rm = TRUE</strong> to remove missing values from the computations.</p>
@@ -1978,8 +1978,8 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-###   2.000   3.500   5.000   5.286   7.000   9.000
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
+<span class=gp>#</span><span class=c1>##   2.000   3.500   5.000   5.286   7.000   9.000</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id=scenario-22-4-9-8-6-5>Scenario 2 2, 4, 9, 8, 6, 5</h2>
@@ -2002,8 +2002,8 @@ Looking at this clustered bar chart, it becomes quickly apparent that as the cla
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-###   2.000   4.250   5.500   5.667   7.500   9.000
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
+<span class=gp>#</span><span class=c1>##   2.000   4.250   5.500   5.667   7.500   9.000</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Q1 and Q3 are calculated in a similar fashion after the dataset is split at the median, top and bottom 50%. Q1 is the median of the bottom 50% (i.e. 25th percentile) and Q3 is median of the top 50% (i.e. 75th percentile).</p>
@@ -2108,14 +2108,14 @@ $$ Upper outlier > 62.675 + (1.5 ∗ 1.625) = 65.1125 $$</p>
 </span><span class=lnt>8
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### # A tibble: 5 x 10
-###   cut         Min    Q1 Median    Q3   Max  Mean    SD     n Missing
-###   &lt;ord&gt;     &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;   &lt;int&gt;
-### 1 Fair        337 2050.  3282  5206. 18574 4359. 3560.  1610       0
-### 2 Good        327 1145   3050. 5028  18788 3929. 3682.  4906       0
-### 3 Very Good   336  912   2648  5373. 18818 3982. 3936. 12082       0
-### 4 Premium     326 1046   3185  6296  18823 4584. 4349. 13791       0
-### 5 Ideal       326  878   1810  4678. 18806 3458. 3808. 21551       0
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## # A tibble: 5 x 10</span>
+<span class=gp>#</span><span class=c1>##   cut         Min    Q1 Median    Q3   Max  Mean    SD     n Missing</span>
+<span class=gp>#</span><span class=c1>##   &lt;ord&gt;     &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;   &lt;int&gt;</span>
+<span class=gp>#</span><span class=c1>## 1 Fair        337 2050.  3282  5206. 18574 4359. 3560.  1610       0</span>
+<span class=gp>#</span><span class=c1>## 2 Good        327 1145   3050. 5028  18788 3929. 3682.  4906       0</span>
+<span class=gp>#</span><span class=c1>## 3 Very Good   336  912   2648  5373. 18818 3982. 3936. 12082       0</span>
+<span class=gp>#</span><span class=c1>## 4 Premium     326 1046   3185  6296  18823 4584. 4349. 13791       0</span>
+<span class=gp>#</span><span class=c1>## 5 Ideal       326  878   1810  4678. 18806 3458. 3808. 21551       0</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Next, let’s create a side-by-side box plot.</p>
@@ -2156,17 +2156,17 @@ $$ Upper outlier > 62.675 + (1.5 ∗ 1.625) = 65.1125 $$</p>
 </span><span class=lnt>11
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###    ID Carat Price
-### 1   1  0.23   326
-### 2   2  0.21   326
-### 3   3  0.23   327
-### 4   4  0.29   334
-### 5   5  0.31   335
-### 6   6  0.24   336
-### 7   7  0.24   336
-### 8   8  0.26   337
-### 9   9  0.22   337
-### 10 10  0.23   338
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##    ID Carat Price</span>
+<span class=gp>#</span><span class=c1>## 1   1  0.23   326</span>
+<span class=gp>#</span><span class=c1>## 2   2  0.21   326</span>
+<span class=gp>#</span><span class=c1>## 3   3  0.23   327</span>
+<span class=gp>#</span><span class=c1>## 4   4  0.29   334</span>
+<span class=gp>#</span><span class=c1>## 5   5  0.31   335</span>
+<span class=gp>#</span><span class=c1>## 6   6  0.24   336</span>
+<span class=gp>#</span><span class=c1>## 7   7  0.24   336</span>
+<span class=gp>#</span><span class=c1>## 8   8  0.26   337</span>
+<span class=gp>#</span><span class=c1>## 9   9  0.22   337</span>
+<span class=gp>#</span><span class=c1>## 10 10  0.23   338</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>A point is plotted at the intersection between the x and y value for each data point. For example, for ID = 1, a point is plotted where carat = 0.23 intersects with a price value of 326. This is repeated for all 54,000 data points. Fortunately, you don’t have to do this by hand. Using R:</p>
@@ -3050,7 +3050,7 @@ Pr(&lt; 1 serve) = 3368 / 17042 = .198</p>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 720
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 720</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>k is the number to choose, in this example, 3.</p>
@@ -3070,7 +3070,7 @@ Pr(&lt; 1 serve) = 3368 / 17042 = .198</p>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 120
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 120</span>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id=combinations-not-ranking>Combinations (not ranking)</h4>
@@ -3148,7 +3148,7 @@ Pr(&lt; 1 serve) = 3368 / 17042 = .198</p>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 210
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 210</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>That’s incredible. There are 210 different combinations of friends that you could end up taking to the final. Considering the social ramifications of each combination will take weeks of deliberation, leave it to chance. Use a raffle instead. That way no one can claim favouritism… Who said statistics wasn’t useful!</p>
@@ -3812,7 +3812,7 @@ You go to a sandwich bar. You count there are 30 different ingredients (e.g. mea
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 0.2923585
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 0.2923585</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The answer is found to be $Pr(X = 10) = 0.29$. Given that the vaccine is 85% effective, it would be relatively common to find 10 successes in 12 randomly sampled people. In other words, there is a 29% chance that the vaccine will work for exactly 10/12 people.</p>
@@ -3892,8 +3892,8 @@ You go to a sandwich bar. You count there are 30 different ingredients (e.g. mea
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>dbinom(x = 0:8, size = 12, prob = .85) %&gt;% sum()
-### [1] 0.09220633
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>dbinom(x = 0:8, size = 12, prob = .85) %&gt;% sum()
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.09220633</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Alternatively, we can visualise the cumulative masss function (CMF), which plots, Pr(X≤x). For example: Pr(X≤1)=Pr(X=0)+Pr(X=1), or Pr(X≤8)=Pr(X=0)+Pr(X=1)+&mldr;+Pr(X=8) The CMF for the binomial distribution with n=12, p=0.85 is visualised below. As this is a CMF, it is bound between a probability of 0 and 1. To find Pr(X≤8), we look for 8 on the x axis. We can’t see the exact value, but we know it’s going be be less than 0.1.</p>
@@ -3905,8 +3905,8 @@ You go to a sandwich bar. You count there are 30 different ingredients (e.g. mea
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>pbinom(q = 8, size = 12, prob = 0.85, lower.tail = TRUE)
-### [1] 0.09220633
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>pbinom(q = 8, size = 12, prob = 0.85, lower.tail = TRUE)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.09220633</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>which we recall is exactly the same as:</p>
@@ -3916,8 +3916,8 @@ You go to a sandwich bar. You count there are 30 different ingredients (e.g. mea
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>dbinom(x = 0:8, size = 12, prob = .85) %&gt;% sum()
-### [1] 0.09220633
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>dbinom(x = 0:8, size = 12, prob = .85) %&gt;% sum()
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.09220633</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>We use q instead of x and we add lower.tail = TRUE to ensure we calculate $Pr(X≤x)$ and not $Pr(X>x)$, which would be specified as lower.tail = FALSE. The answer is .092. Once again, it would be unusual to observe the vaccine only working for 8 or less people out of 12, given p=0.85.</p>
@@ -3994,8 +3994,8 @@ You go to a sandwich bar. You count there are 30 different ingredients (e.g. mea
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>pbinom(q = 8, size = 12, prob = 0.85, lower.tail = FALSE)
-### [1] 0.9077937
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>pbinom(q = 8, size = 12, prob = 0.85, lower.tail = FALSE)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.9077937</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>or…</p>
@@ -4005,8 +4005,8 @@ You go to a sandwich bar. You count there are 30 different ingredients (e.g. mea
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>1-pbinom(q = 8, size = 12, prob = 0.85, lower.tail = TRUE)
-### [1] 0.9077937
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>1-pbinom(q = 8, size = 12, prob = 0.85, lower.tail = TRUE)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.9077937</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Note the use of lower.tail = FALSE to calculate $Pr(X>8)$. The answer should be .908. Now adding $Pr(X≤8)+Pr(X>8)=.092+.908=1!$ This confirms the total probability rule.</p>
@@ -4021,8 +4021,8 @@ You go to a sandwich bar. You count there are 30 different ingredients (e.g. mea
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>dbinom(x = 9:11, size = 12, prob = .85) %&gt;% sum()
-### [1] 0.7655519
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>dbinom(x = 9:11, size = 12, prob = .85) %&gt;% sum()
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.7655519</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>We can also use some tricky subtraction:</p>
@@ -4032,8 +4032,8 @@ You go to a sandwich bar. You count there are 30 different ingredients (e.g. mea
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>pbinom(11, 12, 0.85, lower.tail = TRUE) - pbinom(8, 12, 0.85, lower.tail = TRUE)
-### [1] 0.7655519
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>pbinom(11, 12, 0.85, lower.tail = TRUE) - pbinom(8, 12, 0.85, lower.tail = TRUE)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.7655519</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>This formula takes the cumulative probability, Pr(X≤11) and subtracts Pr(X≤8). The probability left over includes Pr(9≤X≤11).</p>
@@ -4061,12 +4061,12 @@ You go to a sandwich bar. You count there are 30 different ingredients (e.g. mea
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>## Mean or expected value
-n*p
-### [1] 10.2
-## SD
-sqrt(n*p*(1-p))
-### [1] 1.236932
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1># Mean or expected value</span>
+<span class=go>n*p
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 10.2</span>
+<span class=gp>#</span><span class=c1># SD</span>
+<span class=go>sqrt(n*p*(1-p))
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 1.236932</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The advantage of this approach is if we need to change n and p to work on a different example. We simply change the object values (e.g. n &lt;- 50, p &lt;- 0.5) and re-run the formula. There is no need to rewrite the values into the formula. This can save a lot of time in the long run.</p>
@@ -4098,8 +4098,8 @@ sqrt(n*p*(1-p))
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>dpois(x = 16, lambda = 16)
-### [1] 0.09921753
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>dpois(x = 16, lambda = 16)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.09921753</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The function dpois() computes the probability of observing a particular number of occurrences for a Poisson distribution. The answer to question 1 is Pr(X=16)=.099. We can use the following code to replicate the visualisation above:</p>
@@ -4182,8 +4182,8 @@ sqrt(n*p*(1-p))
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>ppois(q = 12, lambda = 16)
-### [1] 0.1931215
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>ppois(q = 12, lambda = 16)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.1931215</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Notice that we need to use the function ppois(), which gives $Pr(X &lt;= x)$, rather than the earlier function dpois(), to solve for the cumulative probability, CMF, of the doctor seeing 0 to 12 patients in a given day. Remember the difference between these two functions. Visually, the Poisson CMF looks like the following:</p>
@@ -4266,8 +4266,8 @@ sqrt(n*p*(1-p))
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>ppois(q = 100, lambda = 16*7)
-### [1] 0.1378483
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>ppois(q = 100, lambda = 16*7)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.1378483</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The answer will be Pr(X≤100)=.138.</p>
@@ -4282,8 +4282,8 @@ sqrt(n*p*(1-p))
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>1 - ppois(q = 25, lambda = 16)
-### [1] 0.01311856
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>1 - ppois(q = 25, lambda = 16)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.01311856</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>or…</p>
@@ -4293,8 +4293,8 @@ sqrt(n*p*(1-p))
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>ppois(q = 25, lambda = 16, lower.tail = FALSE)
-### [1] 0.01311856
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>ppois(q = 25, lambda = 16, lower.tail = FALSE)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.01311856</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The probability is very small at Pr(X>25)=.013.</p>
@@ -4309,8 +4309,8 @@ sqrt(n*p*(1-p))
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>ppois(q = 24, lambda = 16) - ppois(q = 7, lambda = 16)
-### [1] 0.9676847
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>ppois(q = 24, lambda = 16) - ppois(q = 7, lambda = 16)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.9676847</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Much quicker! The answer is found to be $Pr(8 \leq X \leq 24) = 0.968$. The reason we put x=7 into the second part of the formula is that we want to include $Pr(X=8)$ in the left over cumulative probability.</p>
@@ -4339,8 +4339,8 @@ Therefore, in R, we use the formula:</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>pnorm(q = 80, mean = 100, sd = 15)
-### [1] 0.09121122
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>pnorm(q = 80, mean = 100, sd = 15)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.09121122</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>We find Pr(X&lt;80)=0.091. This means we have a 9.1% chance of randomly selecting a person with an IQ below 80. To reproduce the plot see the code at the end of this section (It’s rather long).</p>
@@ -4355,8 +4355,8 @@ Therefore, in R, we use the formula:</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>1 - pnorm(q = 110, mean = 100, sd = 15)
-### [1] 0.2524925
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>1 - pnorm(q = 110, mean = 100, sd = 15)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.2524925</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>or…</p>
@@ -4366,8 +4366,8 @@ Therefore, in R, we use the formula:</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>pnorm(q = 110, mean = 100, sd = 15, lower.tail = FALSE)
-### [1] 0.2524925
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>pnorm(q = 110, mean = 100, sd = 15, lower.tail = FALSE)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.2524925</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Note the use of lower.tail = FALSE in the second formula. This reports Pr(X>110). The answer was found to be Pr(X>110)=.252.</p>
@@ -4384,8 +4384,8 @@ Therefore, in R, we use the formula:</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>pnorm(q = 115, mean = 100, sd = 15) - pnorm(q = 85, mean = 100, sd = 15)
-### [1] 0.6826895
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>pnorm(q = 115, mean = 100, sd = 15) - pnorm(q = 85, mean = 100, sd = 15)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.6826895</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The answer is Pr(85&lt;X&lt;115)=.683. Now look back at the info-graphic. Therefore, there is a 68.3% chance that a person’s IQ score will be within one standard deviation from the mean. Simple! Well, sort of…</p>
@@ -4407,8 +4407,8 @@ Therefore, in R, we use the formula:</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>qnorm(p = 0.9, mean = 100, sd = 15)
-### [1] 119.2233
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>qnorm(p = 0.9, mean = 100, sd = 15)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 119.2233</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Rounding the answer to a whole number, we find Pr(X&lt;119)=.9. Therefore, if a person scored in the 90th percentile, their IQ was 119.</p>
@@ -4423,8 +4423,8 @@ Therefore, in R, we use the formula:</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>1 - pnorm(q = 71, mean = 100, sd = 15)
-### [1] 0.9734024
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>1 - pnorm(q = 71, mean = 100, sd = 15)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.9734024</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>or…</p>
@@ -4434,8 +4434,8 @@ Therefore, in R, we use the formula:</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>pnorm(q = 71, mean = 100, sd = 15, lower.tail = FALSE)
-### [1] 0.9734024
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>pnorm(q = 71, mean = 100, sd = 15, lower.tail = FALSE)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.9734024</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>This means that there is .973−.95=.023 probability left above the upper value x, or Pr(X>x)=.023. This x value is the answer to our question. To find this x value, we use:</p>
@@ -4445,8 +4445,8 @@ Therefore, in R, we use the formula:</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>qnorm(p = 1 - .023, mean = 100, sd = 15)
-### [1] 129.9309
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>qnorm(p = 1 - .023, mean = 100, sd = 15)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 129.9309</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Note how we have used 1−.023, which corresponds to the 97.7th percentile. The answer to the above formula is Pr(71&lt;X&lt;130)=.95. Visually, the red shaded area corresponds to .95 probability.</p>
@@ -4458,8 +4458,8 @@ Therefore, in R, we use the formula:</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>pnorm(q = 130, mean = 100, sd = 15) - pnorm(q = 71, mean = 100, sd = 15)
-### [1] 0.9506523
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>pnorm(q = 130, mean = 100, sd = 15) - pnorm(q = 71, mean = 100, sd = 15)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.9506523</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The answer is confirmed to be .95! Phew, that one was getting tricky.</p>
@@ -4478,8 +4478,8 @@ Therefore, in R, we use the formula:</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>1 - pnorm(q = .667, mean = 0, sd = 1)
-### [1] 0.2523861
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>1 - pnorm(q = .667, mean = 0, sd = 1)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.2523861</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>or…</p>
@@ -4489,8 +4489,8 @@ Therefore, in R, we use the formula:</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>pnorm(q = .667, mean = 0, sd = 1, lower.tail = FALSE)
-### [1] 0.2523861
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>pnorm(q = .667, mean = 0, sd = 1, lower.tail = FALSE)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.2523861</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>We find Pr(X>110)=0.252. You will find the answer to be exactly the same as when we used:</p>
@@ -4500,8 +4500,8 @@ Therefore, in R, we use the formula:</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>1 - pnorm(q = 110, mean = 100, sd = 15) 
-### [1] 0.2524925
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>1 - pnorm(q = 110, mean = 100, sd = 15) 
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.2524925</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>or</p>
@@ -4511,8 +4511,8 @@ Therefore, in R, we use the formula:</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>pnorm(q = 110, mean = 100, sd = 15, lower.tail = FALSE)
-### [1] 0.2524925
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>pnorm(q = 110, mean = 100, sd = 15, lower.tail = FALSE)
+</span><span class=go></span><span class=gp>#</span><span class=c1>## [1] 0.2524925</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>You will need to use standardisation techniques throughout the course. This section has aimed to give you a heads up. There is nothing special about the z-distribution. It’s just a way to standardise a variable so that common probability tables can used. To convert a z-score back to its original x value use the following equation:</p>
@@ -5245,8 +5245,8 @@ A mild fever is defined as a body temperature of 39°C. What percentile does a m
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-###       1      50     131     193     261     966
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
+<span class=gp>#</span><span class=c1>##       1      50     131     193     261     966</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The population mean, which we denote as μ, rounds to 193 secs (or 3 minutes 21 secs). However, variability is high with a population standard deviation, which we denote as σ, of 193 secs.</p>
@@ -5292,8 +5292,8 @@ A mild fever is defined as a body temperature of 39°C. What percentile does a m
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-###    34.5   148.6   187.0   192.7   231.8   476.4
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
+<span class=gp>#</span><span class=c1>##    34.5   148.6   187.0   192.7   231.8   476.4</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The set.seed() function forces R’s built-in random number generator to start at a particular seeding value. This ensures that others, like yourself, can re-run this code, and get the same results. If we used a different seed, the results would be a little different. Try for yourself if you wish.</p>
@@ -5334,7 +5334,7 @@ $$\sigma = 193$$</p>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 192.7484
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 192.7484</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -5350,7 +5350,7 @@ $$\sigma = 193$$</p>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 3723.879
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 3723.879</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -5366,7 +5366,7 @@ $$\sigma = 193$$</p>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 61.02359
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 61.02359</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>These simulation estimates are very close! We get closer if we increase the simulation size, but this becomes impractical due to the extra computational time.</p>
@@ -5418,7 +5418,7 @@ Because we have a large sample size, we can invoke the CLT, which means the samp
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 0.01294095
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 0.01294095</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The probability, Pr(x¯&lt;150)), was found to equal .013. Therefore, there is a 1.3% chance that an investigator will randomly select a sample with a mean below 150 secs. In other words, this would be unusual.</p>
@@ -5439,7 +5439,7 @@ We need to find Pr(x¯>240). In R, we use the formula:</li>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 0.007441098
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 0.007441098</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The answer is found to be Pr(x¯>240)=0.007.</p>
@@ -5460,7 +5460,7 @@ We need to find Pr(x¯>240). In R, we use the formula:</li>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 2.244519e-15
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 2.244519e-15</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Note how we calculated SE directly in the formula using the sqrt() function. We find Pr(x¯>300)=2.244519e−15. What does that mean? When you see e-15, that means to move the decimal place to the right 15 places from 2.244519, so, Pr(x¯>300)=0.000000000000002244519. In other words, the probability is really, really small.</p>
@@ -5775,7 +5775,7 @@ The <strong>point estimate</strong> of a sample statistic, such as the mean, med
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 1.959964
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 1.959964</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Note, that if we don’t specify the mean and standard deviation for qnorm(), the R function reverts to a standard normal distribution with mean = 0 and sd = 1. We discover $ Pr( Z &lt; 1.96 ) = .975 $. The following figure shows how $ z = 1.96 $ relates back to the 95% CI. We can see that $ Pr(−1.96 &lt; z &lt; 1.96) = .95 $ or 95%. This means that 0.025 probability sits in the upper and lower tail of the distribution. As you will discover later on, the critical value is required in the conference interval formula to ensure the confidence interval achieves the desired level of coverage, e.g. 95%.</p>
@@ -5873,7 +5873,7 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 1.644854
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 1.644854</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The z-value is found to be 1.64. Now completing the 90% CI equation:</p>
@@ -5893,7 +5893,7 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 2.575829
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 2.575829</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The z-value is found to be 2.58. Next…</p>
@@ -5949,11 +5949,11 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 </span><span class=lnt>5
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### # A tibble: 2 x 10
-###   Store       Min    Q1 Median    Q3   Max  Mean    SD     n Missing
-###   &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;   &lt;int&gt;
-### 1 Dominos    25.5  26.6   26.9  28.8  29.7  27.4 1.17    125       0
-### 2 EagleBoys  26.6  28.8   29.1  29.5  31.1  29.2 0.626   125       0
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## # A tibble: 2 x 10</span>
+<span class=gp>#</span><span class=c1>##   Store       Min    Q1 Median    Q3   Max  Mean    SD     n Missing</span>
+<span class=gp>#</span><span class=c1>##   &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;   &lt;int&gt;</span>
+<span class=gp>#</span><span class=c1>## 1 Dominos    25.5  26.6   26.9  28.8  29.7  27.4 1.17    125       0</span>
+<span class=gp>#</span><span class=c1>## 2 EagleBoys  26.6  28.8   29.1  29.5  31.1  29.2 0.626   125       0</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -6008,16 +6008,16 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 </span><span class=lnt>10
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### # A tibble: 6 x 11
-### # Groups:   Store [2]
-###   Store     Crust     Min    Q1 Median    Q3   Max  Mean    SD     n Missing
-###   &lt;fct&gt;     &lt;fct&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;   &lt;int&gt;
-### 1 Dominos   DeepPan  26.0  26.4   26.6  26.8  28.8  26.7 0.462    40       0
-### 2 Dominos   Mid      25.5  26.6   26.7  27.0  28.9  26.8 0.510    42       0
-### 3 Dominos   Thin     25.6  28.8   29.0  29.2  29.7  28.8 0.801    43       0
-### 4 EagleBoys DeepPan  28.2  28.7   29.0  29.4  30.4  29.1 0.479    43       0
-### 5 EagleBoys Mid      26.6  28.6   28.8  29    29.8  28.8 0.483    43       0
-### 6 EagleBoys Thin     28.5  29.4   29.7  30.0  31.1  29.7 0.550    39       0
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## # A tibble: 6 x 11</span>
+<span class=gp>#</span><span class=c1>## # Groups:   Store [2]</span>
+<span class=gp>#</span><span class=c1>##   Store     Crust     Min    Q1 Median    Q3   Max  Mean    SD     n Missing</span>
+<span class=gp>#</span><span class=c1>##   &lt;fct&gt;     &lt;fct&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;   &lt;int&gt;</span>
+<span class=gp>#</span><span class=c1>## 1 Dominos   DeepPan  26.0  26.4   26.6  26.8  28.8  26.7 0.462    40       0</span>
+<span class=gp>#</span><span class=c1>## 2 Dominos   Mid      25.5  26.6   26.7  27.0  28.9  26.8 0.510    42       0</span>
+<span class=gp>#</span><span class=c1>## 3 Dominos   Thin     25.6  28.8   29.0  29.2  29.7  28.8 0.801    43       0</span>
+<span class=gp>#</span><span class=c1>## 4 EagleBoys DeepPan  28.2  28.7   29.0  29.4  30.4  29.1 0.479    43       0</span>
+<span class=gp>#</span><span class=c1>## 5 EagleBoys Mid      26.6  28.6   28.8  29    29.8  28.8 0.483    43       0</span>
+<span class=gp>#</span><span class=c1>## 6 EagleBoys Thin     28.5  29.4   29.7  30.0  31.1  29.7 0.550    39       0</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1618684246/MATH1324/ModelSix/deepPan_uz3wb5.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1618684246/MATH1324/ModelSix/deepPan_uz3wb5.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1618684246/MATH1324/ModelSix/deepPan_uz3wb5.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1618684246/MATH1324/ModelSix/deepPan_uz3wb5.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1618684246/MATH1324/ModelSix/deepPan_uz3wb5.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1618684246/MATH1324/ModelSix/deepPan_uz3wb5.png>
@@ -6061,11 +6061,11 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 </span><span class=lnt>5
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### # A tibble: 2 x 10
-###   Store       Min    Q1 Median    Q3   Max  Mean    SD     n Missing
-###   &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;   &lt;int&gt;
-### 1 Dominos    25.6  28.8   29.0  29.2  29.7  28.8 0.801    43       0
-### 2 EagleBoys  28.5  29.4   29.7  30.0  31.1  29.7 0.550    39       0
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## # A tibble: 2 x 10</span>
+<span class=gp>#</span><span class=c1>##   Store       Min    Q1 Median    Q3   Max  Mean    SD     n Missing</span>
+<span class=gp>#</span><span class=c1>##   &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;   &lt;int&gt;</span>
+<span class=gp>#</span><span class=c1>## 1 Dominos    25.6  28.8   29.0  29.2  29.7  28.8 0.801    43       0</span>
+<span class=gp>#</span><span class=c1>## 2 EagleBoys  28.5  29.4   29.7  30.0  31.1  29.7 0.550    39       0</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -6123,30 +6123,30 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 </span><span class=lnt>24
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### $stats
-###        [,1]  [,2]
-### [1,] 28.320 28.54
-### [2,] 28.765 29.40
-### [3,] 29.010 29.68
-### [4,] 29.200 30.03
-### [5,] 29.660 30.67
-### 
-### $n
-### [1] 43 39
-### 
-### $conf
-###          [,1]     [,2]
-### [1,] 28.90519 29.52061
-### [2,] 29.11481 29.83939
-### 
-### $out
-### [1] 27.04 25.58 27.45 26.38 31.06
-### 
-### $group
-### [1] 1 1 1 1 2
-### 
-### $names
-### [1] &#34;Dominos&#34;   &#34;EagleBoys&#34;
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## $stats</span>
+<span class=gp>#</span><span class=c1>##        [,1]  [,2]</span>
+<span class=gp>#</span><span class=c1>## [1,] 28.320 28.54</span>
+<span class=gp>#</span><span class=c1>## [2,] 28.765 29.40</span>
+<span class=gp>#</span><span class=c1>## [3,] 29.010 29.68</span>
+<span class=gp>#</span><span class=c1>## [4,] 29.200 30.03</span>
+<span class=gp>#</span><span class=c1>## [5,] 29.660 30.67</span>
+<span class=gp>#</span><span class=c1>## </span>
+<span class=gp>#</span><span class=c1>## $n</span>
+<span class=gp>#</span><span class=c1>## [1] 43 39</span>
+<span class=gp>#</span><span class=c1>## </span>
+<span class=gp>#</span><span class=c1>## $conf</span>
+<span class=gp>#</span><span class=c1>##          [,1]     [,2]</span>
+<span class=gp>#</span><span class=c1>## [1,] 28.90519 29.52061</span>
+<span class=gp>#</span><span class=c1>## [2,] 29.11481 29.83939</span>
+<span class=gp>#</span><span class=c1>## </span>
+<span class=gp>#</span><span class=c1>## $out</span>
+<span class=gp>#</span><span class=c1>## [1] 27.04 25.58 27.45 26.38 31.06</span>
+<span class=gp>#</span><span class=c1>## </span>
+<span class=gp>#</span><span class=c1>## $group</span>
+<span class=gp>#</span><span class=c1>## [1] 1 1 1 1 2</span>
+<span class=gp>#</span><span class=c1>## </span>
+<span class=gp>#</span><span class=c1>## $names</span>
+<span class=gp>#</span><span class=c1>## [1] &#34;Dominos&#34;   &#34;EagleBoys&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Now we can create a filter matrix to identify and remove the outliers in Pizza_thin.</p>
@@ -6174,12 +6174,12 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###       group outliers
-### 1   Dominos    27.04
-### 2   Dominos    25.58
-### 3   Dominos    27.45
-### 4   Dominos    26.38
-### 5 EagleBoys    31.06
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##       group outliers</span>
+<span class=gp>#</span><span class=c1>## 1   Dominos    27.04</span>
+<span class=gp>#</span><span class=c1>## 2   Dominos    25.58</span>
+<span class=gp>#</span><span class=c1>## 3   Dominos    27.45</span>
+<span class=gp>#</span><span class=c1>## 4   Dominos    26.38</span>
+<span class=gp>#</span><span class=c1>## 5 EagleBoys    31.06</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Now we can use dplyr and %in% operator to filter the outliers.</p>
@@ -6241,11 +6241,11 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 </span><span class=lnt>5
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### # A tibble: 2 x 10
-###   Store       Min    Q1 Median    Q3   Max  Mean    SD     n Missing
-###   &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;   &lt;int&gt;
-### 1 Dominos    28.3  28.8   29.0  29.2  29.7  29.0 0.307    39       0
-### 2 EagleBoys  28.5  29.4   29.6  30.0  30.7  29.7 0.509    38       0
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## # A tibble: 2 x 10</span>
+<span class=gp>#</span><span class=c1>##   Store       Min    Q1 Median    Q3   Max  Mean    SD     n Missing</span>
+<span class=gp>#</span><span class=c1>##   &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;   &lt;int&gt;</span>
+<span class=gp>#</span><span class=c1>## 1 Dominos    28.3  28.8   29.0  29.2  29.7  29.0 0.307    39       0</span>
+<span class=gp>#</span><span class=c1>## 2 EagleBoys  28.5  29.4   29.6  30.0  30.7  29.7 0.509    38       0</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Sometimes when you are dealing with very large datasets, removing one set of outliers, can create additional outliers in the filtered dataset. This is due to the outlier definition being based on the estimates of the IQR and quartiles. When you remove outliers, you are changing these estimates, which then changes the location of your fences. This is a major problem when dealing with highly skewed distributions. If you’re ever faced with this situation, look into applying a Box-cox power transformation prior to outlier detection and removal. The Box-Cox transformations do an amazing job of normalising distributions, which can greatly assist with outlier detection.</p>
@@ -6306,7 +6306,7 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 2.024394
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 2.024394</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>$$ 29.04 \pm 2.024\frac{0.306}{\sqrt{39}} = 099 $$</p>
@@ -6324,7 +6324,7 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### [1] 2.026192
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## [1] 2.026192</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>$$ 29.66 \pm 2.026\frac{0.509}{\sqrt{38}} = 0.167 $$</p>
@@ -6392,11 +6392,11 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 </span><span class=lnt>5
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### # A tibble: 2 x 8
-###   Store     Mean    SD     n tcrit    SE `95% CI Lower Boun~ `95% CI Upper Boun~
-###   &lt;fct&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;               &lt;dbl&gt;               &lt;dbl&gt;
-### 1 Dominos   29.0 0.307    39  2.02 0.049                28.9                29.1
-### 2 EagleBo~  29.7 0.509    38  2.03 0.083                29.5                29.8
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## # A tibble: 2 x 8</span>
+<span class=gp>#</span><span class=c1>##   Store     Mean    SD     n tcrit    SE `95% CI Lower Boun~ `95% CI Upper Boun~</span>
+<span class=gp>#</span><span class=c1>##   &lt;fct&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;               &lt;dbl&gt;               &lt;dbl&gt;</span>
+<span class=gp>#</span><span class=c1>## 1 Dominos   29.0 0.307    39  2.02 0.049                28.9                29.1</span>
+<span class=gp>#</span><span class=c1>## 2 EagleBo~  29.7 0.509    38  2.03 0.083                29.5                29.8</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>We can also use the t-test if we filter the dataset first:</p>
@@ -6425,17 +6425,17 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 </span><span class=lnt>11
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### 
-###  One Sample t-test
-### 
-### data:  Dominos$Diameter
-### t = 591.66, df = 38, p-value &lt; 2.2e-16
-### alternative hypothesis: true mean is not equal to 0
-### 95 percent confidence interval:
-###  28.94089 29.13962
-### sample estimates:
-### mean of x 
-###  29.04026
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## </span>
+<span class=gp>#</span><span class=c1>##  One Sample t-test</span>
+<span class=gp>#</span><span class=c1>## </span>
+<span class=gp>#</span><span class=c1>## data:  Dominos$Diameter</span>
+<span class=gp>#</span><span class=c1>## t = 591.66, df = 38, p-value &lt; 2.2e-16</span>
+<span class=gp>#</span><span class=c1>## alternative hypothesis: true mean is not equal to 0</span>
+<span class=gp>#</span><span class=c1>## 95 percent confidence interval:</span>
+<span class=gp>#</span><span class=c1>##  28.94089 29.13962</span>
+<span class=gp>#</span><span class=c1>## sample estimates:</span>
+<span class=gp>#</span><span class=c1>## mean of x </span>
+<span class=gp>#</span><span class=c1>##  29.04026</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -6463,17 +6463,17 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 </span><span class=lnt>11
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### 
-###  One Sample t-test
-### 
-### data:  EagleBoys$Diameter
-### t = 359.09, df = 37, p-value &lt; 2.2e-16
-### alternative hypothesis: true mean is not equal to 0
-### 95 percent confidence interval:
-###  29.49735 29.83212
-### sample estimates:
-### mean of x 
-###  29.66474
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## </span>
+<span class=gp>#</span><span class=c1>##  One Sample t-test</span>
+<span class=gp>#</span><span class=c1>## </span>
+<span class=gp>#</span><span class=c1>## data:  EagleBoys$Diameter</span>
+<span class=gp>#</span><span class=c1>## t = 359.09, df = 37, p-value &lt; 2.2e-16</span>
+<span class=gp>#</span><span class=c1>## alternative hypothesis: true mean is not equal to 0</span>
+<span class=gp>#</span><span class=c1>## 95 percent confidence interval:</span>
+<span class=gp>#</span><span class=c1>##  29.49735 29.83212</span>
+<span class=gp>#</span><span class=c1>## sample estimates:</span>
+<span class=gp>#</span><span class=c1>## mean of x </span>
+<span class=gp>#</span><span class=c1>##  29.66474</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>If you want to change the confidence level to 99%:</p>
@@ -6502,17 +6502,17 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 </span><span class=lnt>11
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### 
-###  One Sample t-test
-### 
-### data:  Dominos$Diameter
-### t = 591.66, df = 38, p-value &lt; 2.2e-16
-### alternative hypothesis: true mean is not equal to 0
-### 99 percent confidence interval:
-###  28.90717 29.17335
-### sample estimates:
-### mean of x 
-###  29.04026
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## </span>
+<span class=gp>#</span><span class=c1>##  One Sample t-test</span>
+<span class=gp>#</span><span class=c1>## </span>
+<span class=gp>#</span><span class=c1>## data:  Dominos$Diameter</span>
+<span class=gp>#</span><span class=c1>## t = 591.66, df = 38, p-value &lt; 2.2e-16</span>
+<span class=gp>#</span><span class=c1>## alternative hypothesis: true mean is not equal to 0</span>
+<span class=gp>#</span><span class=c1>## 99 percent confidence interval:</span>
+<span class=gp>#</span><span class=c1>##  28.90717 29.17335</span>
+<span class=gp>#</span><span class=c1>## sample estimates:</span>
+<span class=gp>#</span><span class=c1>## mean of x </span>
+<span class=gp>#</span><span class=c1>##  29.04026</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -6540,17 +6540,17 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 </span><span class=lnt>11
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>### 
-###  One Sample t-test
-### 
-### data:  EagleBoys$Diameter
-### t = 359.09, df = 37, p-value &lt; 2.2e-16
-### alternative hypothesis: true mean is not equal to 0
-### 99 percent confidence interval:
-###  29.44042 29.88906
-### sample estimates:
-### mean of x 
-###  29.66474
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>## </span>
+<span class=gp>#</span><span class=c1>##  One Sample t-test</span>
+<span class=gp>#</span><span class=c1>## </span>
+<span class=gp>#</span><span class=c1>## data:  EagleBoys$Diameter</span>
+<span class=gp>#</span><span class=c1>## t = 359.09, df = 37, p-value &lt; 2.2e-16</span>
+<span class=gp>#</span><span class=c1>## alternative hypothesis: true mean is not equal to 0</span>
+<span class=gp>#</span><span class=c1>## 99 percent confidence interval:</span>
+<span class=gp>#</span><span class=c1>##  29.44042 29.88906</span>
+<span class=gp>#</span><span class=c1>## sample estimates:</span>
+<span class=gp>#</span><span class=c1>## mean of x </span>
+<span class=gp>#</span><span class=c1>##  29.66474</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Visualising confidence intervals can be tricky. I recommend you display the confidence intervals overlaid upon the data. This ensures the viewer does not confuse the 95% CI as the range of the data. Here’s some code that you can adapt to different situations. The visualisation makes use of the ggplot2 and Hmisc package.</p>
@@ -6610,8 +6610,8 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###   x   n proportion     lower     upper conf.level
-### 1 6 300       0.02 0.0041578 0.0358422       0.95
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##   x   n proportion     lower     upper conf.level</span>
+<span class=gp>#</span><span class=c1>## 1 6 300       0.02 0.0041578 0.0358422       0.95</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>What do you do if np(1−p)&lt;5? For example, say the above example was changed so n=20, p=.3 (x=6) and 1−p=.7, np(1−p)=20∗.3∗.70=4.2. Therefore, the normal approximation does not apply. We can use the binom.exact() function to deal with this situation.</p>
@@ -6629,8 +6629,8 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###   x  n proportion     lower     upper conf.level
-### 1 6 20        0.3 0.1189316 0.5427892       0.95
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##   x  n proportion     lower     upper conf.level</span>
+<span class=gp>#</span><span class=c1>## 1 6 20        0.3 0.1189316 0.5427892       0.95</span>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id=rates---poisson-distribution>Rates - Poisson distribution</h4>
@@ -6649,8 +6649,8 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###    x pt rate    lower    upper conf.level
-### 1 56  1   56 42.30181 72.72068       0.95
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##    x pt rate    lower    upper conf.level</span>
+<span class=gp>#</span><span class=c1>## 1 56  1   56 42.30181 72.72068       0.95</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>When λ>100, we can use the following normal approximation:</p>
@@ -6672,8 +6672,8 @@ $$ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$</li>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>###     x pt rate    lower    upper conf.level
-### 1 145  1  145 121.3989 168.6011       0.95
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>##     x pt rate    lower    upper conf.level</span>
+<span class=gp>#</span><span class=c1>## 1 145  1  145 121.3989 168.6011       0.95</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id=determining-sample-size-for-the-mean>Determining Sample Size for the Mean</h3>
@@ -6746,8 +6746,8 @@ To determine the required sample size for the mean, you must know:</p>
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>##    Min   Q1 Median   Q3  Max     Mean        SD   n Missing
-## 1 35.7 36.6   36.8 37.1 38.2 36.80769 0.4074149 130       0
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1>#    Min   Q1 Median   Q3  Max     Mean        SD   n Missing</span>
+<span class=gp>#</span><span class=c1># 1 35.7 36.6   36.8 37.1 38.2 36.80769 0.4074149 130       0</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -6797,7 +6797,7 @@ Note the use of the sample standard deviation, s, in place of σ. The sampling d
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>## [1] -1.656752
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1># [1] -1.656752</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>This means the t∗ mean sits 1.66 SEs below the population mean of 37. We can write a short R function, named ttox to convert this back to a critical mean.</p>
@@ -6837,7 +6837,7 @@ Note the use of the sample standard deviation, s, in place of σ. The sampling d
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>## [1] 36.9408
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1># [1] 36.9408</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The t critical mean was found to be 36.94. This means Pr(x¯&lt;36.94)=0.05. In other-words, assuming the population mean = 37, sampling 130 people from the population and finding a mean to be less than 36.94 would happen less than 5% of the time.</p>
@@ -6859,7 +6859,7 @@ Note the use of the sample standard deviation, s, in place of σ. The sampling d
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>## [1] -1.978524
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1># [1] -1.978524</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>As the t distribution is symmetric, we know the t∗ values lie at -1.98 and +1.98 SE from the mean. Using R we can readily locate the lower critical mean:</p>
@@ -6882,7 +6882,7 @@ Note the use of the sample standard deviation, s, in place of σ. The sampling d
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>## [1] 36.9293
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1># [1] 36.9293</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>and the upper critical mean:</p>
@@ -6905,7 +6905,7 @@ Note the use of the sample standard deviation, s, in place of σ. The sampling d
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>## [1] 37.0707
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1># [1] 37.0707</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The lower t critical mean is equal to 36.93 and the upper critical region starts at 37.07.</p>
@@ -6954,7 +6954,7 @@ We can write another function called t_stat to perform this operation.</p>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>## [1] -5.381848
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1># [1] -5.381848</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>This test statistic is interpreted as the sample mean falling 5.38 SEs below the population mean. Now we can restate the p-value in terms of a SE of the mean using the t statistic. By doing this, we can look up a t distribution which has a mean of 0 and df=n−1. The p-value becomes:</p>
@@ -6981,7 +6981,7 @@ Using R:</p>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>## [1] 3.360785e-07
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>#</span><span class=c1># [1] 3.360785e-07</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>The answer is still really, really small, so we write p&lt;.001.</p>
@@ -7320,7 +7320,7 @@ A paired-samples t-test was used to test for a significant mean difference betwe
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-10-14</span>
+<span>Updated on 2021-11-07</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -7346,7 +7346,7 @@ A paired-samples t-test was used to test for a significant mean difference betwe
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.88.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.89.1">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 </footer></div>
