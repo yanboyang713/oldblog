@@ -483,7 +483,8 @@ R-CNN
 [[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633680106/cv/treeTwo_wchdqb.png]]
 
 
-** TODO Gettting Started SRS(Simple Realtime Server)
+** DONE Gettting Started SRS(Simple Realtime Server)
+CLOSED: [2021-11-13 Sat 11:43]
 :PROPERTIES:
 :EXPORT_FILE_NAME: srs
 :EXPORT_OPTIONS: author:nil
@@ -496,7 +497,7 @@ SRS is a simple, high efficiency and realtime video server, supports RTMP/WebRTC
 ** DONE Getting Started ROS and Openwrt with Proxmox
 CLOSED: [2021-11-05 Fri 19:52]
 :PROPERTIES:
-:EXPORT_FILE_NAME: ROSandOpenwrtWithProxmox
+:EXPORT_FILE_NAME: ROSandOpenwrtProxmox
 :EXPORT_OPTIONS: author:nil
 :END:
 
@@ -505,41 +506,87 @@ Update the package index and then install the Open vSwitch packages by executing
 
 #+begin_src console
  apt update
+ apt install ifupdown2
  apt install openvswitch-switch
 #+end_src
 
 root@pve-home:~# cat /etc/network/interfaces
+https://karneliuk.com/2021/08/infrastructure-1-building-virtualized-environment-with-debian-linux-and-proxmox-on-hp-and-supermicro/
+
+ifreload -a
+ifup vmbr0
 
 #+begin_src file
 auto lo
 iface lo inet loopback
 
+auto enp6s0
 iface enp6s0 inet manual
 
-# Bond Intel nics together
-allow-vmbr0 bond0
-iface bond0 inet manual
-        ovs_bridge vmbr0
-        ovs_type OVSBond
-        ovs_bonds enp1s0 enp2s0 enp3s0 ens9 enp5s0
-        ovs_options bond_mode=balance-slb vlan_mode=native-untagged
+auto enp1s0
+iface enp1s0 inet manual
 
-# Bridge for our bond and vlan virtual interfaces (our VMs attach to this bridge)
-auto vmbr0
-allow-ovs vmbr0
-iface vmbr0 inet manual
-        ovs_type OVSBridge
-        ovs_ports bond0 vlan1
+auto enp2s0
+iface enp2s0 inet manual
 
-# Virtual interface untagged traffic
-allow-vmbr0 vlan1
+auto enp3s0
+iface enp3s0 inet manual
+
+auto enp5s0
+iface enp5s0 inet manual
+
+auto ens9
+iface ens9 inet manual
+
+auto vlan1
 iface vlan1 inet static
+        address 192.168.1.2/24
+        gateway 192.168.1.1
         ovs_type OVSIntPort
         ovs_bridge vmbr0
         ovs_options vlan_mode=access
         ovs_extra set interface ${IFACE} external-ids:iface-id=$(hostname -s)-${IFACE}-vif
-        address 192.168.1.2
-        netmask 255.255.255.0
-        gateway 192.168.1.1
         dns-nameservers 192.168.1.1 8.8.8.8 8.8.4.4
+
+auto bond0
+iface bond0 inet manual
+        ovs_bonds enp1s0 enp2s0 enp3s0 ens9 enp5s0
+        ovs_type OVSBond
+        ovs_bridge vmbr0
+        ovs_options vlan_mode=native-untagged bond_mode=balance-slb
+
+auto vmbr0
+iface vmbr0 inet manual
+        ovs_type OVSBridge
+        ovs_ports bond0 vlan1
 #+end_src
+
+
+*** mikrotik
+https://mikrotik.com/software
+
+
+*** OpenWrt
+https://openwrt.org/downloads
+https://downloads.openwrt.org/releases/21.02.1/targets/x86/
+https://downloads.openwrt.org/releases/21.02.1/targets/x86/64/
+*** Migration of servers to Proxmox VE
+https://pve.proxmox.com/wiki/Migration_of_servers_to_Proxmox_VE
+*** VLAN
+https://engineerworkshop.com/blog/configuring-vlans-on-proxmox-an-introductory-guide/
+
+** DONE Getting Started Configuring VLANs on Proxmox
+CLOSED: [2021-11-05 Fri 19:52]
+:PROPERTIES:
+:EXPORT_FILE_NAME: vlan
+:EXPORT_OPTIONS: author:nil
+:END:
+*** Introduction
+A virtualization server allows you to run multiple machines, virtual machines (VMs), on one physical device, also known as the host. There could be many different VMs each for different tasks. In this guide, we will discuss configuring your Proxmox virtualization server to use VLANs so that you can group related VMs onto their own subnet.
+*** Motivation
+For security, as well as organizational purposes, physical machines are often separated on the network from each other by VLANs. By logically separating devices based on their functionality with these VLANs, we can make sure that our family's personal devices aren't sitting out in the open on the same subnet exposed to our internet-facing web servers. This is fairly easy on your regular network setup because the devices are physically separate from each other and so each ethernet port physically connected to a device can be assigned an individual VLAN.
+
+However, this system starts to break down when faced with virtualization servers. This is because diverse virtual machines are all sitting on the same physical host, forcing each VM to share the same physical connection. With a standard bridge between the individual VM and the host's NIC, we necessarily end up with each VM on the same subnet as the Proxmox host itself. Additionally, we end up with each VM on the same subnet as every other VM on that host. Not ideal.
+*** Solution
+Thankfully there's a way around this. In Proxmox, you can make your virtual bridge VLAN-aware so you can pass multiple VLANs through to your Proxmox server using only a single physical port. The individual VMs can then be configured to use whichever VLAN you choose.
+
