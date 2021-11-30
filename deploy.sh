@@ -22,6 +22,12 @@ deploy () {
     #set git remote URL
     git remote set-url origin git@github.com:"$RepositorieName".git
 
+    # switch to main branch
+    git checkout main
+
+    # pull
+    git pull
+
     # Add changes to git.
     git add -A
 
