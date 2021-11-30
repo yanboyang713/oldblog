@@ -590,3 +590,60 @@ However, this system starts to break down when faced with virtualization servers
 *** Solution
 Thankfully there's a way around this. In Proxmox, you can make your virtual bridge VLAN-aware so you can pass multiple VLANs through to your Proxmox server using only a single physical port. The individual VMs can then be configured to use whichever VLAN you choose.
 
+* Linux :@Linux:
+** TODO Getting Started Dynamic Window Manager (DWM)
+:PROPERTIES:
+:EXPORT_FILE_NAME: dwm
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+
+
+*** Installing
+**** Install Xorg
+
+#+begin_src console
+pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot
+#+end_src
+**** Install DWM
+#+begin_src bash
+git clone git://git.suckless.org/dwm ~/.config/dwm
+git clone git://git.suckless.org/st ~/.config/st
+git clone git://git.suckless.org/dmenu ~/.config/dmenu
+#+end_src
+
+#+begin_src bash
+cd ~/.config/dwm && sudo make install
+cd ~/.config/st && sudo make install
+cd ~/.config/dmenu && sudo make install
+#+end_src
+**** Installing a Display Manager (DM)
+#+begin_src bash
+pacman -S lightdm
+
+pacman -S lightdm-gtk-greeter
+
+pacman -S lightdm-gtk-greeter-settings
+#+end_src
+**** Enable lightdm service
+#+begin_src bash
+sudo systemctl enable lightdm
+#+end_src
+**** Adding an entry for DWM in the DM
+Create this file and add the following.
+#+begin_src bash
+mkdir /usr/share/xsessions
+
+sudo vim /usr/share/xsessions/dwm.desktop
+#+end_src
+
+#+begin_src file
+[Desktop Entry]
+Encoding=UTF-8
+Name=Dwm
+Comment=the dynamic window manager
+Exec=dwm
+Icon=dwm
+Type=XSession
+#+end_src
