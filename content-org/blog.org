@@ -591,7 +591,8 @@ However, this system starts to break down when faced with virtualization servers
 Thankfully there's a way around this. In Proxmox, you can make your virtual bridge VLAN-aware so you can pass multiple VLANs through to your Proxmox server using only a single physical port. The individual VMs can then be configured to use whichever VLAN you choose.
 
 * Linux :@Linux:
-** TODO Getting Started Dynamic Window Manager (DWM)
+** DONE Getting Started Dynamic Window Manager (DWM)
+CLOSED: [2021-11-30 Tue 17:50]
 :PROPERTIES:
 :EXPORT_FILE_NAME: dwm
 :EXPORT_OPTIONS: author:nil
@@ -647,3 +648,58 @@ Exec=dwm
 Icon=dwm
 Type=XSession
 #+end_src
+
+*** Multi-monitor setup
+If configured to use Xinerama libraries in config.mk, dwm can automatically detect configured screen outputs (monitor, overhead projector, etc.) and their resolutions and draw the windows in the output area accordingly.
+
+One of the easiest ways to configure screen outputs is via the RandR X server extension using the xrandr tool. Without arguments it will list the current configuration of screen outputs.
+
+#+begin_src bash
+xrandr
+#+end_src
+
+For each connected output the supported resolution modes will be printed.
+
+This is a example for set-up xrandr. You can put below content into ~/.xprofile, when system run X windows will set-up montors automatically.
+#+begin_src bash
+#!/bin/bash
+
+###############################
+# Set Monitor                 #
+###############################
+xrandr --output DP-1 --primary --mode 1920x1080 --pos 0x0 --rotate left --output HDMI-1 --mode 2560x1440 --pos 1080x0 --rotate normal --output DVI-D-1 --off
+#+end_src
+
+
+*** Basic Commands
++ Moving between windows: *[Alt]+[j]* or *[Alt]+[k]*
++ To move a terminal to another tag: *[Shift]+[Alt]+[<TAG_NUMBER>]*
++ To focus on another tag: *[Alt]+[tag number]*
++ To change the amount of windows in the master area: *[Alt]+[d]* (Decrease) or *[Alt]+[i]* (Increase)
++ To toggle a window between the master and stack area: *[Alt]+[Return]*
++ To kill a window: *[Shift]+[Alt]+[c]*
++ Click another tag with the right mouse button to bring those windows into your current focus.
+*** Layouts
+*Note*: By default dwm is in tiled layout mode.
+
++ Tiled: *[Alt]+[t]*
++ Floating: *[Alt]+[f]*
++ Monocle: *[Alt]+[m]*
+
+Further layout modes can be included through patches.
+
+*** Floating
+To resize the floating window: *[Alt]+[right mouse button]*
+
+To move it around *[Alt]+[left mouse button]*
+
+Floating in Tiled Layout
+
++ Toggle floating mode on the active window: *[Alt]+[Shift]+[space]*
++ Resize the window: *[Alt]+[right mouse button]*
++ toggle it in being floating *[Alt]+[middle mouse button]*
+
+If you want to set some type of window to be always floating, look at the config.def.h and the rules array, where the last but one element defines this behaviour.
+
+*** Quitting
+To quit dwm cleanly: *[Shift]+[Alt]+[q]*
