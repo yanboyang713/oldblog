@@ -679,13 +679,13 @@ The Third Way describes the environment and culture, as the following practices
 
 [[https://blog-assets.freshworks.com/freshservice/wp-content/uploads/2019/01/23142856/3.png]]
 
+
 ** DONE Terraform Beginner's Guide
 CLOSED: [2021-12-02 Thu 11:09]
 :PROPERTIES:
 :EXPORT_FILE_NAME: terraform
 :EXPORT_OPTIONS: author:nil
 :END:
-
 *** Overview
 In this blog post, I am going to cover a brief introduction of *Infrastructure as Code (IaC)*, *Terraform*, its *lifecycle*, and all the core concepts that every beginner should know. I have tried to cover all the topics in this beginner’s guide that will give you a quick start for using Terraform.
 
@@ -693,29 +693,167 @@ In this blog post, I am going to cover a brief introduction of *Infrastructure a
 1.[[id:807c90ce-9dfd-44be-861b-b2893282ed5f][DevOps/DevOps Beginner's Guide]]
 
 *** What Is Infrastructure as Code (IaC)?
+*Infrastructure as Code (IaC)* is a widespread terminology among DevOps professionals and a key DevOps practice in the industry. It is the process of managing and provisioning the complete IT infrastructure (comprises both physical and virtual machines) using machine-readable definition files. It helps in automating the complete data center by using programming scripts.
 
+[[https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2020/11/Explanation-of-how-IaC-works.jpg]]
+
+*** Popular IaC Tools:
+1. *Terraform*: An open-source declarative tool that offers pre-written modules to build and manage an infrastructure.
+2. *Chef*: A configuration management tool that uses cookbooks and recipes to deploy the desired environment. Best used for Deploying and configuring applications using a pull-based approach.
+3. *Puppet*: Popular tool for configuration management that follows a Client-Server Model. Puppet needs agents to be deployed on the target machines before the puppet can start managing them.
+4. *Ansible*: Ansible is used for building infrastructure as well as deploying and configuring applications on top of them. Best used for Ad hoc analysis.
+5. *Packer*: Unique tool that generates VM images (not running VMs) based on steps you provide. Best used for Baking compute images.
+6. *Vagrant*: Builds VMs using a workflow. Best used for Creating pre-configured developer VMs within VirtualBox.
 
 *** What Is Terraform?
+*Terraform* is one of the most popular *Infrastructure-as-code (IaC) tool*, used by DevOps teams to automate infrastructure tasks. It is used to automate the provisioning of your cloud resources. Terraform is an open-source, cloud-agnostic provisioning tool developed by HashiCorp and written in GO language.
 
+[[https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2020/11/logo-hashicorp-e1605707253653.png]]
+
+Benefits of using Terraform:
+
++ Does orchestration, not just configuration management
++ Supports multiple providers such as AWS, Azure, Oracle, GCP, and many more
++ Provide immutable infrastructure where configuration changes smoothly
++ Uses easy to understand language, HCL (HashiCorp configuration language)
++ Easily portable to any other provider
 
 *** Terraform Lifecycle
+Terraform lifecycle consists of – *init*, *plan*, *apply*, and *destroy*.
+
+[[https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2020/11/terraform-lifecycle.png]]
+
+1. *Terraform init* initializes the (local) Terraform environment. Usually executed only once per session.
+2. *Terraform plan* compares the Terraform state with the as-is state in the cloud, build and display an execution plan. This does not change the deployment (read-only).
+3. *Terraform apply* executes the plan. This potentially changes the deployment.
+4. *Terraform destroy* deletes all resources that are governed by this specific terraform environment.
 
 *** Terraform Core Concepts
+1. *Variables*: Terraform has input and output variables, it is a key-value pair. Input variables are used as parameters to input values at run time to customize our deployments. Output variables are return values of a terraform module that can be used by other configurations.
+
+   Please, read article on [[https://k21academy.com/terraform-iac/variables-in-terraform/][Terraform Variables]]
+
+2. *Provider*: Terraform users provision their infrastructure on the major cloud providers such as AWS, Azure, OCI, and others. A provider is a plugin that interacts with the various APIs required to create, update, and delete various resources.
+
+   Please, read article to know more about [[https://k21academy.com/terraform-iac/terraform-providers-overview/][Terraform Providers]]
+
+3. *Module*: Any set of Terraform configuration files in a folder is a module. Every Terraform configuration has at least one module, known as its *root module*.
+
+4. *State*: Terraform records information about what infrastructure is created in a Terraform state file. With the state file, Terraform is able to find the resources it created previously, supposed to manage and update them accordingly.
+
+5. *Resources*: Cloud Providers provides various services in their offerings, they are referenced as Resources in Terraform. Terraform resources can be anything from compute instances, virtual networks to higher-level components such as DNS records. Each resource has its own attributes to define that resource.
+
+6. *Data Source*: Data source performs a read-only operation. It allows data to be fetched or computed from resources/entities that are not defined or managed by Terraform or the current Terraform configuration.
+
+7. *Plan*: It is one of the stages in the Terraform lifecycle where it determines what needs to be created, updated, or destroyed to move from the real/current state of the infrastructure to the desired state.
+
+8. *Apply*: It is one of the stages in the Terraform lifecycle where it applies the changes real/current state of the infrastructure in order to achieve the desired state.
+
+Check Out: Our previous blog post on [[https://k21academy.com/terraform-iac/terraform-cheat-sheet/][Terraform Cheat Sheet]].
 
 *** Terraform Installation
+Terraform Installation
+Before you start working, make sure you have Terraform installed on your machine, it can be installed on any OS, say Windows, macOS, Linux, or others. Terraform installation is an easy process and can be done in a few minutes.
+
+Read our blog to know how to [[https://k21academy.com/terraform-iac/terraform-installation-overview/][install Terraform]] in Linux, Mac, Windows
+
+[[https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2020/11/Terraform-installation.jpg]]
 
 *** Terraform Providers
+A provider is responsible for understanding API interactions and exposing resources. It is an executable plug-in that contains code necessary to interact with the API of the service. Terraform configurations must declare which providers they require so that Terraform can install and use them.
+
+[[https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2020/11/Terraform-provider-api-call.png]]
+
+Terraform has over a hundred providers for different technologies, and each provider then gives terraform user access to its resources. So through AWS provider, for example, you have access to hundreds of AWS resources like EC2 instances, the AWS users, etc.
 
 *** Terraform Configuration Files
+Configuration files are a set of files used to describe infrastructure in Terraform and have the file extensions .tf and .tf.json. Terraform uses a declarative model for defining infrastructure. Configuration files let you write a configuration that declares your desired state. Configuration files are made up of resources with settings and values representing the desired state of your infrastructure.
+
+[[https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2020/11/terraform-config-files-e1605834689106.png]]
+
+A Terraform configuration is made up of one or more files in a directory, provider binaries, plan files, and state files once Terraform has run the configuration.
+
+1. *Configuration file (*.tf files)*: Here we declare the provider and resources to be deployed along with the type of resource and all resources specific settings
+
+2. *Variable declaration file (variables.tf or variables.tf.json)*: Here we declare the input variables required to provision resources
+
+3. *Variable definition files (terraform.tfvars)*: Here we assign values to the input variables
+
+4. *State file (terraform.tfstate)*: a state file is created once after Terraform is run. It stores state about our managed infrastructure.
 
 *** Getting started using Terraform
+To get started building infrastructure resources using Terraform, there are few things that you should take care of. The general steps to deploy a resource(s) in the cloud are:
+
+1. Set up a Cloud Account on any cloud provider (AWS, Azure, OCI)
+2. Install Terraform
+3. Add a provider – AWS, Azure, OCI, GCP, or others
+4. Write configuration files
+5. Initialize Terraform Providers
+6. PLAN (DRY RUN) using terraform plan
+7. APPLY (Create a Resource) using terraform apply
+8. DESTROY (Delete a Resource) using terraform destroy
 
 *** Import Existing Infrastructure
+Terraform is one of the great IaC tools with which, you can deploy all your infrastructure’s resources. In addition to that, you can manage infrastructures from different cloud providers, such as AWS, Google Cloud, etc. But what if you have already created your infrastructure manually?
+
+Terraform has a really nice feature for importing existing resources, which makes the migration of existing infrastructure into Terraform a lot easier.
+
+[[https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2020/11/terraform-import-workflow-diagram.png]]
+
+Currently, Terraform can only import resources into the state. It does not generate a configuration for them. Because of this, prior to running terraform import it is necessary to write manually a resource configuration block for the resource, to which the imported object will be mapped. For example:
+
+#+begin_src file
+resource "aws_instance" "import_example" {
+  # ...instance configuration...
+}
+#+end_src
+
+Now terraform import can be run to attach an existing instance to this resource configuration:
+
+#+begin_src console
+$ terraform import aws_instance.import_example i-03efafa258104165f
+#+end_src
+
+This command locates the AWS instance with ID i-03efafa258104165f (which has been created outside Terraform) and attaches it to the name aws_instance.import_example in the Terraform state.
 
 *** Conclusion
+I hope the above gives you an idea about how you can get started with Terraform.
 
 *** Related/References
 
+
+** DONE Ansible Beginner's Guide
+CLOSED: [2021-12-02 Thu 17:58]
+:PROPERTIES:
+:EXPORT_FILE_NAME: ansible
+:EXPORT_OPTIONS: author:nil
+:END:
+*** Overview
+This article covers all the aspects of Ansible, a tool used in DevOps for the Management, Deployment, and Orchestration of IT Infrastructure.
+
+*** What Is Ansible?
+
+*** Why Use Ansible?
+
+*** Ansible Use Cases
+
+*** Ansible Architecture Diagram
+
+*** Ansible Playbook
+
+*** What Are Inventories In Ansible?
+
+*** Ansible Modules
+
+*** Ansible Tower
+
+*** Ansible Roles
+
+*** Ansible Variables
+
+*** How To Run The Ansible Commands?
+
+*** AD-HOC Commands Examples
 
 ** DONE The comparison and introduction between Terraform and Ansible
 CLOSED: [2021-12-02 Thu 10:53]
@@ -735,9 +873,31 @@ Terraform is an open-source tool for building, changing, and versioning infrastr
 Now, we will discuss the working of terraform.
 
 **** How does Terraform work?
+There are two main working components of terraform.
 
++ Terraform Core
++ Providers
+
+Terraform is of *declarative nature*. It directly describes the end state of the system without defining the steps to reach there. It works at a high level of abstraction to describe what services and resources should be created and defined.
+
+Terraform core takes two input sources to do its job. The first input source is a *terraform configuration* that is configured by its users. Users define what needs to be provisioned and created. The second input source is a state that holds information about the infrastructure.
+
+So terraform core takes the input and figures out various plans for what steps to follow to get the desired output.
+
+[[https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/06/TerraformCore_Diagram-08-1024x421.png]]
+
+The second principal component is providers, such as cloud providers like AWS, GCP, Azure, or other Infrastructure as service platforms. It helps to create infrastructure on different levels. Let’s take an example where users create an AWS infrastructure, deploy Kubernetes on top of it, and then create services inside the cluster of Kubernetes. Terraform has multiple providers for various technologies; users can access resources from these providers through terraform. This is the basic working terminology of terraform that helps to provision and cover the complete application set up from infrastructure to fully developed application.
 
 **** Features of Terraform
+As we have discussed the working of Terraform, now we will look at the features of Terraform.
+
++ Terraform follows a *declarative approach* which makes deployments fast and easy.
++ It is a convenient tool to display the resulting model in a *graphical form*.
++ Terraform also manages *external service providers* such as cloud networks and in-house solutions.
++ It is one of the rare tools to offer *building infrastructure* from scratch, whether public, private or multi-cloud.
++ It helps *manage parallel environments*, making it a good choice for testing, validating bug fixes, and formal acceptance.
++ Modular code helps in achieving *consistency*, *reusability*, and *collaboration*.
++ Terraform can *manage multiple clouds* to increase fault tolerance.
 
 
 *** Ansible
@@ -766,6 +926,7 @@ Now, we will discuss the working of terraform.
 *** Conclusion
 
 *** References
+
 
 * Linux :@Linux:
 ** DONE Getting Started Dynamic Window Manager (DWM)
