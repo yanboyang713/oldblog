@@ -12,6 +12,8 @@ In this blog post, I am going to cover a brief introduction of **Infrastructure 
 
 ## Prerequires {#prerequires}
 
+1.[DevOps/DevOps Beginner's Guide]({{< relref "DevOps" >}})
+
 
 ## What Is Infrastructure as Code (IaC)? {#what-is-infrastructure-as-code--iac}
 
