@@ -679,7 +679,8 @@ The Third Way describes the environment and culture, as the following practices
 
 [[https://blog-assets.freshworks.com/freshservice/wp-content/uploads/2019/01/23142856/3.png]]
 
-** test
+** DONE test
+CLOSED: [2021-12-02 Thu 12:15]
 :PROPERTIES:
 :EXPORT_FILE_NAME: test
 :EXPORT_OPTIONS: author:nil
