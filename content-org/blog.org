@@ -679,19 +679,6 @@ The Third Way describes the environment and culture, as the following practices
 
 [[https://blog-assets.freshworks.com/freshservice/wp-content/uploads/2019/01/23142856/3.png]]
 
-** DONE test
-CLOSED: [2021-12-02 Thu 12:15]
-:PROPERTIES:
-:EXPORT_FILE_NAME: test
-:EXPORT_OPTIONS: author:nil
-:END:
-
-*** testH
-[[id:807c90ce-9dfd-44be-861b-b2893282ed5f][DevOps/DevOps Beginner's Guide]]
-1. one item
-2. <<target>>another item
-Here we refer to item [[target]].
-
 ** DONE Terraform Beginner's Guide
 CLOSED: [2021-12-02 Thu 11:09]
 :PROPERTIES:
