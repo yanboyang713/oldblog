@@ -484,7 +484,7 @@ R-CNN
 
 
 ** DONE Gettting Started SRS(Simple Realtime Server)
-CLOSED: [2021-11-13 Sat 11:43]
+CLOSED: [2021-11-13 Sat 11:43   ]
 :PROPERTIES:
 :EXPORT_FILE_NAME: srs
 :EXPORT_OPTIONS: author:nil
@@ -494,6 +494,7 @@ CLOSED: [2021-11-13 Sat 11:43]
 SRS is a simple, high efficiency and realtime video server, supports RTMP/WebRTC/HLS/HTTP-FLV/SRT.
 
 
+* Cluster :@Cluster:
 ** DONE Getting Started ROS and Openwrt with Proxmox
 CLOSED: [2021-11-05 Fri 19:52]
 :PROPERTIES:
@@ -589,6 +590,192 @@ For security, as well as organizational purposes, physical machines are often se
 However, this system starts to break down when faced with virtualization servers. This is because diverse virtual machines are all sitting on the same physical host, forcing each VM to share the same physical connection. With a standard bridge between the individual VM and the host's NIC, we necessarily end up with each VM on the same subnet as the Proxmox host itself. Additionally, we end up with each VM on the same subnet as every other VM on that host. Not ideal.
 *** Solution
 Thankfully there's a way around this. In Proxmox, you can make your virtual bridge VLAN-aware so you can pass multiple VLANs through to your Proxmox server using only a single physical port. The individual VMs can then be configured to use whichever VLAN you choose.
+
+** DONE Build a Kubernetes cluster on Proxmox via Ansible and Terraform
+CLOSED: [2021-12-01 Wed 20:27]
+:PROPERTIES:
+:EXPORT_FILE_NAME: k8sOnProxmox
+:EXPORT_OPTIONS: author:nil
+:END:
+
+[[https://miro.medium.com/max/1400/1*jL6SE1nSaPQb4EOWGnbZpw.jpeg]]
+
+
+*** Overview
+Proxmox is an open-source hypervisor that have enterprise capabilities and a large community behind it.
+
+For Terraform and Ansible, i always like the idea of infrastructure as code (iac) and Terraform and Ansible just make it easy to accomplish.
+
+The idea here was to be able to spin up a k3s cluster with minimum effort so i can spin it up and down for ever project that i would like to run.
+
+*** System requirements
++ The deployment environment must have [[https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html][Ansible]] 2.4.0+
++ [[https://learn.hashicorp.com/tutorials/terraform/install-cli][Terraform]] installed
++ [[https://www.proxmox.com/en/proxmox-ve][Proxmox]] server
+
+* DevOps :@DevOps:
+** DONE DevOps Beginner's Guide
+CLOSED: [2021-12-02 Thu 11:18]
+:PROPERTIES:
+:EXPORT_FILE_NAME: DevOps
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Overview
+In this blog, I discussed *what is DevOps*, and why it has *gained* so much *traction* in the IT industry lately.
+
+*** What Is DevOps?
+It is a combination of practices that *streamline* the *automation* and *integration* of processes between the *software development* and *IT teams*. This will help them to *build*, *test*, and *release software* in a faster and more reliable way.
+
+**** Purpose
+The term was formed by combining the words *"development"* and *"operations"* and signifies a cultural shift that *helps bridge the gap between the development and operation teams*.
+**** Goal
+ The *goal* of DevOps is to change and improve the relationship by advocating better communication and collaboration between these two business units.
+
+*** DevOps Model For Teams
+Teams using the DevOps model are able to evolve and improve their products at a higher rate over the organizations that use traditional processes. *Collaboration*, *Communication*, and *Integration* are the key elements of incorporating DevOps into any development and delivery setting.
+
+This speed enables the teams (and in turn their organizations) to better serve their customers and compete more effectively in the market.
+
+[[https://d1.awsstatic.com/product-marketing/DevOps/DevOps_feedback-diagram.ff668bfc299abada00b2dcbdc9ce2389bd3dce3f.png]]
+
+*** DevOps Advantages
+Improvement of collaboration between all stakeholders from planning through delivery and automation of the delivery process in order to:
+
++ Increase deployment frequency
++ Achieve faster time to market
++ Decrease the failure rate of new releases
++ Shorten the lead time between fixes
++ Improve mean time to recovery
+
+According to the State of DevOps Report, "high-performing IT organizations deploy 30x more frequently with 200x shorter lead times; they have 60x fewer failures and recover 168x faster."
+
+*** DevOps Principles
+The phrase “The Three Ways” is used to describe the underlying principles of the DevOps movement.
+
+**** The First Way: Principles of Flow
+The First Way states the following, about the flow of work:
+
++ Work should only flow in one direction
++ No known defect should be passed downstream
++ Always seek to increase the flow
+
+**** The Second Way: Principles of Feedback
+The Second Way describes the feedback process as the following:
+
++ Establish an upstream feedback loop
++ Shorten the feedback loop
++ Amplify the feedback loop
+  [[https://blog-assets.freshworks.com/freshservice/wp-content/uploads/2019/01/23142830/2.png]]
+
+**** The Third Way: Principles of Continuous Learning
+The Third Way describes the environment and culture, as the following practices
+
++ Promote experimentation
++ Learn from success and failure
++ Constant improvement
++ Seek to achieve mastery through practice
+
+[[https://blog-assets.freshworks.com/freshservice/wp-content/uploads/2019/01/23142856/3.png]]
+
+** test
+:PROPERTIES:
+:EXPORT_FILE_NAME: test
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** <<test>>testH
+1. one item
+2. <<target>>another item
+Here we refer to item [[target]].
+
+** DONE Terraform Beginner's Guide
+CLOSED: [2021-12-02 Thu 11:09]
+:PROPERTIES:
+:EXPORT_FILE_NAME: terraform
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Overview
+In this blog post, I am going to cover a brief introduction of *Infrastructure as Code (IaC)*, *Terraform*, its *lifecycle*, and all the core concepts that every beginner should know. I have tried to cover all the topics in this beginner’s guide that will give you a quick start for using Terraform.
+
+*** Prerequires
+[[test]]
+
+*** What Is Infrastructure as Code (IaC)?
+
+
+*** What Is Terraform?
+
+
+*** Terraform Lifecycle
+
+*** Terraform Core Concepts
+
+*** Terraform Installation
+
+*** Terraform Providers
+
+*** Terraform Configuration Files
+
+*** Getting started using Terraform
+
+*** Import Existing Infrastructure
+
+*** Conclusion
+
+*** Related/References
+
+
+** DONE The comparison and introduction between Terraform and Ansible
+CLOSED: [2021-12-02 Thu 10:53]
+:PROPERTIES:
+:EXPORT_FILE_NAME: terraformAndAnsible
+:EXPORT_OPTIONS: author:nil
+:END:
+*** Overview
+The Terraform vs. Ansible battle continues to escalate as the DevOps environment focuses more on automation and orchestration. These two tools help in automating configurations and deploying infrastructure. Terraform offers to deploy Infrastructure as a Code, helps in readability and lift and shift deployments. Ansible is a configuration management tool for automating system configuration and management.
+
+*** Terraform
+
+**** What is Terraform?
+
+Terraform is an open-source tool for building, changing, and versioning infrastructure securely and effectively. It is an Infrastructure as a Code tool that is very straightforward to use. It helps to develop and scale Cloud services and manage the state of the network. Its primary use is in data centers and software-defined networking environments. It does not install and manage software on existing devices; instead, it creates, modifies, and destroys servers and various other cloud services. Slack, Uber, Starbucks, Twitch, all big brands are using Terraform. We can also integrate Terraform with Microsoft Azure, Heroku, and Google Compute Engine, etc.
+
+Now, we will discuss the working of terraform.
+
+**** How does Terraform work?
+
+
+**** Features of Terraform
+
+
+*** Ansible
+
+**** What is Ansible?
+
+**** How does Ansible work?
+
+
+**** Features of Ansible
+
+
+*** Difference between Terraform and Ansible Provisioning
+
+*** Configuration Management vs. Orchestration
+
+
+*** Procedural vs Declarative
+
+
+*** Terraform vs Ansible Provisioning
+
+
+*** Which one to choose: Terraform or Ansible?
+
+*** Conclusion
+
+*** References
 
 * Linux :@Linux:
 ** DONE Getting Started Dynamic Window Manager (DWM)

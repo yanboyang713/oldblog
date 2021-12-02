@@ -1,0 +1,24 @@
+---
+title: "Build a Kubernetes cluster on Proxmox via Ansible and Terraform"
+date: 2021-12-01T20:27:00+08:00
+categories: ["Cluster"]
+draft: false
+---
+
+{{< figure src="https://miro.medium.com/max/1400/1*jL6SE1nSaPQb4EOWGnbZpw.jpeg" >}}
+
+
+## Overview {#overview}
+
+Proxmox is an open-source hypervisor that have enterprise capabilities and a large community behind it.
+
+For Terraform and Ansible, i always like the idea of infrastructure as code (iac) and Terraform and Ansible just make it easy to accomplish.
+
+The idea here was to be able to spin up a k3s cluster with minimum effort so i can spin it up and down for ever project that i would like to run.
+
+
+## System requirements {#system-requirements}
+
+-   The deployment environment must have [Ansible](https://docs.ansible.com/ansible/latest/installation%5Fguide/intro%5Finstallation.html) 2.4.0+
+-   [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) installed
+-   [Proxmox](https://www.proxmox.com/en/proxmox-ve) server
