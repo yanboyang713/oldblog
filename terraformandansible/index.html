@@ -10,7 +10,7 @@ Terraform What is Terraform? Terraform is an open-source tool for building, chan
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/terraformandansible/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-02T10:53:00+08:00">
-<meta property="article:modified_time" content="2021-12-02T04:45:16+00:00">
+<meta property="article:modified_time" content="2021-12-02T11:55:59+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="The comparison and introduction between Terraform and Ansible">
@@ -19,7 +19,7 @@ Terraform What is Terraform? Terraform is an open-source tool for building, chan
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/terraformandansible/><link rel=prev href=https://yanboyang.com/k8sonproxmox/><link rel=next href=https://yanboyang.com/terraform/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"The comparison and introduction between Terraform and Ansible","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/terraformandansible\/"},"genre":"posts","wordcount":213,"url":"https:\/\/yanboyang.com\/terraformandansible\/","datePublished":"2021-12-02T10:53:00+08:00","dateModified":"2021-12-02T04:45:16+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/terraformandansible/><link rel=prev href=https://yanboyang.com/k8sonproxmox/><link rel=next href=https://yanboyang.com/terraform/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"The comparison and introduction between Terraform and Ansible","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/terraformandansible\/"},"genre":"posts","wordcount":534,"url":"https:\/\/yanboyang.com\/terraformandansible\/","datePublished":"2021-12-02T10:53:00+08:00","dateModified":"2021-12-02T11:55:59+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -93,8 +93,8 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">The comparison and introduction between Terraform and Ansible</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/devops/><i class="far fa-folder fa-fw"></i>DevOps</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-02>2021-12-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;213 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-02>2021-12-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;534 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -133,7 +133,28 @@ Cancel
 <p>Terraform is an open-source tool for building, changing, and versioning infrastructure securely and effectively. It is an Infrastructure as a Code tool that is very straightforward to use. It helps to develop and scale Cloud services and manage the state of the network. Its primary use is in data centers and software-defined networking environments. It does not install and manage software on existing devices; instead, it creates, modifies, and destroys servers and various other cloud services. Slack, Uber, Starbucks, Twitch, all big brands are using Terraform. We can also integrate Terraform with Microsoft Azure, Heroku, and Google Compute Engine, etc.</p>
 <p>Now, we will discuss the working of terraform.</p>
 <h3 id=how-does-terraform-work>How does Terraform work?</h3>
+<p>There are two main working components of terraform.</p>
+<ul>
+<li>Terraform Core</li>
+<li>Providers</li>
+</ul>
+<p>Terraform is of <strong>declarative nature</strong>. It directly describes the end state of the system without defining the steps to reach there. It works at a high level of abstraction to describe what services and resources should be created and defined.</p>
+<p>Terraform core takes two input sources to do its job. The first input source is a <strong>terraform configuration</strong> that is configured by its users. Users define what needs to be provisioned and created. The second input source is a state that holds information about the infrastructure.</p>
+<p>So terraform core takes the input and figures out various plans for what steps to follow to get the desired output.</p>
+<figure><img src=https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/06/TerraformCore%5FDiagram-08-1024x421.png>
+</figure>
+<p>The second principal component is providers, such as cloud providers like AWS, GCP, Azure, or other Infrastructure as service platforms. It helps to create infrastructure on different levels. Let’s take an example where users create an AWS infrastructure, deploy Kubernetes on top of it, and then create services inside the cluster of Kubernetes. Terraform has multiple providers for various technologies; users can access resources from these providers through terraform. This is the basic working terminology of terraform that helps to provision and cover the complete application set up from infrastructure to fully developed application.</p>
 <h3 id=features-of-terraform>Features of Terraform</h3>
+<p>As we have discussed the working of Terraform, now we will look at the features of Terraform.</p>
+<ul>
+<li>Terraform follows a <strong>declarative approach</strong> which makes deployments fast and easy.</li>
+<li>It is a convenient tool to display the resulting model in a <strong>graphical form</strong>.</li>
+<li>Terraform also manages <strong>external service providers</strong> such as cloud networks and in-house solutions.</li>
+<li>It is one of the rare tools to offer <strong>building infrastructure</strong> from scratch, whether public, private or multi-cloud.</li>
+<li>It helps <strong>manage parallel environments</strong>, making it a good choice for testing, validating bug fixes, and formal acceptance.</li>
+<li>Modular code helps in achieving <strong>consistency</strong>, <strong>reusability</strong>, and <strong>collaboration</strong>.</li>
+<li>Terraform can <strong>manage multiple clouds</strong> to increase fault tolerance.</li>
+</ul>
 <h2 id=ansible>Ansible</h2>
 <h3 id=what-is-ansible>What is Ansible?</h3>
 <h3 id=how-does-ansible-work>How does Ansible work?</h3>
