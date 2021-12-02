@@ -88,12 +88,6 @@ Cancel
 <main class=main>
 <div class=container><div class="page home" posts><div class=home-profile><div class=home-avatar><a href=/ title=Home><img class=lazyload src=/svg/loading.min.svg data-src="https://www.gravatar.com/avatar/ddb0ff6c3db71b8244883ebcaf772b79?s=240&d=mp" data-srcset="https://www.gravatar.com/avatar/ddb0ff6c3db71b8244883ebcaf772b79?s=240&d=mp, https://www.gravatar.com/avatar/ddb0ff6c3db71b8244883ebcaf772b79?s=240&d=mp 1.5x, https://www.gravatar.com/avatar/ddb0ff6c3db71b8244883ebcaf772b79?s=240&d=mp 2x" data-sizes=auto alt="Boyang Yan" title="Boyang Yan"></a></div><h1 class=home-title>Boyang Yan's Blog</h1><h2 class=home-subtitle><div id=id-1 class=typeit></div></h2><div class=links><a href=https://github.com/yanboyang713 title=GitHub target=_blank rel="noopener noreferrer me"><i class="fab fa-github fa-fw"></i></a><a href=https://linkedin.com/in/boyang-yan-50a70763 title=LinkedIn target=_blank rel="noopener noreferrer me"><i class="fab fa-linkedin fa-fw"></i></a><a href=https://facebook.com/boyang.yan.52 title=facebook target=_blank rel="noopener noreferrer me"><i class="fab fa-facebook fa-fw"></i></a><a href=mailto:yanboyang713@gmail.com title=Email rel=me><i class="far fa-envelope fa-fw"></i></a><a href=/index.xml title=RSS target=_blank rel="noopener noreferrer me"><i class="fas fa-rss fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
-<a href=/plantuml/>Getting started with UML (Unified Modeling Language)</a>
-</h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-publish>published on <time datetime=2020-09-01>2020-09-01</time></span>&nbsp;<span class=post-category>included in <a href=/categories/uml/><i class="far fa-folder fa-fw"></i>UML</a></span></div><div class=content>Introduction This post document will brief introduct UML at the begining. After, will talk how using PlantUML for drawing UML diagrams. At the end, how does PlantUML integrate with Markdown and Emacs(Spacemacs).
-UML Basics PlantUML Basics Reasons for using PlantUML Markdown Emacs (Spacemacs) Summary </div><div class=post-footer>
-<a href=/plantuml/>Read More</a><div class=post-tags>
-<i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/uml/>UML</a>,&nbsp;<a href=/tags/plantuml/>plantuml</a>,&nbsp;<a href=/tags/markdown/>Markdown</a>,&nbsp;<a href=/tags/emacs/>emacs</a>,&nbsp;<a href=/tags/spacemacs/>spacemacs</a></div></div>
-</article><article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
 <a href=/machinelearningfileformats/>Guide to File Formats for Machine Learning</a>
 </h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-publish>published on <time datetime=2020-09-01>2020-09-01</time></span></div><div class=content>Introduction This post document is a guide to the popular file formats used in open source frameworks for machine learning in Python, including TensorFlow/Keras, PyTorch, Scikit-Learn, and PySpark. We will also describe how a Feature Store can make the Data Scientist’s life easier by generating training/test data in a file format of choice on a file system of choice. This guide is base on Jim Dowling&rsquo;s blog.
 A file format defines the structure and encoding of the data stored in it and it is typically identified by its file extension — for example, a filename ending in .</div><div class=post-footer>
@@ -125,6 +119,13 @@ The main reason you may find yourself needing to install kernel headers is if yo
 1 2 3 4 5 6 7 8 9 ## Screenshots bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)" bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)" bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)" ### Clipboard Screenshots bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png NOTE: You may remove the default screenshot shortcuts to prevent error.</div><div class=post-footer>
 <a href=/manjaro/>Read More</a><div class=post-tags>
 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/manjaro/>manjaro</a></div></div>
+</article><article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
+<a href=/hexowithdocker/>Creating a Hexo blog with Docker</a>
+</h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-publish>published on <time datetime=2020-02-05>2020-02-05</time></span>&nbsp;<span class=post-category>included in <a href=/categories/blog/><i class="far fa-folder fa-fw"></i>Blog</a></span></div><div class=content>Overview This is a tutorial on creating a blog or website using hexo.io (a static site generator).
+We will use Docker as our development environment. Also, we will storge our Hexo development code in Github main branche and all of our generate static pages will hosting in Github Page on gh-pages branches with your own custom domain and https.
+Why we choose Hexo After comparing a multitude of offerings, I settled on the excellent hexo.</div><div class=post-footer>
+<a href=/hexowithdocker/>Read More</a><div class=post-tags>
+<i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/hexo/>Hexo</a>,&nbsp;<a href=/tags/blog/>Blog</a></div></div>
 </article><ul class=pagination><li class=page-item>
 <span class=page-link>
 <a href=/>1</a>
@@ -155,7 +156,7 @@ The main reason you may find yourself needing to install kernel headers is if yo
 <span class=page-link aria-hidden=true>&mldr;</span>
 </li><li class=page-item>
 <span class=page-link>
-<a href=/page/15/>15</a>
+<a href=/page/14/>14</a>
 </span>
 </li></ul></div></div>
 </main><footer class=footer>
