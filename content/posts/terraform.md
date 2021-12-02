@@ -12,8 +12,6 @@ In this blog post, I am going to cover a brief introduction of **Infrastructure 
 
 ## Prerequires {#prerequires}
 
-[{{< relref "test" >}}]({{< relref "test" >}})
-
 
 ## What Is Infrastructure as Code (IaC)? {#what-is-infrastructure-as-code--iac}
 

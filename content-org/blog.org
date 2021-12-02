@@ -619,6 +619,7 @@ CLOSED: [2021-12-02 Thu 11:18]
 :PROPERTIES:
 :EXPORT_FILE_NAME: DevOps
 :EXPORT_OPTIONS: author:nil
+:ID:       807c90ce-9dfd-44be-861b-b2893282ed5f
 :END:
 
 *** Overview
@@ -684,7 +685,8 @@ The Third Way describes the environment and culture, as the following practices
 :EXPORT_OPTIONS: author:nil
 :END:
 
-*** <<test>>testH
+*** testH
+[[id:807c90ce-9dfd-44be-861b-b2893282ed5f][DevOps/DevOps Beginner's Guide]]
 1. one item
 2. <<target>>another item
 Here we refer to item [[target]].
@@ -700,7 +702,6 @@ CLOSED: [2021-12-02 Thu 11:09]
 In this blog post, I am going to cover a brief introduction of *Infrastructure as Code (IaC)*, *Terraform*, its *lifecycle*, and all the core concepts that every beginner should know. I have tried to cover all the topics in this beginner’s guide that will give you a quick start for using Terraform.
 
 *** Prerequires
-[[test]]
 
 *** What Is Infrastructure as Code (IaC)?
 
