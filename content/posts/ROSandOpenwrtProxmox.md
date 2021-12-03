@@ -1,7 +1,7 @@
 ---
 title: "Getting Started ROS and Openwrt with Proxmox"
-date: 2021-11-05T19:52:00+11:00
-categories: ["ComputerVision"]
+date: 2021-11-05T19:52:00+08:00
+categories: ["Cluster"]
 draft: false
 ---
 

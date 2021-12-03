@@ -576,6 +576,7 @@ https://pve.proxmox.com/wiki/Migration_of_servers_to_Proxmox_VE
 *** VLAN
 https://engineerworkshop.com/blog/configuring-vlans-on-proxmox-an-introductory-guide/
 
+
 ** DONE Getting Started Configuring VLANs on Proxmox
 CLOSED: [2021-11-05 Fri 19:52]
 :PROPERTIES:
@@ -590,6 +591,7 @@ For security, as well as organizational purposes, physical machines are often se
 However, this system starts to break down when faced with virtualization servers. This is because diverse virtual machines are all sitting on the same physical host, forcing each VM to share the same physical connection. With a standard bridge between the individual VM and the host's NIC, we necessarily end up with each VM on the same subnet as the Proxmox host itself. Additionally, we end up with each VM on the same subnet as every other VM on that host. Not ideal.
 *** Solution
 Thankfully there's a way around this. In Proxmox, you can make your virtual bridge VLAN-aware so you can pass multiple VLANs through to your Proxmox server using only a single physical port. The individual VMs can then be configured to use whichever VLAN you choose.
+
 
 ** DONE Build a Kubernetes cluster on Proxmox via Ansible and Terraform
 CLOSED: [2021-12-01 Wed 20:27]
@@ -607,11 +609,20 @@ Proxmox is an open-source hypervisor that have enterprise capabilities and a lar
 For Terraform and Ansible, i always like the idea of infrastructure as code (iac) and Terraform and Ansible just make it easy to accomplish.
 
 The idea here was to be able to spin up a k3s cluster with minimum effort so i can spin it up and down for ever project that i would like to run.
+*** Prerequires
+1. read [[id:ee79f2a9-445b-4756-9853-e0819fda588c][DevOps/Terraform Beginner's Guide]]
+2. read [[id:5012520e-c7d0-4b8e-8575-6ecf70e819b6][DevOps/Ansible Beginner's Guide]]
 
 *** System requirements
 + The deployment environment must have [[https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html][Ansible]] 2.4.0+
 + [[https://learn.hashicorp.com/tutorials/terraform/install-cli][Terraform]] installed
 + [[https://www.proxmox.com/en/proxmox-ve][Proxmox]] server
+
+*** Proxmox setup
+
+
+
+
 
 * DevOps :@DevOps:
 ** DONE DevOps Beginner's Guide
@@ -685,6 +696,7 @@ CLOSED: [2021-12-02 Thu 11:09]
 :PROPERTIES:
 :EXPORT_FILE_NAME: terraform
 :EXPORT_OPTIONS: author:nil
+:ID:       ee79f2a9-445b-4756-9853-e0819fda588c
 :END:
 *** Overview
 In this blog post, I am going to cover a brief introduction of *Infrastructure as Code (IaC)*, *Terraform*, its *lifecycle*, and all the core concepts that every beginner should know. I have tried to cover all the topics in this beginner’s guide that will give you a quick start for using Terraform.
@@ -827,6 +839,7 @@ CLOSED: [2021-12-02 Thu 17:58]
 :PROPERTIES:
 :EXPORT_FILE_NAME: ansible
 :EXPORT_OPTIONS: author:nil
+:ID:       5012520e-c7d0-4b8e-8575-6ecf70e819b6
 :END:
 *** Overview
 This article covers all the aspects of Ansible, a tool used in DevOps for the Management, Deployment, and Orchestration of IT Infrastructure.
@@ -1056,6 +1069,7 @@ Ansible is of hybrid nature. It follows both declarative and *procedural style* 
 You can now choose between these two, according to the requirement of the situation and the job. For example, if the containerized solution is used to provision software within the cloud, then Terraform is preferable. On the other hand, if you want to gain reasonable control of your devices and find other ways to deploy underlying services, Ansible is more suitable. These tools will provide more comprehensive solutions in the future.
 
 *** Conclusion
+It is essential to know which tool is used for which job among Terraform vs. Ansible. Terraform is mainly known for provisioning infrastructure across various clouds. It supports more than 200 providers and a great tool to manage cloud services below the server. In comparison, Ansible is optimized to perform both provisioning and configuration management. Therefore, we can say that both Terraform and Ansible can work hand in hand as standalone tools or work together but always pick up the right tool as per the job requirement.
 
 *** References
 
