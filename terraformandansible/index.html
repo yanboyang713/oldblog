@@ -10,7 +10,7 @@ Terraform What is Terraform? Terraform is an open-source tool for building, chan
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/terraformandansible/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-02T10:53:00+08:00">
-<meta property="article:modified_time" content="2021-12-03T04:03:31+00:00">
+<meta property="article:modified_time" content="2021-12-03T05:49:24+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="The comparison and introduction between Terraform and Ansible">
@@ -19,7 +19,7 @@ Terraform What is Terraform? Terraform is an open-source tool for building, chan
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/terraformandansible/><link rel=prev href=https://yanboyang.com/k8sonproxmox/><link rel=next href=https://yanboyang.com/terraform/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"The comparison and introduction between Terraform and Ansible","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/terraformandansible\/"},"genre":"posts","wordcount":534,"url":"https:\/\/yanboyang.com\/terraformandansible\/","datePublished":"2021-12-02T10:53:00+08:00","dateModified":"2021-12-03T04:03:31+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/terraformandansible/><link rel=prev href=https://yanboyang.com/k8sonproxmox/><link rel=next href=https://yanboyang.com/terraform/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"The comparison and introduction between Terraform and Ansible","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/terraformandansible\/"},"genre":"posts","wordcount":1608,"url":"https:\/\/yanboyang.com\/terraformandansible\/","datePublished":"2021-12-02T10:53:00+08:00","dateModified":"2021-12-03T05:49:24+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -93,8 +93,8 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">The comparison and introduction between Terraform and Ansible</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/devops/><i class="far fa-folder fa-fw"></i>DevOps</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-02>2021-12-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;534 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-02>2021-12-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1608 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -157,13 +157,80 @@ Cancel
 </ul>
 <h2 id=ansible>Ansible</h2>
 <h3 id=what-is-ansible>What is Ansible?</h3>
+<p>Ansible is the most significant way to automate and configure apps and IT infrastructure. Ansible is an <strong>open-source configuration management tool</strong> mainly designed for provisioning and deploying applications using IaaC.</p>
+<figure><img src=https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/06/Ansible-Official-Logo-Black-299x300.png>
+</figure>
+<p>It has its own language to describe system configuration. Ansible is <strong>agentless</strong>, making it manage large deployments across enterprises using Windows Power Shell or SSH to perform its tasks. Ansible is not completely declarative; it is a hybrid of procedural and declarative. It can integrate with Amazon EC2, Docker, and Kubernetes. Companies like Zalando, Revolt, and 9gaga are using Ansible.</p>
 <h3 id=how-does-ansible-work>How does Ansible work?</h3>
+<p>Ansible is agentless and doesn’t run on target nodes. It makes <strong>connections using SSH</strong> or other authentication methods. It installs various <strong>Python modules</strong> on the target using JSON. These modules are simple instructions that run on the target. These modules are executed and removed once their job is done. This strategy ensures that there is no misuse of resources on target. Python is mandatory to be installed on both the controlling and the target nodes.</p>
+<figure><img src=https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/06/Ansible%5FDiagram-07-1024x564.png>
+</figure>
+<p>Ansible <strong>management node</strong> acts as a controlling node that controls the entire execution of the playbook. This node is the place to run the installations. There is an <strong>inventory file</strong> that provides the host list where the modules need to be run. The management node makes SSH connections to execute the modules on the host machine and installs the product. Modules are removed once they are installed in the system. This is the simple working process of Ansible.</p>
 <h3 id=features-of-ansible>Features of Ansible</h3>
+<p>Now we will discuss various features Ansible provides to benefit its users.</p>
+<ul>
+<li>Ansible is used for <strong>configuration management</strong> and follows a procedural approach.</li>
+<li>Ansible deals with <strong>infrastructure platforms</strong> such as bare metal, cloud networks, and virtualized devices like hypervisors.</li>
+<li>Ansible follows <strong>idempotent behavior</strong> that makes it to place node in the same state every time.</li>
+<li>It uses <strong>Infrastructure as a Code system configuration</strong> across the infrastructure.</li>
+<li>It offers <strong>rapid and easy deployment</strong> of multi-tier apps with being agentless.</li>
+<li>If the code is <strong>interrupted</strong>, it allows entering the code again without any conflicts with other invocations.</li>
+</ul>
 <h2 id=difference-between-terraform-and-ansible-provisioning>Difference between Terraform and Ansible Provisioning</h2>
+<p>Let’s see how Terraform vs. Ansible battle differentiates from each other:</p>
+<table>
+<thead>
+<tr>
+<th>Terraform</th>
+<th>Ansible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Terraform is a provisioning tool.</td>
+<td>Ansible is a configuration management tool.</td>
+</tr>
+<tr>
+<td>It follows a declarative Infrastructure as a Code approach.</td>
+<td>It follows a procedural approach.</td>
+</tr>
+<tr>
+<td>It is the best fit for orchestrating cloud services and setup cloud infrastructure from scratch.</td>
+<td>It is mainly used for configuring servers with the right software and updates already configured resources.</td>
+</tr>
+<tr>
+<td>Terraform does not support bare metal provisioning by default.</td>
+<td>Ansible supports the provisioning of bare metal servers.</td>
+</tr>
+<tr>
+<td>It does not provide better support in terms of packaging and templating.</td>
+<td>It provides full support for packaging and templating.</td>
+</tr>
+<tr>
+<td>It highly depends on lifecycle or state management.</td>
+<td>It does not have lifecycle management at all.</td>
+</tr>
+</tbody>
+</table>
 <h2 id=configuration-management-vs-dot-orchestration>Configuration Management vs. Orchestration</h2>
+<p>Terraform and Ansible have so many similarities and differences at the same time. The difference comes when we look at two significant concepts of DevOps: <strong>Orchestration</strong> and <strong>configuration management</strong>.</p>
+<p><strong>Configuration management</strong> tools solve the issues locally rather than replacing the system entirely. Ansible helps to configure each action and instrument and ensures smooth functioning without any damage or error. In addition, Ansible comes up with hybrid capabilities to perform both orchestration and replace infrastructure.</p>
+<p><strong>Orchestration tools</strong> ensure that an environment is in its desired state continuously. Terraform is explicitly designed to store the state of the domain. Whenever there is any glitch in the system, terraform automatically restores and computes the entire process in the system after reloading. It is the best fit in situations where a constant and invariable state is needed. <strong>Terraform Apply</strong> helps to resolve all anomalies effectively.</p>
+<p>Let’s have a look at the <strong>Procedural</strong> and <strong>Declarative</strong> nature of Terraform and Ansible.</p>
 <h2 id=procedural-vs-declarative>Procedural vs Declarative</h2>
+<p>There are two main categories of DevOps tools: <strong>Procedural</strong> vs. <strong>Declarative</strong>. These two categories tell the action of tools.</p>
+<p>Terraform follows the <strong>declarative approach</strong>, ensuring that if your defined environment suffers changes, it rectifies those changes. This tool attempts to reach the desired end state described by the sysadmin. Puppet also follows the declarative approach. With terraform, we can describe the desired state and figure out how to move from one state to the next automatically.</p>
+<p>Ansible is of hybrid nature. It follows both declarative and <strong>procedural style</strong> configuration. It performs ad-hoc commands to implement procedural-style configurations. Please read the documentation of Ansible very carefully to get in-depth knowledge of its behavior. It’s important to know whether you need to add or subtract resources to get the desired result or need to indicate the resources required explicitly.</p>
 <h2 id=terraform-vs-ansible-provisioning>Terraform vs Ansible Provisioning</h2>
+<figure><img src=https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/07/TerraformVsAnsible-400x224.png>
+</figure>
+<p><strong>Terraform</strong> deals with <strong>infrastructure automation</strong>. Its current declarative model lacks some features which arise complexity. Using Terraform, the elements of required environments are separately described, including their relationships. It assesses the model, creates a plan based on dependencies, and gives optimized commands to Infrastructure as a Service. If there is no change in the environment or strategy, repeated runs will do nothing. If there is any update in the plan or environment, it will <strong>synchronize</strong> the cloud infrastructure.</p>
+<p><strong>Ansible</strong> follows a <strong>procedural approach</strong>. Various users create playbooks that are evaluated through top to bottom approach and executed in sequence. <strong>Playbooks</strong> are responsible for the configuration of network devices that contributes towards a procedural approach. Of course, Ansible provisions the cloud infrastructure as well. But its procedural approach limits it to large infrastructure deployments.</p>
 <h2 id=which-one-to-choose-terraform-or-ansible>Which one to choose: Terraform or Ansible?</h2>
+<p><strong>Terraform</strong> vs. <strong>Ansible</strong>: Every tool has its unique characteristics and limitations. Let’s check out which one to go with.</p>
+<p><strong>Terraform</strong> comes with good <strong>scheduling capabilities</strong> and is very <strong>user-friendly</strong>. It integrates with docker well, as docker handles the configuration management slightly better than Terraform. But there is no clear evidence of how the target devices are brought to their final state, and sometimes, the final configuration is unnecessary.</p>
+<p><strong>Ansible</strong> comes with better <strong>security</strong> and <strong>ACL functionality</strong>. It is considered a mature tool because it adjusts comfortably with traditional automation frameworks. It offers simple operations and helps to code quickly. But, on the other hand, it is not good at services like logical dependencies, orchestration services, and interconnected applications.</p>
+<p>You can now choose between these two, according to the requirement of the situation and the job. For example, if the containerized solution is used to provision software within the cloud, then Terraform is preferable. On the other hand, if you want to gain reasonable control of your devices and find other ways to deploy underlying services, Ansible is more suitable. These tools will provide more comprehensive solutions in the future.</p>
 <h2 id=conclusion>Conclusion</h2>
 <h2 id=references>References</h2>
 </div><div class=post-footer id=post-footer>
