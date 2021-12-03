@@ -136,6 +136,8 @@ You can now choose between these two, according to the requirement of the situat
 
 ## Conclusion {#conclusion}
 
+It is essential to know which tool is used for which job among Terraform vs. Ansible. Terraform is mainly known for provisioning infrastructure across various clouds. It supports more than 200 providers and a great tool to manage cloud services below the server. In comparison, Ansible is optimized to perform both provisioning and configuration management. Therefore, we can say that both Terraform and Ansible can work hand in hand as standalone tools or work together but always pick up the right tool as per the job requirement.
+
 
 ## References {#references}
 
