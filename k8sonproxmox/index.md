@@ -17,6 +17,7 @@ The idea here was to be able to spin up a k3s cluster with minimum effort so i c
 
 1.  read [DevOps/Terraform Beginner's Guide]({{< relref "terraform" >}})
 2.  read [DevOps/Ansible Beginner's Guide]({{< relref "ansible" >}})
+3.  read [Cluster/Create Proxmox cloud-init template]({{< relref "clouldInit" >}})
 
 
 ## System requirements {#system-requirements}
@@ -27,4 +28,9 @@ The idea here was to be able to spin up a k3s cluster with minimum effort so i c
 
 
 ## Proxmox setup {#proxmox-setup}
+
+
+## References {#references}
+
+1.<https://medium.com/@ssnetanel/build-a-kubernetes-cluster-using-k3s-on-proxmox-via-ansible-and-terraform-c97c7974d4a5>
 
