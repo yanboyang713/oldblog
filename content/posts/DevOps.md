@@ -1,6 +1,7 @@
 ---
 title: "DevOps Beginner's Guide"
 date: 2021-12-02T11:18:00+08:00
+tags: ["DevOps"]
 categories: ["DevOps"]
 draft: false
 ---

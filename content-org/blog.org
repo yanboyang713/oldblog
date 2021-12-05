@@ -598,6 +598,7 @@ CLOSED: [2021-12-03 Fri 18:27]
 :PROPERTIES:
 :EXPORT_FILE_NAME: clouldInit
 :EXPORT_OPTIONS: author:nil
+:ID:       632ee4dd-5bdd-4103-bab1-b3c1110aeac6
 :END:
 *** Overview
 In this article, I'll demonstrate how to create a cloud-init enabled Ubuntu 20.04 LTS base image to use on Proxmox VE.
@@ -674,6 +675,9 @@ Now that you've created a template using packer from the base template, you can 
 3. https://norocketscience.at/deploy-proxmox-virtual-machines-using-cloud-init/
 4. https://pve.proxmox.com/wiki/Cloud-Init_Support
 5. https://blog.dustinrue.com/2020/05/going-deeper-with-proxmox-cloud-init/
+6. https://gist.github.com/mike1237/cce83a74f898b11c2cec911204568cf9
+
+
 
 ** DONE Build a Kubernetes cluster on Proxmox via Ansible and Terraform
 CLOSED: [2021-12-01 Wed 20:27]
@@ -694,7 +698,7 @@ The idea here was to be able to spin up a k3s cluster with minimum effort so i c
 *** Prerequires
 1. read [[id:ee79f2a9-445b-4756-9853-e0819fda588c][DevOps/Terraform Beginner's Guide]]
 2. read [[id:5012520e-c7d0-4b8e-8575-6ecf70e819b6][DevOps/Ansible Beginner's Guide]]
-
+3. read [[id:632ee4dd-5bdd-4103-bab1-b3c1110aeac6][Cluster/Create Proxmox cloud-init template]]
 *** System requirements
 + The deployment environment must have [[https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html][Ansible]] 2.4.0+
 + [[https://learn.hashicorp.com/tutorials/terraform/install-cli][Terraform]] installed
@@ -703,11 +707,13 @@ The idea here was to be able to spin up a k3s cluster with minimum effort so i c
 *** Proxmox setup
 
 
+*** References
+1. https://medium.com/@ssnetanel/build-a-kubernetes-cluster-using-k3s-on-proxmox-via-ansible-and-terraform-c97c7974d4a5
 
 
 
 * DevOps :@DevOps:
-** DONE DevOps Beginner's Guide
+** DONE DevOps Beginner's Guide :DevOps:
 CLOSED: [2021-12-02 Thu 11:18]
 :PROPERTIES:
 :EXPORT_FILE_NAME: DevOps

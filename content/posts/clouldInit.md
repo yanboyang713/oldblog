@@ -97,3 +97,4 @@ Now that you've created a template using packer from the base template, you can 
 3.  <https://norocketscience.at/deploy-proxmox-virtual-machines-using-cloud-init/>
 4.  <https://pve.proxmox.com/wiki/Cloud-Init%5FSupport>
 5.  <https://blog.dustinrue.com/2020/05/going-deeper-with-proxmox-cloud-init/>
+6.  <https://gist.github.com/mike1237/cce83a74f898b11c2cec911204568cf9>
