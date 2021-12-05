@@ -9,6 +9,8 @@ I see myself advancing with strong ability, and passion for new technology and a
 
 [PDF CV download HERE!!!](/cvEN.pdf)
 
+**Note:** I am currently looking for opportunities to conduct research for PhD at univeristies in US. Please feel free to contact me by [email](mailto:yanboyang713@gmail.com) if there is such an opportunity. Thanks.
+
 ## Working Experience
 1. 2020.3 - 2021.6
 	* Support Engineer
