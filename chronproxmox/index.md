@@ -9,6 +9,7 @@ Cloud Hosted Router (CHR) is a RouterOS version intended for running as a virtua
 ## Prerequires {#prerequires}
 
 1.  read [Cluster/Getting Started Set-up OVS for Proxmox]({{< relref "ProxmoxOVS" >}})
+2.  read [Cluster/Proxmox PCI Passthrough]({{< relref "ProxmoxPassthrough" >}})
 
 
 ## System Minimal Requirements {#system-minimal-requirements}
@@ -159,6 +160,7 @@ rm /root/temp/chr-$version.img
 echo "############## End of Script ##############"
 ```
 
+**NOTE**: ERROR: storage 'local' does not support content-type 'images'
 **NOTE**: Useful snippet to clean up the BASH script from Windows formatting that may interfere with script if it's edited on a Windows workstation:
 
 ```console
@@ -166,7 +168,14 @@ sed -i -e 's/\r$//' *.sh
 ```
 
 
-## list network interface name with PCI ID {#list-network-interface-name-with-pci-id}
+### Step 3: Add WAN port to ROS {#step-3-add-wan-port-to-ros}
+
+I am add a passthrough NIC as WAM, so before you read this section. Please, read [Cluster/Proxmox PCI Passthrough]({{< relref "ProxmoxPassthrough" >}}) first.
+
+When you **DONE** set-up passthrough, now lets we list network interfaces name with PCI ID and add WAN.
+
+
+#### List network interface name with PCI ID {#list-network-interface-name-with-pci-id}
 
 ```bash
 apt install lshw
@@ -193,4 +202,18 @@ For example, you can found interface name with bus id at below.
        configuration: autonegotiation=on broadcast=yes driver=igb driverversion=5.13.19-1-pve duplex=full firmware=0. 6-1 latency=0 link=yes multicast=yes port=twisted pair speed=1Gbit/s
        resources: irq:17 memory:df200000-df21ffff ioport:b000(size=32) memory:df220000-df223fff
 ```
+
+
+#### Add WAN {#add-wan}
+
+now lets we add WAN to ROS.
+
+Go to **Hardware** Section -> **Add** -> **PCI Device**
+
+Choose your WAN need to add in.
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638780489/PVE/hardwareAdd%5Faqh8vq.png" >}}
+
+
+### Step 4: Start your ROS {#step-4-start-your-ros}
 
