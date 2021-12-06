@@ -568,6 +568,81 @@ iface vmbr0 inet manual
 #+end_src
 
 
+** DONE Proxmox PCI Passthrough :passthrough:proxmox:
+CLOSED: [2021-12-06 Mon 16:04]
+:PROPERTIES:
+:EXPORT_FILE_NAME: ProxmoxPassthrough
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+PCI passthrough allows you to use a physical PCI device (graphics card, network card) inside a VM (KVM virtualization only).
+
+If you "*PCI passthrough*" a device, the device is not available to the host anymore.
+
+*Note*:
+PCI passthrough is an experimental feature in Proxmox VE! VMs with passthroughed devices cannot be *migrated*.
+
+*** Enable the IOMMU
+First open your bootloader kernel command line config file.
+
+#+begin_src bash
+vim /etc/default/grub
+#+end_src
+
+Find line *GRUB_CMDLINE_LINUX_DEFAULT="quiet"*
+
+Change to:
+
+*GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on"*
+
+Then save the changes and update grub:
+
+#+begin_src bash
+update-grub
+#+end_src
+
+and than, reboot your PVE
+#+begin_src bash
+reboot
+#+end_src
+
+Verify IOMMU is enabled
+
+after reboot, then run:
+#+begin_src bash
+dmesg | grep -e DMAR -e IOMMU
+#+end_src
+
+There should be a line that looks like "DMAR: IOMMU enabled". If there is no output, something is wrong.
+
+Add *PT* Mode,
+Both Intel and AMD chips can use the additional parameter "iommu=pt", added in the same way as above to the kernel cmdline.
+#+begin_src file
+GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt"
+#+end_src
+
+This enables the IOMMU translation only when necessary, the adapter does not need to use DMA translation to the memory, and can thus improve performance for hypervisor PCIe devices (which are not passthroughed to a VM)
+
+than, update grub and root
+#+begin_src bash
+update-grub
+reboot
+#+end_src
+
+*** Add required Modules
+add to /etc/modules (default is empty)
+
+#+begin_src file
+vfio
+vfio_iommu_type1
+vfio_pci
+vfio_virqfd
+#+end_src
+
+Then, reboot. Well Done
+
+
 ** DONE Getting Started MikroTik Cloud Hosted Router (CHR) on Proxmox
 CLOSED: [2021-12-06 Mon 12:28]
 :PROPERTIES:
@@ -714,6 +789,34 @@ echo "############## End of Script ##############"
 
 #+begin_src console
 sed -i -e 's/\r$//' *.sh
+#+end_src
+
+
+*** list network interface name with PCI ID
+
+#+begin_src bash
+apt install lshw
+lshw -class network
+#+end_src
+
+For example, you can found interface name with bus id at below.
+#+begin_src file
+*-network
+       description: Ethernet interface
+       product: I211 Gigabit Network Connection
+       vendor: Intel Corporation
+       physical id: 0
+       bus info: pci@0000:04:00.0
+       logical name: ens9
+       version: 03
+       serial: 00:90:27:e5:8d:07
+       size: 1Gbit/s
+       capacity: 1Gbit/s
+       width: 32 bits
+       clock: 33MHz
+       capabilities: pm msi msix pciexpress bus_master cap_list ethernet physical tp 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation
+       configuration: autonegotiation=on broadcast=yes driver=igb driverversion=5.13.19-1-pve duplex=full firmware=0. 6-1 latency=0 link=yes multicast=yes port=twisted pair speed=1Gbit/s
+       resources: irq:17 memory:df200000-df21ffff ioport:b000(size=32) memory:df220000-df223fff
 #+end_src
 
 
