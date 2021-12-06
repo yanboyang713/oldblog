@@ -165,3 +165,32 @@ echo "############## End of Script ##############"
 sed -i -e 's/\r$//' *.sh
 ```
 
+
+## list network interface name with PCI ID {#list-network-interface-name-with-pci-id}
+
+```bash
+apt install lshw
+lshw -class network
+```
+
+For example, you can found interface name with bus id at below.
+
+```file
+*-network
+       description: Ethernet interface
+       product: I211 Gigabit Network Connection
+       vendor: Intel Corporation
+       physical id: 0
+       bus info: pci@0000:04:00.0
+       logical name: ens9
+       version: 03
+       serial: 00:90:27:e5:8d:07
+       size: 1Gbit/s
+       capacity: 1Gbit/s
+       width: 32 bits
+       clock: 33MHz
+       capabilities: pm msi msix pciexpress bus_master cap_list ethernet physical tp 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation
+       configuration: autonegotiation=on broadcast=yes driver=igb driverversion=5.13.19-1-pve duplex=full firmware=0. 6-1 latency=0 link=yes multicast=yes port=twisted pair speed=1Gbit/s
+       resources: irq:17 memory:df200000-df21ffff ioport:b000(size=32) memory:df220000-df223fff
+```
+
