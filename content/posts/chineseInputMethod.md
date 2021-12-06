@@ -1,6 +1,7 @@
 ---
-title: "Getting Started Fcitx with chinese input method in Linux :Fcitx:chinese input method:linux:"
+title: "Getting Started Fcitx with chinese input method in Linux"
 date: 2021-12-06T13:56:00+08:00
+tags: ["Fcitx", "chinese", "linux"]
 categories: ["Linux"]
 draft: false
 ---

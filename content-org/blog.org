@@ -1438,7 +1438,7 @@ If you want to set some type of window to be always floating, look at the config
 *** Quitting
 To quit dwm cleanly: *[Shift]+[Alt]+[q]*
 
-** DONE Getting Started Fcitx with chinese input method in Linux :Fcitx:chinese input method:linux:
+** DONE Getting Started Fcitx with chinese input method in Linux :Fcitx:chinese:linux:
 CLOSED: [2021-12-06 Mon 13:56]
 :PROPERTIES:
 :EXPORT_FILE_NAME: chineseInputMethod
