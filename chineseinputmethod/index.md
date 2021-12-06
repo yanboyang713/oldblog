@@ -1,4 +1,4 @@
-# Getting Started Fcitx with chinese input method in Linux :Fcitx:chinese input method:linux:
+# Getting Started Fcitx with chinese input method in Linux
 
 
 ## Introduction {#introduction}
