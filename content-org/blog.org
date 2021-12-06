@@ -573,6 +573,7 @@ CLOSED: [2021-12-06 Mon 16:04]
 :PROPERTIES:
 :EXPORT_FILE_NAME: ProxmoxPassthrough
 :EXPORT_OPTIONS: author:nil
+:ID:       0a2b0901-86a5-4a83-b6a7-e9f18516053a
 :END:
 
 *** Introduction
@@ -655,6 +656,7 @@ Cloud Hosted Router (CHR) is a RouterOS version intended for running as a virtua
 
 *** Prerequires
 1. read [[id:ffb1b001-6dba-40f3-a222-4260015a6863][Cluster/Getting Started Set-up OVS for Proxmox]]
+2. read [[id:0a2b0901-86a5-4a83-b6a7-e9f18516053a][Cluster/Proxmox PCI Passthrough]]
 
 *** System Minimal Requirements
 + Package version: RouterOS v6.34 or newer
@@ -785,14 +787,19 @@ echo "############## End of Script ##############"
 
 #+end_src
 
+*NOTE*: ERROR: storage 'local' does not support content-type 'images'
 *NOTE*: Useful snippet to clean up the BASH script from Windows formatting that may interfere with script if it's edited on a Windows workstation:
 
 #+begin_src console
 sed -i -e 's/\r$//' *.sh
 #+end_src
 
+**** Step 3: Add WAN port to ROS
+I am add a passthrough NIC as WAM, so before you read this section. Please, read [[id:0a2b0901-86a5-4a83-b6a7-e9f18516053a][Cluster/Proxmox PCI Passthrough]] first.
 
-*** list network interface name with PCI ID
+When you *DONE* set-up passthrough, now lets we list network interfaces name with PCI ID and add WAN.
+
+***** List network interface name with PCI ID
 
 #+begin_src bash
 apt install lshw
@@ -818,6 +825,18 @@ For example, you can found interface name with bus id at below.
        configuration: autonegotiation=on broadcast=yes driver=igb driverversion=5.13.19-1-pve duplex=full firmware=0. 6-1 latency=0 link=yes multicast=yes port=twisted pair speed=1Gbit/s
        resources: irq:17 memory:df200000-df21ffff ioport:b000(size=32) memory:df220000-df223fff
 #+end_src
+
+***** Add WAN
+now lets we add WAN to ROS.
+
+Go to *Hardware* Section -> *Add* -> *PCI Device*
+
+Choose your WAN need to add in.
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638780489/PVE/hardwareAdd_aqh8vq.png]]
+
+
+**** Step 4: Start your ROS
 
 
 ** DONE Getting Started ROS and Openwrt with Proxmox
