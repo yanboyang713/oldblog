@@ -1,6 +1,7 @@
 ---
 title: "Getting Started Dynamic Window Manager (DWM)"
 date: 2021-11-30T17:50:00+08:00
+tags: ["DWM"]
 categories: ["Linux"]
 draft: false
 ---

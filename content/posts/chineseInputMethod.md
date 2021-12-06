@@ -1,10 +1,21 @@
 ---
-title: "Install Chinese Input Method in Linux"
-date: 2020-02-05T06:11:32+10:00
-tags: [ "chinese input method" ]
-categories: [ "Linux" ]
+title: "Getting Started Fcitx with chinese input method in Linux :Fcitx:chinese input method:linux:"
+date: 2021-12-06T13:56:00+08:00
+categories: ["Linux"]
+draft: false
 ---
-## Install fcite packages in Manjaro
+
+## Introduction {#introduction}
+
+Fcitx is a lightweight input method framework aimed at providing environment independent language support for Linux. It supports a lot of different languages and also provides many useful non-CJK features.
+
+In this article, I will introduction:
+
+1.  How to install Fcite in Manjaro/Arch Linux.
+2.  How to Config Environmental variables
+
+
+## Install fcite packages in Manjaro {#install-fcite-packages-in-manjaro}
 
 ```bash
 yay -Syu adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts
@@ -14,7 +25,8 @@ yay -Syu adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts
 yay -Syu fcitx fcitx-googlepinyin fcitx-im fcitx-configtool
 ```
 
-## Config Environmental variables
+
+## Config Environmental variables {#config-environmental-variables}
 
 ```bash
 vim ~/.profile
@@ -33,5 +45,3 @@ fcitx &
 ```bash
 source .profile
 ```
-
-

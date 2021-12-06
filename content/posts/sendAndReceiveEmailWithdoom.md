@@ -1,7 +1,8 @@
 ---
 title: "Getting Started with send and receive Email with Doom Emacs"
+date: 2021-12-06T13:44:00+08:00
 categories: ["Emacs"]
-draft: true
+draft: false
 ---
 
 ## Receive Email {#receive-email}

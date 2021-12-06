@@ -1,6 +1,7 @@
 ---
 title: "The comparison and introduction between Terraform and Ansible"
 date: 2021-12-02T10:53:00+08:00
+tags: ["Terraform", "Ansible"]
 categories: ["DevOps"]
 draft: false
 ---

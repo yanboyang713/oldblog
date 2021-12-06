@@ -1,6 +1,7 @@
 ---
 title: "Terraform Beginner's Guide"
 date: 2021-12-02T11:09:00+08:00
+tags: ["Terraform"]
 categories: ["DevOps"]
 draft: false
 ---

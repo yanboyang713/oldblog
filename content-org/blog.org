@@ -115,7 +115,8 @@ SPC o p - Open
 When Treemacs is opened, you can type *q* to close.
 
 
-** TODO Getting Started with send and receive Email with Doom Emacs
+** DONE Getting Started with send and receive Email with Doom Emacs
+CLOSED: [2021-12-06 Mon 13:44]
 :PROPERTIES:
 :EXPORT_FILE_NAME: sendAndReceiveEmailWithdoom
 :EXPORT_OPTIONS: author:nil
@@ -173,6 +174,7 @@ set mta=/usr/bin/msmtp
 
 *** Usage
 https://cheatography.com/ddoherty03/cheat-sheets/mu4e-with-gmail-hints/
+
 
 * Computer Vision :@ComputerVision:
 
@@ -495,12 +497,15 @@ SRS is a simple, high efficiency and realtime video server, supports RTMP/WebRTC
 
 
 * Cluster :@Cluster:
-** DONE Getting Started ROS and Openwrt with Proxmox
-CLOSED: [2021-11-05 Fri 19:52]
+** DONE Getting Started Set-up OVS for Proxmox
+CLOSED: [2021-12-06 Mon 12:58]
 :PROPERTIES:
-:EXPORT_FILE_NAME: ROSandOpenwrtProxmox
+:EXPORT_FILE_NAME: ProxmoxOVS
 :EXPORT_OPTIONS: author:nil
+:ID:       ffb1b001-6dba-40f3-a222-4260015a6863
 :END:
+
+*** Introduction
 
 *** Install Open vSwitch
 Update the package index and then install the Open vSwitch packages by executing:
@@ -563,6 +568,163 @@ iface vmbr0 inet manual
 #+end_src
 
 
+** DONE Getting Started MikroTik Cloud Hosted Router (CHR) on Proxmox
+CLOSED: [2021-12-06 Mon 12:28]
+:PROPERTIES:
+:EXPORT_FILE_NAME: CHRonProxmox
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+Cloud Hosted Router (CHR) is a RouterOS version intended for running as a virtual machine. It supports the x86 64-bit architecture and can be used on most of the popular hypervisors such as VMWare, Hyper-V, VirtualBox, KVM and others. CHR has full RouterOS features enabled by default but has a different licensing model than other RouterOS versions.
+
+*** Prerequires
+1. read [[id:ffb1b001-6dba-40f3-a222-4260015a6863][Cluster/Getting Started Set-up OVS for Proxmox]]
+
+*** System Minimal Requirements
++ Package version: RouterOS v6.34 or newer
++ Host CPU: 64-bit with virtualization support
++ RAM: 128MB or more
++ Disk: 128MB disk space for the CHR virtual hard drive (Max: 16GB)
+
+*NOTE*: The minimum required RAM depends on interface count and CPU count. You can get an approximate number by using the following formula: RAM = 128 + [ 8 × (CPU_COUNT) × (INTERFACE_COUNT - 1) ]
+
+*** The CHR has 4 license levels:
+
++ free
++ *p1* perpetual-1 ($45)
++ *p10* perpetual-10 ($95)
++ *p-unlimited* perpetual-unlimited ($250)
+
+Perpetual is a lifetime license (buy once, use forever). It is possible to transfer a perpetual license to another CHR instance. A running CHR instance will indicate the time when it has to access the account server to renew it's license. If the CHR instance will not be able to renew the license it will behave as if the trial period has ran out and will not allow an upgrade of RouterOS to a newer version.
+
+After licensing a running trial system, you must manually run the */system license renew* function from the CHR to make it active. Otherwise the system will not know you have licensed it in your account. If you do not do this before the system deadline time, the trial will end and you will have to do a complete fresh CHR installation, request a new trial and then license it with the license you had obtained.
+
+**** Paid licenses
+***** p1
+p1 (perpetual-1) license level allows CHR to run indefinitely. It is limited to 1Gbps upload per interface. All the rest of the features provided by CHR are available without restrictions. It is possible to upgrade p1 to p10 or p-unlimited After the upgrade is purchased the former license will become available for later use on your account.
+
+***** p10
+p10 (perpetual-10) license level allows CHR to run indefinitely. It is limited to 10Gbps upload per interface. All the rest of the features provided by CHR are available without restrictions. It is possible to upgrade p10 to p-unlimited After the upgrade is purchased the former license will become available for later use on your account.
+
+***** p-unlimited
+The p-unlimited (perpetual-unlimited) license level allows CHR to run indefinitely. It is the highest tier license and it has no enforced limitations.
+
+***** Free licenses
+The free license level allows CHR to run indefinitely. It is limited to 1Mbps upload per interface. All the rest of the features provided by CHR are available without restrictions. To use this, all you have to do is download disk image file from our download page and create a virtual guest.
+*** CHR ProxMox installation
+**** Step 1: Registration a new mikrotik account, if you have NOT it.
+https://mikrotik.com/client
+
+**** Step 2: Installation
+I recommand using the below Bash script to install. You need to *ssh* into your ProxMox and run below script.
+
+Before run this script, Please do some research, which version of ROS you want to install. Please, check this [[https://mikrotik.com/download][link]].
+
+What this script does:
++ Stores tmp files in: /root/temp dir.
++ Downloads raw image archive from MikroTik download page.
++ Converts image file to qcow format.
++ Creates basic VM that is attached to MGMT bridge.
+
+*Important Note*: Make sure you have a MGMT bridge, which named *vmbr0*. If you have NOT  avaiable bridge, please have a look [[id:ffb1b001-6dba-40f3-a222-4260015a6863][Cluster/Getting Started Set-up OVS for Proxmox]]
+
+#+begin_src bash
+#!/bin/bash
+
+#vars
+version="nil"
+vmID="nil"
+
+echo "############## Start of Script ##############
+
+## Checking if temp dir is available..."
+if [ -d /root/temp ]
+then
+    echo "-- Directory exists!"
+else
+    echo "-- Creating temp dir!"
+    mkdir /root/temp
+fi
+
+# apt install unzip
+echo "Install unzip"
+apt update
+apt install unzip -y
+
+# Ask user for version
+echo "## Preparing for image download and VM creation!"
+read -p "Please input CHR version to deploy ( 6.49.1 (Stable) 6.49rc2 (Testing) 7.1 (Testing)):" version
+# Check if image is available and download if needed
+if [ -f /root/temp/chr-$version.img ]
+then
+    echo "-- CHR image is available."
+else
+    echo "-- Downloading CHR $version image file."
+    cd  /root/temp
+    echo "---------------------------------------------------------------------------"
+    wget https://download.mikrotik.com/routeros/$version/chr-$version.img.zip
+    unzip chr-$version.img.zip
+    echo "---------------------------------------------------------------------------"
+fi
+# List already existing VM's and ask for vmID
+echo "== Printing list of VM's on this hypervisor!"
+qm list
+echo ""
+read -p "Please Enter free vm ID to use:" vmID
+echo ""
+# Create storage dir for VM if needed.
+if [ -d /var/lib/vz/images/$vmID ]
+then
+    echo "-- VM Directory exists! Ideally try another vm ID!"
+    read -p "Please Enter free vm ID to use:" vmID
+else
+    echo "-- Creating VM image dir!"
+    mkdir /var/lib/vz/images/$vmID
+fi
+# Creating qcow2 image for CHR.
+echo "-- Converting image to qcow2 format "
+qemu-img convert \
+    -f raw \
+    -O qcow2 \
+    /root/temp/chr-$version.img \
+    /var/lib/vz/images/$vmID/vm-$vmID-disk-1.qcow2
+# Creating VM
+echo "-- Creating new CHR VM"
+qm create $vmID \
+  --name chr-$version \
+  --net0 virtio,bridge=vmbr0 \
+  --bootdisk virtio0 \
+  --ostype l26 \
+  --memory 256 \
+  --onboot no \
+  --sockets 1 \
+  --cores 1 \
+  --virtio0 local:$vmID/vm-$vmID-disk-1.qcow2
+
+# remove downloaded raw image and zip
+rm /root/temp/chr-$version.img.zip
+rm /root/temp/chr-$version.img
+
+echo "############## End of Script ##############"
+
+#+end_src
+
+*NOTE*: Useful snippet to clean up the BASH script from Windows formatting that may interfere with script if it's edited on a Windows workstation:
+
+#+begin_src console
+sed -i -e 's/\r$//' *.sh
+#+end_src
+
+
+** DONE Getting Started ROS and Openwrt with Proxmox
+CLOSED: [2021-11-05 Fri 19:52]
+:PROPERTIES:
+:EXPORT_FILE_NAME: ROSandOpenwrtProxmox
+:EXPORT_OPTIONS: author:nil
+:END:
+
+**
 *** mikrotik
 https://mikrotik.com/software
 
@@ -779,7 +941,7 @@ The Third Way describes the environment and culture, as the following practices
 [[https://blog-assets.freshworks.com/freshservice/wp-content/uploads/2019/01/23142856/3.png]]
 
 
-** DONE Terraform Beginner's Guide
+** DONE Terraform Beginner's Guide :Terraform:
 CLOSED: [2021-12-02 Thu 11:09]
 :PROPERTIES:
 :EXPORT_FILE_NAME: terraform
@@ -922,7 +1084,7 @@ I hope the above gives you an idea about how you can get started with Terraform.
 *** Related/References
 
 
-** DONE Ansible Beginner's Guide
+** DONE Ansible Beginner's Guide :Ansible:
 CLOSED: [2021-12-02 Thu 17:58]
 :PROPERTIES:
 :EXPORT_FILE_NAME: ansible
@@ -1040,7 +1202,7 @@ $ Ansible ABC -m file -a "dest = /path/user1/new state = absent"
 #+end_src
 
 
-** DONE The comparison and introduction between Terraform and Ansible
+** DONE The comparison and introduction between Terraform and Ansible :Terraform:Ansible:
 CLOSED: [2021-12-02 Thu 10:53]
 :PROPERTIES:
 :EXPORT_FILE_NAME: terraformAndAnsible
@@ -1163,7 +1325,7 @@ It is essential to know which tool is used for which job among Terraform vs. Ans
 
 
 * Linux :@Linux:
-** DONE Getting Started Dynamic Window Manager (DWM)
+** DONE Getting Started Dynamic Window Manager (DWM) :DWM:
 CLOSED: [2021-11-30 Tue 17:50]
 :PROPERTIES:
 :EXPORT_FILE_NAME: dwm
@@ -1275,3 +1437,47 @@ If you want to set some type of window to be always floating, look at the config
 
 *** Quitting
 To quit dwm cleanly: *[Shift]+[Alt]+[q]*
+
+** DONE Getting Started Fcitx with chinese input method in Linux :Fcitx:chinese input method:linux:
+CLOSED: [2021-12-06 Mon 13:56]
+:PROPERTIES:
+:EXPORT_FILE_NAME: chineseInputMethod
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+Fcitx is a lightweight input method framework aimed at providing environment independent language support for Linux. It supports a lot of different languages and also provides many useful non-CJK features.
+
+In this article, I will introduction:
+1. How to install Fcite in Manjaro/Arch Linux.
+2. How to Config Environmental variables
+
+*** Install fcite packages in Manjaro
+
+#+begin_src bash
+yay -Syu adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts
+#+end_src
+
+#+begin_src bash
+yay -Syu fcitx fcitx-googlepinyin fcitx-im fcitx-configtool
+#+end_src
+
+*** Config Environmental variables
+
+#+begin_src bash
+vim ~/.profile
+#+end_src
+
+add:
+
+#+begin_src file
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+fcitx &
+#+end_src
+
+#+begin_src bash
+source .profile
+#+end_src
