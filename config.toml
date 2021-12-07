@@ -9,6 +9,11 @@ title = "Boyang Yan's Tech Blog"
 theme = "CodeIT"
 googleAnalytics = "UA-101949995-1"
 
+enableEmoji = true
+enableGitInfo = true
+enableRobotsTXT = true
+canonifyURLs = true
+
 [menu]
   [[menu.main]]
     identifier = "home"
