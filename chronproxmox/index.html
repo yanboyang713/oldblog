@@ -10,7 +10,7 @@ Prerequires  read Cluster/Getting Started Set-up OVS for Proxmox read Cluster/Pr
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/chronproxmox/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-06T12:28:00+08:00">
-<meta property="article:modified_time" content="2021-12-06T10:59:03+00:00">
+<meta property="article:modified_time" content="2021-12-07T03:10:03+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting Started MikroTik Cloud Hosted Router (CHR) on Proxmox">
@@ -19,7 +19,7 @@ Prerequires  read Cluster/Getting Started Set-up OVS for Proxmox read Cluster/Pr
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/chronproxmox/><link rel=prev href=https://yanboyang.com/clouldinit/><link rel=next href=https://yanboyang.com/proxmoxovs/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started MikroTik Cloud Hosted Router (CHR) on Proxmox","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/chronproxmox\/"},"genre":"posts","wordcount":1199,"url":"https:\/\/yanboyang.com\/chronproxmox\/","datePublished":"2021-12-06T12:28:00+08:00","dateModified":"2021-12-06T10:59:03+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://yanboyang.com/chronproxmox/><link rel=prev href=https://yanboyang.com/clouldinit/><link rel=next href=https://yanboyang.com/proxmoxovs/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started MikroTik Cloud Hosted Router (CHR) on Proxmox","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/chronproxmox\/"},"genre":"posts","wordcount":1547,"url":"https:\/\/yanboyang.com\/chronproxmox\/","datePublished":"2021-12-06T12:28:00+08:00","dateModified":"2021-12-07T03:10:03+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -93,8 +93,8 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting Started MikroTik Cloud Hosted Router (CHR) on Proxmox</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/cluster/><i class="far fa-folder fa-fw"></i>Cluster</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-06>2021-12-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1199 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-06>2021-12-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1547 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -339,6 +339,164 @@ rm /root/temp/chr-<span class=nv>$version</span>.img
 <span class=nb>echo</span> <span class=s2>&#34;############## End of Script ##############&#34;</span>
 </code></pre></td></tr></table>
 </div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=cp>#!/bin/bash
+</span><span class=cp></span>
+<span class=c1>#vars</span>
+<span class=nv>version</span><span class=o>=</span><span class=s2>&#34;nil&#34;</span>
+<span class=nv>vmID</span><span class=o>=</span><span class=s2>&#34;nil&#34;</span>
+
+<span class=nb>echo</span> <span class=s2>&#34;############## Start of Script ##############
+</span><span class=s2>
+</span><span class=s2>## Checking if temp dir is available...&#34;</span>
+<span class=k>if</span> <span class=o>[</span> -d /root/temp <span class=o>]</span>
+<span class=k>then</span>
+    <span class=nb>echo</span> <span class=s2>&#34;-- Directory exists!&#34;</span>
+<span class=k>else</span>
+    <span class=nb>echo</span> <span class=s2>&#34;-- Creating temp dir!&#34;</span>
+    mkdir /root/temp
+<span class=k>fi</span>
+
+<span class=c1># apt install unzip</span>
+<span class=nb>echo</span> <span class=s2>&#34;Install unzip&#34;</span>
+apt update
+apt install unzip -y
+
+<span class=c1># Ask user for version</span>
+<span class=nb>echo</span> <span class=s2>&#34;## Preparing for image download and VM creation!&#34;</span>
+<span class=nb>read</span> -p <span class=s2>&#34;Please input CHR version to deploy ( 6.49.1 (Stable) 6.49rc2 (Testing) 7.1 (Testing)):&#34;</span> version
+<span class=c1># Check if image is available and download if needed</span>
+<span class=k>if</span> <span class=o>[</span> -f /root/temp/chr-<span class=nv>$version</span>.img <span class=o>]</span>
+<span class=k>then</span>
+    <span class=nb>echo</span> <span class=s2>&#34;-- CHR image is available.&#34;</span>
+<span class=k>else</span>
+    <span class=nb>echo</span> <span class=s2>&#34;-- Downloading CHR </span><span class=nv>$version</span><span class=s2> image file.&#34;</span>
+    <span class=nb>cd</span>  /root/temp
+    <span class=nb>echo</span> <span class=s2>&#34;---------------------------------------------------------------------------&#34;</span>
+    wget https://download.mikrotik.com/routeros/<span class=nv>$version</span>/chr-<span class=nv>$version</span>.img.zip
+    unzip chr-<span class=nv>$version</span>.img.zip
+    <span class=nb>echo</span> <span class=s2>&#34;---------------------------------------------------------------------------&#34;</span>
+<span class=k>fi</span>
+<span class=c1># List already existing VM&#39;s and ask for vmID</span>
+<span class=nb>echo</span> <span class=s2>&#34;== Printing list of VM&#39;s on this hypervisor!&#34;</span>
+qm list
+<span class=nb>echo</span> <span class=s2>&#34;&#34;</span>
+<span class=nb>read</span> -p <span class=s2>&#34;Please Enter free vm ID to use:&#34;</span> vmID
+<span class=nb>echo</span> <span class=s2>&#34;&#34;</span>
+<span class=c1># Create storage dir for VM if needed.</span>
+<span class=k>if</span> <span class=o>[</span> -d /var/lib/vz/images/<span class=nv>$vmID</span> <span class=o>]</span>
+<span class=k>then</span>
+    <span class=nb>echo</span> <span class=s2>&#34;-- VM Directory exists! Ideally try another vm ID!&#34;</span>
+    <span class=nb>read</span> -p <span class=s2>&#34;Please Enter free vm ID to use:&#34;</span> vmID
+<span class=k>else</span>
+    <span class=nb>echo</span> <span class=s2>&#34;-- Creating VM image dir!&#34;</span>
+    mkdir /var/lib/vz/images/<span class=nv>$vmID</span>
+<span class=k>fi</span>
+<span class=c1># import image</span>
+<span class=nb>echo</span> <span class=s2>&#34;-- Import RAW image to local-lvm&#34;</span>
+qemu-img resize /root/temp/chr-<span class=nv>$version</span>.img +10G
+
+<span class=c1># Creating VM</span>
+<span class=nb>echo</span> <span class=s2>&#34;-- Creating new CHR VM&#34;</span>
+qm create <span class=nv>$vmID</span> <span class=se>\
+</span><span class=se></span>  --name chr-<span class=nv>$version</span> <span class=se>\
+</span><span class=se></span>  --net0 virtio,bridge<span class=o>=</span>vmbr0 <span class=se>\
+</span><span class=se></span>  --bootdisk virtio0 <span class=se>\
+</span><span class=se></span>  --ostype l26 <span class=se>\
+</span><span class=se></span>  --memory <span class=m>256</span> <span class=se>\
+</span><span class=se></span>  --onboot no <span class=se>\
+</span><span class=se></span>  --sockets <span class=m>1</span> <span class=se>\
+</span><span class=se></span>  --cores <span class=m>1</span> <span class=se>\
+</span><span class=se></span>  --virtio0 local-lvm:vm-<span class=nv>$vmID</span>-disk-0
+
+qm importdisk <span class=nv>$vmID</span> /root/temp/chr-<span class=nv>$version</span>.img local-lvm
+
+<span class=c1># remove downloaded raw image and zip</span>
+rm /root/temp/chr-<span class=nv>$version</span>.img.zip
+rm /root/temp/chr-<span class=nv>$version</span>.img
+
+<span class=nb>echo</span> <span class=s2>&#34;############## End of Script ##############&#34;</span>
+</code></pre></td></tr></table>
+</div>
 </div><p><strong>NOTE</strong>: ERROR: storage &lsquo;local&rsquo; does not support content-type &lsquo;images&rsquo;
 <strong>NOTE</strong>: Useful snippet to clean up the BASH script from Windows formatting that may interfere with script if it&rsquo;s edited on a Windows workstation:</p>
 <div class=highlight><div class=chroma>
@@ -413,7 +571,7 @@ lshw -class network
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-12-06</span>
+<span>Updated on 2021-12-07</span>
 </div>
 <div class=post-info-license></div>
 </div>
