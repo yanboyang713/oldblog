@@ -14,8 +14,8 @@ Much like any well-integrated tool, I am currently using **Emacs Org Mode** as S
 I will follow the below overview diagram introducte each components one by one.
 
 {{< mermaid >}}flowchart LR;
-    A[Zotero \n Plugins: \n - Better BibTex] -->|Link text| B(Round edge)
-    B --> C{Decision}
-    C -->|One| D[Result one]
-    C -->|Two| E[Result two]
+    A[Zotero \n\n Plugins: \n - Better BibTex \n - ZotFile \n - Scite (optional)] -->|.bib file| B[org-roam-bibtex \n - Create org file for each bib entry \n - Templating \n - orb-pdf-scrapper*]
+    B --> |Add-ons: \n - org-noter \n - PDF-tools| R[org-roam \n - Build database \n - Make connections \n - Visualize database]
+    B --> |Add-ons: \n - org-noter \n - PDF-tools| O[org-mode \n - Write \n - Assign tasks \n - Run code \n - orgtransclusion \n - Export]
+    R --> O
 {{< /mermaid >}}
