@@ -4,6 +4,7 @@ date: 2021-12-07T12:46:00+08:00
 tags: ["zotero"]
 categories: ["Research"]
 draft: false
+summary: "Set-up Zotero with Better Bibtex, zotfile and Scite."
 ---
 
 ## Introduction {#introduction}

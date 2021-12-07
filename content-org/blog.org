@@ -1691,6 +1691,7 @@ CLOSED: [2021-12-07 Tue 12:46]
 :EXPORT_FILE_NAME: zotero
 :EXPORT_OPTIONS: author:nil
 :ID:       2fbd7db1-7307-4837-ad23-93c57ce2c463
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :summary Set-up Zotero with Better Bibtex, zotfile and Scite.
 :END:
 
 *** Introduction
@@ -1824,11 +1825,14 @@ Install by downloading the [[https://github.com/scitedotai/scite-zotero-plugin/r
 2. https://github.com/scitedotai/scite-zotero-plugin
 3. https://retorque.re/zotero-better-bibtex/
 
-** DONE Building a Second Brain: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers
+
+** DONE Building a Second Brain
 CLOSED: [2021-12-07 Tue 10:18]
 :PROPERTIES:
 :EXPORT_FILE_NAME: SecondBrain
 :EXPORT_OPTIONS: author:nil
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: subtitle: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers
+
 :END:
 *** Introduction
 Building a Second Brain is about creating a reliable system – outside your physical skin-and-bone bodily boundaries – for storing, organising, digesting, and eventually transforming information into Good Creative Output.
