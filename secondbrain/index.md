@@ -9,10 +9,8 @@ Much like any well-integrated tool, I am currently using **Emacs Org Mode** as S
 
 I will follow the below overview diagram introducte each components one by one.
 
-[[]]
-
-{{< mermaid >}}graph LR;
-    A[Hard edge] -->|Link text| B(Round edge)
+{{< mermaid >}}flowchart LR;
+    A[Zotero \n Plugins: \n - Better BibTex] -->|Link text| B(Round edge)
     B --> C{Decision}
     C -->|One| D[Result one]
     C -->|Two| E[Result two]
