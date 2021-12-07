@@ -1685,6 +1685,145 @@ source .profile
 
 
 * Research :@Research:
+** DONE Getting Started with Zotero :zotero:
+CLOSED: [2021-12-07 Tue 12:46]
+:PROPERTIES:
+:EXPORT_FILE_NAME: zotero
+:EXPORT_OPTIONS: author:nil
+:ID:       2fbd7db1-7307-4837-ad23-93c57ce2c463
+:END:
+
+*** Introduction
+
+*** Why Use Zotero?
++ Be Organized: Keep all of your research and citations in one place
++ Save time: Format fewer citations by hand
++ Collaborate: Work with anyone in the world, anytime
++ It's Free: No cost even after you
+
+*** Zotero Installation
+
+#+begin_src bash
+yay -S zotero
+#+end_src
+
+*** Launch Zotero :zotero-sync:
+
+**** Create a Zotero Account
+If you haven’t already created a Zotero account, please take a few moments to register now [[https://www.zotero.org/user/register][ *Here* ]]. It’s a free way to sync and access your library from anywhere, and it lets you join groups and back up all your attached files.
+
+**** Set up Zotero syncing
+You can now set up Zotero syncing to sync your data across multiple computers, access your library online, or collaborate in group libraries. Follow these steps to get started.
+
+1. Open the Sync pane of the Zotero preferences
+Goto "Edit" and click "Preferences"
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1618958146/zotero/Wed_Apr_21_08_33_25_AM_AEST_2021_yoifbp.png]]
+
+2. Enter your username and password
+Enter your username and password into the Sync preferences and click “Set Up Syncing”. Zotero will now automatically sync your data as you make changes.
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1618958273/zotero/Wed_Apr_21_08_37_31_AM_AEST_2021_on28w2.png]]
+
+*** Zotero Connector
+Go to this [[https://chrome.google.com/webstore/detail/zotero-connector/ekhagklcjbdpajgpjgmbionohlpdbjgc][link]].
+
+*** Better Bibtex :better-bibtex:
+
+**** Instaliion
+Install by downloading the [[https://github.com/retorquere/zotero-better-bibtex/releases/tag/v5.4.29][latest release]] and save the XPI file, just clicking it and then in Zotero:
+
+1. In the main menu go to Tools > Add-ons
+2. Select ‘Extensions’
+3. Click on the gear in the top-right corner and choose ‘Install Add-on From File…’
+4. Choose .xpi that you’ve just downloaded, click ‘Install’
+5. Restart Zotero
+
+**** Settings
+1. Go to Edit -> Preferences -> Better BibTex
+
+***** citation key format
+You can set key format gengeration the same format key with Google scholar
+
+#+begin_src file
+[auth:lower][year][veryshorttitle:lower]
+#+end_src
+
+Zotero:
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631529034/zotero/citationKey_000_gnoo2l.png]]
+
+Google Scholar:
+#+begin_src file
+@article{jordan2015machine,
+  title={Machine learning: Trends, perspectives, and prospects},
+  author={Jordan, Michael I and Mitchell, Tom M},
+  journal={Science},
+  volume={349},
+  number={6245},
+  pages={255--260},
+  year={2015},
+  publisher={American Association for the Advancement of Science}
+}
+#+end_src
+
+**** Export
+1. In the main menu go to File > Export Library
+2. Format you can choose Better BibTex.
+**Inportance Note**: Don't forget choose **keep updated**
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631527429/zotero/export_ilg1il.png]]
+3. Choose folder
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631527595/zotero/exportFile_rtlngo.png]]
+4.  There is a example:
+   #+begin_src console
+[yanboyang713@Boyang-PC ~]$ head reference.bib
+
+@misc{ActionCommandsBasler,
+  title = {Action {{Commands}} | {{Basler}}},
+  howpublished = {https://docs.baslerweb.com/action-commands\#action-group-mask},
+  file = {/home/yanboyang713/Zotero/storage/NKXFFZRJ/action-commands.html}
+}
+
+@misc{ActionCommandsBaslera,
+  title = {Action {{Commands}} | {{Basler}}},
+  howpublished = {https://docs.baslerweb.com/action-commands},
+   #+end_src
+
+*** Zotfile :zotfile:
+Install by downloading the [[https://github.com/jlegewie/zotfile/releases/][latest release]] and save the XPI file, just clicking it – and then in Zotero:
+
+1. In the main menu go to Tools > Add-ons
+2. Select ‘Extensions’
+3. Click on the gear in the top-right corner and choose ‘Install Add-on From File…’
+4. Choose .xpi that you’ve just downloaded, click ‘Install’
+5. Restart Zotero
+
+**** Settings
+1. In the main menu go to Tools -> ZotFile Preferences
+
+***** Location of Files
+1. Set **Custom Location**. For example: /home/yanboyang713/papers
+2. Use subfolder defined by **/%a**, mean author name.
+
+***** Renaming Rules
+1. Set *Format for all Item Types except Patents*: {%b}
+This will rename file same with your Citation Key.
+2. Set *Maximum number of authors* choose 1
+3. Uncheck *Add suffix when authors are omitted*
+
+*** Scite :scite:
+Install by downloading the [[https://github.com/scitedotai/scite-zotero-plugin/releases][latest release]]  and save the XPI file, just clicking it – and then in Zotero:
+
+1. In the main menu go to Tools > Add-ons
+2. Select ‘Extensions’
+3. Click on the gear in the top-right corner and choose ‘Install Add-on From File…’
+4. Choose .xpi that you’ve just downloaded, click ‘Install’
+5. Restart Zotero
+
+*** Reference List
+1. http://zotfile.com/
+2. https://github.com/scitedotai/scite-zotero-plugin
+3. https://retorque.re/zotero-better-bibtex/
+
 ** DONE Building a Second Brain: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers
 CLOSED: [2021-12-07 Tue 10:18]
 :PROPERTIES:
@@ -1698,14 +1837,52 @@ Much like any well-integrated tool, I am currently using *Emacs Org Mode* as Sec
 
 I will follow the below overview diagram introducte each components one by one.
 
-#+begin_export markdown
-{{< mermaid >}}flowchart LR;
-    A[Zotero \n\n Plugins: \n - Better BibTex \n - ZotFile \n - Scite (optional)] -->|.bib file| B[org-roam-bibtex \n - Create org file for each bib entry \n - Templating \n - orb-pdf-scrapper*]
-    B --> |Add-ons: \n - org-noter \n - PDF-tools| R[org-roam \n - Build database \n - Make connections \n - Visualize database]
-    B --> |Add-ons: \n - org-noter \n - PDF-tools| O[org-mode \n - Write \n - Assign tasks \n - Run code \n - orgtransclusion \n - Export]
-    R --> O
-{{< /mermaid >}}
-#+end_export
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638851036/research/orgmode2_firjld.png]]
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638851036/research/orgMode_asb3an.png]]
 
 *** Org-mode modules
-[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638848774/research/orgMode_coskik.png]]
+**** Planning
++ Task management (pomodoro method; time-blocking)
++ Time management (appointments; time-blocking)
+***** TODO’s and tags
++ These are identifiers in an org-file as tasks or reminders.
++ The types of TODO’s can either be set globally in your init file, or they can be file/buffer specific.
++ They are created as a subtree (think ‘heading’), or in-line ('org-inlinetask).
++ You can assign deadlines, scheduled date and time, active timestamps, and inactive timestamps
+***** Org-capture
+These are customizable org-headings that you can create on-the-go.
+They can be regular TODO’s or just notes.
+***** Org-agenda
+Populates all your TODO’s and appointments into a singular view.
+Default is week-view.
+Using org-super-agenda, I set up my agenda as a daily view with
+appointments, deadlines, and a habit tracker.
+***** Org-sidebar
+Another way of accessing your TODO’s that are outside of your agenda. I
+am using it to keep my project-specific TODO’s in the main project org
+file.
+**** Writing
+***** org-roam
+A note-taking package that replicates Roam Research which is based on
+the Zettelkasten method. I use it to build my literature review and I use
+org-roam-server to visualize my notes into a network.
+It builds on the strength of org-mode’s hyperlinking properties.
+***** Org-roam-bibtex
+Utilizes a combination of org-ref, helm-bibtex, and
+bibtex-completion to streamline note-taking workflow with references
+within the org-roam ecosystem.
+***** Org-noter
+I use it to annotate PDFs and take notes within the same buffer.
++ Works extremely well with PDF-tools.
++ org-noter-create-skeleton
+
+***** Org-transclusion
+An effective way of “copy/pasting” text from one org file (let’s say
+an org-roam note or a section of your thesis/dissertation) into your
+main org file.
+It will export all the transcluded text.
+Sort of equivalent to “#+INCLUDE:”
+
+**** Reference Management
+   [[id:2fbd7db1-7307-4837-ad23-93c57ce2c463][Research/Getting Started with Zotero]]
