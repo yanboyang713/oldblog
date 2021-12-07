@@ -164,6 +164,85 @@ rm /root/temp/chr-$version.img
 echo "############## End of Script ##############"
 ```
 
+```bash
+#!/bin/bash
+
+#vars
+version="nil"
+vmID="nil"
+
+echo "############## Start of Script ##############
+
+## Checking if temp dir is available..."
+if [ -d /root/temp ]
+then
+    echo "-- Directory exists!"
+else
+    echo "-- Creating temp dir!"
+    mkdir /root/temp
+fi
+
+# apt install unzip
+echo "Install unzip"
+apt update
+apt install unzip -y
+
+# Ask user for version
+echo "## Preparing for image download and VM creation!"
+read -p "Please input CHR version to deploy ( 6.49.1 (Stable) 6.49rc2 (Testing) 7.1 (Testing)):" version
+# Check if image is available and download if needed
+if [ -f /root/temp/chr-$version.img ]
+then
+    echo "-- CHR image is available."
+else
+    echo "-- Downloading CHR $version image file."
+    cd  /root/temp
+    echo "---------------------------------------------------------------------------"
+    wget https://download.mikrotik.com/routeros/$version/chr-$version.img.zip
+    unzip chr-$version.img.zip
+    echo "---------------------------------------------------------------------------"
+fi
+# List already existing VM's and ask for vmID
+echo "== Printing list of VM's on this hypervisor!"
+qm list
+echo ""
+read -p "Please Enter free vm ID to use:" vmID
+echo ""
+# Create storage dir for VM if needed.
+if [ -d /var/lib/vz/images/$vmID ]
+then
+    echo "-- VM Directory exists! Ideally try another vm ID!"
+    read -p "Please Enter free vm ID to use:" vmID
+else
+    echo "-- Creating VM image dir!"
+    mkdir /var/lib/vz/images/$vmID
+fi
+# import image
+echo "-- Import RAW image to local-lvm"
+qemu-img resize /root/temp/chr-$version.img +10G
+
+# Creating VM
+echo "-- Creating new CHR VM"
+qm create $vmID \
+  --name chr-$version \
+  --net0 virtio,bridge=vmbr0 \
+  --bootdisk virtio0 \
+  --ostype l26 \
+  --memory 256 \
+  --onboot no \
+  --sockets 1 \
+  --cores 1 \
+  --virtio0 local-lvm:vm-$vmID-disk-0
+
+qm importdisk $vmID /root/temp/chr-$version.img local-lvm
+
+# remove downloaded raw image and zip
+rm /root/temp/chr-$version.img.zip
+rm /root/temp/chr-$version.img
+
+echo "############## End of Script ##############"
+```
+
 **NOTE**: ERROR: storage 'local' does not support content-type 'images'
 **NOTE**: Useful snippet to clean up the BASH script from Windows formatting that may interfere with script if it's edited on a Windows workstation:
 
