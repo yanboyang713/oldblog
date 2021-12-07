@@ -9,15 +9,85 @@ Much like any well-integrated tool, I am currently using **Emacs Org Mode** as S
 
 I will follow the below overview diagram introducte each components one by one.
 
-{{< mermaid >}}flowchart LR;
-    A[Zotero \n\n Plugins: \n - Better BibTex \n - ZotFile \n - Scite (optional)] -->|.bib file| B[org-roam-bibtex \n - Create org file for each bib entry \n - Templating \n - orb-pdf-scrapper*]
-    B --> |Add-ons: \n - org-noter \n - PDF-tools| R[org-roam \n - Build database \n - Make connections \n - Visualize database]
-    B --> |Add-ons: \n - org-noter \n - PDF-tools| O[org-mode \n - Write \n - Assign tasks \n - Run code \n - orgtransclusion \n - Export]
-    R --> O
-{{< /mermaid >}}
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638851036/research/orgmode2%5Ffirjld.png" >}}
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638851036/research/orgMode%5Fasb3an.png" >}}
 
 
 ## Org-mode modules {#org-mode-modules}
 
-{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638848774/research/orgMode%5Fcoskik.png" >}}
+
+### Planning {#planning}
+
+-   Task management (pomodoro method; time-blocking)
+-   Time management (appointments; time-blocking)
+
+
+#### TODO’s and tags {#todo-s-and-tags}
+
+-   These are identifiers in an org-file as tasks or reminders.
+-   The types of TODO’s can either be set globally in your init file, or they can be file/buffer specific.
+-   They are created as a subtree (think ‘heading’), or in-line ('org-inlinetask).
+-   You can assign deadlines, scheduled date and time, active timestamps, and inactive timestamps
+
+
+#### Org-capture {#org-capture}
+
+These are customizable org-headings that you can create on-the-go.
+They can be regular TODO’s or just notes.
+
+
+#### Org-agenda {#org-agenda}
+
+Populates all your TODO’s and appointments into a singular view.
+Default is week-view.
+Using org-super-agenda, I set up my agenda as a daily view with
+appointments, deadlines, and a habit tracker.
+
+
+#### Org-sidebar {#org-sidebar}
+
+Another way of accessing your TODO’s that are outside of your agenda. I
+am using it to keep my project-specific TODO’s in the main project org
+file.
+
+
+### Writing {#writing}
+
+
+#### org-roam {#org-roam}
+
+A note-taking package that replicates Roam Research which is based on
+the Zettelkasten method. I use it to build my literature review and I use
+org-roam-server to visualize my notes into a network.
+It builds on the strength of org-mode’s hyperlinking properties.
+
+
+#### Org-roam-bibtex {#org-roam-bibtex}
+
+Utilizes a combination of org-ref, helm-bibtex, and
+bibtex-completion to streamline note-taking workflow with references
+within the org-roam ecosystem.
+
+
+#### Org-noter {#org-noter}
+
+I use it to annotate PDFs and take notes within the same buffer.
+
+-   Works extremely well with PDF-tools.
+-   org-noter-create-skeleton
+
+
+#### Org-transclusion {#org-transclusion}
+
+An effective way of “copy/pasting” text from one org file (let’s say
+an org-roam note or a section of your thesis/dissertation) into your
+main org file.
+It will export all the transcluded text.
+Sort of equivalent to “#+INCLUDE:”
+
+
+### Reference Management {#reference-management}
+
+[Research/Getting Started with Zotero]({{< relref "zotero" >}})
 
