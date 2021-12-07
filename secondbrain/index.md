@@ -16,3 +16,8 @@ I will follow the below overview diagram introducte each components one by one.
     R --> O
 {{< /mermaid >}}
 
+
+## Org-mode modules {#org-mode-modules}
+
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638848774/research/orgMode%5Fcoskik.png" >}}
+
