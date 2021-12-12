@@ -470,7 +470,7 @@ R-CNN
 ***** Semantic Image Segmentation
 [[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678681/cv/SegmentationOne_zfgix9.png]]
 
-[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633678681/cv/SegmentationTwo_orkdal.png]]
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v163367868e/cv/SegmentationTwo_orkdal.png]]
 
 ***** Instance Segmentation
 
@@ -494,6 +494,171 @@ CLOSED: [2021-11-13 Sat 11:43   ]
 
 *** Overview
 SRS is a simple, high efficiency and realtime video server, supports RTMP/WebRTC/HLS/HTTP-FLV/SRT.
+
+
+* Networking :@Networking:
+** DONE Getting Started OpenWrt :openwrt:
+CLOSED: [2021-12-12 Sun 11:42]
+:PROPERTIES:
+:EXPORT_FILE_NAME: openwrt
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+The OpenWrt Project is a Linux operating system targeting embedded devices. Instead of trying to create a single, static firmware, OpenWrt provides a fully writable filesystem with package management. This frees you from the application selection and configuration provided by the vendor and allows you to customize the device through the use of packages to suit any application.
+
+OpenWrt official Website [[https://openwrt.org/][Here]].
+
+In this article, I will talk about:
+1. Compile Openwrt from Source Code.
+2. Install Openwrt on ProxMox.
+3. Basic Set-Up for Openwrt.
+
+*** Compile OpenWrt
+ 1. Make sure your have a avaiable Linux/MacOS system, offers recommand Ubuntu 18 LTS x64.
+ 2. Install required packages.
+    #+begin_src bash
+        sudo apt-get update
+
+        sudo apt-get -y install build-essential asciidoc binutils bzip2 curl gawk gettext git libncurses5-dev libz-dev patch python3.5 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf
+    #+end_src
+ 3. Getting Source Code and enter direction.
+    #+begin_src bash
+        git clone -b main --single-branch https://github.com/Lienol/openwrt openwrt
+        cd openwrt
+    #+end_src
+ 4. Add additional package/plugin to Source Code, such as *Passwall*.
+    #+begin_src bash
+        vim feeds.conf.default
+    #+end_src
+
+    Adding src-git at the end of file.
+    #+begin_src file
+src-git passwall https://github.com/xiaorouji/openwrt-passwall
+    #+end_src
+ 5. Update the feeds
+    #+begin_src bash
+./scripts/feeds clean
+./scripts/feeds update -a
+./scripts/feeds install -a
+    #+end_src
+ 6. Configure the firmware image
+    #+begin_src bash
+make menuconfig
+    #+end_src
+    *NOTE*:
+    1. First three menu is very inportance, Please, carefully choose with your correct CPU architecture. For example, x86.
+
+    2. Settings your package/plugins luci-app, such as, luci-app-passwall
+
+ 7. Downloading DL library.
+    #+begin_src bash
+make -j8 download v=s
+    #+end_src
+ 8. Start Compile
+    #+begin_src bash
+make -j1 V=s
+    #+end_src
+    *NOTE*: -j1 is followed by the number of threads. Single thread is recommended for the first compilation.
+ 9. Output path after compilation.
+    *openwrt/bin/targets*
+
+*** Installation
+https://www.77bx.com/34.html
+
+**** Firstly, Upload your compiled IMG File to ProxMox
+sftp into ProxMox.
+#+begin_src console
+[yanboyang713@manjaro] ➜ 64 (U main) sftp root@192.168.1.2
+The authenticity of host '192.168.1.2 (192.168.1.2)' can't be established.
+ED25519 key fingerprint is SHA256:VPD220yr70tQsDuIn/z41hTWzte0bZ1k6wF8JjBzjiw.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.1.2' (ED25519) to the list of known hosts.
+root@192.168.1.2's password:
+Connected to 192.168.1.2.
+#+end_src
+
+Uploading
+#+begin_src bash
+sftp> put openwrt-x86-64-generic-squashfs-combined.img.gz
+Uploading openwrt-x86-64-generic-squashfs-combined.img.gz to /root/openwrt-x86-64-generic-squashfs-combined.img.gz
+openwrt-x86-64-generic-squashfs-combined.img.gz                                                          100%   53MB 111.4MB/s   00:00
+sftp>
+#+end_src
+
+*NOTE*:
+1. List local directory.
+   #+begin_src console
+sftp> lls
+openwrt-x86-64-generic-squashfs-combined.img.gz
+   #+end_src
+2. List remote directory.
+    #+begin_src console
+sftp> ls
+ROSinstall.sh  interfaces     temp
+    #+end_src
+
+**** Secondly, ssh into ProxMox and using the below Script create a new VM.
+#+begin_src bash
+#!/bin/bash
+
+#vars
+vmID="nil"
+
+echo "############## Start of Script ##############
+
+#List already existing VM's and ask for vmID
+
+echo "== Printing list of VM's on this hypervisor!"
+qm list
+echo ""
+read -p "Please Enter free vm ID to use:" vmID
+echo ""
+
+# Create storage dir for VM if needed.
+if [ -d /var/lib/vz/images/$vmID ]
+then
+    echo "-- VM Directory exists! Ideally try another vm ID!"
+    read -p "Please Enter free vm ID to use:" vmID
+else
+    echo "-- Creating VM image dir!"
+    mkdir /var/lib/vz/images/$vmID
+fi
+
+
+# Creating VM
+echo "-- Creating new CHR VM"
+qm create $vmID \
+  --name chr-$version \
+  --net0 virtio,bridge=vmbr0 \
+  --bootdisk virtio0 \
+  --ostype l26 \
+  --memory 2048 \
+  --onboot no \
+  --sockets 1 \
+  --cores 1 \
+  --virtio0 local-lvm:vm-$vmID-disk-0
+
+# Decompression image
+gzip -d /root/openwrt-x86-64-generic-squashfs-combined.img.gz
+
+# Resize image
+qemu-img resize /root/openwrt-x86-64-generic-squashfs-combined.img +10G
+
+echo "-- Import RAW image to local-lvm"
+qm importdisk $vmID /root/openwrt-x86-64-generic-squashfs-combined.img local-lvm
+
+echo "############## End of Script ##############"
+
+#+end_src
+
+*** Set-up
+network -> interface -> edit
+
+IPv4 gateway: 192.168.1.253
+IPv4 bradcast: 192.168.1.0
+DNS set as public DNS Server
 
 
 * Cluster :@Cluster:
@@ -689,6 +854,7 @@ The p-unlimited (perpetual-unlimited) license level allows CHR to run indefinite
 
 ***** Free licenses
 The free license level allows CHR to run indefinitely. It is limited to 1Mbps upload per interface. All the rest of the features provided by CHR are available without restrictions. To use this, all you have to do is download disk image file from our download page and create a virtual guest.
+
 *** CHR ProxMox installation
 **** Step 1: Registration a new mikrotik account, if you have NOT it.
 https://mikrotik.com/client
@@ -815,17 +981,16 @@ For example, you can found interface name with bus id at below.
        product: I211 Gigabit Network Connection
        vendor: Intel Corporation
        physical id: 0
-       bus info: pci@0000:04:00.0
-       logical name: ens9
+       bus info: pci@0000:06:00.0
+       logical name: enp6s0
        version: 03
-       serial: 00:90:27:e5:8d:07
-       size: 1Gbit/s
+       serial: 00:90:27:e5:8d:09
        capacity: 1Gbit/s
        width: 32 bits
        clock: 33MHz
        capabilities: pm msi msix pciexpress bus_master cap_list ethernet physical tp 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation
-       configuration: autonegotiation=on broadcast=yes driver=igb driverversion=5.13.19-1-pve duplex=full firmware=0. 6-1 latency=0 link=yes multicast=yes port=twisted pair speed=1Gbit/s
-       resources: irq:17 memory:df200000-df21ffff ioport:b000(size=32) memory:df220000-df223fff
+       configuration: autonegotiation=on broadcast=yes driver=igb driverversion=5.13.19-2-pve firmware=0. 6-1 latency=0 link=no multicast=yes port=twisted pair
+       resources: irq:17 memory:df000000-df01ffff ioport:9000(size=32) memory:df020000-df023fff
 #+end_src
 
 ***** Add WAN
@@ -844,11 +1009,6 @@ check interface name:
 interface print
 #+end_src
 
-Finding the switch port by MAC address:
-#+begin_src bash
-/interface ethernet switch host print
-#+end_src
-
 check IP address:
 #+begin_src bash
 ip export
@@ -861,8 +1021,61 @@ ip address remove IDnum
 
 Assign IP address:
 #+begin_src bash
-ip address add address=192.168.1.1/24 interface=eth0
+ip address add address=192.168.1.253/24 interface=ether2
 #+end_src
+**** Step 5: Disable API, API-SSL, Telnet, FTP, WWW and WWW-SSL
+#+begin_src bash
+ip service disable api,api-ssl,ftp,ssh,telnet,www,www-ssl
+#+end_src
+
+**** Step 6: interface rename
+#+begin_src bash
+interface set ether2 name="LAN"
+interface set ether1 name="WAN"
+#+end_src
+
+
+**** Step 7: add dhcp client
+#+begin_src bash
+ip dhcp-client print detail
+
+ip dhcp-client set interface=WAN disable=no use-peer-dns=no
+
+ip dhcp-client print detail
+#+end_src
+
+**** Step 8: add DNS
+https://wiki.mikrotik.com/wiki/Manual:IP/DNS
+
+#+begin_src bash
+ip dns set servers=192.168.1.252 max-udp-packet-size=8192
+#+end_src
+
+#+begin_src bash
+ip dns static add name=ros address=192.168.1.253
+#+end_src
+**** Step 9: firwall NAT
+#+begin_src bash
+ip firewall nat add chain=srcnat action=masquerade
+#+end_src
+
+**** Step 10: IP Pool
+https://wiki.mikrotik.com/wiki/Manual:IP/Pools
+#+begin_src bash
+ip pool add name=ip-pool ranges=192.168.1.100-192.168.1.200
+#+end_src
+
+**** Step 11: DHCP Server
+#+begin_src bash
+ip dhcp-server add name=LANDHCP interface=LAN address-pool=ip-p
+ool
+#+end_src
+
+#+begin_src bash
+ip dhcp-server network add address=192.168.1.0/24 gateway=192.1
+68.1.252
+#+end_src
+
 
 ** DONE Getting Started ROS and Openwrt with Proxmox
 CLOSED: [2021-11-05 Fri 19:52]

@@ -200,17 +200,16 @@ For example, you can found interface name with bus id at below.
        product: I211 Gigabit Network Connection
        vendor: Intel Corporation
        physical id: 0
-       bus info: pci@0000:04:00.0
-       logical name: ens9
+       bus info: pci@0000:06:00.0
+       logical name: enp6s0
        version: 03
-       serial: 00:90:27:e5:8d:07
-       size: 1Gbit/s
+       serial: 00:90:27:e5:8d:09
        capacity: 1Gbit/s
        width: 32 bits
        clock: 33MHz
        capabilities: pm msi msix pciexpress bus_master cap_list ethernet physical tp 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation
-       configuration: autonegotiation=on broadcast=yes driver=igb driverversion=5.13.19-1-pve duplex=full firmware=0. 6-1 latency=0 link=yes multicast=yes port=twisted pair speed=1Gbit/s
-       resources: irq:17 memory:df200000-df21ffff ioport:b000(size=32) memory:df220000-df223fff
+       configuration: autonegotiation=on broadcast=yes driver=igb driverversion=5.13.19-2-pve firmware=0. 6-1 latency=0 link=no multicast=yes port=twisted pair
+       resources: irq:17 memory:df000000-df01ffff ioport:9000(size=32) memory:df020000-df023fff
 ```
 
 
@@ -233,12 +232,6 @@ check interface name:
 interface print
 ```
 
-Finding the switch port by MAC address:
-
-```bash
-/interface ethernet switch host print
-```
-
 check IP address:
 
 ```bash
@@ -254,5 +247,73 @@ ip address remove IDnum
 Assign IP address:
 
 ```bash
-ip address add address=192.168.1.1/24 interface=eth0
+ip address add address=192.168.1.253/24 interface=ether2
+```
+
+
+### Step 5: Disable API, API-SSL, Telnet, FTP, WWW and WWW-SSL {#step-5-disable-api-api-ssl-telnet-ftp-www-and-www-ssl}
+
+```bash
+ip service disable api,api-ssl,ftp,ssh,telnet,www,www-ssl
+```
+
+
+### Step 6: interface rename {#step-6-interface-rename}
+
+```bash
+interface set ether2 name="LAN"
+interface set ether1 name="WAN"
+```
+
+
+### Step 7: add dhcp client {#step-7-add-dhcp-client}
+
+```bash
+ip dhcp-client print detail
+
+ip dhcp-client set interface=WAN disable=no use-peer-dns=no
+
+ip dhcp-client print detail
+```
+
+
+### Step 8: add DNS {#step-8-add-dns}
+
+<https://wiki.mikrotik.com/wiki/Manual:IP/DNS>
+
+```bash
+ip dns set servers=192.168.1.252 max-udp-packet-size=8192
+```
+
+```bash
+ip dns static add name=ros address=192.168.1.253
+```
+
+
+### Step 9: firwall NAT {#step-9-firwall-nat}
+
+```bash
+ip firewall nat add chain=srcnat action=masquerade
+```
+
+
+### Step 10: IP Pool {#step-10-ip-pool}
+
+<https://wiki.mikrotik.com/wiki/Manual:IP/Pools>
+
+```bash
+ip pool add name=ip-pool ranges=192.168.1.100-192.168.1.200
+```
+
+
+### Step 11: DHCP Server {#step-11-dhcp-server}
+
+```bash
+ip dhcp-server add name=LANDHCP interface=LAN address-pool=ip-p
+ool
+```
+
+```bash
+ip dhcp-server network add address=192.168.1.0/24 gateway=192.1
+68.1.252
 ```
