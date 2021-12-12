@@ -25,20 +25,20 @@ In this article, I will talk about:
 2.  Install required packages.
 
     ```bash
-               sudo apt-get update
+       sudo apt-get update
 
-               sudo apt-get -y install build-essential asciidoc binutils bzip2 curl gawk gettext git libncurses5-dev libz-dev patch python3.5 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf
+       sudo apt-get -y install build-essential asciidoc binutils bzip2 curl gawk gettext git libncurses5-dev libz-dev patch python3.5 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf
     ```
 3.  Getting Source Code and enter direction.
 
     ```bash
-               git clone -b main --single-branch https://github.com/Lienol/openwrt openwrt
-               cd openwrt
+       git clone -b main --single-branch https://github.com/Lienol/openwrt openwrt
+       cd openwrt
     ```
 4.  Add additional package/plugin to Source Code, such as **Passwall**.
 
     ```bash
-               vim feeds.conf.default
+       vim feeds.conf.default
     ```
 
     Adding src-git at the end of file.
@@ -183,8 +183,33 @@ echo "############## End of Script ##############"
 
 ## Set-up {#set-up}
 
+1.  Change Password
+
+    ```bash
+       passwd
+    ```
+2.  Set **Lan** IP Address, Gateway and DNS
+
 network -> interface -> edit
 
+Content need to set-up:
+
+-   General Settings:
+
+IPv4 IP Address: 192.168.1.252
 IPv4 gateway: 192.168.1.253
 IPv4 bradcast: 192.168.1.0
-DNS set as public DNS Server
+
+-   Advantages Settings:
+
+DNS set as public DNS Server: 114.114.114.114, 114,114,115,115
+
+1.  If this Openwrt as your bypass router, please follow at the below settings.
+    **LAN Settings**: Let lede only be used as a pure bypass route, DHCP and IPv6 are both allocated by the main route.
+    -   DHCP Server -> General Settings -> choose Ignore this interface.
+    -   IPv6 Settings -> RA Service - Disable
+    -   IPv6 Settings -> DHCPv6 Service - Disable
+
+2.  Let lede obtain IPv6 information normally.
+
+add new interface -> name: IPv6; Protocol: DHCPv6 Client Device: @lan -> create interface -> Firewall settings: lan -> create interface.
