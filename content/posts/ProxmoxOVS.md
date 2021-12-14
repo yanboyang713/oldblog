@@ -1,6 +1,7 @@
 ---
 title: "Getting Started Set-up OVS for Proxmox"
 date: 2021-12-06T12:58:00+08:00
+tags: ["OVS"]
 categories: ["Cluster"]
 draft: false
 ---

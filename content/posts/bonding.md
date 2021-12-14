@@ -36,6 +36,10 @@ Steps for configure **Link Aggregation Groups**
 
 <https://help.ui.com/hc/en-us/articles/360007279753-UniFi-USW-Configuring-Link-Aggregation-Groups-LAG>-
 
+mode=4 (802.3ad)
+
+This mode is known as a Dynamic Link Aggregation mode that has it created aggregation groups having same speed. It requires a switch that supports IEEE 802.3ad dynamic link. The slave selection for outgoing traffic is done based on a transmit hashing method. This may be changed from the XOR method via the xmit\_hash\_policy option.
+
 
 ## OpenVswitch Bonding {#openvswitch-bonding}
 

@@ -1,6 +1,7 @@
 ---
 title: "Getting Started MikroTik Cloud Hosted Router (CHR) on Proxmox"
 date: 2021-12-06T12:28:00+08:00
+tags: ["MikroTik", "CHR", "Proxmox"]
 categories: ["Cluster"]
 draft: false
 ---

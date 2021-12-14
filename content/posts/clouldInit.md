@@ -1,5 +1,5 @@
 ---
-title: "Create Proxmox cloud-init template"
+title: "Create Proxmox cloud-init template :cloud-init:Proxmox:"
 date: 2021-12-03T18:27:00+08:00
 categories: ["Cluster"]
 draft: false

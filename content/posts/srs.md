@@ -1,6 +1,6 @@
 ---
-title: "Gettting Started SRS(Simple Realtime Server)"
-date: 2021-11-13T11:43:00+11:00
+title: "Gettting Started SRS(Simple Realtime Server) :SRS:video-server:"
+date: 2021-11-13T11:43:00+08:00
 categories: ["ComputerVision"]
 draft: false
 ---

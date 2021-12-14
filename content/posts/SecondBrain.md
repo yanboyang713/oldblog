@@ -1,8 +1,9 @@
 ---
-title: "Building a Second Brain: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers"
+title: "Building a Second Brain :second-brain:org-mode:emacs:"
 date: 2021-12-07T10:18:00+08:00
 categories: ["Research"]
 draft: false
+subtitle:: "Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers"
 ---
 
 ## Introduction {#introduction}
@@ -16,6 +17,11 @@ I will follow the below overview diagram introducte each components one by one.
 {{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638851036/research/orgmode2%5Ffirjld.png" >}}
 
 {{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638851036/research/orgMode%5Fasb3an.png" >}}
+
+
+## Pre-reading {#pre-reading}
+
+1.  [Emacs/Getting Started with Doom Emacs]({{< relref "doom" >}})
 
 
 ## Org-mode modules {#org-mode-modules}

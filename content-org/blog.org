@@ -9,6 +9,7 @@ CLOSED: [2021-10-05 Tue 03:44]
 :PROPERTIES:
 :EXPORT_FILE_NAME: doom
 :EXPORT_OPTIONS: author:nil
+:ID:       48390f93-f8f0-435c-8938-acf20f581e46
 :END:
 *** Prerequisites
 **** Instation
@@ -485,7 +486,7 @@ R-CNN
 [[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1633680106/cv/treeTwo_wchdqb.png]]
 
 
-** DONE Gettting Started SRS(Simple Realtime Server)
+** DONE Gettting Started SRS(Simple Realtime Server) :SRS:video-server:
 CLOSED: [2021-11-13 Sat 11:43   ]
 :PROPERTIES:
 :EXPORT_FILE_NAME: srs
@@ -497,6 +498,45 @@ SRS is a simple, high efficiency and realtime video server, supports RTMP/WebRTC
 
 
 * Networking :@Networking:
+** DONE Getting Started IpTV with RouterOS and OpenVswitch :IPTV:
+CLOSED: [2021-12-13 Mon 19:52]
+:PROPERTIES:
+:EXPORT_FILE_NAME: iptv
+:EXPORT_OPTIONS: author:nil
+:END:
+
+After replacing the optical modem with the optical module, it is found that there are vlan 3964 and 4000, and there are igmp data on them, you can watch iptv through igmp proxy.
+
+The specific operation method is as follows:
+
+1. Interface–>Add a VLAN virtual interface to the sfp optical port, with any Name and VLAN ID=4000. Not necessarily 4000 in other regions
+
+[[https://danteng.org/wp-content/uploads/2020/03/1584948032751.png]]
+
+2. Randomly configure an IP address for the VLAN4000 virtual interface. This address is not needed, but it must be present.
+   [[https://danteng.org/wp-content/uploads/2020/03/1584948032760.png]]
+   [[https://danteng.org/wp-content/uploads/2020/03/1584948032766.png]]
+3. An upstream interface is added to Routing–>IGMP Proxy, and VLAN 4000 virtual interface is selected here.
+   [[https://danteng.org/wp-content/uploads/2020/03/1584948032775.png]]
+   [[https://danteng.org/wp-content/uploads/2020/03/1584948032780.png]]
+4. Configure the internal network interface, be careful not to check upstream
+   [[https://danteng.org/wp-content/uploads/2020/03/1584948032784.png]]
+   After adding, you can see the multicast information in the MFC tag
+   [[https://danteng.org/wp-content/uploads/2020/03/1584948032788.png]]
+5. Check IGMP Snooping in the Intranet bridge, General tab. The function is to allow IGMP frames to pass. If you do not check it, you will not be able to watch them.
+   [[https://danteng.org/wp-content/uploads/2020/03/1584948032792.png]]
+6. Use a network cable to connect to the computer, it must be a network cable
+7. It can be watched by pot player or VLC under windows, and it can be watched by importing the Beijing Unicom multicast address table
+
+   When watching iptv, you can see that traffic is generated on the VLAN 4000 virtual interface. According to observations, the standard-definition signal traffic is around 2.6M, and the high-definition signal is around 4M. My computer's network card is a 100M network card, and can only watch 4 channels of high-definition signals at the same time.
+
+   [[https://danteng.org/wp-content/uploads/2020/03/1584948032796.png]]
+
+   If there is no IGMP Proxy option in the routing menu, please go to System->Packages to check whether the multicast package is installed.
+
+   [[https://danteng.org/wp-content/uploads/2020/03/1584948032800.png]]
+
+
 ** DONE Configuring Network Bonding :bonding:
 CLOSED: [2021-12-12 Sun 17:57]
 :PROPERTIES:
@@ -529,6 +569,10 @@ Steps for configure *Link Aggregation Groups*
 5. Under the Aggregate Ports input which ports to include in the LAG.
 
 https://help.ui.com/hc/en-us/articles/360007279753-UniFi-USW-Configuring-Link-Aggregation-Groups-LAG-
+
+mode=4 (802.3ad)
+
+This mode is known as a Dynamic Link Aggregation mode that has it created aggregation groups having same speed. It requires a switch that supports IEEE 802.3ad dynamic link. The slave selection for outgoing traffic is done based on a transmit hashing method. This may be changed from the XOR method via the xmit_hash_policy option.
 
 *** OpenVswitch Bonding
 https://docs.openvswitch.org/en/latest/topics/bonding/
@@ -719,7 +763,7 @@ add new interface -> name: IPv6; Protocol: DHCPv6 Client Device: @lan -> create 
 
 
 * Cluster :@Cluster:
-** DONE Getting Started Set-up OVS for Proxmox
+** DONE Getting Started Set-up OVS for Proxmox :OVS:
 CLOSED: [2021-12-06 Mon 12:58]
 :PROPERTIES:
 :EXPORT_FILE_NAME: ProxmoxOVS
@@ -866,7 +910,7 @@ vfio_virqfd
 Then, reboot. Well Done
 
 
-** DONE Getting Started MikroTik Cloud Hosted Router (CHR) on Proxmox
+** DONE Getting Started MikroTik Cloud Hosted Router (CHR) on Proxmox :MikroTik:CHR:Proxmox:
 CLOSED: [2021-12-06 Mon 12:28]
 :PROPERTIES:
 :EXPORT_FILE_NAME: CHRonProxmox
@@ -1134,14 +1178,13 @@ ip dhcp-server network add address=192.168.1.0/24 gateway=192.1
 #+end_src
 
 
-** DONE Getting Started ROS and Openwrt with Proxmox
+** DONE Getting Started ROS and Openwrt with Proxmox :ROS:Openwrt:proxmox:
 CLOSED: [2021-11-05 Fri 19:52]
 :PROPERTIES:
 :EXPORT_FILE_NAME: ROSandOpenwrtProxmox
 :EXPORT_OPTIONS: author:nil
 :END:
 
-**
 *** mikrotik
 https://mikrotik.com/software
 
@@ -1156,7 +1199,7 @@ https://pve.proxmox.com/wiki/Migration_of_servers_to_Proxmox_VE
 https://engineerworkshop.com/blog/configuring-vlans-on-proxmox-an-introductory-guide/
 
 
-** DONE Getting Started Configuring VLANs on Proxmox
+** DONE Getting Started Configuring VLANs on Proxmox :VLAN:Proxmox:
 CLOSED: [2021-11-05 Fri 19:52]
 :PROPERTIES:
 :EXPORT_FILE_NAME: vlan
@@ -1172,7 +1215,7 @@ However, this system starts to break down when faced with virtualization servers
 Thankfully there's a way around this. In Proxmox, you can make your virtual bridge VLAN-aware so you can pass multiple VLANs through to your Proxmox server using only a single physical port. The individual VMs can then be configured to use whichever VLAN you choose.
 
 
-** DONE Create Proxmox cloud-init template
+** DONE Create Proxmox cloud-init template :cloud-init:Proxmox:
 CLOSED: [2021-12-03 Fri 18:27]
 :PROPERTIES:
 :EXPORT_FILE_NAME: clouldInit
@@ -1256,6 +1299,34 @@ Now that you've created a template using packer from the base template, you can 
 5. https://blog.dustinrue.com/2020/05/going-deeper-with-proxmox-cloud-init/
 6. https://gist.github.com/mike1237/cce83a74f898b11c2cec911204568cf9
 
+
+** DONE Creating ProxMox templates with packer :packer:
+CLOSED: [2021-12-14 Tue 12:08]
+:PROPERTIES:
+:EXPORT_FILE_NAME: packer
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+With proxmox when can create templates for our VMS so we can have a standard starting point to install our applications on top of, these templates can be useful too so that you can pre-install packages for authentication, security, logging and etc without anyone else needing to think about it.
+
+However, creating and managing these templates can become a challenge with how time-consuming and manual it can be. I want to show you how you can make this process more standardized and automated with the use of [[https://www.packer.io/][packer]] to allow you to declare your proxmox templates as code.
+
+*** What is packer
+Packer is a utility that allows you to build virtual machine images so that you can define a golden image as code. Packer can be used to create images for almost all of the big cloud providers such as AWS, GCE, Azure and Digital Ocean, or can be used with locally installed hypervisors such as VMWare, Proxmox and a few others.
+
+To build an image with packer we need to define our image through a template file. The file uses the JSON format and comprises of 3 main sections that are used to define and prepare your image.
+
++ [[https://www.packer.io/docs/terminology#builders][Builders]]: Components of Packer that are able to create a machine image for a single platform. A builder is invoked as part of a build in order to create the actual resulting images.
+
++ [[https://www.packer.io/docs/terminology#provisioners][Provisioners]]: Install and configure software within a running machine prior to that machine being turned into a static image. Example provisioners include shell scripts, Chef, Puppet, etc.
+
++ [[https://www.packer.io/docs/terminology#post-processors][Post Processors]]: Take the result of a builder or another post-processor and process that to create a new artifact. Examples of post-processors are compress and upload to compress and upload artifacts respectively, etc.
+
+By using packer we can define our golden VM image as code so that we can easily build identically configured images on demand so that all your machines are running the same image and can also be easily updated to a new image when needed.
+
+*** References
+1. https://dev.to/aaronktberry/creating-proxmox-templates-with-packer-1b35
 
 
 ** DONE Build a Kubernetes cluster on Proxmox via Ansible and Terraform
@@ -1855,6 +1926,7 @@ If you want to set some type of window to be always floating, look at the config
 *** Quitting
 To quit dwm cleanly: *[Shift]+[Alt]+[q]*
 
+
 ** DONE Getting Started Fcitx with chinese input method in Linux :Fcitx:chinese:linux:
 CLOSED: [2021-12-06 Mon 13:56]
 :PROPERTIES:
@@ -2042,14 +2114,14 @@ Install by downloading the [[https://github.com/scitedotai/scite-zotero-plugin/r
 3. https://retorque.re/zotero-better-bibtex/
 
 
-** DONE Building a Second Brain
+** DONE Building a Second Brain :second-brain:org-mode:emacs:
 CLOSED: [2021-12-07 Tue 10:18]
 :PROPERTIES:
 :EXPORT_FILE_NAME: SecondBrain
 :EXPORT_OPTIONS: author:nil
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: subtitle: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers
-
 :END:
+
 *** Introduction
 Building a Second Brain is about creating a reliable system – outside your physical skin-and-bone bodily boundaries – for storing, organising, digesting, and eventually transforming information into Good Creative Output.
 
@@ -2060,6 +2132,9 @@ I will follow the below overview diagram introducte each components one by one.
 [[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638851036/research/orgmode2_firjld.png]]
 
 [[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638851036/research/orgMode_asb3an.png]]
+
+*** Pre-reading
+1. [[id:48390f93-f8f0-435c-8938-acf20f581e46][Emacs/Getting Started with Doom Emacs]]
 
 *** Org-mode modules
 **** Planning
@@ -2106,3 +2181,445 @@ Sort of equivalent to “#+INCLUDE:”
 
 **** Reference Management
    [[id:2fbd7db1-7307-4837-ad23-93c57ce2c463][Research/Getting Started with Zotero]]
+
+
+* Blog :@Blog:
+** DONE Creating a Hugo blog :hugo:
+CLOSED: [2021-12-14 Tue 17:31]
+:PROPERTIES:
+:EXPORT_FILE_NAME: hugo
+:EXPORT_OPTIONS: author:nil
+:ID:       ccc106d1-2c4b-45b4-a878-08ee337440d6
+:END:
+
+*** Overview
+This is a tutorial on creating a blog or website using [[https://gohugo.io/][hugo]] (a static site generator).
+
+We will use Docker as our development environment. Also, we will storge our Hugo development code in Github main branche and automate the whole process with Github Action Workflow for Github Pages.
+
+*** Prerequisites
+You will need to have the following:
+
+1. Docker installation. Docker is available for Mac/Windows/Linux and is easily installed. You can following the link at the below for install Docker.
+ link "content/posts/dockerinstall.md" install Docker "go!"
+2. Domain Name (optional). I will be using a domain name for my configuration. If you wish to follow along fully, you’ll need a domain name but, you can just as easily stick with the free subdomain provided by Github pages, i.e. name.github.io, and skip the domain name related aspects in this tutorial. If you don’t have a domain name but wish to purchase one, [[https://www.namecheap.com/][namecheap]] is an excellent provider and fits in well with this tutorial.
+3. Github account, sign up for free on github.com
+
+In the subsequent sections, we will be covering the complete setup of https://yanboyang.com
+
+*** Set-up
+**** On Github, create a repository called something.github.io
+In my case, I created yanboyang.github.io
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat_Dec_26_05_24_25_PM_CST_2020_zbblkc.png]]
+
+**** Clone this repository to Local
+#+begin_src console
+[yanboyang713@boyang Documents]$ git clone https://github.com/yanboyang713/yanboyang.github.io.git
+Cloning into 'yanboyang.github.io'...
+remote: Enumerating objects: 760, done.
+remote: Counting objects: 100% (760/760), done.
+remote: Compressing objects: 100% (148/148), done.
+remote: Total 760 (delta 289), reused 743 (delta 276), pack-reused 0
+Receiving objects: 100% (760/760), 4.13 MiB | 1.88 MiB/s, done.
+Resolving deltas: 100% (289/289), done.
+#+end_src
+
+#+begin_src bash
+# Go to your blog root folder
+cd yanboyang.github.io
+#+end_src
+
+**** Create a new Hugo site
+#+begin_src bash
+docker run --rm -it \
+  -v $(pwd):/src \
+  -w="/src" \
+  klakegg/hugo:latest \
+  "new site . --force"
+#+end_src
+
+**** Chown User and Group Recursively
+#+begin_src bash
+sudo chown -R yanboyang713:yanboyang713 .
+#+end_src
+
+**** Add the theme to your blog
+#+begin_src bash
+git submodule add https://github.com/sunt-programator/CodeIT.git themes/CodeIT
+#+end_src
+
+**** Basic Configuration
+The following is a basic configuration for the CodeIT theme:
+
+#+begin_src toml
+baseURL = "http://example.org/"
+# [en, zh-cn, fr, ...] determines default content language
+defaultContentLanguage = "en"
+# language code
+languageCode = "en"
+title = "My New Hugo Site"
+
+# Change the default theme to be use when building the site with Hugo
+theme = "CodeIT"
+
+[params]
+  # DoIt theme version
+  version = "0.2.X"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Posts"
+    url = "/posts/"
+    # title will be shown when you hover on this menu link
+    title = ""
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "Tags"
+    url = "/tags/"
+    title = ""
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Categories"
+    url = "/categories/"
+    title = ""
+    weight = 3
+
+# Markup related configuration in Hugo
+[markup]
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
+#+end_src
+
+**** Create Your First Post
+Here is the way to create your first post:
+#+begin_src bash
+docker run --rm -it \
+  -v $(pwd):/src \
+  -w="/src" \
+  klakegg/hugo:latest \
+  "new posts/first_post.md"
+
+sudo chown -R yanboyang713:yanboyang713 content
+#+end_src
+
+*NOTE:* Go to your first post and change the *draft: false*
+
+**** Launching the Website in Docker
+
+#+begin_src bash
+docker run --rm -it \
+  -v $(pwd):/src \
+  -p 1313:1313 \
+  klakegg/hugo:latest \
+  server
+#+end_src
+
+Web Server is available at http://localhost:1313/
+
+**** Build Hugo With GitHub Action
+#+begin_src bash
+mkdir -p .github/workflows
+vim .github/workflows/main.yml
+#+end_src
+
+#+begin_src yml
+name: github pages
+
+on:
+  push:
+    branches:
+      - main  # Set a branch to deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.TOKEN }}
+          external_repository: yanboyang713/yanboyang713.github.io
+          publish_dir: ./public
+          publish_branch: gh-pages
+          keep_files: true
+          user_name: yanboyang713
+          user_email: yanboyang713@gmail.com
+          cname: yanboyang.com
+#+end_src
+
+*** Post your blog
+I written a bash script for push your blog to Github evertime.
+
+*NOTE:* If you need add your public key.
+1. Go to Repository Settings
+2. Go to Deploy Keys and add your public key with the Allow write access
+
+#+begin_src bash
+#!/bin/bash
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: Hugo Depolyment                                 ##
+## PURPOSE: This program for push Hugo to github             ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 25.05.2021                            ##
+###############################################################
+
+printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
+
+deploy () {
+
+    echo "$1"
+
+    # get Repositorie Name
+    RepositorieName=$(grep -oP '(?<=[[:space:]]).*?(?=!)' <<< "$1")
+
+    echo "Your Github Repositorir Name is: $RepositorieName"
+
+    #set git remote URL
+    git remote set-url origin git@github.com:"$RepositorieName".git
+
+    # Add changes to git.
+    git add -A
+
+    # Commit changes.
+    msg="Published on $(date +'%Y-%m-%d %H:%M:%S')"
+
+    echo "$msg"
+    git commit -m "$msg"
+
+    # Push source and build repos.
+    git push
+
+}
+
+initSSHkey () {
+    echo "***** App .ssh directory is empty, initialising ssh key and configuring known_hosts for common git repositories (github/gitlab) *****"
+    rm -rf ~/.ssh/*
+    ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -P ""
+    ssh-keyscan github.com > ~/.ssh/known_hosts 2>/dev/null
+    ssh-keyscan gitlab.com >> ~/.ssh/known_hosts 2>/dev/null
+
+    echo "Init SSH key Done!!!"
+}
+
+testConnectionAndDeploy () {
+    # Testing Github connection success or not
+    testConnection=$(ssh -T git@github.com 2>&1)
+
+    # success connect to Github
+    if [[ $testConnection =~ successfully ]]; then
+        echo "***** You can connect to Github successfully **********"
+        deploy "$testConnection"
+    else
+        echo "***** Could NOT connect to Github!!! Please, update your Github deploy keys *******"
+        echo "***** You can add the below public key as your deploy key *****"
+        cat ~/.ssh/id_rsa.pub
+
+        read -p "Are you done update your deploy key (Y/n)? " -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            testConnection=$(ssh -T git@github.com 2>&1)
+            if [[ $testConnection =~ successfully ]]; then
+                deploy "$testConnection"
+            else
+                echo "Please wait a few minutes, and try again !!!"
+            fi
+        fi
+    fi
+}
+
+
+# Have ssh key
+if [ "$(ls -A ~/.ssh 2>/dev/null)" ]; then
+    echo "***** .ssh directory exists and has content, continuing *****";
+    testConnectionAndDeploy
+# Have NOT ssh key
+else
+    initSSHkey
+    testConnectionAndDeploy
+
+fi;
+#+end_src
+
+*** Set up your Google Analytics account
+Head over to https://analytics.google.com/ and make an account (or sign in with your Google account).
+
+Set up your “Property”, give it a name, and point it to the URL of the site you plan on tracking.
+
+Click through the basic options until you land on a page with a Tracking Code. This is the value we need to be keeping track of.
+If you’re having trouble with this step then I recommend checking out [[http://cloudywithachanceofdevops.com/posts/2018/05/17/setting-up-google-analytics-on-hugo/][this]] tutorial, which has very detailed step by step instructions for configuring your GA account.
+
+**** Configuring Hugo
+Hugo has a built in template for Google Analytics. All we need to do is make sure the template gets included in all our pages, so we can have more detailed tracking.
+
+**** header.html
+The easiest way to do this is to insert the template into the header.html file used by your Hugo theme of choice.
+
+Since it is common to use a git submodule as a theme directory, it could be undesirable and messy to write changes directly into the submodule.
+
+The solution to this is to create another directory layouts in the root of your hugo directory. Hugo looks at the contents of this folder and uses it to overwrites the styles defined by your theme.
+
+For example I use the Terminal theme. The header file is located at <HUGO ROOT>/themes/terminal/layouts/partials/header.html
+
+We can copy this file to our new directory, so it sits at <HUGO ROOT>/layouts/partials/header.html.
+
+Next we can edit our header.html file to include the template for google analytics. Your header.html will look different depending on the theme you’re using, but there should be a <head> section at the top. If not we can simply create it.
+
+#+begin_src html
+<head>
+  {{ template "_internal/google_analytics.html" . }}
+  {{ template "_internal/google_analytics_async.html" . }}
+</head>
+#+end_src
+
+Adding these two lines inside <head> will make the google tracking code embed in the HTML of all of your pages.
+
+config.toml
+Finally we need to use that tracking code from earlier. At the top level of your config.toml, add the line
+
+#+begin_src toml
+googleAnalytics = "UA-302012394-1"
+#+end_src
+
+Replacing the string with your Google Analytics tracking code. After you rebuild the site, everything should work as expected! You should also be able to detect the traffic by running the server locally as well, before you push to production.
+
+Note!
+I had quite the time figuring out why I couldn’t see any activity on my site. Being the paranoid privacy nut that I am, I have a multitude of tracker/script blocker plugins on my browsers, to block nefarious ads/scripts.
+
+This also blocks the tracking I do want, wouldn’t you know. I switched over to a private window without plugins and the traffic was instantly visible!
+
+*** Write Blog with Emacs and ox-hugo package
+[[https://ox-hugo.scripter.co/][ox-hugo]] is an awesome way to blog from org-mode. It makes it possible for posts in org-mode format to kept separate, and it generates the Markdown files for Hugo. Hugo supports org files, but using ox-hugo has multiple advantages:
+
++ Parsing is done by org-mode natively, not by an external library. Although goorgeous (used by Hugo) is very good, it still lacks in many areas, which leads to text being interpreted differently as by org-mode.
++ Hugo is left to parse a native Markdown file, which means that many of its features such as shortcodes, TOC generation, etc., can still be used on the generated file.
+
+**** Prerequisites
+Currently, I am using Doom Emacs, which includes and configures ox-hugo as part of its *(:lang org +hugo)* module, so all that’s left is to configure some parameters to my liking.
+
+I set org-hugo-use-code-for-kbd so that I can apply a custom style to keyboard bindings in my blog.
+
+#+begin_src emacs-lisp
+(after! ox-hugo
+  (setq org-hugo-use-code-for-kbd t))
+#+end_src
+
+**** Auto-export the whole project on Saving
+***** Step 1: Enable minor mode org-hugo-auto-export-mode
+This minor mode is disabled by default. It can be enabled separately at project level or file level.
+
+*Note* that once you update the .dir-locals.el file or file-local Variables as shown below, you will be prompted by Emacs to tell it if those settings are safe. Hit ! in that prompt to says yes and to save that choice for future Emacs sessions.
+
+***** Step 2: Enable for the whole project
+If you want to enable auto-exporting for the whole project, add this to the *.dir-locals.el* file in the project root:
+
+#+begin_src emascs-lisp
+(("content-org/"
+  . ((org-mode . ((eval . (org-hugo-auto-export-mode)))))))
+#+end_src
+
+Above assumes that the Org files are in the “content-org"/ directory (at any nested level in there) relative to that .dir-locals.el file:
+
+#+begin_src file
+<HUGO_BASE_DIR>
+  ├── config.toml
+  ├── content
+  ├── content-org      <-- Org files in there
+  ├── static
+  ├── themes
+  └── .dir-locals.el
+#+end_src
+
+***** Step 3: Create a post with org mode
+In content-org directory, create a xxx.org file.
+
+#+begin_src org
+
+#+title: Boyang Yan's Blog
+#+hugo_base_dir: ~/blog/
+#+hugo_section: posts
+#+hugo_front_matter_format: yaml
+
+*Emacs :@Emacs:
+**DONE Getting Started with Doom Emacs
+CLOSED: [2021-10-05 Tue 03:44]
+:PROPERTIES:
+:EXPORT_FILE_NAME: doom
+:EXPORT_OPTIONS: author:nil
+:END:
+***Prerequisites
+****Instation Dependencies
+#### Arch Linux
+#+begin_src bash
+# required dependencies
+pacman -S git emacs ripgrep
+# optional dependencies
+pacman -S fd
+yay -S emacs-pdf-tools-git
+#+end_src
+
+#+end_src
+
+When you save this file, you will found there are doom file created in your blog->content->posts automately.
+
+**** Export bindings
+The common ox-hugo export bindings are:
+
+***** For both one-post-per-subtree and one-post-per-file flows
++ *C-c C-e H H*
+  Export “What I Mean”.
+  If point is in a valid Hugo post subtree, export that subtree to a Hugo post in Markdown.
+  A valid Hugo post subtree is an Org subtree that has the *EXPORT_FILE_NAME* property set.
+  If the file is intended to be exported as a whole (i.e. has the #+title keyword), export the whole Org file to a Hugo post in Markdown.
+
++ *C-c C-e H A*
+  Export all “What I Mean”
+  If the Org file has one or more ‘valid Hugo post subtrees’, export them to Hugo posts in Markdown.
+  If the file is intended to be exported as a whole (i.e. no ‘valid Hugo post subtrees’ at all, and has the *#+title* keyword), export the whole Org file to a Hugo post in Markdown.
+***** For only the one-post-per-file flow
++ *C-c C-e H h*
+    Export the Org file to a Hugo post in Markdown.
+
+
+** DONE Exporting Org Roam notes to hugo :hugo:org-roam:
+CLOSED: [2021-12-14 Tue 13:20]
+:PROPERTIES:
+:EXPORT_FILE_NAME: roamTOhugo
+:EXPORT_OPTIONS: author:nil
+:END:
+*** Introduction
+
+*** Pre-reading
+1. Read this article: [[id:ccc106d1-2c4b-45b4-a878-08ee337440d6][Blog/Creating a Hugo blog]] and Set-up your HUGO blog
+
+*** References
+1. https://sidhartharya.me/exporting-org-roam-notes-to-hugo/

@@ -1,6 +1,7 @@
 ---
 title: "Getting Started Configuring VLANs on Proxmox"
 date: 2021-11-05T19:52:00+08:00
+tags: ["VLAN", "Proxmox"]
 categories: ["Cluster"]
 draft: false
 ---

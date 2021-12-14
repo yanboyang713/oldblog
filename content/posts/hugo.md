@@ -1,30 +1,41 @@
 ---
 title: "Creating a Hugo blog"
-date: 2020-02-05T06:11:32+10:00
-tags: [ "Hugo", "Blog" ]
-categories: [ "Blog" ]
+date: 2021-12-14T17:31:00+08:00
+tags: ["hugo"]
+categories: ["Blog"]
+draft: false
 ---
-## Overview
+
+## Overview {#overview}
+
 This is a tutorial on creating a blog or website using [hugo](https://gohugo.io/) (a static site generator).
 
 We will use Docker as our development environment. Also, we will storge our Hugo development code in Github main branche and automate the whole process with Github Action Workflow for Github Pages.
 
-## Prerequisites
+
+## Prerequisites {#prerequisites}
+
 You will need to have the following:
 
-1. Docker installation. Docker is available for Mac/Windows/Linux and is easily installed. You can following the link at the below for install Docker.
- link "content/posts/dockerinstall.md" install Docker "go!"
-2. Domain Name (optional). I will be using a domain name for my configuration. If you wish to follow along fully, you’ll need a domain name but, you can just as easily stick with the free subdomain provided by Github pages, i.e. name.github.io, and skip the domain name related aspects in this tutorial. If you don’t have a domain name but wish to purchase one,  [namecheap](https://www.namecheap.com/) is an excellent provider and fits in well with this tutorial.
-3. Github account, sign up for free on github.com
+1.  Docker installation. Docker is available for Mac/Windows/Linux and is easily installed. You can following the link at the below for install Docker.
+    link "content/posts/dockerinstall.md" install Docker "go!"
+2.  Domain Name (optional). I will be using a domain name for my configuration. If you wish to follow along fully, you’ll need a domain name but, you can just as easily stick with the free subdomain provided by Github pages, i.e. name.github.io, and skip the domain name related aspects in this tutorial. If you don’t have a domain name but wish to purchase one, [namecheap](https://www.namecheap.com/) is an excellent provider and fits in well with this tutorial.
+3.  Github account, sign up for free on github.com
 
-In the subsequent sections, we will be covering the complete setup of https://yanboyang.com
+In the subsequent sections, we will be covering the complete setup of <https://yanboyang.com>
 
-## Set-up
-### On Github, create a repository called something.github.io
+
+## Set-up {#set-up}
+
+
+### On Github, create a repository called something.github.io {#on-github-create-a-repository-called-something-dot-github-dot-io}
+
 In my case, I created yanboyang.github.io
-![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat_Dec_26_05_24_25_PM_CST_2020_zbblkc.png)
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat%5FDec%5F26%5F05%5F24%5F25%5FPM%5FCST%5F2020%5Fzbblkc.png)
 
-### Clone this repository to Local
+
+### Clone this repository to Local {#clone-this-repository-to-local}
+
 ```console
 [yanboyang713@boyang Documents]$ git clone https://github.com/yanboyang713/yanboyang.github.io.git
 Cloning into 'yanboyang.github.io'...
@@ -41,7 +52,9 @@ Resolving deltas: 100% (289/289), done.
 cd yanboyang.github.io
 ```
 
-### Create a new Hugo site
+
+### Create a new Hugo site {#create-a-new-hugo-site}
+
 ```bash
 docker run --rm -it \
   -v $(pwd):/src \
@@ -49,18 +62,24 @@ docker run --rm -it \
   klakegg/hugo:latest \
   "new site . --force"
 ```
-### Chown User and Group Recursively
+
+
+### Chown User and Group Recursively {#chown-user-and-group-recursively}
+
 ```bash
 sudo chown -R yanboyang713:yanboyang713 .
 ```
 
-### Add the theme to your blog
+
+### Add the theme to your blog {#add-the-theme-to-your-blog}
 
 ```bash
 git submodule add https://github.com/sunt-programator/CodeIT.git themes/CodeIT
 ```
 
-### Basic Configuration
+
+### Basic Configuration {#basic-configuration}
+
 The following is a basic configuration for the CodeIT theme:
 
 ```toml
@@ -115,21 +134,25 @@ theme = "CodeIT"
     noClasses = false
 ```
 
-### Create Your First Post
+
+### Create Your First Post {#create-your-first-post}
+
 Here is the way to create your first post:
+
 ```bash
 docker run --rm -it \
   -v $(pwd):/src \
   -w="/src" \
   klakegg/hugo:latest \
   "new posts/first_post.md"
-  
+
 sudo chown -R yanboyang713:yanboyang713 content
 ```
 
 **NOTE:** Go to your first post and change the **draft: false**
 
-### Launching the Website in Docker
+
+### Launching the Website in Docker {#launching-the-website-in-docker}
 
 ```bash
 docker run --rm -it \
@@ -139,9 +162,11 @@ docker run --rm -it \
   server
 ```
 
-Web Server is available at http://localhost:1313/
+Web Server is available at <http://localhost:1313/>
 
-### Build Hugo With GitHub Action
+
+### Build Hugo With GitHub Action {#build-hugo-with-github-action}
+
 ```bash
 mkdir -p .github/workflows
 vim .github/workflows/main.yml
@@ -187,12 +212,17 @@ jobs:
           cname: yanboyang.com
 ```
 
-## Post your blog
+
+## Post your blog {#post-your-blog}
+
 I written a bash script for push your blog to Github evertime.
 
 **NOTE:** If you need add your public key.
-1. Go to Repository Settings
-2. Go to Deploy Keys and add your public key with the Allow write access
+
+1.  Go to Repository Settings
+2.  Go to Deploy Keys and add your public key with the Allow write access
+
+<!--listend-->
 
 ```bash
 #!/bin/bash
@@ -282,18 +312,24 @@ else
 fi;
 ```
 
-## Set up your Google Analytics account
-Head over to https://analytics.google.com/ and make an account (or sign in with your Google account).
+
+## Set up your Google Analytics account {#set-up-your-google-analytics-account}
+
+Head over to <https://analytics.google.com/> and make an account (or sign in with your Google account).
 
 Set up your “Property”, give it a name, and point it to the URL of the site you plan on tracking.
 
 Click through the basic options until you land on a page with a Tracking Code. This is the value we need to be keeping track of.
 If you’re having trouble with this step then I recommend checking out [this](http://cloudywithachanceofdevops.com/posts/2018/05/17/setting-up-google-analytics-on-hugo/) tutorial, which has very detailed step by step instructions for configuring your GA account.
 
-### Configuring Hugo
+
+### Configuring Hugo {#configuring-hugo}
+
 Hugo has a built in template for Google Analytics. All we need to do is make sure the template gets included in all our pages, so we can have more detailed tracking.
 
-### header.html
+
+### header.html {#header-dot-html}
+
 The easiest way to do this is to insert the template into the header.html file used by your Hugo theme of choice.
 
 Since it is common to use a git submodule as a theme directory, it could be undesirable and messy to write changes directly into the submodule.
@@ -318,7 +354,7 @@ Adding these two lines inside <head> will make the google tracking code embed in
 config.toml
 Finally we need to use that tracking code from earlier. At the top level of your config.toml, add the line
 
-```
+```toml
 googleAnalytics = "UA-302012394-1"
 ```
 
@@ -329,13 +365,17 @@ I had quite the time figuring out why I couldn’t see any activity on my site. 
 
 This also blocks the tracking I do want, wouldn’t you know. I switched over to a private window without plugins and the traffic was instantly visible!
 
-## Write Blog with Emacs and ox-hugo package
+
+## Write Blog with Emacs and ox-hugo package {#write-blog-with-emacs-and-ox-hugo-package}
+
 [ox-hugo](https://ox-hugo.scripter.co/) is an awesome way to blog from org-mode. It makes it possible for posts in org-mode format to kept separate, and it generates the Markdown files for Hugo. Hugo supports org files, but using ox-hugo has multiple advantages:
 
-+ Parsing is done by org-mode natively, not by an external library. Although goorgeous (used by Hugo) is very good, it still lacks in many areas, which leads to text being interpreted differently as by org-mode.
-+ Hugo is left to parse a native Markdown file, which means that many of its features such as shortcodes, TOC generation, etc., can still be used on the generated file.
+-   Parsing is done by org-mode natively, not by an external library. Although goorgeous (used by Hugo) is very good, it still lacks in many areas, which leads to text being interpreted differently as by org-mode.
+-   Hugo is left to parse a native Markdown file, which means that many of its features such as shortcodes, TOC generation, etc., can still be used on the generated file.
 
-### Prerequisites
+
+### Prerequisites {#prerequisites}
+
 Currently, I am using Doom Emacs, which includes and configures ox-hugo as part of its **(:lang org +hugo)** module, so all that’s left is to configure some parameters to my liking.
 
 I set org-hugo-use-code-for-kbd so that I can apply a custom style to keyboard bindings in my blog.
@@ -345,15 +385,22 @@ I set org-hugo-use-code-for-kbd so that I can apply a custom style to keyboard b
   (setq org-hugo-use-code-for-kbd t))
 ```
 
-### Auto-export the whole project on Saving
-#### Step 1: Enable minor mode org-hugo-auto-export-mode
+
+### Auto-export the whole project on Saving {#auto-export-the-whole-project-on-saving}
+
+
+#### Step 1: Enable minor mode org-hugo-auto-export-mode {#step-1-enable-minor-mode-org-hugo-auto-export-mode}
+
 This minor mode is disabled by default. It can be enabled separately at project level or file level.
 
 **Note** that once you update the .dir-locals.el file or file-local Variables as shown below, you will be prompted by Emacs to tell it if those settings are safe. Hit ! in that prompt to says yes and to save that choice for future Emacs sessions.
 
-#### Step 2: Enable for the whole project
+
+#### Step 2: Enable for the whole project {#step-2-enable-for-the-whole-project}
+
 If you want to enable auto-exporting for the whole project, add this to the **.dir-locals.el** file in the project root:
-```emacs-lisp
+
+```emascs-lisp
 (("content-org/"
   . ((org-mode . ((eval . (org-hugo-auto-export-mode)))))))
 ```
@@ -370,24 +417,27 @@ Above assumes that the Org files are in the “content-org"/ directory (at any n
   └── .dir-locals.el
 ```
 
-#### Step 3: Create a post with org mode
+
+#### Step 3: Create a post with org mode {#step-3-create-a-post-with-org-mode}
+
 In content-org directory, create a xxx.org file.
 
-```file
+```org
+
 #+title: Boyang Yan's Blog
 #+hugo_base_dir: ~/blog/
 #+hugo_section: posts
 #+hugo_front_matter_format: yaml
 
-* Emacs :@Emacs:
-** DONE Getting Started with Doom Emacs
+*Emacs :@Emacs:
+**DONE Getting Started with Doom Emacs
 CLOSED: [2021-10-05 Tue 03:44]
 :PROPERTIES:
 :EXPORT_FILE_NAME: doom
 :EXPORT_OPTIONS: author:nil
 :END:
-*** Prerequisites
-**** Instation Dependencies
+***Prerequisites
+****Instation Dependencies
 #### Arch Linux
 #+begin_src bash
 # required dependencies
@@ -395,24 +445,33 @@ pacman -S git emacs ripgrep
 # optional dependencies
 pacman -S fd
 yay -S emacs-pdf-tools-git
-#+end_src
 ```
+
+\#+end\_src
+
 When you save this file, you will found there are doom file created in your blog->content->posts automately.
 
-### Export bindings
+
+### Export bindings {#export-bindings}
+
 The common ox-hugo export bindings are:
 
-#### For both one-post-per-subtree and one-post-per-file flows
-+ **C-c C-e H H**
-Export “What I Mean”.
-If point is in a valid Hugo post subtree, export that subtree to a Hugo post in Markdown.
-A valid Hugo post subtree is an Org subtree that has the **EXPORT_FILE_NAME** property set.
-If the file is intended to be exported as a whole (i.e. has the #+title keyword), export the whole Org file to a Hugo post in Markdown.
 
-+ **C-c C-e H A**
-Export all “What I Mean”
-If the Org file has one or more ‘valid Hugo post subtrees’, export them to Hugo posts in Markdown.
-If the file is intended to be exported as a whole (i.e. no ‘valid Hugo post subtrees’ at all, and has the **#+title** keyword), export the whole Org file to a Hugo post in Markdown.
-#### For only the one-post-per-file flow
-+ **C-c C-e H h**
-Export the Org file to a Hugo post in Markdown.
+#### For both one-post-per-subtree and one-post-per-file flows {#for-both-one-post-per-subtree-and-one-post-per-file-flows}
+
+-   **C-c C-e H H**
+    Export “What I Mean”.
+    If point is in a valid Hugo post subtree, export that subtree to a Hugo post in Markdown.
+    A valid Hugo post subtree is an Org subtree that has the **EXPORT\_FILE\_NAME** property set.
+    If the file is intended to be exported as a whole (i.e. has the #+title keyword), export the whole Org file to a Hugo post in Markdown.
+
+-   **C-c C-e H A**
+    Export all “What I Mean”
+    If the Org file has one or more ‘valid Hugo post subtrees’, export them to Hugo posts in Markdown.
+    If the file is intended to be exported as a whole (i.e. no ‘valid Hugo post subtrees’ at all, and has the **#+title** keyword), export the whole Org file to a Hugo post in Markdown.
+
+
+#### For only the one-post-per-file flow {#for-only-the-one-post-per-file-flow}
+
+-   **C-c C-e H h**
+    Export the Org file to a Hugo post in Markdown.
