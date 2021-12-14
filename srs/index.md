@@ -1,4 +1,4 @@
-# Gettting Started SRS(Simple Realtime Server)
+# Gettting Started SRS(Simple Realtime Server) :SRS:video-server:
 
 
 ## Overview {#overview}

@@ -1,4 +1,4 @@
-# Create Proxmox cloud-init template
+# Create Proxmox cloud-init template :cloud-init:Proxmox:
 
 
 ## Overview {#overview}

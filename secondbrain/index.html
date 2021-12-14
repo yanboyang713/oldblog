@@ -4,24 +4,24 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Building a Second Brain: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Building a Second Brain: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers">
+<title>Building a Second Brain :second-brain:org-mode:emacs: - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Building a Second Brain :second-brain:org-mode:emacs:">
 <meta property="og:description" content="Introduction Building a Second Brain is about creating a reliable system – outside your physical skin-and-bone bodily boundaries – for storing, organising, digesting, and eventually transforming information into Good Creative Output.
 Much like any well-integrated tool, I am currently using Emacs Org Mode as Second Brain core tool. This system also includes many other peripheral components that make up the complete Second Brain system.
 I will follow the below overview diagram introducte each components one by one.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/secondbrain/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-07T10:18:00+08:00">
-<meta property="article:modified_time" content="2021-12-13T09:54:56+00:00">
+<meta property="article:modified_time" content="2021-12-14T09:43:08+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
-<meta name=twitter:title content="Building a Second Brain: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers">
+<meta name=twitter:title content="Building a Second Brain :second-brain:org-mode:emacs:">
 <meta name=twitter:description content="Introduction Building a Second Brain is about creating a reliable system – outside your physical skin-and-bone bodily boundaries – for storing, organising, digesting, and eventually transforming information into Good Creative Output.
 Much like any well-integrated tool, I am currently using Emacs Org Mode as Second Brain core tool. This system also includes many other peripheral components that make up the complete Second Brain system.
 I will follow the below overview diagram introducte each components one by one.">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/secondbrain/><link rel=prev href=https://yanboyang.com/proxmoxpassthrough/><link rel=next href=https://yanboyang.com/zotero/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Building a Second Brain: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/secondbrain\/"},"genre":"posts","wordcount":351,"url":"https:\/\/yanboyang.com\/secondbrain\/","datePublished":"2021-12-07T10:18:00+08:00","dateModified":"2021-12-13T09:54:56+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/secondbrain/><link rel=prev href=https://yanboyang.com/proxmoxpassthrough/><link rel=next href=https://yanboyang.com/zotero/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Building a Second Brain :second-brain:org-mode:emacs:","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/secondbrain\/"},"genre":"posts","wordcount":357,"url":"https:\/\/yanboyang.com\/secondbrain\/","datePublished":"2021-12-07T10:18:00+08:00","dateModified":"2021-12-14T09:43:08+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -93,9 +93,9 @@ Cancel
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Building a Second Brain: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers</h1><div class=post-meta>
+</div><article class="page single"><h1 class="single-title animated flipInX">Building a Second Brain :second-brain:org-mode:emacs:</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/research/><i class="far fa-folder fa-fw"></i>research</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-07>2021-12-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;351 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-07>2021-12-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;357 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
@@ -105,6 +105,7 @@ Cancel
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
 <li><a href=#introduction>Introduction</a></li>
+<li><a href=#pre-reading>Pre-reading</a></li>
 <li><a href=#org-mode-modules>Org-mode modules</a>
 <ul>
 <li><a href=#planning>Planning</a>
@@ -136,6 +137,10 @@ Cancel
 </figure>
 <figure><img src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638851036/research/orgMode%5Fasb3an.png>
 </figure>
+<h2 id=pre-reading>Pre-reading</h2>
+<ol>
+<li><a href=https://yanboyang.com/doom/ rel>Emacs/Getting Started with Doom Emacs</a></li>
+</ol>
 <h2 id=org-mode-modules>Org-mode modules</h2>
 <h3 id=planning>Planning</h3>
 <ul>
@@ -189,7 +194,7 @@ Sort of equivalent to “#+INCLUDE:”</p>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-12-13</span>
+<span>Updated on 2021-12-14</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -198,7 +203,7 @@ Sort of equivalent to “#+INCLUDE:”</p>
 <a class=link-to-markdown href=https://yanboyang.com/secondbrain/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/secondbrain/ data-title="Building a Second Brain: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/secondbrain/><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/secondbrain/ data-title="Building a Second Brain: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/secondbrain/ data-title="Building a Second Brain: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/secondbrain/ data-title="Building a Second Brain: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/secondbrain/ data-title="Building a Second Brain: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/secondbrain/ data-title="Building a Second Brain: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/secondbrain/ data-title="Building a Second Brain: Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers"><i class="fab fa-evernote fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/secondbrain/ data-title="Building a Second Brain :second-brain:org-mode:emacs:"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/secondbrain/><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/secondbrain/ data-title="Building a Second Brain :second-brain:org-mode:emacs:" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/secondbrain/ data-title="Building a Second Brain :second-brain:org-mode:emacs:"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/secondbrain/ data-title="Building a Second Brain :second-brain:org-mode:emacs:"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/secondbrain/ data-title="Building a Second Brain :second-brain:org-mode:emacs:" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/secondbrain/ data-title="Building a Second Brain :second-brain:org-mode:emacs:" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/secondbrain/ data-title="Building a Second Brain :second-brain:org-mode:emacs:"><i class="fab fa-evernote fa-fw"></i></a></span>
 </div>
 </div>
 </div>
