@@ -1,4 +1,4 @@
-# Getting Started with Doom Emacs
+# Getting Started with Doom Emacs :Emacs:Doom-Emacs:
 
 
 ## Prerequisites {#prerequisites}
@@ -134,5 +134,5 @@ projectile-project-search-path '("~/Project/" "~/dotfiles/" "~/blog/content-org/
 ### Treemacs {#treemacs}
 
 SPC o p - Open
-SPC o p again - Close
+When Treemacs is opened, you can type **q** to close.
 
