@@ -459,7 +459,7 @@ canonifyURLs = true
     bing = ""
     yandex = ""
     pinterest = ""
-    baidu = ""
+    baidu = "wsCeKMuJ31RLblHf"
 
   #  Site SEO config
   [params.seo]

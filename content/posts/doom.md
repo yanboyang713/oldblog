@@ -1,6 +1,6 @@
 ---
-title: "Getting Started with Doom Emacs"
-date: 2021-10-05T03:44:00+11:00
+title: "Getting Started with Doom Emacs :Emacs:Doom-Emacs:"
+date: 2021-10-05T03:44:00+08:00
 categories: ["Emacs"]
 draft: false
 ---
@@ -138,4 +138,4 @@ projectile-project-search-path '("~/Project/" "~/dotfiles/" "~/blog/content-org/
 ### Treemacs {#treemacs}
 
 SPC o p - Open
-SPC o p again - Close
+When Treemacs is opened, you can type **q** to close.
