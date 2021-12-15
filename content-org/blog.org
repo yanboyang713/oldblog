@@ -4,7 +4,7 @@
 #+hugo_front_matter_format: yaml
 
 * Emacs :@Emacs:
-** DONE Getting Started with Doom Emacs :Emacs:Doom-Emacs:
+** DONE Getting Started with Doom Emacs :Emacs:Doom Emacs:
 CLOSED: [2021-10-05 Tue 03:44]
 :PROPERTIES:
 :EXPORT_FILE_NAME: doom
