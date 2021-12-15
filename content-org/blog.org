@@ -128,12 +128,24 @@ Org mode is an artifact under Emacs. Compared with the lightweight format of mar
 It has more functions and expandability, but it is still difficult to get started.
 Here is only a brief introduction to some of the basic functions.
 
-*** Fundamental Function
-
-***
-
 *** Pre-reading
 1. [[id:48390f93-f8f0-435c-8938-acf20f581e46][Emacs/Getting Started with Doom Emacs :Emacs:Doom-Emacs:]]
+
+*** Fundamental Function
+**** Headings
+org-mode uses * to indicate headings, and the number of * to indicate heading level:
+
+#+begin_src org
+* First level heading
+** Secondary heading
+*** Level 3 heading
+#+end_src
+
+1. Use the *Control-[RET]* key to insert the title of the same level, and you can use the *Alt-left/right* title to increase and decrease the level
+2. Using *Alt-Up* and *Alt-Down* swap the *Headings* content Up and Down (including sub-chapters).
+3. You can use the *Tab* key to expand and collapse the headings, and the *Shift+Tab* key to expand and collapse all chapters.
+
+*** List
 
 *** Reference List
 1. https://blog.csdn.net/sunny0660/article/details/104078734
