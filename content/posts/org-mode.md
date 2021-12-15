@@ -12,16 +12,16 @@ It has more functions and expandability, but it is still difficult to get starte
 Here is only a brief introduction to some of the basic functions.
 
 
-## Fundamental Function {#fundamental-function}
-
-**\***
-
-
 ## Pre-reading {#pre-reading}
 
 1.  [Emacs/Getting Started with Doom Emacs :Emacs:Doom-Emacs:]({{< relref "doom" >}})
 
 
-## Reference List {#reference-list}
+## Fundamental Function {#fundamental-function}
 
-1.  <https://blog.csdn.net/sunny0660/article/details/104078734>
+
+### Headings {#headings}
+
+org-mode uses \* to indicate headings, and the number of \* to indicate heading level:
+
+\#+begin\_example
