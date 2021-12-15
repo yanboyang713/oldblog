@@ -1,4 +1,4 @@
-# Getting Started with Doom Emacs :Emacs:Doom-Emacs:
+# Getting Started with Doom Emacs :Emacs:Doom Emacs:
 
 
 ## Prerequisites {#prerequisites}
@@ -116,7 +116,7 @@ My user information.
 ````
 
 
-## Projects with Projectile, File Explorer with Treemacs & EShell {#projects-with-projectile-file-explorer-with-treemacs-and-eshell}
+## Projects with Projectile, File Explorer with Treemacs &amp; EShell {#projects-with-projectile-file-explorer-with-treemacs-and-eshell}
 
 
 ### Projectile {#projectile}
