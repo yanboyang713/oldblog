@@ -1,8 +1,9 @@
 ---
 title: "Verify Your Site For Baidu Webmaster Tools - Baidu SEO"
+date: 2021-12-15T13:13:00+08:00
 tags: ["SEO", "Baidu"]
 categories: ["Blog"]
-draft: true
+draft: false
 ---
 
 ## Introduction {#introduction}

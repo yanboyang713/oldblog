@@ -2648,7 +2648,8 @@ CLOSED: [2021-12-14 Tue 13:20]
 1. https://sidhartharya.me/exporting-org-roam-notes-to-hugo/
 
 
-** TODO Verify Your Site For Baidu Webmaster Tools - Baidu SEO :SEO:Baidu:
+** DONE Verify Your Site For Baidu Webmaster Tools - Baidu SEO :SEO:Baidu:
+CLOSED: [2021-12-15 Wed 13:13]
 :PROPERTIES:
 :EXPORT_FILE_NAME: baiduSEO
 :EXPORT_OPTIONS: author:nil
