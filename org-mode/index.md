@@ -1,4 +1,4 @@
-# Getting Started Org-mode on Emacs :Emacs:org-mode:
+# Getting Started Org-mode on Emacs
 
 
 ## Introduction {#introduction}
