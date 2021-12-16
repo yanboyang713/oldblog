@@ -131,7 +131,7 @@ Here is only a brief introduction to some of the basic functions.
 *** Pre-reading
 1. [[id:48390f93-f8f0-435c-8938-acf20f581e46][Emacs/Getting Started with Doom Emacs :Emacs:Doom-Emacs:]]
 
-*** Fundamental Function
+*** Fundamental Ffeature
 **** Headings
 org-mode uses * to indicate headings, and the number of * to indicate heading level:
 
@@ -160,6 +160,21 @@ The *List* includes two types:
 2. list
     1. sub-list
    #+end_example
+
+*** Checkbox
+It often great to split a task into a number of simple steps. Or you can use them in a shopping list.
+
+The form is [], put in front of the task can mark the completion status of the task, Put it after the task to mark the completion degree of the task, which needs to add% or /
+
+Here is an example of a checkbox list.
+#+begin_example
+,call people [1/3]
+,    - [ ] Peter
+,    - [X] Sarah
+,    - [-] Sam [50%]
+,      + [X] topic 1
+,      + [ ] topic 2
+#+end_example
 
 *** Reference List
 1. https://blog.csdn.net/sunny0660/article/details/104078734
@@ -225,6 +240,9 @@ set mta=/usr/bin/msmtp
 *** Usage
 https://cheatography.com/ddoherty03/cheat-sheets/mu4e-with-gmail-hints/
 
+
+*** Reference List
+1. https://macowners.club/posts/email-emacs-mu4e-macos/
 
 * Computer Vision :@ComputerVision:
 

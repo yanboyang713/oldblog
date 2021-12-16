@@ -18,7 +18,7 @@ Here is only a brief introduction to some of the basic functions.
 1.  [Emacs/Getting Started with Doom Emacs :Emacs:Doom-Emacs:]({{< relref "doom" >}})
 
 
-## Fundamental Function {#fundamental-function}
+## Fundamental Ffeature {#fundamental-ffeature}
 
 
 ### Headings {#headings}
@@ -55,6 +55,24 @@ The **List** includes two types:
        2. list
            1. sub-list
     ```
+
+
+## Checkbox {#checkbox}
+
+It often great to split a task into a number of simple steps. Or you can use them in a shopping list.
+
+The form is [], put in front of the task can mark the completion status of the task, Put it after the task to mark the completion degree of the task, which needs to add% or /
+
+Here is an example of a checkbox list.
+
+```text
+,call people [1/3]
+,    - [ ] Peter
+,    - [X] Sarah
+,    - [-] Sam [50%]
+,      + [X] topic 1
+,      + [ ] topic 2
+```
 
 
 ## Reference List {#reference-list}
