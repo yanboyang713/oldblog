@@ -182,7 +182,6 @@ For display image is similar:
 [fn:1] The link: https:yanboyang.com
 Boyang Yan's Blog[fn:1]
 
-
 *** Table
 The Org-mode table is implemented in the following format:
 #+begin_example
