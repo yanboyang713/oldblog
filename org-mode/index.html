@@ -6,22 +6,22 @@
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Getting Started Org-mode on Emacs - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Getting Started Org-mode on Emacs">
 <meta property="og:description" content="Introduction Org mode is an artifact under Emacs. Compared with the lightweight format of markdown, It has more functions and expandability, but it is still difficult to get started. Here is only a brief introduction to some of the basic functions.
-Pre-reading  Emacs/Getting Started with Doom Emacs :Emacs:Doom-Emacs:  Fundamental Ffeature Headings org-mode uses * to indicate headings, and the number of * to indicate heading level:
+Pre-reading  Emacs/Getting Started with Doom Emacs :Emacs:Doom-Emacs:  Fundamental Feature Headings org-mode uses * to indicate headings, and the number of * to indicate heading level:
 1 2 3  * First level heading ** Secondary heading *** Level 3 heading    Use the Control-[RET] key to insert the title of the same level, and you can use the Alt-left/right title to increase and decrease the level Using Alt-Up and Alt-Down swap the Headings content Up and Down (including sub-chapters).">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/org-mode/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-15T11:29:00+08:00">
-<meta property="article:modified_time" content="2021-12-16T09:36:27+00:00">
+<meta property="article:modified_time" content="2021-12-16T11:04:23+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting Started Org-mode on Emacs">
 <meta name=twitter:description content="Introduction Org mode is an artifact under Emacs. Compared with the lightweight format of markdown, It has more functions and expandability, but it is still difficult to get started. Here is only a brief introduction to some of the basic functions.
-Pre-reading  Emacs/Getting Started with Doom Emacs :Emacs:Doom-Emacs:  Fundamental Ffeature Headings org-mode uses * to indicate headings, and the number of * to indicate heading level:
+Pre-reading  Emacs/Getting Started with Doom Emacs :Emacs:Doom-Emacs:  Fundamental Feature Headings org-mode uses * to indicate headings, and the number of * to indicate heading level:
 1 2 3  * First level heading ** Secondary heading *** Level 3 heading    Use the Control-[RET] key to insert the title of the same level, and you can use the Alt-left/right title to increase and decrease the level Using Alt-Up and Alt-Down swap the Headings content Up and Down (including sub-chapters).">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/org-mode/><link rel=prev href=https://yanboyang.com/hugo/><link rel=next href=https://yanboyang.com/baiduseo/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started Org-mode on Emacs","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/org-mode\/"},"genre":"posts","keywords":"Emacs, org","wordcount":483,"url":"https:\/\/yanboyang.com\/org-mode\/","datePublished":"2021-12-15T11:29:00+08:00","dateModified":"2021-12-16T09:36:27+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/org-mode/><link rel=prev href=https://yanboyang.com/hugo/><link rel=next href=https://yanboyang.com/baiduseo/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started Org-mode on Emacs","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/org-mode\/"},"genre":"posts","keywords":"Emacs, org","wordcount":607,"url":"https:\/\/yanboyang.com\/org-mode\/","datePublished":"2021-12-15T11:29:00+08:00","dateModified":"2021-12-16T11:04:23+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -95,7 +95,7 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting Started Org-mode on Emacs</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/emacs/><i class="far fa-folder fa-fw"></i>Emacs</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-15>2021-12-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;483 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-15>2021-12-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;607 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
@@ -106,15 +106,18 @@ Cancel
 <ul>
 <li><a href=#introduction>Introduction</a></li>
 <li><a href=#pre-reading>Pre-reading</a></li>
-<li><a href=#fundamental-ffeature>Fundamental Ffeature</a>
+<li><a href=#fundamental-feature>Fundamental Feature</a>
 <ul>
 <li><a href=#headings>Headings</a></li>
 </ul>
 </li>
 <li><a href=#list>List</a></li>
 <li><a href=#link>Link</a></li>
+<li><a href=#font-settings>font settings</a></li>
 <li><a href=#table>Table</a></li>
-<li><a href=#checkbox>Checkbox</a></li>
+<li><a href=#text-format-output>Text format output</a></li>
+<li><a href=#source-code-insert-and-running>Source Code Insert & Running</a></li>
+<li><a href=#post-reading>Post-reading</a></li>
 <li><a href=#reference-list>Reference List</a></li>
 </ul>
 </nav></div>
@@ -126,7 +129,7 @@ Here is only a brief introduction to some of the basic functions.</p>
 <ol>
 <li><a href=https://yanboyang.com/doom/ rel>Emacs/Getting Started with Doom Emacs :Emacs:Doom-Emacs:</a></li>
 </ol>
-<h2 id=fundamental-ffeature>Fundamental Ffeature</h2>
+<h2 id=fundamental-feature>Fundamental Feature</h2>
 <h3 id=headings>Headings</h3>
 <p>org-mode uses * to indicate headings, and the number of * to indicate heading level:</p>
 <div class=highlight><div class=chroma>
@@ -204,6 +207,25 @@ Here is only a brief introduction to some of the basic functions.</p>
 [[./pics/file.jpg]]
 </code></pre></td></tr></table>
 </div>
+</div><h2 id=font-settings>font settings</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>*bold*
+/italic/
+_underlined_
+=code=
+~verbatim~
++striken-through+
+</code></pre></td></tr></table>
+</div>
 </div><h2 id=table>Table</h2>
 <p>The Org-mode table is implemented in the following format:</p>
 <div class=highlight><div class=chroma>
@@ -225,38 +247,141 @@ Here is only a brief introduction to some of the basic functions.</p>
 </div><p>You need to set the number of columns in the first row, and the <strong>Tab</strong> key can complete to the next grid (next row)</p>
 <p><strong>|-</strong> can be completed to get <strong>|&mdash;&mdash;&mdash;-<del>&mdash;&mdash;&mdash;</del>&mdash;&mdash;&mdash;|</strong></p>
 <p>The total column can be automatically summed in the form of = /$4+/$5 and executed as <strong>C-c C-c</strong></p>
-<h2 id=checkbox>Checkbox</h2>
-<p>It often great to split a task into a number of simple steps. Or you can use them in a shopping list.</p>
-<p>The form is [], put in front of the task can mark the completion status of the task, Put it after the task to mark the completion degree of the task, which needs to add % or /</p>
-<p>Here is an example of a checkbox list.</p>
+<h2 id=text-format-output>Text format output</h2>
+<p>The text format output needs to be run in different modes, generally obtained by the form of <strong>&lt;+char+Tab</strong> completion, such as <strong>&lt;s+Tab</strong></p>
+<p>Different characters in different text forms are defined as follows:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>s       #+BEGIN_SRC ... #+END_SRC
+
+e       #+BEGIN_EXAMPLE ... #+END_EXAMPLE
+
+q       #+BEGIN_QUOTE ... #+END_QUOTE
+
+v       #+BEGIN_VERSE ... #+END_VERSE
+
+c       #+BEGIN_CENTER ... #+END_CENTER
+
+C       #+BEGIN_COMMENT ... #+END_COMMENT
+
+l       #+BEGIN_EXPORT latex ... #+END_EXPORT
+
+L       #+LATEX:
+
+h       #+BEGIN_EXPORT html ... #+END_EXPORT
+
+H       #+HTML:
+
+a       #+BEGIN_EXPORT ascii ... #+END_EXPORT
+
+A       #+ASCII:
+
+i       #+INDEX: line
+
+I       #+INCLUDE: line
+</code></pre></td></tr></table>
+</div>
+</div><p>Here are examples:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>Set title and the table of content:
+# +TITLE: This is the title of the document
+# +OPTIONS: toc:2 (only to two levels in TOC)
+# +OPTIONS: toc:nil (no TOC at all)
+
+Add quote：
+# +BEGIN_QUOTE
+Everything should be made as simple as possible,
+but not any simpler -- Albert Einstein
+# +END_QUOTE
+
+Set to center：
+# +BEGIN_CENTER
+    Everything should be made as simple as possible,but not any simpler
+# +END_CENTER
+
+Set Example (The content inside will be output directly):
+# +BEGIN_EXAMPLE
+The text will be output directly, NOT tranfer the others form.
+# +END_EXAMPLE
+
+Write Comment (The content inside will NOT output)
+# +BEGIN_COMMENT
+The content inside will NOT export.
+# +END_COMMENT
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=source-code-insert-and-running>Source Code Insert & Running</h2>
+<p>Here is an format example:</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text>call people [1/3]
-    - [ ] Peter
-    - [X] Sarah
-    - [-] Sam [50%]
-      + [X] topic 1
-      + [ ] topic 2
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>#+BEGIN_SRC language
+#+END_SRC
 </code></pre></td></tr></table>
 </div>
-</div><p><strong>NOTE</strong>:</p>
+</div><h2 id=post-reading>Post-reading</h2>
 <ol>
-<li>
-<p><strong>M-S-RET</strong> (org-insert-todo-heading) <strong>M</strong> is ALT on my system.</p>
-<p>Insert a new item with a checkbox. This works only if point is already in a plain list item</p>
-</li>
-<li>
-<p><strong>C-c C-c</strong> (org-toggle-checkbox)
-Toggle checkbox status or—with prefix argument—checkbox presence at point. With a single prefix argument, add an empty checkbox or remove the current one50. With a double prefix argument, set it to ‘[-]’, which is considered to be an intermediate state.</p>
-</li>
+<li><a href=https://yanboyang.com/orgplanning/ rel>Emacs/Best practices for using Emacs org-mode as a day-planner/scheduler/calendar</a></li>
 </ol>
 <h2 id=reference-list>Reference List</h2>
 <ol>
