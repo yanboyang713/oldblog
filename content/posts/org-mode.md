@@ -1,6 +1,7 @@
 ---
-title: "Getting Started Org-mode on Emacs :Emacs:org-mode:"
+title: "Getting Started Org-mode on Emacs"
 date: 2021-12-15T11:29:00+08:00
+tags: ["Emacs", "org"]
 categories: ["Emacs"]
 draft: false
 ---

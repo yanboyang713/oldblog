@@ -4,7 +4,7 @@
 #+hugo_front_matter_format: yaml
 
 * Emacs :@Emacs:
-** DONE Getting Started with Doom Emacs :Emacs:Doom Emacs:
+** DONE Getting Started with Doom Emacs :Emacs:Doom:
 CLOSED: [2021-10-05 Tue 03:44]
 :PROPERTIES:
 :EXPORT_FILE_NAME: doom
@@ -116,7 +116,7 @@ SPC o p - Open
 When Treemacs is opened, you can type *q* to close.
 
 
-** DONE Getting Started Org-mode on Emacs :Emacs:org-mode:
+** DONE Getting Started Org-mode on Emacs :Emacs:org:
 CLOSED: [2021-12-15 Wed 11:29]
 :PROPERTIES:
 :EXPORT_FILE_NAME: org-mode
