@@ -18,7 +18,7 @@ Here is only a brief introduction to some of the basic functions.
 1.  [Emacs/Getting Started with Doom Emacs :Emacs:Doom-Emacs:]({{< relref "doom" >}})
 
 
-## Fundamental Ffeature {#fundamental-ffeature}
+## Fundamental Feature {#fundamental-feature}
 
 
 ### Headings {#headings}
@@ -76,6 +76,18 @@ For display image is similar:
 ```
 
 
+## font settings {#font-settings}
+
+```text
+*bold*
+/italic/
+_underlined_
+=code=
+~verbatim~
++striken-through+
+```
+
+
 ## Table {#table}
 
 The Org-mode table is implemented in the following format:
@@ -95,32 +107,91 @@ You need to set the number of columns in the first row, and the **Tab** key can 
 The total column can be automatically summed in the form of = /$4+/$5 and executed as **C-c C-c**
 
 
-## Checkbox {#checkbox}
+## Text format output {#text-format-output}
 
-It often great to split a task into a number of simple steps. Or you can use them in a shopping list.
+The text format output needs to be run in different modes, generally obtained by the form of **&lt;+char+Tab** completion, such as **&lt;s+Tab**
 
-The form is [], put in front of the task can mark the completion status of the task, Put it after the task to mark the completion degree of the task, which needs to add % or /
-
-Here is an example of a checkbox list.
+Different characters in different text forms are defined as follows:
 
 ```text
-call people [1/3]
-    - [ ] Peter
-    - [X] Sarah
-    - [-] Sam [50%]
-      + [X] topic 1
-      + [ ] topic 2
+s       #+BEGIN_SRC ... #+END_SRC
+
+e       #+BEGIN_EXAMPLE ... #+END_EXAMPLE
+
+q       #+BEGIN_QUOTE ... #+END_QUOTE
+
+v       #+BEGIN_VERSE ... #+END_VERSE
+
+c       #+BEGIN_CENTER ... #+END_CENTER
+
+C       #+BEGIN_COMMENT ... #+END_COMMENT
+
+l       #+BEGIN_EXPORT latex ... #+END_EXPORT
+
+L       #+LATEX:
+
+h       #+BEGIN_EXPORT html ... #+END_EXPORT
+
+H       #+HTML:
+
+a       #+BEGIN_EXPORT ascii ... #+END_EXPORT
+
+A       #+ASCII:
+
+i       #+INDEX: line
+
+I       #+INCLUDE: line
 ```
 
-**NOTE**:
+Here are examples:
 
-1.  **M-S-RET** (org-insert-todo-heading) **M** is ALT on my system.
+```text
+Set title and the table of content:
+# +TITLE: This is the title of the document
+# +OPTIONS: toc:2 (only to two levels in TOC)
+# +OPTIONS: toc:nil (no TOC at all)
 
-    Insert a new item with a checkbox. This works only if point is already in a plain list item
-2.  **C-c C-c** (org-toggle-checkbox)
-    Toggle checkbox status or—with prefix argument—checkbox presence at point. With a single prefix argument, add an empty checkbox or remove the current one50. With a double prefix argument, set it to ‘[-]’, which is considered to be an intermediate state.
+Add quote：
+# +BEGIN_QUOTE
+Everything should be made as simple as possible,
+but not any simpler -- Albert Einstein
+# +END_QUOTE
+
+Set to center：
+# +BEGIN_CENTER
+    Everything should be made as simple as possible,but not any simpler
+# +END_CENTER
+
+Set Example (The content inside will be output directly):
+# +BEGIN_EXAMPLE
+The text will be output directly, NOT tranfer the others form.
+# +END_EXAMPLE
+
+Write Comment (The content inside will NOT output)
+# +BEGIN_COMMENT
+The content inside will NOT export.
+# +END_COMMENT
+```
+
+
+## Source Code Insert &amp; Running {#source-code-insert-and-running}
+
+Here is an format example:
+
+```text
+#+BEGIN_SRC language
+#+END_SRC
+```
+
+
+## Post-reading {#post-reading}
+
+1.  [Emacs/Best practices for using Emacs org-mode as a day-planner/scheduler/calendar]({{< relref "orgPlanning" >}})
 
 
 ## Reference List {#reference-list}
 
 1.  <https://blog.csdn.net/sunny0660/article/details/104078734>
+
+[^fn:1]: a definition
+[^fn:2]: This is the inline definition of this footnote

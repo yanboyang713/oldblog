@@ -121,6 +121,7 @@ CLOSED: [2021-12-15 Wed 11:29]
 :PROPERTIES:
 :EXPORT_FILE_NAME: org-mode
 :EXPORT_OPTIONS: author:nil
+:ID:       93eddd5b-1e6c-4107-9c04-2d68968a01cc
 :END:
 
 *** Introduction
@@ -131,7 +132,7 @@ Here is only a brief introduction to some of the basic functions.
 *** Pre-reading
 1. [[id:48390f93-f8f0-435c-8938-acf20f581e46][Emacs/Getting Started with Doom Emacs :Emacs:Doom-Emacs:]]
 
-*** Fundamental Ffeature
+*** Fundamental Feature
 **** Headings
 org-mode uses * to indicate headings, and the number of * to indicate heading level:
 
@@ -177,10 +178,27 @@ For display image is similar:
 [[./pics/file.jpg]]
 #+end_example
 
-*** Footnotes
+*** font settings
+#+begin_example
+*bold*
+/italic/
+_underlined_
+=code=
+~verbatim~
++striken-through+
+#+end_example
 
-[fn:1] The link: https:yanboyang.com
-Boyang Yan's Blog[fn:1]
+*** Footnotes
+Here is an example of Footnotes.
+
+#+begin_example
+[fn:name] The link: https:yanboyang.com
+Boyang Yan's Blog[fn:name]
+#+end_example
+
+Can be inserted through *C-c C-x f*, and footnote jump to the definition *C-c C-c*
+
+The specific content is [fn:NAME], [fn:: This is the inline definition of this footnote] and [fn:NAME: a definition].
 
 *** Table
 The Org-mode table is implemented in the following format:
@@ -197,6 +215,96 @@ You need to set the number of columns in the first row, and the *Tab* key can co
 *|-* can be completed to get *|----------+---------+---------|*
 
 The total column can be automatically summed in the form of = /$4+/$5 and executed as *C-c C-c*
+
+*** Text format output
+The text format output needs to be run in different modes, generally obtained by the form of *<+char+Tab* completion, such as *<s+Tab*
+
+Different characters in different text forms are defined as follows:
+#+begin_example
+s       #+BEGIN_SRC ... #+END_SRC
+
+e       #+BEGIN_EXAMPLE ... #+END_EXAMPLE
+
+q       #+BEGIN_QUOTE ... #+END_QUOTE
+
+v       #+BEGIN_VERSE ... #+END_VERSE
+
+c       #+BEGIN_CENTER ... #+END_CENTER
+
+C       #+BEGIN_COMMENT ... #+END_COMMENT
+
+l       #+BEGIN_EXPORT latex ... #+END_EXPORT
+
+L       #+LATEX:
+
+h       #+BEGIN_EXPORT html ... #+END_EXPORT
+
+H       #+HTML:
+
+a       #+BEGIN_EXPORT ascii ... #+END_EXPORT
+
+A       #+ASCII:
+
+i       #+INDEX: line
+
+I       #+INCLUDE: line
+#+end_example
+
+Here are examples:
+#+begin_example
+Set title and the table of content:
+# +TITLE: This is the title of the document
+# +OPTIONS: toc:2 (only to two levels in TOC)
+# +OPTIONS: toc:nil (no TOC at all)
+
+Add quote：
+# +BEGIN_QUOTE
+Everything should be made as simple as possible,
+but not any simpler -- Albert Einstein
+# +END_QUOTE
+
+Set to center：
+# +BEGIN_CENTER
+    Everything should be made as simple as possible,but not any simpler
+# +END_CENTER
+
+Set Example (The content inside will be output directly):
+# +BEGIN_EXAMPLE
+The text will be output directly, NOT tranfer the others form.
+# +END_EXAMPLE
+
+Write Comment (The content inside will NOT output)
+# +BEGIN_COMMENT
+The content inside will NOT export.
+# +END_COMMENT
+#+end_example
+
+*** Source Code Insert & Running
+
+Here is an format example:
+#+begin_example
+#+BEGIN_SRC language
+#+END_SRC
+#+end_example
+
+
+*** Post-reading
+1. [[id:9b54ba0f-8677-428b-bf01-0fc8aa44e1e3][Emacs/Best practices for using Emacs org-mode as a day-planner/scheduler/calendar]]
+
+*** Reference List
+1. https://blog.csdn.net/sunny0660/article/details/104078734
+
+
+** DONE Best practices for using Emacs org-mode as a day-planner/scheduler/calendar :Emacs:org:planning:
+CLOSED: [2021-12-16 Thu 18:28]
+:PROPERTIES:
+:EXPORT_FILE_NAME: orgPlanning
+:EXPORT_OPTIONS: author:nil
+:ID:       9b54ba0f-8677-428b-bf01-0fc8aa44e1e3
+:END:
+
+*** Pre-reading
+1. [[id:93eddd5b-1e6c-4107-9c04-2d68968a01cc][Emacs/Getting Started Org-mode on Emacs]]
 
 *** Checkbox
 It often great to split a task into a number of simple steps. Or you can use them in a shopping list.
@@ -219,9 +327,6 @@ call people [1/3]
    Insert a new item with a checkbox. This works only if point is already in a plain list item
 2. *C-c C-c* (org-toggle-checkbox)
    Toggle checkbox status or—with prefix argument—checkbox presence at point. With a single prefix argument, add an empty checkbox or remove the current one50. With a double prefix argument, set it to ‘[-]’, which is considered to be an intermediate state.
-
-*** Reference List
-1. https://blog.csdn.net/sunny0660/article/details/104078734
 
 
 ** DONE Getting Started with send and receive Email with Doom Emacs
