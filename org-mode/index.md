@@ -80,7 +80,7 @@ You need to set the number of columns in the first row, and the **Tab** key can 
 
 **|-** can be completed to get **|----------~~---------~~---------|**
 
-The total column can be automatically summed in the form of = $4+$5 and executed as **C-c C-c**
+The total column can be automatically summed in the form of = /$4+/$5 and executed as **C-c C-c**
 
 
 ## Checkbox {#checkbox}
@@ -102,9 +102,9 @@ call people [1/3]
 
 **NOTE**:
 
-1.  M-S-RET (org-insert-todo-heading) **M** is ALT on my system
+1.  **M-S-RET** (org-insert-todo-heading) **M** is ALT on my system
     Insert a new item with a checkbox. This works only if point is already in a plain list item
-2.  C-c C-c (org-toggle-checkbox)
+2.  **C-c C-c** (org-toggle-checkbox)
     Toggle checkbox status or—with prefix argument—checkbox presence at point. With a single prefix argument, add an empty checkbox or remove the current one50. With a double prefix argument, set it to ‘[-]’, which is considered to be an intermediate state.
 
 
