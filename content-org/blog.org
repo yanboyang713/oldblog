@@ -188,7 +188,7 @@ _underlined_
 +striken-through+
 #+end_example
 
-*** Footnotes
+*** Footnote
 Here is an example of Footnotes.
 
 #+begin_example

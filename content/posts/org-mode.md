@@ -88,6 +88,20 @@ _underlined_
 ```
 
 
+## Footnote {#footnote}
+
+Here is an example of Footnotes.
+
+```text
+[fn:name] The link: https:yanboyang.com
+Boyang Yan's Blog[fn:name]
+```
+
+Can be inserted through **C-c C-x f**, and footnote jump to the definition **C-c C-c**
+
+The specific content is&nbsp;[^fn:1],&nbsp;[^fn:2] and&nbsp;[^fn:1].
+
+
 ## Table {#table}
 
 The Org-mode table is implemented in the following format:
