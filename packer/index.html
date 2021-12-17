@@ -10,7 +10,7 @@ However, creating and managing these templates can become a challenge with how t
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/packer/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-14T12:08:00+08:00">
-<meta property="article:modified_time" content="2021-12-17T02:33:34+00:00">
+<meta property="article:modified_time" content="2021-12-17T10:11:16+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Creating ProxMox templates with packer">
@@ -19,7 +19,7 @@ However, creating and managing these templates can become a challenge with how t
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/packer/><link rel=prev href=https://yanboyang.com/iptv/><link rel=next href=https://yanboyang.com/roamtohugo/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Creating ProxMox templates with packer","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/packer\/"},"genre":"posts","keywords":"packer","wordcount":340,"url":"https:\/\/yanboyang.com\/packer\/","datePublished":"2021-12-14T12:08:00+08:00","dateModified":"2021-12-17T02:33:34+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/packer/><link rel=prev href=https://yanboyang.com/iptv/><link rel=next href=https://yanboyang.com/roamtohugo/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Creating ProxMox templates with packer","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/packer\/"},"genre":"posts","keywords":"packer","wordcount":412,"url":"https:\/\/yanboyang.com\/packer\/","datePublished":"2021-12-14T12:08:00+08:00","dateModified":"2021-12-17T10:11:16+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -93,7 +93,7 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Creating ProxMox templates with packer</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/cluster/><i class="far fa-folder fa-fw"></i>Cluster</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-14>2021-12-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;340 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-14>2021-12-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;412 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
@@ -104,6 +104,8 @@ Cancel
 <ul>
 <li><a href=#introduction>Introduction</a></li>
 <li><a href=#what-is-packer>What is packer</a></li>
+<li><a href=#packer-template>Packer template</a></li>
+<li><a href=#final>Final</a></li>
 <li><a href=#references>References</a></li>
 </ul>
 </nav></div>
@@ -113,10 +115,32 @@ Cancel
 <h2 id=what-is-packer>What is packer</h2>
 <p>Packer is a utility that allows you to build virtual machine images so that you can define a golden image as code. Packer can be used to create images for almost all of the big cloud providers such as AWS, GCE, Azure and Digital Ocean, or can be used with locally installed hypervisors such as VMWare, Proxmox and a few others.</p>
 <p>To build an image with packer we need to define our image through a template file. The file uses the JSON format and comprises of 3 main sections that are used to define and prepare your image.</p>
-<p>Builders: Components of Packer that are able to create a machine image for a single platform. A builder is invoked as part of a build in order to create the actual resulting images.</p>
-<p>Provisioners: Install and configure software within a running machine prior to that machine being turned into a static image. Example provisioners include shell scripts, Chef, Puppet, etc.</p>
-<p>Post Processors: Take the result of a builder or another post-processor and process that to create a new artifact. Examples of post-processors are compress and upload to compress and upload artifacts respectively, etc.</p>
+<ul>
+<li>
+<p><a href=https://www.packer.io/docs/terminology#builders target=_blank rel="noopener noreferrer">Builders</a>: Components of Packer that are able to create a machine image for a single platform. A builder is invoked as part of a build in order to create the actual resulting images.</p>
+</li>
+<li>
+<p><a href=https://www.packer.io/docs/terminology#provisioners target=_blank rel="noopener noreferrer">Provisioners</a>: Install and configure software within a running machine prior to that machine being turned into a static image. Example provisioners include shell scripts, Chef, Puppet, etc.</p>
+</li>
+<li>
+<p><a href=https://www.packer.io/docs/terminology#post-processors target=_blank rel="noopener noreferrer">Post Processors</a>: Take the result of a builder or another post-processor and process that to create a new artifact. Examples of post-processors are compress and upload to compress and upload artifacts respectively, etc.</p>
+</li>
+</ul>
 <p>By using packer we can define our golden VM image as code so that we can easily build identically configured images on demand so that all your machines are running the same image and can also be easily updated to a new image when needed.</p>
+<h2 id=packer-template>Packer template</h2>
+<p>Now that we have our cloud-init enabled image on Proxmox, we can use Packer to create a template based off of this template.
+Ensure to set the scsi_controller=&ldquo;virtio-scsi-pci&rdquo; and qemu_agent=true.</p>
+<p>I&rsquo;d recommend adding the Proxmox variables to a var file.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>packer build --var-file<span class=o>=</span>./proxmox.pkvars.hcl --var <span class=s2>&#34;proxox_template_name=test-output-template&#34;</span> --var <span class=s2>&#34;proxmox_source_template=ubuntu2004-cloud&#34;</span> base.pkr.hcl
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=final>Final</h2>
+<p>Now that you&rsquo;ve created a template using packer from the base template, you can use Terraform to deploy that VM!</p>
 <h2 id=references>References</h2>
 <ol>
 <li><a href=https://dev.to/aaronktberry/creating-proxmox-templates-with-packer-1b35 target=_blank rel="noopener noreferrer">https://dev.to/aaronktberry/creating-proxmox-templates-with-packer-1b35</a></li>

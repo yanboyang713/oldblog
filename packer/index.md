@@ -14,13 +14,30 @@ Packer is a utility that allows you to build virtual machine images so that you 
 
 To build an image with packer we need to define our image through a template file. The file uses the JSON format and comprises of 3 main sections that are used to define and prepare your image.
 
-Builders: Components of Packer that are able to create a machine image for a single platform. A builder is invoked as part of a build in order to create the actual resulting images.
+-   [Builders](https://www.packer.io/docs/terminology#builders): Components of Packer that are able to create a machine image for a single platform. A builder is invoked as part of a build in order to create the actual resulting images.
 
-Provisioners: Install and configure software within a running machine prior to that machine being turned into a static image. Example provisioners include shell scripts, Chef, Puppet, etc.
+-   [Provisioners](https://www.packer.io/docs/terminology#provisioners): Install and configure software within a running machine prior to that machine being turned into a static image. Example provisioners include shell scripts, Chef, Puppet, etc.
 
-Post Processors: Take the result of a builder or another post-processor and process that to create a new artifact. Examples of post-processors are compress and upload to compress and upload artifacts respectively, etc.
+-   [Post Processors](https://www.packer.io/docs/terminology#post-processors): Take the result of a builder or another post-processor and process that to create a new artifact. Examples of post-processors are compress and upload to compress and upload artifacts respectively, etc.
 
 By using packer we can define our golden VM image as code so that we can easily build identically configured images on demand so that all your machines are running the same image and can also be easily updated to a new image when needed.
+
+
+## Packer template {#packer-template}
+
+Now that we have our cloud-init enabled image on Proxmox, we can use Packer to create a template based off of this template.
+Ensure to set the scsi\_controller="virtio-scsi-pci" and qemu\_agent=true.
+
+I'd recommend adding the Proxmox variables to a var file.
+
+```bash
+packer build --var-file=./proxmox.pkvars.hcl --var "proxox_template_name=test-output-template" --var "proxmox_source_template=ubuntu2004-cloud" base.pkr.hcl
+```
+
+
+## Final {#final}
+
+Now that you've created a template using packer from the base template, you can use Terraform to deploy that VM!
 
 
 ## References {#references}

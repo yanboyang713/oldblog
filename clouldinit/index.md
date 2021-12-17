@@ -1,4 +1,4 @@
-# Create Proxmox cloud-init template :cloud-init:Proxmox:
+# Create Proxmox cloud-init template
 
 
 ## Overview {#overview}
@@ -48,6 +48,8 @@ virt-customize --install qemu-guest-agent -a $IMG_NAME
 
 For best performance, virtio "hardware" should be used. Additionally, cloud-init requires a serial console and cloudinit IDE (CDROM) drive. We will set the network config to DHCP so that we get an IP address. Lastly, we will expand the template disk image size so we have space to install items later. It appears packer doesn't support doing this later.
 
+you will need to change the user name, password, and add the ssh public key so we can connect to the VM later using Ansible and terraform. update the variables and click on Regenerate Image
+
 ```bash
 TEMPL_NAME="ubuntu2004-cloud"
 VMID="9000"
@@ -67,23 +69,6 @@ qm template $VMID
 # Remove downloaded image
 rm $IMG_NAME
 ```
-
-
-## Step 4: Packer template {#step-4-packer-template}
-
-Now that we have our cloud-init enabled image on Proxmox, we can use Packer to create a template based off of this template.
-Ensure to set the scsi\_controller="virtio-scsi-pci" and qemu\_agent=true.
-
-I'd recommend adding the Proxmox variables to a var file.
-
-```bash
-packer build --var-file=./proxmox.pkvars.hcl --var "proxox_template_name=test-output-template" --var "proxmox_source_template=ubuntu2004-cloud" base.pkr.hcl
-```
-
-
-## Final {#final}
-
-Now that you've created a template using packer from the base template, you can use Terraform to deploy that VM!
 
 
 ## References {#references}

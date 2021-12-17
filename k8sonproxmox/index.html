@@ -6,22 +6,22 @@
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Build a Kubernetes cluster on Proxmox via Ansible and Terraform - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Build a Kubernetes cluster on Proxmox via Ansible and Terraform">
 <meta property="og:description" content="Overview Proxmox is an open-source hypervisor that have enterprise capabilities and a large community behind it.
-For Terraform and Ansible, i always like the idea of infrastructure as code (iac) and Terraform and Ansible just make it easy to accomplish.
-The idea here was to be able to spin up a k3s cluster with minimum effort so i can spin it up and down for ever project that i would like to run.">
+For Terraform and Ansible, I always like the idea of infrastructure as code (iac) and Terraform and Ansible just make it easy to accomplish.
+The idea here was to be able to spin up a k3s cluster with minimum effort so I can spin it up and down for ever project that I would like to run.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/k8sonproxmox/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-01T20:27:00+08:00">
-<meta property="article:modified_time" content="2021-12-17T02:33:34+00:00">
+<meta property="article:modified_time" content="2021-12-17T10:11:16+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Build a Kubernetes cluster on Proxmox via Ansible and Terraform">
 <meta name=twitter:description content="Overview Proxmox is an open-source hypervisor that have enterprise capabilities and a large community behind it.
-For Terraform and Ansible, i always like the idea of infrastructure as code (iac) and Terraform and Ansible just make it easy to accomplish.
-The idea here was to be able to spin up a k3s cluster with minimum effort so i can spin it up and down for ever project that i would like to run.">
+For Terraform and Ansible, I always like the idea of infrastructure as code (iac) and Terraform and Ansible just make it easy to accomplish.
+The idea here was to be able to spin up a k3s cluster with minimum effort so I can spin it up and down for ever project that I would like to run.">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/k8sonproxmox/><link rel=prev href=https://yanboyang.com/dwm/><link rel=next href=https://yanboyang.com/terraformandansible/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Build a Kubernetes cluster on Proxmox via Ansible and Terraform","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/k8sonproxmox\/"},"genre":"posts","wordcount":104,"url":"https:\/\/yanboyang.com\/k8sonproxmox\/","datePublished":"2021-12-01T20:27:00+08:00","dateModified":"2021-12-17T02:33:34+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/k8sonproxmox/><link rel=prev href=https://yanboyang.com/dwm/><link rel=next href=https://yanboyang.com/terraformandansible/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Build a Kubernetes cluster on Proxmox via Ansible and Terraform","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/k8sonproxmox\/"},"genre":"posts","keywords":"k8s, proxmox, ansible, terraform","wordcount":465,"url":"https:\/\/yanboyang.com\/k8sonproxmox\/","datePublished":"2021-12-01T20:27:00+08:00","dateModified":"2021-12-17T10:11:16+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -95,8 +95,8 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Build a Kubernetes cluster on Proxmox via Ansible and Terraform</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/cluster/><i class="far fa-folder fa-fw"></i>Cluster</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-01>2021-12-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;104 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-01>2021-12-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;465 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -107,7 +107,13 @@ Cancel
 <li><a href=#overview>Overview</a></li>
 <li><a href=#prerequires>Prerequires</a></li>
 <li><a href=#system-requirements>System requirements</a></li>
-<li><a href=#proxmox-setup>Proxmox setup</a></li>
+<li><a href=#step-1-create-cloud-init-vm-template>Step 1: Create Cloud-init VM template</a></li>
+<li><a href=#step-2-generating-public-private-key-pair>Step 2: Generating public/private key pair</a></li>
+<li><a href=#step-3-add-public-key-user-name-and-password-to-template>Step 3: Add public key, User name and Password to template</a></li>
+<li><a href=#step-2-terraform-setup>Step 2: terraform setup</a></li>
+<li><a href=#step-3-ansible-setup>Step 3: Ansible setup</a></li>
+<li><a href=#step-4-kubeconfig>Step 4: Kubeconfig</a></li>
+<li><a href=#summary>Summary</a></li>
 <li><a href=#references>References</a></li>
 </ul>
 </nav></div>
@@ -115,8 +121,8 @@ Cancel
 </figure>
 <h2 id=overview>Overview</h2>
 <p>Proxmox is an open-source hypervisor that have enterprise capabilities and a large community behind it.</p>
-<p>For Terraform and Ansible, i always like the idea of infrastructure as code (iac) and Terraform and Ansible just make it easy to accomplish.</p>
-<p>The idea here was to be able to spin up a k3s cluster with minimum effort so i can spin it up and down for ever project that i would like to run.</p>
+<p>For Terraform and Ansible, I always like the idea of infrastructure as code (iac) and Terraform and Ansible just make it easy to accomplish.</p>
+<p>The idea here was to be able to spin up a k3s cluster with minimum effort so I can spin it up and down for ever project that I would like to run.</p>
 <h2 id=prerequires>Prerequires</h2>
 <ol>
 <li>read <a href=https://yanboyang.com/terraform/ rel>DevOps/Terraform Beginner&rsquo;s Guide</a></li>
@@ -129,9 +135,129 @@ Cancel
 <li><a href=https://learn.hashicorp.com/tutorials/terraform/install-cli target=_blank rel="noopener noreferrer">Terraform</a> installed</li>
 <li><a href=https://www.proxmox.com/en/proxmox-ve target=_blank rel="noopener noreferrer">Proxmox</a> server</li>
 </ul>
-<h2 id=proxmox-setup>Proxmox setup</h2>
+<h2 id=step-1-create-cloud-init-vm-template>Step 1: Create Cloud-init VM template</h2>
+<p>Please, following the step by step document on <a href=https://yanboyang.com/clouldinit/ rel>Cluster/Create Proxmox cloud-init template</a></p>
+<h2 id=step-2-generating-public-private-key-pair>Step 2: Generating public/private key pair</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ssh-keygen -t rsa -f ~/.ssh/k3s
+<span class=c1># Print Public Key</span>
+cat /root/.ssh/k3s.pub
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=step-3-add-public-key-user-name-and-password-to-template>Step 3: Add public key, User name and Password to template</h2>
+<p>This is a example below:
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1639731593/PVE/pve-cloud-init%5Fef96tq.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1639731593/PVE/pve-cloud-init%5Fef96tq.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1639731593/PVE/pve-cloud-init%5Fef96tq.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1639731593/PVE/pve-cloud-init%5Fef96tq.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1639731593/PVE/pve-cloud-init%5Fef96tq.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1639731593/PVE/pve-cloud-init%5Fef96tq.png></p>
+<p>When you done, click <strong>Regenerate Image</strong>.</p>
+<h2 id=step-2-terraform-setup>Step 2: terraform setup</h2>
+<p>Clone the repo to get all the files and cd into the folder.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git clone https://github.com/NatiSayada/k3s-proxmox-terraform-ansible
+<span class=nb>cd</span> k3s-proxmox-terraform-ansible
+</code></pre></td></tr></table>
+</div>
+</div><p>Our terraform also creates a dynamic host file for Ansible, so we need to create the files first.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>cp -R inventory/sample inventory/my-cluster
+</code></pre></td></tr></table>
+</div>
+</div><p>Rename the file terraform/vars.sample to terraform/vars.tf and update all the vars. there you can select how many nodes would you like to have on your cluster and configure the name of the base image.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>
+</code></pre></td></tr></table>
+</div>
+</div><p>to run the Terrafom, you will need to cd into terraform and run:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>terraform init
+terraform plan
+terraform apply
+</code></pre></td></tr></table>
+</div>
+</div><p>It can take some time to create the servers on Proxmox but you can monitor them over Proxmox. it should look like this now:</p>
+<p>Add alt text
+<a href=https://miro.medium.com/max/432/0*vnMepxEQgFND4dOw target=_blank rel="noopener noreferrer">https://miro.medium.com/max/432/0*vnMepxEQgFND4dOw</a></p>
+<h2 id=step-3-ansible-setup>Step 3: Ansible setup</h2>
+<p>First, update the var file in inventory/my-cluster/group_vars/all.yml and update the user name that you’re selected in the cloud-init setup.
+after you run the Terrafom file, your host file should look like this:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=p>[</span><span class=l>master]</span><span class=w>
+</span><span class=w></span><span class=m>192.168.3.200</span><span class=w> </span><span class=l>Ansible_ssh_private_key_file=~/.ssh/proxk3s</span><span class=w>
+</span><span class=w></span><span class=p>[</span><span class=l>node]</span><span class=w>
+</span><span class=w></span><span class=m>192.168.3.202</span><span class=w> </span><span class=l>Ansible_ssh_private_key_file=~/.ssh/proxk3s</span><span class=w>
+</span><span class=w></span><span class=m>192.168.3.201</span><span class=w> </span><span class=l>Ansible_ssh_private_key_file=~/.ssh/proxk3s</span><span class=w>
+</span><span class=w></span><span class=m>192.168.3.198</span><span class=w> </span><span class=l>Ansible_ssh_private_key_file=~/.ssh/proxk3s</span><span class=w>
+</span><span class=w></span><span class=m>192.168.3.203</span><span class=w> </span><span class=l>Ansible_ssh_private_key_file=~/.ssh/proxk3s</span><span class=w>
+</span><span class=w></span><span class=p>[</span><span class=l>k3s_cluster:children]</span><span class=w>
+</span><span class=w></span><span class=l>master</span><span class=w>
+</span><span class=w></span><span class=l>node</span><span class=w>
+</span></code></pre></td></tr></table>
+</div>
+</div><p>Start provisioning of the cluster using the following command:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>Ansible-playbook site.yml -i inventory/my-cluster/hosts.ini
+</code></pre></td></tr></table>
+</div>
+</div><p>this playbook will install k3s in 644 mode and helm.
+the 644 mode is the permission needed for the /etc/rancher/k3s/k3s.yaml config file so it can be imported to rancher. so if you would also like to check out rancher.. you are good to go!</p>
+<h2 id=step-4-kubeconfig>Step 4: Kubeconfig</h2>
+<p>To get access to your Kubernetes cluster just copy the k3s yaml file to your kube config file and change the ip address of the server</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>scp debian@master_ip:/etc/rancher/k3s/k3s.yaml ~/.kube/config
+</code></pre></td></tr></table>
+</div>
+</div><p>run kubectl get nodes to check you cluster nodes status
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://miro.medium.com/max/636/1*JgAE4EKXnCL-bEp7p0kOkg.png data-srcset="https://miro.medium.com/max/636/1*JgAE4EKXnCL-bEp7p0kOkg.png, https://miro.medium.com/max/636/1*JgAE4EKXnCL-bEp7p0kOkg.png 1.5x, https://miro.medium.com/max/636/1*JgAE4EKXnCL-bEp7p0kOkg.png 2x" data-sizes=auto alt=https://miro.medium.com/max/636/1*JgAE4EKXnCL-bEp7p0kOkg.png title=https://miro.medium.com/max/636/1*JgAE4EKXnCL-bEp7p0kOkg.png></p>
+<h2 id=summary>Summary</h2>
+<p>Now you should have a full blown k3s cluster running on Proxmox! all you have left is to start running some deployments.</p>
 <h2 id=references>References</h2>
-<p>1.<a href=https://medium.com/@ssnetanel/build-a-kubernetes-cluster-using-k3s-on-proxmox-via-ansible-and-terraform-c97c7974d4a5 target=_blank rel="noopener noreferrer">https://medium.com/@ssnetanel/build-a-kubernetes-cluster-using-k3s-on-proxmox-via-ansible-and-terraform-c97c7974d4a5</a></p>
+<ol>
+<li><a href=https://medium.com/@ssnetanel/build-a-kubernetes-cluster-using-k3s-on-proxmox-via-ansible-and-terraform-c97c7974d4a5 target=_blank rel="noopener noreferrer">https://medium.com/@ssnetanel/build-a-kubernetes-cluster-using-k3s-on-proxmox-via-ansible-and-terraform-c97c7974d4a5</a></li>
+</ol>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
@@ -145,12 +271,12 @@ Cancel
 <a class=link-to-markdown href=https://yanboyang.com/k8sonproxmox/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/k8sonproxmox/ data-title="Build a Kubernetes cluster on Proxmox via Ansible and Terraform"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/k8sonproxmox/><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/k8sonproxmox/ data-title="Build a Kubernetes cluster on Proxmox via Ansible and Terraform" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/k8sonproxmox/ data-title="Build a Kubernetes cluster on Proxmox via Ansible and Terraform"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/k8sonproxmox/ data-title="Build a Kubernetes cluster on Proxmox via Ansible and Terraform"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/k8sonproxmox/ data-title="Build a Kubernetes cluster on Proxmox via Ansible and Terraform" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/k8sonproxmox/ data-title="Build a Kubernetes cluster on Proxmox via Ansible and Terraform" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/k8sonproxmox/ data-title="Build a Kubernetes cluster on Proxmox via Ansible and Terraform"><i class="fab fa-evernote fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/k8sonproxmox/ data-title="Build a Kubernetes cluster on Proxmox via Ansible and Terraform" data-hashtags=k8s,proxmox,ansible,terraform><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/k8sonproxmox/ data-hashtag=k8s><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/k8sonproxmox/ data-title="Build a Kubernetes cluster on Proxmox via Ansible and Terraform" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/k8sonproxmox/ data-title="Build a Kubernetes cluster on Proxmox via Ansible and Terraform"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/k8sonproxmox/ data-title="Build a Kubernetes cluster on Proxmox via Ansible and Terraform"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/k8sonproxmox/ data-title="Build a Kubernetes cluster on Proxmox via Ansible and Terraform" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/k8sonproxmox/ data-title="Build a Kubernetes cluster on Proxmox via Ansible and Terraform" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/k8sonproxmox/ data-title="Build a Kubernetes cluster on Proxmox via Ansible and Terraform"><i class="fab fa-evernote fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/k8s/>k8s</a>,&nbsp;<a href=https://yanboyang.com/tags/proxmox/>Proxmox</a>,&nbsp;<a href=https://yanboyang.com/tags/ansible/>Ansible</a>,&nbsp;<a href=https://yanboyang.com/tags/terraform/>terraform</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span>
 </section>

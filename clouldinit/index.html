@@ -4,22 +4,22 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Create Proxmox cloud-init template :cloud-init:Proxmox: - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Create Proxmox cloud-init template :cloud-init:Proxmox:">
+<title>Create Proxmox cloud-init template - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Create Proxmox cloud-init template">
 <meta property="og:description" content="Overview In this article, I&rsquo;ll demonstrate how to create a cloud-init enabled Ubuntu 20.04 LTS base image to use on Proxmox VE.
 Cloud Native Image The tradition packer builder to build a base image from an ISO file. Modern Linux distributions are increasingly moving away from this install method and preseed files. Rather, disk images are provided with the OS pre-installed, and configuration is performed via cloud-init. We will create a Proxmox KVM base image using Ubuntu&rsquo;s KVM cloud image.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/clouldinit/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-03T18:27:00+08:00">
-<meta property="article:modified_time" content="2021-12-17T02:33:34+00:00">
+<meta property="article:modified_time" content="2021-12-17T10:11:16+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
-<meta name=twitter:title content="Create Proxmox cloud-init template :cloud-init:Proxmox:">
+<meta name=twitter:title content="Create Proxmox cloud-init template">
 <meta name=twitter:description content="Overview In this article, I&rsquo;ll demonstrate how to create a cloud-init enabled Ubuntu 20.04 LTS base image to use on Proxmox VE.
 Cloud Native Image The tradition packer builder to build a base image from an ISO file. Modern Linux distributions are increasingly moving away from this install method and preseed files. Rather, disk images are provided with the OS pre-installed, and configuration is performed via cloud-init. We will create a Proxmox KVM base image using Ubuntu&rsquo;s KVM cloud image.">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/clouldinit/><link rel=prev href=https://yanboyang.com/ansible/><link rel=next href=https://yanboyang.com/chronproxmox/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Create Proxmox cloud-init template :cloud-init:Proxmox:","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/clouldinit\/"},"genre":"posts","wordcount":526,"url":"https:\/\/yanboyang.com\/clouldinit\/","datePublished":"2021-12-03T18:27:00+08:00","dateModified":"2021-12-17T02:33:34+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/clouldinit/><link rel=prev href=https://yanboyang.com/ansible/><link rel=next href=https://yanboyang.com/chronproxmox/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Create Proxmox cloud-init template","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/clouldinit\/"},"genre":"posts","keywords":"cloud, init, Proxmox","wordcount":487,"url":"https:\/\/yanboyang.com\/clouldinit\/","datePublished":"2021-12-03T18:27:00+08:00","dateModified":"2021-12-17T10:11:16+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -91,9 +91,9 @@ Cancel
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Create Proxmox cloud-init template :cloud-init:Proxmox:</h1><div class=post-meta>
+</div><article class="page single"><h1 class="single-title animated flipInX">Create Proxmox cloud-init template</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/cluster/><i class="far fa-folder fa-fw"></i>Cluster</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-03>2021-12-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;526 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-03>2021-12-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;487 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
@@ -108,8 +108,6 @@ Cancel
 <li><a href=#step-1-download-the-image>Step 1: Download the image</a></li>
 <li><a href=#step-2-add-qemu-guest-agent>Step 2: Add QEMU Guest Agent</a></li>
 <li><a href=#step-3-create-a-vm-in-proxmox-with-required-settings-and-convert-to-template>Step 3: Create a VM in Proxmox with required settings and convert to template</a></li>
-<li><a href=#step-4-packer-template>Step 4: Packer template</a></li>
-<li><a href=#final>Final</a></li>
 <li><a href=#references>References</a></li>
 </ul>
 </nav></div>
@@ -152,6 +150,7 @@ virt-customize --install qemu-guest-agent -a <span class=nv>$IMG_NAME</span>
 </div>
 </div><h2 id=step-3-create-a-vm-in-proxmox-with-required-settings-and-convert-to-template>Step 3: Create a VM in Proxmox with required settings and convert to template</h2>
 <p>For best performance, virtio &ldquo;hardware&rdquo; should be used. Additionally, cloud-init requires a serial console and cloudinit IDE (CDROM) drive. We will set the network config to DHCP so that we get an IP address. Lastly, we will expand the template disk image size so we have space to install items later. It appears packer doesn&rsquo;t support doing this later.</p>
+<p>you will need to change the user name, password, and add the ssh public key so we can connect to the VM later using Ansible and terraform. update the variables and click on Regenerate Image</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
@@ -192,21 +191,7 @@ qm template <span class=nv>$VMID</span>
 rm <span class=nv>$IMG_NAME</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id=step-4-packer-template>Step 4: Packer template</h2>
-<p>Now that we have our cloud-init enabled image on Proxmox, we can use Packer to create a template based off of this template.
-Ensure to set the scsi_controller=&ldquo;virtio-scsi-pci&rdquo; and qemu_agent=true.</p>
-<p>I&rsquo;d recommend adding the Proxmox variables to a var file.</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>packer build --var-file<span class=o>=</span>./proxmox.pkvars.hcl --var <span class=s2>&#34;proxox_template_name=test-output-template&#34;</span> --var <span class=s2>&#34;proxmox_source_template=ubuntu2004-cloud&#34;</span> base.pkr.hcl
-</code></pre></td></tr></table>
-</div>
-</div><h2 id=final>Final</h2>
-<p>Now that you&rsquo;ve created a template using packer from the base template, you can use Terraform to deploy that VM!</p>
-<h2 id=references>References</h2>
+</div><h2 id=references>References</h2>
 <ol>
 <li><a href=https://gist.github.com/chriswayg/43fbea910e024cbe608d7dcb12cb8466 target=_blank rel="noopener noreferrer">https://gist.github.com/chriswayg/43fbea910e024cbe608d7dcb12cb8466</a></li>
 <li><a href=https://whattheserver.com/proxmox-cloud-init-os-template-creation/ target=_blank rel="noopener noreferrer">https://whattheserver.com/proxmox-cloud-init-os-template-creation/</a></li>
@@ -228,12 +213,12 @@ Ensure to set the scsi_controller=&ldquo;virtio-scsi-pci&rdquo; and qemu_agent=t
 <a class=link-to-markdown href=https://yanboyang.com/clouldinit/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/clouldinit/ data-title="Create Proxmox cloud-init template :cloud-init:Proxmox:"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/clouldinit/><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/clouldinit/ data-title="Create Proxmox cloud-init template :cloud-init:Proxmox:" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/clouldinit/ data-title="Create Proxmox cloud-init template :cloud-init:Proxmox:"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/clouldinit/ data-title="Create Proxmox cloud-init template :cloud-init:Proxmox:"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/clouldinit/ data-title="Create Proxmox cloud-init template :cloud-init:Proxmox:" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/clouldinit/ data-title="Create Proxmox cloud-init template :cloud-init:Proxmox:" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/clouldinit/ data-title="Create Proxmox cloud-init template :cloud-init:Proxmox:"><i class="fab fa-evernote fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/clouldinit/ data-title="Create Proxmox cloud-init template" data-hashtags=cloud,init,Proxmox><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/clouldinit/ data-hashtag=cloud><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/clouldinit/ data-title="Create Proxmox cloud-init template" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/clouldinit/ data-title="Create Proxmox cloud-init template"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/clouldinit/ data-title="Create Proxmox cloud-init template"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/clouldinit/ data-title="Create Proxmox cloud-init template" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/clouldinit/ data-title="Create Proxmox cloud-init template" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/clouldinit/ data-title="Create Proxmox cloud-init template"><i class="fab fa-evernote fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/cloud/>cloud</a>,&nbsp;<a href=https://yanboyang.com/tags/init/>init</a>,&nbsp;<a href=https://yanboyang.com/tags/proxmox/>Proxmox</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span>
 </section>
