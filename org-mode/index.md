@@ -183,19 +183,10 @@ The content inside will NOT export.
 ```
 
 
-## Source Code Insert &amp; Running {#source-code-insert-and-running}
-
-Here is an format example:
-
-```text
-#+BEGIN_SRC language
-#+END_SRC
-```
-
-
 ## Post-reading {#post-reading}
 
 1.  [Emacs/Best practices for using Emacs org-mode as a day-planner/scheduler/calendar]({{< relref "orgPlanning" >}})
+2.  [Emacs/Using Emacs Org-Babel Mode to Write Literate Programming Documents]({{< relref "orgBabel" >}})
 
 
 ## Reference List {#reference-list}
