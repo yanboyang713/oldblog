@@ -287,7 +287,7 @@ The content inside will NOT export.
 1. https://blog.csdn.net/sunny0660/article/details/104078734
 
 
-** DONE Using Emacs Org-Babel Mode to Write Literate Programming Documents
+** DONE Using Emacs Org-Babel Mode to Write Literate Programming Documents :babel:org:emacs:literate:programming:
 CLOSED: [2021-12-17 Fri 10:29]
 :PROPERTIES:
 :EXPORT_FILE_NAME: orgBabel
@@ -296,6 +296,7 @@ CLOSED: [2021-12-17 Fri 10:29]
 :END:
 
 *** Introduction
+We introduce the use of emacs org-babel model in this document. Emacs Org-Babel mode is a literate programming tool (aka. active document), which can embed multiple programming languages, inlcuding R, Python, C/C++ in one document. Babel has ability to execute source code within Org-mode documents.
 
 *** Pre-reading
 1. [[id:93eddd5b-1e6c-4107-9c04-2d68968a01cc][Emacs/Getting Started Org-mode on Emacs]]
@@ -307,6 +308,12 @@ Here is an format example:
 #+BEGIN_SRC language
 #+END_SRC
 #+end_example
+
+
+*** Reference List
+1. https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-C.html
+2. https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-R.html
+3. https://orgmode.org/worg/org-contrib/babel/how-to-use-Org-Babel-for-R.html
 
 
 ** DONE Best practices for using Emacs org-mode as a day-planner/scheduler/calendar :Emacs:org:planning:
@@ -1445,7 +1452,7 @@ However, this system starts to break down when faced with virtualization servers
 Thankfully there's a way around this. In Proxmox, you can make your virtual bridge VLAN-aware so you can pass multiple VLANs through to your Proxmox server using only a single physical port. The individual VMs can then be configured to use whichever VLAN you choose.
 
 
-** DONE Create Proxmox cloud-init template :cloud-init:Proxmox:
+** DONE Create Proxmox cloud-init template :cloud:init:Proxmox:
 CLOSED: [2021-12-03 Fri 18:27]
 :PROPERTIES:
 :EXPORT_FILE_NAME: clouldInit
@@ -1488,6 +1495,8 @@ virt-customize --install qemu-guest-agent -a $IMG_NAME
 *** Step 3: Create a VM in Proxmox with required settings and convert to template
 For best performance, virtio "hardware" should be used. Additionally, cloud-init requires a serial console and cloudinit IDE (CDROM) drive. We will set the network config to DHCP so that we get an IP address. Lastly, we will expand the template disk image size so we have space to install items later. It appears packer doesn't support doing this later.
 
+you will need to change the user name, password, and add the ssh public key so we can connect to the VM later using Ansible and terraform. update the variables and click on Regenerate Image
+
 #+begin_src bash
 TEMPL_NAME="ubuntu2004-cloud"
 VMID="9000"
@@ -1507,19 +1516,6 @@ qm template $VMID
 # Remove downloaded image
 rm $IMG_NAME
 #+end_src
-
-*** Step 4: Packer template
-Now that we have our cloud-init enabled image on Proxmox, we can use Packer to create a template based off of this template.
-Ensure to set the scsi_controller="virtio-scsi-pci" and qemu_agent=true.
-
-I'd recommend adding the Proxmox variables to a var file.
-
-#+begin_src bash
-packer build --var-file=./proxmox.pkvars.hcl --var "proxox_template_name=test-output-template" --var "proxmox_source_template=ubuntu2004-cloud" base.pkr.hcl
-#+end_src
-
-*** Final
-Now that you've created a template using packer from the base template, you can use Terraform to deploy that VM!
 
 *** References
 1. https://gist.github.com/chriswayg/43fbea910e024cbe608d7dcb12cb8466
@@ -1555,11 +1551,24 @@ To build an image with packer we need to define our image through a template fil
 
 By using packer we can define our golden VM image as code so that we can easily build identically configured images on demand so that all your machines are running the same image and can also be easily updated to a new image when needed.
 
+*** Packer template
+Now that we have our cloud-init enabled image on Proxmox, we can use Packer to create a template based off of this template.
+Ensure to set the scsi_controller="virtio-scsi-pci" and qemu_agent=true.
+
+I'd recommend adding the Proxmox variables to a var file.
+
+#+begin_src bash
+packer build --var-file=./proxmox.pkvars.hcl --var "proxox_template_name=test-output-template" --var "proxmox_source_template=ubuntu2004-cloud" base.pkr.hcl
+#+end_src
+
+*** Final
+Now that you've created a template using packer from the base template, you can use Terraform to deploy that VM!
+
 *** References
 1. https://dev.to/aaronktberry/creating-proxmox-templates-with-packer-1b35
 
 
-** DONE Build a Kubernetes cluster on Proxmox via Ansible and Terraform
+** DONE Build a Kubernetes cluster on Proxmox via Ansible and Terraform :k8s:proxmox:ansible:terraform:
 CLOSED: [2021-12-01 Wed 20:27]
 :PROPERTIES:
 :EXPORT_FILE_NAME: k8sOnProxmox
@@ -1572,20 +1581,99 @@ CLOSED: [2021-12-01 Wed 20:27]
 *** Overview
 Proxmox is an open-source hypervisor that have enterprise capabilities and a large community behind it.
 
-For Terraform and Ansible, i always like the idea of infrastructure as code (iac) and Terraform and Ansible just make it easy to accomplish.
+For Terraform and Ansible, I always like the idea of infrastructure as code (iac) and Terraform and Ansible just make it easy to accomplish.
 
-The idea here was to be able to spin up a k3s cluster with minimum effort so i can spin it up and down for ever project that i would like to run.
+The idea here was to be able to spin up a k3s cluster with minimum effort so I can spin it up and down for ever project that I would like to run.
+
 *** Prerequires
 1. read [[id:ee79f2a9-445b-4756-9853-e0819fda588c][DevOps/Terraform Beginner's Guide]]
 2. read [[id:5012520e-c7d0-4b8e-8575-6ecf70e819b6][DevOps/Ansible Beginner's Guide]]
 3. read [[id:632ee4dd-5bdd-4103-bab1-b3c1110aeac6][Cluster/Create Proxmox cloud-init template]]
+
 *** System requirements
 + The deployment environment must have [[https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html][Ansible]] 2.4.0+
 + [[https://learn.hashicorp.com/tutorials/terraform/install-cli][Terraform]] installed
 + [[https://www.proxmox.com/en/proxmox-ve][Proxmox]] server
 
-*** Proxmox setup
+*** Step 1: Create Cloud-init VM template
+Please, following the step by step document on [[id:632ee4dd-5bdd-4103-bab1-b3c1110aeac6][Cluster/Create Proxmox cloud-init template]]
+*** Step 2: Generating public/private key pair
+#+begin_src bash
+ssh-keygen -t rsa -f ~/.ssh/k3s
+# Print Public Key
+cat /root/.ssh/k3s.pub
+#+end_src
+*** Step 3: Add public key, User name and Password to template
+This is a example below:
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1639731593/PVE/pve-cloud-init_ef96tq.png]]
 
+When you done, click *Regenerate Image*.
+
+*** Step 2: terraform setup
+Clone the repo to get all the files and cd into the folder.
+#+begin_src bash
+git clone https://github.com/NatiSayada/k3s-proxmox-terraform-ansible
+cd k3s-proxmox-terraform-ansible
+#+end_src
+
+Our terraform also creates a dynamic host file for Ansible, so we need to create the files first.
+
+#+begin_src bash
+cp -R inventory/sample inventory/my-cluster
+#+end_src
+
+Rename the file terraform/vars.sample to terraform/vars.tf and update all the vars. there you can select how many nodes would you like to have on your cluster and configure the name of the base image.
+to run the Terrafom, you will need to cd into terraform and run:
+
+#+begin_src bash
+terraform init
+terraform plan
+terraform apply
+#+end_src
+
+It can take some time to create the servers on Proxmox but you can monitor them over Proxmox. it should look like this now:
+
+Add alt text
+[[https://miro.medium.com/max/432/0*vnMepxEQgFND4dOw]]
+
+*** Step 3: Ansible setup
+First, update the var file in inventory/my-cluster/group_vars/all.yml and update the user name that you’re selected in the cloud-init setup.
+after you run the Terrafom file, your host file should look like this:
+
+#+begin_src yml
+[master]
+192.168.3.200 Ansible_ssh_private_key_file=~/.ssh/proxk3s
+[node]
+192.168.3.202 Ansible_ssh_private_key_file=~/.ssh/proxk3s
+192.168.3.201 Ansible_ssh_private_key_file=~/.ssh/proxk3s
+192.168.3.198 Ansible_ssh_private_key_file=~/.ssh/proxk3s
+192.168.3.203 Ansible_ssh_private_key_file=~/.ssh/proxk3s
+[k3s_cluster:children]
+master
+node
+#+end_src
+
+Start provisioning of the cluster using the following command:
+
+#+begin_src bash
+Ansible-playbook site.yml -i inventory/my-cluster/hosts.ini
+#+end_src
+
+this playbook will install k3s in 644 mode and helm.
+the 644 mode is the permission needed for the /etc/rancher/k3s/k3s.yaml config file so it can be imported to rancher. so if you would also like to check out rancher.. you are good to go!
+
+*** Step 4: Kubeconfig
+To get access to your Kubernetes cluster just copy the k3s yaml file to your kube config file and change the ip address of the server
+
+#+begin_src bash
+scp debian@master_ip:/etc/rancher/k3s/k3s.yaml ~/.kube/config
+#+end_src
+
+run kubectl get nodes to check you cluster nodes status
+[[https://miro.medium.com/max/636/1*JgAE4EKXnCL-bEp7p0kOkg.png]]
+
+*** Summary
+Now you should have a full blown k3s cluster running on Proxmox! all you have left is to start running some deployments.
 
 *** References
 1. https://medium.com/@ssnetanel/build-a-kubernetes-cluster-using-k3s-on-proxmox-via-ansible-and-terraform-c97c7974d4a5
@@ -1802,6 +1890,83 @@ I hope the above gives you an idea about how you can get started with Terraform.
 *** Related/References
 
 
+** DONE Install Terrafom with Quick start tutorial :Terraform:tutorial:
+CLOSED: [2021-12-17 Fri 17:39]
+:PROPERTIES:
+:EXPORT_FILE_NAME: terraformInstall
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Pre-reading
+1. [[id:807c90ce-9dfd-44be-861b-b2893282ed5f][DevOps/DevOps Beginner's Guide]]
+2. [[id:ee79f2a9-445b-4756-9853-e0819fda588c][DevOps/Terraform Beginner's Guide]]
+3. [[id:54145bec-00b1-4044-9f97-8a9ddd6df50f][DevOps/The comparison and introduction between Terraform and Ansible]]
+
+*** Install
+**** Arch Linux
+#+begin_src bash
+yay -S terraform
+#+end_src
+
+**** Ubuntu/Debian
+Ensure that your system is up to date, and you have the gnupg, software-properties-common, and curl packages installed. You will use these packages to verify HashiCorp's GPG signature, and install HashiCorp's Debian package repository.
+#+begin_src bash
+sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
+#+end_src
+
+Add the HashiCorp GPG key.
+
+#+begin_src bash
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+#+end_src
+
+Add the official HashiCorp Linux repository.
+#+begin_src bash
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+#+end_src
+
+Update to add the repository, and install the Terraform CLI.
+#+begin_src bash
+sudo apt-get update && sudo apt-get install terraform
+#+end_src
+
+*TIP*: Now that you have added the HashiCorp repository, you can install Vault, Consul, Nomad and Packer with the same command.
+
+
+*** Verify the installation
+Verify that the installation worked by opening a new terminal session and listing Terraform's available subcommands.
+
+#+begin_src bash
+terraform -help
+#+end_src
+
+Add any subcommand to terraform -help to learn more about what it does and available options.
+
+#+begin_src bash
+terraform -help plan
+#+end_src
+
+*** Troubleshoot
+If you get an error that *terraform* could not be found, your *PATH* environment variable was not set up properly. Please go back and ensure that your *PATH* variable contains the directory where Terraform was installed.
+
+*** Enable tab completion for ZSH :ZSH:zsh:
+You can enable tab completion for Terraform commands. To enable autocomplete, first ensure that a config file exists for your ZSH shell
+
+#+begin_src bash
+touch ~/.zshrc
+#+end_src
+
+Then install the autocomplete package.
+
+#+begin_src file
+terraform -install-autocomplete
+#+end_src
+
+Once the autocomplete support is installed, you will need to restart your shell.
+
+*** Reference List
+1. https://learn.hashicorp.com/tutorials/terraform/install-cli
+
 ** DONE Ansible Beginner's Guide :Ansible:
 CLOSED: [2021-12-02 Thu 17:58]
 :PROPERTIES:
@@ -1925,6 +2090,7 @@ CLOSED: [2021-12-02 Thu 10:53]
 :PROPERTIES:
 :EXPORT_FILE_NAME: terraformAndAnsible
 :EXPORT_OPTIONS: author:nil
+:ID:       54145bec-00b1-4044-9f97-8a9ddd6df50f
 :END:
 *** Overview
 The Terraform vs. Ansible battle continues to escalate as the DevOps environment focuses more on automation and orchestration. These two tools help in automating configurations and deploying infrastructure. Terraform offers to deploy Infrastructure as a Code, helps in readability and lift and shift deployments. Ansible is a configuration management tool for automating system configuration and management.
