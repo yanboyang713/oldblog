@@ -1577,7 +1577,6 @@ CLOSED: [2021-12-01 Wed 20:27]
 
 [[https://miro.medium.com/max/1400/1*jL6SE1nSaPQb4EOWGnbZpw.jpeg]]
 
-
 *** Overview
 Proxmox is an open-source hypervisor that have enterprise capabilities and a large community behind it.
 
@@ -1589,10 +1588,11 @@ The idea here was to be able to spin up a k3s cluster with minimum effort so I c
 1. read [[id:ee79f2a9-445b-4756-9853-e0819fda588c][DevOps/Terraform Beginner's Guide]]
 2. read [[id:5012520e-c7d0-4b8e-8575-6ecf70e819b6][DevOps/Ansible Beginner's Guide]]
 3. read [[id:632ee4dd-5bdd-4103-bab1-b3c1110aeac6][Cluster/Create Proxmox cloud-init template]]
+4. read [[id:18169cab-9be7-45ba-8cbb-31379873f0c4][DevOps/Install Terrafom with Quick start tutorial]]
 
 *** System requirements
 + The deployment environment must have [[https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html][Ansible]] 2.4.0+
-+ [[https://learn.hashicorp.com/tutorials/terraform/install-cli][Terraform]] installed
++ Following this article: [[id:18169cab-9be7-45ba-8cbb-31379873f0c4][DevOps/Install Terrafom with Quick start tutorial]] install [[https://learn.hashicorp.com/tutorials/terraform/install-cli][Terraform]].
 + [[https://www.proxmox.com/en/proxmox-ve][Proxmox]] server
 
 *** Step 1: Create Cloud-init VM template
@@ -1895,6 +1895,7 @@ CLOSED: [2021-12-17 Fri 17:39]
 :PROPERTIES:
 :EXPORT_FILE_NAME: terraformInstall
 :EXPORT_OPTIONS: author:nil
+:ID:       18169cab-9be7-45ba-8cbb-31379873f0c4
 :END:
 
 *** Pre-reading
