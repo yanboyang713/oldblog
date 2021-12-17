@@ -1,6 +1,7 @@
 ---
-title: "Getting Started with Doom Emacs :Emacs:Doom Emacs:"
+title: "Getting Started with Doom Emacs"
 date: 2021-10-05T03:44:00+08:00
+tags: ["Doom", "Emacs"]
 categories: ["Emacs"]
 draft: false
 ---
