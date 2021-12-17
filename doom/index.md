@@ -1,4 +1,4 @@
-# Getting Started with Doom Emacs :Emacs:Doom Emacs:
+# Getting Started with Doom Emacs
 
 
 ## Prerequisites {#prerequisites}
