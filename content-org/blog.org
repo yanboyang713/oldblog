@@ -279,6 +279,27 @@ The content inside will NOT export.
 # +END_COMMENT
 #+end_example
 
+*** Post-reading
+1. [[id:9b54ba0f-8677-428b-bf01-0fc8aa44e1e3][Emacs/Best practices for using Emacs org-mode as a day-planner/scheduler/calendar]]
+2. [[id:44cd9edd-924b-49e1-8a91-5f85961165c4][Emacs/Using Emacs Org-Babel Mode to Write Literate Programming Documents]]
+
+*** Reference List
+1. https://blog.csdn.net/sunny0660/article/details/104078734
+
+
+** DONE Using Emacs Org-Babel Mode to Write Literate Programming Documents
+CLOSED: [2021-12-17 Fri 10:29]
+:PROPERTIES:
+:EXPORT_FILE_NAME: orgBabel
+:EXPORT_OPTIONS: author:nil
+:ID:       44cd9edd-924b-49e1-8a91-5f85961165c4
+:END:
+
+*** Introduction
+
+*** Pre-reading
+1. [[id:93eddd5b-1e6c-4107-9c04-2d68968a01cc][Emacs/Getting Started Org-mode on Emacs]]
+
 *** Source Code Insert & Running
 
 Here is an format example:
@@ -286,13 +307,6 @@ Here is an format example:
 #+BEGIN_SRC language
 #+END_SRC
 #+end_example
-
-
-*** Post-reading
-1. [[id:9b54ba0f-8677-428b-bf01-0fc8aa44e1e3][Emacs/Best practices for using Emacs org-mode as a day-planner/scheduler/calendar]]
-
-*** Reference List
-1. https://blog.csdn.net/sunny0660/article/details/104078734
 
 
 ** DONE Best practices for using Emacs org-mode as a day-planner/scheduler/calendar :Emacs:org:planning:
