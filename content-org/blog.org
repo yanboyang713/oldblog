@@ -1950,7 +1950,9 @@ terraform -help plan
 If you get an error that *terraform* could not be found, your *PATH* environment variable was not set up properly. Please go back and ensure that your *PATH* variable contains the directory where Terraform was installed.
 
 *** Enable tab completion for ZSH :ZSH:zsh:
-You can enable tab completion for Terraform commands. To enable autocomplete, first ensure that a config file exists for your ZSH shell
+You can enable tab completion for Terraform commands.
+
+To enable autocomplete, first ensure that a config file exists for your ZSH shell
 
 #+begin_src bash
 touch ~/.zshrc
@@ -1964,8 +1966,78 @@ terraform -install-autocomplete
 
 Once the autocomplete support is installed, you will need to restart your shell.
 
+*Importance NOTE*: If you want to use the same configuration on your different computers and VMs, please read [[id:5daeba1f-2aa5-492a-b3e7-3343722def0b][Linux/Managing Your Dotfiles With Git and Make]].
+
+*** Quick start tutorial
+Now that you've installed Terraform, you can provision an NGINX server in less than a minute using Docker on Mac, Windows, or Linux.
+
+To follow this tutorial on Linux, first install Docker Engine for your distribution.
+
+Create a directory named learn-terraform-docker-container.
+
+#+begin_src bash
+$ mkdir learn-terraform-docker-container
+#+end_src
+
+Then, navigate into it.
+
+#+begin_src bash
+$ cd learn-terraform-docker-container
+#+end_src
+
+Paste the following Terraform configuration into a file and name it main.tf.
+
+#+begin_src file
+terraform {
+  required_providers {
+    docker = {
+      source  = "kreuzwerker/docker"
+      version = "~> 2.13.0"
+    }
+  }
+}
+
+provider "docker" {}
+
+resource "docker_image" "nginx" {
+  name         = "nginx:latest"
+  keep_locally = false
+}
+
+resource "docker_container" "nginx" {
+  image = docker_image.nginx.latest
+  name  = "tutorial"
+  ports {
+    internal = 80
+    external = 8000
+  }
+}
+#+end_src
+
+Initialize the project, which downloads a plugin that allows Terraform to interact with Docker.
+
+#+begin_src bash
+$ terraform init
+#+end_src
+
+Provision the NGINX server container with apply. When Terraform asks you to confirm type yes and press ENTER.
+
+#+begin_src bash
+$ terraform apply
+#+end_src
+
+Verify the existence of the NGINX container by visiting localhost:8000 in your web browser or running docker ps to see the container.
+
+To stop the container, run terraform destroy.
+#+begin_src bash
+$ terraform destroy
+#+end_src
+
+You've now provisioned and destroyed an NGINX webserver with Terraform.
+
 *** Reference List
 1. https://learn.hashicorp.com/tutorials/terraform/install-cli
+
 
 ** DONE Ansible Beginner's Guide :Ansible:
 CLOSED: [2021-12-02 Thu 17:58]
@@ -2365,6 +2437,67 @@ fcitx &
 
 #+begin_src bash
 source .profile
+#+end_src
+
+
+** DONE Managing Your Dotfiles With Git and Make :Dotfiles:
+CLOSED: [2021-12-17 Fri 18:59]
+:PROPERTIES:
+:EXPORT_FILE_NAME: dotfiles
+:EXPORT_OPTIONS: author:nil
+:ID:       5daeba1f-2aa5-492a-b3e7-3343722def0b
+:END:
+
+*** Introduction
+User-specific application configuration is traditionally stored in so called dotfiles (files whose filename starts with a dot). It is common practice to track dotfiles with a version control system such as Git to keep track of changes and synchronize dotfiles across various hosts.
+There are various approaches to managing your dotfiles. In this article, I will talk about How to use Make with Git to management your dotfiles and package.
+
+make - Unix, Linux Command is widely in used, so you can easier doing symlinking/copying/generating files.
+
+*** Creating a dotfiles repository
+The advantage of using a versioning system for this, is that it’s easy to copy your changes to the other machines. As an extra, you can go back to a previous version in case you broke the configuration files, or you can share your awesome preferences with other developers.
+
+1. Create a directory of your dotfiles and navigate to the root directory.
+   #+begin_src bash
+mkdir dotfiles
+cd dotfiles/
+   #+end_src
+
+2. Initialize the local directory as a Git repository.
+   #+begin_src console
+[yanboyang713@Boyang-PC dotfiles]$ git init -b main
+Initialized empty Git repository in /home/yanboyang713/dotfiles/.git/
+   #+end_src
+
+3. To create a repository for your project on GitHub, use the gh repo create subcommand. Replace project-name with the desired name for your repository. If you want your project to belong to an organization instead of to your user account, specify the organization name and project name with organization-name/project-name. Follow the interactive prompts.
+   #+begin_src bash
+gh repo create project-name
+   #+end_src
+
+*NOTE:* If you facing any issue in this section, please have a look [this document]({{< ref "./git.md" >}}) first.
+
+4. (Option) Pull changes from the new repository that you created. (If you created a .gitignore or LICENSE file in the previous step, this will pull those changes to your local directory.)
+   #+begin_src console
+[yanboyang713@Boyang-PC dotfiles]$ git pull --set-upstream origin main
+From https://github.com/yanboyang713/DotFiles
+ * branch            main       -> FETCH_HEAD
+   #+end_src
+
+5. When you done your edit. Go ahead. Stage, commit, and push all of the files in your project.
+
+   #+begin_src bash
+git add . && git commit -m "initial commit" && git push
+   #+end_src
+
+*** Create a main Make File
+#+begin_src bash
+touch Makefile
+#+end_src
+
+*** Package Management
+
+#+begin_src file
+
 #+end_src
 
 
