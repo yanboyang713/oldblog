@@ -882,9 +882,12 @@ make -j1 V=s
     *openwrt/bin/targets*
 
 *** Installation
+
+**** Proxmox :proxmox:
+
 https://www.77bx.com/34.html
 
-**** Firstly, Upload your compiled IMG File to ProxMox
+***** Firstly, Upload your compiled IMG File to ProxMox
 sftp into ProxMox.
 #+begin_src console
 [yanboyang713@manjaro] ➜ 64 (U main) sftp root@192.168.1.2
@@ -917,7 +920,7 @@ sftp> ls
 ROSinstall.sh  interfaces     temp
     #+end_src
 
-**** Secondly, ssh into ProxMox and using the below Script create a new VM.
+***** Secondly, ssh into ProxMox and using the below Script create a new VM.
 #+begin_src bash
 #!/bin/bash
 
@@ -970,6 +973,10 @@ qm importdisk $vmID /root/openwrt-x86-64-generic-squashfs-combined.img local-lvm
 echo "############## End of Script ##############"
 
 #+end_src
+
+
+**** Raspberry Pi :raspberry:pi:
+https://openwrt.org/toh/raspberry_pi_foundation/raspberry_pi
 
 *** Set-up
 1. Change Password
@@ -2301,8 +2308,18 @@ pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot
 **** Install DWM
 #+begin_src bash
 git clone git://git.suckless.org/dwm ~/.config/dwm
+git clone https://github.com/WouterSpekkink/dwm.git
+
+
+
+
 git clone git://git.suckless.org/st ~/.config/st
+git clone https://github.com/WouterSpekkink/st.git
+
+
+
 git clone git://git.suckless.org/dmenu ~/.config/dmenu
+git clone https://github.com/WouterSpekkink/dmenu.git
 #+end_src
 
 #+begin_src bash
@@ -3283,3 +3300,67 @@ Once your site is verified, we recommend following these steps:
 
 In Bing Webmaster Tools, navigate to Configure My Site > Geo-Targeting. Change the dropdown from Directory to Domain, then select the country of your target audience. Click Submit.
 Navigate to Configure My Site > Users. Under Would you like to add a user?, enter support@lexblog.com in the Email field, then click Add. This allows LexBlog to perform maintenance or troubleshoot your site.
+
+
+* Windows :@Windows:
+** DONE Virtualize Windows 11 with Proxmox :windows:11:proxmox:pve:
+CLOSED: [2021-12-20 Mon 12:37]
+:PROPERTIES:
+:EXPORT_FILE_NAME: windows11PVE
+:EXPORT_OPTIONS: author:nil
+:END:
+*** Introduction
+As Microsoft released Windows 11, it was made clear that TPM 2.0 and Secure boot is no longer optional but mandatory, without these capabilities on the hardware/virtual hardware, Windows 11 refuse to install.
+
+
+*** Step 1: Download Windows 11 ISO
+You can click [[https://www.microsoft.com/software-download/windows11][Here]] for download ISO file.
+
+*** Step 2: Download virtio-win drivers disk
+You can click [[https://github.com/virtio-win/virtio-win-pkg-scripts][Here]], download Latest virtio-win ISO.
+
+*** Step 3: Upload Windows 11 ISO and Latest virtio-win ISO to ProxMox
+login to ProxMox -> choose Node -> local (pve) -> ISO Images -> Upload
+
+*** Step 4: Create VM
+Click *Create VM* -> *General*: name: Windows 11
+
+-> *OS*: choose boot OS: ISO image choose Win11 ISO; Type: Microsoft Windows; Version: 11/2022
+
+-> System: SCSI Controller: VirtIO SCSI
+Machine: q35
+Qemu Agent: Enable
+BIOS: OVMF (UEFI)
+Add TPM: Enable Version: v2.0
+EFI Storage and TPM Storage *should use same storage*
+
+-> Disks:
+Bus/Device: VirtIO Block
+Disk size (GiB): 64
+
+-> CPU:
+Cores: 2
+Type: host
+
+-> Memory:
+Memory (MiB): 8192
+
+-> Network:
+Bridge: vmbr0
+Model: VirtIO (paravirtualized)
+
+OK, we done! However, *Don't Start it*
+*** Step 5: Add virtio-win ISO
+Hardware -> Add -> CD/DVD Drive -> choose IDE and your downloaded ISO
+
+*** Step 6: Check Boot Order
+Options -> Boot Order
+Make sure your boot Win11 at the begging
+
+Now, ready to start this VM.
+
+*** Step 6: Start
+
+*** Reference List
+1. https://www.youtube.com/watch?app=desktop&v=fupuTkkKPDU
+2. https://dannyda.com/2021/10/08/how-to-install-windows-11-on-proxmox-ve-pve-without-workarounds/
