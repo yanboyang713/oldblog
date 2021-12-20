@@ -18,8 +18,18 @@ pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot
 
 ```bash
 git clone git://git.suckless.org/dwm ~/.config/dwm
+git clone https://github.com/WouterSpekkink/dwm.git
+
+
+
+
 git clone git://git.suckless.org/st ~/.config/st
+git clone https://github.com/WouterSpekkink/st.git
+
+
+
 git clone git://git.suckless.org/dmenu ~/.config/dmenu
+git clone https://github.com/WouterSpekkink/dmenu.git
 ```
 
 ```bash
@@ -95,7 +105,7 @@ xrandr --output DP-1 --primary --mode 1920x1080 --pos 0x0 --rotate left --output
 ## Basic Commands {#basic-commands}
 
 -   Moving between windows: **[Alt]+[j]** or **[Alt]+[k]**
--   To move a terminal to another tag: **[Shift]+[Alt]+[<TAG\_NUMBER>]**
+-   To move a terminal to another tag: **[Shift]+[Alt]+[&lt;TAG\_NUMBER&gt;]**
 -   To focus on another tag: **[Alt]+[tag number]**
 -   To change the amount of windows in the master area: **[Alt]+[d]** (Decrease) or **[Alt]+[i]** (Increase)
 -   To toggle a window between the master and stack area: **[Alt]+[Return]**

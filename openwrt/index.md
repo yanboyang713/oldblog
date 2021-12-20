@@ -78,10 +78,13 @@ In this article, I will talk about:
 
 ## Installation {#installation}
 
+
+### Proxmox {#proxmox}
+
 <https://www.77bx.com/34.html>
 
 
-### Firstly, Upload your compiled IMG File to ProxMox {#firstly-upload-your-compiled-img-file-to-proxmox}
+#### Firstly, Upload your compiled IMG File to ProxMox {#firstly-upload-your-compiled-img-file-to-proxmox}
 
 sftp into ProxMox.
 
@@ -121,7 +124,7 @@ sftp>
     ```
 
 
-### Secondly, ssh into ProxMox and using the below Script create a new VM. {#secondly-ssh-into-proxmox-and-using-the-below-script-create-a-new-vm-dot}
+#### Secondly, ssh into ProxMox and using the below Script create a new VM. {#secondly-ssh-into-proxmox-and-using-the-below-script-create-a-new-vm-dot}
 
 ```bash
 #!/bin/bash
@@ -176,6 +179,11 @@ echo "############## End of Script ##############"
 ```
 
 
+### Raspberry Pi {#raspberry-pi}
+
+<https://openwrt.org/toh/raspberry%5Fpi%5Ffoundation/raspberry%5Fpi>
+
+
 ## Set-up {#set-up}
 
 1.  Change Password
@@ -185,7 +193,7 @@ echo "############## End of Script ##############"
     ```
 2.  Set **Lan** IP Address, Gateway and DNS
 
-network -> interface -> edit
+network -&gt; interface -&gt; edit
 
 Content need to set-up:
 
@@ -201,11 +209,11 @@ DNS set as public DNS Server: 114.114.114.114, 114,114,115,115
 
 1.  If this Openwrt as your bypass router, please follow at the below settings.
     **LAN Settings**: Let lede only be used as a pure bypass route, DHCP and IPv6 are both allocated by the main route.
-    -   DHCP Server -> General Settings -> choose Ignore this interface.
-    -   IPv6 Settings -> RA Service - Disable
-    -   IPv6 Settings -> DHCPv6 Service - Disable
+    -   DHCP Server -&gt; General Settings -&gt; choose Ignore this interface.
+    -   IPv6 Settings -&gt; RA Service - Disable
+    -   IPv6 Settings -&gt; DHCPv6 Service - Disable
 
 2.  Let lede obtain IPv6 information normally.
 
-add new interface -> name: IPv6; Protocol: DHCPv6 Client Device: @lan -> create interface -> Firewall settings: lan -> create interface.
+add new interface -&gt; name: IPv6; Protocol: DHCPv6 Client Device: @lan -&gt; create interface -&gt; Firewall settings: lan -&gt; create interface.
 
