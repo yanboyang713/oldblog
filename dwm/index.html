@@ -5,19 +5,21 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Getting Started Dynamic Window Manager (DWM) - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Getting Started Dynamic Window Manager (DWM)">
-<meta property="og:description" content="Introduction Installing Install Xorg 1  pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot   Install DWM 1 2 3 4 5 6 7 8 9 10 11 12 13  git clone git://git.suckless.org/dwm ~/.config/dwm git clone https://github.com/WouterSpekkink/dwm.git git clone git://git.suckless.org/st ~/.config/st git clone https://github.com/WouterSpekkink/st.git git clone git://git.suckless.org/dmenu ~/.config/dmenu git clone https://github.com/WouterSpekkink/dmenu.git   1 2 3  cd ~/.config/dwm && sudo make install cd ~/.config/st && sudo make install cd ~/.">
+<meta property="og:description" content="Introduction dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
+Installing Install Xorg 1  pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot   Install DWM 1 2 3 4 5 6 7 8 9 10 11 12 13  git clone git://git.suckless.org/dwm ~/.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/dwm/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-11-30T17:50:00+08:00">
-<meta property="article:modified_time" content="2021-12-20T09:02:19+00:00">
+<meta property="article:modified_time" content="2021-12-21T04:01:54+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting Started Dynamic Window Manager (DWM)">
-<meta name=twitter:description content="Introduction Installing Install Xorg 1  pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot   Install DWM 1 2 3 4 5 6 7 8 9 10 11 12 13  git clone git://git.suckless.org/dwm ~/.config/dwm git clone https://github.com/WouterSpekkink/dwm.git git clone git://git.suckless.org/st ~/.config/st git clone https://github.com/WouterSpekkink/st.git git clone git://git.suckless.org/dmenu ~/.config/dmenu git clone https://github.com/WouterSpekkink/dmenu.git   1 2 3  cd ~/.config/dwm && sudo make install cd ~/.config/st && sudo make install cd ~/.">
+<meta name=twitter:description content="Introduction dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
+Installing Install Xorg 1  pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot   Install DWM 1 2 3 4 5 6 7 8 9 10 11 12 13  git clone git://git.suckless.org/dwm ~/.">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/dwm/><link rel=prev href=https://yanboyang.com/srs/><link rel=next href=https://yanboyang.com/k8sonproxmox/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started Dynamic Window Manager (DWM)","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dwm\/"},"genre":"posts","keywords":"DWM","wordcount":442,"url":"https:\/\/yanboyang.com\/dwm\/","datePublished":"2021-11-30T17:50:00+08:00","dateModified":"2021-12-20T09:02:19+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/dwm/><link rel=prev href=https://yanboyang.com/srs/><link rel=next href=https://yanboyang.com/k8sonproxmox/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started Dynamic Window Manager (DWM)","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dwm\/"},"genre":"posts","keywords":"DWM","wordcount":505,"url":"https:\/\/yanboyang.com\/dwm\/","datePublished":"2021-11-30T17:50:00+08:00","dateModified":"2021-12-21T04:01:54+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -91,7 +93,7 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting Started Dynamic Window Manager (DWM)</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/linux/><i class="far fa-folder fa-fw"></i>Linux</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-11-30>2021-11-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;442 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-11-30>2021-11-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;505 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
@@ -111,6 +113,7 @@ Cancel
 </ul>
 </li>
 <li><a href=#multi-monitor-setup>Multi-monitor setup</a></li>
+<li><a href=#status-monotor>Status Monotor</a></li>
 <li><a href=#basic-commands>Basic Commands</a></li>
 <li><a href=#layouts>Layouts</a></li>
 <li><a href=#floating>Floating</a></li>
@@ -118,6 +121,7 @@ Cancel
 </ul>
 </nav></div>
 </div><div class=content id=content><h2 id=introduction>Introduction</h2>
+<p>dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.</p>
 <h2 id=installing>Installing</h2>
 <h3 id=install-xorg>Install Xorg</h3>
 <div class=highlight><div class=chroma>
@@ -264,7 +268,33 @@ Type=XSession
 xrandr --output DP-1 --primary --mode 1920x1080 --pos 0x0 --rotate left --output HDMI-1 --mode 2560x1440 --pos 1080x0 --rotate normal --output DVI-D-1 --off
 </code></pre></td></tr></table>
 </div>
-</div><h2 id=basic-commands>Basic Commands</h2>
+</div><h2 id=status-monotor>Status Monotor</h2>
+<p><a href=https://dwm.suckless.org/status%5Fmonitor/ target=_blank rel="noopener noreferrer">https://dwm.suckless.org/status%5Fmonitor/</a></p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git clone git://git.suckless.org/dwmstatus
+<span class=nb>cd</span> dwmstatus
+make
+sudo make <span class=nv>PREFIX</span><span class=o>=</span>/usr install
+</code></pre></td></tr></table>
+</div>
+</div><p>add</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>dwmstatus 2&gt;&amp;1 &gt;/dev/null &amp;
+</code></pre></td></tr></table>
+</div>
+</div><p>to your .xinitrc</p>
+<h2 id=basic-commands>Basic Commands</h2>
 <ul>
 <li>Moving between windows: <strong>[Alt]+[j]</strong> or <strong>[Alt]+[k]</strong></li>
 <li>To move a terminal to another tag: <strong>[Shift]+[Alt]+[&lt;TAG_NUMBER>]</strong></li>
@@ -298,7 +328,7 @@ xrandr --output DP-1 --primary --mode 1920x1080 --pos 0x0 --rotate left --output
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-12-20</span>
+<span>Updated on 2021-12-21</span>
 </div>
 <div class=post-info-license></div>
 </div>
