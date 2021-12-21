@@ -2289,6 +2289,49 @@ It is essential to know which tool is used for which job among Terraform vs. Ans
 
 
 * Linux :@Linux:
+** DONE Arch Linux/Manjaro sound and sound card configuration :arch:linux:manjaro:sound:card:
+CLOSED: [2021-12-20 Mon 19:04]
+:PROPERTIES:
+:EXPORT_FILE_NAME: configSound
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+After install Arch Linux/Manjaro, although alsa-utils has been installed, it may still not play sound correctly. Here is a solution.
+
+*** First try
+#+begin_src bash
+amixer sset Master unmute
+#+end_src
+
+If you use alsamixer to unmute the master sound, you still can't play the sound.
+
+Please, following the steps at the below.
+
+*NOTE*: If you faced maixer: Unable to find simple cintrol 'Master', 0, that means, it maybe that the sound card device cannot be found or the sound card driver us not installed.
+
+*** Finding sound card ID and set-up .asoundrc file
+Using below commands to get the sound card ID and device ID of the sound card you want to use.
+
+#+begin_src bash
+aplay -l
+#+end_src
+
+There is a example for select the sound card with the sound card ID of 1 and the device ID of 0 for configuration.
+
+Add the following three lines to the configuration file ~/.asoundrc
+
+#+begin_example
+defaults.pcm.card 1
+defaults.pcm.device 0
+defaults.ctl.card 1
+#+end_example
+
+The *PCM* option determines the device used to play audio, and the *CTL* option determines which sound card can be used by the control tool (alsamixer)
+
+If you want to manage configuration files in a unified way, please have a read [[id:5daeba1f-2aa5-492a-b3e7-3343722def0b][Linux/Managing Your Dotfiles With Git and Make]].
+
+
 ** DONE Getting Started Dynamic Window Manager (DWM) :DWM:
 CLOSED: [2021-11-30 Tue 17:50]
 :PROPERTIES:
@@ -2297,7 +2340,7 @@ CLOSED: [2021-11-30 Tue 17:50]
 :END:
 
 *** Introduction
-
+dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
 
 *** Installing
 **** Install Xorg
@@ -2378,6 +2421,22 @@ This is a example for set-up xrandr. You can put below content into ~/.xprofile,
 xrandr --output DP-1 --primary --mode 1920x1080 --pos 0x0 --rotate left --output HDMI-1 --mode 2560x1440 --pos 1080x0 --rotate normal --output DVI-D-1 --off
 #+end_src
 
+*** Status Monotor
+https://dwm.suckless.org/status_monitor/
+
+#+begin_src bash
+git clone git://git.suckless.org/dwmstatus
+cd dwmstatus
+make
+sudo make PREFIX=/usr install
+#+end_src
+
+add
+#+begin_example
+dwmstatus 2>&1 >/dev/null &
+#+end_example
+
+to your .xinitrc
 
 *** Basic Commands
 + Moving between windows: *[Alt]+[j]* or *[Alt]+[k]*

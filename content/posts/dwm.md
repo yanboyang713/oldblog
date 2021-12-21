@@ -8,6 +8,8 @@ draft: false
 
 ## Introduction {#introduction}
 
+dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
+
 
 ## Installing {#installing}
 
@@ -105,6 +107,26 @@ This is a example for set-up xrandr. You can put below content into ~/.xprofile,
 ###############################
 xrandr --output DP-1 --primary --mode 1920x1080 --pos 0x0 --rotate left --output HDMI-1 --mode 2560x1440 --pos 1080x0 --rotate normal --output DVI-D-1 --off
 ```
+
+
+## Status Monotor {#status-monotor}
+
+<https://dwm.suckless.org/status%5Fmonitor/>
+
+```bash
+git clone git://git.suckless.org/dwmstatus
+cd dwmstatus
+make
+sudo make PREFIX=/usr install
+```
+
+add
+
+```text
+dwmstatus 2>&1 >/dev/null &
+```
+
+to your .xinitrc
 
 
 ## Basic Commands {#basic-commands}
