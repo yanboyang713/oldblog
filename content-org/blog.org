@@ -3,6 +3,129 @@
 #+hugo_section: posts
 #+hugo_front_matter_format: yaml
 
+* Editor :@Editor:
+** DONE VIM Keyboard Shortcuts Cheatsheet :vim:
+CLOSED: [2021-12-21 Tue 16:16]
+:PROPERTIES:
+:EXPORT_FILE_NAME: vim
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+This post document is brief introduction about how to use VIM/VI text editor and help you remember the shortcuts. The Vim editor is a command-line based tool that’s an enhanced version of the venerable vi editor. Despite the abundance of graphical rich text editors, familiarity with Vim will help every Linux user – from an experienced system administrator to a newbie Raspberry Pi user.
+
+One important thing to note when using Vim, is that the function of a key depends on the "mode" the editor is in. For example, pressing the alphabet "j" will move the cursor down one line in the "command mode". You’ll have to switch to the "insert mode" to make the keys input the character they represent.
+
+*TIPS:*
+1. [[http://gen.lib.rus.ec/book/index.php?md5=BC6FB75F968BCC39E4446C29BF04D2D1][Book reference - Learning the Vi and Vim Editors]]
+
+2. I recommend you using [Spacemacs](https://github.com/syl20bnr/spacemacs), which is a new way to experience Emacs, you can use VI's editing styles with emacs' extendibility.
+
+*** User Scenario
+1. Most of Embedded system have not GUI avabliable. Nowadays, edge computing become poplar, using command-line text editor can be inportance for configure Edge Devices.
+2. Cloud Virual Machine(VM) - marjor of VM only support using SSH login, when you login the cloud VM, CLI will be the only way.
+
+*** Cheatsheet
+Here’s a cheatsheet to help you get the most out of Vim.
+
+| *Shortcut Keys*                                | *Function*                                                                                                              |
+|----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------|
+| *Main (Change Mode)*                           |                                                                                                                       |
+| Escape key                                   | Gets out of the current mode into the “command mode”. All keys are bound of commands.                                 |
+| i                                            | "Insert mode" for inserting text. Keys behave as expected.                                                            |
+| :                                            | "Last-line mode" where Vim expects you to enter a command such as to save the document.                               |
+| v                                            | Enter "visual mode"                                                                                                   |
+| *Navigation keys (used in command mode)*       |                                                                                                                       |
+| h                                            | moves the cursor one character to the left                                                                            |
+| j or Ctrl + J                                | moves the cursor down one line                                                                                        |
+| k or Ctrl + P                                | moves the cursor up one line                                                                                          |
+| l                                            | moves the cursor one character to the right                                                                           |
+| 0                                            | moves the cursor to the beginning of the line                                                                         |
+| $                                            | moves the cursor to the end of the line                                                                               |
+| ^                                            | moves the cursor to the first non-empty character of the line                                                         |
+| w                                            | move forward one word (next alphanumeric word)                                                                        |
+| W                                            | move forward one word (delimited by a white space)                                                                    |
+| 5w                                           | move forward five words                                                                                               |
+| b                                            | move backward one word (previous alphanumeric word)                                                                   |
+| B                                            | move backward one word (delimited by a white space)                                                                   |
+| 5b                                           | move backward five words                                                                                              |
+| G                                            | move to the end of the file                                                                                           |
+| gg                                           | move to the beginning of the file                                                                                     |
+| *Navigate around the document*                 |                                                                                                                       |
+| (                                            | jumps to the previous sentence                                                                                        |
+| )                                            | jumps to the next sentence                                                                                            |
+| {                                            | jumps to the previous paragraph                                                                                       |
+| }                                            | jumps to the next paragraph                                                                                           |
+| [[                                           | jumps to the previous section                                                                                         |
+| ]]                                           | jumps to the next section                                                                                             |
+| []                                           | jump to the end of the previous section                                                                               |
+| ][                                           | jump to the end of the next section                                                                                   |
+| *Insert text*                                  |                                                                                                                       |
+| a                                            | Insert text after the cursor                                                                                          |
+| A                                            | Insert text at the end of the line                                                                                    |
+| i                                            | Insert text before the cursor                                                                                         |
+| o                                            | Begin a new line below the cursor                                                                                     |
+| O                                            | Begin a new line above the cursor                                                                                     |
+| *Special inserts*                              |                                                                                                                       |
+| :r [filename]                                | Insert the file [filename] below the cursor                                                                           |
+| :r ![command]                                | Execute [command] and insert its output below the cursor                                                              |
+| *Delete text*                                  |                                                                                                                       |
+| x                                            | delete character at cursor                                                                                            |
+| dw                                           | delete a word                                                                                                         |
+| d0                                           | delete to the beginning of a line                                                                                     |
+| d$                                           | delete to the end of a line                                                                                           |
+| d)                                           | delete to the end of sentence                                                                                         |
+| dgg                                          | delete to the beginning of the file                                                                                   |
+| dG                                           | delete to the end of the file                                                                                         |
+| dd                                           | delete line                                                                                                           |
+| 3dd                                          | delete three lines                                                                                                    |
+| *Simple replace text*                          |                                                                                                                       |
+| r{text}                                      | Replace the character under the cursor with {text}                                                                    |
+| R                                            | Replace characters instead of inserting them                                                                          |
+| *Copy/Paste text*                              |                                                                                                                       |
+| yy                                           | copy current line into storage buffer                                                                                 |
+| ["x]yy                                       | Copy the current lines into register x                                                                                |
+| p                                            | paste storage buffer after current line                                                                               |
+| P                                            | paste storage buffer before current line                                                                              |
+| ["x]p                                        | paste from register x after current line                                                                              |
+| ["x]P                                        | paste from register x before current line                                                                             |
+| *Undo/Redo operation*                          |                                                                                                                       |
+| u                                            | undo the last operation                                                                                               |
+| Ctrl+r                                       | redo the last undo                                                                                                    |
+| *Search and Replace keys*                      |                                                                                                                       |
+| /search_text                                 | search document for search_text going forward                                                                         |
+| ?search_text                                 | search document for search_text going backward                                                                        |
+| n                                            | move to the next instance of the result from the search                                                               |
+| N                                            | move to the previous instance of the result                                                                           |
+| :%s/original/replacement                     | Search for the first occurrence of the string "original" and replace it with "replacement"                            |
+| :%s/original/replacement/g                   | Search and replace all occurrences of the string "original" with "replacement"                                        |
+| :%s/original/replacement/gc                  | Search for all occurrences of the string “original” but ask for confirmation before replacing them with "replacement" |
+| *Bookmarks*                                    |                                                                                                                       |
+| m {a-z A-Z}                                  | Set bookmark {a-z A-Z} at the current cursor position                                                                 |
+| :marks                                       | List all bookmarks                                                                                                    |
+| `{a-z A-Z}                                   | Jumps to the bookmark {a-z A-Z}                                                                                       |
+| *Select text*                                  |                                                                                                                       |
+| v                                            | Enter visual mode per character                                                                                       |
+| V                                            | Enter visual mode per line                                                                                            |
+| Esc                                          | Exit visual mode                                                                                                      |
+| *Modify selected text (used in visual mode)*   |                                                                                                                       |
+| ~                                            | Switch case                                                                                                           |
+| d                                            | delete a word                                                                                                         |
+| c                                            | change                                                                                                                |
+| y                                            | yank                                                                                                                  |
+| >                                            | shift right                                                                                                           |
+| <                                            | shift left                                                                                                            |
+| !                                            | filter through an external command                                                                                    |
+| *Save and quit*                                |                                                                                                                       |
+| :q                                           | Quits Vim but fails when file has been changed                                                                        |
+| :w                                           | Save the file                                                                                                         |
+| :w new_name                                  | Save the file with the new_name filename                                                                              |
+| :wq                                          | Save the file and quit Vim                                                                                            |
+| :q!                                          | Quit Vim without saving the changes to the file                                                                       |
+| ZZ                                           | Write file, if modified, and quit Vim                                                                                 |
+| ZQ                                           | Same as :q! Quits Vim without writing changes                                                                         |
+
+
 * Emacs :@Emacs:
 ** DONE Getting Started with Doom Emacs :Doom:Emacs:
 CLOSED: [2021-10-05 Tue 03:44]
@@ -413,6 +536,7 @@ https://cheatography.com/ddoherty03/cheat-sheets/mu4e-with-gmail-hints/
 
 *** Reference List
 1. https://macowners.club/posts/email-emacs-mu4e-macos/
+
 
 * Computer Vision :@ComputerVision:
 
@@ -2289,6 +2413,127 @@ It is essential to know which tool is used for which job among Terraform vs. Ans
 
 
 * Linux :@Linux:
+** DONE Getting Started with Nix :nix:
+CLOSED: [2021-12-24 Fri 12:34]
+:PROPERTIES:
+:EXPORT_FILE_NAME: nix
+:EXPORT_OPTIONS: author:nil
+:END:
+*** Introduction
+The NixOS package manager is a system of its own. You can use it under any Linux Distribution.
+*** What does NixOS Package Manager do?
+Most package managers use a file that contains the executable or source code. They then calculate what it needs on the system and then make sure that it exists. In Nix, things work very similarly. The big difference is that Nix creates all the files, and compiles them if necessary, then put them in one place; the nix-store. The first question you have may be, “Will the files not have the same name?” The system avoids this by having one directory for each version AND naming all files with a hash. To make the application “feel at home”, all dependencies are then linked to their correct directories using ordinary symlinks. A profile keeps track of which version each user runs.
+*** NixOS User Installs
+With this system, you can have different versions installed in each user’s directory. If they are the same in several users, the administrator can let Nix re-link binaries, so only one exists at a time. This is useful in saving disk space. You can also create specific environments for each version of the package. This is especially useful when you want to test a new version or develop software.
+
+*** Installing for common distribution
+For most common platforms, you can install Nix, the package manager with a simple script. This script is available on the Nix website. The script will need root user access, but if you are very security conscious, you should read the script before you use it. If you want to avoid using root in the script, just create the /nix directory on your system.
+
+#+begin_src bash
+$ sh <(curl -L https://nixos.org/nix/install)
+#+end_src
+
+*NOTE*: modifying /home/yanboyang713/.bash_profile...
+modifying /home/yanboyang713/.zshrc...
+
+Installation finished!  To ensure that the necessary environment
+variables are set, either log in again, or type
+#+begin_src bash
+  . /home/yanboyang713/.nix-profile/etc/profile.d/nix.sh
+#+end_src
+in your shell.
+
+If you have no root access or just super cautious, you can have Nix as a user only package manager.
+
+#+begin_src bash
+$ sh <(curl -L https://nixos.org/nix/install) –no-daemon
+#+end_src
+
+This binary works well for most, if not all, distributions. Platforms are x8664, i?86, aarch64, and x8664-darwin, which cover almost all platforms available. If you use any other platforms, you can probably use the source code and build your own. When the installation is done, you will then have a bunch of new commands.
+
+*** Adding your first program to NixOS
+To install software and set when it can be used, you have nix-env. The install option (-i) is the most common one since you use it always and put a package as an argument.
+
+#+begin_src bash
+nix-env -i firefox
+#+end_src
+This looks the same as in other distributions, so does the query argument. The install will take some time, though. The reason is that it must compile the software unless there is a pre-compiled version in the Nix Cache. Reaching the cache is not always very fast either. There is a difference that you should take note of; you can pick a version! If you want a special version, you must find which are available using regular expressions.
+
+#+begin_src bash
+nix-env -qa 'firefox.*'
+#+end_src
+
+You will receive a list of all the available packages. You can install it the same way but using the value in the list.
+
+#+begin_src bash
+nix-env –install 'firefox-78.4.0ser' –preserve-installed
+#+end_src
+
+This can fail if you already have an installed version. Option ‘–preserve-installed’ will not erase the installed version. You may end up with two versions of the same priority, which you can fix by setting the priority.
+
+#+begin_src bash
+nix-env –set-flag priority 2 'firefox-82.0.2'
+#+end_src
+
+Now, you will run the old version the next time you start Firefox. To switch which one you run, you can set the priority accordingly. You can also start a shell to choose a binary. This is a developer’s option, and the command is nix-shell.
+
+*** Updating NixOS
+Once you have a collection of software, you want to stay updated. Same as always, you use the same command with an argument. But you must also keep the channel updated. The command is nix-channel.
+
+#+begin_src bash
+nix-channel --update
+#+end_src
+
+This reads down the current versions of all packages available. After that, you can start upgrading your software with nix-env.
+
+#+begin_src bash
+nix-env --upgrade
+#+end_src
+
+An upgrade like this will upgrade your old version of the software. In this case, the old Firefox will be replaced with the newest version. You may not want this for whatever reason, usually development.
+
+*** Removing applications from NixOS
+Removing applications is equally simple, with a small caveat. No applications are removed by a remove command.
+
+#+begin_src bash
+nix-env –uninstall 'firefox-78.4.0ser'
+#+end_src
+
+This command will remove the links to the current build of this version of Firefox. All the files will always stay on disk. You have these versions available to do a rollback. A rollback means that you go back to using the old version. This can be useful if you have tried the newest and it has unforeseen problems.
+
+#+begin_src bash
+nix-env –rollback
+#+end_src
+
+You rollback an entire generation, which means all the programs that were upgraded since the last generation. The option runs two commands; that list and then switches to that old generations. All installed packages exist in a generation on disk.
+
+*** NixOS Roll-back and Cleaning up
+The rollback function will lead to a lot of disk space being used by old versions. You can clean this up (you need to clean this up!). When you have had a long enough period, at your own choice, you can also clean up these old generations to save disk space.
+
+#+begin_src bash
+nix-env –delete-generations old
+#+end_src
+
+With this command, you delete all generations except the two last ones. You can go back and forth in the list with more complex parameters to leave the specific generation that worked best for you. Unless you have many testing or development projects that need many versions for testing, you should use a scheduled removal of all old generations.
+
+A simple script to keep your generations clean comes with a Nix package manager install.
+
+#+begin_src bash
+nix-collect-garbage
+#+end_src
+
+You should also set up the collector to run automatically using systemd or other systems.
+
+*** Conclusion
+Nix package manager is a powerful system that can get you running complex development environments on your machine. You can also use it to keep your software tidy and have a simple way to recover on a new machine, should the catastrophe of a disk crash occur.
+
+*** Reference List
+1. https://linuxhint.com/how-to-use-nixos-package-manager/
+2. https://serokell.io/blog/what-is-nix
+3. https://github.com/NixOS/nix
+4. https://nixos.org/learn.html
+
+
 ** DONE Arch Linux/Manjaro sound and sound card configuration :arch:linux:manjaro:sound:card:
 CLOSED: [2021-12-20 Mon 19:04]
 :PROPERTIES:
@@ -2345,9 +2590,10 @@ dwm is a dynamic window manager for X. It manages windows in tiled, monocle and 
 *** Installing
 **** Install Xorg
 
-#+begin_src console
+#+begin_src bash
 pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot
 #+end_src
+
 **** Install DWM
 #+begin_src bash
 git clone git://git.suckless.org/dwm ~/.config/dwm
@@ -2400,6 +2646,47 @@ Icon=dwm
 Type=XSession
 #+end_src
 
+*** DWM patches
+There are two types of patches: The ones that fit to your personal taste and the ones you think should be included in mainline.
+
+patch filename format
+The expected format for patches is:
+
+For git revisions:
+
+toolname-patchname-YYYYMMDD-SHORTHASH.diff
+dwm-allyourbase-20160617-3465bed.diff
+The YYYYMMDD date should correspond to the last time the patch has been modified.
+
+**** diff generation
+For git users:
+
+cd program-directory
+git add filechanges...
+git commit (write a clear patch description)
+git format-patch --stdout HEAD^ > toolname-patchname-YYYYMMDD-SHORTHASH.diff
+
+**** patch program
+For git users, use -3 to fix the conflict easily:
+
+cd program-directory
+git apply path/to/patch.diff
+For patches formatted with git format-patch:
+
+cd program-directory
+git am path/to/patch.diff
+For tarballs:
+
+cd program-directory
+patch -p1 < path/to/patch.diff
+
+*** picom
+picom is a standalone compositor for Xorg, suitable for use with window managers that do not provide compositing. picom is a fork of compton, which is a fork of xcompmgr-dana, which in turn is a fork of xcompmgr.
+
+#+begin_src bash
+yay -S picom
+#+end_src
+
 *** Multi-monitor setup
 If configured to use Xinerama libraries in config.mk, dwm can automatically detect configured screen outputs (monitor, overhead projector, etc.) and their resolutions and draw the windows in the output area accordingly.
 
@@ -2422,6 +2709,55 @@ xrandr --output DP-1 --primary --mode 1920x1080 --pos 0x0 --rotate left --output
 #+end_src
 
 *** Status Monotor
+pre-required
+#+begin_src bash
+yay -S pamixer
+
+#+end_src
+https://github.com/LukeSmithxyz/dwmblocks
+
+#+begin_src bash
+xsetroot -name "Boyang Yan"
+xsetroot -name "$(uptime)"
+#+end_src
+
+*NOTE*: If show *zsh: command not found: xsetroot*, you need install *xorg-xsetroot*.
+#+begin_src bash
+sudo pacman -S xorg-xsetroot
+#+end_src
+
+#+begin_src bash
+git clone https://github.com/WouterSpekkink/dwmblocks.git
+cd dwmblocks
+
+sudo make clean install
+dwmblocks &
+#+end_src
+
+*NOTE*:
+1. If you faced *ERROR* message like this *sh: line 1: sb-internet: command not found*
+      you should check your default paths in file: profile and your *sb-** program.
+2. If there are some *ERROR* show out. You need kill dwmblocks and run again.
+#+begin_src bash
+ps aux | grep dwmblocks
+kill -9 6416
+#+end_src
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 https://dwm.suckless.org/status_monitor/
 
 #+begin_src bash
@@ -2437,6 +2773,58 @@ dwmstatus 2>&1 >/dev/null &
 #+end_example
 
 to your .xinitrc
+
+*** slock :slock:
+Simple X display locker. This is the simplest X screen locker we are aware of.
+#+begin_src bash
+git clone https://git.suckless.org/slock
+cd slock
+#+end_src
+
+Before, your *sudo make install*
+You need
+
+#+begin_src bash
+vim config.def.h
+#+end_src
+
+change to
+#+begin_example
+/* user and group to drop privileges to */
+static const char *user  = "yanboyang713";
+static const char *group = "yanboyang713";
+#+end_example
+
+
+slock: getgrnam nogroup: group entry not found
+
+Test, it is working.
+
+#+begin_src console
+[yanboyang713@manjaro] ➜ system whereis slock
+slock: /usr/local/bin/slock
+#+end_src
+
+/etc/systemd/system/slock@.service
+
+#+begin_example
+[Unit]
+Description=Lock X session using slock for user %i
+Before=sleep.target
+
+[Service]
+User=%i
+Environment=DISPLAY=:0
+ExecStartPre=/usr/bin/xset dpms force suspend
+ExecStart=/usr/bin/slock
+
+[Install]
+WantedBy=sleep.target
+#+end_example
+
+systemctl daemon-reload
+
+sudo systemctl enable slock@yanboyang713.service
 
 *** Basic Commands
 + Moving between windows: *[Alt]+[j]* or *[Alt]+[k]*
