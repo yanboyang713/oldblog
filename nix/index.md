@@ -18,31 +18,7 @@ With this system, you can have different versions installed in each user’s dir
 
 ## Installing for common distribution {#installing-for-common-distribution}
 
-For most common platforms, you can install Nix, the package manager with a simple script. This script is available on the Nix website. The script will need root user access, but if you are very security conscious, you should read the script before you use it. If you want to avoid using root in the script, just create the /nix directory on your system.
-
-```bash
-$ sh <(curl -L https://nixos.org/nix/install)
-```
-
-**NOTE**: modifying _home/yanboyang713_.bash\_profile...
-modifying _home/yanboyang713_.zshrc...
-
-Installation finished!  To ensure that the necessary environment
-variables are set, either log in again, or type
-
-```bash
-  . /home/yanboyang713/.nix-profile/etc/profile.d/nix.sh
-```
-
-in your shell.
-
-If you have no root access or just super cautious, you can have Nix as a user only package manager.
-
-```bash
-$ sh <(curl -L https://nixos.org/nix/install) –no-daemon
-```
-
-This binary works well for most, if not all, distributions. Platforms are x8664, i?86, aarch64, and x8664-darwin, which cover almost all platforms available. If you use any other platforms, you can probably use the source code and build your own. When the installation is done, you will then have a bunch of new commands.
+[Linux/Nix Installation]({{< relref "nixInstallation" >}})
 
 
 ## Adding your first program to NixOS {#adding-your-first-program-to-nixos}
