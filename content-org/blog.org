@@ -2413,6 +2413,136 @@ It is essential to know which tool is used for which job among Terraform vs. Ans
 
 
 * Linux :@Linux:
+** DONE Nix Installation :nix:
+CLOSED: [2021-12-26 Sun 15:18]
+:PROPERTIES:
+:EXPORT_FILE_NAME: nixInstallation
+:EXPORT_OPTIONS: author:nil
+:ID:       2b17d9c7-a5eb-4892-abec-282e74530b0c
+:END:
+
+*** Supported Platforms
+Nix is currently supported on the following platforms:
++ Linux (i686, x86_64, aarch64).
++ macOS (x86_64).
+
+*** Installing a Binary Distribution
+We recommend the multi-user install if it supports your platform and you can authenticate with sudo.
+
+*** Single User Installation
+
+To explicitly select a single-user installation on your system:
+
+#+begin_src bash
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
+#+end_src
+
+This will perform a single-user installation of Nix, meaning that */nix* is owned by the invoking user. You should run this under your usual user account, not as root. The script will invoke *sudo* to create */nix* if it doesn’t already exist. If you don’t have *sudo*, you should manually create */nix* first as root, e.g.:
+
+#+begin_src bash
+mkdir /nix
+chown alice /nix
+#+end_src
+
+The install script will modify the first writable file from amongst *.bash_profile*, *.bash_login* and *.profile* to source *~/.nix-profile/etc/profile.d/nix.sh*. You can set the *NIX_INSTALLER_NO_MODIFY_PROFILE* environment variable before executing the install script to disable this behaviour.
+
+You can uninstall Nix simply by running:
+
+#+begin_src bash
+rm -rf /nix
+#+end_src
+
+*** Multi User Installation (recommend)
+The multi-user Nix installation creates system users, and a system service for the Nix daemon.
+
+*Supported Systems*
++ Linux running systemd, with SELinux disabled
++ macOS
+
+You can instruct the installer to perform a multi-user installation on your system:
+
+#+begin_src bash
+sh <(curl -L https://nixos.org/nix/install) --daemon
+#+end_src
+
+The multi-user installation of Nix will create build users between the user IDs 30001 and 30032, and a group with the group ID 30000. You should run this under your usual user account, not as root. The script will invoke sudo as needed.
+
+When you see:
+
+*Alright! We're done!*
+Try it! Open a new terminal, and type:
+#+begin_src bash
+nix-shell -p nix-info --run "nix-info -m"
+#+end_src
+
+The installer will modify /etc/bashrc, and /etc/zshrc if they exist. The installer will first back up these files with a .backup-before-nix extension. The installer will also create /etc/profile.d/nix.sh.
+
+You can uninstall Nix with the following commands:
+#+begin_src bash
+sudo rm -rf /etc/profile/nix.sh /etc/nix /nix ~root/.nix-profile ~root/.nix-defexpr ~root/.nix-channels ~/.nix-profile ~/.nix-defexpr ~/.nix-channels
+
+# If you are on Linux with systemd, you will need to run:
+sudo systemctl stop nix-daemon.socket
+sudo systemctl stop nix-daemon.service
+sudo systemctl disable nix-daemon.socket
+sudo systemctl disable nix-daemon.service
+sudo systemctl daemon-reload
+
+# If you are on macOS, you will need to run:
+sudo launchctl unload /Library/LaunchDaemons/org.nixos.nix-daemon.plist
+sudo rm /Library/LaunchDaemons/org.nixos.nix-daemon.plist
+There may also be references to Nix in /etc/profile, /etc/bashrc, and /etc/zshrc which you may remove.
+#+end_src
+
+*** Reference List
+1. https://nixos.org/manual/nix/stable/installation/installation.html
+
+** DONE Home Manager using Nix
+CLOSED: [2021-12-26 Sun 17:30]
+:PROPERTIES:
+:EXPORT_FILE_NAME: nixHomeManager
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Home Manager
+
+**** Standalone installation
+1. Add the appropriate Home Manager channel. If you are following Nixpkgs master or an unstable channel you can run.
+
+   #+begin_src bash
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+ nix-channel --update
+   #+end_src
+
+   #+begin_src bash
+cat ~/.nix-channels
+nix-channel --list
+   #+end_src
+
+   Check your *echo $NIX_PATH*, If your have NOT
+
+   you may have to add
+   #+begin_src bash
+export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
+
+/nix/var/nix/profiles/per-user/yanboyang713/channels
+
+
+export NIX_PATH=nixpkgs=/nix/var/nix/profiles/per-user/yanboyang713/channels/nixpkgs:/nix/var/nix/profiles/per-user/yanboyang713/channels:~/.nix-defexpr/channels
+   #+end_src
+   to your shell
+
+2. Run the Home Manager installation command and create the first Home Manager generation:
+
+   #+begin_src bash
+
+   #+end_src
+
+*** Reference List
+1. https://github.com/nix-community/home-manager
+2.
+
+
 ** DONE Getting Started with Nix :nix:
 CLOSED: [2021-12-24 Fri 12:34]
 :PROPERTIES:
@@ -2427,29 +2557,7 @@ Most package managers use a file that contains the executable or source code. Th
 With this system, you can have different versions installed in each user’s directory. If they are the same in several users, the administrator can let Nix re-link binaries, so only one exists at a time. This is useful in saving disk space. You can also create specific environments for each version of the package. This is especially useful when you want to test a new version or develop software.
 
 *** Installing for common distribution
-For most common platforms, you can install Nix, the package manager with a simple script. This script is available on the Nix website. The script will need root user access, but if you are very security conscious, you should read the script before you use it. If you want to avoid using root in the script, just create the /nix directory on your system.
-
-#+begin_src bash
-$ sh <(curl -L https://nixos.org/nix/install)
-#+end_src
-
-*NOTE*: modifying /home/yanboyang713/.bash_profile...
-modifying /home/yanboyang713/.zshrc...
-
-Installation finished!  To ensure that the necessary environment
-variables are set, either log in again, or type
-#+begin_src bash
-  . /home/yanboyang713/.nix-profile/etc/profile.d/nix.sh
-#+end_src
-in your shell.
-
-If you have no root access or just super cautious, you can have Nix as a user only package manager.
-
-#+begin_src bash
-$ sh <(curl -L https://nixos.org/nix/install) –no-daemon
-#+end_src
-
-This binary works well for most, if not all, distributions. Platforms are x8664, i?86, aarch64, and x8664-darwin, which cover almost all platforms available. If you use any other platforms, you can probably use the source code and build your own. When the installation is done, you will then have a bunch of new commands.
+[[id:2b17d9c7-a5eb-4892-abec-282e74530b0c][Linux/Nix Installation]]
 
 *** Adding your first program to NixOS
 To install software and set when it can be used, you have nix-env. The install option (-i) is the most common one since you use it always and put a package as an argument.
@@ -2523,6 +2631,7 @@ nix-collect-garbage
 #+end_src
 
 You should also set up the collector to run automatically using systemd or other systems.
+
 
 *** Conclusion
 Nix package manager is a powerful system that can get you running complex development environments on your machine. You can also use it to keep your software tidy and have a simple way to recover on a new machine, should the catastrophe of a disk crash occur.
