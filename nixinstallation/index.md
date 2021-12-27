@@ -85,6 +85,13 @@ There may also be references to Nix in /etc/profile, /etc/bashrc, and /etc/zshrc
 ```
 
 
+## Sert-up {#sert-up}
+
+```bash
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+```
+
+
 ## Reference List {#reference-list}
 
 1.  <https://nixos.org/manual/nix/stable/installation/installation.html>

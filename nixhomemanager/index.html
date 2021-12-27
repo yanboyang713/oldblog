@@ -5,25 +5,25 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Home Manager using Nix - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Home Manager using Nix">
-<meta property="og:description" content="Home Manager Standalone installation   Add the appropriate Home Manager channel. If you are following Nixpkgs master or an unstable channel you can run.
+<meta property="og:description" content="Standalone installation   Add the appropriate Home Manager channel. If you are following Nixpkgs master or an unstable channel you can run.
 1 2  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager nix-channel --update   1 2  cat ~/.nix-channels nix-channel --list   Check your echo $NIX_PATH, If your have NOT
 you may have to add
 1 2 3 4 5 6  export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH /nix/var/nix/profiles/per-user/yanboyang713/channels export NIX_PATH=nixpkgs=/nix/var/nix/profiles/per-user/yanboyang713/channels/nixpkgs:/nix/var/nix/profiles/per-user/yanboyang713/channels:~/.nix-defexpr/channels   to your shell">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/nixhomemanager/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-26T17:30:00+08:00">
-<meta property="article:modified_time" content="2021-12-26T09:37:30+00:00">
+<meta property="article:modified_time" content="2021-12-27T07:36:58+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Home Manager using Nix">
-<meta name=twitter:description content="Home Manager Standalone installation   Add the appropriate Home Manager channel. If you are following Nixpkgs master or an unstable channel you can run.
+<meta name=twitter:description content="Standalone installation   Add the appropriate Home Manager channel. If you are following Nixpkgs master or an unstable channel you can run.
 1 2  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager nix-channel --update   1 2  cat ~/.nix-channels nix-channel --list   Check your echo $NIX_PATH, If your have NOT
 you may have to add
 1 2 3 4 5 6  export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH /nix/var/nix/profiles/per-user/yanboyang713/channels export NIX_PATH=nixpkgs=/nix/var/nix/profiles/per-user/yanboyang713/channels/nixpkgs:/nix/var/nix/profiles/per-user/yanboyang713/channels:~/.nix-defexpr/channels   to your shell">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/nixhomemanager/><link rel=prev href=https://yanboyang.com/nixinstallation/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Home Manager using Nix","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/nixhomemanager\/"},"genre":"posts","wordcount":81,"url":"https:\/\/yanboyang.com\/nixhomemanager\/","datePublished":"2021-12-26T17:30:00+08:00","dateModified":"2021-12-26T09:37:30+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/nixhomemanager/><link rel=prev href=https://yanboyang.com/nixinstallation/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Home Manager using Nix","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/nixhomemanager\/"},"genre":"posts","wordcount":1823,"url":"https:\/\/yanboyang.com\/nixhomemanager\/","datePublished":"2021-12-26T17:30:00+08:00","dateModified":"2021-12-27T07:36:58+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -97,8 +97,8 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Home Manager using Nix</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/linux/><i class="far fa-folder fa-fw"></i>Linux</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-26>2021-12-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;81 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-26>2021-12-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1823 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -106,16 +106,22 @@ Cancel
 </div>
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
-<li><a href=#home-manager>Home Manager</a>
-<ul>
 <li><a href=#standalone-installation>Standalone installation</a></li>
+<li><a href=#getting-started-home-manager>Getting started Home Manager</a></li>
+<li><a href=#git-it>Git-it</a></li>
+<li><a href=#let-s-add-our-first-package>Let’s add our first package</a></li>
+<li><a href=#what-is-this-home-manager-switch-business>What is this home-manager switch business?</a></li>
+<li><a href=#porting-over-an-existing-dotfile>Porting over an existing dotfile</a></li>
+<li><a href=#using-home-manager-modules>Using Home Manager modules</a>
+<ul>
+<li><a href=#porting-your-git-config>Porting your git config</a></li>
 </ul>
 </li>
+<li><a href=#structuring-your-home-manager-config>Structuring your Home Manager config</a></li>
 <li><a href=#reference-list>Reference List</a></li>
 </ul>
 </nav></div>
-</div><div class=content id=content><h2 id=home-manager>Home Manager</h2>
-<h3 id=standalone-installation>Standalone installation</h3>
+</div><div class=content id=content><h2 id=standalone-installation>Standalone installation</h2>
 <ol>
 <li>
 <p>Add the appropriate Home Manager channel. If you are following Nixpkgs master or an unstable channel you can run.</p>
@@ -168,21 +174,549 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>   nix-shell <span class=s1>&#39;&lt;home-manager&gt;&#39;</span> -A install
 </code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
+<p>Once finished, Home Manager should be active and available in your user environment.</p>
+<ol>
+<li>
+<p>If you do not plan on having Home Manager manage your shell configuration then you must source the</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>   $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<p>file in your shell configuration.
+This file can be sourced directly by POSIX.2-like shells such as Bash or Z shell</p>
+<p>For example, if you use Bash then add</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>. &#34;$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>to your ~/.profile file.</p>
+<p>You can test that everything worked by typing</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>home-manager
+</code></pre></td></tr></table>
+</div>
+</div><p>Congratulations, you are ready to go!</p>
+<h2 id=getting-started-home-manager>Getting started Home Manager</h2>
+<p>As you have seen in the install prompt, by default Home Manager initializes a new configuration in</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nv>$HOME</span>/.config/nixpkgs/home.nix
+</code></pre></td></tr></table>
+</div>
+</div><p>that should look roughly like this</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>{ config, pkgs, ... }:
+
+{
+  # Home Manager needs a bit of information about you and the
+  # paths it should manage.
+  home.username = &#34;yanboyang713&#34;;
+  home.homeDirectory = &#34;/home/yanboyang713&#34;;
+
+  # This value determines the Home Manager release that your
+  # configuration is compatible with. This helps avoid breakage
+  # when a new Home Manager release introduces backwards
+  # incompatible changes.
+  #
+  # You can update Home Manager without changing this value. See
+  # the Home Manager release notes for a list of state version
+  # changes in each release.
+  home.stateVersion = &#34;22.05&#34;;
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>Your use of Home Manager is centered around the configuration file.</p>
+<p>This configuration file can be built and activated.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>home-manager build
+</code></pre></td></tr></table>
+</div>
+</div><p>Once a configuration is successfully built, it can be activated. The activation performs the steps necessary to make the files, programs, and services available in your user environment.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># The command performs a combined build and activation</span>
+home-manager switch
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=git-it>Git-it</h2>
+<p>The first step is to move this configuration to a git repository, I prefer to have it in a different location and use symlinks to expose it to Home Manager.</p>
+<p>Run:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>
+mv ~/.config/nixpkgs ~/nixfiles
+<span class=nb>cd</span> ~/nixfiles
+git init
+git add .
+git commit -m <span class=s1>&#39;getting started with Home Manager&#39;</span>
+<span class=nb>cd</span> ~/.config
+ln -s ~/nixfiles nixpkgs
+</code></pre></td></tr></table>
+</div>
+</div><p>Then test that you can apply the configuration.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>home-manager switch
+</code></pre></td></tr></table>
+</div>
+</div><p>We have not added anything so this should be a no-op.</p>
+<p>Home Manager will let you know that it’s &ldquo;reusing lastest profile generation&rdquo;.</p>
+<h2 id=let-s-add-our-first-package>Let’s add our first package</h2>
+<p>First let’s see how we can use Home Manager to install packages for our user. In this example we’ll add tmux. Edit ~/nixfiles/home.nix as follows:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>{ config, pkgs, ... }:
+
+{
+  # Home Manager needs a bit of information about you and the
+  # paths it should manage.
+  home.username = &#34;yanboyang713&#34;;
+  home.homeDirectory = &#34;/home/yanboyang713&#34;;
+
+  # Packages that should be installed to the user profile.
+  home.packages = [
+    pkgs.htop
+  ];
+
+  # This value determines the Home Manager release that your
+  # configuration is compatible with. This helps avoid breakage
+  # when a new Home Manager release introduces backwards
+  # incompatible changes.
+  #
+  # You can update Home Manager without changing this value. See
+  # the Home Manager release notes for a list of state version
+  # changes in each release.
+  home.stateVersion = &#34;22.05&#34;;
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>Then run</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>home-manager switch
+</code></pre></td></tr></table>
+</div>
+</div><p>And now try it out</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>htop
+</code></pre></td></tr></table>
+</div>
+</div><p>A great place to search for packages is <a href=https://search.nixos.org/packages target=_blank rel="noopener noreferrer">https://search.nixos.org/packages</a>, make sure you pick the right “channel”, if you are following this guide it will be unstable.</p>
+<h2 id=what-is-this-home-manager-switch-business>What is this home-manager switch business?</h2>
+<p><strong>home-manager switch</strong> is how you &ldquo;<strong>activate</strong>&rdquo; your configuration. Home Manager will evaluate your configuration, build the result and <strong>atomically</strong> switch your old configuration with the new one.</p>
+<p>This also means that it’s possible to see all old configurations</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@manjaro] ➜ nixpkgs home-manager generations
+</span><span class=go>2021-12-26 19:53 : id 2 -&gt; /nix/store/hgma8yixml6ngwizw31sxdj9n08kmkfg-home-manager-generation
+</span><span class=go>2021-12-26 17:55 : id 1 -&gt; /nix/store/1xkax9m57lbyrcvhybpksqsga28injsf-home-manager-generation
+</span></code></pre></td></tr></table>
+</div>
+</div><p>And you can rollback to older versions as well.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text># copy the path from the command above and add /activate
+/nix/store/1xkax9m57lbyrcvhybpksqsga28injsf-home-manager-generation/activate
+...
+
+# this will create a new generation
+Creating profile generation 3
+...
+</code></pre></td></tr></table>
+</div>
+</div><p>You can then switch again to re-apply your changes to go back to the current version of home.nix.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>home-manager switch
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=porting-over-an-existing-dotfile>Porting over an existing dotfile</h2>
+<p>So far we saw how to use Home Manager to install packages for our user, but a perhaps more important use case is manage our user configuration.</p>
+<p>First we’ll see how to take an existing configuration file and make it part of Home Manager.</p>
+<p>The simplest way to do this is to use the <strong>home.file</strong> option.</p>
+<p>Assume that you have a <strong>~/.vimrc</strong> with the following contents:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>call plug#begin()
+Plug &#39;LnL7/vim-nix&#39;
+call plug#end()
+</code></pre></td></tr></table>
+</div>
+</div><p>First let’s move it in our nixfiles repo</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>mv ~/.vimrc ~/nixfiles/vimrc
+</code></pre></td></tr></table>
+</div>
+</div><p>You can then edit ~/nixfiles/home.nix as follows</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>{ config, pkgs, ... }:
+
+{
+  # Home Manager needs a bit of information about you and the
+  # paths it should manage.
+  home.username = &#34;yanboyang713&#34;;
+  home.homeDirectory = &#34;/home/yanboyang713&#34;;
+
+  # Packages that should be installed to the user profile.
+  home.packages = [
+    pkgs.htop
+  ];
+
+  # Raw configuration files
+  home.file.&#34;.vimrc&#34;.source = ./vimrc;
+
+  # This value determines the Home Manager release that your
+  # configuration is compatible with. This helps avoid breakage
+  # when a new Home Manager release introduces backwards
+  # incompatible changes.
+  #
+  # You can update Home Manager without changing this value. See
+  # the Home Manager release notes for a list of state version
+  # changes in each release.
+  home.stateVersion = &#34;22.05&#34;;
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>And run <strong>home-manager switch</strong> again.
+Now, let’s check what happened</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@manjaro] ➜ nixpkgs ls -l ~/.vimrc
+</span><span class=go>lrwxrwxrwx 1 yanboyang713 yanboyang713 69 Dec 27 13:49 /home/yanboyang713/.vimrc -&gt; /nix/store/mfjw8j9c04wp9zxj4g6xj83jcxlld045-home-manager-files/.vimrc
+</span></code></pre></td></tr></table>
+</div>
+</div><p>/.vimrc is now a symlink to a file in the “Nix store”, the place where all the nix things go. Without concering ourself with details, the thing to notice is that if you now change the contents of ~/nixfiles/vimrc and re-run home-manager switch Home Manager will detect the changes, create a new version of .vimrc in the Nix store and update the symlink.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span><span class=nb>echo</span> <span class=s2>&#34;hello nix&#34;</span> &gt; ~/nixfiles/vimrc
+<span class=gp>$ </span>home-manager switch
+<span class=gp>$ </span>ls -l ~/.vimrc
+<span class=go>lrwxrwxrwx 1 ghedamat ghedamat 69 Apr  3 05:47 /home/ghedamat/.vimrc -&gt; /nix/store/dsq0da2y4p7w67imwnd95crv4k35d6qb-home-manager-files/.vimrc
+</span></code></pre></td></tr></table>
+</div>
+</div><p>It is true that managing configuration in this way will add a step every time you want to edit your vimrc. I believe that this tradeoff is worth it even if you were to decide to not use any other feature offered by Home Manager as you now have a reliable and consistent way to manage all your configuration files and packages.</p>
+<h2 id=using-home-manager-modules>Using Home Manager modules</h2>
+<p>Using the <strong>home.file</strong> configuration option is my preferred way to port existing configuration files. Once that’s done though Home Manager has much more to offer.</p>
+<p>Home Manager comes with a large amount of pre-defined configuration <strong>modules</strong> for a variety of applications (<a href=https://github.com/nix-community/home-manager/tree/master/modules target=_blank rel="noopener noreferrer">full list on github</a>). These modules allow you to use a consistent syntax (the Nix language) to configure every application regardless of the output format that each program requires (ini, yaml, custom…).</p>
+<p>By using modules you will get <strong>type safety guarantees</strong> about your configuration as it will be now written in Nix and the modules can specify types for each option you pass. This also means that <strong>you can use the Nix language to add logic</strong> (i.e conditionals and functions) as well as the ability to compose your configuration as you would with any other functional program written in Nix.</p>
+<p>The downside is that you have to learn at least a small part of the Nix language (mostly how to write sets, which are similar to maps and hash in other languages).</p>
+<p>Once you have identified a module you are interested in, all the options available are listed in the <a href=https://nix-community.github.io/home-manager/ target=_blank rel="noopener noreferrer">Home Manager Manual</a>.</p>
+<h3 id=porting-your-git-config>Porting your git config</h3>
+<p>Let’s see an example with porting over our <strong>~/.config/git/config</strong> to Home Manager.</p>
+<p>[user]
+email = <a href=mailto:ghedamat@gmail.com rel>ghedamat@gmail.com</a>
+name = ghedamat
+[alias]
+st = &ldquo;status&rdquo;</p>
+<p>Edit <strong>home.nix</strong> as follows (you can find the full list of options for <strong>programs.git</strong> <a href=https://nix-community.github.io/home-manager/options.html#opt-programs.git.enable target=_blank rel="noopener noreferrer">here</a>)</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>{ config, pkgs, ... }:
+
+{
+  # Home Manager needs a bit of information about you and the
+  # paths it should manage.
+  home.username = &#34;yanboyang713&#34;;
+  home.homeDirectory = &#34;/home/yanboyang713&#34;;
+
+  # Packages that should be installed to the user profile.
+  home.packages = [
+    pkgs.htop
+  ];
+
+  # Raw configuration files
+  home.file.&#34;.vimrc&#34;.source = ./vimrc;
+
+  # Git config using Home Manager modules
+  programs.git = {
+     enable = true;
+     userName = &#34;Boyang Yan&#34;;
+     userEmail = &#34;yanboyang713@gmail.com&#34;;
+     aliases = {
+        st = &#34;status&#34;;
+     };
+  };
+
+  # This value determines the Home Manager release that your
+  # configuration is compatible with. This helps avoid breakage
+  # when a new Home Manager release introduces backwards
+  # incompatible changes.
+  #
+  # You can update Home Manager without changing this value. See
+  # the Home Manager release notes for a list of state version
+  # changes in each release.
+  home.stateVersion = &#34;22.05&#34;;
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>Let’s try to apply this change</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>home-manager switch
+</code></pre></td></tr></table>
+</div>
+</div><p>We can verify that the file is now generated by Home Manager (notice the content is slightly different)</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>cat ~/.config/git/config
+<span class=go>[alias]
+</span><span class=go>        st = &#34;status&#34;
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>[user]
+</span><span class=go>        email = &#34;yanboyang713@gmail.com&#34;
+</span><span class=go>        name = &#34;Boyang Yan&#34;
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id=structuring-your-home-manager-config>Structuring your Home Manager config</h2>
+<p>The author of Home Manager recommends to start with a single home.nix file and I would definitely agree. As you learn more about the Nix language you’ll find about all the different ways to structure your code.</p>
+<p>Later, you might want to learn about using imports to break down your configuration into multiple files. A more advance approach is to build your own Nix modules.</p>
+<p>I might decide to cover these in a future post.</p>
 <h2 id=reference-list>Reference List</h2>
 <ol>
 <li><a href=https://github.com/nix-community/home-manager target=_blank rel="noopener noreferrer">https://github.com/nix-community/home-manager</a></li>
-<li></li>
+<li><a href=https://nix-community.github.io/home-manager/index.html#sec-install-standalone target=_blank rel="noopener noreferrer">https://nix-community.github.io/home-manager/index.html#sec-install-standalone</a></li>
+<li><a href=https://ghedam.at/24353/tutorial-getting-started-with-home-manager-for-nix target=_blank rel="noopener noreferrer">https://ghedam.at/24353/tutorial-getting-started-with-home-manager-for-nix</a></li>
 </ol>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-12-26</span>
+<span>Updated on 2021-12-27</span>
 </div>
 <div class=post-info-license></div>
 </div>
