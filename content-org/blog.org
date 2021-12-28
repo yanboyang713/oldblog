@@ -2412,7 +2412,8 @@ It is essential to know which tool is used for which job among Terraform vs. Ans
 *** References
 
 
-* Linux :@Linux:
+* Nix :@Nix:
+
 ** DONE Nix Installation :nix:
 CLOSED: [2021-12-26 Sun 15:18]
 :PROPERTIES:
@@ -2500,6 +2501,115 @@ nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
 
 *** Reference List
 1. https://nixos.org/manual/nix/stable/installation/installation.html
+
+
+** DONE Getting Started with Nix :nix:
+CLOSED: [2021-12-24 Fri 12:34]
+:PROPERTIES:
+:EXPORT_FILE_NAME: nix
+:EXPORT_OPTIONS: author:nil
+:ID:       8c5cdb79-de79-45c6-be67-ebade5414a88
+:END:
+*** Introduction
+The NixOS package manager is a system of its own. You can use it under any Linux Distribution.
+*** What is Nix?
+Briefly speaking, Nix is a package manager and a build system. Its most important aspect is allowing to write declarative scripts for reproducible software builds. It also helps to test and deploy software systems while using the functional programming paradigm. There is a vast repository of packages for Nix called [[https://github.com/nixos/nixpkgs][nixpkgs]], and a GNU/Linux distribution that extends the ideas of Nix to the OS level called [[https://nixos.org/][NixOS]].
+
+Nix building instructions are called “derivations” and are written in Nix, the programming language. Derivations can be written for packages or even entire systems. After that, they can then be deterministically “realised” (built) via Nix, the package manager. Derivations can only depend on a pre-defined set of inputs, so they are somewhat reproducible.
+
+You can read more about the benefits of Nix in my blog post on [[https://serokell.io/blog/what-is-nix][Nix]].
+
+*** What does NixOS Package Manager do?
+Most package managers use a file that contains the executable or source code. They then calculate what it needs on the system and then make sure that it exists. In Nix, things work very similarly. The big difference is that Nix creates all the files, and compiles them if necessary, then put them in one place; the nix-store. The first question you have may be, “Will the files not have the same name?” The system avoids this by having one directory for each version AND naming all files with a hash. To make the application “feel at home”, all dependencies are then linked to their correct directories using ordinary symlinks. A profile keeps track of which version each user runs.
+*** NixOS User Installs
+With this system, you can have different versions installed in each user’s directory. If they are the same in several users, the administrator can let Nix re-link binaries, so only one exists at a time. This is useful in saving disk space. You can also create specific environments for each version of the package. This is especially useful when you want to test a new version or develop software.
+
+*** Installing for common distribution
+[[id:2b17d9c7-a5eb-4892-abec-282e74530b0c][Linux/Nix Installation]]
+
+*** Adding your first program to NixOS
+To install software and set when it can be used, you have nix-env. The install option (-i) is the most common one since you use it always and put a package as an argument.
+
+#+begin_src bash
+nix-env -i firefox
+#+end_src
+This looks the same as in other distributions, so does the query argument. The install will take some time, though. The reason is that it must compile the software unless there is a pre-compiled version in the Nix Cache. Reaching the cache is not always very fast either. There is a difference that you should take note of; you can pick a version! If you want a special version, you must find which are available using regular expressions.
+
+#+begin_src bash
+nix-env -qa 'firefox.*'
+#+end_src
+
+You will receive a list of all the available packages. You can install it the same way but using the value in the list.
+
+#+begin_src bash
+nix-env –install 'firefox-78.4.0ser' –preserve-installed
+#+end_src
+
+This can fail if you already have an installed version. Option ‘–preserve-installed’ will not erase the installed version. You may end up with two versions of the same priority, which you can fix by setting the priority.
+
+#+begin_src bash
+nix-env –set-flag priority 2 'firefox-82.0.2'
+#+end_src
+
+Now, you will run the old version the next time you start Firefox. To switch which one you run, you can set the priority accordingly. You can also start a shell to choose a binary. This is a developer’s option, and the command is nix-shell.
+
+*** Updating NixOS
+Once you have a collection of software, you want to stay updated. Same as always, you use the same command with an argument. But you must also keep the channel updated. The command is nix-channel.
+
+#+begin_src bash
+nix-channel --update
+#+end_src
+
+This reads down the current versions of all packages available. After that, you can start upgrading your software with nix-env.
+
+#+begin_src bash
+nix-env --upgrade
+#+end_src
+
+An upgrade like this will upgrade your old version of the software. In this case, the old Firefox will be replaced with the newest version. You may not want this for whatever reason, usually development.
+
+*** Removing applications from NixOS
+Removing applications is equally simple, with a small caveat. No applications are removed by a remove command.
+
+#+begin_src bash
+nix-env –uninstall 'firefox-78.4.0ser'
+#+end_src
+
+This command will remove the links to the current build of this version of Firefox. All the files will always stay on disk. You have these versions available to do a rollback. A rollback means that you go back to using the old version. This can be useful if you have tried the newest and it has unforeseen problems.
+
+#+begin_src bash
+nix-env –rollback
+#+end_src
+
+You rollback an entire generation, which means all the programs that were upgraded since the last generation. The option runs two commands; that list and then switches to that old generations. All installed packages exist in a generation on disk.
+
+*** NixOS Roll-back and Cleaning up
+The rollback function will lead to a lot of disk space being used by old versions. You can clean this up (you need to clean this up!). When you have had a long enough period, at your own choice, you can also clean up these old generations to save disk space.
+
+#+begin_src bash
+nix-env –delete-generations old
+#+end_src
+
+With this command, you delete all generations except the two last ones. You can go back and forth in the list with more complex parameters to leave the specific generation that worked best for you. Unless you have many testing or development projects that need many versions for testing, you should use a scheduled removal of all old generations.
+
+A simple script to keep your generations clean comes with a Nix package manager install.
+
+#+begin_src bash
+nix-collect-garbage
+#+end_src
+
+You should also set up the collector to run automatically using systemd or other systems.
+
+
+*** Conclusion
+Nix package manager is a powerful system that can get you running complex development environments on your machine. You can also use it to keep your software tidy and have a simple way to recover on a new machine, should the catastrophe of a disk crash occur.
+
+*** Reference List
+1. https://linuxhint.com/how-to-use-nixos-package-manager/
+2. https://serokell.io/blog/what-is-nix
+3. https://github.com/NixOS/nix
+4. https://nixos.org/learn.html
+
 
 ** DONE Home Manager using Nix
 CLOSED: [2021-12-26 Sun 17:30]
@@ -2880,107 +2990,87 @@ I might decide to cover these in a future post.
 3. https://ghedam.at/24353/tutorial-getting-started-with-home-manager-for-nix
 
 
-
-** DONE Getting Started with Nix :nix:
-CLOSED: [2021-12-24 Fri 12:34]
+** DONE Nix Flakes :nix:Flakes:
+CLOSED: [2021-12-28 Tue 11:23]
 :PROPERTIES:
-:EXPORT_FILE_NAME: nix
+:EXPORT_FILE_NAME: nixFlakes
 :EXPORT_OPTIONS: author:nil
 :END:
 *** Introduction
-The NixOS package manager is a system of its own. You can use it under any Linux Distribution.
-*** What does NixOS Package Manager do?
-Most package managers use a file that contains the executable or source code. They then calculate what it needs on the system and then make sure that it exists. In Nix, things work very similarly. The big difference is that Nix creates all the files, and compiles them if necessary, then put them in one place; the nix-store. The first question you have may be, “Will the files not have the same name?” The system avoids this by having one directory for each version AND naming all files with a hash. To make the application “feel at home”, all dependencies are then linked to their correct directories using ordinary symlinks. A profile keeps track of which version each user runs.
-*** NixOS User Installs
-With this system, you can have different versions installed in each user’s directory. If they are the same in several users, the administrator can let Nix re-link binaries, so only one exists at a time. This is useful in saving disk space. You can also create specific environments for each version of the package. This is especially useful when you want to test a new version or develop software.
+Nix Flakes are an upcoming feature of the Nix package manager.
 
-*** Installing for common distribution
-[[id:2b17d9c7-a5eb-4892-abec-282e74530b0c][Linux/Nix Installation]]
+Flakes replace stateful channels (which cause much confusion among novices) and introduce a more intuitive and consistent CLI, making them a perfect opportunity to start using Nix.
 
-*** Adding your first program to NixOS
-To install software and set when it can be used, you have nix-env. The install option (-i) is the most common one since you use it always and put a package as an argument.
+It contains examples and advice on using flakes for a real-life use case: building applications in various languages.
 
-#+begin_src bash
-nix-env -i firefox
-#+end_src
-This looks the same as in other distributions, so does the query argument. The install will take some time, though. The reason is that it must compile the software unless there is a pre-compiled version in the Nix Cache. Reaching the cache is not always very fast either. There is a difference that you should take note of; you can pick a version! If you want a special version, you must find which are available using regular expressions.
+*** Pre-reading
+1. [[id:8c5cdb79-de79-45c6-be67-ebade5414a88][Nix/Getting Started with Nix]]
 
-#+begin_src bash
-nix-env -qa 'firefox.*'
-#+end_src
+*** Installing flakes
+In order to do anything with flakes, you will first have to get “unstable” Nix up and running on your machine. Don’t mind that it is called unstable: it is not generally dangerous to run on your machine, it simply changes more often than “stable”.
 
-You will receive a list of all the available packages. You can install it the same way but using the value in the list.
+If you have NOT install *NIX*, please following this [[id:2b17d9c7-a5eb-4892-abec-282e74530b0c][Nix/Nix Installation]].
+
+For *Non-NixOS*, Follow the instructions until you have Nix working on your machine, and then update to unstable with:
 
 #+begin_src bash
-nix-env –install 'firefox-78.4.0ser' –preserve-installed
+#On non-nixos systems, install nixFlakes in your environment:
+nix-env -iA nixpkgs.nixUnstable
 #+end_src
 
-This can fail if you already have an installed version. Option ‘–preserve-installed’ will not erase the installed version. You may end up with two versions of the same priority, which you can fix by setting the priority.
+And enable experimental features. Edit either *~/.config/nix/nix.conf* or */etc/nix/nix.conf* and add:
+
+I recommend:
 
 #+begin_src bash
-nix-env –set-flag priority 2 'firefox-82.0.2'
+mkdir -p ~/.config/nix
+echo 'experimental-features = nix-command flakes' >> ~/.config/nix/nix.conf
 #+end_src
 
-Now, you will run the old version the next time you start Firefox. To switch which one you run, you can set the priority accordingly. You can also start a shell to choose a binary. This is a developer’s option, and the command is nix-shell.
+This is needed to expose the Nix 2.0 CLI and flakes support that are hidden behind feature-flags.
 
-*** Updating NixOS
-Once you have a collection of software, you want to stay updated. Same as always, you use the same command with an argument. But you must also keep the channel updated. The command is nix-channel.
+Finally, if the Nix installation is in multi-user mode, don’t forget to restart the nix-daemon.
 
 #+begin_src bash
-nix-channel --update
+sudo systemctl stop nix-daemon.socket
+sudo systemctl stop nix-daemon.service
+sudo systemctl start nix-daemon.socket
+sudo systemctl start nix-daemon.service
 #+end_src
+*** Getting a feel for flakes
+Now that you have a “flaky” Nix installed, it’s time to use it!
 
-This reads down the current versions of all packages available. After that, you can start upgrading your software with nix-env.
+https://serokell.io/blog/practical-nix-flakes
+
+*** What are Nix flakes?
+Flakes are self-contained units that have inputs (dependencies) and outputs (packages, deployment instructions, Nix functions for use in other flakes). You can think about them as Rust crates or Go modules but language-independent. Flakes have great reproducibility because they are only allowed to depend on their inputs and they pin the exact versions of said inputs in a lockfile.
+
+If you’re already familiar with Nix, flakes are to Nix expressions what derivations are to build instructions.
+
+
+Flakes allow you to specify your code's dependencies (e.g. remote Git repositories) in a declarative way, simply by listing them inside a *flake.nix* file:
+
+#+begin_example
+{
+  inputs = {
+    home-manager.url = "github:nix-community/home-manager";
+  };
+}
+#+end_example
+Each dependency gets then pinned, that is: its commit hash gets automatically stored into a file - named flake.lock - making it easy to, say, upgrade it:
 
 #+begin_src bash
-nix-env --upgrade
+nix flake lock --update-input home-manager
 #+end_src
+(if you're familiar with modern packages managers like cargo or npm, then the overall mechanism shouldn't surprise you - Nix works in a similar way, although without a centralized repository.)
 
-An upgrade like this will upgrade your old version of the software. In this case, the old Firefox will be replaced with the newest version. You may not want this for whatever reason, usually development.
-
-*** Removing applications from NixOS
-Removing applications is equally simple, with a small caveat. No applications are removed by a remove command.
-
-#+begin_src bash
-nix-env –uninstall 'firefox-78.4.0ser'
-#+end_src
-
-This command will remove the links to the current build of this version of Firefox. All the files will always stay on disk. You have these versions available to do a rollback. A rollback means that you go back to using the old version. This can be useful if you have tried the newest and it has unforeseen problems.
-
-#+begin_src bash
-nix-env –rollback
-#+end_src
-
-You rollback an entire generation, which means all the programs that were upgraded since the last generation. The option runs two commands; that list and then switches to that old generations. All installed packages exist in a generation on disk.
-
-*** NixOS Roll-back and Cleaning up
-The rollback function will lead to a lot of disk space being used by old versions. You can clean this up (you need to clean this up!). When you have had a long enough period, at your own choice, you can also clean up these old generations to save disk space.
-
-#+begin_src bash
-nix-env –delete-generations old
-#+end_src
-
-With this command, you delete all generations except the two last ones. You can go back and forth in the list with more complex parameters to leave the specific generation that worked best for you. Unless you have many testing or development projects that need many versions for testing, you should use a scheduled removal of all old generations.
-
-A simple script to keep your generations clean comes with a Nix package manager install.
-
-#+begin_src bash
-nix-collect-garbage
-#+end_src
-
-You should also set up the collector to run automatically using systemd or other systems.
-
-
-*** Conclusion
-Nix package manager is a powerful system that can get you running complex development environments on your machine. You can also use it to keep your software tidy and have a simple way to recover on a new machine, should the catastrophe of a disk crash occur.
+Flakes replace the nix-channels command and things like ad-hoc invocations of builtins.fetchgit - no more worrying about keeping your channels in sync, no more worrying about forgetting about a dependency deep down in your tree: everything's at hand right inside flake.lock.
 
 *** Reference List
-1. https://linuxhint.com/how-to-use-nixos-package-manager/
-2. https://serokell.io/blog/what-is-nix
-3. https://github.com/NixOS/nix
-4. https://nixos.org/learn.html
+1. https://serokell.io/blog/practical-nix-flakes
 
 
+* Linux :@Linux:
 ** DONE Arch Linux/Manjaro sound and sound card configuration :arch:linux:manjaro:sound:card:
 CLOSED: [2021-12-20 Mon 19:04]
 :PROPERTIES:
