@@ -6,20 +6,20 @@
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Getting Started with Nix - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Getting Started with Nix">
 <meta property="og:description" content="Introduction The NixOS package manager is a system of its own. You can use it under any Linux Distribution.
-What does NixOS Package Manager do? Most package managers use a file that contains the executable or source code. They then calculate what it needs on the system and then make sure that it exists. In Nix, things work very similarly. The big difference is that Nix creates all the files, and compiles them if necessary, then put them in one place; the nix-store.">
+What is Nix? Briefly speaking, Nix is a package manager and a build system. Its most important aspect is allowing to write declarative scripts for reproducible software builds. It also helps to test and deploy software systems while using the functional programming paradigm. There is a vast repository of packages for Nix called nixpkgs, and a GNU/Linux distribution that extends the ideas of Nix to the OS level called NixOS.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/nix/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-24T12:34:00+08:00">
-<meta property="article:modified_time" content="2021-12-27T07:36:58+00:00">
+<meta property="article:modified_time" content="2021-12-28T08:08:09+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting Started with Nix">
 <meta name=twitter:description content="Introduction The NixOS package manager is a system of its own. You can use it under any Linux Distribution.
-What does NixOS Package Manager do? Most package managers use a file that contains the executable or source code. They then calculate what it needs on the system and then make sure that it exists. In Nix, things work very similarly. The big difference is that Nix creates all the files, and compiles them if necessary, then put them in one place; the nix-store.">
+What is Nix? Briefly speaking, Nix is a package manager and a build system. Its most important aspect is allowing to write declarative scripts for reproducible software builds. It also helps to test and deploy software systems while using the functional programming paradigm. There is a vast repository of packages for Nix called nixpkgs, and a GNU/Linux distribution that extends the ideas of Nix to the OS level called NixOS.">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/nix/><link rel=prev href=https://yanboyang.com/vim/><link rel=next href=https://yanboyang.com/nixinstallation/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Nix","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/nix\/"},"genre":"posts","keywords":"nix","wordcount":896,"url":"https:\/\/yanboyang.com\/nix\/","datePublished":"2021-12-24T12:34:00+08:00","dateModified":"2021-12-27T07:36:58+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/nix/><link rel=prev href=https://yanboyang.com/vim/><link rel=next href=https://yanboyang.com/nixinstallation/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Nix","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/nix\/"},"genre":"posts","keywords":"nix","wordcount":1034,"url":"https:\/\/yanboyang.com\/nix\/","datePublished":"2021-12-24T12:34:00+08:00","dateModified":"2021-12-28T08:08:09+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -92,8 +92,8 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting Started with Nix</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/linux/><i class="far fa-folder fa-fw"></i>Linux</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-24>2021-12-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;896 words&nbsp;
+<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/nix/><i class="far fa-folder fa-fw"></i>Nix</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-24>2021-12-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1034 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
@@ -103,6 +103,7 @@ Cancel
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
 <li><a href=#introduction>Introduction</a></li>
+<li><a href=#what-is-nix>What is Nix?</a></li>
 <li><a href=#what-does-nixos-package-manager-do>What does NixOS Package Manager do?</a></li>
 <li><a href=#nixos-user-installs>NixOS User Installs</a></li>
 <li><a href=#installing-for-common-distribution>Installing for common distribution</a></li>
@@ -116,6 +117,10 @@ Cancel
 </nav></div>
 </div><div class=content id=content><h2 id=introduction>Introduction</h2>
 <p>The NixOS package manager is a system of its own. You can use it under any Linux Distribution.</p>
+<h2 id=what-is-nix>What is Nix?</h2>
+<p>Briefly speaking, Nix is a package manager and a build system. Its most important aspect is allowing to write declarative scripts for reproducible software builds. It also helps to test and deploy software systems while using the functional programming paradigm. There is a vast repository of packages for Nix called <a href=https://github.com/nixos/nixpkgs target=_blank rel="noopener noreferrer">nixpkgs</a>, and a GNU/Linux distribution that extends the ideas of Nix to the OS level called <a href=https://nixos.org/ target=_blank rel="noopener noreferrer">NixOS</a>.</p>
+<p>Nix building instructions are called “derivations” and are written in Nix, the programming language. Derivations can be written for packages or even entire systems. After that, they can then be deterministically “realised” (built) via Nix, the package manager. Derivations can only depend on a pre-defined set of inputs, so they are somewhat reproducible.</p>
+<p>You can read more about the benefits of Nix in my blog post on <a href=https://serokell.io/blog/what-is-nix target=_blank rel="noopener noreferrer">Nix</a>.</p>
 <h2 id=what-does-nixos-package-manager-do>What does NixOS Package Manager do?</h2>
 <p>Most package managers use a file that contains the executable or source code. They then calculate what it needs on the system and then make sure that it exists. In Nix, things work very similarly. The big difference is that Nix creates all the files, and compiles them if necessary, then put them in one place; the nix-store. The first question you have may be, “Will the files not have the same name?” The system avoids this by having one directory for each version AND naming all files with a hash. To make the application “feel at home”, all dependencies are then linked to their correct directories using ordinary symlinks. A profile keeps track of which version each user runs.</p>
 <h2 id=nixos-user-installs>NixOS User Installs</h2>
@@ -234,7 +239,7 @@ Cancel
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-12-27</span>
+<span>Updated on 2021-12-28</span>
 </div>
 <div class=post-info-license></div>
 </div>

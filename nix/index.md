@@ -6,6 +6,15 @@
 The NixOS package manager is a system of its own. You can use it under any Linux Distribution.
 
 
+## What is Nix? {#what-is-nix}
+
+Briefly speaking, Nix is a package manager and a build system. Its most important aspect is allowing to write declarative scripts for reproducible software builds. It also helps to test and deploy software systems while using the functional programming paradigm. There is a vast repository of packages for Nix called [nixpkgs](https://github.com/nixos/nixpkgs), and a GNU/Linux distribution that extends the ideas of Nix to the OS level called [NixOS](https://nixos.org/).
+
+Nix building instructions are called “derivations” and are written in Nix, the programming language. Derivations can be written for packages or even entire systems. After that, they can then be deterministically “realised” (built) via Nix, the package manager. Derivations can only depend on a pre-defined set of inputs, so they are somewhat reproducible.
+
+You can read more about the benefits of Nix in my blog post on [Nix](https://serokell.io/blog/what-is-nix).
+
+
 ## What does NixOS Package Manager do? {#what-does-nixos-package-manager-do}
 
 Most package managers use a file that contains the executable or source code. They then calculate what it needs on the system and then make sure that it exists. In Nix, things work very similarly. The big difference is that Nix creates all the files, and compiles them if necessary, then put them in one place; the nix-store. The first question you have may be, “Will the files not have the same name?” The system avoids this by having one directory for each version AND naming all files with a hash. To make the application “feel at home”, all dependencies are then linked to their correct directories using ordinary symlinks. A profile keeps track of which version each user runs.
