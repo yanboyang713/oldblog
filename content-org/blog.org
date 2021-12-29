@@ -2414,14 +2414,13 @@ It is essential to know which tool is used for which job among Terraform vs. Ans
 
 * Nix :@Nix:
 
-** DONE Nix Installation :nix:
+** DONE Nix Installation :nix:install:
 CLOSED: [2021-12-26 Sun 15:18]
 :PROPERTIES:
 :EXPORT_FILE_NAME: nixInstallation
 :EXPORT_OPTIONS: author:nil
 :ID:       2b17d9c7-a5eb-4892-abec-282e74530b0c
 :END:
-
 *** Supported Platforms
 Nix is currently supported on the following platforms:
 + Linux (i686, x86_64, aarch64).
@@ -2611,7 +2610,7 @@ Nix package manager is a powerful system that can get you running complex develo
 4. https://nixos.org/learn.html
 
 
-** DONE Home Manager using Nix
+** DONE Home Manager using Nix :home:manager:nix:
 CLOSED: [2021-12-26 Sun 17:30]
 :PROPERTIES:
 :EXPORT_FILE_NAME: nixHomeManager

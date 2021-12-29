@@ -1,8 +1,8 @@
 ---
 title: "Nix Installation"
 date: 2021-12-26T15:18:00+08:00
-tags: ["nix"]
-categories: ["Linux"]
+tags: ["nix", "install"]
+categories: ["Nix"]
 draft: false
 ---
 

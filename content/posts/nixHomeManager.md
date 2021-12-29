@@ -1,7 +1,8 @@
 ---
 title: "Home Manager using Nix"
 date: 2021-12-26T17:30:00+08:00
-categories: ["Linux"]
+tags: ["home", "manager", "nix"]
+categories: ["Nix"]
 draft: false
 ---
 
