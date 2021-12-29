@@ -1,6 +1,7 @@
 ---
 title: "Getting Started with Org Roam"
 date: 2021-12-29T15:08:00+08:00
+tags: ["org", "roam", "emacs", "doom"]
 categories: ["Research"]
 draft: false
 summary: "Set-up org roam"

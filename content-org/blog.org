@@ -3901,7 +3901,7 @@ Install by downloading the [[https://github.com/scitedotai/scite-zotero-plugin/r
 3. https://retorque.re/zotero-better-bibtex/
 
 
-** DONE Getting Started with Org Roam
+** DONE Getting Started with Org Roam :org:roam:emacs:doom:
 CLOSED: [2021-12-29 Wed 15:08]
 :PROPERTIES:
 :EXPORT_FILE_NAME: orgroam
