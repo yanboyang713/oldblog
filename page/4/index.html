@@ -88,6 +88,13 @@ Cancel
 <main class=main>
 <div class=container><div class="page home" posts><div class=home-profile><div class=home-avatar><a href=https://yanboyang.com/ title=Home><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src="https://www.gravatar.com/avatar/ddb0ff6c3db71b8244883ebcaf772b79?s=240&d=mp" data-srcset="https://www.gravatar.com/avatar/ddb0ff6c3db71b8244883ebcaf772b79?s=240&d=mp, https://www.gravatar.com/avatar/ddb0ff6c3db71b8244883ebcaf772b79?s=240&d=mp 1.5x, https://www.gravatar.com/avatar/ddb0ff6c3db71b8244883ebcaf772b79?s=240&d=mp 2x" data-sizes=auto alt="Boyang Yan" title="Boyang Yan"></a></div><h1 class=home-title>Boyang Yan's Blog</h1><h2 class=home-subtitle><div id=id-1 class=typeit></div></h2><div class=links><a href=https://github.com/yanboyang713 title=GitHub target=_blank rel="noopener noreferrer me"><i class="fab fa-github fa-fw"></i></a><a href=https://linkedin.com/in/boyang-yan-50a70763 title=LinkedIn target=_blank rel="noopener noreferrer me"><i class="fab fa-linkedin fa-fw"></i></a><a href=https://facebook.com/boyang.yan.52 title=facebook target=_blank rel="noopener noreferrer me"><i class="fab fa-facebook fa-fw"></i></a><a href=mailto:yanboyang713@gmail.com title=Email rel=me><i class="far fa-envelope fa-fw"></i></a><a href=https://yanboyang.com/index.xml title=RSS target=_blank rel="noopener noreferrer me"><i class="fas fa-rss fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
+<a href=https://yanboyang.com/iptv/>Getting Started IpTV with RouterOS and OpenVswitch</a>
+</h1><div class=post-meta><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-publish>published on <time datetime=2021-12-13>2021-12-13</time></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/networking/><i class="far fa-folder fa-fw"></i>Networking</a></span></div><div class=content>After replacing the optical modem with the optical module, it is found that there are vlan 3964 and 4000, and there are igmp data on them, you can watch iptv through igmp proxy.
+The specific operation method is as follows:
+Interface–>Add a VLAN virtual interface to the sfp optical port, with any Name and VLAN ID=4000. Not necessarily 4000 in other regions Randomly configure an IP address for the VLAN4000 virtual interface.</div><div class=post-footer>
+<a href=https://yanboyang.com/iptv/>Read More</a><div class=post-tags>
+<i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/iptv/>IPTV</a></div></div>
+</article><article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
 <a href=https://yanboyang.com/bonding/>Configuring Network Bonding</a>
 </h1><div class=post-meta><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-publish>published on <time datetime=2021-12-12>2021-12-12</time></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/networking/><i class="far fa-folder fa-fw"></i>Networking</a></span></div><div class=content>Introduction Network bonding refers to the combination of network interfaces on one host for redundancy and/or increased throughput.
 Redundancy is the key factor: we want to protect our virtualized environment from loss of service due to failure of a single physical link. This network bonding is the same as the Linux network bonding.
@@ -121,14 +128,7 @@ Note: PCI passthrough is an experimental feature in Proxmox VE! VMs with passthr
 Enable the IOMMU First open your bootloader kernel command line config file.
 1 vim /etc/default/grub Find line GRUB_CMDLINE_LINUX_DEFAULT=&ldquo;quiet&rdquo;</div><div class=post-footer>
 <a href=https://yanboyang.com/proxmoxpassthrough/>Read More</a><div class=post-tags>
-<i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/passthrough/>passthrough</a>,&nbsp;<a href=https://yanboyang.com/tags/proxmox/>Proxmox</a></div></div>
-</article><article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
-<a href=https://yanboyang.com/chineseinputmethod/>Getting Started Fcitx with chinese input method in Linux</a>
-</h1><div class=post-meta><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-publish>published on <time datetime=2021-12-06>2021-12-06</time></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/linux/><i class="far fa-folder fa-fw"></i>Linux</a></span></div><div class=content>Introduction Fcitx is a lightweight input method framework aimed at providing environment independent language support for Linux. It supports a lot of different languages and also provides many useful non-CJK features.
-In this article, I will introduction:
-How to install Fcite in Manjaro/Arch Linux. How to Config Environmental variables Install fcite packages in Manjaro 1 yay -Syu adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts 1 yay -Syu fcitx fcitx-googlepinyin fcitx-im fcitx-configtool Config Environmental variables 1 vim ~/.</div><div class=post-footer>
-<a href=https://yanboyang.com/chineseinputmethod/>Read More</a><div class=post-tags>
-<i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/fcitx/>Fcitx</a>,&nbsp;<a href=https://yanboyang.com/tags/chinese/>chinese</a>,&nbsp;<a href=https://yanboyang.com/tags/linux/>linux</a></div></div>
+<i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/passthrough/>passthrough</a>,&nbsp;<a href=https://yanboyang.com/tags/proxmox/>proxmox</a></div></div>
 </article><ul class=pagination><li class=page-item>
 <span class=page-link>
 <a href=https://yanboyang.com/>1</a>
@@ -157,7 +157,7 @@ How to install Fcite in Manjaro/Arch Linux. How to Config Environmental variable
 <span class=page-link aria-hidden=true>&mldr;</span>
 </li><li class=page-item>
 <span class=page-link>
-<a href=https://yanboyang.com/page/18/>18</a>
+<a href=https://yanboyang.com/page/19/>19</a>
 </span>
 </li></ul></div></div>
 </main><footer class=footer>
