@@ -1,4 +1,4 @@
-# Building a Second Brain :second-brain:org-mode:emacs:
+# Building a Second Brain
 
 
 ## Introduction {#introduction}
