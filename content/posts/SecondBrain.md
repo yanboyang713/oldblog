@@ -1,6 +1,7 @@
 ---
-title: "Building a Second Brain :second-brain:org-mode:emacs:"
+title: "Building a Second Brain"
 date: 2021-12-07T10:18:00+08:00
+tags: ["second", "brain", "org", "mode", "emacs"]
 categories: ["Research"]
 draft: false
 subtitle:: "Capturing, Organizing, and Sharing Knowledge for Scholars and Researchers"
