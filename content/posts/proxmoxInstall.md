@@ -1,5 +1,5 @@
 ---
-title: "Get Started with Proxmox"
+title: "Beginner guide to install Proxmox"
 date: 2021-12-29T18:17:00+08:00
 tags: ["proxmox"]
 categories: ["Cluster"]
@@ -13,13 +13,13 @@ Proxmox Virtual Environment is an open source server virtualization management s
 
 ## Install {#install}
 
-I recommend you use USB Flash Drive as Installation Medium because it is the faster option.
+I recommend you use USB Flash Drive as **Installation Medium** because it is the faster option.
 
 
 ### Download the installer ISO image {#download-the-installer-iso-image}
 
 You can download ISO image from: <https://www.proxmox.com/en/downloads/category/iso-images-pve>
-Currently, the latest version is 6.3-1.
+Currently, the latest version is **7.1-2**.
 
 
 ### Prepare a USB Flash Drive as Installation Medium {#prepare-a-usb-flash-drive-as-installation-medium}
@@ -31,7 +31,7 @@ Official link: <https://pve.proxmox.com/wiki/Prepare%5FInstallation%5FMedia>
 
 <!--list-separator-->
 
--  Find the Correct USB Device Name
+-  Find the Correct USB Device Name     :fdisk:lsblk:
 
     There are two ways to find out the name of the USB flash drive. The first one is use **lsblk** (strong recommend). The second way is to compare the output of the **fdisk -l** command. Both example at the below.
 
@@ -80,12 +80,12 @@ Official link: <https://pve.proxmox.com/wiki/Prepare%5FInstallation%5FMedia>
 
 <!--list-separator-->
 
--  Make a bootable USB using DD
+-  Make a bootable USB using DD     :dd:bootable:usb:
 
     On Unix-like operating system use the dd command to copy the ISO image to the USB flash drive. First find the correct device name of the USB flash drive (see above). Then run the dd command.
 
     ```console
-    boyang:~$ sudo dd bs=1M conv=fdatasync if=~/Downloads/proxmox-ve_6.3-1.iso of=/dev/sda
+    [yanboyang713@manjaro] ➜ ~ sudo dd bs=1M conv=fdatasync if=/home/yanboyang713/Downloads/proxmox-ve.iso of=/dev/sda
     812+1 records in
     812+1 records out
     852299776 bytes (852 MB, 813 MiB) copied, 185.781 s, 4.6 MB/s
