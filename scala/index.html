@@ -5,19 +5,21 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Getting Started with Scala - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Getting Started with Scala">
-<meta property="og:description" content="Overview Why need to learn Scala  Spark and Flink are memory-level big data computing framework are very important part of big data. Spark and Flink are written in Scala. Therefore, in order to learn Spark and Flink better, you need to master the language Scala. The rise of Spark drives the development of the Scala language!  Scala history Martin Odersky of the Federal Institute of Technology began designing Scala in 2001.">
+<meta property="og:description" content="Overview Scala is a modern multi-paradigm programming language designed to express common programming patterns in a concise, elegant, and type-safe way. Scala has been created by Martin Odersky and he released the first version in 2003. Scala smoothly integrates the features of object-oriented and functional languages. This tutorial explains the basics of Scala in a simple and reader-friendly way.
+Prerequisites Scala Programming is based on Java, so if you are aware of Java syntax, then it&rsquo;s pretty easy to learn Scala.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/scala/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-05-29T06:11:32+10:00">
-<meta property="article:modified_time" content="2021-12-30T02:51:37+00:00">
+<meta property="article:published_time" content="2021-12-31T12:04:00+08:00">
+<meta property="article:modified_time" content="2021-12-31T14:05:04+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting Started with Scala">
-<meta name=twitter:description content="Overview Why need to learn Scala  Spark and Flink are memory-level big data computing framework are very important part of big data. Spark and Flink are written in Scala. Therefore, in order to learn Spark and Flink better, you need to master the language Scala. The rise of Spark drives the development of the Scala language!  Scala history Martin Odersky of the Federal Institute of Technology began designing Scala in 2001.">
+<meta name=twitter:description content="Overview Scala is a modern multi-paradigm programming language designed to express common programming patterns in a concise, elegant, and type-safe way. Scala has been created by Martin Odersky and he released the first version in 2003. Scala smoothly integrates the features of object-oriented and functional languages. This tutorial explains the basics of Scala in a simple and reader-friendly way.
+Prerequisites Scala Programming is based on Java, so if you are aware of Java syntax, then it&rsquo;s pretty easy to learn Scala.">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/scala/><link rel=prev href=https://yanboyang.com/esxi/><link rel=next href=https://yanboyang.com/sdr/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Scala","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/scala\/"},"genre":"posts","keywords":"scala","wordcount":465,"url":"https:\/\/yanboyang.com\/scala\/","datePublished":"2021-05-29T06:11:32+10:00","dateModified":"2021-12-30T02:51:37+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/scala/><link rel=prev href=https://yanboyang.com/proxmoxinstall/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Scala","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/scala\/"},"genre":"posts","keywords":"scala","wordcount":1329,"url":"https:\/\/yanboyang.com\/scala\/","datePublished":"2021-12-31T12:04:00+08:00","dateModified":"2021-12-31T14:05:04+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -90,9 +92,9 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting Started with Scala</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/scala/><i class="far fa-folder fa-fw"></i>scala</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-05-29>2021-05-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;465 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/scala/><i class="far fa-folder fa-fw"></i>Scala</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-31>2021-12-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1329 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -102,6 +104,7 @@ Cancel
 <ul>
 <li><a href=#overview>Overview</a>
 <ul>
+<li><a href=#prerequisites>Prerequisites</a></li>
 <li><a href=#why-need-to-learn-scala>Why need to learn Scala</a></li>
 <li><a href=#scala-history>Scala history</a></li>
 <li><a href=#the-relationship-between-scala-and-java>The relationship between Scala and Java</a></li>
@@ -109,9 +112,21 @@ Cancel
 </ul>
 </li>
 <li><a href=#set-up-scala-development-environment>Set-up Scala development environment</a></li>
+<li><a href=#basic-syntax>Basic Syntax</a></li>
+<li><a href=#first-scala-program>First Scala Program</a>
+<ul>
+<li><a href=#interactive-mode>Interactive Mode</a></li>
+<li><a href=#script-mode>Script Mode</a></li>
+</ul>
+</li>
+<li><a href=#basic-syntax>Basic Syntax</a></li>
+<li><a href=#reference-list>Reference List</a></li>
 </ul>
 </nav></div>
 </div><div class=content id=content><h2 id=overview>Overview</h2>
+<p>Scala is a modern multi-paradigm programming language designed to express common programming patterns in a concise, elegant, and type-safe way. Scala has been created by Martin Odersky and he released the first version in 2003. Scala smoothly integrates the features of object-oriented and functional languages. This tutorial explains the basics of Scala in a simple and reader-friendly way.</p>
+<h3 id=prerequisites>Prerequisites</h3>
+<p>Scala Programming is based on Java, so if you are aware of Java syntax, then it&rsquo;s pretty easy to learn Scala. Further if you do not have expertise in Java but if you know any other programming language like C, C++ or Python then it will also help in grasping Scala concepts very quickly.</p>
 <h3 id=why-need-to-learn-scala>Why need to learn Scala</h3>
 <ol>
 <li>Spark and Flink are memory-level big data computing framework are very important part of big data.</li>
@@ -120,13 +135,13 @@ Cancel
 </ol>
 <h3 id=scala-history>Scala history</h3>
 <p>Martin Odersky of the Federal Institute of Technology began designing Scala in 2001.
-Martin Odyssky is a big fan of compilers and programming. After a long time of programming, he hopes to invent a
-Language can make basic tasks like writing programs efficient and simple. So when you come into contact with the JAVA language, right JAVA, a portable language that runs on the Internet and has garbage collection, has generated great interest, so he decided combining the features of functional programming languages ​​into JAVA, two languages ​​(Pizza & Scala) were invented. Pizza and Scala have greatly promoted the development of the Java programming language. The generics of JDK5.0, enhanced for loops, automatic type conversion, etc., are all new features introduced from Pizza. Type inference and Lambda expressions of JDK8.0 are features introduced from Scala. The editors of JDK5.0 and JDK8.0 were written by Martin Odyssky, so Martin Odyssky alone. The fighting power is worthy of a Java development team.</p>
+Martin Odyssky is a big fan of compilers and programming. After a long time of programming, he hopes to invent a Language can make basic tasks like writing programs efficient and simple. So when you come into contact with the JAVA language, right JAVA, a portable language that runs on the Internet and has garbage collection, has generated great interest, so he decided combining the features of functional programming languages ​into JAVA, two languages ​(Pizza & Scala) were invented. Pizza and Scala have greatly promoted the development of the Java programming language. The generics of JDK5.0, enhanced for loops, automatic type conversion, etc., are all new features introduced from Pizza. Type inference and Lambda expressions of JDK8.0 are features introduced from Scala. The editors of JDK5.0 and JDK8.0 were written by Martin Odyssky, so Martin Odyssky alone. The fighting power is worthy of a Java development team.</p>
 <h3 id=the-relationship-between-scala-and-java>The relationship between Scala and Java</h3>
 <p>Generally speaking, people who learn Scala already know Java, and Scala is based on Java.</p>
-<p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1622322955/scala/Sun_30_May_2021_07_13_51_AEST_u3wqes.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1622322955/scala/Sun_30_May_2021_07_13_51_AEST_u3wqes.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1622322955/scala/Sun_30_May_2021_07_13_51_AEST_u3wqes.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1622322955/scala/Sun_30_May_2021_07_13_51_AEST_u3wqes.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1622322955/scala/Sun_30_May_2021_07_13_51_AEST_u3wqes.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1622322955/scala/Sun_30_May_2021_07_13_51_AEST_u3wqes.png></p>
+<figure><img src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1622322955/scala/Sun%5F30%5FMay%5F2021%5F07%5F13%5F51%5FAEST%5Fu3wqes.png>
+</figure>
 <h3 id=scala-language-features>Scala language features</h3>
-<p>Scala is a program that uses Java Virtual Machine (JVM) as its operating environment and combines the best features of object-oriented and functional programming. Statically typed programming languages ​​(static languages ​​need to be compiled in advance, such as: Java, c, c++, etc., dynamic languages ​​such as: js).</p>
+<p>Scala is a program that uses Java Virtual Machine (JVM) as its operating environment and combines the best features of object-oriented and functional programming. Statically typed programming languages ​(static languages ​need to be compiled in advance, such as: Java, c, c++, etc., dynamic languages ​such as: js).</p>
 <ol>
 <li>
 <p>Scala is a multi-paradigm programming language. Scala supports object-oriented and functional programming. (Multi-paradigm means multiple programming methods The meaning of law. There are four programming methods: process-oriented, object-oriented, generic, and functional. )</p>
@@ -142,26 +157,171 @@ Language can make basic tasks like writing programs efficient and simple. So whe
 </li>
 </ol>
 <h2 id=set-up-scala-development-environment>Set-up Scala development environment</h2>
-<ol>
-<li>Intellij Installation</li>
-</ol>
+<p>I recommend you using <strong>NIX</strong>, set-up your emvironment. Please, read this article: <a href=https://yanboyang.com/nix/ rel>Nix/Getting Started with Nix</a>.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@manjaro] ➜ ~ java -version
+</span><span class=go>openjdk version &#34;17.0.1&#34; 2021-10-19
+</span><span class=go>OpenJDK Runtime Environment (build 17.0.1+12-nixos)
+</span><span class=go>OpenJDK 64-Bit Server VM (build 17.0.1+12-nixos, mixed mode, sharing)
+</span></code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@manjaro] ➜ ~ scala -version
+</span><span class=go>Scala code runner version 2.13.7 -- Copyright 2002-2021, LAMP/EPFL and Lightbend, Inc.
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id=basic-syntax>Basic Syntax</h2>
+<p>If you have a good understanding on Java, then it will be very easy for you to learn Scala. The biggest syntactic difference between Scala and Java is that the &lsquo;;&rsquo; line end character is optional.</p>
+<p>When we consider a Scala program, it can be defined as a collection of objects that communicate via invoking each other’s methods. Let us now briefly look into what do class, object, methods and instance variables mean.</p>
+<ul>
+<li>
+<p><strong>Object</strong> − Objects have states and behaviors. An object is an instance of a class. Example − A dog has states - color, name, breed as well as behaviors - wagging, barking, and eating.</p>
+</li>
+<li>
+<p><strong>Class</strong> − A class can be defined as a template/blueprint that describes the behaviors/states that are related to the class.</p>
+</li>
+<li>
+<p><strong>Methods</strong> − A method is basically a behavior. A class can contain many methods. It is in methods where the logics are written, data is manipulated and all the actions are executed.</p>
+</li>
+<li>
+<p><strong>Fields</strong> − Each object has its unique set of instance variables, which are called fields. An object&rsquo;s state is created by the values assigned to these fields.</p>
+</li>
+<li>
+<p><strong>Closure</strong> − A closure is a function, whose return value depends on the value of one or more variables declared outside this function.</p>
+</li>
+<li>
+<p><strong>Traits</strong> − A trait encapsulates method and field definitions, which can then be reused by mixing them into classes. Traits are used to define object types by specifying the signature of the supported methods.</p>
+</li>
+</ul>
+<h2 id=first-scala-program>First Scala Program</h2>
+<p>We can execute a Scala program in two modes: one is <strong>interactive mode</strong> and another is <strong>script mode</strong>.</p>
+<h3 id=interactive-mode>Interactive Mode</h3>
+<p>Open the command prompt and use the following command to open Scala.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@manjaro] ➜ ~ scala
+</span><span class=go>Welcome to Scala 2.13.7 (OpenJDK 64-Bit Server VM, Java 17.0.1).
+</span><span class=go>Type in expressions for evaluation. Or try :help.
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>scala&gt;
+</span></code></pre></td></tr></table>
+</div>
+</div><p>Type the following text to the right of the Scala prompt and press the Enter key −</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yay -S intellij-idea-community-edition
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>scala&gt; println(&#34;Hello, Scala!&#34;);
+</span></code></pre></td></tr></table>
+</div>
+</div><p>It will produce the following result −</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>Hello, Scala!
+</span></code></pre></td></tr></table>
+</div>
+</div><p>You can type <strong>:quit</strong> to exit interactive Mode.</p>
+<h3 id=script-mode>Script Mode</h3>
+<p>Use the following instructions to write a Scala program in script mode. Open notepad and add the following code into it.</p>
+<p>Example</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-scala data-lang=scala><span class=k>object</span> <span class=nc>HelloWorld</span> <span class=o>{</span>
+   <span class=cm>/* This is my first java program.
+</span><span class=cm>   * This will print &#39;Hello World&#39; as the output
+</span><span class=cm>   */</span>
+   <span class=k>def</span> <span class=n>main</span><span class=o>(</span><span class=n>args</span><span class=k>:</span> <span class=kt>Array</span><span class=o>[</span><span class=kt>String</span><span class=o>])</span> <span class=o>{</span>
+      <span class=n>println</span><span class=o>(</span><span class=s>&#34;Hello, world!&#34;</span><span class=o>)</span> <span class=c1>// prints Hello World
+</span><span class=c1></span>   <span class=o>}</span>
+<span class=o>}</span>
 </code></pre></td></tr></table>
 </div>
-</div><ol start=2>
-<li>Scala Plugin Installation
-Go to <strong>Marketplace</strong> installation <strong>Scala</strong> Plugin. After that, Restart Intellij IDEA.</li>
+</div><p>Save the file as − HelloWorld.scala.</p>
+<p>Open the command prompt window and go to the directory where the program file is saved. The ‘scalac’ command is used to compile the Scala program and it will generate a few class files in the current directory. One of them will be called HelloWorld.class. This is a bytecode which will run on Java Virtual Machine (JVM) using ‘scala’ command.</p>
+<p>Use the following command to compile and execute your Scala program.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>\&gt; scalac HelloWorld.scala
+</span><span class=go>\&gt; scala HelloWorld
+</span></code></pre></td></tr></table>
+</div>
+</div><p>Output:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>Hello, World!
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=basic-syntax>Basic Syntax</h2>
+<p>The following are the basic syntaxes and coding conventions in Scala programming.</p>
+<ul>
+<li>
+<p><strong>Case Sensitivity</strong> − Scala is case-sensitive, which means identifier <strong>Hello</strong> and <strong>hello</strong> would have different meaning in Scala.</p>
+</li>
+<li>
+<p><strong>Class Names</strong> − For all class names, the first letter should be in Upper Case. If several words are used to form a name of the class, each inner word&rsquo;s first letter should be in Upper Case.</p>
+<p><strong>Example</strong> − class MyFirstScalaClass.</p>
+</li>
+<li>
+<p><strong>Method Names</strong> − All method names should start with a Lower Case letter. If multiple words are used to form the name of the method, then each inner word&rsquo;s first letter should be in Upper Case.</p>
+<p><strong>Example</strong> − def myMethodName()</p>
+</li>
+<li>
+<p><strong>Program File Name</strong> − Name of the program file should exactly match the object name. When saving the file you should save it using the object name (Remember Scala is case-sensitive) and append &lsquo;<strong>.scala</strong>&rsquo; to the end of the name. (If the file name and the object name do not match your program will not compile).</p>
+<p><strong>Example</strong> − Assume &lsquo;HelloWorld&rsquo; is the object name. Then the file should be saved as &lsquo;HelloWorld.scala&rsquo;.</p>
+</li>
+<li>
+<p><strong>def main(args: Array[String])</strong> − Scala program processing starts from the main() method which is a mandatory part of every Scala Program.</p>
+</li>
+</ul>
+<h2 id=reference-list>Reference List</h2>
+<ol>
+<li><a href=https://www.tutorialspoint.com/scala/index.htm target=_blank rel="noopener noreferrer">https://www.tutorialspoint.com/scala/index.htm</a></li>
 </ol>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-12-30</span>
+<span>Updated on 2021-12-31</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -180,8 +340,7 @@ Go to <strong>Marketplace</strong> installation <strong>Scala</strong> Plugin. A
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span>
 </section>
 </div>
-<div class=post-nav><a href=https://yanboyang.com/esxi/ class=prev rel=prev title=ESXi><i class="fas fa-angle-left fa-fw"></i>ESXi</a>
-<a href=https://yanboyang.com/sdr/ class=next rel=next title="Getting started Software-defined radio with SDRPlay">Getting started Software-defined radio with SDRPlay<i class="fas fa-angle-right fa-fw"></i></a></div>
+<div class=post-nav><a href=https://yanboyang.com/proxmoxinstall/ class=prev rel=prev title="Beginner guide to install Proxmox"><i class="fas fa-angle-left fa-fw"></i>Beginner guide to install Proxmox</a></div>
 </div>
 <div id=comments><div id=disqus_thread class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
