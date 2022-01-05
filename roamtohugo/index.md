@@ -1,4 +1,4 @@
-# Exporting Org Roam notes to hugo :hugo:org-roam:
+# Exporting Org Roam notes to hugo
 
 
 ## Introduction {#introduction}

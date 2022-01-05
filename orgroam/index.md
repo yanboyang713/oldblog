@@ -18,6 +18,19 @@ Org-roam provides these benefits over other tooling:
 
 ## Installation {#installation}
 
+
+### Doom Emacs {#doom-emacs}
+
+-   Enable org-roam
+    init.el file
+
+    ```emacs-lisp
+      (org +roam2)
+    ```
+
+
+### Spacemacs {#spacemacs}
+
 You can installing from MELPA or GitHub(Source). In this section, I will choose install Org-roam directly from the repository on GotHub. This will give you access to the latest version hours or days before it appears on MELPA, and months (or more) before it is added to the Debian or Ubuntu repositories. This will also give you access to various developmental branches that may be available.
 
 Note, however, that development version, and especially any feature branches, may not always be in working order. You’ll need to be prepared to do some debugging, or to manually roll-back to working versions, if you install from GitHub.
@@ -155,7 +168,7 @@ Each entry is either:
 
 ## Creating your first node {#creating-your-first-node}
 
-Let's create our first node! We can use the **SPC aor/** binding to invoke org-roam-node-find which brings up a completion session to select or create a node.
+Let's create our first node! We can use the spacemacs: (**SPC aor/**) Doom emacs: (**SPC n r**) binding to invoke org-roam-node-find which brings up a completion session to select or create a node.
 
 Since we want to create a new node, we can type in the desired node name "test node" and press RET (Enter).
 
