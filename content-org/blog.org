@@ -4155,6 +4155,229 @@ touch Makefile
 #+end_src
 
 
+** DONE Take a Screenshot and upload to Cloudinary using Bash Scripts :cloudinary:Screenshot:
+CLOSED: [2022-01-05 Wed 16:12]
+:PROPERTIES:
+:EXPORT_FILE_NAME: cloudinary
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+In this article, I will introduce *HOW TO* take a screenshot and upload screenshot to *cloudinary*. Cloudinary will return the *image URL* and put it into your clipboard.
+
+So, you can directly paste image URL using *Control+v*.
+
+[[https://cloudinary.com/][Cloudinary]] is an amazing image hosting service. We can upload all of our *published* image to *WWW* and save our *local* disk memory. Let's we do it now!
+
+*** Pre-reading
+1. [[id:2a4b8ac1-c2ac-444d-bd75-b079e1878146][Linux/Pipe to/from the clipboard in a Bash script]]
+2. [[id:5daeba1f-2aa5-492a-b3e7-3343722def0b][Linux/Managing Your Dotfiles With Git and Make]]
+
+*** Pre-installion
+1. maim: take screenshots tool
+2. xclip: clipboard
+3. Python >= 3.6 and PIP
+4. PIP install *cloudinary-cli*
+
+*** Cloudinary CLI
+The Cloudinary CLI (Command Line Interface) enables you to interact with Cloudinary through the command line. There are so many difference functions you can use. For example, you can perform Admin and Upload API operations. Additional helper commands are provided to help you to try out transformations, optimizations, and other common actions with minimal effort.
+
+In our case, I will use cloudinary CLI combine others CLI command tools to automate take screenshot -> upload to cloudinary -> use *Control+v* paste image URL.
+
+**** Installation and configuration
+1. *Prerequisite*: To use the Cloudinary CLI, you need Python 3.6 or later. Package Installer (pip) is installed with it.
+2. To install the Cloudinary CLI, run:
+   #+begin_src bash
+pip install cloudinary-cli
+   #+end_src
+
+***** Environment Variable
+To make all your *cld* commands point to your Cloudinary account, you need set up your *CLOUDINARY_URL* environment variable. We will do it in our bash script.
+
+There are just a reminders, we will do it later. You can jump to [[id:efffb8bf-9dc8-4691-aa8a-02f3de7380f7][Linux/Take a Screenshot and upload to Cloudinary using Bash Scripts/Cloudinary CLI/Uploader Image Script]] section.
+
+   + On Mac or Linux:
+     #+begin_src bash
+export CLOUDINARY_URL=cloudinary://123456789012345:abcdefghijklmnopqrstuvwxyzA@cloud_name
+     #+end_src
+
+   + On Windows:
+     #+begin_src bash
+set CLOUDINARY_URL=cloudinary://123456789012345:abcdefghijklmnopqrstuvwxyzA@cloud_name
+     #+end_src
+
+
+    You may prefer to set up a persistent environment variable, but be aware that you could put your API secret at risk by storing it in your shell's startup script.
+
+    *Tip*: You can copy and paste your *API Environment variable* from the *Account Details* section of the *Dashboard* page in the [[https://cloudinary.com/console][Cloudinary console]].
+
+***** Check your configuration
+#+begin_src bash
+cld config
+#+end_src
+
+A response of the following form is returned:
+#+begin_example
+cloud_name:     <CLOUD_NAME>
+api_key:        <API_KEY>
+api_secret:     ***************<LAST_4_DIGITS>
+private_cdn:    <True|False>
+signature_algorithm:    <sha1|sha256>
+#+end_example
+
+**** Uploader Image Script
+:PROPERTIES:
+:ID:       efffb8bf-9dc8-4691-aa8a-02f3de7380f7
+:END:
+
+This script include *Four* steps:
+1. Take a screenshot
+2. Set-up cloudinary environment and upload image to cloudinary
+3. Get image *URL*.
+4. Put *URL* into clipboard.
+
+This *Script* could use *Make* to management, You can link this script to *$(HOME)/.local/bin/*
+
+After, you can run screenshot directly.
+
+#+begin_example
+execs:
+    $(LN) $(PWD)/scripts/screenshot $(HOME)/.local/bin/screenshot
+#+end_example
+
+The details: [[id:5daeba1f-2aa5-492a-b3e7-3343722def0b][Linux/Managing Your Dotfiles With Git and Make]]
+
+#+begin_src bash
+#!/bin/bash
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: cloudinary, upload, screenshot                  ##
+## PURPOSE: This program for take a screenshot and           ##
+## upload to cloudinary                                      ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 05.01.2022                            ##
+###############################################################
+
+# Using scrot take a screenshot
+fileName="$(date +'%Y-%m-%d-%H-%M-%S')-screenshot.png"
+echo $fileName
+scrot -s /tmp/$fileName
+
+# Upload screenshot to cloudinary
+export CLOUDINARY_URL=cloudinary://812134614995175:peTDZeQMd6IlCvr4-dLm5Xc0qBM@dkvj6mo4c
+json=$(cld uploader upload "/tmp/$fileName" folder="screenshot" tags="screenshot" 2>&1)
+
+# Save return json file to tmp dir
+echo $json > /tmp/json.json
+
+# Get image URL
+url=$(jq -r '.url' /tmp/json.json)
+
+# free files
+rm -rf /tmp/json.json
+rm -rf /tmp/$fileName
+
+# Write URL to clipboard
+echo $url
+echo $url | xclip -selection c
+#+end_src
+
+*** I3 WM Set-up
+Set this on your i3 config file *~/.i3/config*
+
+#+begin_example
+## Screenshots
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
+## screenshots with cloudinary
+bindsym --release Ctrl+Shift+p exec --no-startup-id screenshot
+#+end_example
+
+*NOTE:* You may remove the default screenshot shortcuts to prevent error.
+
+**** What it do
+| Feature                    | Shortcut:              |
+|----------------------------+------------------------|
+| Full Screen                | PrtScrn                |
+| Selection                  | Shift + PrtScrn        |
+| Active Window              | Super + PrtScrn        |
+| Clipboard Full Screen      | Ctrl + PrtScrn         |
+| Clipboard Selection        | Ctrl + Shift + PrtScrn |
+| Clipboard Active Window    | Ctrl + Super + PrtScrn |
+| screenshot with cloudinary | Ctrl + Shift + p       |
+
+All the screen shots are saved on ~/Pictures/CURRENT_DATE
+
+*NOTE*: super key is the windows key
+
+
+** DONE Pipe to/from the clipboard in a Bash script :clipboard:
+CLOSED: [2022-01-05 Wed 12:09]
+:PROPERTIES:
+:EXPORT_FILE_NAME: clipboard
+:EXPORT_OPTIONS: author:nil
+:ID:       2a4b8ac1-c2ac-444d-bd75-b079e1878146
+:END:
+
+*** Introduction
+The *clipboard* is a buffer that operating systems provide for short-term storage and transfer within and between application programs.
+
+The clipboard provides an application programming interface by which programs can specify cut, copy and paste operations.
+
+In the Post, I will introduct how to using *xclip* in *Bash Script*.
+
+*** Installion
+**** Linux
+#+begin_src bash
+# You can install xclip using `apt-get`
+apt-get install xclip
+
+# or `pacman`
+pacman -S xclip
+
+# or `dnf`
+dnf install xclip
+#+end_src
+
+*** Set-up
+**** Bash
+In ~/.bash_aliases, add:
+
+#+begin_example
+alias setclip="xclip -selection c"
+alias getclip="xclip -selection c -o"
+#+end_example
+
+Do not forget to load your new configuration using *. ~/.bash_aliases* or by restarting your profile.
+
+**** Fish
+In *~/.config/fish/config.fish*, add:
+
+#+begin_example
+abbr setclip "xclip -selection c"
+abbr getclip "xclip -selection c -o"
+#+end_example
+
+Do not forget to restart your fish instance by restarting your terminal for changes to apply.
+
+*** Usage
+You can now use setclip and getclip, e.g:
+
+#+begin_src console
+$ echo foo | setclip
+$ getclip
+foo
+#+end_src
+
+
 * Research :@Research:
 ** DONE Getting Started with Zotero :zotero:
 CLOSED: [2021-12-07 Tue 12:46]
@@ -4318,6 +4541,13 @@ Org-roam provides these benefits over other tooling:
 + *Built on Emacs*: Emacs is also a fantastic interface for editing text, and Org-roam inherits many of the powerful text-navigation and editing packages available to Emacs.
 
 *** Installation
+**** Doom Emacs
++ Enable org-roam
+  init.el file
+  #+begin_src emacs-lisp
+(org +roam2)
+  #+end_src
+**** Spacemacs
 You can installing from MELPA or GitHub(Source). In this section, I will choose install Org-roam directly from the repository on GotHub. This will give you access to the latest version hours or days before it appears on MELPA, and months (or more) before it is added to the Debian or Ubuntu repositories. This will also give you access to various developmental branches that may be available.
 
 Note, however, that development version, and especially any feature branches, may not always be in working order. You’ll need to be prepared to do some debugging, or to manually roll-back to working versions, if you install from GitHub.
@@ -4454,7 +4684,7 @@ Each entry is either:
 #+end_src
 
 *** Creating your first node
-Let's create our first node! We can use the *SPC aor/* binding to invoke org-roam-node-find which brings up a completion session to select or create a node.
+Let's create our first node! We can use the spacemacs: (*SPC aor/*) Doom emacs: (*SPC n r*) binding to invoke org-roam-node-find which brings up a completion session to select or create a node.
 
 Since we want to create a new node, we can type in the desired node name "test node" and press RET (Enter).
 
@@ -5016,7 +5246,7 @@ The common ox-hugo export bindings are:
     Export the Org file to a Hugo post in Markdown.
 
 
-** DONE Exporting Org Roam notes to hugo :hugo:org-roam:
+** DONE Exporting Org Roam notes to hugo :hugo:org:roam:
 CLOSED: [2021-12-14 Tue 13:20]
 :PROPERTIES:
 :EXPORT_FILE_NAME: roamTOhugo

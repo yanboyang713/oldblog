@@ -1,6 +1,7 @@
 ---
-title: "Exporting Org Roam notes to hugo :hugo:org-roam:"
+title: "Exporting Org Roam notes to hugo"
 date: 2021-12-14T13:20:00+08:00
+tags: ["hugo", "org", "roam"]
 categories: ["Blog"]
 draft: false
 ---
