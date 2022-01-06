@@ -4,20 +4,24 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Extented Image Training Set Tips - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Extented Image Training Set Tips">
-<meta property="og:description" content="Introduction Regardless of the algorithm and framework used to train the neural network, the amount of image data is always an important prerequisite for determining the quality of the training model. Data expansion is a common method for training models, which is very important for the robustness and accuracy of the model. This post document will use OpenCV to show some of tips for how we can extented image training set.">
+<title>Getting Started Alacritty Terminal - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Getting Started Alacritty Terminal">
+<meta property="og:description" content="Introduction Alacritty is a modern terminal emulator that comes with sensible defaults, but allows for extensive configuration. By integrating with other applications, rather than reimplementing their functionality, it manages to provide a flexible set of features with high performance. The supported platforms currently consist of BSD, Linux, macOS and Windows.
+Installation NIX You can use NIX install Alacritty. Nix/Getting Started with Nix
+Arch Linux 1  yay -S mesa-git alacritty-git   Set as default terminal Ubuntu it is necessary to define it as an alternative available for ‘terminal’ type applications:">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://yanboyang.com/extentedimagetrainingset/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2020-09-07T06:11:32+10:00">
+<meta property="og:url" content="https://yanboyang.com/alacritty/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-01-05T18:37:00+08:00">
 <meta property="article:modified_time" content="2022-01-06T02:55:17+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
-<meta name=twitter:title content="Extented Image Training Set Tips">
-<meta name=twitter:description content="Introduction Regardless of the algorithm and framework used to train the neural network, the amount of image data is always an important prerequisite for determining the quality of the training model. Data expansion is a common method for training models, which is very important for the robustness and accuracy of the model. This post document will use OpenCV to show some of tips for how we can extented image training set.">
+<meta name=twitter:title content="Getting Started Alacritty Terminal">
+<meta name=twitter:description content="Introduction Alacritty is a modern terminal emulator that comes with sensible defaults, but allows for extensive configuration. By integrating with other applications, rather than reimplementing their functionality, it manages to provide a flexible set of features with high performance. The supported platforms currently consist of BSD, Linux, macOS and Windows.
+Installation NIX You can use NIX install Alacritty. Nix/Getting Started with Nix
+Arch Linux 1  yay -S mesa-git alacritty-git   Set as default terminal Ubuntu it is necessary to define it as an alternative available for ‘terminal’ type applications:">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/extentedimagetrainingset/><link rel=prev href=https://yanboyang.com/frp/><link rel=next href=https://yanboyang.com/amlci/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Extented Image Training Set Tips","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/extentedimagetrainingset\/"},"genre":"posts","keywords":"Machine Learning, Extented Image Training Set, OpenCV","wordcount":135,"url":"https:\/\/yanboyang.com\/extentedimagetrainingset\/","datePublished":"2020-09-07T06:11:32+10:00","dateModified":"2022-01-06T02:55:17+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/alacritty/><link rel=prev href=https://yanboyang.com/cloudinary/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started Alacritty Terminal","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/alacritty\/"},"genre":"posts","wordcount":157,"url":"https:\/\/yanboyang.com\/alacritty\/","datePublished":"2022-01-05T18:37:00+08:00","dateModified":"2022-01-06T02:55:17+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -89,9 +93,9 @@ Cancel
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Extented Image Training Set Tips</h1><h2 class=single-subtitle>Make Machine Learning model Robustness</h2><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/machine-learning/><i class="far fa-folder fa-fw"></i>Machine Learning</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-09-07>2020-09-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;135 words&nbsp;
+</div><article class="page single"><h1 class="single-title animated flipInX">Getting Started Alacritty Terminal</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/linux/><i class="far fa-folder fa-fw"></i>Linux</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-01-05>2022-01-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;157 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
@@ -101,55 +105,80 @@ Cancel
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
 <li><a href=#introduction>Introduction</a></li>
-<li><a href=#random-cropping-of-images>Random cropping of images</a></li>
+<li><a href=#installation>Installation</a>
+<ul>
+<li><a href=#nix>NIX</a></li>
+<li><a href=#arch-linux>Arch Linux</a></li>
+</ul>
+</li>
+<li><a href=#set-as-default-terminal>Set as default terminal</a>
+<ul>
+<li><a href=#ubuntu>Ubuntu</a></li>
+<li><a href=#i3-wm>I3 WM</a></li>
+</ul>
+</li>
+<li><a href=#reference-list>Reference List</a></li>
 </ul>
 </nav></div>
 </div><div class=content id=content><h2 id=introduction>Introduction</h2>
-<p>Regardless of the algorithm and framework used to train the neural network, the amount of image data is always an important prerequisite for determining the quality of the training model. Data expansion is a common method for training models, which is very important for the robustness and accuracy of the model. This post document will use OpenCV to show some of tips for how we can extented image training set.</p>
-<h2 id=random-cropping-of-images>Random cropping of images</h2>
+<p><a href=https://github.com/alacritty/alacritty target=_blank rel="noopener noreferrer">Alacritty</a> is a modern terminal emulator that comes with sensible defaults, but allows for extensive configuration. By integrating with other applications, rather than reimplementing their functionality, it manages to provide a flexible set of features with high performance. The supported platforms currently consist of BSD, Linux, macOS and Windows.</p>
+<h2 id=installation>Installation</h2>
+<h3 id=nix>NIX</h3>
+<p>You can use <strong>NIX</strong> install <strong>Alacritty</strong>. <a href=https://yanboyang.com/nix/ rel>Nix/Getting Started with Nix</a></p>
+<h3 id=arch-linux>Arch Linux</h3>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>cv2</span>
-<span class=kn>import</span> <span class=nn>random</span>
-
-<span class=n>img</span> <span class=o>=</span> <span class=n>cv2</span><span class=o>.</span><span class=n>imread</span><span class=p>(</span><span class=s2>&#34;lena.jpg&#34;</span><span class=p>)</span>
-<span class=n>width</span><span class=p>,</span> <span class=n>height</span><span class=p>,</span> <span class=n>depth</span> <span class=o>=</span> <span class=n>img</span><span class=o>.</span><span class=n>shape</span>
-
-<span class=n>img_width_box</span> <span class=o>=</span> <span class=n>width</span> <span class=o>*</span> <span class=mf>0.2</span>
-<span class=n>img_width_box</span> <span class=o>=</span> <span class=n>height</span> <span class=o>*</span> <span class=mf>0.2</span>
-
-<span class=k>for</span> <span class=n>_</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>9</span><span class=p>):</span>
-	<span class=n>start_pointX</span> <span class=o>=</span> <span class=nb>int</span><span class=p>(</span><span class=n>random</span><span class=o>.</span><span class=n>uniform</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=n>img_width_box</span><span class=p>))</span>
-	<span class=n>start_pointY</span> <span class=o>=</span> <span class=nb>int</span><span class=p>(</span><span class=n>random</span><span class=o>.</span><span class=n>uniform</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=n>img_height_box</span><span class=p>))</span>
-	
-	<span class=n>copyImg</span> <span class=o>=</span> <span class=n>img</span><span class=p>[</span><span class=n>start_pointX</span><span class=p>:</span><span class=mi>200</span><span class=p>,</span> <span class=n>start_pointY</span><span class=p>:</span><span class=mi>200</span><span class=p>]</span>
-
-	<span class=n>cv2</span><span class=o>.</span><span class=n>imshow</span> <span class=p>(</span><span class=s2>&#34;test&#34;</span><span class=p>,</span> <span class=n>copyImg</span><span class=p>)</span>
-	<span class=n>cv2</span><span class=o>.</span><span class=n>waitKey</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
-
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yay -S mesa-git alacritty-git
 </code></pre></td></tr></table>
 </div>
-</div></div><div class=post-footer id=post-footer>
+</div><h2 id=set-as-default-terminal>Set as default terminal</h2>
+<h3 id=ubuntu>Ubuntu</h3>
+<p>it is necessary to define it as an alternative available for ‘terminal’ type applications:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/alacritty <span class=m>50</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>(The number ‘50’ at the end represents the priority of the entry)</p>
+<p>It will then be possible to define it as the default terminal, thanks to the command:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo update-alternatives --config x-terminal-emulator
+</code></pre></td></tr></table>
+</div>
+</div><p>Finally, if you want to remove alacritty from the available alternatives:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo update-alternatives --remove <span class=s2>&#34;x-terminal-emulator&#34;</span> <span class=s2>&#34;/usr/bin/alacritty&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=i3-wm>I3 WM</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>bindsym $mod+Return exec alacritty
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=reference-list>Reference List</h2>
+<ol>
+<li><a href=https://betterprogramming.pub/a-minimal-and-configurable-terminal-setup-72aa833672e target=_blank rel="noopener noreferrer">https://betterprogramming.pub/a-minimal-and-configurable-terminal-setup-72aa833672e</a></li>
+<li><a href=https://frantzroulet.com/blog/other/2018/12/26/how-to-choose-alacritty-as-default-terminal.html target=_blank rel="noopener noreferrer">https://frantzroulet.com/blog/other/2018/12/26/how-to-choose-alacritty-as-default-terminal.html</a></li>
+</ol>
+</div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
@@ -159,21 +188,20 @@ Cancel
 </div>
 <div class=post-info-line>
 <div class=post-info-md><span>
-<a class=link-to-markdown href=https://yanboyang.com/extentedimagetrainingset/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
+<a class=link-to-markdown href=https://yanboyang.com/alacritty/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/extentedimagetrainingset/ data-title="Extented Image Training Set Tips" data-hashtags="Machine Learning,Extented Image Training Set,OpenCV"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/extentedimagetrainingset/ data-hashtag="Machine Learning"><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/extentedimagetrainingset/ data-title="Extented Image Training Set Tips" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/extentedimagetrainingset/ data-title="Extented Image Training Set Tips"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/extentedimagetrainingset/ data-title="Extented Image Training Set Tips"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/extentedimagetrainingset/ data-title="Extented Image Training Set Tips" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/extentedimagetrainingset/ data-title="Extented Image Training Set Tips" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/extentedimagetrainingset/ data-title="Extented Image Training Set Tips"><i class="fab fa-evernote fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/alacritty/ data-title="Getting Started Alacritty Terminal"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/alacritty/><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/alacritty/ data-title="Getting Started Alacritty Terminal" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/alacritty/ data-title="Getting Started Alacritty Terminal"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/alacritty/ data-title="Getting Started Alacritty Terminal"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/alacritty/ data-title="Getting Started Alacritty Terminal" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/alacritty/ data-title="Getting Started Alacritty Terminal" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/alacritty/ data-title="Getting Started Alacritty Terminal"><i class="fab fa-evernote fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/machine-learning/>Machine Learning</a>,&nbsp;<a href=https://yanboyang.com/tags/extented-image-training-set/>Extented Image Training Set</a>,&nbsp;<a href=https://yanboyang.com/tags/opencv/>OpenCV</a></section>
+<section class=post-tags></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span>
 </section>
 </div>
-<div class=post-nav><a href=https://yanboyang.com/frp/ class=prev rel=prev title="Getting Started with Reverse Proxy"><i class="fas fa-angle-left fa-fw"></i>Getting Started with Reverse Proxy</a>
-<a href=https://yanboyang.com/amlci/ class=next rel=next title="Azure Machine Learning Compute Instance Getting Started">Azure Machine Learning Compute Instance Getting Started<i class="fas fa-angle-right fa-fw"></i></a></div>
+<div class=post-nav><a href=https://yanboyang.com/cloudinary/ class=prev rel=prev title="Take a Screenshot and upload to Cloudinary using Bash Scripts"><i class="fas fa-angle-left fa-fw"></i>Take a Screenshot and upload to Cloudinary using Bash Scripts</a></div>
 </div>
 <div id=comments><div id=disqus_thread class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
