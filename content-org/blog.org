@@ -4378,6 +4378,57 @@ foo
 #+end_src
 
 
+** DONE Getting Started Alacritty Terminal
+CLOSED: [2022-01-05 Wed 18:37]
+:PROPERTIES:
+:EXPORT_FILE_NAME: alacritty
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+[[https://github.com/alacritty/alacritty][Alacritty]] is a modern terminal emulator that comes with sensible defaults, but allows for extensive configuration. By integrating with other applications, rather than reimplementing their functionality, it manages to provide a flexible set of features with high performance. The supported platforms currently consist of BSD, Linux, macOS and Windows.
+
+*** Installation
+**** NIX
+You can use *NIX* install *Alacritty*. [[id:8c5cdb79-de79-45c6-be67-ebade5414a88][Nix/Getting Started with Nix]]
+
+**** Arch Linux
+#+begin_src bash
+yay -S mesa-git alacritty-git
+#+end_src
+*** Set as default terminal
+**** Ubuntu
+it is necessary to define it as an alternative available for ‘terminal’ type applications:
+
+#+begin_src bash
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/alacritty 50
+#+end_src
+
+(The number ‘50’ at the end represents the priority of the entry)
+
+It will then be possible to define it as the default terminal, thanks to the command:
+
+#+begin_src bash
+sudo update-alternatives --config x-terminal-emulator
+#+end_src
+
+Finally, if you want to remove alacritty from the available alternatives:
+
+#+begin_src bash
+sudo update-alternatives --remove "x-terminal-emulator" "/usr/bin/alacritty"
+#+end_src
+
+**** I3 WM
+#+begin_example
+bindsym $mod+Return exec alacritty
+#+end_example
+
+
+*** Reference List
+1. https://betterprogramming.pub/a-minimal-and-configurable-terminal-setup-72aa833672e
+2. https://frantzroulet.com/blog/other/2018/12/26/how-to-choose-alacritty-as-default-terminal.html
+
+
 * Research :@Research:
 ** DONE Getting Started with Zotero :zotero:
 CLOSED: [2021-12-07 Tue 12:46]
