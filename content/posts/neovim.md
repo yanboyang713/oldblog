@@ -89,7 +89,8 @@ VISUAL=nvim
 ### coc.nvim Plugged {#coc-dot-nvim-plugged}
 
 If you faced below error message.
-![](http://res.cloudinary.com/dkvj6mo4c/image/upload/v1641468862/screenshot/usfnmxvdpqkhfqlbgjg1.png)
+
+{{< figure src="http://res.cloudinary.com/dkvj6mo4c/image/upload/v1641468862/screenshot/usfnmxvdpqkhfqlbgjg1.png" >}}
 
 The solution is:
 
