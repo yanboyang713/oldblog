@@ -2,7 +2,7 @@
 title: "Getting Started Dynamic Window Manager (DWM)"
 date: 2021-11-30T17:50:00+08:00
 tags: ["DWM"]
-categories: ["Linux"]
+categories: ["WM"]
 draft: false
 ---
 
@@ -200,7 +200,7 @@ ps aux | grep dwmblocks
 kill -9 6416
 ```
 
-<https://dwm.suckless.org/status%5Fmonitor/>
+<https://dwm.suckless.org/status_monitor/>
 
 ```bash
 git clone git://git.suckless.org/dwmstatus
@@ -276,7 +276,7 @@ sudo systemctl enable slock@yanboyang713.service
 ## Basic Commands {#basic-commands}
 
 -   Moving between windows: **[Alt]+[j]** or **[Alt]+[k]**
--   To move a terminal to another tag: **[Shift]+[Alt]+[&lt;TAG\_NUMBER&gt;]**
+-   To move a terminal to another tag: **[Shift]+[Alt]+[&lt;TAG_NUMBER&gt;]**
 -   To focus on another tag: **[Alt]+[tag number]**
 -   To change the amount of windows in the master area: **[Alt]+[d]** (Decrease) or **[Alt]+[i]** (Increase)
 -   To toggle a window between the master and stack area: **[Alt]+[Return]**

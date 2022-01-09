@@ -3966,50 +3966,7 @@ Flakes replace the nix-channels command and things like ad-hoc invocations of bu
 1. https://serokell.io/blog/practical-nix-flakes
 
 
-* Linux :@Linux:
-** DONE Arch Linux/Manjaro sound and sound card configuration :arch:linux:manjaro:sound:card:
-CLOSED: [2021-12-20 Mon 19:04]
-:PROPERTIES:
-:EXPORT_FILE_NAME: configSound
-:EXPORT_OPTIONS: author:nil
-:END:
-
-*** Introduction
-After install Arch Linux/Manjaro, although alsa-utils has been installed, it may still not play sound correctly. Here is a solution.
-
-*** First try
-#+begin_src bash
-amixer sset Master unmute
-#+end_src
-
-If you use alsamixer to unmute the master sound, you still can't play the sound.
-
-Please, following the steps at the below.
-
-*NOTE*: If you faced maixer: Unable to find simple cintrol 'Master', 0, that means, it maybe that the sound card device cannot be found or the sound card driver us not installed.
-
-*** Finding sound card ID and set-up .asoundrc file
-Using below commands to get the sound card ID and device ID of the sound card you want to use.
-
-#+begin_src bash
-aplay -l
-#+end_src
-
-There is a example for select the sound card with the sound card ID of 1 and the device ID of 0 for configuration.
-
-Add the following three lines to the configuration file ~/.asoundrc
-
-#+begin_example
-defaults.pcm.card 1
-defaults.pcm.device 0
-defaults.ctl.card 1
-#+end_example
-
-The *PCM* option determines the device used to play audio, and the *CTL* option determines which sound card can be used by the control tool (alsamixer)
-
-If you want to manage configuration files in a unified way, please have a read [[id:5daeba1f-2aa5-492a-b3e7-3343722def0b][Linux/Managing Your Dotfiles With Git and Make]].
-
-
+* WM :@WM:
 ** DONE Getting Started Dynamic Window Manager (DWM) :DWM:
 CLOSED: [2021-11-30 Tue 17:50]
 :PROPERTIES:
@@ -4291,6 +4248,118 @@ If you want to set some type of window to be always floating, look at the config
 
 *** Quitting
 To quit dwm cleanly: *[Shift]+[Alt]+[q]*
+
+
+** DONE Getting Started Rofi :rofi:
+CLOSED: [2022-01-07 Fri 17:41]
+:PROPERTIES:
+:EXPORT_FILE_NAME: rofi
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+*Rofi* is a window switcher, run dialog, ssh-launcher and dmenu replacement that started as a clone of simpleswitcher.
+
+*** Installation
+1. First, Make sure you have the same (stable) version of rofi installed.
+   + On Arch / Arch-based:
+     #+begin_src bash
+pacman -S rofi
+     #+end_src
+
++ On Debian / Ubuntu:
+  #+begin_src bash
+apt-get install rofi
+  #+end_src
+
++ On Fedora:
+#+begin_src bash
+dnf install rofi
+#+end_src
+
+2. Clone this repository
+   #+begin_src bash
+git clone --depth=1 https://github.com/adi1090x/rofi.git
+   #+end_src
+
+   #+RESULTS:
+
+3. Change to cloned directory and make setup.sh executable
+   #+begin_src bash
+cd rofi
+chmod +x setup.sh
+   #+end_src
+4. Run setup.sh and select your screen resolution
+   #+begin_src console
+$ ./setup.sh
+
+[*] Installing Rofi Themes...
+
+[*] Choose your screen resolution -
+[1] 1920x1080
+[2] 1366x768
+
+[?] Select Option : 1
+
+[*] Installing fonts...
+[*] Creating a backup of your rofi configs...
+[*] Successfully Installed.
+   #+end_src
+
+That's it, These themes are now installed on your system.
+
+*** i3WM
+'bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+
+*** DWM
+
+*** Reference List
+1. https://www.reddit.com/r/suckless/comments/gs7fjz/how_do_i_add_rofi_show_drun_showicons_to_dwm/
+2. https://github.com/adi1090x/rofi
+
+
+* Linux :@Linux:
+** DONE Arch Linux/Manjaro sound and sound card configuration :arch:linux:manjaro:sound:card:
+CLOSED: [2021-12-20 Mon 19:04]
+:PROPERTIES:
+:EXPORT_FILE_NAME: configSound
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+After install Arch Linux/Manjaro, although alsa-utils has been installed, it may still not play sound correctly. Here is a solution.
+
+*** First try
+#+begin_src bash
+amixer sset Master unmute
+#+end_src
+
+If you use alsamixer to unmute the master sound, you still can't play the sound.
+
+Please, following the steps at the below.
+
+*NOTE*: If you faced maixer: Unable to find simple cintrol 'Master', 0, that means, it maybe that the sound card device cannot be found or the sound card driver us not installed.
+
+*** Finding sound card ID and set-up .asoundrc file
+Using below commands to get the sound card ID and device ID of the sound card you want to use.
+
+#+begin_src bash
+aplay -l
+#+end_src
+
+There is a example for select the sound card with the sound card ID of 1 and the device ID of 0 for configuration.
+
+Add the following three lines to the configuration file ~/.asoundrc
+
+#+begin_example
+defaults.pcm.card 1
+defaults.pcm.device 0
+defaults.ctl.card 1
+#+end_example
+
+The *PCM* option determines the device used to play audio, and the *CTL* option determines which sound card can be used by the control tool (alsamixer)
+
+If you want to manage configuration files in a unified way, please have a read [[id:5daeba1f-2aa5-492a-b3e7-3343722def0b][Linux/Managing Your Dotfiles With Git and Make]].
 
 
 ** DONE Getting Started Fcitx with chinese input method in Linux :Fcitx:chinese:linux:
@@ -5684,6 +5753,245 @@ Once your site is verified, we recommend following these steps:
 
 In Bing Webmaster Tools, navigate to Configure My Site > Geo-Targeting. Change the dropdown from Directory to Domain, then select the country of your target audience. Click Submit.
 Navigate to Configure My Site > Users. Under Would you like to add a user?, enter support@lexblog.com in the Email field, then click Add. This allows LexBlog to perform maintenance or troubleshoot your site.
+
+
+* Git :@Git:
+** DONE An introduction for Git :git:
+CLOSED: [2022-01-09 Sun 12:09]
+:PROPERTIES:
+:EXPORT_FILE_NAME: git
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Git Cli
+**** Install
+ If you facing this *ERROR* message (*bash: gh: command not found*), please following this [[https://github.com/cli/cli/blob/trunk/docs/install_linux.md][document]] installing gh on your Linux first. Below section, I will tell you how to use Make to management your package.
+
+ #+begin_src bash
+sudo pacman -S github-cli
+ #+end_src
+
+**** Login
+Step1:
+#+begin_src console
+[yanboyang713@Boyang-PC dotfiles]$ gh auth login
+? What account do you want to log into?  [Use arrows to move, type to filter]
+> GitHub.com
+  GitHub Enterprise Server
+#+end_src
+
+Step 2:
+
+#+begin_src console
+[yanboyang713@Boyang-PC dotfiles]$ gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations?  [Use arrows to move, type to filter]
+> HTTPS
+  SSH
+#+end_src
+
+Step 3:
+#+begin_src console
+[yanboyang713@Boyang-PC dotfiles]$ gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations? HTTPS
+? Authenticate Git with your GitHub credentials? (Y/n) Y
+#+end_src
+
+Step 4:
+#+begin_src console
+[yanboyang713@Boyang-PC dotfiles]$ gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations? HTTPS
+? Authenticate Git with your GitHub credentials? Yes
+? How would you like to authenticate GitHub CLI?  [Use arrows to move, type to filter]
+> Login with a web browser
+  Paste an authentication token
+#+end_src
+
+Step 5:
+#+begin_src console
+[yanboyang713@Boyang-PC dotfiles]$ gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations? HTTPS
+? Authenticate Git with your GitHub credentials? Yes
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: 37E2-DE02
+- Press Enter to open github.com in your browser...
+#+end_src
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490070/git/ghLogin_hgj913.png]]
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490251/git/ghAuthorize_ansrw3.png]]
+
+[[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490331/git/ghAllDone_kia8xs.png]]
+
+#+begin_src console
+[yanboyang713@Boyang-PC dotfiles]$ gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations? HTTPS
+? Authenticate Git with your GitHub credentials? Yes
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: 37E2-DE02
+- Press Enter to open github.com in your browser...
+✓ Authentication complete. Press Enter to continue...
+#+end_src
+
+#+begin_src console
+[yanboyang713@Boyang-PC dotfiles]$ gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations? HTTPS
+? Authenticate Git with your GitHub credentials? Yes
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: 37E2-DE02
+- Press Enter to open github.com in your browser...
+✓ Authentication complete. Press Enter to continue...
+
+- gh config set -h github.com git_protocol https
+✓ Configured git protocol
+✓ Logged in as yanboyang713
+[yanboyang713@Boyang-PC dotfiles]$
+#+end_src
+
+*** Repository
+A repository contains all of your project's files and each file's revision history. You can discuss and manage your project's work within the repository.
+
++ You can own repositories individually, or you can share ownership of repositories with other people in an organization.
++ You can restrict who has access to a repository by choosing the repository's visibility.
++ For user-owned repositories, you can give other people collaborator access so that they can collaborate on your project. If a repository is owned by an organization, you can give organization members access permissions to collaborate on your repository.
++ You can use repositories to manage your work and collaborate with others.
++ You can use issues to collect user feedback, report software bugs, and organize tasks you'd like to accomplish.
++ You can use GitHub Discussions to ask and answer questions, share information, make announcements, and conduct or participate in conversations about a project.
++ You can use pull requests to propose changes to a repository.
++ You can use project boards to organize and prioritize your issues and pull requests.
+
+
+*** Create a repository :create:repository:
+**** GUI
+1. In the upper-right corner of any page, use the *+* drop-down menu, and select *New repository*.
+
+   [[https://docs.github.com/assets/images/help/repository/repo-create.png]]
+
+2. Type a short, memorable name for your repository. For example, "hello-world".
+
+   [[https://docs.github.com/assets/images/help/repository/create-repository-name.png]]
+
+3. Optionally, add a description of your repository. For example, "My first repository on GitHub."
+
+   [[https://docs.github.com/assets/images/help/repository/create-repository-desc.png]]
+
+4. Choose a repository visibility. For more information, see "[[https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#about-repository-visibility][About repositorie]]"
+
+   [[https://docs.github.com/assets/images/help/repository/create-repository-public-private.png]]
+
+5. Select *Initialize this repository with a README*.
+   [[https://docs.github.com/assets/images/help/repository/initialize-with-readme.png]]
+
+6. Click *Create repository*.
+   [[https://docs.github.com/assets/images/help/repository/create-repository-button.png]]
+
+Congratulations! You've successfully created your first repository, and initialized it with a README file.
+
+**** CLI
+#+begin_src console
+[yanboyang713@Boyang-PC dotfiles]$ gh repo create DotFiles
+? Visibility  [Use arrows to move, type to filter]
+> Public
+  Private
+  Internal
+#+end_src
+
+#+begin_src console
+[yanboyang713@Boyang-PC dotfiles]$ gh repo create DotFiles
+? Visibility Public
+? Would you like to add a .gitignore? (y/N) N
+#+end_src
+
+#+begin_src console
+[yanboyang713@Boyang-PC dotfiles]$ gh repo create DotFiles
+? Visibility Public
+? Would you like to add a .gitignore? No
+? Would you like to add a license? (y/N) y
+#+end_src
+
+#+begin_src console
+[yanboyang713@Boyang-PC dotfiles]$ gh repo create DotFiles
+? Visibility Public
+? Would you like to add a .gitignore? No
+? Would you like to add a license? Yes
+? Choose a license  [Use arrows to move, type to filter]
+  Eclipse Public License 2.0
+  GNU General Public License v2.0
+  GNU General Public License v3.0
+  GNU Lesser General Public License v2.1
+> MIT License
+  Mozilla Public License 2.0
+  The Unlicense
+#+end_src
+
+#+begin_src console
+[yanboyang713@Boyang-PC dotfiles]$ gh repo create DotFiles
+? Visibility Public
+? Would you like to add a .gitignore? No
+? Would you like to add a license? Yes
+? Choose a license MIT License
+? This will add an "origin" git remote to your local repository. Continue? (Y/n) Y
+#+end_src
+
+#+begin_src console
+[yanboyang713@Boyang-PC dotfiles]$ gh repo create DotFiles
+? Visibility Public
+? Would you like to add a .gitignore? No
+? Would you like to add a license? Yes
+? Choose a license MIT License
+? This will add an "origin" git remote to your local repository. Continue? Yes
+✓ Created repository yanboyang713/DotFiles on GitHub
+✓ Added remote https://github.com/yanboyang713/DotFiles.git
+#+end_src
+
+*** Inviting collaborators :inviting:collaborators:
+You can invite users to become collaborators to your personal repository.
+
+1. Ask for the username of the person you're inviting as a collaborator. If they don't have a username yet, they can sign up for GitHub
+2. On GitHub, navigate to the main page of the repository.
+3. Under your repository name, click *Settings*.
+
+   [[https://docs.github.com/assets/images/help/repository/repo-actions-settings.png]]
+
+4. In the left sidebar, click *Manage access*.
+   [[https://docs.github.com/assets/images/help/repository/manage-access-tab.png]]
+
+5. Click *Invite a collaborator*.
+   [[https://docs.github.com/assets/images/help/repository/invite-a-collaborator-button.png]]
+
+6. In the search field, start typing the name of person you want to invite, then click a name in the list of matches.
+   [[https://docs.github.com/assets/images/help/repository/manage-access-invite-search-field-user.png]]
+
+7. Click *Add NAME to REPOSITORY*.
+   [[https://docs.github.com/assets/images/help/repository/add-collaborator-user-repo.png]]
+
+8. The user will receive an email inviting them to the repository. Once they accept your invitation, they will have collaborator access to your repository.
+
+*** Submodule :submodule:
+**** add a submodule to a directory
+#+begin_src bash
+git submodule add <git@github ...> dir
+#+end_src
+
+
+** TODO Create Github Profile :github:profile:
+:PROPERTIES:
+:EXPORT_FILE_NAME: githubProfile
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+
+
+*** Crate new Github repository
 
 
 * Windows :@Windows:
