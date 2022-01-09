@@ -10,8 +10,8 @@
 1 2 3 4  [yanboyang713@Boyang-PC dotfiles]$ gh auth login ? What account do you want to log into? [Use arrows to move, type to filter] > GitHub.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/git/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-09-24T06:11:32+10:00">
-<meta property="article:modified_time" content="2022-01-07T08:15:08+00:00">
+<meta property="article:published_time" content="2022-01-09T12:09:00+08:00">
+<meta property="article:modified_time" content="2022-01-09T05:09:02+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="An introduction for Git">
@@ -21,7 +21,7 @@
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/git/><link rel=prev href=https://yanboyang.com/ham/><link rel=next href=https://yanboyang.com/doom/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"An introduction for Git","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/git\/"},"genre":"posts","keywords":"git, git-cli","wordcount":1140,"url":"https:\/\/yanboyang.com\/git\/","datePublished":"2021-09-24T06:11:32+10:00","dateModified":"2022-01-07T08:15:08+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/git/><link rel=prev href=https://yanboyang.com/rofi/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"An introduction for Git","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/git\/"},"genre":"posts","keywords":"git","wordcount":1139,"url":"https:\/\/yanboyang.com\/git\/","datePublished":"2022-01-09T12:09:00+08:00","dateModified":"2022-01-09T05:09:02+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -94,8 +94,8 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">An introduction for Git</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/version-contrl/><i class="far fa-folder fa-fw"></i>version contrl</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-09-24>2021-09-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1140 words&nbsp;
+<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/git/><i class="far fa-folder fa-fw"></i>Git</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-01-09>2022-01-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1139 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
@@ -225,24 +225,26 @@ Cancel
 </span><span class=go>? How would you like to authenticate GitHub CLI? Login with a web browser
 </span><span class=go></span><span class=err>
 </span><span class=err></span><span class=go>! First copy your one-time code: 37E2-DE02
-</span><span class=go>- Press Enter to open github.com in your browser... 
+</span><span class=go>- Press Enter to open github.com in your browser...
 </span></code></pre></td></tr></table>
 </div>
-</div><p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490070/git/ghLogin_hgj913.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490070/git/ghLogin_hgj913.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490070/git/ghLogin_hgj913.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490070/git/ghLogin_hgj913.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490070/git/ghLogin_hgj913.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490070/git/ghLogin_hgj913.png></p>
-<p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490251/git/ghAuthorize_ansrw3.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490251/git/ghAuthorize_ansrw3.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490251/git/ghAuthorize_ansrw3.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490251/git/ghAuthorize_ansrw3.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490251/git/ghAuthorize_ansrw3.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490251/git/ghAuthorize_ansrw3.png></p>
-<p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490331/git/ghAllDone_kia8xs.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490331/git/ghAllDone_kia8xs.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490331/git/ghAllDone_kia8xs.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490331/git/ghAllDone_kia8xs.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490331/git/ghAllDone_kia8xs.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490331/git/ghAllDone_kia8xs.png></p>
+</div><figure><img src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490070/git/ghLogin_hgj913.png>
+</figure>
+<figure><img src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490251/git/ghAuthorize_ansrw3.png>
+</figure>
+<figure><img src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1632490331/git/ghAllDone_kia8xs.png>
+</figure>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
 </span></code></pre></td>
 <td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@Boyang-PC dotfiles]$ gh auth login
@@ -252,9 +254,8 @@ Cancel
 </span><span class=go>? How would you like to authenticate GitHub CLI? Login with a web browser
 </span><span class=go></span><span class=err>
 </span><span class=err></span><span class=go>! First copy your one-time code: 37E2-DE02
-</span><span class=go>- Press Enter to open github.com in your browser... 
+</span><span class=go>- Press Enter to open github.com in your browser...
 </span><span class=go>✓ Authentication complete. Press Enter to continue...
-</span><span class=go></span><span class=err>
 </span></code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -282,13 +283,13 @@ Cancel
 </span><span class=go>? How would you like to authenticate GitHub CLI? Login with a web browser
 </span><span class=go></span><span class=err>
 </span><span class=err></span><span class=go>! First copy your one-time code: 37E2-DE02
-</span><span class=go>- Press Enter to open github.com in your browser... 
+</span><span class=go>- Press Enter to open github.com in your browser...
 </span><span class=go>✓ Authentication complete. Press Enter to continue...
 </span><span class=go></span><span class=err>
 </span><span class=err></span><span class=go>- gh config set -h github.com git_protocol https
 </span><span class=go>✓ Configured git protocol
 </span><span class=go>✓ Logged in as yanboyang713
-</span><span class=go>[yanboyang713@Boyang-PC dotfiles]$ 
+</span><span class=go>[yanboyang713@Boyang-PC dotfiles]$
 </span></code></pre></td></tr></table>
 </div>
 </div><h2 id=repository>Repository</h2>
@@ -306,18 +307,34 @@ Cancel
 <h2 id=create-a-repository>Create a repository</h2>
 <h3 id=gui>GUI</h3>
 <ol>
-<li>In the upper-right corner of any page, use the <strong>+</strong> drop-down menu, and select <strong>New repository</strong>.
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/repo-create.png data-srcset="https://docs.github.com/assets/images/help/repository/repo-create.png, https://docs.github.com/assets/images/help/repository/repo-create.png 1.5x, https://docs.github.com/assets/images/help/repository/repo-create.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/repo-create.png title=https://docs.github.com/assets/images/help/repository/repo-create.png></li>
-<li>Type a short, memorable name for your repository. For example, &ldquo;hello-world&rdquo;.
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/create-repository-name.png data-srcset="https://docs.github.com/assets/images/help/repository/create-repository-name.png, https://docs.github.com/assets/images/help/repository/create-repository-name.png 1.5x, https://docs.github.com/assets/images/help/repository/create-repository-name.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/create-repository-name.png title=https://docs.github.com/assets/images/help/repository/create-repository-name.png></li>
-<li>Optionally, add a description of your repository. For example, &ldquo;My first repository on GitHub.&rdquo;
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/create-repository-desc.png data-srcset="https://docs.github.com/assets/images/help/repository/create-repository-desc.png, https://docs.github.com/assets/images/help/repository/create-repository-desc.png 1.5x, https://docs.github.com/assets/images/help/repository/create-repository-desc.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/create-repository-desc.png title=https://docs.github.com/assets/images/help/repository/create-repository-desc.png></li>
-<li>Choose a repository visibility. For more information, see &ldquo;<a href=https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#about-repository-visibility target=_blank rel="noopener noreferrer">About repositories</a>.&rdquo;
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/create-repository-public-private.png data-srcset="https://docs.github.com/assets/images/help/repository/create-repository-public-private.png, https://docs.github.com/assets/images/help/repository/create-repository-public-private.png 1.5x, https://docs.github.com/assets/images/help/repository/create-repository-public-private.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/create-repository-public-private.png title=https://docs.github.com/assets/images/help/repository/create-repository-public-private.png></li>
-<li>Select <strong>Initialize this repository with a README</strong>.
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/initialize-with-readme.png data-srcset="https://docs.github.com/assets/images/help/repository/initialize-with-readme.png, https://docs.github.com/assets/images/help/repository/initialize-with-readme.png 1.5x, https://docs.github.com/assets/images/help/repository/initialize-with-readme.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/initialize-with-readme.png title=https://docs.github.com/assets/images/help/repository/initialize-with-readme.png></li>
-<li>Click <strong>Create repository</strong>.
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/create-repository-button.png data-srcset="https://docs.github.com/assets/images/help/repository/create-repository-button.png, https://docs.github.com/assets/images/help/repository/create-repository-button.png 1.5x, https://docs.github.com/assets/images/help/repository/create-repository-button.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/create-repository-button.png title=https://docs.github.com/assets/images/help/repository/create-repository-button.png></li>
+<li>
+<p>In the upper-right corner of any page, use the <strong>+</strong> drop-down menu, and select <strong>New repository</strong>.</p>
+<figure><img src=https://docs.github.com/assets/images/help/repository/repo-create.png>
+</figure>
+</li>
+<li>
+<p>Type a short, memorable name for your repository. For example, &ldquo;hello-world&rdquo;.</p>
+<figure><img src=https://docs.github.com/assets/images/help/repository/create-repository-name.png>
+</figure>
+</li>
+<li>
+<p>Optionally, add a description of your repository. For example, &ldquo;My first repository on GitHub.&rdquo;</p>
+<figure><img src=https://docs.github.com/assets/images/help/repository/create-repository-desc.png>
+</figure>
+</li>
+<li>
+<p>Choose a repository visibility. For more information, see &ldquo;<a href=https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#about-repository-visibility target=_blank rel="noopener noreferrer">About repositorie</a>&rdquo;</p>
+<figure><img src=https://docs.github.com/assets/images/help/repository/create-repository-public-private.png>
+</figure>
+</li>
+<li>
+<p>Select <strong>Initialize this repository with a README</strong>.
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/initialize-with-readme.png data-srcset="https://docs.github.com/assets/images/help/repository/initialize-with-readme.png, https://docs.github.com/assets/images/help/repository/initialize-with-readme.png 1.5x, https://docs.github.com/assets/images/help/repository/initialize-with-readme.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/initialize-with-readme.png title=https://docs.github.com/assets/images/help/repository/initialize-with-readme.png></p>
+</li>
+<li>
+<p>Click <strong>Create repository</strong>.
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/create-repository-button.png data-srcset="https://docs.github.com/assets/images/help/repository/create-repository-button.png, https://docs.github.com/assets/images/help/repository/create-repository-button.png 1.5x, https://docs.github.com/assets/images/help/repository/create-repository-button.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/create-repository-button.png title=https://docs.github.com/assets/images/help/repository/create-repository-button.png></p>
+</li>
 </ol>
 <p>Congratulations! You&rsquo;ve successfully created your first repository, and initialized it with a README file.</p>
 <h3 id=cli>CLI</h3>
@@ -401,7 +418,6 @@ Cancel
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span><span class=lnt>7
 </span></code></pre></td>
 <td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@Boyang-PC dotfiles]$ gh repo create DotFiles
@@ -410,7 +426,6 @@ Cancel
 </span><span class=go>? Would you like to add a license? Yes
 </span><span class=go>? Choose a license MIT License
 </span><span class=go>? This will add an &#34;origin&#34; git remote to your local repository. Continue? (Y/n) Y
-</span><span class=go></span><span class=err>
 </span></code></pre></td></tr></table>
 </div>
 </div><div class=highlight><div class=chroma>
@@ -438,28 +453,52 @@ Cancel
 </div><h2 id=inviting-collaborators>Inviting collaborators</h2>
 <p>You can invite users to become collaborators to your personal repository.</p>
 <ol>
-<li>Ask for the username of the person you&rsquo;re inviting as a collaborator. If they don&rsquo;t have a username yet, they can sign up for GitHub</li>
-<li>On GitHub, navigate to the main page of the repository.</li>
-<li>Under your repository name, click <strong>Settings</strong>.
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/repo-actions-settings.png data-srcset="https://docs.github.com/assets/images/help/repository/repo-actions-settings.png, https://docs.github.com/assets/images/help/repository/repo-actions-settings.png 1.5x, https://docs.github.com/assets/images/help/repository/repo-actions-settings.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/repo-actions-settings.png title=https://docs.github.com/assets/images/help/repository/repo-actions-settings.png></li>
-<li>In the left sidebar, click <strong>Manage access</strong>.
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/manage-access-tab.png data-srcset="https://docs.github.com/assets/images/help/repository/manage-access-tab.png, https://docs.github.com/assets/images/help/repository/manage-access-tab.png 1.5x, https://docs.github.com/assets/images/help/repository/manage-access-tab.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/manage-access-tab.png title=https://docs.github.com/assets/images/help/repository/manage-access-tab.png></li>
-<li>Click <strong>Invite a collaborator</strong>.
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/invite-a-collaborator-button.png data-srcset="https://docs.github.com/assets/images/help/repository/invite-a-collaborator-button.png, https://docs.github.com/assets/images/help/repository/invite-a-collaborator-button.png 1.5x, https://docs.github.com/assets/images/help/repository/invite-a-collaborator-button.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/invite-a-collaborator-button.png title=https://docs.github.com/assets/images/help/repository/invite-a-collaborator-button.png></li>
-<li>In the search field, start typing the name of person you want to invite, then click a name in the list of matches.
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/manage-access-invite-search-field-user.png data-srcset="https://docs.github.com/assets/images/help/repository/manage-access-invite-search-field-user.png, https://docs.github.com/assets/images/help/repository/manage-access-invite-search-field-user.png 1.5x, https://docs.github.com/assets/images/help/repository/manage-access-invite-search-field-user.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/manage-access-invite-search-field-user.png title=https://docs.github.com/assets/images/help/repository/manage-access-invite-search-field-user.png></li>
-<li>Click <strong>Add NAME to REPOSITORY</strong>.
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/add-collaborator-user-repo.png data-srcset="https://docs.github.com/assets/images/help/repository/add-collaborator-user-repo.png, https://docs.github.com/assets/images/help/repository/add-collaborator-user-repo.png 1.5x, https://docs.github.com/assets/images/help/repository/add-collaborator-user-repo.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/add-collaborator-user-repo.png title=https://docs.github.com/assets/images/help/repository/add-collaborator-user-repo.png></li>
-<li>The user will receive an email inviting them to the repository. Once they accept your invitation, they will have collaborator access to your repository.</li>
+<li>
+<p>Ask for the username of the person you&rsquo;re inviting as a collaborator. If they don&rsquo;t have a username yet, they can sign up for GitHub</p>
+</li>
+<li>
+<p>On GitHub, navigate to the main page of the repository.</p>
+</li>
+<li>
+<p>Under your repository name, click <strong>Settings</strong>.</p>
+<figure><img src=https://docs.github.com/assets/images/help/repository/repo-actions-settings.png>
+</figure>
+</li>
+<li>
+<p>In the left sidebar, click <strong>Manage access</strong>.
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/manage-access-tab.png data-srcset="https://docs.github.com/assets/images/help/repository/manage-access-tab.png, https://docs.github.com/assets/images/help/repository/manage-access-tab.png 1.5x, https://docs.github.com/assets/images/help/repository/manage-access-tab.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/manage-access-tab.png title=https://docs.github.com/assets/images/help/repository/manage-access-tab.png></p>
+</li>
+<li>
+<p>Click <strong>Invite a collaborator</strong>.
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/invite-a-collaborator-button.png data-srcset="https://docs.github.com/assets/images/help/repository/invite-a-collaborator-button.png, https://docs.github.com/assets/images/help/repository/invite-a-collaborator-button.png 1.5x, https://docs.github.com/assets/images/help/repository/invite-a-collaborator-button.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/invite-a-collaborator-button.png title=https://docs.github.com/assets/images/help/repository/invite-a-collaborator-button.png></p>
+</li>
+<li>
+<p>In the search field, start typing the name of person you want to invite, then click a name in the list of matches.
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/manage-access-invite-search-field-user.png data-srcset="https://docs.github.com/assets/images/help/repository/manage-access-invite-search-field-user.png, https://docs.github.com/assets/images/help/repository/manage-access-invite-search-field-user.png 1.5x, https://docs.github.com/assets/images/help/repository/manage-access-invite-search-field-user.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/manage-access-invite-search-field-user.png title=https://docs.github.com/assets/images/help/repository/manage-access-invite-search-field-user.png></p>
+</li>
+<li>
+<p>Click <strong>Add NAME to REPOSITORY</strong>.
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.github.com/assets/images/help/repository/add-collaborator-user-repo.png data-srcset="https://docs.github.com/assets/images/help/repository/add-collaborator-user-repo.png, https://docs.github.com/assets/images/help/repository/add-collaborator-user-repo.png 1.5x, https://docs.github.com/assets/images/help/repository/add-collaborator-user-repo.png 2x" data-sizes=auto alt=https://docs.github.com/assets/images/help/repository/add-collaborator-user-repo.png title=https://docs.github.com/assets/images/help/repository/add-collaborator-user-repo.png></p>
+</li>
+<li>
+<p>The user will receive an email inviting them to the repository. Once they accept your invitation, they will have collaborator access to your repository.</p>
+</li>
 </ol>
 <h2 id=submodule>Submodule</h2>
 <h3 id=add-a-submodule-to-a-directory>add a submodule to a directory</h3>
-<p>git submodule add &lt;git@github &mldr;> dir</p>
-</div><div class=post-footer id=post-footer>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git submodule add &lt;git@github ...&gt; dir
+</code></pre></td></tr></table>
+</div>
+</div></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2022-01-07</span>
+<span>Updated on 2022-01-09</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -468,18 +507,17 @@ Cancel
 <a class=link-to-markdown href=https://yanboyang.com/git/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/git/ data-title="An introduction for Git" data-hashtags=git,git-cli><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/git/ data-hashtag=git><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/git/ data-title="An introduction for Git" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/git/ data-title="An introduction for Git"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/git/ data-title="An introduction for Git"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/git/ data-title="An introduction for Git" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/git/ data-title="An introduction for Git" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/git/ data-title="An introduction for Git"><i class="fab fa-evernote fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/git/ data-title="An introduction for Git" data-hashtags=git><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/git/ data-hashtag=git><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/git/ data-title="An introduction for Git" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/git/ data-title="An introduction for Git"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/git/ data-title="An introduction for Git"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/git/ data-title="An introduction for Git" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/git/ data-title="An introduction for Git" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/git/ data-title="An introduction for Git"><i class="fab fa-evernote fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/git/>git</a>,&nbsp;<a href=https://yanboyang.com/tags/git-cli/>git-cli</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/git/>git</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span>
 </section>
 </div>
-<div class=post-nav><a href=https://yanboyang.com/ham/ class=prev rel=prev title="Beginners Guide to Ham Radio"><i class="fas fa-angle-left fa-fw"></i>Beginners Guide to Ham Radio</a>
-<a href=https://yanboyang.com/doom/ class=next rel=next title="Getting Started with Doom Emacs">Getting Started with Doom Emacs<i class="fas fa-angle-right fa-fw"></i></a></div>
+<div class=post-nav><a href=https://yanboyang.com/rofi/ class=prev rel=prev title="Getting Started Rofi"><i class="fas fa-angle-left fa-fw"></i>Getting Started Rofi</a></div>
 </div>
 <div id=comments><div id=disqus_thread class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
