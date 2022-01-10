@@ -1,0 +1,588 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Create Github Profile based on README - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Create Github Profile based on README">
+<meta property="og:description" content="Introduction If you visit other peoples GitHub profiles, some people have some fancy pictures, descriptions and stats in their profiles. These are the new GitHub Profile README. They are kind of a hidden new feature and in this article I will show you how to create one and how make it stand out using some cool tricks and tools!
+ First Step: Crate new Github repository You should create a new repository, which name should same as your GitHub&rsquo;s Username.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yanboyang.com/githubprofile/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-01-10T11:52:00+08:00">
+<meta property="article:modified_time" content="2022-01-10T03:54:35+00:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://yanboyang.com/logo.png">
+<meta name=twitter:title content="Create Github Profile based on README">
+<meta name=twitter:description content="Introduction If you visit other peoples GitHub profiles, some people have some fancy pictures, descriptions and stats in their profiles. These are the new GitHub Profile README. They are kind of a hidden new feature and in this article I will show you how to create one and how make it stand out using some cool tricks and tools!
+ First Step: Crate new Github repository You should create a new repository, which name should same as your GitHub&rsquo;s Username.">
+<meta name=application-name content="LoveIt">
+<meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/githubprofile/><link rel=prev href=https://yanboyang.com/git/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Create Github Profile based on README","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/githubprofile\/"},"genre":"posts","keywords":"github, profile","wordcount":828,"url":"https:\/\/yanboyang.com\/githubprofile\/","datePublished":"2022-01-10T11:52:00+08:00","dateModified":"2022-01-10T03:54:35+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=https://yanboyang.com/> Home </a><a class=menu-item href=https://yanboyang.com/posts/> Posts </a><a class=menu-item href=https://yanboyang.com/tags/> Tags </a><a class=menu-item href=https://yanboyang.com/categories/> Categories </a><a class=menu-item href=https://yanboyang.com/about/> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+Cancel
+</a>
+</div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>Contents</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Create Github Profile based on README</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/git/><i class="far fa-folder fa-fw"></i>Git</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-01-10>2022-01-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;828 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+</div><div class="details toc" id=toc-static kept=true>
+<div class="details-summary toc-title">
+<span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#introduction>Introduction</a></li>
+<li><a href=#first-step-crate-new-github-repository>First Step: Crate new Github repository</a></li>
+<li><a href=#make-it-stand-out>Make It Stand Out</a></li>
+<li><a href=#add-contents>Add contents</a>
+<ul>
+<li><a href=#add-latest-blog-posts>Add Latest Blog Posts</a></li>
+<li><a href=#add-latest-github-activity>Add Latest github activity</a></li>
+<li><a href=#add-top-followers>Add Top Followers</a></li>
+<li><a href=#add-starred>Add Starred</a></li>
+<li><a href=#add-youtube>Add Youtube</a></li>
+</ul>
+</li>
+<li><a href=#reference-list>Reference List</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h2 id=introduction>Introduction</h2>
+<p>If you visit other peoples GitHub profiles, some people have some fancy <strong>pictures</strong>, <strong>descriptions</strong> and <strong>stats</strong> in their <strong>profiles</strong>. These are the new GitHub Profile <strong>README</strong>. They are kind of a hidden new feature and in this article I will show you how to create one and how make it stand out using some cool tricks and tools!</p>
+<figure><img src=http://res.cloudinary.com/dkvj6mo4c/image/upload/v1641783755/screenshot/webleuai74noouki9wy7.png>
+</figure>
+<h2 id=first-step-crate-new-github-repository>First Step: Crate new Github repository</h2>
+<p>You should create a new repository, which name should same as your GitHub&rsquo;s <strong>Username</strong>.</p>
+<p>In my case that would be <strong>yanboyang713/yanboyang713</strong>.</p>
+<figure><img src=http://res.cloudinary.com/dkvj6mo4c/image/upload/v1641707032/screenshot/eenmrezaanurdatesvrx.png>
+</figure>
+<p>Please, have a look this <a href=https://yanboyang.com/git/#create-a-repository rel>Git/An introduction for Git/Create a repository</a> for create new one.</p>
+<h2 id=make-it-stand-out>Make It Stand Out</h2>
+<p>We have a repository with <strong>README</strong>, but what about the content? You could just throw in some information about yourself, your email contact and call it a day, but we can do better.</p>
+<p>One thing I would suggest to add is a nice <strong>header</strong> to make it more <strong>personalized</strong>. You could include your <strong>name</strong> or <strong>job title</strong> in it, content is up to you. There are a lot of examples of very nice and creative headers, e.g:</p>
+<ol>
+<li><a href=https://github.com/WaylonWalker/WaylonWalker target=_blank rel="noopener noreferrer">https://github.com/WaylonWalker/WaylonWalker</a></li>
+<li><a href=https://github.com/SidharthArya/SidharthArya target=_blank rel="noopener noreferrer">https://github.com/SidharthArya/SidharthArya</a></li>
+</ol>
+<p>Now, how to add it into README? First, add the <strong>header</strong> picture to your repository, so that you have it hosted publicly. Next, include following line at the top of README.md</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=gh># [![Header](https://raw.githubusercontent.com/yanboyang713/yanboyang713/main/hearder.png)](https://yanboyang.com/)
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id=add-contents>Add contents</h2>
+<p>There are a couple of <strong>TIPS</strong>, add your <strong>Blog</strong> post, <strong>GitHub</strong> activity, <strong>Starred</strong>, Top <strong>Followers</strong> and <strong>YouTube</strong> content <strong>dynamically</strong> based on <strong>GitHub</strong> Action.</p>
+<p>Before you start, You need create a new <strong>DIR</strong>: <strong>/.github/workflows</strong></p>
+<h3 id=add-latest-blog-posts>Add Latest Blog Posts</h3>
+<p>you need create a new <strong>yml</strong> file, you can named <strong>blog-post-workflow.yml</strong></p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Latest blog post workflow</span><span class=w>
+</span><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>schedule</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=c># Runs every hour</span><span class=w>
+</span><span class=w>    </span>- <span class=nt>cron</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;0 * * * *&#39;</span><span class=w>
+</span><span class=w>  </span><span class=nt>workflow_dispatch</span><span class=p>:</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>update-readme-with-blog</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Update this repo&#39;s README with latest blog posts</span><span class=w>
+</span><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest</span><span class=w>
+</span><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v2</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>gautamkrishnar/blog-post-workflow@master</span><span class=w>
+</span><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span><span class=w>          </span><span class=nt>feed_list</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;https://www.yanboyang.com/index.xml&#34;</span><span class=w>
+</span><span class=w>          </span><span class=nt>max_post_count</span><span class=p>:</span><span class=w> </span><span class=m>10</span><span class=w>
+</span><span class=w>          </span><span class=nt>date_format</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;dd-mm-yyyy&#34;</span><span class=w>
+</span><span class=w>          </span><span class=nt>template</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;$newline - $date [$title]($url)&#34;</span><span class=w>
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Importance Note</strong>: You also need add following contents in your <strong>README</strong>.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=gu>## Latest Blog Posts
+</span><span class=gu></span><span class=c>&lt;!-- BLOG-POST-LIST:START --&gt;</span>
+
+<span class=c>&lt;!-- BLOG-POST-LIST:END --&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>You need change the <strong>feed_list</strong> with your owm <strong>Blog</strong>.</p>
+<p>If you have NOT blog, I recommend read <a href=https://yanboyang.com/hugo/ rel>Blog/Creating a Hugo blog</a>.</p>
+<h3 id=add-latest-github-activity>Add Latest github activity</h3>
+<p>You need create a new <strong>yml</strong> file, you can named <strong>github-activity-workflow.yml</strong></p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Latest github post workflow</span><span class=w>
+</span><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>schedule</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=c># Runs every hour</span><span class=w>
+</span><span class=w>    </span>- <span class=nt>cron</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;0 * * * *&#39;</span><span class=w>
+</span><span class=w>  </span><span class=nt>workflow_dispatch</span><span class=p>:</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>update-readme-with-blog</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Update this repo&#39;s README with latest blog posts</span><span class=w>
+</span><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest</span><span class=w>
+</span><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v2</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>gautamkrishnar/blog-post-workflow@master</span><span class=w>
+</span><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span><span class=w>          </span><span class=nt>feed_list</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;https://github.com/yanboyang713&#34;</span><span class=w>
+</span><span class=w>          </span><span class=nt>comment_tag_name</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;GITHUB&#34;</span><span class=w>
+</span><span class=w>          </span><span class=nt>max_post_count</span><span class=p>:</span><span class=w> </span><span class=m>10</span><span class=w>
+</span><span class=w>          </span><span class=nt>accept_header</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;application/atom+xml&#34;</span><span class=w>
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Importance Note</strong>: You also need add following contents in your <strong>README</strong>.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=gu>## Latest Github Activity
+</span><span class=gu></span>
+<span class=c>&lt;!-- GITHUB:START --&gt;</span>
+
+<span class=c>&lt;!-- GITHUB:END --&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>You need change the <strong>feed_list</strong> with your owm <strong>GitHub</strong>.</p>
+<h3 id=add-top-followers>Add Top Followers</h3>
+<p>You need create a new <strong>yml</strong> file, you can named <strong>topFollowers.yml</strong>.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Get Top Followers</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>push</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>branches</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- <span class=l>master</span><span class=w>
+</span><span class=w>  </span><span class=nt>schedule</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span>- <span class=nt>cron</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;0 22 * * *&#39;</span><span class=w>
+</span><span class=w>  </span><span class=nt>workflow_dispatch</span><span class=p>:</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>top-followers</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest</span><span class=w>
+</span><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v2</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Setup python</span><span class=w>
+</span><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/setup-python@v2.2.2</span><span class=w>
+</span><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span><span class=w>          </span><span class=nt>python-version</span><span class=p>:</span><span class=w> </span><span class=m>3.8</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Install requests</span><span class=w>
+</span><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>pip install requests</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Update README</span><span class=w>
+</span><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>python src/topFollowers.py ${{ github.repository_owner }} ${{ secrets.GITHUB_TOKEN }} README.md</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Commit changes</span><span class=w>
+</span><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span><span class=sd>          git config --local user.email &#34;action@github.com&#34;
+</span><span class=sd>          git config --local user.name &#34;GitHub Action&#34;
+</span><span class=sd>          git add -A
+</span><span class=sd>          git diff-index --quiet HEAD || git commit -m &#34;Update top followers&#34;</span><span class=w>          
+</span><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Pull changes</span><span class=w>
+</span><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>git pull -r</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Push changes</span><span class=w>
+</span><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>ad-m/github-push-action@b007e7b818e33b04afd056e4c4b57ba917145d7a</span><span class=w>
+</span><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span><span class=w>          </span><span class=nt>github_token</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.GITHUB_TOKEN }}</span><span class=w>
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Importance Note</strong>: You also need add following contents in your <strong>README</strong>.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=gu>## Top Followers
+</span><span class=gu></span><span class=c>&lt;!--START_SECTION:top-followers--&gt;</span>
+
+<span class=c>&lt;!--END_SECTION:top-followers--&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=add-starred>Add Starred</h3>
+<p>You need create a new <strong>yml</strong> file, you can named <strong>starred.yml</strong>.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Update awesome-stars</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>schedule</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span>- <span class=nt>cron</span><span class=p>:</span><span class=w> </span><span class=m>0</span><span class=w> </span><span class=m>18</span><span class=w> </span>*<span class=w> </span>*<span class=w> </span>*<span class=w>
+</span><span class=w>  </span><span class=nt>workflow_dispatch</span><span class=p>:</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>awesome-stars</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>update awesome-stars</span><span class=w>
+</span><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest</span><span class=w>
+</span><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v2</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Set up Python</span><span class=w>
+</span><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/setup-python@v2.2.2</span><span class=w>
+</span><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span><span class=w>          </span><span class=nt>python-version</span><span class=p>:</span><span class=w> </span><span class=m>3.8</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>pip install starred</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Update star list</span><span class=w>
+</span><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>starred --username ${{ github.repository_owner }} --sort --token ${{ secrets.GITHUB_TOKEN }} &gt; AWESOME-STARS.md</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Commit changes</span><span class=w>
+</span><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span><span class=sd>          git config --local user.email &#34;action@github.com&#34;
+</span><span class=sd>          git config --local user.name &#34;GitHub Action&#34;
+</span><span class=sd>          git add -A
+</span><span class=sd>          git diff-index --quiet HEAD || git commit -m &#34;Update awesome stars&#34;</span><span class=w>          
+</span><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Pull changes</span><span class=w>
+</span><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>git pull -r</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Push changes</span><span class=w>
+</span><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>ad-m/github-push-action@b007e7b818e33b04afd056e4c4b57ba917145d7a</span><span class=w>
+</span><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span><span class=w>          </span><span class=nt>github_token</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.GITHUB_TOKEN }}</span><span class=w>
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Importance Note</strong>: You also need add following contents in your <strong>README</strong>.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=gu>## Github Stats
+</span><span class=gu></span>
+<span class=p>&lt;</span><span class=nt>table</span> <span class=na>border</span><span class=o>=</span><span class=s>&#34;0&#34;</span><span class=p>&gt;</span>
+ <span class=p>&lt;</span><span class=nt>tr</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>td</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;d-inline&#34;</span><span class=p>&gt;</span>
+  <span class=p>&lt;</span><span class=nt>td</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>img</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://github-readme-stats.vercel.app/api?username=yanboyang713&amp;count_private=true&amp;show_icons=true&#34;</span> <span class=p>/&gt;</span>
+
+<span class=p>&lt;/</span><span class=nt>td</span><span class=p>&gt;</span>
+
+<span class=p>&lt;</span><span class=nt>td</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>img</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://github-readme-stats.vercel.app/api/top-langs/?username=yanboyang713&amp;layout=compact&#34;</span><span class=p>/&gt;</span>
+
+<span class=p>&lt;/</span><span class=nt>td</span><span class=p>&gt;</span>
+
+<span class=p>&lt;/</span><span class=nt>table</span><span class=p>&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>You need change the <strong>username</strong> with your owm <strong>username</strong>.</p>
+<h3 id=add-youtube>Add Youtube</h3>
+<p>You need create a new <strong>yml</strong> file, you can named <strong>youtube-workflow.yml</strong>.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Latest YouTube Videos</span><span class=w>
+</span><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>schedule</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=c># Runs every hour</span><span class=w>
+</span><span class=w>    </span>- <span class=nt>cron</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;0 * * * *&#39;</span><span class=w>
+</span><span class=w>  </span><span class=nt>workflow_dispatch</span><span class=p>:</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>update-readme-with-youtube</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Update this repo&#39;s README with latest videos from YouTube</span><span class=w>
+</span><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest</span><span class=w>
+</span><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v2</span><span class=w>
+</span><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>gautamkrishnar/blog-post-workflow@master</span><span class=w>
+</span><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span><span class=w>          </span><span class=nt>comment_tag_name</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;YOUTUBE&#34;</span><span class=w>
+</span><span class=w>          </span><span class=nt>feed_list</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;https://www.youtube.com/feeds/videos.xml?channel_id=UCiGWcKBGD4UcH1VM0ZB2i0Q&#34;</span><span class=w>
+</span><span class=w>          </span><span class=nt>max_post_count</span><span class=p>:</span><span class=w> </span><span class=m>10</span><span class=w>
+</span><span class=w>          </span><span class=nt>date_format</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;dd-mm-yyyy&#34;</span><span class=w>
+</span><span class=w>          </span><span class=nt>template</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;$newline - $date [$title]($url)&#34;</span><span class=w>
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Importance Note</strong>: You also need add following contents in your <strong>README</strong>.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=gu>## Latest YouTube Videos
+</span><span class=gu></span><span class=c>&lt;!-- YOUTUBE:START --&gt;</span>
+
+<span class=c>&lt;!-- YOUTUBE:END --&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>You need change the <strong>channel_id</strong> with your owm <strong>channel_id</strong>.</p>
+<h2 id=reference-list>Reference List</h2>
+<ol>
+<li><a href=https://towardsdatascience.com/build-a-stunning-readme-for-your-github-profile-9b80434fe5d7 target=_blank rel="noopener noreferrer">https://towardsdatascience.com/build-a-stunning-readme-for-your-github-profile-9b80434fe5d7</a></li>
+</ol>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>Updated on 2022-01-10</span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=https://yanboyang.com/githubprofile/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
+</span></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/githubprofile/ data-title="Create Github Profile based on README" data-hashtags=github,profile><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/githubprofile/ data-hashtag=github><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/githubprofile/ data-title="Create Github Profile based on README" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/githubprofile/ data-title="Create Github Profile based on README"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/githubprofile/ data-title="Create Github Profile based on README"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/githubprofile/ data-title="Create Github Profile based on README" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/githubprofile/ data-title="Create Github Profile based on README" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/githubprofile/ data-title="Create Github Profile based on README"><i class="fab fa-evernote fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/github/>github</a>,&nbsp;<a href=https://yanboyang.com/tags/profile/>profile</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span>
+</section>
+</div>
+<div class=post-nav><a href=https://yanboyang.com/git/ class=prev rel=prev title="An introduction for Git"><i class="fas fa-angle-left fa-fw"></i>An introduction for Git</a></div>
+</div>
+<div id=comments><div id=disqus_thread class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments">
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body>
+</html>

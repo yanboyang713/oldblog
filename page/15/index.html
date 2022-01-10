@@ -88,6 +88,12 @@ Cancel
 <main class=main>
 <div class=container><div class="page home" posts><div class=home-profile><div class=home-avatar><a href=https://yanboyang.com/ title=Home><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src="https://www.gravatar.com/avatar/ddb0ff6c3db71b8244883ebcaf772b79?s=240&d=mp" data-srcset="https://www.gravatar.com/avatar/ddb0ff6c3db71b8244883ebcaf772b79?s=240&d=mp, https://www.gravatar.com/avatar/ddb0ff6c3db71b8244883ebcaf772b79?s=240&d=mp 1.5x, https://www.gravatar.com/avatar/ddb0ff6c3db71b8244883ebcaf772b79?s=240&d=mp 2x" data-sizes=auto alt="Boyang Yan" title="Boyang Yan"></a></div><h1 class=home-title>Boyang Yan's Blog</h1><h2 class=home-subtitle><div id=id-1 class=typeit></div></h2><div class=links><a href=https://github.com/yanboyang713 title=GitHub target=_blank rel="noopener noreferrer me"><i class="fab fa-github fa-fw"></i></a><a href=https://linkedin.com/in/boyang-yan-50a70763 title=LinkedIn target=_blank rel="noopener noreferrer me"><i class="fab fa-linkedin fa-fw"></i></a><a href=https://facebook.com/boyang.yan.52 title=facebook target=_blank rel="noopener noreferrer me"><i class="fab fa-facebook fa-fw"></i></a><a href=mailto:yanboyang713@gmail.com title=Email rel=me><i class="far fa-envelope fa-fw"></i></a><a href=https://yanboyang.com/index.xml title=RSS target=_blank rel="noopener noreferrer me"><i class="fas fa-rss fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
+<a href=https://yanboyang.com/amlworkspaceauthentication/>Azure Machine Learning Workspace Authentication Troubleshooting Guide</a>
+</h1><div class=post-meta><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-publish>published on <time datetime=2020-09-05>2020-09-05</time></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/azure/><i class="far fa-folder fa-fw"></i>Azure</a></span></div><div class=content>Could you try using config.json file connect to your Azure ML Workspace first? The steps you can following at the below.
+Go to https://portal.azure.com/ Download config.json config.json Story config.json to the same directory as your Python code. run python code at the below 1 2 3 from azureml.core import Workspace ws = Workspace.from_config() print("Found workspace {}at location {}".format(ws.name, ws.location))  If using config.json file connect to your Azure ML Workspace does not work, please check your SDK version and update your SDK.</div><div class=post-footer>
+<a href=https://yanboyang.com/amlworkspaceauthentication/>Read More</a><div class=post-tags>
+<i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/azure/>Azure</a>,&nbsp;<a href=https://yanboyang.com/tags/machine-learning/>Machine Learning</a></div></div>
+</article><article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
 <a href=https://yanboyang.com/patent/>Intellectual Property Foundation and Patent Mining</a>
 </h1><div class=post-meta><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-publish>published on <time datetime=2020-09-05>2020-09-05</time></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/patent/><i class="far fa-folder fa-fw"></i>Patent</a></span></div><div class=content>Introduction Scope of Intellectual Property Intellectual property Also known as &ldquo;intellectual property rights&rdquo;, it refers to the broad fields of industry, technology, science and art The exclusive legal rights involved in intellectual creation, invention and innovation. Intellectual property rights include: Copyright (copyright), trademark, patent, Trade secrets, new plant varieties, semiconductor integrated circuit design, trade name (company name)
 Patent Type Total have three type of patent
@@ -118,14 +124,6 @@ UML Basics PlantUML Basics Reasons for using PlantUML Markdown Emacs (Spacemacs)
 A file format defines the structure and encoding of the data stored in it and it is typically identified by its file extension — for example, a filename ending in .</div><div class=post-footer>
 <a href=https://yanboyang.com/machinelearningfileformats/>Read More</a><div class=post-tags>
 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/machine-learning/>Machine Learning</a>,&nbsp;<a href=https://yanboyang.com/tags/machine-learning-file-formats/>machine Learning File Formats</a></div></div>
-</article><article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
-<a href=https://yanboyang.com/lxccontainerproxmox/>Get started with LXC Container in Proxmox</a>
-</h1><div class=post-meta><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-publish>published on <time datetime=2020-02-06>2020-02-06</time></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/proxmox/><i class="far fa-folder fa-fw"></i>Proxmox</a></span></div><div class=content>Introduction https://pve.proxmox.com/wiki/Linux_Container
-Containers are a lightweight alternative to fully virtualized machines (VMs). They use the kernel of the host system that they run on, instead of emulating a full operating system (OS). This means that containers can access resources on the host system directly.
-The runtime costs for containers is low, usually negligible. However, there are some drawbacks that need be considered:
-Only Linux distributions can be run in Proxmox Containers.</div><div class=post-footer>
-<a href=https://yanboyang.com/lxccontainerproxmox/>Read More</a><div class=post-tags>
-<i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/lxc-container/>LXC Container</a>,&nbsp;<a href=https://yanboyang.com/tags/proxmox/>proxmox</a></div></div>
 </article><ul class=pagination><li class=page-item>
 <span class=page-link>
 <a href=https://yanboyang.com/>1</a>
@@ -156,7 +154,7 @@ Only Linux distributions can be run in Proxmox Containers.</div><div class=post-
 <span class=page-link aria-hidden=true>&mldr;</span>
 </li><li class=page-item>
 <span class=page-link>
-<a href=https://yanboyang.com/page/19/>19</a>
+<a href=https://yanboyang.com/page/20/>20</a>
 </span>
 </li></ul></div></div>
 </main><footer class=footer>
