@@ -10,7 +10,7 @@ Installing Install Xorg 1  pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xse
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/dwm/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-11-30T17:50:00+08:00">
-<meta property="article:modified_time" content="2022-01-11T06:04:54+00:00">
+<meta property="article:modified_time" content="2022-01-11T12:44:51+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting Started Dynamic Window Manager (DWM)">
@@ -19,7 +19,7 @@ Installing Install Xorg 1  pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xse
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/dwm/><link rel=prev href=https://yanboyang.com/srs/><link rel=next href=https://yanboyang.com/k8sonproxmox/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started Dynamic Window Manager (DWM)","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dwm\/"},"genre":"posts","keywords":"DWM","wordcount":879,"url":"https:\/\/yanboyang.com\/dwm\/","datePublished":"2021-11-30T17:50:00+08:00","dateModified":"2022-01-11T06:04:54+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/dwm/><link rel=prev href=https://yanboyang.com/srs/><link rel=next href=https://yanboyang.com/k8sonproxmox/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started Dynamic Window Manager (DWM)","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dwm\/"},"genre":"posts","keywords":"DWM","wordcount":877,"url":"https:\/\/yanboyang.com\/dwm\/","datePublished":"2021-11-30T17:50:00+08:00","dateModified":"2022-01-11T12:44:51+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -93,7 +93,7 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting Started Dynamic Window Manager (DWM)</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/wm/><i class="far fa-folder fa-fw"></i>WM</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-11-30>2021-11-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;879 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-11-30>2021-11-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;877 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
@@ -112,24 +112,31 @@ Cancel
 <li><a href=#adding-an-entry-for-dwm-in-the-dm>Adding an entry for DWM in the DM</a></li>
 </ul>
 </li>
-<li><a href=#dwm-patches>DWM patches</a>
+<li><a href=#default-usage>Default Usage</a>
 <ul>
-<li><a href=#diff-generation>diff generation</a></li>
-<li><a href=#patch-program>patch program</a></li>
-</ul>
-</li>
-<li><a href=#picom>picom</a></li>
-<li><a href=#multi-monitor-setup>Multi-monitor setup</a></li>
-<li><a href=#status-monotor>Status Monotor</a></li>
-<li><a href=#slock>slock</a></li>
 <li><a href=#basic-commands>Basic Commands</a></li>
 <li><a href=#layouts>Layouts</a></li>
 <li><a href=#floating>Floating</a></li>
 <li><a href=#quitting>Quitting</a></li>
 </ul>
+</li>
+<li><a href=#configuration>Configuration</a>
+<ul>
+<li><a href=#change-mod1-key-to-the-windows-key>Change Mod1 key to the Windows key</a>
+<ul>
+<li><a href=#other-modifier-key>Other modifier key</a></li>
+</ul>
+</li>
+<li><a href=#change-terminal-as-alacritty>Change terminal as Alacritty</a></li>
+<li><a href=#add-hotkey-for-some-of-binary-program>Add Hotkey for some of binary program</a></li>
+<li><a href=#add-hotkey-for-shell-commands>Add Hotkey for shell commands</a></li>
+</ul>
+</li>
+<li><a href=#patches>Patches</a></li>
+</ul>
 </nav></div>
 </div><div class=content id=content><h2 id=introduction>Introduction</h2>
-<p>dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.</p>
+<p>dwm is a dynamic window manager for X. It manages windows in <strong>tiled</strong>, <strong>monocle</strong> and <strong>floating</strong> layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.</p>
 <h2 id=installing>Installing</h2>
 <h3 id=install-xorg>Install Xorg</h3>
 <div class=highlight><div class=chroma>
@@ -245,206 +252,76 @@ Icon=dwm
 Type=XSession
 </code></pre></td></tr></table>
 </div>
-</div><h2 id=dwm-patches>DWM patches</h2>
-<p>There are two types of patches: The ones that fit to your personal taste and the ones you think should be included in mainline.</p>
-<p>patch filename format
-The expected format for patches is:</p>
-<p>For git revisions:</p>
-<p>toolname-patchname-YYYYMMDD-SHORTHASH.diff
-dwm-allyourbase-20160617-3465bed.diff
-The YYYYMMDD date should correspond to the last time the patch has been modified.</p>
-<h3 id=diff-generation>diff generation</h3>
-<p>For git users:</p>
-<p>cd program-directory
-git add filechanges&mldr;
-git commit (write a clear patch description)
-git format-patch &ndash;stdout HEAD^ > toolname-patchname-YYYYMMDD-SHORTHASH.diff</p>
-<h3 id=patch-program>patch program</h3>
-<p>For git users, use -3 to fix the conflict easily:</p>
-<p>cd program-directory
-git apply path/to/patch.diff
-For patches formatted with git format-patch:</p>
-<p>cd program-directory
-git am path/to/patch.diff
-For tarballs:</p>
-<p>cd program-directory
-patch -p1 &lt; path/to/patch.diff</p>
-<h2 id=picom>picom</h2>
-<p>picom is a standalone compositor for Xorg, suitable for use with window managers that do not provide compositing. picom is a fork of compton, which is a fork of xcompmgr-dana, which in turn is a fork of xcompmgr.</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yay -S picom
-</code></pre></td></tr></table>
-</div>
-</div><h2 id=multi-monitor-setup>Multi-monitor setup</h2>
-<p>If configured to use Xinerama libraries in config.mk, dwm can automatically detect configured screen outputs (monitor, overhead projector, etc.) and their resolutions and draw the windows in the output area accordingly.</p>
-<p>One of the easiest ways to configure screen outputs is via the RandR X server extension using the xrandr tool. Without arguments it will list the current configuration of screen outputs.</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>xrandr
-</code></pre></td></tr></table>
-</div>
-</div><p>For each connected output the supported resolution modes will be printed.</p>
-<p>This is a example for set-up xrandr. You can put below content into ~/.xprofile, when system run X windows will set-up montors automatically.</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=cp>#!/bin/bash
-</span><span class=cp></span>
-<span class=c1>###############################</span>
-<span class=c1># Set Monitor                 #</span>
-<span class=c1>###############################</span>
-xrandr --output DP-1 --primary --mode 1920x1080 --pos 0x0 --rotate left --output HDMI-1 --mode 2560x1440 --pos 1080x0 --rotate normal --output DVI-D-1 --off
-</code></pre></td></tr></table>
-</div>
-</div><h2 id=status-monotor>Status Monotor</h2>
-<p>pre-required</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yay -S pamixer
-</code></pre></td></tr></table>
-</div>
-</div><p><a href=https://github.com/LukeSmithxyz/dwmblocks target=_blank rel="noopener noreferrer">https://github.com/LukeSmithxyz/dwmblocks</a></p>
+</div><h2 id=default-usage>Default Usage</h2>
+<p>In this section, I will introduction the basic usage by default. After, I will talk more on how to make you <strong>OWN</strong> configuration and Patches.</p>
+<h3 id=basic-commands>Basic Commands</h3>
+<ul>
+<li>Moving between windows: <strong>[Alt]+[j]</strong> or <strong>[Alt]+[k]</strong></li>
+<li>To move a terminal to another tag: <strong>[Shift]+[Alt]+[&lt;TAG_NUMBER>]</strong></li>
+<li>To focus on another tag: <strong>[Alt]+[tag number]</strong></li>
+<li>To change the amount of windows in the master area: <strong>[Alt]+[d]</strong> (Decrease) or <strong>[Alt]+[i]</strong> (Increase)</li>
+<li>To toggle a window between the master and stack area: <strong>[Alt]+[Return]</strong></li>
+<li>To kill a window: <strong>[Shift]+[Alt]+[c]</strong></li>
+<li>Click another tag with the right mouse button to bring those windows into your current focus.</li>
+</ul>
+<h3 id=layouts>Layouts</h3>
+<p><strong>Note</strong>: By default dwm is in tiled layout mode.</p>
+<ul>
+<li>Tiled: <strong>[Alt]+[t]</strong></li>
+<li>Floating: <strong>[Alt]+[f]</strong></li>
+<li>Monocle: <strong>[Alt]+[m]</strong></li>
+</ul>
+<p>Further layout modes can be included through patches.</p>
+<h3 id=floating>Floating</h3>
+<p>To resize the floating window: <strong>[Alt]+[right mouse button]</strong></p>
+<p>To move it around <strong>[Alt]+[left mouse button]</strong></p>
+<p>Floating in Tiled Layout</p>
+<ul>
+<li>Toggle floating mode on the active window: <strong>[Alt]+[Shift]+[space]</strong></li>
+<li>Resize the window: <strong>[Alt]+[right mouse button]</strong></li>
+<li>toggle it in being floating <strong>[Alt]+[middle mouse button]</strong></li>
+</ul>
+<p>If you want to set some type of window to be always floating, look at the config.def.h and the rules array, where the last but one element defines this behaviour.</p>
+<h3 id=quitting>Quitting</h3>
+<p>To quit dwm cleanly: <strong>[Shift]+[Alt]+[q]</strong></p>
+<h2 id=configuration>Configuration</h2>
+<p>All of configuration should be in <strong>config.def.h</strong> file.</p>
+<p>When you make modified, please run:</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>xsetroot -name <span class=s2>&#34;Boyang Yan&#34;</span>
-xsetroot -name <span class=s2>&#34;</span><span class=k>$(</span>uptime<span class=k>)</span><span class=s2>&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>NOTE</strong>: If show <strong>zsh: command not found: xsetroot</strong>, you need install <strong>xorg-xsetroot</strong>.</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo pacman -S xorg-xsetroot
-</code></pre></td></tr></table>
-</div>
-</div><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git clone https://github.com/WouterSpekkink/dwmblocks.git
-<span class=nb>cd</span> dwmblocks
-
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>rm config.h
 sudo make clean install
-dwmblocks <span class=p>&amp;</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><strong>NOTE</strong>:</p>
-<ol>
-<li>If you faced <strong>ERROR</strong> message like this <strong>sh: line 1: sb-internet: command not found</strong>
-you should check your default paths in file: profile and your <strong>sb-*</strong> program.</li>
-<li>If there are some <strong>ERROR</strong> show out. You need kill dwmblocks and run again.</li>
-</ol>
+</div><h3 id=change-mod1-key-to-the-windows-key>Change Mod1 key to the Windows key</h3>
+<p><strong>dwm</strong>&rsquo;s documentation refers to <strong>Mod1</strong> as the <strong>modifier</strong> key that you must press to issue commands to it.</p>
+<p>On most keyboards, <strong>Mod1</strong> is mapped to the <strong>left Alt</strong> key. Most new keyboards now come equipped with the <strong>Windows</strong> key. Since no known UNIX/X applications are known to use the <strong>Windows</strong> key, it is an excellent alternative mapping to issue commands to dwm.</p>
+<p>In <strong>config.def.h</strong>, under the comment ,/* key definitions */, you can find the line</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>#define MODKEY Mod1Mask
+</code></pre></td></tr></table>
+</div>
+</div><p>In order to change dwm&rsquo;s modifier key to the <strong>Windows</strong> key, you can simply change its value definition to <strong>Mod4Mask</strong>.</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ps aux <span class=p>|</span> grep dwmblocks
-<span class=nb>kill</span> -9 <span class=m>6416</span>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>//Change ALT key to Windows key
+#define MODKEY Mod4Mask
 </code></pre></td></tr></table>
 </div>
-</div><p><a href=https://dwm.suckless.org/status_monitor/ target=_blank rel="noopener noreferrer">https://dwm.suckless.org/status_monitor/</a></p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git clone git://git.suckless.org/dwmstatus
-<span class=nb>cd</span> dwmstatus
-make
-sudo make <span class=nv>PREFIX</span><span class=o>=</span>/usr install
-</code></pre></td></tr></table>
-</div>
-</div><p>add</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text>dwmstatus 2&gt;&amp;1 &gt;/dev/null &amp;
-</code></pre></td></tr></table>
-</div>
-</div><p>to your .xinitrc</p>
-<h2 id=slock>slock</h2>
-<p>Simple X display locker. This is the simplest X screen locker we are aware of.</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git clone https://git.suckless.org/slock
-<span class=nb>cd</span> slock
-</code></pre></td></tr></table>
-</div>
-</div><p>Before, your <strong>sudo make install</strong>
-You need</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>vim config.def.h
-</code></pre></td></tr></table>
-</div>
-</div><p>change to</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text>/* user and group to drop privileges to */
-static const char *user  = &#34;yanboyang713&#34;;
-static const char *group = &#34;yanboyang713&#34;;
-</code></pre></td></tr></table>
-</div>
-</div><p>slock: getgrnam nogroup: group entry not found</p>
-<p>Test, it is working.</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@manjaro] ➜ system whereis slock
-</span><span class=go>slock: /usr/local/bin/slock
-</span></code></pre></td></tr></table>
-</div>
-</div><p>/etc/systemd/system/slock@.service</p>
+</div><h4 id=other-modifier-key>Other modifier key</h4>
+<p>There are 5 modifiers, Mod1Mask to Mod5Mask. They are associated to up-to three keysyms (keycodes) from the X window server. To show the current association on your keyboard, run xmodmap with no arguments. It will show something like:</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
@@ -458,55 +335,98 @@ static const char *group = &#34;yanboyang713&#34;;
 </span><span class=lnt> 9
 </span><span class=lnt>10
 </span><span class=lnt>11
-</span><span class=lnt>12
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text>[Unit]
-Description=Lock X session using slock for user %i
-Before=sleep.target
-
-[Service]
-User=%i
-Environment=DISPLAY=:0
-ExecStartPre=/usr/bin/xset dpms force suspend
-ExecStart=/usr/bin/slock
-
-[Install]
-WantedBy=sleep.target
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@manjaro] ➜ ~ xmodmap
+</span><span class=go>xmodmap:  up to 4 keys per modifier, (keycodes in parentheses):
+</span><span class=go></span><span class=err>
+</span><span class=err></span><span class=go>shift       Shift_L (0x32),  Shift_R (0x3e)
+</span><span class=go>lock
+</span><span class=go>control     Control_L (0x25),  Control_R (0x69)
+</span><span class=go>mod1        Alt_L (0x40),  Alt_R (0x6c),  Meta_L (0xcd)
+</span><span class=go>mod2        Num_Lock (0x4d)
+</span><span class=go>mod3
+</span><span class=go>mod4        Super_L (0x85),  Super_R (0x86),  Super_L (0xce),  Hyper_L (0xcf)
+</span><span class=go>mod5        ISO_Level3_Shift (0x5c),  Mode_switch (0xcb)
+</span></code></pre></td></tr></table>
+</div>
+</div><p>Using <strong>xev</strong>, a utility to show X events, such as key presses, we can quickly identify which keysym (keycode) combination a particular key has, and associate that to a modifier using <strong>xmodmap</strong>.</p>
+<h3 id=change-terminal-as-alacritty>Change terminal as Alacritty</h3>
+<p>If you <strong>NOT</strong> install Alacritty, please have look this <a href=https://yanboyang.com/alacritty/ rel>Linux/Getting Started Alacritty Terminal</a>.</p>
+<p>When you done install <strong>Alacritty</strong>,</p>
+<p>Change termcmd as below.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>static const char *termcmd[]  = { &#34;alacritty&#34;, NULL };
 </code></pre></td></tr></table>
 </div>
-</div><p>systemctl daemon-reload</p>
-<p>sudo systemctl enable <a href=mailto:slock@yanboyang713.service rel>slock@yanboyang713.service</a></p>
-<h2 id=basic-commands>Basic Commands</h2>
-<ul>
-<li>Moving between windows: <strong>[Alt]+[j]</strong> or <strong>[Alt]+[k]</strong></li>
-<li>To move a terminal to another tag: <strong>[Shift]+[Alt]+[&lt;TAG_NUMBER>]</strong></li>
-<li>To focus on another tag: <strong>[Alt]+[tag number]</strong></li>
-<li>To change the amount of windows in the master area: <strong>[Alt]+[d]</strong> (Decrease) or <strong>[Alt]+[i]</strong> (Increase)</li>
-<li>To toggle a window between the master and stack area: <strong>[Alt]+[Return]</strong></li>
-<li>To kill a window: <strong>[Shift]+[Alt]+[c]</strong></li>
-<li>Click another tag with the right mouse button to bring those windows into your current focus.</li>
-</ul>
-<h2 id=layouts>Layouts</h2>
-<p><strong>Note</strong>: By default dwm is in tiled layout mode.</p>
-<ul>
-<li>Tiled: <strong>[Alt]+[t]</strong></li>
-<li>Floating: <strong>[Alt]+[f]</strong></li>
-<li>Monocle: <strong>[Alt]+[m]</strong></li>
-</ul>
-<p>Further layout modes can be included through patches.</p>
-<h2 id=floating>Floating</h2>
-<p>To resize the floating window: <strong>[Alt]+[right mouse button]</strong></p>
-<p>To move it around <strong>[Alt]+[left mouse button]</strong></p>
-<p>Floating in Tiled Layout</p>
-<ul>
-<li>Toggle floating mode on the active window: <strong>[Alt]+[Shift]+[space]</strong></li>
-<li>Resize the window: <strong>[Alt]+[right mouse button]</strong></li>
-<li>toggle it in being floating <strong>[Alt]+[middle mouse button]</strong></li>
-</ul>
-<p>If you want to set some type of window to be always floating, look at the config.def.h and the rules array, where the last but one element defines this behaviour.</p>
-<h2 id=quitting>Quitting</h2>
-<p>To quit dwm cleanly: <strong>[Shift]+[Alt]+[q]</strong></p>
+</div><p>and add below to keys array (static Key keys[])</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>{ MODKEY,             XK_Return,     spawn,                  {.v = termcmd } },
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=add-hotkey-for-some-of-binary-program>Add Hotkey for some of binary program</h3>
+<p>There are <strong>two</strong> example, <strong>emacs</strong>, <strong>zotero</strong> and <strong>google-chrome-stable</strong>.</p>
+<p>Please, set-up <strong>emacs</strong> and <strong>zotero</strong> first. Following the below guide:</p>
+<ol>
+<li><a href=https://yanboyang.com/doom/ rel>Emacs/Getting Started with Doom Emacs</a></li>
+<li><a href=https://yanboyang.com/zotero/ rel>Research/Getting Started with Zotero</a></li>
+</ol>
+<p>Firstly, create two new variable for each command.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>static const char *emacscmd[] = { &#34;emacsclient&#34;, &#34;-c&#34;, &#34;-a emacs&#34;, NULL };
+static const char *zoterocmd[] = { &#34;zotero&#34;, NULL };
+static const char *googleChromecmd[] = { &#34;google-chrome-stable&#34;, NULL };
+</code></pre></td></tr></table>
+</div>
+</div><p>and add below to keys array (static Key keys[])</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>	{ MODKEY,                       XK_e, 	   spawn,          {.v = emacscmd } },
+	{ MODKEY,                       XK_z,      spawn,          {.v = zoterocmd } },
+	{ MODKEY,                       XK_g,      spawn,          {.v = googleChromecmd } },
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=add-hotkey-for-shell-commands>Add Hotkey for shell commands</h3>
+<p>There is a example for take a screenshot.
+First, please read <a href=https://yanboyang.com/cloudinary/ rel>Linux/Take a Screenshot and upload to Cloudinary using Bash Scripts</a>.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>/* helper for spawning shell commands in the pre dwm-5.0 fashion */
+#define SHCMD(cmd) { .v = (const char*[]){ &#34;/bin/sh&#34;, &#34;-c&#34;, cmd, NULL } }
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-text data-lang=text>{ ControlMask|ShiftMask,              XK_p,      spawn,          SHCMD(&#34;screenshot&#34;) },
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=patches>Patches</h2>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
