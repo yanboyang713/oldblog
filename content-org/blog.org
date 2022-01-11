@@ -3976,7 +3976,7 @@ CLOSED: [2021-11-30 Tue 17:50]
 :END:
 
 *** Introduction
-dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
+dwm is a dynamic window manager for X. It manages windows in *tiled*, *monocle* and *floating* layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
 
 *** Installing
 **** Install Xorg
@@ -4037,7 +4037,10 @@ Icon=dwm
 Type=XSession
 #+end_src
 
-*** Basic Commands
+*** Default Usage
+In this section, I will introduction the basic usage by default. After, I will talk more on how to make you *OWN* configuration and Patches.
+
+**** Basic Commands
 + Moving between windows: *[Alt]+[j]* or *[Alt]+[k]*
 + To move a terminal to another tag: *[Shift]+[Alt]+[<TAG_NUMBER>]*
 + To focus on another tag: *[Alt]+[tag number]*
@@ -4045,7 +4048,8 @@ Type=XSession
 + To toggle a window between the master and stack area: *[Alt]+[Return]*
 + To kill a window: *[Shift]+[Alt]+[c]*
 + Click another tag with the right mouse button to bring those windows into your current focus.
-*** Layouts
+
+**** Layouts
 *Note*: By default dwm is in tiled layout mode.
 
 + Tiled: *[Alt]+[t]*
@@ -4054,7 +4058,7 @@ Type=XSession
 
 Further layout modes can be included through patches.
 
-*** Floating
+**** Floating
 To resize the floating window: *[Alt]+[right mouse button]*
 
 To move it around *[Alt]+[left mouse button]*
@@ -4067,9 +4071,119 @@ Floating in Tiled Layout
 
 If you want to set some type of window to be always floating, look at the config.def.h and the rules array, where the last but one element defines this behaviour.
 
-*** Quitting
+**** Quitting
 To quit dwm cleanly: *[Shift]+[Alt]+[q]*
 
+
+*** Configuration
+All of configuration should be in *config.def.h* file.
+
+When you make modified, please run:
+#+begin_src bash
+rm config.h
+sudo make clean install
+#+end_src
+
+**** Change Mod1 key to the Windows key :mod1:key:windows:
+*dwm*'s documentation refers to *Mod1* as the *modifier* key that you must press to issue commands to it.
+
+On most keyboards, *Mod1* is mapped to the *left Alt* key. Most new keyboards now come equipped with the *Windows* key. Since no known UNIX/X applications are known to use the *Windows* key, it is an excellent alternative mapping to issue commands to dwm.
+
+In *config.def.h*, under the comment ,/* key definitions */, you can find the line
+
+#+begin_example
+#define MODKEY Mod1Mask
+#+end_example
+
+In order to change dwm's modifier key to the *Windows* key, you can simply change its value definition to *Mod4Mask*.
+
+#+begin_example
+//Change ALT key to Windows key
+#define MODKEY Mod4Mask
+#+end_example
+
+***** Other modifier key
+There are 5 modifiers, Mod1Mask to Mod5Mask. They are associated to up-to three keysyms (keycodes) from the X window server. To show the current association on your keyboard, run xmodmap with no arguments. It will show something like:
+
+#+begin_src console
+[yanboyang713@manjaro] ➜ ~ xmodmap
+xmodmap:  up to 4 keys per modifier, (keycodes in parentheses):
+
+shift       Shift_L (0x32),  Shift_R (0x3e)
+lock
+control     Control_L (0x25),  Control_R (0x69)
+mod1        Alt_L (0x40),  Alt_R (0x6c),  Meta_L (0xcd)
+mod2        Num_Lock (0x4d)
+mod3
+mod4        Super_L (0x85),  Super_R (0x86),  Super_L (0xce),  Hyper_L (0xcf)
+mod5        ISO_Level3_Shift (0x5c),  Mode_switch (0xcb)
+#+end_src
+
+Using *xev*, a utility to show X events, such as key presses, we can quickly identify which keysym (keycode) combination a particular key has, and associate that to a modifier using *xmodmap*.
+
+**** Change terminal as Alacritty :alacritty:
+If you *NOT* install Alacritty, please have look this [[id:1953a8a2-53b0-4982-b09a-0096a0cb6921][Linux/Getting Started Alacritty Terminal]].
+
+When you done install *Alacritty*,
+
+Change termcmd as below.
+
+#+begin_example
+static const char *termcmd[]  = { "alacritty", NULL };
+#+end_example
+
+and add below to keys array (static Key keys[])
+
+#+begin_example
+{ MODKEY,             XK_Return,     spawn,                  {.v = termcmd } },
+#+end_example
+
+**** Add Hotkey for some of binary program :hot:key:binary:program:
+There are *two* example, *emacs*, *zotero* and *google-chrome-stable*.
+
+Please, set-up *emacs* and *zotero* first. Following the below guide:
+1. [[id:48390f93-f8f0-435c-8938-acf20f581e46][Emacs/Getting Started with Doom Emacs]]
+2. [[id:2fbd7db1-7307-4837-ad23-93c57ce2c463][Research/Getting Started with Zotero]]
+
+Firstly, create two new variable for each command.
+
+#+begin_example
+static const char *emacscmd[] = { "emacsclient", "-c", "-a emacs", NULL };
+static const char *zoterocmd[] = { "zotero", NULL };
+static const char *googleChromecmd[] = { "google-chrome-stable", NULL };
+#+end_example
+
+and add below to keys array (static Key keys[])
+
+#+begin_example
+	{ MODKEY,                       XK_e, 	   spawn,          {.v = emacscmd } },
+	{ MODKEY,                       XK_z,      spawn,          {.v = zoterocmd } },
+	{ MODKEY,                       XK_g,      spawn,          {.v = googleChromecmd } },
+#+end_example
+
+**** Add Hotkey for shell commands :hot:key:shell:commands:
+There is a example for take a screenshot.
+First, please read [[id:60c091b3-d0ed-470d-b071-8665606e349b][Linux/Take a Screenshot and upload to Cloudinary using Bash Scripts]].
+
+#+begin_example
+/* helper for spawning shell commands in the pre dwm-5.0 fashion */
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+#+end_example
+
+#+begin_example
+{ ControlMask|ShiftMask,              XK_p,      spawn,          SHCMD("screenshot") },
+#+end_example
+
+*** Patches
+
+
+/* This patch allows you to toggle fullscreen on and off using a single shortcut key.
+ * https://github.com/bakkeby/patches/blob/master/dwm/dwm-togglefullscreen-6.2.diff
+ */
+#define TOGGLEFULLSCREEN_PATCH 0
+
+
+https://dwm.suckless.org/patches/single_tagset/
 
 ** DONE Picom: A lightweight compositor for X11 :picom:X11:compositor:
 CLOSED: [2022-01-11 Tue 14:03]
@@ -4310,6 +4424,13 @@ cd program-directory
 patch -p1 < path/to/patch.diff
 #+end_src
 
+If faced the *ERROR* message like this:
+#+begin_example
+21 out of 41 hunks FAILED -- saving rejects to file dwm.c.rej
+#+end_example
+
+You should open file: *dwm.c.rej* and manual change file's contents. Good luck.
+
 
 *** DWM Flexipatch :DWM:flexipatch:
 :PROPERTIES:
@@ -4368,6 +4489,19 @@ status2d
 
 *NOTE*:
 dwm can now be restarted without destroying other X windows by pressing the usual Mod-Shift-Q combination.
+*** flexipatch-finalizer
+
+#+begin_src bash
+mkdir dwm
+
+cd flexipatch-finalizer
+
+sh ./flexipatch-finalizer.sh -r -d ~/Documents/suckless/dwm-flexipatch -o ~/Documents/suckless/dwm
+
+cd dwm
+sudo make clean install
+
+#+end_src
 
 *** Reference List
 1. https://www.youtube.com/watch?v=9AoCHMIO5Ew
@@ -4598,6 +4732,7 @@ CLOSED: [2022-01-05 Wed 16:12]
 :PROPERTIES:
 :EXPORT_FILE_NAME: cloudinary
 :EXPORT_OPTIONS: author:nil
+:ID:       60c091b3-d0ed-470d-b071-8665606e349b
 :END:
 
 *** Introduction
@@ -4821,6 +4956,7 @@ CLOSED: [2022-01-05 Wed 18:37]
 :PROPERTIES:
 :EXPORT_FILE_NAME: alacritty
 :EXPORT_OPTIONS: author:nil
+:ID:       1953a8a2-53b0-4982-b09a-0096a0cb6921
 :END:
 
 *** Introduction

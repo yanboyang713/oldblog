@@ -76,6 +76,14 @@ cd program-directory
 patch -p1 < path/to/patch.diff
 ```
 
+If faced the **ERROR** message like this:
+
+```text
+21 out of 41 hunks FAILED -- saving rejects to file dwm.c.rej
+```
+
+You should open file: **dwm.c.rej** and manual change file's contents. Good luck.
+
 
 ## DWM Flexipatch {#dwm-flexipatch}
 
