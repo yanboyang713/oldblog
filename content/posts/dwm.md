@@ -245,4 +245,241 @@ First, please read [Linux/Take a Screenshot and upload to Cloudinary using Bash 
 ```
 
 
+### Multi Monitor set-up {#multi-monitor-set-up}
+
+Before, you start this section, please read [WM/Multi Monitor SetUp]({{< relref "multiMonitor" >}}) first.
+When you done set-up your **~/.xprofile**. You can start read the below **two** sections (**Set Tags** and **Key Binding switch monitor**).
+
+
+#### Set Tags {#set-tags}
+
+There is a patch [tagicons](https://github.com/bakkeby/patches/wiki/tagicons) that allows you to have different sets of **tags** on a per monitor basis.
+As for **dwm-flexipatch** the **tagicons** patch is already integrated (**hardcoded**) so it can't be **enabled** via **patches.h**.
+
+<!--list-separator-->
+
+-  Changing the number of tags per monitor
+
+    In a traditional dwm the number of tags in use can be changed by changing the number of strings in the tags array.
+
+    With this patch the number of tags is controlled with the **NUMTAGS** macro in dwm.c, which is primarily used to differentiate between different icons per monitor.
+
+<!--list-separator-->
+
+-  Tags per monitor
+
+    Tag icons can be defined on a per monitor basis and the position of the icons is derived based on the number of tags (NUMTAGS) and the monitor number (index). If the derived tag index is greater than the available icons then a modulus between the two is further applied.
+
+    Let's have look at a practical example:
+
+    ```c
+    static char *tagicons[][NUMTAGS*2] = {
+    	[IconsDefault]        = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I" },
+    	[IconsVacant]         = { NULL },
+    	[IconsOccupied]       = { NULL },
+    };
+    ```
+
+    In this case icons 1 through 9 is being used for monitor 0 while icons A through I are used for monitor 1.
+
+    **How does that work exactly?**
+    Note the **NUMTAGS\*2** which doubles the number of icons. The icon for a tag is derived as tag index + monitor index \* NUMTAGS. So for the third tag on the second monitor we end up with 2 + 1 \* 9 which gives the icon of "C".
+
+    If a third monitor is used then that gives 2 + 2 \* 9 (index 20). As that is greater than the number of icons (NUMTAGS\*2) a modulus is applied: 20 % 18 = 2, giving the icon of "3". In other words the icons wraps around. A fourth monitor would then use icons A through I.
+
+    This mechanism comes into play again in the example below.
+
+<!--list-separator-->
+
+-  Repeating icons
+
+    Having identical tags can also make for an elegant look and feel. For example having all tags shown as bullet points gives a certain aesthetic.
+
+    In a normal dwm build that would be configured like this:
+
+    ```c
+    static const char *tags[] = { "•", "•", "•", "•", "•", "•", "•", "•", "•" };
+    ```
+
+    With the tagicons patch this can be simplified to a single bullet point thanks to how icon indexes are derived and reduced:
+
+    ```c
+    static char *tagicons[][NUMTAGS] = {
+    	[IconsDefault]        = { "•" },
+    	[IconsVacant]         = { NULL },
+    	[IconsOccupied]       = { NULL },
+    };
+    ```
+
+    Similarly if you choose two tags A and B then tags will alternate between them.
+
+    If you want identical tags for all tags, but different tags per monitor, then you will have to explicitly define them all though.
+
+<!--list-separator-->
+
+-  Occupied tags
+
+    The IconsOccupied tag set will replace the default icons if there are clients occupating the given tag. This is a practical representation of the [alttagsdecoration](https://dwm.suckless.org/patches/alttagsdecoration/) patch.
+
+    If **IconsOccupied** is NULL then that means that the feature is not to be used.
+
+    A practical example:
+
+    ```c
+    static char *tagicons[][NUMTAGS] = {
+    	[IconsDefault]        = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+    	[IconsVacant]         = { NULL },
+    	[IconsOccupied]       = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
+    };
+    ```
+
+    When dwm starts up tags 1 through 9 will be displayed. As soon as a client is opened on a tag then the occupied tag icon is being used instead. E.g. opening a client on tag 5 means that "&lt;5&gt;" will be shown instead of "5".
+
+<!--list-separator-->
+
+-  Hide vacant tags
+
+    To hide vacant (as in empty) tags simply set the icon text to be an empty string.
+
+    Taking advantage of the repeating icons logic we can set a single empty string to replicate the behavour of the [hide vacant tags](https://dwm.suckless.org/patches/hide_vacant_tags/) patch.
+
+    ```c
+    static char *tagicons[][NUMTAGS] = {
+    	[IconsDefault]        = { "" },
+    	[IconsVacant]         = { NULL },
+    	[IconsOccupied]       = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
+    };
+    ```
+
+    One benefit of doing it this way (using empty strings) is that you could choose to hide all tags except for special ones that you want to always display. Here is an example that hides all but the seventh, eight and ninth tag:
+
+    ```c
+    static char *tagicons[][NUMTAGS] = {
+    	[IconsDefault]        = { "", "", "", "", "", "", "7", "8", "9" },
+    	[IconsVacant]         = { NULL },
+    	[IconsOccupied]       = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
+    };
+    ```
+
+    If a client exists on tag 3 then "&lt;3&gt;" will be shown as per the occupied tags feature.
+
+    This brings us to an exception; vacant tags.
+
+<!--list-separator-->
+
+-  Vacant tags
+
+    The **IconsVacant** tag set is a bit of an exception and is only used when:
+
+    -   The default icon is hidden (i.e. being an empty string) and
+    -   The selected tag is not occupied
+
+    In other words this is only used when you explicitly view a tag that has no clients on it.
+
+    An example configuration may look like:
+
+    ```c
+    static char *tagicons[][NUMTAGS] = {
+    	[IconsDefault]        = { "" },
+    	[IconsVacant]         = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+    	[IconsOccupied]       = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
+    };
+    ```
+
+    Here all tags are hidden by default, but show "1", "2", etc. when selected unless they have clients on them.
+
+<!--list-separator-->
+
+-  Alternative tags
+
+    Icon sets are defined by an enum in dwm.c:
+
+    ```c
+    enum {
+    	IconsDefault,
+    	IconsVacant,
+    	IconsOccupied,
+    	IconsLast
+    }; /* icon sets */
+    ```
+
+    As with colour schemes you can add your own sets here and as many as you want. Here is an example setup:
+
+    ```c
+    static char *tagicons[][NUMTAGS] = {
+    	[IconsDefault]        = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+    	[IconsBullets]        = { "•" },
+    	[IconsLetters]        = { "A", "B", "C", "D", "E", "F", "G", "H", "I" },
+    	[IconsText]           = { "mail", "chat", "office", "gimp", "prog", "misc", "play", "mon", "web" },
+    	[IconsSubscript]      = { " ₁", " ₂", " ₃", " ₄", " ₅", " ₆", " ₇", " ₈", " ₉"
+    	[IconsVacant]         = { "•₁", "•₂", "•₃", "•₄", "•₅", "•₆", "•₇", "•₈", "•₉" },
+    	[IconsOccupied]       = { "◉₁", "☢₂", "❖₃", "⚉₄", "♻₅", "⌬₆", "♹₇", "✇₈", "☉₉" },
+    };
+    ```
+
+    You can then cycle through the various icon sets with the **cycleiconset** function by using the mouse scroll wheel on the tags (provided that the button binding is set of course). Alternatively you can add keybindings to set specific icon sets if you prefer.
+
+    This extends the [alternativetags](https://dwm.suckless.org/patches/alternativetags/) patch by allowing you to have multiple alternative tags rather than just the one.
+
+    It should be noted though that with the implementation as-is the **IconsOccupied icon** set will always override the selected icon set if the tag is occupied by clients. Being able to define occupied and vacant icon sets on a per icon set basis was considered, but was deemed to add too much complexity for a feature that most people would likey not want. One likely solution could be to use variables that point to the sets that defines vacant and occupied icons, and allow these to be changed during runtime.
+
+
+#### Key Binding switch Monitor {#key-binding-switch-monitor}
+
+The keybindings here are defined as:
+
+```c
+ TAGKEYS(                        XK_1,                                  0)
+ TAGKEYS(                        XK_2,                                  1)
+ TAGKEYS(                        XK_3,                                  2)
+ TAGKEYS(                        XK_4,                                  3)
+ TAGKEYS(                        XK_5,                                  4)
+ TAGKEYS(                        XK_6,                                  5)
+ TAGKEYS(                        XK_7,                                  6)
+ TAGKEYS(                        XK_8,                                  7)
+ TAGKEYS(                        XK_9,                                  8)
+```
+
+Which uses the following macro:
+
+```c
+#define TAGKEYS(KEY,TAG) \
+ 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+ 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+ 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+ 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+```
+
+You can think of the macro as text being copy-pasted for every TAGKEYS reference above.
+
+So MOD+1 will trigger the view function to change the tags on the currently selected monitor.
+
+To focus on another monitor it is expected that you change focus to the other monitor first.
+
+```c
+{ MODKEY,                       XK_comma,      focusmon,               {.i = -1 } },
+ { MODKEY,                       XK_period,     focusmon,               {.i = +1 } },
+```
+
+
 ## Patches {#patches}
+
+/\* This patch allows you to toggle fullscreen on and off using a single shortcut key.
+
+-   <https://github.com/bakkeby/patches/blob/master/dwm/dwm-togglefullscreen-6.2.diff>
+    \*/
+
+\#define TOGGLEFULLSCREEN_PATCH 0
+
+<https://dwm.suckless.org/patches/single_tagset/>
+
+
+## Reference List {#reference-list}
+
+1.  <https://github.com/bakkeby/dwm-flexipatch/issues/213>
+2.  <https://github.com/bakkeby/patches/wiki/tagicons>
+
+
+## Acknowledge {#acknowledge}
+
+1.  Stein Gunnar Bakkeby: <https://github.com/bakkeby>
