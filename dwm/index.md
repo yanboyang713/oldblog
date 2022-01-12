@@ -459,14 +459,90 @@ To focus on another monitor it is expected that you change focus to the other mo
 
 ## Patches {#patches}
 
-/\* This patch allows you to toggle fullscreen on and off using a single shortcut key.
 
--   <https://github.com/bakkeby/patches/blob/master/dwm/dwm-togglefullscreen-6.2.diff>
-    \*/
+### Restart DWM without logging out or closing applications {#restart-dwm-without-logging-out-or-closing-applications}
 
-\#define TOGGLEFULLSCREEN_PATCH 0
+dwm can now be restarted without destroying other X windows by pressing the usual Mod-Shift-Q combination.
+	{ MODKEY|ShiftMask,             XK_r,          self_restart,           {0} },
+	#endif // SELFRESTART_PATCH
 
-<https://dwm.suckless.org/patches/single_tagset/>
+
+### dwm-fullgaps {#dwm-fullgaps}
+
+
+### Autostart {#autostart}
+
+autostart_blocking.sh
+
+```sh
+#!/bin/sh
+
+if [ -n "$(qvm-usb | grep tslil_clingman_dactyl_manuform_mini_0)" ]; then
+	# If my USB keyboard is detected, don't mangle the layout
+	setxkbmap -layout us -variant altgr-intl -option caps:ctrl_modifier,terminate:ctrl_alt_bksp,nodeadkeys
+else
+	# Otherwise set the layout for the built-in keyboard
+	setxkbmap -model pc104curl-z -layout us -variant cmk_ed_dh -option caps:ctrl_modifier,terminate:ctrl_alt_bksp
+fi
+# In a better world we could use something like
+# internal_keyboard=$(xinput -list | grep 'AT Translated' | sed 's/^.*id=\([0-9]*\).*$/\1/')
+# setxkbmap -device $internal_keyboard ...
+# but Qubes only sends one input source to each domU so this wont work.
+
+# I used to have a slightly-too-large Coreboot image in the EEPROM and it
+# would occassionaly cause the RAM to fail. This is fixed, but i might as
+# well keep the following around.
+if [ "$(xl info | awk '/total_memory/ { print $3 }')" -lt "16148" ]; then
+	notify-send -u critical "RAM malfunction"
+fi;
+
+# FHD mod! Thanks nitrocaster for your hard work, and the coreboot community
+# for the patch that disconnects the internal LVDS.
+if [ -n "$(xrandr | grep 'VGA1 connected')" ]; then
+	xrandr --output eDP --auto --output VGA1 --left-of eDP --auto
+fi
+
+exec xdg_autostart
+```
+
+autostart.sh
+
+```sh
+#!/bin/sh
+
+# This is to catch lock-session from systemd
+xss-lock lock &
+
+# No dpms
+xset -dpms
+
+# The idle timer is handled elsewhere
+echo "enable autolock" > ~/.autolock_status
+toggle_autolock
+
+# Set my wallpaper
+feh --bg-scale /usr/share/backgrounds/tiles/default_blue.jpg
+
+exec dwm_status &
+```
+
+
+### Fullscreen {#fullscreen}
+
+This patch allows you to toggle fullscreen on and off using a single shortcut key.
+
+```c
+#define TOGGLEFULLSCREEN_PATCH 1
+```
+
+```console
+[yanboyang713@manjaro] ➜ dwm-flexipatch (U master) rm config.h
+rm: remove write-protected regular file 'config.h'? yes
+```
+
+```c
+	{ MODKEY,                       XK_y,          togglefullscreen,       {0} },
+```
 
 
 ## Reference List {#reference-list}

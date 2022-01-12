@@ -10,7 +10,7 @@ Installing Install Xorg 1  pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xse
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/dwm/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-11-30T17:50:00+08:00">
-<meta property="article:modified_time" content="2022-01-12T06:15:28+00:00">
+<meta property="article:modified_time" content="2022-01-12T13:12:24+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting Started Dynamic Window Manager (DWM)">
@@ -19,7 +19,7 @@ Installing Install Xorg 1  pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xse
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/dwm/><link rel=prev href=https://yanboyang.com/srs/><link rel=next href=https://yanboyang.com/k8sonproxmox/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started Dynamic Window Manager (DWM)","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dwm\/"},"genre":"posts","keywords":"DWM","wordcount":2346,"url":"https:\/\/yanboyang.com\/dwm\/","datePublished":"2021-11-30T17:50:00+08:00","dateModified":"2022-01-12T06:15:28+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/dwm/><link rel=prev href=https://yanboyang.com/srs/><link rel=next href=https://yanboyang.com/k8sonproxmox/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started Dynamic Window Manager (DWM)","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dwm\/"},"genre":"posts","keywords":"DWM","wordcount":2676,"url":"https:\/\/yanboyang.com\/dwm\/","datePublished":"2021-11-30T17:50:00+08:00","dateModified":"2022-01-12T13:12:24+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
@@ -93,8 +93,8 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Getting Started Dynamic Window Manager (DWM)</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/wm/><i class="far fa-folder fa-fw"></i>WM</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-11-30>2021-11-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2346 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;12 minutes&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-11-30>2021-11-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2676 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;13 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -138,7 +138,14 @@ Cancel
 </li>
 </ul>
 </li>
-<li><a href=#patches>Patches</a></li>
+<li><a href=#patches>Patches</a>
+<ul>
+<li><a href=#restart-dwm-without-logging-out-or-closing-applications>Restart DWM without logging out or closing applications</a></li>
+<li><a href=#dwm-fullgaps>dwm-fullgaps</a></li>
+<li><a href=#autostart>Autostart</a></li>
+<li><a href=#fullscreen>Fullscreen</a></li>
+</ul>
+</li>
 <li><a href=#reference-list>Reference List</a></li>
 <li><a href=#acknowledge>Acknowledge</a></li>
 </ul>
@@ -714,14 +721,143 @@ Note the <strong>NUMTAGS*2</strong> which doubles the number of icons. The icon 
 </code></pre></td></tr></table>
 </div>
 </div><h2 id=patches>Patches</h2>
-<p>/* This patch allows you to toggle fullscreen on and off using a single shortcut key.</p>
-<ul>
-<li><a href=https://github.com/bakkeby/patches/blob/master/dwm/dwm-togglefullscreen-6.2.diff target=_blank rel="noopener noreferrer">https://github.com/bakkeby/patches/blob/master/dwm/dwm-togglefullscreen-6.2.diff</a>
-*/</li>
-</ul>
-<p>#define TOGGLEFULLSCREEN_PATCH 0</p>
-<p><a href=https://dwm.suckless.org/patches/single_tagset/ target=_blank rel="noopener noreferrer">https://dwm.suckless.org/patches/single_tagset/</a></p>
-<h2 id=reference-list>Reference List</h2>
+<h3 id=restart-dwm-without-logging-out-or-closing-applications>Restart DWM without logging out or closing applications</h3>
+<p>dwm can now be restarted without destroying other X windows by pressing the usual Mod-Shift-Q combination.
+{ MODKEY|ShiftMask, XK_r, self_restart, {0} },
+#endif // SELFRESTART_PATCH</p>
+<h3 id=dwm-fullgaps>dwm-fullgaps</h3>
+<h3 id=autostart>Autostart</h3>
+<p>autostart_blocking.sh</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=cp>#!/bin/sh
+</span><span class=cp></span>
+<span class=k>if</span> <span class=o>[</span> -n <span class=s2>&#34;</span><span class=k>$(</span>qvm-usb <span class=p>|</span> grep tslil_clingman_dactyl_manuform_mini_0<span class=k>)</span><span class=s2>&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+	<span class=c1># If my USB keyboard is detected, don&#39;t mangle the layout</span>
+	setxkbmap -layout us -variant altgr-intl -option caps:ctrl_modifier,terminate:ctrl_alt_bksp,nodeadkeys
+<span class=k>else</span>
+	<span class=c1># Otherwise set the layout for the built-in keyboard</span>
+	setxkbmap -model pc104curl-z -layout us -variant cmk_ed_dh -option caps:ctrl_modifier,terminate:ctrl_alt_bksp
+<span class=k>fi</span>
+<span class=c1># In a better world we could use something like</span>
+<span class=c1># internal_keyboard=$(xinput -list | grep &#39;AT Translated&#39; | sed &#39;s/^.*id=\([0-9]*\).*$/\1/&#39;)</span>
+<span class=c1># setxkbmap -device $internal_keyboard ...</span>
+<span class=c1># but Qubes only sends one input source to each domU so this wont work.</span>
+
+<span class=c1># I used to have a slightly-too-large Coreboot image in the EEPROM and it</span>
+<span class=c1># would occassionaly cause the RAM to fail. This is fixed, but i might as</span>
+<span class=c1># well keep the following around.</span>
+<span class=k>if</span> <span class=o>[</span> <span class=s2>&#34;</span><span class=k>$(</span>xl info <span class=p>|</span> awk <span class=s1>&#39;/total_memory/ { print $3 }&#39;</span><span class=k>)</span><span class=s2>&#34;</span> -lt <span class=s2>&#34;16148&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+	notify-send -u critical <span class=s2>&#34;RAM malfunction&#34;</span>
+<span class=k>fi</span><span class=p>;</span>
+
+<span class=c1># FHD mod! Thanks nitrocaster for your hard work, and the coreboot community</span>
+<span class=c1># for the patch that disconnects the internal LVDS.</span>
+<span class=k>if</span> <span class=o>[</span> -n <span class=s2>&#34;</span><span class=k>$(</span>xrandr <span class=p>|</span> grep <span class=s1>&#39;VGA1 connected&#39;</span><span class=k>)</span><span class=s2>&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+	xrandr --output eDP --auto --output VGA1 --left-of eDP --auto
+<span class=k>fi</span>
+
+<span class=nb>exec</span> xdg_autostart
+</code></pre></td></tr></table>
+</div>
+</div><p>autostart.sh</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=cp>#!/bin/sh
+</span><span class=cp></span>
+<span class=c1># This is to catch lock-session from systemd</span>
+xss-lock lock <span class=p>&amp;</span>
+
+<span class=c1># No dpms</span>
+xset -dpms
+
+<span class=c1># The idle timer is handled elsewhere</span>
+<span class=nb>echo</span> <span class=s2>&#34;enable autolock&#34;</span> &gt; ~/.autolock_status
+toggle_autolock
+
+<span class=c1># Set my wallpaper</span>
+feh --bg-scale /usr/share/backgrounds/tiles/default_blue.jpg
+
+<span class=nb>exec</span> dwm_status <span class=p>&amp;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=fullscreen>Fullscreen</h3>
+<p>This patch allows you to toggle fullscreen on and off using a single shortcut key.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=cp>#define TOGGLEFULLSCREEN_PATCH 1
+</span></code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>[yanboyang713@manjaro] ➜ dwm-flexipatch (U master) rm config.h
+</span><span class=go>rm: remove write-protected regular file &#39;config.h&#39;? yes
+</span></code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c>	<span class=p>{</span> <span class=n>MODKEY</span><span class=p>,</span>                       <span class=n>XK_y</span><span class=p>,</span>          <span class=n>togglefullscreen</span><span class=p>,</span>       <span class=p>{</span><span class=mi>0</span><span class=p>}</span> <span class=p>},</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=reference-list>Reference List</h2>
 <ol>
 <li><a href=https://github.com/bakkeby/dwm-flexipatch/issues/213 target=_blank rel="noopener noreferrer">https://github.com/bakkeby/dwm-flexipatch/issues/213</a></li>
 <li><a href=https://github.com/bakkeby/patches/wiki/tagicons target=_blank rel="noopener noreferrer">https://github.com/bakkeby/patches/wiki/tagicons</a></li>
