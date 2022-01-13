@@ -16,4 +16,4 @@ On Arch / Arch-based:
 1 pacman -S rofi On Debian / Ubuntu:
 1 apt-get install rofi On Fedora:
 1 dnf install rofi Clone this repository</description></item><item><title>Getting Started Dynamic Window Manager (DWM)</title><link>https://yanboyang.com/dwm/</link><pubDate>Tue, 30 Nov 2021 17:50:00 +0800</pubDate><author>Author</author><guid>https://yanboyang.com/dwm/</guid><description>Introduction dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
-Installing Install Xorg 1 pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot Install DWM 1 2 3 4 5 6 7 8 9 10 11 12 13 git clone git://git.suckless.org/dwm ~/.</description></item></channel></rss>
+Pre-reading WM/Getting Started Xorg with display manager Installing Before you install DWM, firstly, please Set-up your Display Server and Display Manager. I recommand you use X11 (Xorg) as your Display Server and Lightdm as your Display Server.</description></item></channel></rss>

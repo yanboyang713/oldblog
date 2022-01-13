@@ -82,6 +82,8 @@ You should open file: **dwm.c.rej** and manual change file's contents. Good luck
 
 ## DWM Flexipatch {#dwm-flexipatch}
 
+Fork for your **OWN** and install
+
 1.  First Step: create a new **DIR** and clone **TWO** Repositories.
     1.  <https://github.com/bakkeby/dwm-flexipatch.git>
     2.  <https://github.com/bakkeby/flexipatch-finalizer.git>
@@ -122,6 +124,8 @@ You should open file: **dwm.c.rej** and manual change file's contents. Good luck
        #define BAR_ALPHA_PATCH 1
     ```
 
+4.  For more configuration and Patches, please go to [Configuration]({{< relref "dwm#configuration" >}}) and [Patches]({{< relref "dwm#patches" >}}).
+
 Patches I use:
 
 status_padding
@@ -137,6 +141,20 @@ status2d
 
 **NOTE**:
 dwm can now be restarted without destroying other X windows by pressing the usual Mod-Shift-Q combination.
+
+
+### flexipatch-finalizer {#flexipatch-finalizer}
+
+```bash
+mkdir dwm
+
+cd flexipatch-finalizer
+
+sh ./flexipatch-finalizer.sh -r -d ~/Documents/suckless/dwm-flexipatch -o ~/Documents/suckless/dwm
+
+cd dwm
+sudo make clean install
+```
 
 
 ## Reference List {#reference-list}
