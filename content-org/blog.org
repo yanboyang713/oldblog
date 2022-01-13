@@ -4090,8 +4090,27 @@ CLOSED: [2021-11-30 Tue 17:50]
 *** Introduction
 dwm is a dynamic window manager for X. It manages windows in *tiled*, *monocle* and *floating* layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
 
+*** Pre-reading
+1. [[id:4be63633-1b9e-46a1-9463-f845f0336e29][WM/Getting Started Xorg with display manager]]
+
 *** Installing
+Before you install *DWM*, firstly, please Set-up your *Display Server* and *Display Manager*. I recommand you use X11 (Xorg) as your *Display Server* and Lightdm as your *Display Server*. If you don't know how to do it, please, read [[id:4be63633-1b9e-46a1-9463-f845f0336e29][WM/Getting Started Xorg with display manager]]
+
 **** Install DWM
+There are ways install *DWM*:
+1. Manual patching *DWM* from scratch.
+2. "*Fully fledged*" *DWM*, such as *dwm-flexipatch* (recommand)
+
+***** dwm-flexipatch
+If you have ever been *curious* about trying out *dwm*, but have been *discouraged* by manual patching, then this may be a good starting point to see [[https://github.com/bakkeby/dwm-flexipatch.git][dwm-flexipatch]] Just flip a config and recompile.
+
+Once you have found out what works for you and what doesn't then you should be in a better position to choose patches should you want to start patching from scratch.
+
+Alternatively if you have found the patches you want, but don't want the rest of the flexipatch entanglement on your plate then you may want to have a look at [[https://github.com/bakkeby/flexipatch-finalizer][flexipatch-finalizer]]; a custom pre-processor tool that removes all the unused flexipatch code leaving you with a build that contains the patches you selected.
+
+For how to install flexipatch, please read [[id:1893ad0c-4838-4e44-b40f-8fb11bb0552f][DWM Flexipatch]].
+
+***** From Scratch
 #+begin_src bash
 git clone git://git.suckless.org/dwm ~/.config/dwm
 git clone https://github.com/WouterSpekkink/dwm.git
@@ -4170,6 +4189,9 @@ To quit dwm cleanly: *[Shift]+[Alt]+[q]*
 
 
 *** Configuration
+:PROPERTIES:
+:ID:       ffc4a901-211d-4091-8146-026e4a5b7863
+:END:
 All of configuration should be in *config.def.h* file.
 
 When you make modified, please run:
@@ -4454,6 +4476,9 @@ To focus on another monitor it is expected that you change focus to the other mo
 
 
 *** Patches
+:PROPERTIES:
+:ID:       257927be-60a2-4557-a4a9-73204d51ab68
+:END:
 **** Restart DWM without logging out or closing applications :restart:
 dwm can now be restarted without destroying other X windows by pressing the usual Mod-Shift-Q combination.
 	{ MODKEY|ShiftMask,             XK_r,          self_restart,           {0} },
@@ -4900,6 +4925,8 @@ You should open file: *dwm.c.rej* and manual change file's contents. Good luck.
 :ID:       1893ad0c-4838-4e44-b40f-8fb11bb0552f
 :END:
 
+Fork for your *OWN* and install
+
 1. First Step: create a new *DIR* and clone *TWO* Repositories.
    1. https://github.com/bakkeby/dwm-flexipatch.git
    2. https://github.com/bakkeby/flexipatch-finalizer.git
@@ -4937,6 +4964,9 @@ sudo make clean install
    #+begin_example
 #define BAR_ALPHA_PATCH 1
    #+end_example
+
+4. For more configuration and Patches, please go to [[id:ffc4a901-211d-4091-8146-026e4a5b7863][Configuration]] and [[id:257927be-60a2-4557-a4a9-73204d51ab68][Patches]].
+
 Patches I use:
 
 status_padding
@@ -4952,7 +4982,7 @@ status2d
 
 *NOTE*:
 dwm can now be restarted without destroying other X windows by pressing the usual Mod-Shift-Q combination.
-*** flexipatch-finalizer
+**** flexipatch-finalizer
 
 #+begin_src bash
 mkdir dwm

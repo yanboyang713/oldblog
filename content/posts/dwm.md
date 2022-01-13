@@ -11,17 +11,36 @@ draft: false
 dwm is a dynamic window manager for X. It manages windows in **tiled**, **monocle** and **floating** layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
 
 
+## Pre-reading {#pre-reading}
+
+1.  [WM/Getting Started Xorg with display manager]({{< relref "Xorg" >}})
+
+
 ## Installing {#installing}
 
-
-### Install Xorg {#install-xorg}
-
-```bash
-pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot
-```
+Before you install **DWM**, firstly, please Set-up your **Display Server** and **Display Manager**. I recommand you use X11 (Xorg) as your **Display Server** and Lightdm as your **Display Server**. If you don't know how to do it, please, read [WM/Getting Started Xorg with display manager]({{< relref "Xorg" >}})
 
 
 ### Install DWM {#install-dwm}
+
+There are ways install **DWM**:
+
+1.  Manual patching **DWM** from scratch.
+2.  "**Fully fledged**" **DWM**, such as **dwm-flexipatch** (recommand)
+
+
+#### dwm-flexipatch {#dwm-flexipatch}
+
+If you have ever been **curious** about trying out **dwm**, but have been **discouraged** by manual patching, then this may be a good starting point to see [dwm-flexipatch](https://github.com/bakkeby/dwm-flexipatch.git) Just flip a config and recompile.
+
+Once you have found out what works for you and what doesn't then you should be in a better position to choose patches should you want to start patching from scratch.
+
+Alternatively if you have found the patches you want, but don't want the rest of the flexipatch entanglement on your plate then you may want to have a look at [flexipatch-finalizer](https://github.com/bakkeby/flexipatch-finalizer); a custom pre-processor tool that removes all the unused flexipatch code leaving you with a build that contains the patches you selected.
+
+For how to install flexipatch, please read [DWM Flexipatch]({{< relref "dwmPatches#dwm-flexipatch" >}}).
+
+
+#### From Scratch {#from-scratch}
 
 ```bash
 git clone git://git.suckless.org/dwm ~/.config/dwm
@@ -43,24 +62,6 @@ git clone https://github.com/WouterSpekkink/dmenu.git
 cd ~/.config/dwm && sudo make install
 cd ~/.config/st && sudo make install
 cd ~/.config/dmenu && sudo make install
-```
-
-
-### Installing a Display Manager (DM) {#installing-a-display-manager--dm}
-
-```bash
-pacman -S lightdm
-
-pacman -S lightdm-gtk-greeter
-
-pacman -S lightdm-gtk-greeter-settings
-```
-
-
-### Enable lightdm service {#enable-lightdm-service}
-
-```bash
-sudo systemctl enable lightdm
 ```
 
 
