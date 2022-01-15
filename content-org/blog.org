@@ -3967,6 +3967,53 @@ Flakes replace the nix-channels command and things like ad-hoc invocations of bu
 
 
 * WM :@WM:
+** Change the Suckless DWM Wallpaper with Feh :DWM:feh:wallpaper:
+:PROPERTIES:
+:EXPORT_FILE_NAME: DWMwallpaper
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+By default DWM does NOT have a background and it does NOT have a background manager like you would find in Gnome or KDE or other full desktop environments.
+
+DWM it is very easy to set a background using a small program called Feh. So, Let's we begin.
+
+*** Installation
+Firstly, we need to install *Feh*.
+
+#+begin_src bash
+yay -S feh
+#+end_src
+
+*** Usage
+
+#+begin_src bash
+feh --bg-fill Arch-Linux-blue-desktop-kiss-Linux-logo-nice-wallpaper-1657915.png
+#+end_src
+
+[[http://res.cloudinary.com/dkvj6mo4c/image/upload/v1642240441/screenshot/xoa3ljqwmho0sumitox4.png]]
+
+Now, it just updated my Wallpaper.
+
+Automated at boot we just need to edit at the start of x.
+
+Firstly, you need create a new bash script in your home DIR.
+
+#+begin_src sh
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/yanboyang713/DotFiles/wallpaper.png'
+#+end_src
+
+Than, edit your *.xinitrc* file, to run this script.
+
+#+begin_example
+# Set Background Wallpaper
+~/.fehbg
+#+end_example
+
+When you update your Wallpaper, it will also update *~/.fehbg* here. You don't really need to go back and replace this DIR every time you change your wallpaper because the effect command will update this file here so you only need to really do it every time that you want to change your wallpaper so essentially just change whatever wallpaper you want to use and you're good that's it just make sure to edit *.xinitrc* the background set every time that you start x and you'll be good to go.
+
+
 ** DONE Getting Started Display Server compared with X11, Wayland and Mir :display:server:
 CLOSED: [2022-01-13 Thu 13:08]
 :PROPERTIES:
