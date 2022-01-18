@@ -478,6 +478,18 @@ dwm can now be restarted without destroying other X windows by pressing the usua
 
 ### Autostart {#autostart}
 
+_\* This patch will make dwm run "~_.local/share/dwm/autostart_blocking.sh" and
+
+-   "~/.local/share/dwm/autostart.sh &amp;" before entering the handler loop. One or
+-   both of these files can be ommited. Note the path inside .local/share rather
+-   than the original ~/.dwm folder.
+-   <https://dwm.suckless.org/patches/autostart/>
+    \*/
+
+\#define AUTOSTART_PATCH 1
+
+cd _home/yanboyang713_.local/share/dwm
+
 autostart_blocking.sh
 
 ```sh

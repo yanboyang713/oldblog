@@ -1,5 +1,6 @@
 ---
 title: "Change the Suckless DWM Wallpaper with Feh"
+date: 2022-01-15T19:27:00+08:00
 tags: ["DWM", "feh", "wallpaper"]
 categories: ["WM"]
 draft: false

@@ -3967,7 +3967,8 @@ Flakes replace the nix-channels command and things like ad-hoc invocations of bu
 
 
 * WM :@WM:
-** Change the Suckless DWM Wallpaper with Feh :DWM:feh:wallpaper:
+** DONE Change the Suckless DWM Wallpaper with Feh :DWM:feh:wallpaper:
+CLOSED: [2022-01-15 Sat 19:27]
 :PROPERTIES:
 :EXPORT_FILE_NAME: DWMwallpaper
 :EXPORT_OPTIONS: author:nil
@@ -4760,6 +4761,19 @@ dwm can now be restarted without destroying other X windows by pressing the usua
 **** dwm-fullgaps
 
 **** Autostart
+
+/* This patch will make dwm run "~/.local/share/dwm/autostart_blocking.sh" and
+ * "~/.local/share/dwm/autostart.sh &" before entering the handler loop. One or
+ * both of these files can be ommited. Note the path inside .local/share rather
+ * than the original ~/.dwm folder.
+ * https://dwm.suckless.org/patches/autostart/
+ */
+#define AUTOSTART_PATCH 1
+
+cd /home/yanboyang713/.local/share/dwm
+
+
+
 autostart_blocking.sh
 #+begin_src sh
 #!/bin/sh
@@ -4938,7 +4952,7 @@ What's even better is that you can externally trigger updation of any specific b
 The installation is simple, just clone this repository, modify config.h appropriately, and then do a sudo make install.
 
 #+begin_src bash
-git clone https://github.com/UtkarshVerma/dwmblocks.git
+git clone https://github.com/yanboyang713/dwmblocks-async.git
 vi config.h
 sudo make install
 #+end_src
@@ -4949,6 +4963,46 @@ To have dwmblocks set your statusbar, you need to run it as a background process
 #+begin_example
 dwmblocks &
 #+end_example
+
+#define BAR_STATUSCMD_PATCH 1
+#define BAR_STATUS_PATCH 0
+
+#+end_src
+https://github.com/bakkeby/dwm-flexipatch/issues/76
+
+#+begin_src c
+#define BAR_SYSTRAY_PATCH 1
+#+end_src
+
+https://dwm.suckless.org/patches/systray/
+systray for show input method.
+
+
+/* Show tag symbols + class of master window in the bar.
+ * https://dwm.suckless.org/patches/taglabels/
+ */
+#define BAR_TAGLABELS_PATCH 0
+If you have logo on your tags, I recommand enabled this patch.
+
+
+/* This patch underlines the selected tag, or optionally all tags.
+ * https://dwm.suckless.org/patches/underlinetags/
+ */
+#define BAR_UNDERLINETAGS_PATCH 1
+
+
+
+/* Adds a keyboard shortcut to restart dwm or alternatively by using kill -HUP dwmpid.
+ * Additionally dwm can quit cleanly by using kill -TERM dwmpid.
+ * https://dwm.suckless.org/patches/restartsig/
+ */
+#define RESTARTSIG_PATCH 1
+
+
+	#if RESTARTSIG_PATCH
+	{ MODKEY|ControlMask|ShiftMask, XK_q,          quit,                   {1} },
+	#endif // RESTARTSIG_PATCH
+
 
 *** Modifying the blocks
 You can define your *statusbar* blocks in *config.h*. Each block has the following properties:
@@ -5044,7 +5098,7 @@ dwmstatus 2>&1 >/dev/null &
 
 to your .xinitrc
 
-
+#+begin_src c
 
 *** Reference List
 1. https://bestofcpp.com/repo/UtkarshVerma-dwmblocks-cpp-cli

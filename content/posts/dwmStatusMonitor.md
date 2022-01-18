@@ -62,7 +62,7 @@ What's even better is that you can externally trigger updation of any specific b
 The installation is simple, just clone this repository, modify config.h appropriately, and then do a sudo make install.
 
 ```bash
-git clone https://github.com/UtkarshVerma/dwmblocks.git
+git clone https://github.com/yanboyang713/dwmblocks-async.git
 vi config.h
 sudo make install
 ```
@@ -75,6 +75,46 @@ To have dwmblocks set your statusbar, you need to run it as a background process
 ```text
 dwmblocks &
 ```
+
+\#define BAR_STATUSCMD_PATCH 1
+\#define BAR_STATUS_PATCH 0
+
+\#+end_src
+<https://github.com/bakkeby/dwm-flexipatch/issues/76>
+
+```c
+#define BAR_SYSTRAY_PATCH 1
+```
+
+<https://dwm.suckless.org/patches/systray/>
+systray for show input method.
+
+/\* Show tag symbols + class of master window in the bar.
+
+-   <https://dwm.suckless.org/patches/taglabels/>
+    \*/
+
+\#define BAR_TAGLABELS_PATCH 0
+If you have logo on your tags, I recommand enabled this patch.
+
+/\* This patch underlines the selected tag, or optionally all tags.
+
+-   <https://dwm.suckless.org/patches/underlinetags/>
+    \*/
+
+\#define BAR_UNDERLINETAGS_PATCH 1
+
+/\* Adds a keyboard shortcut to restart dwm or alternatively by using kill -HUP dwmpid.
+
+-   Additionally dwm can quit cleanly by using kill -TERM dwmpid.
+-   <https://dwm.suckless.org/patches/restartsig/>
+    \*/
+
+\#define RESTARTSIG_PATCH 1
+
+\#if RESTARTSIG_PATCH
+{ MODKEY|ControlMask|ShiftMask, XK_q,          quit,                   {1} },
+\#endif // RESTARTSIG_PATCH
 
 
 ## Modifying the blocks {#modifying-the-blocks}
@@ -185,6 +225,8 @@ dwmstatus 2>&1 >/dev/null &
 ```
 
 to your .xinitrc
+
+\#+begin_src c
 
 
 ## Reference List {#reference-list}
