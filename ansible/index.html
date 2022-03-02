@@ -10,7 +10,7 @@ What Is Ansible? Ansible is a simple configuration management and IT automation 
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/ansible/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-02T17:58:00+08:00">
-<meta property="article:modified_time" content="2022-01-18T03:09:25+00:00">
+<meta property="article:modified_time" content="2022-03-02T13:12:39+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Ansible Beginner's Guide">
@@ -19,17 +19,15 @@ What Is Ansible? Ansible is a simple configuration management and IT automation 
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/ansible/><link rel=prev href=https://yanboyang.com/devops/><link rel=next href=https://yanboyang.com/clouldinit/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Ansible Beginner's Guide","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/ansible\/"},"genre":"posts","keywords":"Ansible","wordcount":936,"url":"https:\/\/yanboyang.com\/ansible\/","datePublished":"2021-12-02T17:58:00+08:00","dateModified":"2022-01-18T03:09:25+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
-<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/ansible/><link rel=prev href=https://yanboyang.com/devops/><link rel=next href=https://yanboyang.com/clouldinit/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Ansible Beginner's Guide","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/ansible\/"},"genre":"posts","keywords":"Ansible","wordcount":936,"url":"https:\/\/yanboyang.com\/ansible\/","datePublished":"2021-12-02T17:58:00+08:00","dateModified":"2022-03-02T13:12:39+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 <div class=header-wrapper>
 <div class=header-title>
 <a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div>
-<div class=menu>
+</div><div class=menu>
 <div class=menu-inner><a class=menu-item href=https://yanboyang.com/> Home </a><a class=menu-item href=https://yanboyang.com/posts/> Posts </a><a class=menu-item href=https://yanboyang.com/tags/> Tags </a><a class=menu-item href=https://yanboyang.com/categories/> Categories </a><a class=menu-item href=https://yanboyang.com/about/> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
@@ -44,23 +42,17 @@ What Is Ansible? Ansible is a simple configuration management and IT automation 
 </span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
 <i class="fas fa-adjust fa-fw"></i>
 </a>
-</div>
-</div>
-</div>
-</header><header class=mobile id=header-mobile>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+</div></div></div></header><header class=mobile id=header-mobile>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 <div class=header-container>
 <div class=header-wrapper>
 <div class=header-title>
 <a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div>
-<div class=menu-toggle id=menu-toggle-mobile>
+</div><div class=menu-toggle id=menu-toggle-mobile>
 <span></span><span></span><span></span>
-</div>
-</div>
-<div class=menu id=menu-mobile><div class=search-wrapper>
+</div></div><div class=menu id=menu-mobile><div class=search-wrapper>
 <div class="search mobile" id=search-mobile>
 <input type=text placeholder="Search titles or contents..." id=search-input-mobile>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
@@ -72,218 +64,81 @@ What Is Ansible? Ansible is a simple configuration management and IT automation 
 <span class="search-button search-loading" id=search-loading-mobile>
 <i class="fas fa-spinner fa-fw fa-spin"></i>
 </span>
-</div>
-<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+</div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
 Cancel
 </a>
 </div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
 <i class="fas fa-adjust fa-fw"></i>
-</a></div>
-</div>
-</header>
-<div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div>
-</div>
-<div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div>
-</div>
-<main class=main>
+</a></div></div></header><div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div></div><main class=main>
 <div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>Contents</h2>
-<div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Ansible Beginner's Guide</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/devops/><i class="far fa-folder fa-fw"></i>DevOps</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-02>2021-12-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;936 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
-</div><div class="details toc" id=toc-static kept=true>
+<h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Ansible Beginner's Guide</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/devops/><i class="far fa-folder fa-fw"></i>DevOps</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-02>2021-12-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;936 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
 <span><i class="details-icon fas fa-angle-right"></i></span>
-</div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+</div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
-<li><a href=#overview>Overview</a></li>
-<li><a href=#what-is-ansible>What Is Ansible?</a></li>
-<li><a href=#who-should-learn-ansible>Who should learn Ansible?</a></li>
-<li><a href=#why-use-ansible>Why Use Ansible?</a></li>
-<li><a href=#ansible-use-cases>Ansible Use Cases</a></li>
-<li><a href=#ansible-architecture-diagram>Ansible Architecture Diagram</a></li>
-<li><a href=#ansible-playbook>Ansible Playbook</a></li>
-<li><a href=#what-are-inventories-in-ansible>What Are Inventories In Ansible?</a></li>
-<li><a href=#ansible-modules>Ansible Modules</a></li>
-<li><a href=#ansible-tower>Ansible Tower</a></li>
-<li><a href=#ansible-roles>Ansible Roles</a></li>
-<li><a href=#ansible-variables>Ansible Variables</a></li>
-<li><a href=#how-to-run-the-ansible-commands>How To Run The Ansible Commands?</a></li>
-<li><a href=#ad-hoc-commands-examples>AD-HOC Commands Examples</a></li>
-</ul>
-</nav></div>
-</div><div class=content id=content><h2 id=overview>Overview</h2>
-<p>This article covers all the aspects of Ansible, a tool used in DevOps for the Management, Deployment, and Orchestration of IT Infrastructure.</p>
-<h2 id=what-is-ansible>What Is Ansible?</h2>
-<p>Ansible is a simple configuration management and IT automation engine for multi-tier deployments. It automates both cloud and on-premise provisioning & configuration. It automates cloud provisioning. Rather than managing one system at a time, Ansible uses a model that inter-relates the entire IT infrastructure and enables you to manage everything using something called an Infrastructure as Code (IAC) approach. Ansible is secure and agentless. It relies on OpenSSH and the code written in YAML format. Ansible nodes are run on Unix systems but they can be used to configure changes across Unix as well as Windows systems.</p>
-<h2 id=who-should-learn-ansible>Who should learn Ansible?</h2>
-<p>Ansible is a part of the DevOps stack. Ansible means automation. Ansible seamlessly connects workflow orchestration with configuration management and provisioning deployment. Ansible has various use cases in Provisioning, Configuration Management, Application Deployment, Continuous Deployment, Automation, and Orchestration. So, if you are looking forward to a career in DevOps, IT automation, and managing cloud infrastructure then Ansible is a must-have.</p>
-<h2 id=why-use-ansible>Why Use Ansible?</h2>
-<ul>
-<li><strong>No Agent</strong>: As long as the box can be ssh’d into and it has python, it can be configured with Ansible.</li>
-<li><strong>Idempotent</strong>: Ansible’s whole architecture is structured around the concept of idempotency. The core idea here is that you only do things if they are needed and that things are repeatable without side effects.</li>
-<li><strong>Declarative Not Procedural</strong>: Other configuration tools tend to be procedural do this and then do that and so on. Ansible works by you writing a description of the state of the machine that you want and then it takes steps to fulfill that description.</li>
-<li><strong>Tiny Learning Curve</strong>: Ansible is quite easy to learn. It doesn’t require any extra knowledge.</li>
-</ul>
-<h2 id=ansible-use-cases>Ansible Use Cases</h2>
-<ul>
-<li><strong>Provisioning</strong>: Provisioning is creating new infrastructure. Ansible allows for application management, deployment, orchestration, and configuration management.</li>
-<li><strong>Continuous Delivery</strong>: Ansible provides a simpler way to automatically deploy applications. All required services for a deployment can be configured from a single system. Continuous Integration (CI) tool can be used to run Ansible playbook which can be used to test and automatically deploy the application to production if tests are passed.</li>
-<li><strong>Application Deployment</strong>: Ansible provides a simpler way to deploy applications across the infrastructure. Deployment of multi-tier applications can be simplified and the infrastructure can be easily changed over time.</li>
-<li><strong>Ansible for Cloud Computing</strong>: Ansible makes it easy to provision instances across all cloud providers. Ansible contains multiple modules and allows to manage of large cloud infrastructure across the public-private and hybrid cloud.</li>
-<li><strong>Ansible for Security and Compliance</strong>: You can define security policies in Ansible which will automate security policy across all machines in the network. Security roles once configured in an Ansible node will be embedded across all machines in the network automatically.</li>
-</ul>
-<h2 id=ansible-architecture-diagram>Ansible Architecture Diagram</h2>
-<p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://miro.medium.com/max/564/1*eaY6sN1T9VJiVOrMQMNdRQ.png data-srcset="https://miro.medium.com/max/564/1*eaY6sN1T9VJiVOrMQMNdRQ.png, https://miro.medium.com/max/564/1*eaY6sN1T9VJiVOrMQMNdRQ.png 1.5x, https://miro.medium.com/max/564/1*eaY6sN1T9VJiVOrMQMNdRQ.png 2x" data-sizes=auto alt=https://miro.medium.com/max/564/1*eaY6sN1T9VJiVOrMQMNdRQ.png title=https://miro.medium.com/max/564/1*eaY6sN1T9VJiVOrMQMNdRQ.png>
+<li><a href=#overview>Overview</a></li><li><a href=#what-is-ansible>What Is Ansible?</a></li><li><a href=#who-should-learn-ansible>Who should learn Ansible?</a></li><li><a href=#why-use-ansible>Why Use Ansible?</a></li><li><a href=#ansible-use-cases>Ansible Use Cases</a></li><li><a href=#ansible-architecture-diagram>Ansible Architecture Diagram</a></li><li><a href=#ansible-playbook>Ansible Playbook</a></li><li><a href=#what-are-inventories-in-ansible>What Are Inventories In Ansible?</a></li><li><a href=#ansible-modules>Ansible Modules</a></li><li><a href=#ansible-tower>Ansible Tower</a></li><li><a href=#ansible-roles>Ansible Roles</a></li><li><a href=#ansible-variables>Ansible Variables</a></li><li><a href=#how-to-run-the-ansible-commands>How To Run The Ansible Commands?</a></li><li><a href=#ad-hoc-commands-examples>AD-HOC Commands Examples</a></li></ul></nav></div></div><div class=content id=content><h2 id=overview>Overview</h2><p>This article covers all the aspects of Ansible, a tool used in DevOps for the Management, Deployment, and Orchestration of IT Infrastructure.</p><h2 id=what-is-ansible>What Is Ansible?</h2><p>Ansible is a simple configuration management and IT automation engine for multi-tier deployments. It automates both cloud and on-premise provisioning & configuration. It automates cloud provisioning. Rather than managing one system at a time, Ansible uses a model that inter-relates the entire IT infrastructure and enables you to manage everything using something called an Infrastructure as Code (IAC) approach. Ansible is secure and agentless. It relies on OpenSSH and the code written in YAML format. Ansible nodes are run on Unix systems but they can be used to configure changes across Unix as well as Windows systems.</p><h2 id=who-should-learn-ansible>Who should learn Ansible?</h2><p>Ansible is a part of the DevOps stack. Ansible means automation. Ansible seamlessly connects workflow orchestration with configuration management and provisioning deployment. Ansible has various use cases in Provisioning, Configuration Management, Application Deployment, Continuous Deployment, Automation, and Orchestration. So, if you are looking forward to a career in DevOps, IT automation, and managing cloud infrastructure then Ansible is a must-have.</p><h2 id=why-use-ansible>Why Use Ansible?</h2><ul>
+<li><strong>No Agent</strong>: As long as the box can be ssh’d into and it has python, it can be configured with Ansible.</li><li><strong>Idempotent</strong>: Ansible’s whole architecture is structured around the concept of idempotency. The core idea here is that you only do things if they are needed and that things are repeatable without side effects.</li><li><strong>Declarative Not Procedural</strong>: Other configuration tools tend to be procedural do this and then do that and so on. Ansible works by you writing a description of the state of the machine that you want and then it takes steps to fulfill that description.</li><li><strong>Tiny Learning Curve</strong>: Ansible is quite easy to learn. It doesn’t require any extra knowledge.</li></ul><h2 id=ansible-use-cases>Ansible Use Cases</h2><ul>
+<li><strong>Provisioning</strong>: Provisioning is creating new infrastructure. Ansible allows for application management, deployment, orchestration, and configuration management.</li><li><strong>Continuous Delivery</strong>: Ansible provides a simpler way to automatically deploy applications. All required services for a deployment can be configured from a single system. Continuous Integration (CI) tool can be used to run Ansible playbook which can be used to test and automatically deploy the application to production if tests are passed.</li><li><strong>Application Deployment</strong>: Ansible provides a simpler way to deploy applications across the infrastructure. Deployment of multi-tier applications can be simplified and the infrastructure can be easily changed over time.</li><li><strong>Ansible for Cloud Computing</strong>: Ansible makes it easy to provision instances across all cloud providers. Ansible contains multiple modules and allows to manage of large cloud infrastructure across the public-private and hybrid cloud.</li><li><strong>Ansible for Security and Compliance</strong>: You can define security policies in Ansible which will automate security policy across all machines in the network. Security roles once configured in an Ansible node will be embedded across all machines in the network automatically.</li></ul><h2 id=ansible-architecture-diagram>Ansible Architecture Diagram</h2><p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://miro.medium.com/max/564/1*eaY6sN1T9VJiVOrMQMNdRQ.png data-srcset="https://miro.medium.com/max/564/1*eaY6sN1T9VJiVOrMQMNdRQ.png, https://miro.medium.com/max/564/1*eaY6sN1T9VJiVOrMQMNdRQ.png 1.5x, https://miro.medium.com/max/564/1*eaY6sN1T9VJiVOrMQMNdRQ.png 2x" data-sizes=auto alt=https://miro.medium.com/max/564/1*eaY6sN1T9VJiVOrMQMNdRQ.png title=https://miro.medium.com/max/564/1*eaY6sN1T9VJiVOrMQMNdRQ.png>
 <img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://miro.medium.com/max/625/0*K9Kqdh4ZLT-fHJeP.png data-srcset="https://miro.medium.com/max/625/0*K9Kqdh4ZLT-fHJeP.png, https://miro.medium.com/max/625/0*K9Kqdh4ZLT-fHJeP.png 1.5x, https://miro.medium.com/max/625/0*K9Kqdh4ZLT-fHJeP.png 2x" data-sizes=auto alt=https://miro.medium.com/max/625/0*K9Kqdh4ZLT-fHJeP.png title=https://miro.medium.com/max/625/0*K9Kqdh4ZLT-fHJeP.png>
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/06/Ansible%5FDiagram2-16-1024x461.png data-srcset="https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/06/Ansible%5FDiagram2-16-1024x461.png, https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/06/Ansible%5FDiagram2-16-1024x461.png 1.5x, https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/06/Ansible%5FDiagram2-16-1024x461.png 2x" data-sizes=auto alt=https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/06/Ansible%5FDiagram2-16-1024x461.png title=https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/06/Ansible%5FDiagram2-16-1024x461.png></p>
-<ul>
-<li><strong>Modules</strong>: Modules are script-like programs written to specify the desired state of the system. These are typically written in a code editor. Modules are written by the developer and executed via SSH. Modules are part of a larger program called Playbook. Ansible module is a standalone script that can be used inside an Ansible Playbook.</li>
-<li><strong>Plugins</strong>: Plugins are pieces of code that enhance the core functionality of Ansible. Plugins execute on the control node.</li>
-<li><strong>Inventory</strong>: Ansible reads information about the machines you manage from the inventory. Inventory is listed in the file which contains IP addresses, databases, and servers.</li>
-<li><strong>Playbook</strong>: Playbooks are files written in YAML. Playbooks describe the tasks to be done by declaring configurations in order to bring a managed node into the desired state.</li>
-</ul>
-<h2 id=ansible-playbook>Ansible Playbook</h2>
-<ul>
-<li>Plain-text YAML files that describe the desired state of something</li>
-<li>Human and Machine-readable</li>
-<li>Can be used to build the entire application environment</li>
-</ul>
-<p><a href=https://miro.medium.com/max/463/0*t2iCHi%5FbuMmtKGmw target=_blank rel="noopener noreferrer">https://miro.medium.com/max/463/0*t2iCHi%5FbuMmtKGmw</a></p>
-<h2 id=what-are-inventories-in-ansible>What Are Inventories In Ansible?</h2>
-<ul>
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/06/Ansible%5FDiagram2-16-1024x461.png data-srcset="https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/06/Ansible%5FDiagram2-16-1024x461.png, https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/06/Ansible%5FDiagram2-16-1024x461.png 1.5x, https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/06/Ansible%5FDiagram2-16-1024x461.png 2x" data-sizes=auto alt=https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/06/Ansible%5FDiagram2-16-1024x461.png title=https://eadn-wc03-4064062.nxedge.io/cdn/wp-content/uploads/2021/06/Ansible%5FDiagram2-16-1024x461.png></p><ul>
+<li><strong>Modules</strong>: Modules are script-like programs written to specify the desired state of the system. These are typically written in a code editor. Modules are written by the developer and executed via SSH. Modules are part of a larger program called Playbook. Ansible module is a standalone script that can be used inside an Ansible Playbook.</li><li><strong>Plugins</strong>: Plugins are pieces of code that enhance the core functionality of Ansible. Plugins execute on the control node.</li><li><strong>Inventory</strong>: Ansible reads information about the machines you manage from the inventory. Inventory is listed in the file which contains IP addresses, databases, and servers.</li><li><strong>Playbook</strong>: Playbooks are files written in YAML. Playbooks describe the tasks to be done by declaring configurations in order to bring a managed node into the desired state.</li></ul><h2 id=ansible-playbook>Ansible Playbook</h2><ul>
+<li>Plain-text YAML files that describe the desired state of something</li><li>Human and Machine-readable</li><li>Can be used to build the entire application environment</li></ul><p><a href=https://miro.medium.com/max/463/0*t2iCHi%5FbuMmtKGmw target=_blank rel="noopener noreferrer">https://miro.medium.com/max/463/0*t2iCHi%5FbuMmtKGmw</a></p><h2 id=what-are-inventories-in-ansible>What Are Inventories In Ansible?</h2><ul>
 <li>
-<p>Static lines of servers</p>
-</li>
-<li>
-<p>Dynamic list of servers: AWS, Azure, GCP, etc.</p>
-</li>
-<li>
-<p>Ranges</p>
-</li>
-<li>
-<p>Other custom things</p>
-<p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://miro.medium.com/max/201/1*mLdHcg8SvBvXRDceZIdKeA.png data-srcset="https://miro.medium.com/max/201/1*mLdHcg8SvBvXRDceZIdKeA.png, https://miro.medium.com/max/201/1*mLdHcg8SvBvXRDceZIdKeA.png 1.5x, https://miro.medium.com/max/201/1*mLdHcg8SvBvXRDceZIdKeA.png 2x" data-sizes=auto alt=https://miro.medium.com/max/201/1*mLdHcg8SvBvXRDceZIdKeA.png title=https://miro.medium.com/max/201/1*mLdHcg8SvBvXRDceZIdKeA.png>
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://miro.medium.com/max/1006/0*E%5FbhUEFXGoQCOV%5FK.jpg data-srcset="https://miro.medium.com/max/1006/0*E%5FbhUEFXGoQCOV%5FK.jpg, https://miro.medium.com/max/1006/0*E%5FbhUEFXGoQCOV%5FK.jpg 1.5x, https://miro.medium.com/max/1006/0*E%5FbhUEFXGoQCOV%5FK.jpg 2x" data-sizes=auto alt=https://miro.medium.com/max/1006/0*E%5FbhUEFXGoQCOV%5FK.jpg title=https://miro.medium.com/max/1006/0*E%5FbhUEFXGoQCOV%5FK.jpg></p>
-</li>
-</ul>
-<h2 id=ansible-modules>Ansible Modules</h2>
+<p>Static lines of servers</p></li><li>
+<p>Dynamic list of servers: AWS, Azure, GCP, etc.</p></li><li>
+<p>Ranges</p></li><li>
+<p>Other custom things</p><p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://miro.medium.com/max/201/1*mLdHcg8SvBvXRDceZIdKeA.png data-srcset="https://miro.medium.com/max/201/1*mLdHcg8SvBvXRDceZIdKeA.png, https://miro.medium.com/max/201/1*mLdHcg8SvBvXRDceZIdKeA.png 1.5x, https://miro.medium.com/max/201/1*mLdHcg8SvBvXRDceZIdKeA.png 2x" data-sizes=auto alt=https://miro.medium.com/max/201/1*mLdHcg8SvBvXRDceZIdKeA.png title=https://miro.medium.com/max/201/1*mLdHcg8SvBvXRDceZIdKeA.png>
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://miro.medium.com/max/1006/0*E%5FbhUEFXGoQCOV%5FK.jpg data-srcset="https://miro.medium.com/max/1006/0*E%5FbhUEFXGoQCOV%5FK.jpg, https://miro.medium.com/max/1006/0*E%5FbhUEFXGoQCOV%5FK.jpg 1.5x, https://miro.medium.com/max/1006/0*E%5FbhUEFXGoQCOV%5FK.jpg 2x" data-sizes=auto alt=https://miro.medium.com/max/1006/0*E%5FbhUEFXGoQCOV%5FK.jpg title=https://miro.medium.com/max/1006/0*E%5FbhUEFXGoQCOV%5FK.jpg></p></li></ul><h2 id=ansible-modules>Ansible Modules</h2><ul>
+<li>Over 1000 modules provided by Ansible to automate</li><li>Modules are like plugins that do the actual work in Ansible, they are what gets executed in each playbook task.</li><li>Each module is mostly standalone and can be written in a standard scripting language (such as Python, Perl, Ruby, Bash, etc.)</li></ul><figure><img src=https://miro.medium.com/max/793/1*UDC-1%5FSR4Z26APTYRWDP3w.png>
+</figure><h2 id=ansible-tower>Ansible Tower</h2><p>Ansible Tower is a GUI and REST interface for Ansible that supercharges it by adding RBAC, centralized logging, auto-scaling/provisioning call-backs, graphical inventory editing, and more.</p><p><strong>Capabilities</strong>:</p><p>This command-line tool sends commands to the Tower API. It is capable of retrieving, creating, modifying, and deleting most resources within the Tower.</p><ul>
+<li>A few potential uses include:</li><li>Launching playbook runs (for instance, from Jenkins, TeamCity, Bamboo, etc.)</li><li>Checking on job statuses</li><li>Rapidly creating objects like organizations, users, teams, and more.</li></ul><p><a href=https://www.ansible.com/products/tower target=_blank rel="noopener noreferrer">https://www.ansible.com/products/tower</a></p><h2 id=ansible-roles>Ansible Roles</h2><ol>
+<li>Roles are a way to group tasks together into one container. We could have a role for setting up MySQL, another one for configuring ip tables.</li><li>Roles make it easy to configure hosts. Any role can be performed on any host or group of hosts such as:
 <ul>
-<li>Over 1000 modules provided by Ansible to automate</li>
-<li>Modules are like plugins that do the actual work in Ansible, they are what gets executed in each playbook task.</li>
-<li>Each module is mostly standalone and can be written in a standard scripting language (such as Python, Perl, Ruby, Bash, etc.)</li>
-</ul>
-<figure><img src=https://miro.medium.com/max/793/1*UDC-1%5FSR4Z26APTYRWDP3w.png>
-</figure>
-<h2 id=ansible-tower>Ansible Tower</h2>
-<p>Ansible Tower is a GUI and REST interface for Ansible that supercharges it by adding RBAC, centralized logging, auto-scaling/provisioning call-backs, graphical inventory editing, and more.</p>
-<p><strong>Capabilities</strong>:</p>
-<p>This command-line tool sends commands to the Tower API. It is capable of retrieving, creating, modifying, and deleting most resources within the Tower.</p>
-<ul>
-<li>A few potential uses include:</li>
-<li>Launching playbook runs (for instance, from Jenkins, TeamCity, Bamboo, etc.)</li>
-<li>Checking on job statuses</li>
-<li>Rapidly creating objects like organizations, users, teams, and more.</li>
-</ul>
-<p><a href=https://www.ansible.com/products/tower target=_blank rel="noopener noreferrer">https://www.ansible.com/products/tower</a></p>
-<h2 id=ansible-roles>Ansible Roles</h2>
-<ol>
-<li>Roles are a way to group tasks together into one container. We could have a role for setting up MySQL, another one for configuring ip tables.</li>
-<li>Roles make it easy to configure hosts. Any role can be performed on any host or group of hosts such as:
-<ul>
-<li>hosts: all</li>
-<li>roles:</li>
-<li>role_1</li>
-<li>role_2</li>
-</ul>
-</li>
-</ol>
-<h2 id=ansible-variables>Ansible Variables</h2>
-<p>There are many different ways to source variables:</p>
-<ul>
-<li>Playbooks</li>
-<li>Files</li>
-<li>Inventories (group vars, host vars)</li>
-<li>Command-line Discovered Variables</li>
-<li>Ansible Tower</li>
-</ul>
-<h2 id=how-to-run-the-ansible-commands>How To Run The Ansible Commands?</h2>
-<p><strong>Ad-Hoc</strong>: Ansible <inventory> -m
+<li>hosts: all</li><li>roles:</li><li>role_1</li><li>role_2</li></ul></li></ol><h2 id=ansible-variables>Ansible Variables</h2><p>There are many different ways to source variables:</p><ul>
+<li>Playbooks</li><li>Files</li><li>Inventories (group vars, host vars)</li><li>Command-line Discovered Variables</li><li>Ansible Tower</li></ul><h2 id=how-to-run-the-ansible-commands>How To Run The Ansible Commands?</h2><p><strong>Ad-Hoc</strong>: Ansible <inventory> -m
 <img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://miro.medium.com/max/520/1*W8ndyJq6S37tdAPBEHvUbQ.png data-srcset="https://miro.medium.com/max/520/1*W8ndyJq6S37tdAPBEHvUbQ.png, https://miro.medium.com/max/520/1*W8ndyJq6S37tdAPBEHvUbQ.png 1.5x, https://miro.medium.com/max/520/1*W8ndyJq6S37tdAPBEHvUbQ.png 2x" data-sizes=auto alt=https://miro.medium.com/max/520/1*W8ndyJq6S37tdAPBEHvUbQ.png title=https://miro.medium.com/max/520/1*W8ndyJq6S37tdAPBEHvUbQ.png>
 <strong>Playbooks</strong>: Ansible-playbook
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://miro.medium.com/max/519/1*SfmrmCzzcKmf4GO7TApVmg.png data-srcset="https://miro.medium.com/max/519/1*SfmrmCzzcKmf4GO7TApVmg.png, https://miro.medium.com/max/519/1*SfmrmCzzcKmf4GO7TApVmg.png 1.5x, https://miro.medium.com/max/519/1*SfmrmCzzcKmf4GO7TApVmg.png 2x" data-sizes=auto alt=https://miro.medium.com/max/519/1*SfmrmCzzcKmf4GO7TApVmg.png title=https://miro.medium.com/max/519/1*SfmrmCzzcKmf4GO7TApVmg.png></p>
-<h2 id=ad-hoc-commands-examples>AD-HOC Commands Examples</h2>
-<p><strong>Transferring file to many servers/machines</strong></p>
-<div class=highlight><div class=chroma>
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://miro.medium.com/max/519/1*SfmrmCzzcKmf4GO7TApVmg.png data-srcset="https://miro.medium.com/max/519/1*SfmrmCzzcKmf4GO7TApVmg.png, https://miro.medium.com/max/519/1*SfmrmCzzcKmf4GO7TApVmg.png 1.5x, https://miro.medium.com/max/519/1*SfmrmCzzcKmf4GO7TApVmg.png 2x" data-sizes=auto alt=https://miro.medium.com/max/519/1*SfmrmCzzcKmf4GO7TApVmg.png title=https://miro.medium.com/max/519/1*SfmrmCzzcKmf4GO7TApVmg.png></p><h2 id=ad-hoc-commands-examples>AD-HOC Commands Examples</h2><p><strong>Transferring file to many servers/machines</strong></p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>Ansible Abc -m copy -a <span class=s2>&#34;src = /etc/yum.conf dest = /tmp/yum.conf&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>Creating a new directory</strong></p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>$</span> Ansible Abc -m copy -a <span class=s2>&#34;src = /etc/yum.conf dest = /tmp/yum.conf&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>Creating a new directory</strong></p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>Ansible ABC -m file -a <span class=s2>&#34;dest = /path/user1/new mode = 777 owner = user1 group = user1 state = directory&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>Deleting whole directory and files</strong></p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>$</span> Ansible ABC -m file -a <span class=s2>&#34;dest = /path/user1/new mode = 777 owner = user1 group = user1 state = directory&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>Deleting whole directory and files</strong></p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=gp>$ </span>Ansible ABC -m file -a <span class=s2>&#34;dest = /path/user1/new state = absent&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div></div><div class=post-footer id=post-footer>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>$</span> Ansible ABC -m file -a <span class=s2>&#34;dest = /path/user1/new state = absent&#34;</span>
+</span></span></code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2022-01-18</span>
-</div>
-<div class=post-info-license></div>
-</div>
-<div class=post-info-line>
+<span>Updated on 2022-03-02</span>
+</div><div class=post-info-license></div></div><div class=post-info-line>
 <div class=post-info-md><span>
 <a class=link-to-markdown href=https://yanboyang.com/ansible/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
-</span></div>
-<div class=post-info-share>
+</span></div><div class=post-info-share>
 <span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/ansible/ data-title="Ansible Beginner's Guide" data-hashtags=Ansible><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/ansible/ data-hashtag=Ansible><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/ansible/ data-title="Ansible Beginner's Guide" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/ansible/ data-title="Ansible Beginner's Guide"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/ansible/ data-title="Ansible Beginner's Guide"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/ansible/ data-title="Ansible Beginner's Guide" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/ansible/ data-title="Ansible Beginner's Guide" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/ansible/ data-title="Ansible Beginner's Guide"><i class="fab fa-evernote fa-fw"></i></a></span>
-</div>
-</div>
-</div>
-<div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/ansible/>Ansible</a></section>
-<section>
+</div></div></div><div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/ansible/>Ansible</a></section><section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span>
-</section>
-</div>
-<div class=post-nav><a href=https://yanboyang.com/devops/ class=prev rel=prev title="DevOps Beginner's Guide"><i class="fas fa-angle-left fa-fw"></i>DevOps Beginner's Guide</a>
-<a href=https://yanboyang.com/clouldinit/ class=next rel=next title="Create Proxmox cloud-init template">Create Proxmox cloud-init template<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-<div id=comments><div id=disqus_thread class=comment></div><noscript>
+</section></div><div class=post-nav><a href=https://yanboyang.com/devops/ class=prev rel=prev title="DevOps Beginner's Guide"><i class="fas fa-angle-left fa-fw"></i>DevOps Beginner's Guide</a>
+<a href=https://yanboyang.com/clouldinit/ class=next rel=next title="Create Proxmox cloud-init template">Create Proxmox cloud-init template<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
-</noscript></div></article></div>
-</main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.92.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
-</div>
-</footer></div>
-<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+</noscript></div></article></div></main><footer class=footer>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
 <i class="fas fa-arrow-up fa-fw"></i>
 </a><a href=# id=view-comments class=fixed-button title="View Comments">
 <i class="fas fa-comment fa-fw"></i>
 </a>
-</div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body>
-</html>
+</div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>

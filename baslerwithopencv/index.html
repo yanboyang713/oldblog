@@ -10,7 +10,7 @@ Hardware and Software Testing Environment Hardware Environment  Camera: Basler (
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/baslerwithopencv/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2020-09-03T06:11:32+10:00">
-<meta property="article:modified_time" content="2022-01-18T03:09:25+00:00">
+<meta property="article:modified_time" content="2022-03-02T13:12:39+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting started with Basler Camera With Opencv on Python">
@@ -19,17 +19,15 @@ Hardware and Software Testing Environment Hardware Environment  Camera: Basler (
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/baslerwithopencv/><link rel=prev href=https://yanboyang.com/plantuml/><link rel=next href=https://yanboyang.com/ubunturouter/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting started with Basler Camera With Opencv on Python","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/baslerwithopencv\/"},"genre":"posts","keywords":"Basler, Opencv, python","wordcount":4729,"url":"https:\/\/yanboyang.com\/baslerwithopencv\/","datePublished":"2020-09-03T06:11:32+10:00","dateModified":"2022-01-18T03:09:25+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
-<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/baslerwithopencv/><link rel=prev href=https://yanboyang.com/plantuml/><link rel=next href=https://yanboyang.com/ubunturouter/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting started with Basler Camera With Opencv on Python","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/baslerwithopencv\/"},"genre":"posts","keywords":"Basler, Opencv, python","wordcount":4729,"url":"https:\/\/yanboyang.com\/baslerwithopencv\/","datePublished":"2020-09-03T06:11:32+10:00","dateModified":"2022-03-02T13:12:39+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 <div class=header-wrapper>
 <div class=header-title>
 <a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div>
-<div class=menu>
+</div><div class=menu>
 <div class=menu-inner><a class=menu-item href=https://yanboyang.com/> Home </a><a class=menu-item href=https://yanboyang.com/posts/> Posts </a><a class=menu-item href=https://yanboyang.com/tags/> Tags </a><a class=menu-item href=https://yanboyang.com/categories/> Categories </a><a class=menu-item href=https://yanboyang.com/about/> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
@@ -44,23 +42,17 @@ Hardware and Software Testing Environment Hardware Environment  Camera: Basler (
 </span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
 <i class="fas fa-adjust fa-fw"></i>
 </a>
-</div>
-</div>
-</div>
-</header><header class=mobile id=header-mobile>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+</div></div></div></header><header class=mobile id=header-mobile>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 <div class=header-container>
 <div class=header-wrapper>
 <div class=header-title>
 <a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div>
-<div class=menu-toggle id=menu-toggle-mobile>
+</div><div class=menu-toggle id=menu-toggle-mobile>
 <span></span><span></span><span></span>
-</div>
-</div>
-<div class=menu id=menu-mobile><div class=search-wrapper>
+</div></div><div class=menu id=menu-mobile><div class=search-wrapper>
 <div class="search mobile" id=search-mobile>
 <input type=text placeholder="Search titles or contents..." id=search-input-mobile>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
@@ -72,147 +64,50 @@ Hardware and Software Testing Environment Hardware Environment  Camera: Basler (
 <span class="search-button search-loading" id=search-loading-mobile>
 <i class="fas fa-spinner fa-fw fa-spin"></i>
 </span>
-</div>
-<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+</div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
 Cancel
 </a>
 </div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
 <i class="fas fa-adjust fa-fw"></i>
-</a></div>
-</div>
-</header>
-<div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div>
-</div>
-<div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div>
-</div>
-<main class=main>
+</a></div></div></header><div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div></div><main class=main>
 <div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>Contents</h2>
-<div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Getting started with Basler Camera With Opencv on Python</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/basler/><i class="far fa-folder fa-fw"></i>Basler</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-09-03>2020-09-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4729 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;23 minutes&nbsp;</div>
-</div><div class="details toc" id=toc-static kept=true>
+<h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Getting started with Basler Camera With Opencv on Python</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/basler/><i class="far fa-folder fa-fw"></i>Basler</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-09-03>2020-09-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4729 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;23 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
 <span><i class="details-icon fas fa-angle-right"></i></span>
-</div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+</div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
-<li><a href=#introduction>Introduction</a></li>
-<li><a href=#hardware-and-software-testing-environment>Hardware and Software Testing Environment</a>
+<li><a href=#introduction>Introduction</a></li><li><a href=#hardware-and-software-testing-environment>Hardware and Software Testing Environment</a>
 <ul>
-<li><a href=#hardware-environment>Hardware Environment</a></li>
-<li><a href=#software-environment>Software Environment</a></li>
-</ul>
-</li>
-<li><a href=#development-environment-set-up>Development Environment Set-up</a>
+<li><a href=#hardware-environment>Hardware Environment</a></li><li><a href=#software-environment>Software Environment</a></li></ul></li><li><a href=#development-environment-set-up>Development Environment Set-up</a>
 <ul>
-<li><a href=#creating-conda-environment>Creating conda environment</a></li>
-<li><a href=#installing-pylon>Installing Pylon</a>
+<li><a href=#creating-conda-environment>Creating conda environment</a></li><li><a href=#installing-pylon>Installing Pylon</a>
 <ul>
-<li><a href=#for-ubuntu>For Ubuntu</a></li>
-<li><a href=#for-arch-linux-manjaro>For Arch Linux (Manjaro)</a></li>
-</ul>
-</li>
-<li><a href=#installing-pypylon-binary-wheel-file-to-conda-environment>Installing pypylon binary wheel file to conda environment</a></li>
-<li><a href=#for-the-impatient>For the Impatient</a></li>
-<li><a href=#set-up-pypylon-opencv-vieweroption>Set-up pypylon-opencv-viewer(Option)</a></li>
-<li><a href=#installing-opencv-to-conda-environment>Installing Opencv to conda environment</a></li>
-</ul>
-</li>
-<li><a href=#testing-pylon-with-your-camera>Testing pylon with your camera</a></li>
-<li><a href=#image-control>Image Control</a>
+<li><a href=#for-ubuntu>For Ubuntu</a></li><li><a href=#for-arch-linux-manjaro>For Arch Linux (Manjaro)</a></li></ul></li><li><a href=#installing-pypylon-binary-wheel-file-to-conda-environment>Installing pypylon binary wheel file to conda environment</a></li><li><a href=#for-the-impatient>For the Impatient</a></li><li><a href=#set-up-pypylon-opencv-vieweroption>Set-up pypylon-opencv-viewer(Option)</a></li><li><a href=#installing-opencv-to-conda-environment>Installing Opencv to conda environment</a></li></ul></li><li><a href=#testing-pylon-with-your-camera>Testing pylon with your camera</a></li><li><a href=#image-control>Image Control</a>
 <ul>
 <li><a href=#image-roi-area-of-insterest>Image ROI (Area of Insterest)</a>
 <ul>
-<li><a href=#getting-the-width-of-the-maximum-value-and-the-height-of-the-maximum-value>Getting the width of the maximum value and the height of the maximum value</a></li>
-<li><a href=#setting-the-width-of-the-image-roi-and-the-height-of-the-image-roi>Setting the width of the image ROI and the height of the image ROI</a></li>
-<li><a href=#center-the-image-roi>Center the image ROI</a></li>
-<li><a href=#setting-the-offset-of-image-roi>Setting the offset of image ROI</a></li>
-<li><a href=#print-the-roi-infos>Print the ROI INFOs</a></li>
-</ul>
-</li>
-<li><a href=#imagepixel-format-control>Image/Pixel Format Control</a>
+<li><a href=#getting-the-width-of-the-maximum-value-and-the-height-of-the-maximum-value>Getting the width of the maximum value and the height of the maximum value</a></li><li><a href=#setting-the-width-of-the-image-roi-and-the-height-of-the-image-roi>Setting the width of the image ROI and the height of the image ROI</a></li><li><a href=#center-the-image-roi>Center the image ROI</a></li><li><a href=#setting-the-offset-of-image-roi>Setting the offset of image ROI</a></li><li><a href=#print-the-roi-infos>Print the ROI INFOs</a></li></ul></li><li><a href=#imagepixel-format-control>Image/Pixel Format Control</a>
 <ul>
-<li><a href=#mono-formats>Mono Formats</a></li>
-<li><a href=#bayer-formats>Bayer Formats</a></li>
-<li><a href=#rgb-and-bgr-formats>RGB and BGR Formats</a></li>
-<li><a href=#yuv-formats>YUV Formats</a></li>
-</ul>
-</li>
-<li><a href=#black-level>Black Level</a></li>
-<li><a href=#gamma>Gamma</a>
+<li><a href=#mono-formats>Mono Formats</a></li><li><a href=#bayer-formats>Bayer Formats</a></li><li><a href=#rgb-and-bgr-formats>RGB and BGR Formats</a></li><li><a href=#yuv-formats>YUV Formats</a></li></ul></li><li><a href=#black-level>Black Level</a></li><li><a href=#gamma>Gamma</a>
 <ul>
-<li><a href=#how-it-works>How It Works</a></li>
-<li><a href=#enabling-gamma-correction>Enabling Gamma Correction</a></li>
-<li><a href=#additional-parameters>Additional Parameters</a></li>
-</ul>
-</li>
-<li><a href=#auto-function-roi>Auto Function ROI</a>
+<li><a href=#how-it-works>How It Works</a></li><li><a href=#enabling-gamma-correction>Enabling Gamma Correction</a></li><li><a href=#additional-parameters>Additional Parameters</a></li></ul></li><li><a href=#auto-function-roi>Auto Function ROI</a>
 <ul>
-<li><a href=#changing-position-and-size-of-an-auto-function-roi>Changing Position and Size of an Auto Function ROI</a></li>
-<li><a href=#auto-function-roi-highlighting>Auto Function ROI Highlighting</a></li>
-<li><a href=#assigning-auto-functions>Assigning Auto Functions</a></li>
-<li><a href=#guidelines>Guidelines</a></li>
-<li><a href=#overlap-between-auto-function-roi-and-image-roi>Overlap Between Auto Function ROI and Image ROI</a></li>
-</ul>
-</li>
-<li><a href=#auto-function-profile>Auto Function Profile</a>
+<li><a href=#changing-position-and-size-of-an-auto-function-roi>Changing Position and Size of an Auto Function ROI</a></li><li><a href=#auto-function-roi-highlighting>Auto Function ROI Highlighting</a></li><li><a href=#assigning-auto-functions>Assigning Auto Functions</a></li><li><a href=#guidelines>Guidelines</a></li><li><a href=#overlap-between-auto-function-roi-and-image-roi>Overlap Between Auto Function ROI and Image ROI</a></li></ul></li><li><a href=#auto-function-profile>Auto Function Profile</a>
 <ul>
-<li><a href=#setting-the-auto-function-profile>Setting the Auto Function Profile</a></li>
-<li><a href=#available-auto-function-profiles>Available Auto Function Profiles</a>
+<li><a href=#setting-the-auto-function-profile>Setting the Auto Function Profile</a></li><li><a href=#available-auto-function-profiles>Available Auto Function Profiles</a>
 <ul>
-<li><a href=#minimize-gain--gain-minimum>Minimize Gain (= Gain Minimum)</a></li>
-<li><a href=#minimize-exposure-time--exposure-minimum>Minimize Exposure Time (= Exposure Minimum)</a></li>
-<li><a href=#minimize-gain-quick--gain-minimum-quick>Minimize Gain Quick (= Gain Minimum Quick)</a></li>
-<li><a href=#minimize-exposure-time-quick--exposure-minimum-quick>Minimize Exposure Time Quick (= Exposure Minimum Quick)</a></li>
-<li><a href=#smart>Smart</a></li>
-<li><a href=#anti-flicker-50-hz--60-hz>Anti-Flicker 50 Hz / 60 Hz</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href=#balance-white-auto>Balance White Auto</a>
+<li><a href=#minimize-gain--gain-minimum>Minimize Gain (= Gain Minimum)</a></li><li><a href=#minimize-exposure-time--exposure-minimum>Minimize Exposure Time (= Exposure Minimum)</a></li><li><a href=#minimize-gain-quick--gain-minimum-quick>Minimize Gain Quick (= Gain Minimum Quick)</a></li><li><a href=#minimize-exposure-time-quick--exposure-minimum-quick>Minimize Exposure Time Quick (= Exposure Minimum Quick)</a></li><li><a href=#smart>Smart</a></li><li><a href=#anti-flicker-50-hz--60-hz>Anti-Flicker 50 Hz / 60 Hz</a></li></ul></li></ul></li><li><a href=#balance-white-auto>Balance White Auto</a>
 <ul>
-<li><a href=#enabling-or-disabling-balance-white-auto>Enabling or Disabling Balance White Auto</a></li>
-<li><a href=#how-it-works-1>How It Works</a></li>
-</ul>
-</li>
-<li><a href=#light-source-preset>Light Source Preset</a>
+<li><a href=#enabling-or-disabling-balance-white-auto>Enabling or Disabling Balance White Auto</a></li><li><a href=#how-it-works-1>How It Works</a></li></ul></li><li><a href=#light-source-preset>Light Source Preset</a>
 <ul>
-<li><a href=#impact-on-other-features>Impact on Other Features</a></li>
-<li><a href=#separate-processing>Separate Processing</a></li>
-<li><a href=#no-separate-processing>No Separate Processing</a></li>
-<li><a href=#light-source-preset-feature-selector>Light Source Preset Feature Selector</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</nav></div>
-</div><div class=content id=content><h2 id=introduction>Introduction</h2>
-<p>This post document is about using Basler Camera with Opencv on Python. At the beginning of this guide I will introduct how to set-up development environment with Pylon and opencv within Conda virual environment. Seconly, I will talk about how to check and set some of basic Basler feature base on pypylon. At the end, I will give a example about using Opencv read Basler Camera data stream.</p>
-<h2 id=hardware-and-software-testing-environment>Hardware and Software Testing Environment</h2>
-<h3 id=hardware-environment>Hardware Environment</h3>
-<ul>
-<li>Camera: Basler (a2A1920 - 51gcPRO)</li>
-<li>Network Adapter: Intel I350 Gigabit Network adapter (POE)</li>
-<li>CPU: Intel(R) Core(TM) i7-9700F CPU @ 3.00GHz</li>
-<li>RAM: 16GiB system memory</li>
-</ul>
-<h3 id=software-environment>Software Environment</h3>
-<ul>
-<li>Ubuntu 18.04 (Linux version 5.4.0-48-generic)</li>
-<li>Need set-up Network exchange environment, the document link: {% post_link ubuntuRouter %}</li>
-</ul>
-<h2 id=development-environment-set-up>Development Environment Set-up</h2>
-<h3 id=creating-conda-environment>Creating conda environment</h3>
-<p>You can follow the below steps to create the conda environment. If you want to know more details about Conda, please have a look link: {% post_link conda %}</p>
-<div class=highlight><div class=chroma>
+<li><a href=#impact-on-other-features>Impact on Other Features</a></li><li><a href=#separate-processing>Separate Processing</a></li><li><a href=#no-separate-processing>No Separate Processing</a></li><li><a href=#light-source-preset-feature-selector>Light Source Preset Feature Selector</a></li></ul></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=introduction>Introduction</h2><p>This post document is about using Basler Camera with Opencv on Python. At the beginning of this guide I will introduct how to set-up development environment with Pylon and opencv within Conda virual environment. Seconly, I will talk about how to check and set some of basic Basler feature base on pypylon. At the end, I will give a example about using Opencv read Basler Camera data stream.</p><h2 id=hardware-and-software-testing-environment>Hardware and Software Testing Environment</h2><h3 id=hardware-environment>Hardware Environment</h3><ul>
+<li>Camera: Basler (a2A1920 - 51gcPRO)</li><li>Network Adapter: Intel I350 Gigabit Network adapter (POE)</li><li>CPU: Intel(R) Core(TM) i7-9700F CPU @ 3.00GHz</li><li>RAM: 16GiB system memory</li></ul><h3 id=software-environment>Software Environment</h3><ul>
+<li>Ubuntu 18.04 (Linux version 5.4.0-48-generic)</li><li>Need set-up Network exchange environment, the document link: {% post_link ubuntuRouter %}</li></ul><h2 id=development-environment-set-up>Development Environment Set-up</h2><h3 id=creating-conda-environment>Creating conda environment</h3><p>You can follow the below steps to create the conda environment. If you want to know more details about Conda, please have a look link: {% post_link conda %}</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -225,74 +120,39 @@ Cancel
 </span><span class=lnt> 9
 </span><span class=lnt>10
 </span><span class=lnt>11
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>Please run
-
-	$ <span class=nb>source</span> /opt/anaconda/bin/activate root
-	$ <span class=nb>source</span> /opt/anaconda/bin/deactivate root
-
-to activate and deactivate the anaconda enviroment.
-
-conda create -n baslerOpencv <span class=nv>python</span><span class=o>=</span>3.7.7
-conda activate baslerOpencv
-conda install notebook ipykernel
-ipython kernel install --user --name baslerOpencv --display-name <span class=s2>&#34;Python (Basler with Opencv)&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id=installing-pylon>Installing Pylon</h3>
-<h4 id=for-ubuntu>For Ubuntu</h4>
-<ol>
-<li>Go to <a href=https://www.baslerweb.com/en/products/software/basler-pylon-camera-software-suite/ target=_blank rel="noopener noreferrer">Pylon Official Website</a>.</li>
-<li>Go to Downloads Section</li>
-<li>Click link: pylon 6.1.1 Camera Software Suite Linux x86 (64 Bit) - Debian Installer Package
-<a href=https://www.baslerweb.com/fp-1615275588/media/a_b_testing_1/pylon_6.2.0.21487_x86_64_setup.tar.gz target=_blank rel="noopener noreferrer">https://www.baslerweb.com/fp-1615275588/media/a_b_testing_1/pylon_6.2.0.21487_x86_64_setup.tar.gz</a></li>
-<li>Filling in your personal INFOs and click &ldquo;Start the Download!&rdquo;</li>
-<li>Goto you download directory(Using cd command)</li>
-<li>You can use the apt command for install deb file</li>
-</ol>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>Please run
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	$ <span class=nb>source</span> /opt/anaconda/bin/activate root
+</span></span><span class=line><span class=cl>	$ <span class=nb>source</span> /opt/anaconda/bin/deactivate root
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>to activate and deactivate the anaconda enviroment.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>conda create -n baslerOpencv <span class=nv>python</span><span class=o>=</span>3.7.7
+</span></span><span class=line><span class=cl>conda activate baslerOpencv
+</span></span><span class=line><span class=cl>conda install notebook ipykernel
+</span></span><span class=line><span class=cl>ipython kernel install --user --name baslerOpencv --display-name <span class=s2>&#34;Python (Basler with Opencv)&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=installing-pylon>Installing Pylon</h3><h4 id=for-ubuntu>For Ubuntu</h4><ol>
+<li>Go to <a href=https://www.baslerweb.com/en/products/software/basler-pylon-camera-software-suite/ target=_blank rel="noopener noreferrer">Pylon Official Website</a>.</li><li>Go to Downloads Section</li><li>Click link: pylon 6.1.1 Camera Software Suite Linux x86 (64 Bit) - Debian Installer Package
+<a href=https://www.baslerweb.com/fp-1615275588/media/a_b_testing_1/pylon_6.2.0.21487_x86_64_setup.tar.gz target=_blank rel="noopener noreferrer">https://www.baslerweb.com/fp-1615275588/media/a_b_testing_1/pylon_6.2.0.21487_x86_64_setup.tar.gz</a></li><li>Filling in your personal INFOs and click &ldquo;Start the Download!&rdquo;</li><li>Goto you download directory(Using cd command)</li><li>You can use the apt command for install deb file</li></ol><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo apt install xxxx.deb
-</code></pre></td></tr></table>
-</div>
-</div><h4 id=for-arch-linux-manjaro>For Arch Linux (Manjaro)</h4>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo apt install xxxx.deb
+</span></span></code></pre></td></tr></table></div></div><h4 id=for-arch-linux-manjaro>For Arch Linux (Manjaro)</h4><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yay -S pylon
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>NOTE:</strong></p>
-<ol>
-<li>You can found pylon in DIR: /opt/pylon6</li>
-<li><strong>ipconfigurator</strong>, <strong>PylonFirmwareUpdater</strong> and <strong>pylonviewer</strong>, which can found on DIR: /opt/pylon6/bin</li>
-</ol>
-<p>When you done, you can see there are three applications be installed, which are Pylon IP Configurator, pylon viewer and Basler Product Documention.</p>
-<h3 id=installing-pypylon-binary-wheel-file-to-conda-environment>Installing pypylon binary wheel file to conda environment</h3>
-<p><a href=https://github.com/basler/pypylon target=_blank rel="noopener noreferrer">pypylon</a></p>
-<h3 id=for-the-impatient>For the Impatient</h3>
-<ul>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>yay -S pylon
+</span></span></code></pre></td></tr></table></div></div><p><strong>NOTE:</strong></p><ol>
+<li>You can found pylon in DIR: /opt/pylon6</li><li><strong>ipconfigurator</strong>, <strong>PylonFirmwareUpdater</strong> and <strong>pylonviewer</strong>, which can found on DIR: /opt/pylon6/bin</li></ol><p>When you done, you can see there are three applications be installed, which are Pylon IP Configurator, pylon viewer and Basler Product Documention.</p><h3 id=installing-pypylon-binary-wheel-file-to-conda-environment>Installing pypylon binary wheel file to conda environment</h3><p><a href=https://github.com/basler/pypylon target=_blank rel="noopener noreferrer">pypylon</a></p><h3 id=for-the-impatient>For the Impatient</h3><ul>
 <li>Download a binary wheel from the <a href=https://github.com/Basler/pypylon/releases target=_blank rel="noopener noreferrer">releases</a> page.
-<a href=https://github.com/basler/pypylon/releases/download/1.6.0/pypylon-1.6.0-cp37-cp37m-linux_x86_64.whl target=_blank rel="noopener noreferrer">https://github.com/basler/pypylon/releases/download/1.6.0/pypylon-1.6.0-cp37-cp37m-linux_x86_64.whl</a></li>
-<li>Install the wheel using pip3 install <your downloaded wheel>.whl</li>
-<li>Look at <a href=https://github.com/basler/pypylon/blob/master/samples/grab.py target=_blank rel="noopener noreferrer">samples/grab.py</a> in this repository</li>
-</ul>
-<div class=highlight><div class=chroma>
+<a href=https://github.com/basler/pypylon/releases/download/1.6.0/pypylon-1.6.0-cp37-cp37m-linux_x86_64.whl target=_blank rel="noopener noreferrer">https://github.com/basler/pypylon/releases/download/1.6.0/pypylon-1.6.0-cp37-cp37m-linux_x86_64.whl</a></li><li>Install the wheel using pip3 install <your downloaded wheel>.whl</li><li>Look at <a href=https://github.com/basler/pypylon/blob/master/samples/grab.py target=_blank rel="noopener noreferrer">samples/grab.py</a> in this repository</li></ul><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>pip install pypylon
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>TIPS:</strong></p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>pip install pypylon
+</span></span></code></pre></td></tr></table></div></div><p><strong>TIPS:</strong></p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -300,17 +160,14 @@ ipython kernel install --user --name baslerOpencv --display-name <span class=s2>
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>Traceback <span class=o>(</span>most recent call last<span class=o>)</span>:
-  File <span class=s2>&#34;opencv.py&#34;</span>, line 6, in &lt;module&gt;
-    from pypylon import pylon
-  File <span class=s2>&#34;/home/yanboyang713/miniconda3/envs/baslerOpencv/lib/python3.7/site-packages/pypylon/pylon.py&#34;</span>, line 40, in &lt;module&gt;
-    from . import _pylon
-ImportError: libpython3.7m.so.1.0: cannot open shared object file: No such file or directory
-</code></pre></td></tr></table>
-</div>
-</div><div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>Traceback <span class=o>(</span>most recent call last<span class=o>)</span>:
+</span></span><span class=line><span class=cl>  File <span class=s2>&#34;opencv.py&#34;</span>, line 6, in &lt;module&gt;
+</span></span><span class=line><span class=cl>    from pypylon import pylon
+</span></span><span class=line><span class=cl>  File <span class=s2>&#34;/home/yanboyang713/miniconda3/envs/baslerOpencv/lib/python3.7/site-packages/pypylon/pylon.py&#34;</span>, line 40, in &lt;module&gt;
+</span></span><span class=line><span class=cl>    from . import _pylon
+</span></span><span class=line><span class=cl>ImportError: libpython3.7m.so.1.0: cannot open shared object file: No such file or directory
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -318,23 +175,15 @@ ImportError: libpython3.7m.so.1.0: cannot open shared object file: No such file 
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># check your directory</span>
-<span class=nb>export</span> <span class=nv>LD_LIBRARY_PATH</span><span class=o>=</span>/home/yanboyang713/miniconda3/envs/front/lib
-Or,
-<span class=nb>export</span> <span class=nv>LD_LIBRARY_PATH</span><span class=o>=</span>/home/yanboyang713/.conda/envs/baslerOpencv/lib
-
-<span class=nb>echo</span> <span class=nv>$LD_LIBRARY_PATH</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id=set-up-pypylon-opencv-vieweroption>Set-up pypylon-opencv-viewer(Option)</h3>
-<p>pip install pypylon-opencv-viewer</p>
-<h3 id=installing-opencv-to-conda-environment>Installing Opencv to conda environment</h3>
-<p>pip install opencv-python==3.4.2.17
-pip install opencv-contrib-python==3.4.2.17</p>
-<h2 id=testing-pylon-with-your-camera>Testing pylon with your camera</h2>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># check your directory</span>
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>LD_LIBRARY_PATH</span><span class=o>=</span>/home/yanboyang713/miniconda3/envs/front/lib
+</span></span><span class=line><span class=cl>Or,
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>LD_LIBRARY_PATH</span><span class=o>=</span>/home/yanboyang713/.conda/envs/baslerOpencv/lib
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=nv>$LD_LIBRARY_PATH</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=set-up-pypylon-opencv-vieweroption>Set-up pypylon-opencv-viewer(Option)</h3><p>pip install pypylon-opencv-viewer</p><h3 id=installing-opencv-to-conda-environment>Installing Opencv to conda environment</h3><p>pip install opencv-python==3.4.2.17
+pip install opencv-contrib-python==3.4.2.17</p><h2 id=testing-pylon-with-your-camera>Testing pylon with your camera</h2><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -394,130 +243,103 @@ pip install opencv-contrib-python==3.4.2.17</p>
 </span><span class=lnt>56
 </span><span class=lnt>57
 </span><span class=lnt>58
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>from</span> <span class=nn>pypylon</span> <span class=kn>import</span> <span class=n>pylon</span>
-<span class=kn>from</span> <span class=nn>pypylon</span> <span class=kn>import</span> <span class=n>genicam</span>
-
-<span class=kn>import</span> <span class=nn>sys</span>
-
-<span class=c1># Number of images to be grabbed.</span>
-<span class=n>countOfImagesToGrab</span> <span class=o>=</span> <span class=mi>100</span>
-
-<span class=c1># The exit code of the sample application.</span>
-<span class=n>exitCode</span> <span class=o>=</span> <span class=mi>0</span>
-
-<span class=k>try</span><span class=p>:</span>
-    <span class=c1># Create an instant camera object with the camera device found first.</span>
-    <span class=n>camera</span> <span class=o>=</span> <span class=n>pylon</span><span class=o>.</span><span class=n>InstantCamera</span><span class=p>(</span><span class=n>pylon</span><span class=o>.</span><span class=n>TlFactory</span><span class=o>.</span><span class=n>GetInstance</span><span class=p>()</span><span class=o>.</span><span class=n>CreateFirstDevice</span><span class=p>())</span>
-    <span class=n>camera</span><span class=o>.</span><span class=n>Open</span><span class=p>()</span>
-
-    <span class=c1># Print the model name of the camera.</span>
-    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Using device &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>GetDeviceInfo</span><span class=p>()</span><span class=o>.</span><span class=n>GetModelName</span><span class=p>())</span>
-
-    <span class=c1># demonstrate some feature access</span>
-    <span class=n>new_width</span> <span class=o>=</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>-</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetInc</span><span class=p>()</span>
-    <span class=k>if</span> <span class=n>new_width</span> <span class=o>&gt;=</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetMin</span><span class=p>():</span>
-        <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=n>new_width</span><span class=p>)</span>
-
-    <span class=c1># The parameter MaxNumBuffer can be used to control the count of buffers</span>
-    <span class=c1># allocated for grabbing. The default value of this parameter is 10.</span>
-    <span class=n>camera</span><span class=o>.</span><span class=n>MaxNumBuffer</span> <span class=o>=</span> <span class=mi>5</span>
-
-    <span class=c1># Start the grabbing of c_countOfImagesToGrab images.</span>
-    <span class=c1># The camera device is parameterized with a default configuration which</span>
-    <span class=c1># sets up free-running continuous acquisition.</span>
-    <span class=n>camera</span><span class=o>.</span><span class=n>StartGrabbingMax</span><span class=p>(</span><span class=n>countOfImagesToGrab</span><span class=p>)</span>
-
-    <span class=c1># Camera.StopGrabbing() is called automatically by the RetrieveResult() method</span>
-    <span class=c1># when c_countOfImagesToGrab images have been retrieved.</span>
-    <span class=k>while</span> <span class=n>camera</span><span class=o>.</span><span class=n>IsGrabbing</span><span class=p>():</span>
-        <span class=c1># Wait for an image and then retrieve it. A timeout of 5000 ms is used.</span>
-        <span class=n>grabResult</span> <span class=o>=</span> <span class=n>camera</span><span class=o>.</span><span class=n>RetrieveResult</span><span class=p>(</span><span class=mi>5000</span><span class=p>,</span> <span class=n>pylon</span><span class=o>.</span><span class=n>TimeoutHandling_ThrowException</span><span class=p>)</span>
-
-        <span class=c1># Image grabbed successfully?</span>
-        <span class=k>if</span> <span class=n>grabResult</span><span class=o>.</span><span class=n>GrabSucceeded</span><span class=p>():</span>
-            <span class=c1># Access the image data.</span>
-            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;SizeX: &#34;</span><span class=p>,</span> <span class=n>grabResult</span><span class=o>.</span><span class=n>Width</span><span class=p>)</span>
-            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;SizeY: &#34;</span><span class=p>,</span> <span class=n>grabResult</span><span class=o>.</span><span class=n>Height</span><span class=p>)</span>
-            <span class=n>img</span> <span class=o>=</span> <span class=n>grabResult</span><span class=o>.</span><span class=n>Array</span>
-            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Gray value of first pixel: &#34;</span><span class=p>,</span> <span class=n>img</span><span class=p>[</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>])</span>
-        <span class=k>else</span><span class=p>:</span>
-            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Error: &#34;</span><span class=p>,</span> <span class=n>grabResult</span><span class=o>.</span><span class=n>ErrorCode</span><span class=p>,</span> <span class=n>grabResult</span><span class=o>.</span><span class=n>ErrorDescription</span><span class=p>)</span>
-        <span class=n>grabResult</span><span class=o>.</span><span class=n>Release</span><span class=p>()</span>
-    <span class=n>camera</span><span class=o>.</span><span class=n>Close</span><span class=p>()</span>
-
-<span class=k>except</span> <span class=n>genicam</span><span class=o>.</span><span class=n>GenericException</span> <span class=k>as</span> <span class=n>e</span><span class=p>:</span>
-    <span class=c1># Error handling.</span>
-    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;An exception occurred.&#34;</span><span class=p>)</span>
-    <span class=nb>print</span><span class=p>(</span><span class=n>e</span><span class=o>.</span><span class=n>GetDescription</span><span class=p>())</span>
-    <span class=n>exitCode</span> <span class=o>=</span> <span class=mi>1</span>
-
-<span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>(</span><span class=n>exitCode</span><span class=p>)</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id=image-control>Image Control</h2>
-<h3 id=image-roi-area-of-insterest>Image ROI (Area of Insterest)</h3>
-<h4 id=getting-the-width-of-the-maximum-value-and-the-height-of-the-maximum-value>Getting the width of the maximum value and the height of the maximum value</h4>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pypylon</span> <span class=kn>import</span> <span class=n>pylon</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pypylon</span> <span class=kn>import</span> <span class=n>genicam</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>sys</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Number of images to be grabbed.</span>
+</span></span><span class=line><span class=cl><span class=n>countOfImagesToGrab</span> <span class=o>=</span> <span class=mi>100</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># The exit code of the sample application.</span>
+</span></span><span class=line><span class=cl><span class=n>exitCode</span> <span class=o>=</span> <span class=mi>0</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>try</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=c1># Create an instant camera object with the camera device found first.</span>
+</span></span><span class=line><span class=cl>    <span class=n>camera</span> <span class=o>=</span> <span class=n>pylon</span><span class=o>.</span><span class=n>InstantCamera</span><span class=p>(</span><span class=n>pylon</span><span class=o>.</span><span class=n>TlFactory</span><span class=o>.</span><span class=n>GetInstance</span><span class=p>()</span><span class=o>.</span><span class=n>CreateFirstDevice</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>    <span class=n>camera</span><span class=o>.</span><span class=n>Open</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># Print the model name of the camera.</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Using device &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>GetDeviceInfo</span><span class=p>()</span><span class=o>.</span><span class=n>GetModelName</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># demonstrate some feature access</span>
+</span></span><span class=line><span class=cl>    <span class=n>new_width</span> <span class=o>=</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>-</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetInc</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=n>new_width</span> <span class=o>&gt;=</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetMin</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>        <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=n>new_width</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># The parameter MaxNumBuffer can be used to control the count of buffers</span>
+</span></span><span class=line><span class=cl>    <span class=c1># allocated for grabbing. The default value of this parameter is 10.</span>
+</span></span><span class=line><span class=cl>    <span class=n>camera</span><span class=o>.</span><span class=n>MaxNumBuffer</span> <span class=o>=</span> <span class=mi>5</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># Start the grabbing of c_countOfImagesToGrab images.</span>
+</span></span><span class=line><span class=cl>    <span class=c1># The camera device is parameterized with a default configuration which</span>
+</span></span><span class=line><span class=cl>    <span class=c1># sets up free-running continuous acquisition.</span>
+</span></span><span class=line><span class=cl>    <span class=n>camera</span><span class=o>.</span><span class=n>StartGrabbingMax</span><span class=p>(</span><span class=n>countOfImagesToGrab</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># Camera.StopGrabbing() is called automatically by the RetrieveResult() method</span>
+</span></span><span class=line><span class=cl>    <span class=c1># when c_countOfImagesToGrab images have been retrieved.</span>
+</span></span><span class=line><span class=cl>    <span class=k>while</span> <span class=n>camera</span><span class=o>.</span><span class=n>IsGrabbing</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>        <span class=c1># Wait for an image and then retrieve it. A timeout of 5000 ms is used.</span>
+</span></span><span class=line><span class=cl>        <span class=n>grabResult</span> <span class=o>=</span> <span class=n>camera</span><span class=o>.</span><span class=n>RetrieveResult</span><span class=p>(</span><span class=mi>5000</span><span class=p>,</span> <span class=n>pylon</span><span class=o>.</span><span class=n>TimeoutHandling_ThrowException</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c1># Image grabbed successfully?</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=n>grabResult</span><span class=o>.</span><span class=n>GrabSucceeded</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>            <span class=c1># Access the image data.</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;SizeX: &#34;</span><span class=p>,</span> <span class=n>grabResult</span><span class=o>.</span><span class=n>Width</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;SizeY: &#34;</span><span class=p>,</span> <span class=n>grabResult</span><span class=o>.</span><span class=n>Height</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=n>img</span> <span class=o>=</span> <span class=n>grabResult</span><span class=o>.</span><span class=n>Array</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Gray value of first pixel: &#34;</span><span class=p>,</span> <span class=n>img</span><span class=p>[</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>])</span>
+</span></span><span class=line><span class=cl>        <span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Error: &#34;</span><span class=p>,</span> <span class=n>grabResult</span><span class=o>.</span><span class=n>ErrorCode</span><span class=p>,</span> <span class=n>grabResult</span><span class=o>.</span><span class=n>ErrorDescription</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>grabResult</span><span class=o>.</span><span class=n>Release</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>camera</span><span class=o>.</span><span class=n>Close</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>except</span> <span class=n>genicam</span><span class=o>.</span><span class=n>GenericException</span> <span class=k>as</span> <span class=n>e</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=c1># Error handling.</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;An exception occurred.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>e</span><span class=o>.</span><span class=n>GetDescription</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>    <span class=n>exitCode</span> <span class=o>=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>(</span><span class=n>exitCode</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=image-control>Image Control</h2><h3 id=image-roi-area-of-insterest>Image ROI (Area of Insterest)</h3><h4 id=getting-the-width-of-the-maximum-value-and-the-height-of-the-maximum-value>Getting the width of the maximum value and the height of the maximum value</h4><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;MaxWidth: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetMax</span><span class=p>())</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;MaxHeight: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetMax</span><span class=p>())</span>
-</code></pre></td></tr></table>
-</div>
-</div><h4 id=setting-the-width-of-the-image-roi-and-the-height-of-the-image-roi>Setting the width of the image ROI and the height of the image ROI</h4>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;MaxWidth: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetMax</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;MaxHeight: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetMax</span><span class=p>())</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=setting-the-width-of-the-image-roi-and-the-height-of-the-image-roi>Setting the width of the image ROI and the height of the image ROI</h4><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=c1>## Set the width to 1920</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=mi>1920</span><span class=p>);</span>
-
-<span class=c1>## Set the height to 1080</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=mi>1080</span><span class=p>)</span>
-</code></pre></td></tr></table>
-</div>
-</div><h4 id=center-the-image-roi>Center the image ROI</h4>
-<ul>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1>## Set the width to 1920</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=mi>1920</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>## Set the height to 1080</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=mi>1080</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=center-the-image-roi>Center the image ROI</h4><ul>
 <li>To enable Center X, set the CenterX parameter to true.
-The camera adjusts the OffsetX parameter value to center the image ROI horizontally. When you change the width of the image ROI, the OffsetX parameter value automatically adapts. The OffsetX parameter becomes read-only.</li>
-<li>To enable Center Y, set the CenterY parameter to true.
-The camera adjusts the OffsetY parameter value to center the image ROI vertically. When you change the height of the image ROI, the OffsetY parameter value automatically adapts. The OffsetY parameter becomes read-only.</li>
-</ul>
-<div class=highlight><div class=chroma>
+The camera adjusts the OffsetX parameter value to center the image ROI horizontally. When you change the width of the image ROI, the OffsetX parameter value automatically adapts. The OffsetX parameter becomes read-only.</li><li>To enable Center Y, set the CenterY parameter to true.
+The camera adjusts the OffsetY parameter value to center the image ROI vertically. When you change the height of the image ROI, the OffsetY parameter value automatically adapts. The OffsetY parameter becomes read-only.</li></ul><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>camera</span><span class=o>.</span><span class=n>BslCenterX</span><span class=o>.</span><span class=n>Execute</span><span class=p>();</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>BslCenterY</span><span class=o>.</span><span class=n>Execute</span><span class=p>();</span>
-</code></pre></td></tr></table>
-</div>
-</div><h4 id=setting-the-offset-of-image-roi>Setting the offset of image ROI</h4>
-<p>If you already center the image ROI, offset parameter becomes read-only. You cannot set offset value again.</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>BslCenterX</span><span class=o>.</span><span class=n>Execute</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>BslCenterY</span><span class=o>.</span><span class=n>Execute</span><span class=p>();</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=setting-the-offset-of-image-roi>Setting the offset of image ROI</h4><p>If you already center the image ROI, offset parameter becomes read-only. You cannot set offset value again.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>camera</span><span class=o>.</span><span class=n>OffsetX</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>OffsetY</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>'''</p>
-<h4 id=print-the-roi-infos>Print the ROI INFOs</h4>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>OffsetX</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>OffsetY</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><p>&rsquo;''</p><h4 id=print-the-roi-infos>Print the ROI INFOs</h4><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -532,168 +354,82 @@ The camera adjusts the OffsetY parameter value to center the image ROI verticall
 </span><span class=lnt>11
 </span><span class=lnt>12
 </span><span class=lnt>13
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera Width increment: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetInc</span><span class=p>())</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera Height increment: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetInc</span><span class=p>())</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera Minimum Width: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetMin</span><span class=p>())</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera Minimum Height: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetMin</span><span class=p>())</span>
-
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera Width: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;Camera offsetX: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>OffsetX</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera Height: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;Camera offsetY: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>OffsetY</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=p>)</span>
-
-<span class=k>assert</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>+</span> <span class=n>camera</span><span class=o>.</span><span class=n>OffsetX</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>&lt;=</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetMax</span><span class=p>()</span>
-<span class=k>assert</span> <span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>+</span> <span class=n>camera</span><span class=o>.</span><span class=n>OffsetY</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>&lt;=</span> <span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetMax</span><span class=p>()</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id=imagepixel-format-control>Image/Pixel Format Control</h3>
-<p>The offical <a href=https://docs.baslerweb.com/pixel-format target=_blank rel="noopener noreferrer">Pixel Formats</a></p>
-<ul>
-<li>list your camera available Pixel Formats</li>
-</ul>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera Width increment: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetInc</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera Height increment: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetInc</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera Minimum Width: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetMin</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera Minimum Height: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetMin</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera Width: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;Camera offsetX: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>OffsetX</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera Height: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;Camera offsetY: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>OffsetY</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>assert</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>+</span> <span class=n>camera</span><span class=o>.</span><span class=n>OffsetX</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>&lt;=</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetMax</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=k>assert</span> <span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>+</span> <span class=n>camera</span><span class=o>.</span><span class=n>OffsetY</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>&lt;=</span> <span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetMax</span><span class=p>()</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=imagepixel-format-control>Image/Pixel Format Control</h3><p>The offical <a href=https://docs.baslerweb.com/pixel-format target=_blank rel="noopener noreferrer">Pixel Formats</a></p><ul>
+<li>list your camera available Pixel Formats</li></ul><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=nb>print</span><span class=p>(</span><span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>Symbolics</span><span class=p>)</span>
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>show your current Pixel Formats in used</li>
-</ul>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>Symbolics</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><ul>
+<li>show your current Pixel Formats in used</li></ul><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.PixelFormat.GetValue: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-</code></pre></td></tr></table>
-</div>
-</div><h4 id=mono-formats>Mono Formats</h4>
-<p>If a monochrome camera uses one of the mono pixel formats, it outputs 8, 10, or 12 bits of data per pixel.</p>
-<p>If a color camera uses the Mono 8 pixel format, the values for each pixel are first converted to the YUV color model. The Y component of this model represents a brightness value and is equivalent to the value that would be derived from a pixel in a monochrome image. So in essence, when a color camera is set to Mono 8, it outputs an 8-bit monochrome image. This type of output is sometimes referred to as &ldquo;Y Mono 8&rdquo;.</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.PixelFormat.GetValue: &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=mono-formats>Mono Formats</h4><p>If a monochrome camera uses one of the mono pixel formats, it outputs 8, 10, or 12 bits of data per pixel.</p><p>If a color camera uses the Mono 8 pixel format, the values for each pixel are first converted to the YUV color model. The Y component of this model represents a brightness value and is equivalent to the value that would be derived from a pixel in a monochrome image. So in essence, when a color camera is set to Mono 8, it outputs an 8-bit monochrome image. This type of output is sometimes referred to as &ldquo;Y Mono 8&rdquo;.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Mono8&#34;</span><span class=p>)</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Mono12&#34;</span><span class=p>)</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Mono12p&#34;</span><span class=p>)</span>
-</code></pre></td></tr></table>
-</div>
-</div><h4 id=bayer-formats>Bayer Formats</h4>
-<p>Color cameras are equipped with a Bayer color filter and can output color images based on the Bayer pixel formats given below.</p>
-<p>If a color camera uses one of these Bayer pixel formats, it outputs 8, 10, or 12 bits of data per pixel. The pixel data is not processed or interpolated in any way. For each pixel covered with a red filter, you get 8, 10, or 12 bits of red data. For each pixel covered with a green filter, you get 8, 10, or 12 bits of green data. For each pixel covered with a blue filter, you get 8, 10, or 12 bits of blue data. This type of pixel data is sometimes referred to as &ldquo;raw&rdquo; output.</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Mono8&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Mono12&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Mono12p&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=bayer-formats>Bayer Formats</h4><p>Color cameras are equipped with a Bayer color filter and can output color images based on the Bayer pixel formats given below.</p><p>If a color camera uses one of these Bayer pixel formats, it outputs 8, 10, or 12 bits of data per pixel. The pixel data is not processed or interpolated in any way. For each pixel covered with a red filter, you get 8, 10, or 12 bits of red data. For each pixel covered with a green filter, you get 8, 10, or 12 bits of green data. For each pixel covered with a blue filter, you get 8, 10, or 12 bits of blue data. This type of pixel data is sometimes referred to as &ldquo;raw&rdquo; output.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;BayerRG8&#34;</span><span class=p>)</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;BayerRG12&#34;</span><span class=p>)</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;BayerRG12p&#34;</span><span class=p>)</span>
-</code></pre></td></tr></table>
-</div>
-</div><h4 id=rgb-and-bgr-formats>RGB and BGR Formats</h4>
-<p>When a color camera uses the RGB 8 or BGR 8 pixel format, the camera outputs 8 bit of red data, 8 bit of green data, and 8 bit of blue data for each pixel in the acquired frame.</p>
-<p>The pixel formats differ by the output sequences for the color data (red, green, blue or blue, green, red).</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;BayerRG8&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;BayerRG12&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;BayerRG12p&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=rgb-and-bgr-formats>RGB and BGR Formats</h4><p>When a color camera uses the RGB 8 or BGR 8 pixel format, the camera outputs 8 bit of red data, 8 bit of green data, and 8 bit of blue data for each pixel in the acquired frame.</p><p>The pixel formats differ by the output sequences for the color data (red, green, blue or blue, green, red).</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;RGB8&#34;</span><span class=p>)</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;BGR8&#34;</span><span class=p>)</span>
-</code></pre></td></tr></table>
-</div>
-</div><h4 id=yuv-formats>YUV Formats</h4>
-<p>Color cameras can also output color images based on pixel data in YUV (or YCbCr) format.</p>
-<p>If a color camera uses this format, each pixel value in the captured image goes through a conversion process as it exits the sensor and passes through the camera. This process yields Y, U, and V color information for each pixel value.</p>
-<p><strong>Info</strong></p>
-<p>The values for U and V normally range from -128 to +127. Because the camera transfers U values and V values with unsigned integers, 128 is added to each U value and V value before they are transferred from the camera. This way, values from 0 to 255 can be transferred.</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;RGB8&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;BGR8&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=yuv-formats>YUV Formats</h4><p>Color cameras can also output color images based on pixel data in YUV (or YCbCr) format.</p><p>If a color camera uses this format, each pixel value in the captured image goes through a conversion process as it exits the sensor and passes through the camera. This process yields Y, U, and V color information for each pixel value.</p><p><strong>Info</strong></p><p>The values for U and V normally range from -128 to +127. Because the camera transfers U values and V values with unsigned integers, 128 is added to each U value and V value before they are transferred from the camera. This way, values from 0 to 255 can be transferred.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;YCbCr422_8&#34;</span><span class=p>)</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id=black-level>Black Level</h3>
-<p>The Black Level camera feature allows you to change the overall brightness of an image. All gray values of the pixels are changed by a specified amount.</p>
-<p>For example, you can increase the gray value of each pixel in the image by 3.</p>
-<p>Adjusting the Black Level</p>
-<p>To adjust the black level, enter a value for the BlackLevel parameter.</p>
-<p>The minimum black level setting is 0. The maximum setting depends on the camera model.</p>
-<p>The change in the gray value resulting from the BlackLevel parameter value also depends on the camera model.</p>
-<p><strong>INFO</strong>
-Basler recommends setting the black level to 0 before using any of the color enhancement features, e.g., Balance White, Color Transformation, or Gamma. After the color enhancements have been applied, you can change the black level as desired. However, increasing the black level will decrease the color accuracy.</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>PixelFormat</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;YCbCr422_8&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=black-level>Black Level</h3><p>The Black Level camera feature allows you to change the overall brightness of an image. All gray values of the pixels are changed by a specified amount.</p><p>For example, you can increase the gray value of each pixel in the image by 3.</p><p>Adjusting the Black Level</p><p>To adjust the black level, enter a value for the BlackLevel parameter.</p><p>The minimum black level setting is 0. The maximum setting depends on the camera model.</p><p>The change in the gray value resulting from the BlackLevel parameter value also depends on the camera model.</p><p><strong>INFO</strong>
+Basler recommends setting the black level to 0 before using any of the color enhancement features, e.g., Balance White, Color Transformation, or Gamma. After the color enhancements have been applied, you can change the black level as desired. However, increasing the black level will decrease the color accuracy.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>camera</span><span class=o>.</span><span class=n>BlackLevel</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.BlackLevel.GetValue()&#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>BlackLevel</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id=gamma>Gamma</h3>
-<p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://en.wikipedia.org/wiki/Gamma_correction data-srcset="https://en.wikipedia.org/wiki/Gamma_correction, https://en.wikipedia.org/wiki/Gamma_correction 1.5x, https://en.wikipedia.org/wiki/Gamma_correction 2x" data-sizes=auto alt=https://en.wikipedia.org/wiki/Gamma_correction title="Gamma correction"></p>
-<p>The Gamma camera feature allows you to optimize the brightness of acquired images for display on a monitor.</p>
-<p>Using the Feature</p>
-<h4 id=how-it-works>How It Works</h4>
-<p>The camera applies a gamma correction value (γ) to the brightness value of each pixel according to the following formula (red pixel value (R) of a color camera shown as an example):
-$R_{corrected} = (\frac{ R_{uncorrected} }{ R_{max} }) ^ γ * R_{max} $</p>
-<p>The maximum pixel value (Rmax) equals, e.g., 255 for 8-bit pixel formats or 1 023 for 10-bit pixel formats.</p>
-<h4 id=enabling-gamma-correction>Enabling Gamma Correction</h4>
-<p>To enable gamma correction:</p>
-<ol>
-<li>Set the GammaEnable parameter to true (if available).</li>
-<li>For best results, set the BlackLevel parameter to 0.</li>
-<li>Set the Gamma parameter to the desired value. The parameter&rsquo;s value range is 0 to ≈4.
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>BlackLevel</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.BlackLevel.GetValue()&#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>BlackLevel</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=gamma>Gamma</h3><p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://en.wikipedia.org/wiki/Gamma_correction data-srcset="https://en.wikipedia.org/wiki/Gamma_correction, https://en.wikipedia.org/wiki/Gamma_correction 1.5x, https://en.wikipedia.org/wiki/Gamma_correction 2x" data-sizes=auto alt=https://en.wikipedia.org/wiki/Gamma_correction title="Gamma correction"></p><p>The Gamma camera feature allows you to optimize the brightness of acquired images for display on a monitor.</p><p>Using the Feature</p><h4 id=how-it-works>How It Works</h4><p>The camera applies a gamma correction value (γ) to the brightness value of each pixel according to the following formula (red pixel value (R) of a color camera shown as an example):
+$R_{corrected} = (\frac{ R_{uncorrected} }{ R_{max} }) ^ γ * R_{max} $</p><p>The maximum pixel value (Rmax) equals, e.g., 255 for 8-bit pixel formats or 1 023 for 10-bit pixel formats.</p><h4 id=enabling-gamma-correction>Enabling Gamma Correction</h4><p>To enable gamma correction:</p><ol>
+<li>Set the GammaEnable parameter to true (if available).</li><li>For best results, set the BlackLevel parameter to 0.</li><li>Set the Gamma parameter to the desired value. The parameter&rsquo;s value range is 0 to ≈4.
 <ul>
-<li>Gamma = 1: The overall brightness remains unchanged.</li>
-<li>Gamma &lt; 1: The overall brightness increases.</li>
-<li>Gamma > 1: The overall brightness decreases.</li>
-</ul>
-</li>
-</ol>
-<p>In all cases, black pixels (brightness = 0) and white pixels (brightness = maximum) will not be adjusted.</p>
-<p><strong>INFO</strong>
-If you enable gamma correction and the pixel format is set to a 12-bit pixel format, some image information will be lost. Pixel data output will still be 12-bit, but the pixel values will be interpolated during the gamma correction process.</p>
-<h4 id=additional-parameters>Additional Parameters</h4>
-<p>Depending on your camera model, the following additional parameters are available:</p>
-<ul>
+<li>Gamma = 1: The overall brightness remains unchanged.</li><li>Gamma &lt; 1: The overall brightness increases.</li><li>Gamma > 1: The overall brightness decreases.</li></ul></li></ol><p>In all cases, black pixels (brightness = 0) and white pixels (brightness = maximum) will not be adjusted.</p><p><strong>INFO</strong>
+If you enable gamma correction and the pixel format is set to a 12-bit pixel format, some image information will be lost. Pixel data output will still be 12-bit, but the pixel values will be interpolated during the gamma correction process.</p><h4 id=additional-parameters>Additional Parameters</h4><p>Depending on your camera model, the following additional parameters are available:</p><ul>
 <li>
-<p>GammaEnable: Enables or disables gamma correction.</p>
-</li>
-<li>
-<p>GammaSelector: Allows you to select one of the following gamma correction modes:</p>
-<ul>
-<li>User: The gamma correction value can be set as desired. (Default.)</li>
-<li>sRGB: The camera automatically sets a gamma correction value of approximately 0.4. This value is optimized for image display on sRGB monitors.</li>
-</ul>
-</li>
-<li>
-<p>BslColorSpaceMode or BslColorSpace: Allows you to select one of the following gamma correction modes:</p>
-<ul>
-<li>RGB: No additional gamma correction value is applied.</li>
-<li>sRGB: The image brightness is optimized for display on an sRGB monitor. A gamma correction value of approximately 0.4 is applied. For more information, see the footnotes in the Specifics section.</li>
-</ul>
-</li>
-</ul>
-<div class=highlight><div class=chroma>
+<p>GammaEnable: Enables or disables gamma correction.</p></li><li>
+<p>GammaSelector: Allows you to select one of the following gamma correction modes:</p><ul>
+<li>User: The gamma correction value can be set as desired. (Default.)</li><li>sRGB: The camera automatically sets a gamma correction value of approximately 0.4. This value is optimized for image display on sRGB monitors.</li></ul></li><li>
+<p>BslColorSpaceMode or BslColorSpace: Allows you to select one of the following gamma correction modes:</p><ul>
+<li>RGB: No additional gamma correction value is applied.</li><li>sRGB: The image brightness is optimized for display on an sRGB monitor. A gamma correction value of approximately 0.4 is applied. For more information, see the footnotes in the Specifics section.</li></ul></li></ul><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -701,125 +437,48 @@ If you enable gamma correction and the pixel format is set to a 12-bit pixel for
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=c1>## Set the Gamma value to 1.2</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>Gamma</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=mf>1.2</span><span class=p>)</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.Gamma.GetValue()&#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Gamma</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-<span class=c1>## Set the color space to sRGB</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>BslColorSpace</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;sRgb&#34;</span><span class=p>);</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.BslColorSpace.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>BslColorSpace</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id=auto-function-roi>Auto Function ROI</h3>
-<p>The Auto Function ROI camera feature allows you to specify the part of the sensor array with which you want to control the camera&rsquo;s auto functions.</p>
-<p>ROI is short for region of interest (formerly AOI = area of interest).</p>
-<p>You can create several auto function ROIs, each occupying different parts of the sensor array.</p>
-<p>The settings for the Auto Function ROI feature are independent of the settings for the Image ROI feature.</p>
-<h4 id=changing-position-and-size-of-an-auto-function-roi>Changing Position and Size of an Auto Function ROI</h4>
-<p>By default, all auto function ROIs are set to the same size as the camera&rsquo;s image ROI. You can change their positions and sizes to suit your needs.</p>
-<p>To change the position and size of an auto function ROI:</p>
-<ol>
-<li>Set the AutoFunctionROISelector parameter to one of the available auto function ROIs, e.g., ROI1.</li>
-<li>Enter values for the following parameters to specify the position of the auto function ROI selected:
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1>## Set the Gamma value to 1.2</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>Gamma</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=mf>1.2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.Gamma.GetValue()&#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>Gamma</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=c1>## Set the color space to sRGB</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>BslColorSpace</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;sRgb&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.BslColorSpace.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>BslColorSpace</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=auto-function-roi>Auto Function ROI</h3><p>The Auto Function ROI camera feature allows you to specify the part of the sensor array with which you want to control the camera&rsquo;s auto functions.</p><p>ROI is short for region of interest (formerly AOI = area of interest).</p><p>You can create several auto function ROIs, each occupying different parts of the sensor array.</p><p>The settings for the Auto Function ROI feature are independent of the settings for the Image ROI feature.</p><h4 id=changing-position-and-size-of-an-auto-function-roi>Changing Position and Size of an Auto Function ROI</h4><p>By default, all auto function ROIs are set to the same size as the camera&rsquo;s image ROI. You can change their positions and sizes to suit your needs.</p><p>To change the position and size of an auto function ROI:</p><ol>
+<li>Set the AutoFunctionROISelector parameter to one of the available auto function ROIs, e.g., ROI1.</li><li>Enter values for the following parameters to specify the position of the auto function ROI selected:
 <ul>
-<li>AutoFunctionROIOffsetX</li>
-<li>AutoFunctionROIOffsetY</li>
-</ul>
-</li>
-<li>Enter values for the following parameters to specify the size of the auto function ROI selected:
+<li>AutoFunctionROIOffsetX</li><li>AutoFunctionROIOffsetY</li></ul></li><li>Enter values for the following parameters to specify the size of the auto function ROI selected:
 <ul>
-<li>AutoFunctionROIWidth</li>
-<li>AutoFunctionROIHeight</li>
-</ul>
-</li>
-</ol>
-<p>The position of an auto function ROI is specified based on the lines and rows of the sensor array.</p>
-<p>Example: Assume that you have selected auto function ROI 1 and specified the following settings:</p>
-<pre><code>AutoFunctionROIOffsetX = 14
+<li>AutoFunctionROIWidth</li><li>AutoFunctionROIHeight</li></ul></li></ol><p>The position of an auto function ROI is specified based on the lines and rows of the sensor array.</p><p>Example: Assume that you have selected auto function ROI 1 and specified the following settings:</p><pre><code>AutoFunctionROIOffsetX = 14
 AutoFunctionROIOffsetY = 7
 AutoFunctionROIWidth = 5
 AutoFunctionROIHeight = 6
-</code></pre>
-<p>This creates the following auto function ROI 1:
+</code></pre><p>This creates the following auto function ROI 1:
 <img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.baslerweb.com/images/drawing-af-aoi.svg data-srcset="https://docs.baslerweb.com/images/drawing-af-aoi.svg, https://docs.baslerweb.com/images/drawing-af-aoi.svg 1.5x, https://docs.baslerweb.com/images/drawing-af-aoi.svg 2x" data-sizes=auto alt=https://docs.baslerweb.com/images/drawing-af-aoi.svg title=https://docs.baslerweb.com/images/drawing-af-aoi.svg>
 Only the pixel data from the area of overlap between the auto function ROI and the image ROI will be used by the auto function assigned to it.
-<strong>Info</strong></p>
-<ul>
-<li>On color cameras, Basler recommends setting the parameters for position and size to even values (multiples of 2). This matches the auto function ROI to the color filter pattern of the sensor.</li>
-<li>If the Binning feature is enabled, the auto function ROI settings refer to the binned lines and columns and not to the physical lines in the sensor.</li>
-<li>If the Reverse X or Reverse Y feature or both are enabled, the position of the auto function ROI relative to the sensor remains the same. As a consequence, different regions of the image will be controlled depending on whether or not Reverse X, Reverse Y or both are enabled.</li>
-</ul>
-<h4 id=auto-function-roi-highlighting>Auto Function ROI Highlighting</h4>
-<p>If highlighting is supported by your camera model, you can highlight one or multiple Auto Function ROIs in the pylon Viewer. Areas that don&rsquo;t belong to the Auto Function ROIs appear darker:
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.baslerweb.com/images/image-auto-function-roi-highlight.jpg data-srcset="https://docs.baslerweb.com/images/image-auto-function-roi-highlight.jpg, https://docs.baslerweb.com/images/image-auto-function-roi-highlight.jpg 1.5x, https://docs.baslerweb.com/images/image-auto-function-roi-highlight.jpg 2x" data-sizes=auto alt=https://docs.baslerweb.com/images/image-auto-function-roi-highlight.jpg title=https://docs.baslerweb.com/images/image-auto-function-roi-highlight.jpg></p>
-<p>To highlight an Auto Function ROI:</p>
-<ol>
-<li>Set the AutoFunctionROISelector parameter to the desired auto function ROI, e.g., ROI1.</li>
-<li>Set the AutoFunctionROIHighlight parameter to true.</li>
-</ol>
-<h4 id=assigning-auto-functions>Assigning Auto Functions</h4>
-<p>By default, each auto function ROI is assigned to a specific auto function. For example, the pixel data from auto function ROI 2 is used to control the Balance White Auto auto function.</p>
-<p>On some camera models, the default assignments can be changed. To do so:</p>
-<p>Set the AutoFunctionROISelector parameter to one of the available auto function ROIs, e.g., ROI1.</p>
-<p>Assign the desired auto function(s) to the auto function ROI selected:</p>
-<ul>
-<li>If you want to assign Balance White Auto, set the AutoFunctionROIUseWhiteBalance parameter to true.</li>
-<li>If you want to assign Exposure Auto and gain auto, set the AutoFunctionROIUseBrightness parameter to true. (Exposure Auto and Gain Auto always work together.)</li>
-<li>If you want to assign Tonal Range Auto, set the AutoFunctionROIUseTonalRange parameter to true.</li>
-</ul>
-<p><strong>Info</strong></p>
-<ul>
-<li>If you assign one auto function to multiple auto function ROIs, the pixel data from all selected auto function ROIs will be used for the auto function.</li>
-<li>If you assign multiple auto functions to one auto function ROI, the pixel data from the auto function ROI will be used for all auto functions selected.</li>
-</ul>
-<p>Exposure Auto and Gain Auto Assignments Work Together
-When making auto function ROI assignments, the Gain Auto auto function and the exposure auto auto function always work together. they are considered as a single auto function named &ldquo;intensity&rdquo; or &ldquo;brightness&rdquo;, depending on your camera model.</p>
-<p>This does not imply, however, that Gain Auto and Exposure Auto must always be enabled at the same time.</p>
-<h4 id=guidelines>Guidelines</h4>
-<p>When you are setting an auto function ROI, you must follow these guidelines:</p>
-<table>
+<strong>Info</strong></p><ul>
+<li>On color cameras, Basler recommends setting the parameters for position and size to even values (multiples of 2). This matches the auto function ROI to the color filter pattern of the sensor.</li><li>If the Binning feature is enabled, the auto function ROI settings refer to the binned lines and columns and not to the physical lines in the sensor.</li><li>If the Reverse X or Reverse Y feature or both are enabled, the position of the auto function ROI relative to the sensor remains the same. As a consequence, different regions of the image will be controlled depending on whether or not Reverse X, Reverse Y or both are enabled.</li></ul><h4 id=auto-function-roi-highlighting>Auto Function ROI Highlighting</h4><p>If highlighting is supported by your camera model, you can highlight one or multiple Auto Function ROIs in the pylon Viewer. Areas that don&rsquo;t belong to the Auto Function ROIs appear darker:
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.baslerweb.com/images/image-auto-function-roi-highlight.jpg data-srcset="https://docs.baslerweb.com/images/image-auto-function-roi-highlight.jpg, https://docs.baslerweb.com/images/image-auto-function-roi-highlight.jpg 1.5x, https://docs.baslerweb.com/images/image-auto-function-roi-highlight.jpg 2x" data-sizes=auto alt=https://docs.baslerweb.com/images/image-auto-function-roi-highlight.jpg title=https://docs.baslerweb.com/images/image-auto-function-roi-highlight.jpg></p><p>To highlight an Auto Function ROI:</p><ol>
+<li>Set the AutoFunctionROISelector parameter to the desired auto function ROI, e.g., ROI1.</li><li>Set the AutoFunctionROIHighlight parameter to true.</li></ol><h4 id=assigning-auto-functions>Assigning Auto Functions</h4><p>By default, each auto function ROI is assigned to a specific auto function. For example, the pixel data from auto function ROI 2 is used to control the Balance White Auto auto function.</p><p>On some camera models, the default assignments can be changed. To do so:</p><p>Set the AutoFunctionROISelector parameter to one of the available auto function ROIs, e.g., ROI1.</p><p>Assign the desired auto function(s) to the auto function ROI selected:</p><ul>
+<li>If you want to assign Balance White Auto, set the AutoFunctionROIUseWhiteBalance parameter to true.</li><li>If you want to assign Exposure Auto and gain auto, set the AutoFunctionROIUseBrightness parameter to true. (Exposure Auto and Gain Auto always work together.)</li><li>If you want to assign Tonal Range Auto, set the AutoFunctionROIUseTonalRange parameter to true.</li></ul><p><strong>Info</strong></p><ul>
+<li>If you assign one auto function to multiple auto function ROIs, the pixel data from all selected auto function ROIs will be used for the auto function.</li><li>If you assign multiple auto functions to one auto function ROI, the pixel data from the auto function ROI will be used for all auto functions selected.</li></ul><p>Exposure Auto and Gain Auto Assignments Work Together
+When making auto function ROI assignments, the Gain Auto auto function and the exposure auto auto function always work together. they are considered as a single auto function named &ldquo;intensity&rdquo; or &ldquo;brightness&rdquo;, depending on your camera model.</p><p>This does not imply, however, that Gain Auto and Exposure Auto must always be enabled at the same time.</p><h4 id=guidelines>Guidelines</h4><p>When you are setting an auto function ROI, you must follow these guidelines:</p><table>
 <thead>
 <tr>
-<th>Guideline</th>
-<th style=text-align:center>Example</th>
-</tr>
-</thead>
-<tbody>
+<th>Guideline</th><th style=text-align:center>Example</th></tr></thead><tbody>
 <tr>
-<td>AutoFunctionROIOffsetX + AutoFunctionROIWidth ≤ Width of camera sensor</td>
-<td style=text-align:center>Camera with a 1920 x 1080 pixel sensor: AutoFunctionROIOffsetX + AutoFunctionROIWidth ≤ 1920</td>
-</tr>
-<tr>
-<td>AutoFunctionROIOffsetY + AutoFunctionROIHeight ≤ Height of camera sensor</td>
-<td style=text-align:center>Camera with a 1920 x 1080 pixel sensor: AutoFunctionROIOffsetY + AutoFunctionROIHeight ≤ 1080</td>
-</tr>
-</tbody>
-</table>
-<h4 id=overlap-between-auto-function-roi-and-image-roi>Overlap Between Auto Function ROI and Image ROI</h4>
-<p>The size and position of an auto function ROI can be identical to the size and position of the image ROI, but this is not a requirement. For an auto function to work, it is sufficient if both ROIs overlap each other partially.</p>
-<p>The overlap between auto function ROI and image ROI determines whether and to what extent the auto function will control the related image property. Only the pixel data from the areas of overlap will be used by the auto function to control the image property of the entire image.</p>
-<ul>
+<td>AutoFunctionROIOffsetX + AutoFunctionROIWidth ≤ Width of camera sensor</td><td style=text-align:center>Camera with a 1920 x 1080 pixel sensor: AutoFunctionROIOffsetX + AutoFunctionROIWidth ≤ 1920</td></tr><tr>
+<td>AutoFunctionROIOffsetY + AutoFunctionROIHeight ≤ Height of camera sensor</td><td style=text-align:center>Camera with a 1920 x 1080 pixel sensor: AutoFunctionROIOffsetY + AutoFunctionROIHeight ≤ 1080</td></tr></tbody></table><h4 id=overlap-between-auto-function-roi-and-image-roi>Overlap Between Auto Function ROI and Image ROI</h4><p>The size and position of an auto function ROI can be identical to the size and position of the image ROI, but this is not a requirement. For an auto function to work, it is sufficient if both ROIs overlap each other partially.</p><p>The overlap between auto function ROI and image ROI determines whether and to what extent the auto function will control the related image property. Only the pixel data from the areas of overlap will be used by the auto function to control the image property of the entire image.</p><ul>
 <li>
 <p>If the auto function ROI is completely contained in the image ROI, the pixel data from the auto function ROI will be used to control the image property.
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.baslerweb.com/images/drawing-af-aoi-with-full-effect.svg data-srcset="https://docs.baslerweb.com/images/drawing-af-aoi-with-full-effect.svg, https://docs.baslerweb.com/images/drawing-af-aoi-with-full-effect.svg 1.5x, https://docs.baslerweb.com/images/drawing-af-aoi-with-full-effect.svg 2x" data-sizes=auto alt=https://docs.baslerweb.com/images/drawing-af-aoi-with-full-effect.svg title=https://docs.baslerweb.com/images/drawing-af-aoi-with-full-effect.svg></p>
-</li>
-<li>
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.baslerweb.com/images/drawing-af-aoi-with-full-effect.svg data-srcset="https://docs.baslerweb.com/images/drawing-af-aoi-with-full-effect.svg, https://docs.baslerweb.com/images/drawing-af-aoi-with-full-effect.svg 1.5x, https://docs.baslerweb.com/images/drawing-af-aoi-with-full-effect.svg 2x" data-sizes=auto alt=https://docs.baslerweb.com/images/drawing-af-aoi-with-full-effect.svg title=https://docs.baslerweb.com/images/drawing-af-aoi-with-full-effect.svg></p></li><li>
 <p>If the image ROI is completely contained in the auto function ROI, only the pixel data from the image ROI will be used to control the image property.
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.baslerweb.com/images/drawing-af-aoi-all-encompassing.svg data-srcset="https://docs.baslerweb.com/images/drawing-af-aoi-all-encompassing.svg, https://docs.baslerweb.com/images/drawing-af-aoi-all-encompassing.svg 1.5x, https://docs.baslerweb.com/images/drawing-af-aoi-all-encompassing.svg 2x" data-sizes=auto alt=https://docs.baslerweb.com/images/drawing-af-aoi-all-encompassing.svg title=https://docs.baslerweb.com/images/drawing-af-aoi-all-encompassing.svg></p>
-</li>
-<li>
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.baslerweb.com/images/drawing-af-aoi-all-encompassing.svg data-srcset="https://docs.baslerweb.com/images/drawing-af-aoi-all-encompassing.svg, https://docs.baslerweb.com/images/drawing-af-aoi-all-encompassing.svg 1.5x, https://docs.baslerweb.com/images/drawing-af-aoi-all-encompassing.svg 2x" data-sizes=auto alt=https://docs.baslerweb.com/images/drawing-af-aoi-all-encompassing.svg title=https://docs.baslerweb.com/images/drawing-af-aoi-all-encompassing.svg></p></li><li>
 <p>If the auto function ROI overlaps the image ROI only partially, only the pixel data from the area of partial overlap will be used to control the image property.
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.baslerweb.com/images/drawing-af-aoi-with-partial-effect.svg data-srcset="https://docs.baslerweb.com/images/drawing-af-aoi-with-partial-effect.svg, https://docs.baslerweb.com/images/drawing-af-aoi-with-partial-effect.svg 1.5x, https://docs.baslerweb.com/images/drawing-af-aoi-with-partial-effect.svg 2x" data-sizes=auto alt=https://docs.baslerweb.com/images/drawing-af-aoi-with-partial-effect.svg title=https://docs.baslerweb.com/images/drawing-af-aoi-with-partial-effect.svg></p>
-</li>
-<li>
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.baslerweb.com/images/drawing-af-aoi-with-partial-effect.svg data-srcset="https://docs.baslerweb.com/images/drawing-af-aoi-with-partial-effect.svg, https://docs.baslerweb.com/images/drawing-af-aoi-with-partial-effect.svg 1.5x, https://docs.baslerweb.com/images/drawing-af-aoi-with-partial-effect.svg 2x" data-sizes=auto alt=https://docs.baslerweb.com/images/drawing-af-aoi-with-partial-effect.svg title=https://docs.baslerweb.com/images/drawing-af-aoi-with-partial-effect.svg></p></li><li>
 <p>If the auto function ROI does not overlap the image ROI, the related auto function will not work.
 <img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.baslerweb.com/images/drawing-af-aoi-with-no-effect.svg data-srcset="https://docs.baslerweb.com/images/drawing-af-aoi-with-no-effect.svg, https://docs.baslerweb.com/images/drawing-af-aoi-with-no-effect.svg 1.5x, https://docs.baslerweb.com/images/drawing-af-aoi-with-no-effect.svg 2x" data-sizes=auto alt=https://docs.baslerweb.com/images/drawing-af-aoi-with-no-effect.svg title=https://docs.baslerweb.com/images/drawing-af-aoi-with-no-effect.svg>
-<strong>Info</strong></p>
-</li>
-</ul>
-<p>Basler strongly recommends completely including the auto function ROI within the image ROI or choosing identical positions and sizes for auto function ROI and image ROI.</p>
-<div class=highlight><div class=chroma>
+<strong>Info</strong></p></li></ul><p>Basler strongly recommends completely including the auto function ROI within the image ROI or choosing identical positions and sizes for auto function ROI and image ROI.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -845,74 +504,36 @@ When making auto function ROI assignments, the Gain Auto auto function and the e
 </span><span class=lnt>22
 </span><span class=lnt>23
 </span><span class=lnt>24
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=c1>## Select auto function ROI 1</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROISelector</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;ROI1&#34;</span><span class=p>)</span>
-
-<span class=c1>## Specify position and size of the auto function ROI selected</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIOffsetX</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=n>camera</span><span class=o>.</span><span class=n>OffsetX</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIOffsetY</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=n>camera</span><span class=o>.</span><span class=n>OffsetY</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIWidth</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIHeight</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.AutoFunctionROIOffsetX.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIOffsetX</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.AutoFunctionROIOffsetY.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIOffsetY</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.AutoFunctionROIWidth.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIWidth</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.AutoFunctionROIHeight.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIHeight</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-
-
-<span class=k>assert</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIOffsetX</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>+</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIWidth</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>&lt;=</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetMax</span><span class=p>()</span>
-<span class=k>assert</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIOffsetY</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>+</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIHeight</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>&lt;=</span> <span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetMax</span><span class=p>()</span>
-
-<span class=c1>## Enable the &#39;Brightness&#39; auto function (Gain Auto + Exposure Auto)</span>
-<span class=c1>## for the auto function ROI selected</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIUseBrightness</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=kc>True</span><span class=p>)</span>
-<span class=c1>## Highlight the auto function ROI selected</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIHighlight</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=kc>False</span><span class=p>)</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id=auto-function-profile>Auto Function Profile</h3>
-<p>The Auto Function Profile camera feature allows you to specify how gain and exposure time are balanced when the camera is making automatic adjustments.</p>
-<h4 id=setting-the-auto-function-profile>Setting the Auto Function Profile</h4>
-<p>To set the auto function profile:</p>
-<ol>
-<li>Set the Gain Auto auto function and the Exposure Auto auto function to Continuous.</li>
-<li>Set the AutoFunctionProfile parameter to one of the following values (if available):
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1>## Select auto function ROI 1</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROISelector</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;ROI1&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>## Specify position and size of the auto function ROI selected</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIOffsetX</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=n>camera</span><span class=o>.</span><span class=n>OffsetX</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIOffsetY</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=n>camera</span><span class=o>.</span><span class=n>OffsetY</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIWidth</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIHeight</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.AutoFunctionROIOffsetX.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIOffsetX</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.AutoFunctionROIOffsetY.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIOffsetY</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.AutoFunctionROIWidth.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIWidth</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.AutoFunctionROIHeight.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIHeight</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>assert</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIOffsetX</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>+</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIWidth</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>&lt;=</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetMax</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=k>assert</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIOffsetY</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>+</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIHeight</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>&lt;=</span> <span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetMax</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>## Enable the &#39;Brightness&#39; auto function (Gain Auto + Exposure Auto)</span>
+</span></span><span class=line><span class=cl><span class=c1>## for the auto function ROI selected</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIUseBrightness</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=kc>True</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>## Highlight the auto function ROI selected</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIHighlight</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=kc>False</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=auto-function-profile>Auto Function Profile</h3><p>The Auto Function Profile camera feature allows you to specify how gain and exposure time are balanced when the camera is making automatic adjustments.</p><h4 id=setting-the-auto-function-profile>Setting the Auto Function Profile</h4><p>To set the auto function profile:</p><ol>
+<li>Set the Gain Auto auto function and the Exposure Auto auto function to Continuous.</li><li>Set the AutoFunctionProfile parameter to one of the following values (if available):
 <ul>
-<li>MinimizeGain</li>
-<li>MinimizeExposureTime</li>
-<li>MinimizeGainQuick</li>
-<li>MinimizeExposureTimeQuick</li>
-<li>Smart</li>
-<li>AntiFlicker50Hz</li>
-<li>AntiFlicker60Hz</li>
-</ul>
-</li>
-</ol>
-<h4 id=available-auto-function-profiles>Available Auto Function Profiles</h4>
-<h5 id=minimize-gain--gain-minimum>Minimize Gain (= Gain Minimum)</h5>
-<p>The gain is kept as low as possible during the automatic adjustment process. If the exposure time is at its upper limit and the target brightness value has not been reached yet, the gain will be increased in order to reach the target.</p>
-<h5 id=minimize-exposure-time--exposure-minimum>Minimize Exposure Time (= Exposure Minimum)</h5>
-<p>The exposure time is kept as low as possible during the automatic adjustment process. If the gain is at its upper limit and the target brightness value has not been reached yet, the exposure time will be increased in order to reach the target.</p>
-<h5 id=minimize-gain-quick--gain-minimum-quick>Minimize Gain Quick (= Gain Minimum Quick)</h5>
-<p>This profile works the same as the Minimize Gain profile. The difference is that it reacts more quickly in situations with extreme changes in brightness or where the image brightness changes rapidly. This situation occurs, for example, when microscope objective lenses are changed using the objective turret.</p>
-<h5 id=minimize-exposure-time-quick--exposure-minimum-quick>Minimize Exposure Time Quick (= Exposure Minimum Quick)</h5>
-<p>This profile works the same as the Minimize Exposure Time profile. The difference is that it reacts more quickly in situations with extreme changes in brightness or where the image brightness changes rapidly. This situation occurs, for example, when microscope objective lenses are changed using the objective turret.</p>
-<h5 id=smart>Smart</h5>
-<p>Gain is kept as low as possible and the frame rate will be kept as high as possible during automatic adjustments.</p>
-<p>This is a four-step process:</p>
-<ol>
-<li>The camera adjusts the exposure time to achieve the target brightness value.</li>
-<li>If the exposure time must be increased to achieve the target brightness value, the camera does so until the frame rate drops.</li>
-<li>If the frame rate drops, the camera stops increasing the exposure time and increases the gain until the AutoGainUpperLimit value is reached.</li>
-<li>When the AutoGainUpperLimit value has been reached, the camera stops increasing the gain and increases the exposure time until the target brightness value is reached. Increasing the exposure time results in a lower frame rate.</li>
-</ol>
-<h5 id=anti-flicker-50-hz--60-hz>Anti-Flicker 50 Hz / 60 Hz</h5>
-<p>Gain and exposure time are optimized to reduce flickering. If the camera is operating in an environment where the lighting flickers at a 50-Hz or a 60-Hz rate, the flickering lights can cause significant changes in brightness from image to image. Enabling the anti-flicker profile may reduce the effect of the flickering in the captured images.</p>
-<p>Choose the frequency (50 Hz or 60 Hz) according your local power line frequency (e.g., North America: 60 Hz, Europe: 50 Hz).</p>
-<div class=highlight><div class=chroma>
+<li>MinimizeGain</li><li>MinimizeExposureTime</li><li>MinimizeGainQuick</li><li>MinimizeExposureTimeQuick</li><li>Smart</li><li>AntiFlicker50Hz</li><li>AntiFlicker60Hz</li></ul></li></ol><h4 id=available-auto-function-profiles>Available Auto Function Profiles</h4><h5 id=minimize-gain--gain-minimum>Minimize Gain (= Gain Minimum)</h5><p>The gain is kept as low as possible during the automatic adjustment process. If the exposure time is at its upper limit and the target brightness value has not been reached yet, the gain will be increased in order to reach the target.</p><h5 id=minimize-exposure-time--exposure-minimum>Minimize Exposure Time (= Exposure Minimum)</h5><p>The exposure time is kept as low as possible during the automatic adjustment process. If the gain is at its upper limit and the target brightness value has not been reached yet, the exposure time will be increased in order to reach the target.</p><h5 id=minimize-gain-quick--gain-minimum-quick>Minimize Gain Quick (= Gain Minimum Quick)</h5><p>This profile works the same as the Minimize Gain profile. The difference is that it reacts more quickly in situations with extreme changes in brightness or where the image brightness changes rapidly. This situation occurs, for example, when microscope objective lenses are changed using the objective turret.</p><h5 id=minimize-exposure-time-quick--exposure-minimum-quick>Minimize Exposure Time Quick (= Exposure Minimum Quick)</h5><p>This profile works the same as the Minimize Exposure Time profile. The difference is that it reacts more quickly in situations with extreme changes in brightness or where the image brightness changes rapidly. This situation occurs, for example, when microscope objective lenses are changed using the objective turret.</p><h5 id=smart>Smart</h5><p>Gain is kept as low as possible and the frame rate will be kept as high as possible during automatic adjustments.</p><p>This is a four-step process:</p><ol>
+<li>The camera adjusts the exposure time to achieve the target brightness value.</li><li>If the exposure time must be increased to achieve the target brightness value, the camera does so until the frame rate drops.</li><li>If the frame rate drops, the camera stops increasing the exposure time and increases the gain until the AutoGainUpperLimit value is reached.</li><li>When the AutoGainUpperLimit value has been reached, the camera stops increasing the gain and increases the exposure time until the target brightness value is reached. Increasing the exposure time results in a lower frame rate.</li></ol><h5 id=anti-flicker-50-hz--60-hz>Anti-Flicker 50 Hz / 60 Hz</h5><p>Gain and exposure time are optimized to reduce flickering. If the camera is operating in an environment where the lighting flickers at a 50-Hz or a 60-Hz rate, the flickering lights can cause significant changes in brightness from image to image. Enabling the anti-flicker profile may reduce the effect of the flickering in the captured images.</p><p>Choose the frequency (50 Hz or 60 Hz) according your local power line frequency (e.g., North America: 60 Hz, Europe: 50 Hz).</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -929,56 +550,29 @@ When making auto function ROI assignments, the Gain Auto auto function and the e
 </span><span class=lnt>13
 </span><span class=lnt>14
 </span><span class=lnt>15
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=c1>## Set the auto function profile to Exposure Minimum</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionProfile</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;MinimizeExposureTime&#34;</span><span class=p>);</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.AutoFunctionProfile.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionProfile</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-
-<span class=c1>## Set the auto function profile to Gain Minimum</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionProfile</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;MinimizeGain&#34;</span><span class=p>)</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.AutoFunctionProfile.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionProfile</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-
-<span class=c1>## Enable Gain and Exposure Auto auto functions and set the operating mode to Continuous</span>
-
-<span class=n>camera</span><span class=o>.</span><span class=n>GainAuto</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Continuous&#34;</span><span class=p>)</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.GainAuto.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>GainAuto</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-
-<span class=n>camera</span><span class=o>.</span><span class=n>ExposureAuto</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Continuous&#34;</span><span class=p>)</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.ExposureAuto.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>ExposureAuto</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id=balance-white-auto>Balance White Auto</h3>
-<p>The Balance White Auto camera feature automatically corrects color shifts in images acquired.</p>
-<p>The pixel data for the auto function can come from one or multiple auto function ROIs.</p>
-<p>To correct color shifts manually, use the Balance White feature.</p>
-<h4 id=enabling-or-disabling-balance-white-auto>Enabling or Disabling Balance White Auto</h4>
-<p>To enable or disable the Balance White Auto auto function:</p>
-<ol>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1>## Set the auto function profile to Exposure Minimum</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionProfile</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;MinimizeExposureTime&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.AutoFunctionProfile.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionProfile</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>## Set the auto function profile to Gain Minimum</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionProfile</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;MinimizeGain&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.AutoFunctionProfile.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionProfile</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>## Enable Gain and Exposure Auto auto functions and set the operating mode to Continuous</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>GainAuto</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Continuous&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.GainAuto.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>GainAuto</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>ExposureAuto</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Continuous&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.ExposureAuto.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>ExposureAuto</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=balance-white-auto>Balance White Auto</h3><p>The Balance White Auto camera feature automatically corrects color shifts in images acquired.</p><p>The pixel data for the auto function can come from one or multiple auto function ROIs.</p><p>To correct color shifts manually, use the Balance White feature.</p><h4 id=enabling-or-disabling-balance-white-auto>Enabling or Disabling Balance White Auto</h4><p>To enable or disable the Balance White Auto auto function:</p><ol>
 <li>Assign at least one auto function ROI to the Balance White Auto auto function.
-Make sure the auto function ROI overlaps the image ROI, either partially or completely.</li>
-<li>Set the BalanceWhiteAuto parameter to one of the following operating modes:
+Make sure the auto function ROI overlaps the image ROI, either partially or completely.</li><li>Set the BalanceWhiteAuto parameter to one of the following operating modes:
 <ul>
-<li>Once: The camera adjusts the white balance until the average gray values for red, green, and blue are identical. When this has been achieved, or after a maximum of 30 calculation cycles, the camera sets the auto function to Off and applies the balance ratios resulting from the last calculation to all following images.</li>
-<li>Continuous: The camera adjusts the white balance continuously while images are being acquired. The adjustment process continues until the operating mode is set to Once or Off.</li>
-<li>Off: Disables the Balance White Auto auto function. The BalanceRatio parameters remain at the values resulting from the last automatic or manual adjustment.</li>
-</ul>
-</li>
-</ol>
-<h4 id=how-it-works-1>How It Works</h4>
-<p>Automatic white balancing is a two-step process:</p>
-<ol>
-<li>The camera compares the average gray values of the red, green, and blue pixels. It determines the color with the highest average gray value (i.e., the brightest color) and sets the BalanceRatio parameter value for this color to 1.</li>
-<li>The camera automatically adjusts the BalanceRatio parameter values of the other two colors until the average gray values for red, green, and blue are identical.</li>
-</ol>
-<p>As a result, the BalanceRatio parameter is set to 1 for one color and to a value between 1 and ≈15.98 for the other two colors.</p>
-<p>Example: Assume the green pixels in your image have the highest average gray value. If you enable the Balance White Auto auto function, the camera sets the BalanceRatio parameter value for green to 1. Then, the camera automatically adjusts the BalanceRatio parameter values for red and blue until the average gray values for red, green, and blue are identical. The new balance ratios could be, e.g., green = 1, red = 1.08789, and blue = 2.19678.</p>
-<p><strong>Info</strong></p>
-<ul>
-<li>To view the BalanceRatio parameter values for red, green, or blue, switch to the respective color channel using the BalanceRatioSelector.</li>
-<li>When the camera is capturing images continuously, the auto function takes effect with a short delay. The first few images may not be affected by the auto function.</li>
-</ul>
-<div class=highlight><div class=chroma>
+<li>Once: The camera adjusts the white balance until the average gray values for red, green, and blue are identical. When this has been achieved, or after a maximum of 30 calculation cycles, the camera sets the auto function to Off and applies the balance ratios resulting from the last calculation to all following images.</li><li>Continuous: The camera adjusts the white balance continuously while images are being acquired. The adjustment process continues until the operating mode is set to Once or Off.</li><li>Off: Disables the Balance White Auto auto function. The BalanceRatio parameters remain at the values resulting from the last automatic or manual adjustment.</li></ul></li></ol><h4 id=how-it-works-1>How It Works</h4><p>Automatic white balancing is a two-step process:</p><ol>
+<li>The camera compares the average gray values of the red, green, and blue pixels. It determines the color with the highest average gray value (i.e., the brightest color) and sets the BalanceRatio parameter value for this color to 1.</li><li>The camera automatically adjusts the BalanceRatio parameter values of the other two colors until the average gray values for red, green, and blue are identical.</li></ol><p>As a result, the BalanceRatio parameter is set to 1 for one color and to a value between 1 and ≈15.98 for the other two colors.</p><p>Example: Assume the green pixels in your image have the highest average gray value. If you enable the Balance White Auto auto function, the camera sets the BalanceRatio parameter value for green to 1. Then, the camera automatically adjusts the BalanceRatio parameter values for red and blue until the average gray values for red, green, and blue are identical. The new balance ratios could be, e.g., green = 1, red = 1.08789, and blue = 2.19678.</p><p><strong>Info</strong></p><ul>
+<li>To view the BalanceRatio parameter values for red, green, or blue, switch to the respective color channel using the BalanceRatioSelector.</li><li>When the camera is capturing images continuously, the auto function takes effect with a short delay. The first few images may not be affected by the auto function.</li></ul><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -986,23 +580,14 @@ Make sure the auto function ROI overlaps the image ROI, either partially or comp
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROISelector</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;ROI1&#34;</span><span class=p>)</span>
-
-<span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIUseWhiteBalance</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=kc>True</span><span class=p>)</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.AutoFunctionROIUseWhiteBalance.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIUseWhiteBalance</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>BalanceWhiteAuto</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Continuous&#34;</span><span class=p>)</span>
-<span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.BalanceWhiteAuto.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>BalanceWhiteAuto</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id=light-source-preset>Light Source Preset</h3>
-<p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.baslerweb.com/light-source-preset data-srcset="https://docs.baslerweb.com/light-source-preset, https://docs.baslerweb.com/light-source-preset 1.5x, https://docs.baslerweb.com/light-source-preset 2x" data-sizes=auto alt=https://docs.baslerweb.com/light-source-preset title=https://docs.baslerweb.com/light-source-preset></p>
-<p>The Light Source Preset camera feature allows you to correct color shifts caused by certain light sources.</p>
-<p>Depending on its specific color temperature, the light used for image acquisition can cause color shifts in the image. You can correct these color shifts by selecting the related light source preset.</p>
-<p>Selecting a Light Source Preset</p>
-<p>To select a light source preset, set the BslLightSourcePreset parameter to one of the following values (if available):</p>
-<pre><code>Off: No light source preset is selected.
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROISelector</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;ROI1&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIUseWhiteBalance</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=kc>True</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.AutoFunctionROIUseWhiteBalance.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>AutoFunctionROIUseWhiteBalance</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>BalanceWhiteAuto</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Continuous&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=p>(</span><span class=s2>&#34;camera.BalanceWhiteAuto.GetValue(): &#34;</span><span class=p>,</span> <span class=n>camera</span><span class=o>.</span><span class=n>BalanceWhiteAuto</span><span class=o>.</span><span class=n>GetValue</span><span class=p>())</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=light-source-preset>Light Source Preset</h3><p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.baslerweb.com/light-source-preset data-srcset="https://docs.baslerweb.com/light-source-preset, https://docs.baslerweb.com/light-source-preset 1.5x, https://docs.baslerweb.com/light-source-preset 2x" data-sizes=auto alt=https://docs.baslerweb.com/light-source-preset title=https://docs.baslerweb.com/light-source-preset></p><p>The Light Source Preset camera feature allows you to correct color shifts caused by certain light sources.</p><p>Depending on its specific color temperature, the light used for image acquisition can cause color shifts in the image. You can correct these color shifts by selecting the related light source preset.</p><p>Selecting a Light Source Preset</p><p>To select a light source preset, set the BslLightSourcePreset parameter to one of the following values (if available):</p><pre><code>Off: No light source preset is selected.
 Daylight5000K: The camera corrects color shifts caused by daylight lighting that has a color temperature of about 5 000 K.
 Daylight6500K: The camera corrects color shifts caused by daylight lighting that has a color temperature of about 6 500 K.
 Tungsten2800K: The camera corrects color shifts caused by tungsten lighting that has a color temperature of about 2 500 to 3 000 K.
@@ -1011,39 +596,12 @@ MicroscopeLED5500K: The camera corrects color shifts caused by microscope LED li
 MicroscopeLED6000K: The camera corrects color shifts caused by microscope LED lighting that has a color temperature of about 6 000 K.
 Fluorescent4000K: The camera corrects color shifts caused by fluorescent lighting that has a color temperature of about 4 000 K.
 Custom: Selecting this preset enables the Color Transformation feature which allows you to customize the light source settings. You should only select this preset if you are thoroughly familiar with matrix color transformations. The camera also adjusts the Balance White and Color Adjustment settings so that they have neutral values that do not change the appearance of the colors.
-</code></pre>
-<p>The default light source preset varies by camera model.
-<strong>Info</strong></p>
-<p>On Basler dart cameras, the light source presets are calibrated for the IR cut filter in the CS-mount variant. If you are using an S-mount or bare board variant, make sure your IR cut filter has suitable spectral characteristics.</p>
-<p>For more information about the IR cut filter, see your camera topic. You can find your camera topic in the &ldquo;Models&rdquo; section.</p>
-<h4 id=impact-on-other-features>Impact on Other Features</h4>
-<p>When you select a light source preset, the camera adjusts the settings of the following color enhancement features:</p>
-<ul>
-<li>Balance White</li>
-<li>Color Adjustment</li>
-<li>Color Transformation
+</code></pre><p>The default light source preset varies by camera model.
+<strong>Info</strong></p><p>On Basler dart cameras, the light source presets are calibrated for the IR cut filter in the CS-mount variant. If you are using an S-mount or bare board variant, make sure your IR cut filter has suitable spectral characteristics.</p><p>For more information about the IR cut filter, see your camera topic. You can find your camera topic in the &ldquo;Models&rdquo; section.</p><h4 id=impact-on-other-features>Impact on Other Features</h4><p>When you select a light source preset, the camera adjusts the settings of the following color enhancement features:</p><ul>
+<li>Balance White</li><li>Color Adjustment</li><li>Color Transformation
 The settings will be optimized for the selected light source.
-On some camera models, you can choose which features you want the camera to adjust.</li>
-</ul>
-<h4 id=separate-processing>Separate Processing</h4>
-<p>On some camera models, when you select a light source preset, the camera processes the changes to the features listed above separately. This means that the values of the corresponding parameters visible in the pylon API and the pylon Viewer are not changed.</p>
-<p>Example: If you select the Daylight6500K light source preset, the camera adjusts the white balance, but the values of the BalanceRatio parameter don&rsquo;t change.</p>
-<p>This has the advantage that you don&rsquo;t lose your color enhancement feature settings when you change the light source preset. Your own settings are independent from the light source preset adjustments.</p>
-<h4 id=no-separate-processing>No Separate Processing</h4>
-<p>On some camera models, when you select a light source preset, the camera doesn&rsquo;t process the feature changes separately. Instead, the camera directly adjusts the corresponding parameter values.</p>
-<p>Example: If you select the Daylight6500K light source preset, the values of the BalanceRatio parameter change. You can see the changes in the pylon Viewer or by accessing the parameter via the pylon API.</p>
-<p>This means if you set up the color enhancement features and then change the light source preset, your settings will be overwritten.</p>
-<h4 id=light-source-preset-feature-selector>Light Source Preset Feature Selector</h4>
-<p>On some camera models, the BslLightSourcePresetFeatureSelector parameter is available.</p>
-<p>If the parameter is available, you can select which features you want the camera to adjust when you select a light source preset.</p>
-<p>By default, the camera adjusts all features.</p>
-<p>To enable or disable adjustment of a specific feature:</p>
-<ol>
-<li>Set the BslLightSourcePresetFeatureSelector parameter to the desired feature, e.g., ColorAdjustment.</li>
-<li>Set the BslLightSourcePresetFeatureEnable parameter to true (feature enabled) or false (feature disabled).</li>
-<li>Repeat steps 1 and 2 for all features that you want to enable or disable.</li>
-</ol>
-<div class=highlight><div class=chroma>
+On some camera models, you can choose which features you want the camera to adjust.</li></ul><h4 id=separate-processing>Separate Processing</h4><p>On some camera models, when you select a light source preset, the camera processes the changes to the features listed above separately. This means that the values of the corresponding parameters visible in the pylon API and the pylon Viewer are not changed.</p><p>Example: If you select the Daylight6500K light source preset, the camera adjusts the white balance, but the values of the BalanceRatio parameter don&rsquo;t change.</p><p>This has the advantage that you don&rsquo;t lose your color enhancement feature settings when you change the light source preset. Your own settings are independent from the light source preset adjustments.</p><h4 id=no-separate-processing>No Separate Processing</h4><p>On some camera models, when you select a light source preset, the camera doesn&rsquo;t process the feature changes separately. Instead, the camera directly adjusts the corresponding parameter values.</p><p>Example: If you select the Daylight6500K light source preset, the values of the BalanceRatio parameter change. You can see the changes in the pylon Viewer or by accessing the parameter via the pylon API.</p><p>This means if you set up the color enhancement features and then change the light source preset, your settings will be overwritten.</p><h4 id=light-source-preset-feature-selector>Light Source Preset Feature Selector</h4><p>On some camera models, the BslLightSourcePresetFeatureSelector parameter is available.</p><p>If the parameter is available, you can select which features you want the camera to adjust when you select a light source preset.</p><p>By default, the camera adjusts all features.</p><p>To enable or disable adjustment of a specific feature:</p><ol>
+<li>Set the BslLightSourcePresetFeatureSelector parameter to the desired feature, e.g., ColorAdjustment.</li><li>Set the BslLightSourcePresetFeatureEnable parameter to true (feature enabled) or false (feature disabled).</li><li>Repeat steps 1 and 2 for all features that you want to enable or disable.</li></ol><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -1058,61 +616,41 @@ On some camera models, you can choose which features you want the camera to adju
 </span><span class=lnt>11
 </span><span class=lnt>12
 </span><span class=lnt>13
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=c1>## Disable light source presets (no correction)</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>BslLightSourcePreset</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Off&#34;</span><span class=p>)</span>
-<span class=c1>## Set the light source preset for daylight (at about 5000K)</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>BslLightSourcePreset</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Daylight5000K&#34;</span><span class=p>)</span>
-<span class=c1>## Set the light source preset for tungsten lighting (at about 2800K)</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>BslLightSourcePreset</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Tungsten&#34;</span><span class=p>)</span>
-<span class=c1>## Set the light source preset for daylight (at about 6500K)</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>BslLightSourcePreset</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Daylight6500K&#34;</span><span class=p>)</span>
-
-
-<span class=c1>## Disable adjustment of a specific feature</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>BslLightSourcePresetFeatureSelector</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;ColorAdjustment&#34;</span><span class=p>)</span>
-<span class=n>camera</span><span class=o>.</span><span class=n>BslLightSourcePresetFeatureEnable</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=kc>False</span><span class=p>)</span>
-</code></pre></td></tr></table>
-</div>
-</div></div><div class=post-footer id=post-footer>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1>## Disable light source presets (no correction)</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>BslLightSourcePreset</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Off&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>## Set the light source preset for daylight (at about 5000K)</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>BslLightSourcePreset</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Daylight5000K&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>## Set the light source preset for tungsten lighting (at about 2800K)</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>BslLightSourcePreset</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Tungsten&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>## Set the light source preset for daylight (at about 6500K)</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>BslLightSourcePreset</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;Daylight6500K&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>## Disable adjustment of a specific feature</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>BslLightSourcePresetFeatureSelector</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=s2>&#34;ColorAdjustment&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>camera</span><span class=o>.</span><span class=n>BslLightSourcePresetFeatureEnable</span><span class=o>.</span><span class=n>SetValue</span><span class=p>(</span><span class=kc>False</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2022-01-18</span>
-</div>
-<div class=post-info-license></div>
-</div>
-<div class=post-info-line>
+<span>Updated on 2022-03-02</span>
+</div><div class=post-info-license></div></div><div class=post-info-line>
 <div class=post-info-md><span>
 <a class=link-to-markdown href=https://yanboyang.com/baslerwithopencv/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
-</span></div>
-<div class=post-info-share>
+</span></div><div class=post-info-share>
 <span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/baslerwithopencv/ data-title="Getting started with Basler Camera With Opencv on Python" data-hashtags=Basler,Opencv,python><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/baslerwithopencv/ data-hashtag=Basler><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/baslerwithopencv/ data-title="Getting started with Basler Camera With Opencv on Python" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/baslerwithopencv/ data-title="Getting started with Basler Camera With Opencv on Python"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/baslerwithopencv/ data-title="Getting started with Basler Camera With Opencv on Python"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/baslerwithopencv/ data-title="Getting started with Basler Camera With Opencv on Python" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/baslerwithopencv/ data-title="Getting started with Basler Camera With Opencv on Python" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/baslerwithopencv/ data-title="Getting started with Basler Camera With Opencv on Python"><i class="fab fa-evernote fa-fw"></i></a></span>
-</div>
-</div>
-</div>
-<div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/basler/>Basler</a>,&nbsp;<a href=https://yanboyang.com/tags/opencv/>OpenCV</a>,&nbsp;<a href=https://yanboyang.com/tags/python/>Python</a></section>
-<section>
+</div></div></div><div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/basler/>Basler</a>,&nbsp;<a href=https://yanboyang.com/tags/opencv/>OpenCV</a>,&nbsp;<a href=https://yanboyang.com/tags/python/>Python</a></section><section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span>
-</section>
-</div>
-<div class=post-nav><a href=https://yanboyang.com/plantuml/ class=prev rel=prev title="Getting started with UML (Unified Modeling Language)"><i class="fas fa-angle-left fa-fw"></i>Getting started with UML (Unified Modeling Language)</a>
-<a href=https://yanboyang.com/ubunturouter/ class=next rel=next title="Setting up an Linux Router with bridge">Setting up an Linux Router with bridge<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-<div id=comments><div id=disqus_thread class=comment></div><noscript>
+</section></div><div class=post-nav><a href=https://yanboyang.com/plantuml/ class=prev rel=prev title="Getting started with UML (Unified Modeling Language)"><i class="fas fa-angle-left fa-fw"></i>Getting started with UML (Unified Modeling Language)</a>
+<a href=https://yanboyang.com/ubunturouter/ class=next rel=next title="Setting up an Linux Router with bridge">Setting up an Linux Router with bridge<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
-</noscript></div></article></div>
-</main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.92.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
-</div>
-</footer></div>
-<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+</noscript></div></article></div></main><footer class=footer>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
 <i class="fas fa-arrow-up fa-fw"></i>
 </a><a href=# id=view-comments class=fixed-button title="View Comments">
 <i class="fas fa-comment fa-fw"></i>
 </a>
-</div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body>
-</html>
+</div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>

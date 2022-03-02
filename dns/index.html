@@ -9,7 +9,7 @@
 So in this tutorial, we are going to install and configure DNS on Ubuntu. Through this tutorial, we will use one of the most common programs used for handling the name server on Ubuntu that is BIND (which is an abbreviation for Berkley Internet Naming Daemon).">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/dns/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:modified_time" content="2022-01-18T03:09:25+00:00">
+<meta property="article:modified_time" content="2022-03-02T13:12:39+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="dns">
@@ -18,17 +18,15 @@ So in this tutorial, we are going to install and configure DNS on Ubuntu. Throug
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/dns/><link rel=prev href=https://yanboyang.com/dockeraslocaldevelopmentenvironment/><link rel=next href=https://yanboyang.com/databaseconcepts/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"dns","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dns\/"},"genre":"posts","wordcount":4647,"url":"https:\/\/yanboyang.com\/dns\/","dateModified":"2022-01-18T03:09:25+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
-<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/dns/><link rel=prev href=https://yanboyang.com/dockeraslocaldevelopmentenvironment/><link rel=next href=https://yanboyang.com/databaseconcepts/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"dns","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dns\/"},"genre":"posts","wordcount":4647,"url":"https:\/\/yanboyang.com\/dns\/","dateModified":"2022-03-02T13:12:39+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 <div class=header-wrapper>
 <div class=header-title>
 <a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div>
-<div class=menu>
+</div><div class=menu>
 <div class=menu-inner><a class=menu-item href=https://yanboyang.com/> Home </a><a class=menu-item href=https://yanboyang.com/posts/> Posts </a><a class=menu-item href=https://yanboyang.com/tags/> Tags </a><a class=menu-item href=https://yanboyang.com/categories/> Categories </a><a class=menu-item href=https://yanboyang.com/about/> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
@@ -43,23 +41,17 @@ So in this tutorial, we are going to install and configure DNS on Ubuntu. Throug
 </span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
 <i class="fas fa-adjust fa-fw"></i>
 </a>
-</div>
-</div>
-</div>
-</header><header class=mobile id=header-mobile>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+</div></div></div></header><header class=mobile id=header-mobile>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 <div class=header-container>
 <div class=header-wrapper>
 <div class=header-title>
 <a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div>
-<div class=menu-toggle id=menu-toggle-mobile>
+</div><div class=menu-toggle id=menu-toggle-mobile>
 <span></span><span></span><span></span>
-</div>
-</div>
-<div class=menu id=menu-mobile><div class=search-wrapper>
+</div></div><div class=menu id=menu-mobile><div class=search-wrapper>
 <div class="search mobile" id=search-mobile>
 <input type=text placeholder="Search titles or contents..." id=search-input-mobile>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
@@ -71,241 +63,62 @@ So in this tutorial, we are going to install and configure DNS on Ubuntu. Throug
 <span class="search-button search-loading" id=search-loading-mobile>
 <i class="fas fa-spinner fa-fw fa-spin"></i>
 </span>
-</div>
-<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+</div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
 Cancel
 </a>
 </div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
 <i class="fas fa-adjust fa-fw"></i>
-</a></div>
-</div>
-</header>
-<div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div>
-</div>
-<div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div>
-</div>
-<main class=main>
+</a></div></div></header><div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div></div><main class=main>
 <div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>Contents</h2>
-<div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">dns</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4647 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;22 minutes&nbsp;</div>
-</div><div class="details toc" id=toc-static kept=true>
+<h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">dns</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4647 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;22 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
 <span><i class="details-icon fas fa-angle-right"></i></span>
-</div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+</div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
-<li><a href=#introduction>Introduction</a></li>
-<li><a href=#dns-basics>DNS Basics</a>
+<li><a href=#introduction>Introduction</a></li><li><a href=#dns-basics>DNS Basics</a>
 <ul>
-<li><a href=#name-to-address-resolution>Name-to-Address Resolution</a></li>
-<li><a href=#dns-administrative-domains>DNS Administrative Domains</a></li>
-<li><a href=#dns-name-servers>DNS Name Servers</a></li>
-<li><a href=#dns-clients-and-the-resolver>DNS Clients and the Resolver</a></li>
-<li><a href=#introducing-the-dns-namespace>Introducing the DNS Namespace</a>
+<li><a href=#name-to-address-resolution>Name-to-Address Resolution</a></li><li><a href=#dns-administrative-domains>DNS Administrative Domains</a></li><li><a href=#dns-name-servers>DNS Name Servers</a></li><li><a href=#dns-clients-and-the-resolver>DNS Clients and the Resolver</a></li><li><a href=#introducing-the-dns-namespace>Introducing the DNS Namespace</a>
 <ul>
-<li><a href=#dns-namespace-hierarchy>DNS Namespace Hierarchy</a></li>
-</ul>
-</li>
-<li><a href=#dns-hierarchy-in-a-local-domain>DNS Hierarchy in a Local Domain</a></li>
-<li><a href=#dns-hierarchy-and-the-internet>DNS Hierarchy and the Internet</a></li>
-<li><a href=#joining-the-internet>Joining the Internet</a></li>
-<li><a href=#domain-names>Domain Names</a></li>
-<li><a href=#fully-qualified-domain-names>Fully-Qualified Domain Names</a></li>
-<li><a href=#zones>Zones</a></li>
-<li><a href=#reverse-mapping>Reverse Mapping</a></li>
-<li><a href=#the-in-addrarpa-domain>The in-addr.arpa Domain</a></li>
-<li><a href=#dns-servers>DNS Servers</a></li>
-</ul>
-</li>
-<li><a href=#prerequisites>Prerequisites</a>
+<li><a href=#dns-namespace-hierarchy>DNS Namespace Hierarchy</a></li></ul></li><li><a href=#dns-hierarchy-in-a-local-domain>DNS Hierarchy in a Local Domain</a></li><li><a href=#dns-hierarchy-and-the-internet>DNS Hierarchy and the Internet</a></li><li><a href=#joining-the-internet>Joining the Internet</a></li><li><a href=#domain-names>Domain Names</a></li><li><a href=#fully-qualified-domain-names>Fully-Qualified Domain Names</a></li><li><a href=#zones>Zones</a></li><li><a href=#reverse-mapping>Reverse Mapping</a></li><li><a href=#the-in-addrarpa-domain>The in-addr.arpa Domain</a></li><li><a href=#dns-servers>DNS Servers</a></li></ul></li><li><a href=#prerequisites>Prerequisites</a>
 <ul>
-<li><a href=#example-infrastructure-and-goals>Example Infrastructure and Goals</a></li>
-</ul>
-</li>
-<li><a href=#installing-bind-on-dns-servers>Installing BIND on DNS Servers</a>
+<li><a href=#example-infrastructure-and-goals>Example Infrastructure and Goals</a></li></ul></li><li><a href=#installing-bind-on-dns-servers>Installing BIND on DNS Servers</a>
 <ul>
-<li><a href=#step-1--update-system>Step 1- Update System</a></li>
-<li><a href=#step-2--install-dns-package>Step 2 – Install DNS package</a></li>
-<li><a href=#step-3--install-dns-utilities>Step 3 – Install DNS Utilities</a></li>
-<li><a href=#setting-bind-to-ipv4-mode>Setting Bind to IPv4 Mode</a></li>
-<li><a href=#configuring-the-primary-dns-server>Configuring the Primary DNS Server</a>
+<li><a href=#step-1--update-system>Step 1- Update System</a></li><li><a href=#step-2--install-dns-package>Step 2 – Install DNS package</a></li><li><a href=#step-3--install-dns-utilities>Step 3 – Install DNS Utilities</a></li><li><a href=#setting-bind-to-ipv4-mode>Setting Bind to IPv4 Mode</a></li><li><a href=#configuring-the-primary-dns-server>Configuring the Primary DNS Server</a>
 <ul>
-<li><a href=#configuring-the-options-file>Configuring the Options File</a></li>
-</ul>
-</li>
-<li><a href=#step-4--dns-configuration>Step 4 – DNS Configuration</a></li>
-<li><a href=#step-5--configuring-nameserver>Step 5 – Configuring NameServer</a></li>
-</ul>
-</li>
-<li><a href=#tips>TIPS</a>
+<li><a href=#configuring-the-options-file>Configuring the Options File</a></li></ul></li><li><a href=#step-4--dns-configuration>Step 4 – DNS Configuration</a></li><li><a href=#step-5--configuring-nameserver>Step 5 – Configuring NameServer</a></li></ul></li><li><a href=#tips>TIPS</a>
 <ul>
-<li><a href=#show-you-currently-dns>Show you currently DNS</a></li>
-</ul>
-</li>
-</ul>
-</nav></div>
-</div><div class=content id=content><h2 id=introduction>Introduction</h2>
-<p>DNS is a short abbreviation for Domain Name Service which maps the IP and FQDN (Fully Qualified Domain Names) to one another. And by that, the DNS makes it easy to remember the IP. Name servers are the computers that run the DNS.</p>
-<p>So in this tutorial, we are going to install and configure DNS on Ubuntu. Through this tutorial, we will use one of the most common programs used for handling the name server on Ubuntu that is BIND (which is an abbreviation for Berkley Internet Naming Daemon).</p>
-<p>An important part of managing server configuration and infrastructure includes maintaining an easy way to look up network interfaces and IP addresses by name, by setting up a proper Domain Name System (DNS). Using fully qualified domain names (FQDNs), instead of IP addresses, to specify network addresses eases the configuration of services and applications, and increases the maintainability of configuration files. Setting up your own DNS for your private network is a great way to improve the management of your servers.</p>
-<p>In this tutorial, we will go over how to set up an internal DNS server, using the BIND name server software (BIND9) on Ubuntu 18.04, that can be used by your servers to resolve private hostnames and private IP addresses. This provides a central way to manage your internal hostnames and private IP addresses, which is indispensable when your environment expands to more than a few hosts.</p>
-<p><a href=http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/ target=_blank rel="noopener noreferrer">http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/</a></p>
-<h2 id=dns-basics>DNS Basics</h2>
-<p>The Domain Name System (DNS) is an application-layer protocol that is part of the standard TCP/IP protocol suite. This protocol implements the DNS name service, which is the name service used on the Internet.</p>
-<h3 id=name-to-address-resolution>Name-to-Address Resolution</h3>
-<p>Though it supports the complex, world-wide hierarchy of computers on the Internet, the basic function of DNS is actually very simple: providing name-to-address resolution for TCP/IP-based networks. Name-to-address resolution, also referred to as &ldquo;mapping,&rdquo; is the process of finding the IP address of a computer in a database by using its host name as an index.</p>
-<p>Name-to-address mapping occurs when a program running on your local machine needs to contact a remote computer. The program most likely will know the host name of the remote computer but may not know how to locate it, particularly if the remote machine is in another company, miles from your site. To get the remote machine&rsquo;s address, the program requests assistance from the DNS software running on your local machine, which is considered a DNS client.</p>
-<p>Your machine sends a request to a DNS name server, which maintains the distributed DNS database. The files in the DNS database bear little resemblance to the NIS+ host or ipnodes Table or even the local /etc/hosts or /etc/inet/ipnodes file, though they maintain similar information: the host names, the ipnode names, IPv4 and IPv6 addresses, and other information about a particular group of computers. The name server uses the host name your machine sent as part of its request to find or &ldquo;resolve&rdquo; the IP address of the remote machine. It then returns this IP address to your local machine IF the host name is in its DNS database.</p>
-<p>Below image shows name-to-address mapping as it occurs between a DNS client and a name server, probably on the client&rsquo;s local network.
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2384.epsi.gif data-srcset="https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2384.epsi.gif, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2384.epsi.gif 1.5x, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2384.epsi.gif 2x" data-sizes=auto alt=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2384.epsi.gif title=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2384.epsi.gif></p>
-<p>If the host name is not in that name server&rsquo;s DNS database, this indicates that the machine is outside of its authority, or, to use DNS terminology, outside the local administrative domain. Thus, each name server is spoken of as being &ldquo;authoritative&rdquo; for its local administrative domain.</p>
-<p>Fortunately, the local name server maintains a list of host names and IP addresses of root domain name servers, to which it will forward the request from your machine. These root name servers are authoritative for huge organizational domains, as explained fully in &ldquo;DNS Hierarchy and the Internet&rdquo;. These hierarchies resemble UNIX file systems, in that they are organized into an upside-down tree structure.</p>
-<p>Each root name server maintains the host names and IP address of top level domain name servers for a company, a university, or other large organizations. The root name server sends your request to the top-level name servers that it knows about. If one of these servers has the IP address for the host you requested, it will return the information to your machine. If the top-level servers do not know about the host you requested, they pass the request to second-level name servers for which they maintain information. Your request is then passed on down through the vast organizational tree. Eventually, a name server that has information about your requested host in its database will return the IP address back to your machine.</p>
-<p>Image shows name-to-address resolution outside the local domain at the below.
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2385.epsi.gif data-srcset="https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2385.epsi.gif, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2385.epsi.gif 1.5x, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2385.epsi.gif 2x" data-sizes=auto alt=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2385.epsi.gif title=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2385.epsi.gif></p>
-<h3 id=dns-administrative-domains>DNS Administrative Domains</h3>
-<p>From a DNS perspective, an administrative domain is a group of machines that are administered as a unit. Information about this domain is maintained by at least two name servers; they are &ldquo;authoritative&rdquo; for the domain. The DNS domain is a purely logical grouping of machines. It could correspond to a physical grouping of machines, such as all machines attached to the Ethernet in a small business. But a local DNS domain just as likely could include all machines on a vast university network that belong to the computer science department or to university administration.</p>
-<p>For example, suppose the Ajax company has two sites, one in San Francisco and one in Seattle. The Retail.Sales.Ajax.com. domain might be in Seattle and the Wholesale.Sales.Ajax.com. domain might be in San Francisco. One part of the Sales.Ajax.com. domain would be in one city, the other part in the second city.</p>
-<p>Each administrative domain must have its own unique subdomain name. Moreover, if you want your network to participate in the Internet, the network must be part of a registered administrative domain. The section &ldquo;Joining the Internet&rdquo; has full details about domain names and domain registration.</p>
-<h3 id=dns-name-servers>DNS Name Servers</h3>
-<p>There are three types of DNS name servers:</p>
-<ul>
-<li>Primary server</li>
-<li>Secondary server</li>
-<li>Cache-only server</li>
-</ul>
-<p>Each domain must have one primary server and should have at least one secondary server to provide backup. &ldquo;Zones&rdquo; explains primary and secondary servers in detail.</p>
-<h3 id=dns-clients-and-the-resolver>DNS Clients and the Resolver</h3>
-<p>To be a DNS client, a machine must run the resolver. The resolver is neither a daemon nor a single program; rather, it is a set of dynamic library routines used by applications that need to know machine names. The resolver&rsquo;s function is to resolve users' queries. To do that, it queries a name server, which then returns either the requested information or a referral to another server. Once the resolver is configured, a machine can request DNS service from a name server.</p>
-<p>When a machine&rsquo;s /etc/nsswitch.conf file specifies hosts: dns (or any other variant that includes dns in the hosts line), the resolver libraries are automatically used. If the nsswitch.conf file specifies some other name service before dns, that name service is consulted first for host information and only if that name service does not find the host in question are the resolver libraries used.</p>
-<p>For example, if the hosts line in the nsswitch.conf file specifies hosts: nisplus dns, the NIS+ name service will first be searched for host information. If the information is not found in NIS+, then the DNS resolver is used. Since name services such as NIS+ and NIS only contain information about hosts in their own network, the effect of a hosts:nisplus dns line in a switch file is to specify the use of NIS+ for local host information and DNS for information on remote hosts out on the Internet.</p>
-<p>There are two kinds of DNS clients:</p>
-<ul>
+<li><a href=#show-you-currently-dns>Show you currently DNS</a></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=introduction>Introduction</h2><p>DNS is a short abbreviation for Domain Name Service which maps the IP and FQDN (Fully Qualified Domain Names) to one another. And by that, the DNS makes it easy to remember the IP. Name servers are the computers that run the DNS.</p><p>So in this tutorial, we are going to install and configure DNS on Ubuntu. Through this tutorial, we will use one of the most common programs used for handling the name server on Ubuntu that is BIND (which is an abbreviation for Berkley Internet Naming Daemon).</p><p>An important part of managing server configuration and infrastructure includes maintaining an easy way to look up network interfaces and IP addresses by name, by setting up a proper Domain Name System (DNS). Using fully qualified domain names (FQDNs), instead of IP addresses, to specify network addresses eases the configuration of services and applications, and increases the maintainability of configuration files. Setting up your own DNS for your private network is a great way to improve the management of your servers.</p><p>In this tutorial, we will go over how to set up an internal DNS server, using the BIND name server software (BIND9) on Ubuntu 18.04, that can be used by your servers to resolve private hostnames and private IP addresses. This provides a central way to manage your internal hostnames and private IP addresses, which is indispensable when your environment expands to more than a few hosts.</p><p><a href=http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/ target=_blank rel="noopener noreferrer">http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/</a></p><h2 id=dns-basics>DNS Basics</h2><p>The Domain Name System (DNS) is an application-layer protocol that is part of the standard TCP/IP protocol suite. This protocol implements the DNS name service, which is the name service used on the Internet.</p><h3 id=name-to-address-resolution>Name-to-Address Resolution</h3><p>Though it supports the complex, world-wide hierarchy of computers on the Internet, the basic function of DNS is actually very simple: providing name-to-address resolution for TCP/IP-based networks. Name-to-address resolution, also referred to as &ldquo;mapping,&rdquo; is the process of finding the IP address of a computer in a database by using its host name as an index.</p><p>Name-to-address mapping occurs when a program running on your local machine needs to contact a remote computer. The program most likely will know the host name of the remote computer but may not know how to locate it, particularly if the remote machine is in another company, miles from your site. To get the remote machine&rsquo;s address, the program requests assistance from the DNS software running on your local machine, which is considered a DNS client.</p><p>Your machine sends a request to a DNS name server, which maintains the distributed DNS database. The files in the DNS database bear little resemblance to the NIS+ host or ipnodes Table or even the local /etc/hosts or /etc/inet/ipnodes file, though they maintain similar information: the host names, the ipnode names, IPv4 and IPv6 addresses, and other information about a particular group of computers. The name server uses the host name your machine sent as part of its request to find or &ldquo;resolve&rdquo; the IP address of the remote machine. It then returns this IP address to your local machine IF the host name is in its DNS database.</p><p>Below image shows name-to-address mapping as it occurs between a DNS client and a name server, probably on the client&rsquo;s local network.
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2384.epsi.gif data-srcset="https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2384.epsi.gif, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2384.epsi.gif 1.5x, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2384.epsi.gif 2x" data-sizes=auto alt=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2384.epsi.gif title=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2384.epsi.gif></p><p>If the host name is not in that name server&rsquo;s DNS database, this indicates that the machine is outside of its authority, or, to use DNS terminology, outside the local administrative domain. Thus, each name server is spoken of as being &ldquo;authoritative&rdquo; for its local administrative domain.</p><p>Fortunately, the local name server maintains a list of host names and IP addresses of root domain name servers, to which it will forward the request from your machine. These root name servers are authoritative for huge organizational domains, as explained fully in &ldquo;DNS Hierarchy and the Internet&rdquo;. These hierarchies resemble UNIX file systems, in that they are organized into an upside-down tree structure.</p><p>Each root name server maintains the host names and IP address of top level domain name servers for a company, a university, or other large organizations. The root name server sends your request to the top-level name servers that it knows about. If one of these servers has the IP address for the host you requested, it will return the information to your machine. If the top-level servers do not know about the host you requested, they pass the request to second-level name servers for which they maintain information. Your request is then passed on down through the vast organizational tree. Eventually, a name server that has information about your requested host in its database will return the IP address back to your machine.</p><p>Image shows name-to-address resolution outside the local domain at the below.
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2385.epsi.gif data-srcset="https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2385.epsi.gif, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2385.epsi.gif 1.5x, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2385.epsi.gif 2x" data-sizes=auto alt=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2385.epsi.gif title=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2385.epsi.gif></p><h3 id=dns-administrative-domains>DNS Administrative Domains</h3><p>From a DNS perspective, an administrative domain is a group of machines that are administered as a unit. Information about this domain is maintained by at least two name servers; they are &ldquo;authoritative&rdquo; for the domain. The DNS domain is a purely logical grouping of machines. It could correspond to a physical grouping of machines, such as all machines attached to the Ethernet in a small business. But a local DNS domain just as likely could include all machines on a vast university network that belong to the computer science department or to university administration.</p><p>For example, suppose the Ajax company has two sites, one in San Francisco and one in Seattle. The Retail.Sales.Ajax.com. domain might be in Seattle and the Wholesale.Sales.Ajax.com. domain might be in San Francisco. One part of the Sales.Ajax.com. domain would be in one city, the other part in the second city.</p><p>Each administrative domain must have its own unique subdomain name. Moreover, if you want your network to participate in the Internet, the network must be part of a registered administrative domain. The section &ldquo;Joining the Internet&rdquo; has full details about domain names and domain registration.</p><h3 id=dns-name-servers>DNS Name Servers</h3><p>There are three types of DNS name servers:</p><ul>
+<li>Primary server</li><li>Secondary server</li><li>Cache-only server</li></ul><p>Each domain must have one primary server and should have at least one secondary server to provide backup. &ldquo;Zones&rdquo; explains primary and secondary servers in detail.</p><h3 id=dns-clients-and-the-resolver>DNS Clients and the Resolver</h3><p>To be a DNS client, a machine must run the resolver. The resolver is neither a daemon nor a single program; rather, it is a set of dynamic library routines used by applications that need to know machine names. The resolver&rsquo;s function is to resolve users&rsquo; queries. To do that, it queries a name server, which then returns either the requested information or a referral to another server. Once the resolver is configured, a machine can request DNS service from a name server.</p><p>When a machine&rsquo;s /etc/nsswitch.conf file specifies hosts: dns (or any other variant that includes dns in the hosts line), the resolver libraries are automatically used. If the nsswitch.conf file specifies some other name service before dns, that name service is consulted first for host information and only if that name service does not find the host in question are the resolver libraries used.</p><p>For example, if the hosts line in the nsswitch.conf file specifies hosts: nisplus dns, the NIS+ name service will first be searched for host information. If the information is not found in NIS+, then the DNS resolver is used. Since name services such as NIS+ and NIS only contain information about hosts in their own network, the effect of a hosts:nisplus dns line in a switch file is to specify the use of NIS+ for local host information and DNS for information on remote hosts out on the Internet.</p><p>There are two kinds of DNS clients:</p><ul>
 <li>
-<p>Client-only. A client-only DNS client does not run in.named; instead, it consults the resolver. The resolver knows about a list of name servers for the domain, to which queries are then directed.</p>
-</li>
-<li>
-<p>Client-server. A client-server uses the services provided by in.named to resolve queries forwarded to it by client-machine resolvers.</p>
-</li>
-</ul>
-<h3 id=introducing-the-dns-namespace>Introducing the DNS Namespace</h3>
-<p>The entire collection of DNS administrative domains throughout the world are organized in a hierarchy called the DNS namespace. This section shows how the namespace organization affects both local domains and the Internet.</p>
-<h4 id=dns-namespace-hierarchy>DNS Namespace Hierarchy</h4>
-<p>Like the UNIX file system, DNS domains are organized as a set of descending branches similar to the roots of a tree. Each branch is a domain, each subbranch is a subdomain. The terms domain and subdomain are relative. A given domain is a subdomain relative to those domains above it in the hierarchy, and a parent domain to the subdomains below it.</p>
-<p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2386.epsi.gif data-srcset="https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2386.epsi.gif, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2386.epsi.gif 1.5x, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2386.epsi.gif 2x" data-sizes=auto alt=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2386.epsi.gif title=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2386.epsi.gif>
-For example, in Figure 28-3, com is a parent domain to the Acme, Ajax, and AAA domains. Or you could just as easily say that those are subdomains relative to the com domain. In its turn, the Ajax domain is a parent to four subdomains (Sales, Manf, QA, and Corp).</p>
-<p>A domain contains one parent (or top) domain plus the associated subdomains if any. Domains are named up the tree starting with the lowest (deepest) subdomain and ending with the root domain. For example, Mktg.Corp.Ajax.Com. from Figure 28-3.</p>
-<h3 id=dns-hierarchy-in-a-local-domain>DNS Hierarchy in a Local Domain</h3>
-<p>If your company is large enough, it may support a number of domains,organized into a local namespace. Figure 28-4 shows a domain hierarchy that might be in place in a single company. The top-level, or &ldquo;root&rdquo; domain for the organization is ajax.com, which has three sub-domains, sales.ajax.com, test.ajax.com, and manf.ajax.com.</p>
-<p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2387.epsi.gif data-srcset="https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2387.epsi.gif, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2387.epsi.gif 1.5x, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2387.epsi.gif 2x" data-sizes=auto alt=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2387.epsi.gif title=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2387.epsi.gif></p>
-<p>DNS clients request service only from the servers that support their domain. If the domain&rsquo;s server does not have the information the client needs, it forwards the request to its parent server, which is the server in the next-higher domain in the hierarchy. If the request reaches the top-level server, the top-level server determines whether the domain is valid. If it is not valid, the server returns a &ldquo;not found&rdquo; type message to the client. If the domain is valid, the server routes the request down to the server that supports that domain.</p>
-<h3 id=dns-hierarchy-and-the-internet>DNS Hierarchy and the Internet</h3>
-<p>The domain hierarchy shown in Figure 28-4 is, conceptually, a &ldquo;leaf&rdquo; of the huge DNS namespace supported on the global Internet.</p>
-<p>The DNS namespace for the Internet is organized hierarchically as shown in Figure 28-5. It consists of the root directory, represented as a dot (.) and two top level domain hierarchies, one organizational and one geographical. Note that the com domain introduced in Figure 28-3 is one of a number of top-level organizational domains in existence on the Internet.</p>
-<p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2388.epsi.gif data-srcset="https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2388.epsi.gif, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2388.epsi.gif 1.5x, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2388.epsi.gif 2x" data-sizes=auto alt=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2388.epsi.gif title=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2388.epsi.gif></p>
-<p>At the present time, the organizational hierarchy divides its namespace into the top-level domains listed shown in Table 28-1. It is probable that additional top-level organizational domains will be added in the future.</p>
-<table>
+<p>Client-only. A client-only DNS client does not run in.named; instead, it consults the resolver. The resolver knows about a list of name servers for the domain, to which queries are then directed.</p></li><li>
+<p>Client-server. A client-server uses the services provided by in.named to resolve queries forwarded to it by client-machine resolvers.</p></li></ul><h3 id=introducing-the-dns-namespace>Introducing the DNS Namespace</h3><p>The entire collection of DNS administrative domains throughout the world are organized in a hierarchy called the DNS namespace. This section shows how the namespace organization affects both local domains and the Internet.</p><h4 id=dns-namespace-hierarchy>DNS Namespace Hierarchy</h4><p>Like the UNIX file system, DNS domains are organized as a set of descending branches similar to the roots of a tree. Each branch is a domain, each subbranch is a subdomain. The terms domain and subdomain are relative. A given domain is a subdomain relative to those domains above it in the hierarchy, and a parent domain to the subdomains below it.</p><p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2386.epsi.gif data-srcset="https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2386.epsi.gif, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2386.epsi.gif 1.5x, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2386.epsi.gif 2x" data-sizes=auto alt=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2386.epsi.gif title=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2386.epsi.gif>
+For example, in Figure 28-3, com is a parent domain to the Acme, Ajax, and AAA domains. Or you could just as easily say that those are subdomains relative to the com domain. In its turn, the Ajax domain is a parent to four subdomains (Sales, Manf, QA, and Corp).</p><p>A domain contains one parent (or top) domain plus the associated subdomains if any. Domains are named up the tree starting with the lowest (deepest) subdomain and ending with the root domain. For example, Mktg.Corp.Ajax.Com. from Figure 28-3.</p><h3 id=dns-hierarchy-in-a-local-domain>DNS Hierarchy in a Local Domain</h3><p>If your company is large enough, it may support a number of domains,organized into a local namespace. Figure 28-4 shows a domain hierarchy that might be in place in a single company. The top-level, or &ldquo;root&rdquo; domain for the organization is ajax.com, which has three sub-domains, sales.ajax.com, test.ajax.com, and manf.ajax.com.</p><p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2387.epsi.gif data-srcset="https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2387.epsi.gif, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2387.epsi.gif 1.5x, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2387.epsi.gif 2x" data-sizes=auto alt=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2387.epsi.gif title=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2387.epsi.gif></p><p>DNS clients request service only from the servers that support their domain. If the domain&rsquo;s server does not have the information the client needs, it forwards the request to its parent server, which is the server in the next-higher domain in the hierarchy. If the request reaches the top-level server, the top-level server determines whether the domain is valid. If it is not valid, the server returns a &ldquo;not found&rdquo; type message to the client. If the domain is valid, the server routes the request down to the server that supports that domain.</p><h3 id=dns-hierarchy-and-the-internet>DNS Hierarchy and the Internet</h3><p>The domain hierarchy shown in Figure 28-4 is, conceptually, a &ldquo;leaf&rdquo; of the huge DNS namespace supported on the global Internet.</p><p>The DNS namespace for the Internet is organized hierarchically as shown in Figure 28-5. It consists of the root directory, represented as a dot (.) and two top level domain hierarchies, one organizational and one geographical. Note that the com domain introduced in Figure 28-3 is one of a number of top-level organizational domains in existence on the Internet.</p><p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2388.epsi.gif data-srcset="https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2388.epsi.gif, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2388.epsi.gif 1.5x, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2388.epsi.gif 2x" data-sizes=auto alt=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2388.epsi.gif title=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2388.epsi.gif></p><p>At the present time, the organizational hierarchy divides its namespace into the top-level domains listed shown in Table 28-1. It is probable that additional top-level organizational domains will be added in the future.</p><table>
 <thead>
 <tr>
-<th>Domain</th>
-<th style=text-align:center>Purpose</th>
-</tr>
-</thead>
-<tbody>
+<th>Domain</th><th style=text-align:center>Purpose</th></tr></thead><tbody>
 <tr>
-<td>com</td>
-<td style=text-align:center>Commercial organizations</td>
-</tr>
-<tr>
-<td>edu</td>
-<td style=text-align:center>Educational institutions</td>
-</tr>
-<tr>
-<td>gov</td>
-<td style=text-align:center>Government institutions</td>
-</tr>
-<tr>
-<td>mil</td>
-<td style=text-align:center>Military groups</td>
-</tr>
-<tr>
-<td>net</td>
-<td style=text-align:center>Major network support centers</td>
-</tr>
-<tr>
-<td>org</td>
-<td style=text-align:center>Nonprofit organizations and others</td>
-</tr>
-<tr>
-<td>int</td>
-<td style=text-align:center>International organizations</td>
-</tr>
-</tbody>
-</table>
-<p>The geographic hierarchy assigns each country in the world a two- or three-letter identifier and provides official names for the geographic regions within each country. For example, domains in Britain are subdomains of the uk top-level domain, Japanese domains are subdomains of jp, and so on.</p>
-<h3 id=joining-the-internet>Joining the Internet</h3>
-<p>The Internet root domain, top-level domains (organizational and geographical) are maintained by the various Internet governing bodies. People with networks of any size can &ldquo;join&rdquo; the Internet by registering their domain name in either the organizational or the geographical hierarchy.</p>
-<p>Every DNS domain must have a domain name. If your site wants to use DNS for name service without connecting to the Internet, you can use any name your organization wants for its your domains and subdomains, if applicable. However, if your site plans wants to join the Internet, it must register its domain name with the Internet governing bodies.</p>
-<p>To join the Internet, you have to:</p>
-<ul>
-<li>Register your DNS domain name with the an appropriate Internet governing body.</li>
-<li>Obtain a network IP address from that governing body.</li>
-</ul>
-<p>There are two ways to accomplish this:</p>
-<ul>
+<td>com</td><td style=text-align:center>Commercial organizations</td></tr><tr>
+<td>edu</td><td style=text-align:center>Educational institutions</td></tr><tr>
+<td>gov</td><td style=text-align:center>Government institutions</td></tr><tr>
+<td>mil</td><td style=text-align:center>Military groups</td></tr><tr>
+<td>net</td><td style=text-align:center>Major network support centers</td></tr><tr>
+<td>org</td><td style=text-align:center>Nonprofit organizations and others</td></tr><tr>
+<td>int</td><td style=text-align:center>International organizations</td></tr></tbody></table><p>The geographic hierarchy assigns each country in the world a two- or three-letter identifier and provides official names for the geographic regions within each country. For example, domains in Britain are subdomains of the uk top-level domain, Japanese domains are subdomains of jp, and so on.</p><h3 id=joining-the-internet>Joining the Internet</h3><p>The Internet root domain, top-level domains (organizational and geographical) are maintained by the various Internet governing bodies. People with networks of any size can &ldquo;join&rdquo; the Internet by registering their domain name in either the organizational or the geographical hierarchy.</p><p>Every DNS domain must have a domain name. If your site wants to use DNS for name service without connecting to the Internet, you can use any name your organization wants for its your domains and subdomains, if applicable. However, if your site plans wants to join the Internet, it must register its domain name with the Internet governing bodies.</p><p>To join the Internet, you have to:</p><ul>
+<li>Register your DNS domain name with the an appropriate Internet governing body.</li><li>Obtain a network IP address from that governing body.</li></ul><p>There are two ways to accomplish this:</p><ul>
 <li>
-<p>You can communicate directly with the appropriate Internet governing body or their agent. In the United States, InterNIC is the company that currently handles network address and domain registration matters.</p>
-</li>
-<li>
-<p>You can contract with an Internet Service Provider (ISP) to assist you. ISPs provide a wide range of services from consulting to actually hosting your Internet presence.</p>
-</li>
-</ul>
-<h3 id=domain-names>Domain Names</h3>
-<p>Domain names indicate a domain&rsquo;s position in the overall DNS namespace, much as path names indicate a file&rsquo;s position in the UNIX file system. After your local domain is registered, its name is prepended to the name of the Internet hierarchy to which it belongs. For example, the ajax domain shown in Figure 28-4 has been registered as part of the Internet com hierarchy. Therefore, its Internet domain name becomes ajax.com.</p>
-<p>Figure 28-6 shows the position of the ajax.com domain in the DNS namespace on the Internet.
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2389.epsi.gif data-srcset="https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2389.epsi.gif, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2389.epsi.gif 1.5x, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2389.epsi.gif 2x" data-sizes=auto alt=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2389.epsi.gif title=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2389.epsi.gif></p>
-<p>The ajax.com subdomains now have the following names.</p>
-<ul>
-<li>sales.ajax.com</li>
-<li>test.ajax.com</li>
-<li>manf.ajax.com</li>
-</ul>
-<p>DNS does not require domain names to be capitalized, though they may be. Here are some examples of machines and domain names:</p>
-<ul>
-<li>Boss.manf.ajax.com</li>
-<li>quota.Sales.ajax.com</li>
-</ul>
-<p>The Internet organization regulates administration of its domains by granting each domain authority over the names of its hosts and by expecting each domain to delegate authority to the levels below it. Thus, the com domain has authority over the names of the hosts in its domain. It also authorizes the formation of the Ajax.com domain and delegates authority over the names in that domain. The Ajax.com domain, in turn, assigns names to the hosts in its domain and approves the formation of the Sales.Ajax.com, Test.Ajax.com, and Manf.Ajax.com domains.</p>
-<h3 id=fully-qualified-domain-names>Fully-Qualified Domain Names</h3>
-<p>A domain name is said to be fully-qualified when it includes the names of every DNS domain from the local domain on up to &ldquo;.&rdquo;, the DNS root domain. Conceptually, the fully-qualified domain name indicates the path to the root, as does the absolute path name of a UNIX file. However, fully-qualified domain names are read from lowest, on the left, to highest, on the right. Therefore, a fully-qualified domain name has the syntax:</p>
-<p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2390.epsi.gif data-srcset="https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2390.epsi.gif, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2390.epsi.gif 1.5x, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2390.epsi.gif 2x" data-sizes=auto alt=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2390.epsi.gif title=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2390.epsi.gif></p>
-<p>The fully qualified domain names for the ajax domain and its subdomains are:</p>
-<ul>
-<li>ajax.com.</li>
-<li>sales.ajax.com</li>
-<li>test.ajax.com.</li>
-<li>manf.ajax.com</li>
-</ul>
-<h3 id=zones>Zones</h3>
-<p>DNS service for a domain is managed on the set of name servers first introduced &ldquo;in.named and DNS Name Servers&rdquo;. Name servers can manage a single domain, or multiple domains, or domains and some or all of their corresponding subdomains. The part of the namespace that a given name server controls is called a zone; thus, the name server is said to be authoritative for the zone. If you are responsible for a particular name server, you may be given the title zone administrator.</p>
-<p>The data in a name server&rsquo;s database are called zone files. One type of zone file stores IP addresses and host names. When someone attempts to connect to a remote host using a host name by a utility like ftp or telnet, DNS performs name-to-address mapping, by looking up the host name in the zone file and converting it into its IP address.</p>
-<p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2391.epsi.gif data-srcset="https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2391.epsi.gif, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2391.epsi.gif 1.5x, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2391.epsi.gif 2x" data-sizes=auto alt=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2391.epsi.gif title=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2391.epsi.gif></p>
-<p>For example, the Ajax domain shown in Figure 28-7 contains a top domain (Ajax), four subdomains, and five sub-subdomains. It is divided into four zones shown by the thick lines. Thus, the Ajax name server administers a zone composed of the Ajax, Sales, Retail, and Wholesale domains. The Manf and QA domains are zones unto themselves served by their own name servers, and the Corp name server manages a zone composed of the Corp, Actg, Finance, and Mktg domains.</p>
-<h3 id=reverse-mapping>Reverse Mapping</h3>
-<p>The DNS database also include zone files that use the IP address as a key to find the host name of the machine, enabling IP address to host name resolution. This process is called reverse resolution or more commonly, reverse mapping. Reverse mapping is used primarily to verify the identity of the machine that sent a message or to authorize remote operations on a local host.</p>
-<h3 id=the-in-addrarpa-domain>The in-addr.arpa Domain</h3>
-<p>The in-addr.arpa domain is a conceptual part of the DNS namespace that uses IP addresses for its leaves, rather than domain names. It is the part of your zone that enables address-to-name mapping.</p>
-<p>Just as DNS domain names are read with the lowest level subdomain occupying the furthest left position and the root at the far right, in-addr.arpa domain IP addresses are read from lowest level to the root. Thus, the IP addresses are read backward. For example, suppose a host has the IP address 192.200.21.165. In the in-addr.arpa zone files, its address is listed as 165.21.200.192.in-addr.arpa. with the dot at the end indicating the root of the in-addr.arpa domain.</p>
-<h3 id=dns-servers>DNS Servers</h3>
-<p><a href=http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/ target=_blank rel="noopener noreferrer">http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/</a></p>
-<div class=highlight><div class=chroma>
+<p>You can communicate directly with the appropriate Internet governing body or their agent. In the United States, InterNIC is the company that currently handles network address and domain registration matters.</p></li><li>
+<p>You can contract with an Internet Service Provider (ISP) to assist you. ISPs provide a wide range of services from consulting to actually hosting your Internet presence.</p></li></ul><h3 id=domain-names>Domain Names</h3><p>Domain names indicate a domain&rsquo;s position in the overall DNS namespace, much as path names indicate a file&rsquo;s position in the UNIX file system. After your local domain is registered, its name is prepended to the name of the Internet hierarchy to which it belongs. For example, the ajax domain shown in Figure 28-4 has been registered as part of the Internet com hierarchy. Therefore, its Internet domain name becomes ajax.com.</p><p>Figure 28-6 shows the position of the ajax.com domain in the DNS namespace on the Internet.
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2389.epsi.gif data-srcset="https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2389.epsi.gif, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2389.epsi.gif 1.5x, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2389.epsi.gif 2x" data-sizes=auto alt=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2389.epsi.gif title=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2389.epsi.gif></p><p>The ajax.com subdomains now have the following names.</p><ul>
+<li>sales.ajax.com</li><li>test.ajax.com</li><li>manf.ajax.com</li></ul><p>DNS does not require domain names to be capitalized, though they may be. Here are some examples of machines and domain names:</p><ul>
+<li>Boss.manf.ajax.com</li><li>quota.Sales.ajax.com</li></ul><p>The Internet organization regulates administration of its domains by granting each domain authority over the names of its hosts and by expecting each domain to delegate authority to the levels below it. Thus, the com domain has authority over the names of the hosts in its domain. It also authorizes the formation of the Ajax.com domain and delegates authority over the names in that domain. The Ajax.com domain, in turn, assigns names to the hosts in its domain and approves the formation of the Sales.Ajax.com, Test.Ajax.com, and Manf.Ajax.com domains.</p><h3 id=fully-qualified-domain-names>Fully-Qualified Domain Names</h3><p>A domain name is said to be fully-qualified when it includes the names of every DNS domain from the local domain on up to &ldquo;.&rdquo;, the DNS root domain. Conceptually, the fully-qualified domain name indicates the path to the root, as does the absolute path name of a UNIX file. However, fully-qualified domain names are read from lowest, on the left, to highest, on the right. Therefore, a fully-qualified domain name has the syntax:</p><p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2390.epsi.gif data-srcset="https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2390.epsi.gif, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2390.epsi.gif 1.5x, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2390.epsi.gif 2x" data-sizes=auto alt=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2390.epsi.gif title=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2390.epsi.gif></p><p>The fully qualified domain names for the ajax domain and its subdomains are:</p><ul>
+<li>ajax.com.</li><li>sales.ajax.com</li><li>test.ajax.com.</li><li>manf.ajax.com</li></ul><h3 id=zones>Zones</h3><p>DNS service for a domain is managed on the set of name servers first introduced &ldquo;in.named and DNS Name Servers&rdquo;. Name servers can manage a single domain, or multiple domains, or domains and some or all of their corresponding subdomains. The part of the namespace that a given name server controls is called a zone; thus, the name server is said to be authoritative for the zone. If you are responsible for a particular name server, you may be given the title zone administrator.</p><p>The data in a name server&rsquo;s database are called zone files. One type of zone file stores IP addresses and host names. When someone attempts to connect to a remote host using a host name by a utility like ftp or telnet, DNS performs name-to-address mapping, by looking up the host name in the zone file and converting it into its IP address.</p><p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2391.epsi.gif data-srcset="https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2391.epsi.gif, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2391.epsi.gif 1.5x, https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2391.epsi.gif 2x" data-sizes=auto alt=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2391.epsi.gif title=https://docs.oracle.com/cd/E19455-01/806-1387/images/ad1intro.fig2391.epsi.gif></p><p>For example, the Ajax domain shown in Figure 28-7 contains a top domain (Ajax), four subdomains, and five sub-subdomains. It is divided into four zones shown by the thick lines. Thus, the Ajax name server administers a zone composed of the Ajax, Sales, Retail, and Wholesale domains. The Manf and QA domains are zones unto themselves served by their own name servers, and the Corp name server manages a zone composed of the Corp, Actg, Finance, and Mktg domains.</p><h3 id=reverse-mapping>Reverse Mapping</h3><p>The DNS database also include zone files that use the IP address as a key to find the host name of the machine, enabling IP address to host name resolution. This process is called reverse resolution or more commonly, reverse mapping. Reverse mapping is used primarily to verify the identity of the machine that sent a message or to authorize remote operations on a local host.</p><h3 id=the-in-addrarpa-domain>The in-addr.arpa Domain</h3><p>The in-addr.arpa domain is a conceptual part of the DNS namespace that uses IP addresses for its leaves, rather than domain names. It is the part of your zone that enables address-to-name mapping.</p><p>Just as DNS domain names are read with the lowest level subdomain occupying the furthest left position and the root at the far right, in-addr.arpa domain IP addresses are read from lowest level to the root. Thus, the IP addresses are read backward. For example, suppose a host has the IP address 192.200.21.165. In the in-addr.arpa zone files, its address is listed as 165.21.200.192.in-addr.arpa. with the dot at the end indicating the root of the in-addr.arpa domain.</p><h3 id=dns-servers>DNS Servers</h3><p><a href=http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/ target=_blank rel="noopener noreferrer">http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/</a></p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -327,42 +140,35 @@ For example, in Figure 28-3, com is a parent domain to the Acme, Ajax, and AAA d
 </span><span class=lnt>18
 </span><span class=lnt>19
 </span><span class=lnt>20
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>yanboyang713@boyang:~$ sudo netstat -pna | grep 53
-</span><span class=go>[sudo] password for yanboyang713: 
-</span><span class=go>tcp        0      0 172.17.0.1:53           0.0.0.0:*               LISTEN      1504/named          
-</span><span class=go>tcp        0      0 172.18.0.1:53           0.0.0.0:*               LISTEN      1504/named          
-</span><span class=go>tcp        0      0 192.168.1.1:53          0.0.0.0:*               LISTEN      1504/named          
-</span><span class=go>tcp        0      0 10.172.1.51:53          0.0.0.0:*               LISTEN      1504/named          
-</span><span class=go>tcp        0      0 127.0.0.1:53            0.0.0.0:*               LISTEN      1504/named          
-</span><span class=go>tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      1141/systemd-resolv 
-</span><span class=go>tcp        0      0 127.0.0.1:953           0.0.0.0:*               LISTEN      1504/named          
-</span><span class=go>tcp6       0      0 2404:f801:18:402::49883 2a01:111:f102:8001::443 ESTABLISHED 17794/537.36 --node 
-</span><span class=go>udp        0      0 0.0.0.0:5353            0.0.0.0:*                           845/avahi-daemon: r 
-</span><span class=go>udp        0      0 172.17.0.1:53           0.0.0.0:*                           1504/named          
-</span><span class=go>udp        0      0 172.18.0.1:53           0.0.0.0:*                           1504/named          
-</span><span class=go>udp        0      0 192.168.1.1:53          0.0.0.0:*                           1504/named          
-</span><span class=go>udp        0      0 10.172.1.51:53          0.0.0.0:*                           1504/named          
-</span><span class=go>udp        0      0 127.0.0.1:53            0.0.0.0:*                           1504/named          
-</span><span class=go>udp        0      0 127.0.0.53:53           0.0.0.0:*                           1141/systemd-resolv 
-</span><span class=go>udp6       0      0 :::60590                :::*                                17794/537.36 --node 
-</span><span class=go>udp6       0      0 :::5353                 :::*                                845/avahi-daemon: r 
-</span><span class=go>udp6       0      0 :::42321                :::*                                17794/537.36 --node 
-</span></code></pre></td></tr></table>
-</div>
-</div><p><a href=https://moss.sh/name-resolution-issue-systemd-resolved/ target=_blank rel="noopener noreferrer">https://moss.sh/name-resolution-issue-systemd-resolved/</a></p>
-<p>systemd-resolved
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>yanboyang713@boyang:~$ sudo netstat -pna | grep 53
+</span></span></span><span class=line><span class=cl><span class=go>[sudo] password for yanboyang713: 
+</span></span></span><span class=line><span class=cl><span class=go>tcp        0      0 172.17.0.1:53           0.0.0.0:*               LISTEN      1504/named          
+</span></span></span><span class=line><span class=cl><span class=go>tcp        0      0 172.18.0.1:53           0.0.0.0:*               LISTEN      1504/named          
+</span></span></span><span class=line><span class=cl><span class=go>tcp        0      0 192.168.1.1:53          0.0.0.0:*               LISTEN      1504/named          
+</span></span></span><span class=line><span class=cl><span class=go>tcp        0      0 10.172.1.51:53          0.0.0.0:*               LISTEN      1504/named          
+</span></span></span><span class=line><span class=cl><span class=go>tcp        0      0 127.0.0.1:53            0.0.0.0:*               LISTEN      1504/named          
+</span></span></span><span class=line><span class=cl><span class=go>tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      1141/systemd-resolv 
+</span></span></span><span class=line><span class=cl><span class=go>tcp        0      0 127.0.0.1:953           0.0.0.0:*               LISTEN      1504/named          
+</span></span></span><span class=line><span class=cl><span class=go>tcp6       0      0 2404:f801:18:402::49883 2a01:111:f102:8001::443 ESTABLISHED 17794/537.36 --node 
+</span></span></span><span class=line><span class=cl><span class=go>udp        0      0 0.0.0.0:5353            0.0.0.0:*                           845/avahi-daemon: r 
+</span></span></span><span class=line><span class=cl><span class=go>udp        0      0 172.17.0.1:53           0.0.0.0:*                           1504/named          
+</span></span></span><span class=line><span class=cl><span class=go>udp        0      0 172.18.0.1:53           0.0.0.0:*                           1504/named          
+</span></span></span><span class=line><span class=cl><span class=go>udp        0      0 192.168.1.1:53          0.0.0.0:*                           1504/named          
+</span></span></span><span class=line><span class=cl><span class=go>udp        0      0 10.172.1.51:53          0.0.0.0:*                           1504/named          
+</span></span></span><span class=line><span class=cl><span class=go>udp        0      0 127.0.0.1:53            0.0.0.0:*                           1504/named          
+</span></span></span><span class=line><span class=cl><span class=go>udp        0      0 127.0.0.53:53           0.0.0.0:*                           1141/systemd-resolv 
+</span></span></span><span class=line><span class=cl><span class=go>udp6       0      0 :::60590                :::*                                17794/537.36 --node 
+</span></span></span><span class=line><span class=cl><span class=go>udp6       0      0 :::5353                 :::*                                845/avahi-daemon: r 
+</span></span></span><span class=line><span class=cl><span class=go>udp6       0      0 :::42321                :::*                                17794/537.36 --node 
+</span></span></span></code></pre></td></tr></table></div></div><p><a href=https://moss.sh/name-resolution-issue-systemd-resolved/ target=_blank rel="noopener noreferrer">https://moss.sh/name-resolution-issue-systemd-resolved/</a></p><p>systemd-resolved
 sudo service bind9 stop
-sudo ip addr add 192.168.1.53/24 dev br0</p>
-<p>docker run -d &ndash;name=bind &ndash;dns=127.0.0.1 <br>
+sudo ip addr add 192.168.1.53/24 dev br0</p><p>docker run -d &ndash;name=bind &ndash;dns=127.0.0.1 <br>
 &ndash;publish=192.168.1.53:53:53/udp &ndash;publish=192.168.1.53:10001:10001 <br>
 &ndash;volume=/srv/docker/bind:/data <br>
 &ndash;env=&lsquo;ROOT_PASSWORD=SecretPassword&rsquo; <br>
-sameersbn/bind:latest</p>
-<p>execute an interactive bash shell on the container.
-docker exec -it bind bash</p>
-<div class=highlight><div class=chroma>
+sameersbn/bind:latest</p><p>execute an interactive bash shell on the container.
+docker exec -it bind bash</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -388,168 +194,84 @@ docker exec -it bind bash</p>
 </span><span class=lnt>22
 </span><span class=lnt>23
 </span><span class=lnt>24
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>yanboyang713@boyang:~$ sudo systemctl status systemd-resolved
-</span><span class=go>● systemd-resolved.service - Network Name Resolution
-</span><span class=go>   Loaded: loaded (/lib/systemd/system/systemd-resolved.service; enabled; vendor preset: enabled)
-</span><span class=go>   Active: active (running) since Sat 2020-11-14 12:56:49 CST; 8h ago
-</span><span class=go>     Docs: man:systemd-resolved.service(8)
-</span><span class=go>           https://www.freedesktop.org/wiki/Software/systemd/resolved
-</span><span class=go>           https://www.freedesktop.org/wiki/Software/systemd/writing-network-configuration-managers
-</span><span class=go>           https://www.freedesktop.org/wiki/Software/systemd/writing-resolver-clients
-</span><span class=go> Main PID: 1141 (systemd-resolve)
-</span><span class=go>   Status: &#34;Processing requests...&#34;
-</span><span class=go>    Tasks: 1 (limit: 4915)
-</span><span class=go>   CGroup: /system.slice/systemd-resolved.service
-</span><span class=go>           └─1141 /lib/systemd/systemd-resolved
-</span><span class=go></span><span class=err>
-</span><span class=err></span><span class=go>Nov 14 12:56:49 boyang systemd-resolved[1141]: . IN DS 19036 8 2 49aac11d7b6f6446702e54a1607371607a1a41855200fd2ce1cdde32f24e8fb5
-</span><span class=go>Nov 14 12:56:49 boyang systemd-resolved[1141]: . IN DS 20326 8 2 e06d44b80b8f1d39a95c0b0d7c65d08458e880409bbc683457104237c7f8ec8d
-</span><span class=go>Nov 14 12:56:49 boyang systemd-resolved[1141]: Negative trust anchors: 10.in-addr.arpa 16.172.in-addr.arpa 17.172.in-addr.arpa 18.172.in-addr.arpa 19.172.in-addr.arpa 20.172.in-addr.arpa 21.172.in-addr.ar
-</span><span class=go>Nov 14 12:56:49 boyang systemd-resolved[1141]: Using system hostname &#39;boyang&#39;.
-</span><span class=go>Nov 14 12:56:49 boyang systemd[1]: Started Network Name Resolution.
-</span><span class=go>Nov 14 15:39:22 boyang systemd-resolved[1141]: Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 10.50.50.50.
-</span><span class=go>Nov 14 16:03:27 boyang systemd-resolved[1141]: Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 10.50.10.50.
-</span><span class=go>Nov 14 17:32:02 boyang systemd-resolved[1141]: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.
-</span><span class=go>Nov 14 17:32:02 boyang systemd-resolved[1141]: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.
-</span><span class=go>Nov 14 17:44:01 boyang systemd-resolved[1141]: Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 10.50.50.50.
-</span></code></pre></td></tr></table>
-</div>
-</div><p>DNS servers perform one or more functions:</p>
-<ol>
-<li>Zone Master Servers. A master name server maintains all the data corresponding to the zone, making it the authority for that zone. Master servers are commonly called authoritative name servers. (See &ldquo;Master Servers&rdquo;.)</li>
-</ol>
-<p>The two types of master server are:</p>
-<ul>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>yanboyang713@boyang:~$ sudo systemctl status systemd-resolved
+</span></span></span><span class=line><span class=cl><span class=go>● systemd-resolved.service - Network Name Resolution
+</span></span></span><span class=line><span class=cl><span class=go>   Loaded: loaded (/lib/systemd/system/systemd-resolved.service; enabled; vendor preset: enabled)
+</span></span></span><span class=line><span class=cl><span class=go>   Active: active (running) since Sat 2020-11-14 12:56:49 CST; 8h ago
+</span></span></span><span class=line><span class=cl><span class=go>     Docs: man:systemd-resolved.service(8)
+</span></span></span><span class=line><span class=cl><span class=go>           https://www.freedesktop.org/wiki/Software/systemd/resolved
+</span></span></span><span class=line><span class=cl><span class=go>           https://www.freedesktop.org/wiki/Software/systemd/writing-network-configuration-managers
+</span></span></span><span class=line><span class=cl><span class=go>           https://www.freedesktop.org/wiki/Software/systemd/writing-resolver-clients
+</span></span></span><span class=line><span class=cl><span class=go> Main PID: 1141 (systemd-resolve)
+</span></span></span><span class=line><span class=cl><span class=go>   Status: &#34;Processing requests...&#34;
+</span></span></span><span class=line><span class=cl><span class=go>    Tasks: 1 (limit: 4915)
+</span></span></span><span class=line><span class=cl><span class=go>   CGroup: /system.slice/systemd-resolved.service
+</span></span></span><span class=line><span class=cl><span class=go>           └─1141 /lib/systemd/systemd-resolved
+</span></span></span><span class=line><span class=cl><span class=go></span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=go>Nov 14 12:56:49 boyang systemd-resolved[1141]: . IN DS 19036 8 2 49aac11d7b6f6446702e54a1607371607a1a41855200fd2ce1cdde32f24e8fb5
+</span></span></span><span class=line><span class=cl><span class=go>Nov 14 12:56:49 boyang systemd-resolved[1141]: . IN DS 20326 8 2 e06d44b80b8f1d39a95c0b0d7c65d08458e880409bbc683457104237c7f8ec8d
+</span></span></span><span class=line><span class=cl><span class=go>Nov 14 12:56:49 boyang systemd-resolved[1141]: Negative trust anchors: 10.in-addr.arpa 16.172.in-addr.arpa 17.172.in-addr.arpa 18.172.in-addr.arpa 19.172.in-addr.arpa 20.172.in-addr.arpa 21.172.in-addr.ar
+</span></span></span><span class=line><span class=cl><span class=go>Nov 14 12:56:49 boyang systemd-resolved[1141]: Using system hostname &#39;boyang&#39;.
+</span></span></span><span class=line><span class=cl><span class=go>Nov 14 12:56:49 boyang systemd[1]: Started Network Name Resolution.
+</span></span></span><span class=line><span class=cl><span class=go>Nov 14 15:39:22 boyang systemd-resolved[1141]: Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 10.50.50.50.
+</span></span></span><span class=line><span class=cl><span class=go>Nov 14 16:03:27 boyang systemd-resolved[1141]: Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 10.50.10.50.
+</span></span></span><span class=line><span class=cl><span class=go>Nov 14 17:32:02 boyang systemd-resolved[1141]: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.
+</span></span></span><span class=line><span class=cl><span class=go>Nov 14 17:32:02 boyang systemd-resolved[1141]: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.
+</span></span></span><span class=line><span class=cl><span class=go>Nov 14 17:44:01 boyang systemd-resolved[1141]: Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 10.50.50.50.
+</span></span></span></code></pre></td></tr></table></div></div><p>DNS servers perform one or more functions:</p><ol>
+<li>Zone Master Servers. A master name server maintains all the data corresponding to the zone, making it the authority for that zone. Master servers are commonly called authoritative name servers. (See &ldquo;Master Servers&rdquo;.)</li></ol><p>The two types of master server are:</p><ul>
 <li>
-<p>Zone primary master server. Each zone has one server that is designated as the primary master server for that zone. (See &ldquo;Primary Master Server&rdquo;.)</p>
-</li>
+<p>Zone primary master server. Each zone has one server that is designated as the primary master server for that zone. (See &ldquo;Primary Master Server&rdquo;.)</p></li><li>
+<p>Zone secondary master server. A zone can have one or more secondary master servers. Secondary master servers obtain their DNS data from the zone&rsquo;s primary master server. (See &ldquo;Primary Master Server&rdquo;.)</p></li></ul><ol start=2>
 <li>
-<p>Zone secondary master server. A zone can have one or more secondary master servers. Secondary master servers obtain their DNS data from the zone&rsquo;s primary master server. (See &ldquo;Primary Master Server&rdquo;.)</p>
-</li>
-</ul>
-<ol start=2>
-<li>
-<p>Cache-only Server. All servers are caching servers in the sense that they maintain a cache of DNS data. A cache-only server is a server that is not a master server for any zone other than the in-addr.arpa. domain. (See &ldquo;Caching and Cache-only Servers&rdquo;.)</p>
-</li>
-<li>
-<p>Root Domain servers. A root domain server is the authoritative server for the top of your DNS domain hierarchy. If your network is connected to the Internet, your root domain servers are out on the Internet itself. If your network is not connected to the Internet, you must set up your own root domain server. (See &ldquo;Root Domain Name Server&rdquo;.)</p>
-</li>
-</ol>
-<p>These different server functions can be performed by the same machine. For example, a machine can be a primary master server for one zone and a secondary master server for another zone. When this manual refers to a primary or secondary or cache-only server, it is not referring to a particular machine, but the role that machine plays for a given zone.</p>
-<h2 id=prerequisites>Prerequisites</h2>
-<p>To complete this tutorial, you will need the following infrastructure. Create each server in the same datacenter with private networking enabled:</p>
-<ul>
-<li>A fresh Ubuntu 18.04 server to serve as the Primary DNS server, ns1</li>
-<li>(Recommended) A second Ubuntu 18.04 server to serve as a Secondary DNS server, ns2</li>
-<li>Additional servers in the same datacenter that will be using your DNS servers</li>
-</ul>
-<p>On each of these servers, configure administrative access via a sudo user and a firewall by following our Ubuntu 18.04 initial server setup guide.</p>
-<h3 id=example-infrastructure-and-goals>Example Infrastructure and Goals</h3>
-<p>For the purposes of this article, we will assume the following:</p>
-<pre><code>We have two servers which will be designated as our DNS name servers. We will refer to these as ns1 and ns2 in this guide.
+<p>Cache-only Server. All servers are caching servers in the sense that they maintain a cache of DNS data. A cache-only server is a server that is not a master server for any zone other than the in-addr.arpa. domain. (See &ldquo;Caching and Cache-only Servers&rdquo;.)</p></li><li>
+<p>Root Domain servers. A root domain server is the authoritative server for the top of your DNS domain hierarchy. If your network is connected to the Internet, your root domain servers are out on the Internet itself. If your network is not connected to the Internet, you must set up your own root domain server. (See &ldquo;Root Domain Name Server&rdquo;.)</p></li></ol><p>These different server functions can be performed by the same machine. For example, a machine can be a primary master server for one zone and a secondary master server for another zone. When this manual refers to a primary or secondary or cache-only server, it is not referring to a particular machine, but the role that machine plays for a given zone.</p><h2 id=prerequisites>Prerequisites</h2><p>To complete this tutorial, you will need the following infrastructure. Create each server in the same datacenter with private networking enabled:</p><ul>
+<li>A fresh Ubuntu 18.04 server to serve as the Primary DNS server, ns1</li><li>(Recommended) A second Ubuntu 18.04 server to serve as a Secondary DNS server, ns2</li><li>Additional servers in the same datacenter that will be using your DNS servers</li></ul><p>On each of these servers, configure administrative access via a sudo user and a firewall by following our Ubuntu 18.04 initial server setup guide.</p><h3 id=example-infrastructure-and-goals>Example Infrastructure and Goals</h3><p>For the purposes of this article, we will assume the following:</p><pre><code>We have two servers which will be designated as our DNS name servers. We will refer to these as ns1 and ns2 in this guide.
 We have two additional client servers that will be using the DNS infrastructure we create. We will call these host1 and host2 in this guide. You can add as many as you’d like for your infrastructure.
 All of these servers exist in the same datacenter. We will assume that this is the nyc3 datacenter.
 All of these servers have private networking enabled (and are on the 10.128.0.0/16 subnet. You will likely have to adjust this for your servers).
 All servers are connected to a project that runs on “example.com”. Since our DNS system will be entirely internal and private, you do not have to purchase a domain name. However, using a domain you own may help avoid conflicts with publicly routable domains.
-</code></pre>
-<p>With these assumptions, we decide that it makes sense to use a naming scheme that uses “nyc3.example.com” to refer to our private subnet or zone. Therefore, host1’s private Fully-Qualified Domain Name (FQDN) will be host1.nyc3.example.com. Refer to the following table the relevant details:</p>
-<table>
+</code></pre><p>With these assumptions, we decide that it makes sense to use a naming scheme that uses “nyc3.example.com” to refer to our private subnet or zone. Therefore, host1’s private Fully-Qualified Domain Name (FQDN) will be host1.nyc3.example.com. Refer to the following table the relevant details:</p><table>
 <thead>
 <tr>
-<th>Host</th>
-<th style=text-align:center>Role</th>
-<th style=text-align:center>Private FQDN</th>
-<th style=text-align:center>Private IP Address</th>
-</tr>
-</thead>
-<tbody>
+<th>Host</th><th style=text-align:center>Role</th><th style=text-align:center>Private FQDN</th><th style=text-align:center>Private IP Address</th></tr></thead><tbody>
 <tr>
-<td>ns1</td>
-<td style=text-align:center>Primary DNS Server</td>
-<td style=text-align:center>ns1.nyc3.example.com</td>
-<td style=text-align:center>10.128.10.11</td>
-</tr>
-<tr>
-<td>ns2</td>
-<td style=text-align:center>Secondary DNS Server</td>
-<td style=text-align:center>ns2.nyc3.example.com</td>
-<td style=text-align:center>10.128.20.12</td>
-</tr>
-<tr>
-<td>host1</td>
-<td style=text-align:center>Generic Host 1</td>
-<td style=text-align:center>host1.nyc3.example.com</td>
-<td style=text-align:center>10.128.100.101</td>
-</tr>
-<tr>
-<td>host2</td>
-<td style=text-align:center>Generic Host 2</td>
-<td style=text-align:center>host2.nyc3.example.com</td>
-<td style=text-align:center>10.128.200.102</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Note</strong>
-Your existing setup will be different, but the example names and IP addresses will be used to demonstrate how to configure a DNS server to provide a functioning internal DNS. You should be able to easily adapt this setup to your own environment by replacing the host names and private IP addresses with your own. It is not necessary to use the region name of the datacenter in your naming scheme, but we use it here to denote that these hosts belong to a particular datacenter’s private network. If you utilize multiple datacenters, you can set up an internal DNS within each respective datacenter.</p>
-<p>By the end of this tutorial, we will have a primary DNS server, ns1, and optionally a secondary DNS server, ns2, which will serve as a backup.</p>
-<p>Let’s get started by installing our Primary DNS server, ns1.</p>
-<h2 id=installing-bind-on-dns-servers>Installing BIND on DNS Servers</h2>
-<p><strong>Note</strong>
-Text that is highlighted in red is important! It will often be used to denote something that needs to be replaced with your own settings or that it should be modified or added to a configuration file. For example, if you see something like host1.nyc3.example.com, replace it with the FQDN of your own server. Likewise, if you see host1_private_IP, replace it with the private IP address of your own server.</p>
-<p>Before starting the installation process, please ensure that your system is updated by executing the next three commands. On both DNS servers, ns1 and ns2, update the apt package cache by typing:</p>
-<h3 id=step-1--update-system>Step 1- Update System</h3>
-<div class=highlight><div class=chroma>
+<td>ns1</td><td style=text-align:center>Primary DNS Server</td><td style=text-align:center>ns1.nyc3.example.com</td><td style=text-align:center>10.128.10.11</td></tr><tr>
+<td>ns2</td><td style=text-align:center>Secondary DNS Server</td><td style=text-align:center>ns2.nyc3.example.com</td><td style=text-align:center>10.128.20.12</td></tr><tr>
+<td>host1</td><td style=text-align:center>Generic Host 1</td><td style=text-align:center>host1.nyc3.example.com</td><td style=text-align:center>10.128.100.101</td></tr><tr>
+<td>host2</td><td style=text-align:center>Generic Host 2</td><td style=text-align:center>host2.nyc3.example.com</td><td style=text-align:center>10.128.200.102</td></tr></tbody></table><p><strong>Note</strong>
+Your existing setup will be different, but the example names and IP addresses will be used to demonstrate how to configure a DNS server to provide a functioning internal DNS. You should be able to easily adapt this setup to your own environment by replacing the host names and private IP addresses with your own. It is not necessary to use the region name of the datacenter in your naming scheme, but we use it here to denote that these hosts belong to a particular datacenter’s private network. If you utilize multiple datacenters, you can set up an internal DNS within each respective datacenter.</p><p>By the end of this tutorial, we will have a primary DNS server, ns1, and optionally a secondary DNS server, ns2, which will serve as a backup.</p><p>Let’s get started by installing our Primary DNS server, ns1.</p><h2 id=installing-bind-on-dns-servers>Installing BIND on DNS Servers</h2><p><strong>Note</strong>
+Text that is highlighted in red is important! It will often be used to denote something that needs to be replaced with your own settings or that it should be modified or added to a configuration file. For example, if you see something like host1.nyc3.example.com, replace it with the FQDN of your own server. Likewise, if you see host1_private_IP, replace it with the private IP address of your own server.</p><p>Before starting the installation process, please ensure that your system is updated by executing the next three commands. On both DNS servers, ns1 and ns2, update the apt package cache by typing:</p><h3 id=step-1--update-system>Step 1- Update System</h3><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>sudo apt-get update 
-</span><span class=go></span><span class=err>
-</span><span class=err></span><span class=go>sudo apt-get upgrade 
-</span><span class=go></span><span class=err>
-</span><span class=err></span><span class=go>sudo apt-get dist-upgrade
-</span></code></pre></td></tr></table>
-</div>
-</div><h3 id=step-2--install-dns-package>Step 2 – Install DNS package</h3>
-<p>Use the following command:</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>sudo apt-get update 
+</span></span></span><span class=line><span class=cl><span class=go></span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=go>sudo apt-get upgrade 
+</span></span></span><span class=line><span class=cl><span class=go></span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=go>sudo apt-get dist-upgrade
+</span></span></span></code></pre></td></tr></table></div></div><h3 id=step-2--install-dns-package>Step 2 – Install DNS package</h3><p>Use the following command:</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo apt-get install bind9 bind9utils bind9-doc
-</code></pre></td></tr></table>
-</div>
-</div><p>Once you execute the previous command it will suggest some other packages to be installed, press y to confirm downloading and installing those packages.</p>
-<h3 id=step-3--install-dns-utilities>Step 3 – Install DNS Utilities</h3>
-<p>Another useful package that will help you a lot in troubleshooting and testing the DNS issues is the dnsutils package that can be installed using the next command.</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo apt-get install bind9 bind9utils bind9-doc
+</span></span></code></pre></td></tr></table></div></div><p>Once you execute the previous command it will suggest some other packages to be installed, press y to confirm downloading and installing those packages.</p><h3 id=step-3--install-dns-utilities>Step 3 – Install DNS Utilities</h3><p>Another useful package that will help you a lot in troubleshooting and testing the DNS issues is the dnsutils package that can be installed using the next command.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo apt-get install dnsutils
-</code></pre></td></tr></table>
-</div>
-</div><h3 id=setting-bind-to-ipv4-mode>Setting Bind to IPv4 Mode</h3>
-<p>Before continuing, let’s set BIND to IPv4 mode since our private networking uses IPv4 exclusively. On both servers, edit the bind9 default settings file by typing:</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo apt-get install dnsutils
+</span></span></code></pre></td></tr></table></div></div><h3 id=setting-bind-to-ipv4-mode>Setting Bind to IPv4 Mode</h3><p>Before continuing, let’s set BIND to IPv4 mode since our private networking uses IPv4 exclusively. On both servers, edit the bind9 default settings file by typing:</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo vim /etc/default/bind9
-</code></pre></td></tr></table>
-</div>
-</div><p>Add “-4” to the end of the OPTIONS parameter. It should look like the following:
-/etc/default/bind9</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo vim /etc/default/bind9
+</span></span></code></pre></td></tr></table></div></div><p>Add “-4” to the end of the OPTIONS parameter. It should look like the following:
+/etc/default/bind9</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -557,57 +279,28 @@ Text that is highlighted in red is important! It will often be used to denote so
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>## run resolvconf?
-RESOLVCONF=no
-
-## startup options for the server
-
-OPTIONS=&#34;-u bind -4&#34;
-</code></pre></td></tr></table>
-</div>
-</div><p>Save and close the file when you are finished.</p>
-<p>Restart BIND to implement the changes:</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>## run resolvconf?
+</span></span><span class=line><span class=cl>RESOLVCONF=no
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>## startup options for the server
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>OPTIONS=&#34;-u bind -4&#34;
+</span></span></code></pre></td></tr></table></div></div><p>Save and close the file when you are finished.</p><p>Restart BIND to implement the changes:</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo systemctl restart bind9
-</code></pre></td></tr></table>
-</div>
-</div><p>Now that BIND is installed, let’s configure the primary DNS server.</p>
-<h3 id=configuring-the-primary-dns-server>Configuring the Primary DNS Server</h3>
-<p>BIND’s configuration consists of multiple files, which are included from the main configuration file, named.conf. These filenames begin with named because that is the name of the process that BIND runs (short for “domain name daemon”). We will start with configuring the options file.</p>
-<h4 id=configuring-the-options-file>Configuring the Options File</h4>
-<p>On ns1, open the named.conf.options file for editing:</p>
-<pre><code>sudo nano /etc/bind/named.conf.options
-</code></pre>
-<p>Above the existing options block, create a new ACL (access control list) block called “trusted”. This is where we will define a list of clients that we will allow recursive DNS queries from (i.e. your servers that are in the same datacenter as ns1). Using our example private IP addresses, we will add ns1, ns2, host1, and host2 to our list of trusted clients:</p>
-<h3 id=step-4--dns-configuration>Step 4 – DNS Configuration</h3>
-<p>Usually, you can find the DNS configuration files stored in /etc/bind directory. /etc/bind/named.conf is the master configuration file that contains the DNS options and it’s highly recommended that you should be careful while editing it.</p>
-<h3 id=step-5--configuring-nameserver>Step 5 – Configuring NameServer</h3>
-<p>The most used and default configuration is using your server as a caching server. This means that the DNS will get the answer to name queries, cache it and use the answer again when the domain is queried for another time. So, to use your server as a caching nameserver you can follow the next few steps.</p>
-<p>Open and edit the /etc/bind/named.conf.options with your favorite editor.</p>
-<p>sudo vi /etc/bind/named.conf.options</p>
-<p>Add the following block to it, here we have used Google’s DNS.
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl restart bind9
+</span></span></code></pre></td></tr></table></div></div><p>Now that BIND is installed, let’s configure the primary DNS server.</p><h3 id=configuring-the-primary-dns-server>Configuring the Primary DNS Server</h3><p>BIND’s configuration consists of multiple files, which are included from the main configuration file, named.conf. These filenames begin with named because that is the name of the process that BIND runs (short for “domain name daemon”). We will start with configuring the options file.</p><h4 id=configuring-the-options-file>Configuring the Options File</h4><p>On ns1, open the named.conf.options file for editing:</p><pre><code>sudo nano /etc/bind/named.conf.options
+</code></pre><p>Above the existing options block, create a new ACL (access control list) block called “trusted”. This is where we will define a list of clients that we will allow recursive DNS queries from (i.e. your servers that are in the same datacenter as ns1). Using our example private IP addresses, we will add ns1, ns2, host1, and host2 to our list of trusted clients:</p><h3 id=step-4--dns-configuration>Step 4 – DNS Configuration</h3><p>Usually, you can find the DNS configuration files stored in /etc/bind directory. /etc/bind/named.conf is the master configuration file that contains the DNS options and it’s highly recommended that you should be careful while editing it.</p><h3 id=step-5--configuring-nameserver>Step 5 – Configuring NameServer</h3><p>The most used and default configuration is using your server as a caching server. This means that the DNS will get the answer to name queries, cache it and use the answer again when the domain is queried for another time. So, to use your server as a caching nameserver you can follow the next few steps.</p><p>Open and edit the /etc/bind/named.conf.options with your favorite editor.</p><p>sudo vi /etc/bind/named.conf.options</p><p>Add the following block to it, here we have used Google’s DNS.
 forwarders {
 8.8.8.8;
-};</p>
-<p>To enable the new configurations you should restart the DNS service.</p>
-<div class=highlight><div class=chroma>
+};</p><p>To enable the new configurations you should restart the DNS service.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo systemctl restart bind9
-</code></pre></td></tr></table>
-</div>
-</div><p>To test your query time we can use the dig command which is installed by the dnsutils package.</p>
-<h2 id=tips>TIPS</h2>
-<h3 id=show-you-currently-dns>Show you currently DNS</h3>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl restart bind9
+</span></span></code></pre></td></tr></table></div></div><p>To test your query time we can use the dig command which is installed by the dnsutils package.</p><h2 id=tips>TIPS</h2><h3 id=show-you-currently-dns>Show you currently DNS</h3><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -629,68 +322,48 @@ forwarders {
 </span><span class=lnt>18
 </span><span class=lnt>19
 </span><span class=lnt>20
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=go>yanboyang713@boyang:~$ cat /etc/resolv.conf
-</span><span class=go></span><span class=gp>#</span><span class=c1># This file is managed by man:systemd-resolved(8). Do not edit.</span>
-<span class=gp>#</span><span class=c1>#</span>
-<span class=gp>#</span><span class=c1># This is a dynamic resolv.conf file for connecting local clients to the</span>
-<span class=gp>#</span><span class=c1># internal DNS stub resolver of systemd-resolved. This file lists all</span>
-<span class=gp>#</span><span class=c1># configured search domains.</span>
-<span class=gp>#</span><span class=c1>#</span>
-<span class=gp>#</span><span class=c1># Run &#34;systemd-resolve --status&#34; to see details about the uplink DNS servers</span>
-<span class=gp>#</span><span class=c1># currently in use.</span>
-<span class=gp>#</span><span class=c1>#</span>
-<span class=gp>#</span><span class=c1># Third party programs must not access this file directly, but only through the</span>
-<span class=gp>#</span><span class=c1># symlink at /etc/resolv.conf. To manage man:resolv.conf(5) in a different way,</span>
-<span class=gp>#</span><span class=c1># replace this symlink by a static file or a different symlink.</span>
-<span class=gp>#</span><span class=c1>#</span>
-<span class=gp>#</span><span class=c1># See man:systemd-resolved.service(8) for details about the supported modes of</span>
-<span class=gp>#</span><span class=c1># operation for /etc/resolv.conf.</span>
-<span class=err>
-</span><span class=err></span><span class=go>nameserver 127.0.0.53
-</span><span class=go>options edns0
-</span><span class=go>search corp.microsoft.com
-</span></code></pre></td></tr></table>
-</div>
-</div></div><div class=post-footer id=post-footer>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>yanboyang713@boyang:~$ cat /etc/resolv.conf
+</span></span></span><span class=line><span class=cl><span class=go></span><span class=gp>#</span><span class=c1># This file is managed by man:systemd-resolved(8). Do not edit.</span>
+</span></span><span class=line><span class=cl><span class=gp>#</span><span class=c1>#</span>
+</span></span><span class=line><span class=cl><span class=gp>#</span><span class=c1># This is a dynamic resolv.conf file for connecting local clients to the</span>
+</span></span><span class=line><span class=cl><span class=gp>#</span><span class=c1># internal DNS stub resolver of systemd-resolved. This file lists all</span>
+</span></span><span class=line><span class=cl><span class=gp>#</span><span class=c1># configured search domains.</span>
+</span></span><span class=line><span class=cl><span class=gp>#</span><span class=c1>#</span>
+</span></span><span class=line><span class=cl><span class=gp>#</span><span class=c1># Run &#34;systemd-resolve --status&#34; to see details about the uplink DNS servers</span>
+</span></span><span class=line><span class=cl><span class=gp>#</span><span class=c1># currently in use.</span>
+</span></span><span class=line><span class=cl><span class=gp>#</span><span class=c1>#</span>
+</span></span><span class=line><span class=cl><span class=gp>#</span><span class=c1># Third party programs must not access this file directly, but only through the</span>
+</span></span><span class=line><span class=cl><span class=gp>#</span><span class=c1># symlink at /etc/resolv.conf. To manage man:resolv.conf(5) in a different way,</span>
+</span></span><span class=line><span class=cl><span class=gp>#</span><span class=c1># replace this symlink by a static file or a different symlink.</span>
+</span></span><span class=line><span class=cl><span class=gp>#</span><span class=c1>#</span>
+</span></span><span class=line><span class=cl><span class=gp>#</span><span class=c1># See man:systemd-resolved.service(8) for details about the supported modes of</span>
+</span></span><span class=line><span class=cl><span class=gp>#</span><span class=c1># operation for /etc/resolv.conf.</span>
+</span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=go>nameserver 127.0.0.53
+</span></span></span><span class=line><span class=cl><span class=go>options edns0
+</span></span></span><span class=line><span class=cl><span class=go>search corp.microsoft.com
+</span></span></span></code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2022-01-18</span>
-</div>
-<div class=post-info-license></div>
-</div>
-<div class=post-info-line>
+<span>Updated on 2022-03-02</span>
+</div><div class=post-info-license></div></div><div class=post-info-line>
 <div class=post-info-md><span>
 <a class=link-to-markdown href=https://yanboyang.com/dns/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
-</span></div>
-<div class=post-info-share>
+</span></div><div class=post-info-share>
 <span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/dns/ data-title=dns><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/dns/><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/dns/ data-title=dns data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/dns/ data-title=dns><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/dns/ data-title=dns><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/dns/ data-title=dns data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/dns/ data-title=dns data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/dns/ data-title=dns><i class="fab fa-evernote fa-fw"></i></a></span>
-</div>
-</div>
-</div>
-<div class=post-info-more>
-<section class=post-tags></section>
-<section>
+</div></div></div><div class=post-info-more>
+<section class=post-tags></section><section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span>
-</section>
-</div>
-<div class=post-nav><a href=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ class=prev rel=prev title="Docker as Local Development Environment"><i class="fas fa-angle-left fa-fw"></i>Docker as Local Development Environment</a>
-<a href=https://yanboyang.com/databaseconcepts/ class=next rel=next title="Database Concepts">Database Concepts<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-<div id=comments><div id=disqus_thread class=comment></div><noscript>
+</section></div><div class=post-nav><a href=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ class=prev rel=prev title="Docker as Local Development Environment"><i class="fas fa-angle-left fa-fw"></i>Docker as Local Development Environment</a>
+<a href=https://yanboyang.com/databaseconcepts/ class=next rel=next title="Database Concepts">Database Concepts<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
-</noscript></div></article></div>
-</main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.92.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
-</div>
-</footer></div>
-<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+</noscript></div></article></div></main><footer class=footer>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
 <i class="fas fa-arrow-up fa-fw"></i>
 </a><a href=# id=view-comments class=fixed-button title="View Comments">
 <i class="fas fa-comment fa-fw"></i>
 </a>
-</div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body>
-</html>
+</div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>

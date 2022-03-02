@@ -10,7 +10,7 @@ User Scenario  Acting as a router at home or in office as a local area network. 
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/ubunturouter/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2020-09-04T06:11:32+10:00">
-<meta property="article:modified_time" content="2022-01-18T03:09:25+00:00">
+<meta property="article:modified_time" content="2022-03-02T13:12:39+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Setting up an Linux Router with bridge">
@@ -19,17 +19,15 @@ User Scenario  Acting as a router at home or in office as a local area network. 
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/ubunturouter/><link rel=prev href=https://yanboyang.com/baslerwithopencv/><link rel=next href=https://yanboyang.com/patent/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Setting up an Linux Router with bridge","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/ubunturouter\/"},"genre":"posts","keywords":"Networking, OVS","wordcount":1861,"url":"https:\/\/yanboyang.com\/ubunturouter\/","datePublished":"2020-09-04T06:11:32+10:00","dateModified":"2022-01-18T03:09:25+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head>
-<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/ubunturouter/><link rel=prev href=https://yanboyang.com/baslerwithopencv/><link rel=next href=https://yanboyang.com/patent/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Setting up an Linux Router with bridge","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/ubunturouter\/"},"genre":"posts","keywords":"Networking, OVS","wordcount":1860,"url":"https:\/\/yanboyang.com\/ubunturouter\/","datePublished":"2020-09-04T06:11:32+10:00","dateModified":"2022-03-02T13:12:39+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 <div class=header-wrapper>
 <div class=header-title>
 <a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div>
-<div class=menu>
+</div><div class=menu>
 <div class=menu-inner><a class=menu-item href=https://yanboyang.com/> Home </a><a class=menu-item href=https://yanboyang.com/posts/> Posts </a><a class=menu-item href=https://yanboyang.com/tags/> Tags </a><a class=menu-item href=https://yanboyang.com/categories/> Categories </a><a class=menu-item href=https://yanboyang.com/about/> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
@@ -44,23 +42,17 @@ User Scenario  Acting as a router at home or in office as a local area network. 
 </span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
 <i class="fas fa-adjust fa-fw"></i>
 </a>
-</div>
-</div>
-</div>
-</header><header class=mobile id=header-mobile>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-101949995-1','auto'),ga('send','pageview'))</script>
+</div></div></div></header><header class=mobile id=header-mobile>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 <div class=header-container>
 <div class=header-wrapper>
 <div class=header-title>
 <a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div>
-<div class=menu-toggle id=menu-toggle-mobile>
+</div><div class=menu-toggle id=menu-toggle-mobile>
 <span></span><span></span><span></span>
-</div>
-</div>
-<div class=menu id=menu-mobile><div class=search-wrapper>
+</div></div><div class=menu id=menu-mobile><div class=search-wrapper>
 <div class="search mobile" id=search-mobile>
 <input type=text placeholder="Search titles or contents..." id=search-input-mobile>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
@@ -72,173 +64,78 @@ User Scenario  Acting as a router at home or in office as a local area network. 
 <span class="search-button search-loading" id=search-loading-mobile>
 <i class="fas fa-spinner fa-fw fa-spin"></i>
 </span>
-</div>
-<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+</div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
 Cancel
 </a>
 </div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
 <i class="fas fa-adjust fa-fw"></i>
-</a></div>
-</div>
-</header>
-<div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div>
-</div>
-<div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div>
-</div>
-<main class=main>
+</a></div></div></header><div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div></div><main class=main>
 <div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>Contents</h2>
-<div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Setting up an Linux Router with bridge</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/networking/><i class="far fa-folder fa-fw"></i>Networking</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-09-04>2020-09-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1861 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
-</div><div class="details toc" id=toc-static kept=true>
+<h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Setting up an Linux Router with bridge</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/networking/><i class="far fa-folder fa-fw"></i>Networking</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-09-04>2020-09-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1860 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
 <span><i class="details-icon fas fa-angle-right"></i></span>
-</div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+</div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
-<li><a href=#introduction>Introduction</a></li>
-<li><a href=#user-scenario>User Scenario</a></li>
-<li><a href=#terminology>Terminology</a></li>
-<li><a href=#hardware-requirments>Hardware Requirments</a></li>
-<li><a href=#settings>Settings</a>
+<li><a href=#introduction>Introduction</a></li><li><a href=#user-scenario>User Scenario</a></li><li><a href=#terminology>Terminology</a></li><li><a href=#hardware-requirments>Hardware Requirments</a></li><li><a href=#settings>Settings</a>
 <ul>
 <li><a href=#configuring-the-bridge-and-network-file-settings>Configuring the bridge and Network file settings</a>
 <ul>
 <li><a href=#installing-network-bridge>Installing Network Bridge</a>
 <ul>
-<li><a href=#for-ubuntu-linux-bridge>For Ubuntu (Linux Bridge)</a></li>
-<li><a href=#for-arch-linux-ovs>For Arch Linux (OVS)</a></li>
-</ul>
-</li>
-<li><a href=#start-up-ovs>Start-up OVS</a></li>
-<li><a href=#distinguish-external-and-internal-interfaces-name>Distinguish External and Internal Interfaces' Name</a></li>
-<li><a href=#creating-and-setting-the-bridge-at-start-up>Creating and Setting the Bridge at Start-up</a>
+<li><a href=#for-ubuntu-linux-bridge>For Ubuntu (Linux Bridge)</a></li><li><a href=#for-arch-linux-ovs>For Arch Linux (OVS)</a></li></ul></li><li><a href=#start-up-ovs>Start-up OVS</a></li><li><a href=#distinguish-external-and-internal-interfaces-name>Distinguish External and Internal Interfaces&rsquo; Name</a></li><li><a href=#creating-and-setting-the-bridge-at-start-up>Creating and Setting the Bridge at Start-up</a>
 <ul>
-<li><a href=#for-ubuntu-linux-bridge-1>For Ubuntu (Linux bridge)</a></li>
-<li><a href=#for-arch-linux-ovs-1>For Arch Linux (OVS)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href=#enable-ip-forwarding-and-masquerading>Enable IP forwarding and Masquerading</a></li>
-<li><a href=#clients-network-settings>Clients network settings</a>
+<li><a href=#for-ubuntu-linux-bridge-1>For Ubuntu (Linux bridge)</a></li><li><a href=#for-arch-linux-ovs-1>For Arch Linux (OVS)</a></li></ul></li></ul></li><li><a href=#enable-ip-forwarding-and-masquerading>Enable IP forwarding and Masquerading</a></li><li><a href=#clients-network-settings>Clients network settings</a>
 <ul>
 <li><a href=#for-linux>For Linux</a>
 <ul>
-<li><a href=#using-ifconfig>Using ifconfig</a></li>
-<li><a href=#ubuntu-gui>Ubuntu GUI</a></li>
-</ul>
-</li>
-<li><a href=#for-mac>For Mac</a></li>
-<li><a href=#for-windows>For Windows</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href=#troubleshooting>Troubleshooting</a></li>
-</ul>
-</nav></div>
-</div><div class=content id=content><h2 id=introduction>Introduction</h2>
-<p>This post document is about how to build a Linux gateway. The gateway connects an internal network to an external network. Basically, performing Network Address Translation (NAT) for hosts on the internal network. It is exceptionally similar to what your home router does.</p>
-<h2 id=user-scenario>User Scenario</h2>
-<ol>
-<li>Acting as a router at home or in office as a local area network.</li>
-<li>Connecting multi-network cameras to Linux Server for transfer image data.</li>
-</ol>
-<h2 id=terminology>Terminology</h2>
-<ol>
-<li><strong>interface</strong> is used to mean the operating system&rsquo;s name for a place which sends or receives data packets. It is often, but not necessarily, the same as a device. An interface may have several devices associated (e.g. a bridge), or a single device may have several interfaces. device will refer here to the bit of hardware dealing with your network connections.</li>
-<li>A <strong>network adapter</strong> is the component of a computer’s internal hardware that is used for communicating over a network with another computer. It enable a computer to connect with another computer, server or any networking device over an LAN connection. A network adapter can be used over a wired or wireless network.</li>
-<li>A <strong>gateway</strong> is a piece of networking hardware used in telecommunications for telecommunications networks that allows data to flow from one discrete network to another. Gateways are distinct from routers or switches in that they communicate using more than one protocol to connect a bunch of networks and can operate at any of the seven layers of the open systems interconnection model (OSI).</li>
-</ol>
-<h2 id=hardware-requirments>Hardware Requirments</h2>
-<p>In our scenario, we need one multi-port network adapters with your desktop PC at the less. One port for connect with external network. Others for connect internal network. Because, we have muti-devices need to connect to internal network, So I recommand, we can using monther-board wired adapter connect with external network and one multi-port PCIE network card connect with internal network. All of PCIE network card can be connect to a bridge. The details how to set-up, I will talk at the below.</p>
-<p><strong>Tips, there are two type of PCIE adapters can be use in our project. First type have POE (Power over Ethernet) support and another type does not support POE. I recommend you buy a PoE support card because when you want to connect a network camera or access point (AP), which can be power by PCIE card directly, you need not unnecessary power cable and power supply to power cameras or APs, this will convience for you. 4 port Gigabit POE network card about 120 US dollars.</strong></p>
-<h2 id=settings>Settings</h2>
-<h3 id=configuring-the-bridge-and-network-file-settings>Configuring the bridge and Network file settings</h3>
-<p>Linux supports the implementation of a software network bridge to reproduce the function of a network bridge, a networking device that interconnects two or more communication networks or network segments providing a way for them to work as a single network.
-It acts almost like a network switch, and in a software sense, it is used to implement the concept of a “virtual network switch”.</p>
-<p>In our scenario, we will use software network bridging to connect all of ports for PCIE network card directly to the host server network.
+<li><a href=#using-ifconfig>Using ifconfig</a></li><li><a href=#ubuntu-gui>Ubuntu GUI</a></li></ul></li><li><a href=#for-mac>For Mac</a></li><li><a href=#for-windows>For Windows</a></li></ul></li></ul></li><li><a href=#troubleshooting>Troubleshooting</a></li></ul></nav></div></div><div class=content id=content><h2 id=introduction>Introduction</h2><p>This post document is about how to build a Linux gateway. The gateway connects an internal network to an external network. Basically, performing Network Address Translation (NAT) for hosts on the internal network. It is exceptionally similar to what your home router does.</p><h2 id=user-scenario>User Scenario</h2><ol>
+<li>Acting as a router at home or in office as a local area network.</li><li>Connecting multi-network cameras to Linux Server for transfer image data.</li></ol><h2 id=terminology>Terminology</h2><ol>
+<li><strong>interface</strong> is used to mean the operating system&rsquo;s name for a place which sends or receives data packets. It is often, but not necessarily, the same as a device. An interface may have several devices associated (e.g. a bridge), or a single device may have several interfaces. device will refer here to the bit of hardware dealing with your network connections.</li><li>A <strong>network adapter</strong> is the component of a computer’s internal hardware that is used for communicating over a network with another computer. It enable a computer to connect with another computer, server or any networking device over an LAN connection. A network adapter can be used over a wired or wireless network.</li><li>A <strong>gateway</strong> is a piece of networking hardware used in telecommunications for telecommunications networks that allows data to flow from one discrete network to another. Gateways are distinct from routers or switches in that they communicate using more than one protocol to connect a bunch of networks and can operate at any of the seven layers of the open systems interconnection model (OSI).</li></ol><h2 id=hardware-requirments>Hardware Requirments</h2><p>In our scenario, we need one multi-port network adapters with your desktop PC at the less. One port for connect with external network. Others for connect internal network. Because, we have muti-devices need to connect to internal network, So I recommand, we can using monther-board wired adapter connect with external network and one multi-port PCIE network card connect with internal network. All of PCIE network card can be connect to a bridge. The details how to set-up, I will talk at the below.</p><p><strong>Tips, there are two type of PCIE adapters can be use in our project. First type have POE (Power over Ethernet) support and another type does not support POE. I recommend you buy a PoE support card because when you want to connect a network camera or access point (AP), which can be power by PCIE card directly, you need not unnecessary power cable and power supply to power cameras or APs, this will convience for you. 4 port Gigabit POE network card about 120 US dollars.</strong></p><h2 id=settings>Settings</h2><h3 id=configuring-the-bridge-and-network-file-settings>Configuring the bridge and Network file settings</h3><p>Linux supports the implementation of a software network bridge to reproduce the function of a network bridge, a networking device that interconnects two or more communication networks or network segments providing a way for them to work as a single network.
+It acts almost like a network switch, and in a software sense, it is used to implement the concept of a “virtual network switch”.</p><p>In our scenario, we will use software network bridging to connect all of ports for PCIE network card directly to the host server network.
 If you want to you also can add your virtual machines(VMs) to this bridge.
-This way, the all of PCIE ports are deployed on the same subnet as the host and can access services such as DHCP and much more.</p>
-<h4 id=installing-network-bridge>Installing Network Bridge</h4>
-<p>There are two types of <strong>Bridge</strong> are common in used, <strong>Linux Bridge</strong> and <strong>Open vSwitch (OVS)</strong>.
-I recommend your using OVS, more powerful than Linux Bridge.</p>
-<h5 id=for-ubuntu-linux-bridge>For Ubuntu (Linux Bridge)</h5>
-<p>Begin by installing the bridge-utils package which contains utilities for configuring the Ubuntu ethernet bridge using the apt package manager as shown.</p>
-<div class=highlight><div class=chroma>
+This way, the all of PCIE ports are deployed on the same subnet as the host and can access services such as DHCP and much more.</p><h4 id=installing-network-bridge>Installing Network Bridge</h4><p>There are two types of <strong>Bridge</strong> are common in used, <strong>Linux Bridge</strong> and <strong>Open vSwitch (OVS)</strong>.
+I recommend your using OVS, more powerful than Linux Bridge.</p><h5 id=for-ubuntu-linux-bridge>For Ubuntu (Linux Bridge)</h5><p>Begin by installing the bridge-utils package which contains utilities for configuring the Ubuntu ethernet bridge using the apt package manager as shown.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo apt-get update
-sudo apt-get install bridge-utils
-</code></pre></td></tr></table>
-</div>
-</div><h5 id=for-arch-linux-ovs>For Arch Linux (OVS)</h5>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo apt-get update
+</span></span><span class=line><span class=cl>sudo apt-get install bridge-utils
+</span></span></code></pre></td></tr></table></div></div><h5 id=for-arch-linux-ovs>For Arch Linux (OVS)</h5><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yay -S openvswitch
-</code></pre></td></tr></table>
-</div>
-</div><h4 id=start-up-ovs>Start-up OVS</h4>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>yay -S openvswitch
+</span></span></code></pre></td></tr></table></div></div><h4 id=start-up-ovs>Start-up OVS</h4><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo systemctl start ovsdb-server
-sudo systemctl start ovs-vswitchd
-</code></pre></td></tr></table>
-</div>
-</div><p>Testing OVS running successful.</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl start ovsdb-server
+</span></span><span class=line><span class=cl>sudo systemctl start ovs-vswitchd
+</span></span></code></pre></td></tr></table></div></div><p>Testing OVS running successful.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># Prints a brief overview of the database contents</span>
-sudo ovs-vsctl show
-</code></pre></td></tr></table>
-</div>
-</div><h4 id=distinguish-external-and-internal-interfaces-name>Distinguish External and Internal Interfaces' Name</h4>
-<p>Identify the interface name for your ethernet device using the IP command as shown.</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Prints a brief overview of the database contents</span>
+</span></span><span class=line><span class=cl>sudo ovs-vsctl show
+</span></span></code></pre></td></tr></table></div></div><h4 id=distinguish-external-and-internal-interfaces-name>Distinguish External and Internal Interfaces&rsquo; Name</h4><p>Identify the interface name for your ethernet device using the IP command as shown.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>$ ip ad
-OR
-$ ip add
-</code></pre></td></tr></table>
-</div>
-</div><p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1599389099/setting%20up%20an%20ubuntu%20router%20with%20bridge%20-%20ip%20addr.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1599389099/setting%20up%20an%20ubuntu%20router%20with%20bridge%20-%20ip%20addr.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1599389099/setting%20up%20an%20ubuntu%20router%20with%20bridge%20-%20ip%20addr.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1599389099/setting%20up%20an%20ubuntu%20router%20with%20bridge%20-%20ip%20addr.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1599389099/setting%20up%20an%20ubuntu%20router%20with%20bridge%20-%20ip%20addr.png title="ip add"></p>
-<p>From this screenshot, as you can see:</p>
-<ol>
-<li><strong>enp5s0 interface</strong> is my monther-board wired adapter(only have one port) connect with external network</li>
-<li><strong>enp3s0f0 interface</strong>, <strong>enp3s0f1 interface</strong>, <strong>enp3s0f2 interface</strong> and <strong>enp3s0f3 interface</strong> are my PCIE network card (4 ports)</li>
-<li><strong>br0</strong> is my bridge, which connect with all of PCIE ports. The bridge will as internal network. This interface have not yet. Please following the next creating the bridge section.</li>
-</ol>
-<h4 id=creating-and-setting-the-bridge-at-start-up>Creating and Setting the Bridge at Start-up</h4>
-<h5 id=for-ubuntu-linux-bridge-1>For Ubuntu (Linux bridge)</h5>
-<p>We need to edit the /etc/network/interfaces file. This file shows an example of a bridge configure.</p>
-<p>Sample /etc/network/interfaces file</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ ip ad
+</span></span><span class=line><span class=cl>OR
+</span></span><span class=line><span class=cl>$ ip add
+</span></span></code></pre></td></tr></table></div></div><p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1599389099/setting%20up%20an%20ubuntu%20router%20with%20bridge%20-%20ip%20addr.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1599389099/setting%20up%20an%20ubuntu%20router%20with%20bridge%20-%20ip%20addr.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1599389099/setting%20up%20an%20ubuntu%20router%20with%20bridge%20-%20ip%20addr.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1599389099/setting%20up%20an%20ubuntu%20router%20with%20bridge%20-%20ip%20addr.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1599389099/setting%20up%20an%20ubuntu%20router%20with%20bridge%20-%20ip%20addr.png title="ip add"></p><p>From this screenshot, as you can see:</p><ol>
+<li><strong>enp5s0 interface</strong> is my monther-board wired adapter(only have one port) connect with external network</li><li><strong>enp3s0f0 interface</strong>, <strong>enp3s0f1 interface</strong>, <strong>enp3s0f2 interface</strong> and <strong>enp3s0f3 interface</strong> are my PCIE network card (4 ports)</li><li><strong>br0</strong> is my bridge, which connect with all of PCIE ports. The bridge will as internal network. This interface have not yet. Please following the next creating the bridge section.</li></ol><h4 id=creating-and-setting-the-bridge-at-start-up>Creating and Setting the Bridge at Start-up</h4><h5 id=for-ubuntu-linux-bridge-1>For Ubuntu (Linux bridge)</h5><p>We need to edit the /etc/network/interfaces file. This file shows an example of a bridge configure.</p><p>Sample /etc/network/interfaces file</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -255,105 +152,64 @@ $ ip add
 </span><span class=lnt>13
 </span><span class=lnt>14
 </span><span class=lnt>15
-</span><span class=lnt>16
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>auto lo
-iface lo inet loopback
-
-##External Interface
-auto enp5s0
-iface enp5s0 inet dhcp
-
-##bridge
-auto br0
-iface br0 inet static
-    address 192.168.1.1
-    network 192.168.1.0
-    netmask 255.255.255.0
-    broadcast 192.168.1.255
-    bridge-ports enp3s0f0 enp3s0f1 enp3s0f2 enp3s0f3
-
-</code></pre></td></tr></table>
-</div>
-</div><p>** TIPS: please run the below command backup your interfaces file first.</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>auto lo
+</span></span><span class=line><span class=cl>iface lo inet loopback
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>##External Interface
+</span></span><span class=line><span class=cl>auto enp5s0
+</span></span><span class=line><span class=cl>iface enp5s0 inet dhcp
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>##bridge
+</span></span><span class=line><span class=cl>auto br0
+</span></span><span class=line><span class=cl>iface br0 inet static
+</span></span><span class=line><span class=cl>    address 192.168.1.1
+</span></span><span class=line><span class=cl>    network 192.168.1.0
+</span></span><span class=line><span class=cl>    netmask 255.255.255.0
+</span></span><span class=line><span class=cl>    broadcast 192.168.1.255
+</span></span><span class=line><span class=cl>    bridge-ports enp3s0f0 enp3s0f1 enp3s0f2 enp3s0f3
+</span></span></code></pre></td></tr></table></div></div><p>** TIPS: please run the below command backup your interfaces file first.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>cp /etc/network/interfaces /etc/network/interfaces.backup
-</code></pre></td></tr></table>
-</div>
-</div><p>From this interface configure file, you can see:</p>
-<ol>
-<li>External interface will use Dynamic Host Configuration Protocol (DHCP), whereby external network DHCP server will dynamically assigns an IP adress and other network configuration paprameters to this external interface.</li>
-<li>Created a new interface, names <em>br0</em>. Using static settings, I manuelly assign IP address 192.168.1.1 to this bridge, when you set-up internal network clients 192.168.1.1 should be the gateway. internal network IP should be 192.168.1.x(x minimum valu is 2, the maxmum value is 255)</li>
-<li>All of my PCIE ports connected with this bridge.</li>
-</ol>
-<p>** When you finished settings for this section, please restart networking. The command at the below **</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>cp /etc/network/interfaces /etc/network/interfaces.backup
+</span></span></code></pre></td></tr></table></div></div><p>From this interface configure file, you can see:</p><ol>
+<li>External interface will use Dynamic Host Configuration Protocol (DHCP), whereby external network DHCP server will dynamically assigns an IP adress and other network configuration paprameters to this external interface.</li><li>Created a new interface, names <em>br0</em>. Using static settings, I manuelly assign IP address 192.168.1.1 to this bridge, when you set-up internal network clients 192.168.1.1 should be the gateway. internal network IP should be 192.168.1.x(x minimum valu is 2, the maxmum value is 255)</li><li>All of my PCIE ports connected with this bridge.</li></ol><p>** When you finished settings for this section, please restart networking. The command at the below **</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo /etc/init.d/networking restart 
-</code></pre></td></tr></table>
-</div>
-</div><h5 id=for-arch-linux-ovs-1>For Arch Linux (OVS)</h5>
-<ul>
-<li>Create a new OVS bridge, named <strong>br0</strong>.</li>
-</ul>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo /etc/init.d/networking restart 
+</span></span></code></pre></td></tr></table></div></div><h5 id=for-arch-linux-ovs-1>For Arch Linux (OVS)</h5><ul>
+<li>Create a new OVS bridge, named <strong>br0</strong>.</li></ul><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ovs-vsctl add-br br0
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>Check the Bridge Interface created successful or not.</li>
-</ul>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ovs-vsctl add-br br0
+</span></span></code></pre></td></tr></table></div></div><ul>
+<li>Check the Bridge Interface created successful or not.</li></ul><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ip ad
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>Connect internal ports to OVS bridge.</li>
-</ul>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ip ad
+</span></span></code></pre></td></tr></table></div></div><ul>
+<li>Connect internal ports to OVS bridge.</li></ul><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo ovs-vsctl add-port br0 enp3s0f0
-sudo ovs-vsctl add-port br0 enp3s0f1
-sudo ovs-vsctl add-port br0 enp3s0f2
-sudo ovs-vsctl add-port br0 enp3s0f3
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>Assign IP address to OVS bridge.</li>
-</ul>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo ovs-vsctl add-port br0 enp3s0f0
+</span></span><span class=line><span class=cl>sudo ovs-vsctl add-port br0 enp3s0f1
+</span></span><span class=line><span class=cl>sudo ovs-vsctl add-port br0 enp3s0f2
+</span></span><span class=line><span class=cl>sudo ovs-vsctl add-port br0 enp3s0f3
+</span></span></code></pre></td></tr></table></div></div><ul>
+<li>Assign IP address to OVS bridge.</li></ul><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo ip addr add 192.168.1.1/24 dev br0
-</code></pre></td></tr></table>
-</div>
-</div><h3 id=enable-ip-forwarding-and-masquerading>Enable IP forwarding and Masquerading</h3>
-<p>Doing the above might not be enough to make the Ubuntu machine a real router which does NAT (Network Address Translation) and IP Forwarding. The following script configures the Kernel IPTable and IP forwarding. You will have to configure at least the script&rsquo;s 2 variables; the 1st is the external network interface; the 2nd is the internal network interface.</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo ip addr add 192.168.1.1/24 dev br0
+</span></span></code></pre></td></tr></table></div></div><h3 id=enable-ip-forwarding-and-masquerading>Enable IP forwarding and Masquerading</h3><p>Doing the above might not be enough to make the Ubuntu machine a real router which does NAT (Network Address Translation) and IP Forwarding. The following script configures the Kernel IPTable and IP forwarding. You will have to configure at least the script&rsquo;s 2 variables; the 1st is the external network interface; the 2nd is the internal network interface.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -406,227 +262,136 @@ sudo ovs-vsctl add-port br0 enp3s0f3
 </span><span class=lnt>49
 </span><span class=lnt>50
 </span><span class=lnt>51
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>echo</span> -e <span class=s2>&#34;\n\nLoading simple rc.firewall-iptables version </span><span class=nv>$FWVER</span><span class=s2>..\n&#34;</span>
-<span class=nv>DEPMOD</span><span class=o>=</span>/sbin/depmod
-<span class=nv>MODPROBE</span><span class=o>=</span>/sbin/modprobe
-
-<span class=nv>EXTIF</span><span class=o>=</span><span class=s2>&#34;eth0&#34;</span> <span class=c1># Change eth0 as your External Network Interface Name</span>
-<span class=nv>INTIF</span><span class=o>=</span><span class=s2>&#34;eth1&#34;</span> <span class=c1># Change eth1 as bridge name (Internal Network Interface)</span>
-
-<span class=nb>echo</span> <span class=s2>&#34;   External Interface:  </span><span class=nv>$EXTIF</span><span class=s2>&#34;</span>
-<span class=nb>echo</span> <span class=s2>&#34;   Internal Interface:  </span><span class=nv>$INTIF</span><span class=s2>&#34;</span>
-
-<span class=c1>##======================================================================</span>
-<span class=c1>##== No editing beyond this line is required for initial MASQ testing == </span>
-<span class=nb>echo</span> -en <span class=s2>&#34;   loading modules: &#34;</span>
-<span class=nb>echo</span> <span class=s2>&#34;  - Verifying that all kernel modules are ok&#34;</span>
-<span class=nv>$DEPMOD</span> -a
-<span class=nb>echo</span> <span class=s2>&#34;----------------------------------------------------------------------&#34;</span>
-<span class=nb>echo</span> -en <span class=s2>&#34;ip_tables, &#34;</span>
-<span class=nv>$MODPROBE</span> ip_tables
-<span class=nb>echo</span> -en <span class=s2>&#34;nf_conntrack, &#34;</span> 
-<span class=nv>$MODPROBE</span> nf_conntrack
-<span class=nb>echo</span> -en <span class=s2>&#34;nf_conntrack_ftp, &#34;</span> 
-<span class=nv>$MODPROBE</span> nf_conntrack_ftp
-<span class=nb>echo</span> -en <span class=s2>&#34;nf_conntrack_irc, &#34;</span> 
-<span class=nv>$MODPROBE</span> nf_conntrack_irc
-<span class=nb>echo</span> -en <span class=s2>&#34;iptable_nat, &#34;</span>
-<span class=nv>$MODPROBE</span> iptable_nat
-<span class=nb>echo</span> -en <span class=s2>&#34;nf_nat_ftp, &#34;</span>
-<span class=nv>$MODPROBE</span> nf_nat_ftp
-<span class=nb>echo</span> <span class=s2>&#34;----------------------------------------------------------------------&#34;</span>
-<span class=nb>echo</span> -e <span class=s2>&#34;   Done loading modules.\n&#34;</span>
-<span class=nb>echo</span> <span class=s2>&#34;   Enabling forwarding..&#34;</span>
-<span class=nb>echo</span> <span class=s2>&#34;1&#34;</span> &gt; /proc/sys/net/ipv4/ip_forward
-<span class=nb>echo</span> <span class=s2>&#34;   Enabling DynamicAddr..&#34;</span>
-<span class=nb>echo</span> <span class=s2>&#34;1&#34;</span> &gt; /proc/sys/net/ipv4/ip_dynaddr 
-<span class=nb>echo</span> <span class=s2>&#34;   Clearing any existing rules and setting default policy..&#34;</span>
-
-iptables-restore <span class=s>&lt;&lt;-EOF
-</span><span class=s>*nat
-</span><span class=s>-A POSTROUTING -o &#34;$EXTIF&#34; -j MASQUERADE
-</span><span class=s>COMMIT
-</span><span class=s>*filter
-</span><span class=s>:INPUT ACCEPT [0:0]
-</span><span class=s>:FORWARD DROP [0:0]
-</span><span class=s>:OUTPUT ACCEPT [0:0]
-</span><span class=s>-A FORWARD -i &#34;$EXTIF&#34; -o &#34;$INTIF&#34; -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT 
-</span><span class=s>-A FORWARD -i &#34;$INTIF&#34; -o &#34;$EXTIF&#34; -j ACCEPT
-</span><span class=s>-A FORWARD -j LOG
-</span><span class=s>COMMIT
-</span><span class=s>EOF</span>
-
-<span class=nb>echo</span> -e <span class=s2>&#34;\nrc.firewall-iptables v</span><span class=nv>$FWVER</span><span class=s2> done.\n&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>After configuring the 2 variables, save the script below as nat.sh and make it executable by doing</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>echo</span> -e <span class=s2>&#34;\n\nLoading simple rc.firewall-iptables version </span><span class=nv>$FWVER</span><span class=s2>..\n&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>DEPMOD</span><span class=o>=</span>/sbin/depmod
+</span></span><span class=line><span class=cl><span class=nv>MODPROBE</span><span class=o>=</span>/sbin/modprobe
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nv>EXTIF</span><span class=o>=</span><span class=s2>&#34;eth0&#34;</span> <span class=c1># Change eth0 as your External Network Interface Name</span>
+</span></span><span class=line><span class=cl><span class=nv>INTIF</span><span class=o>=</span><span class=s2>&#34;eth1&#34;</span> <span class=c1># Change eth1 as bridge name (Internal Network Interface)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;   External Interface:  </span><span class=nv>$EXTIF</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;   Internal Interface:  </span><span class=nv>$INTIF</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>##======================================================================</span>
+</span></span><span class=line><span class=cl><span class=c1>##== No editing beyond this line is required for initial MASQ testing == </span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> -en <span class=s2>&#34;   loading modules: &#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;  - Verifying that all kernel modules are ok&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>$DEPMOD</span> -a
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;----------------------------------------------------------------------&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> -en <span class=s2>&#34;ip_tables, &#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>$MODPROBE</span> ip_tables
+</span></span><span class=line><span class=cl><span class=nb>echo</span> -en <span class=s2>&#34;nf_conntrack, &#34;</span> 
+</span></span><span class=line><span class=cl><span class=nv>$MODPROBE</span> nf_conntrack
+</span></span><span class=line><span class=cl><span class=nb>echo</span> -en <span class=s2>&#34;nf_conntrack_ftp, &#34;</span> 
+</span></span><span class=line><span class=cl><span class=nv>$MODPROBE</span> nf_conntrack_ftp
+</span></span><span class=line><span class=cl><span class=nb>echo</span> -en <span class=s2>&#34;nf_conntrack_irc, &#34;</span> 
+</span></span><span class=line><span class=cl><span class=nv>$MODPROBE</span> nf_conntrack_irc
+</span></span><span class=line><span class=cl><span class=nb>echo</span> -en <span class=s2>&#34;iptable_nat, &#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>$MODPROBE</span> iptable_nat
+</span></span><span class=line><span class=cl><span class=nb>echo</span> -en <span class=s2>&#34;nf_nat_ftp, &#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>$MODPROBE</span> nf_nat_ftp
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;----------------------------------------------------------------------&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> -e <span class=s2>&#34;   Done loading modules.\n&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;   Enabling forwarding..&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;1&#34;</span> &gt; /proc/sys/net/ipv4/ip_forward
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;   Enabling DynamicAddr..&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;1&#34;</span> &gt; /proc/sys/net/ipv4/ip_dynaddr 
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;   Clearing any existing rules and setting default policy..&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>iptables-restore <span class=s>&lt;&lt;-EOF
+</span></span></span><span class=line><span class=cl><span class=s>*nat
+</span></span></span><span class=line><span class=cl><span class=s>-A POSTROUTING -o &#34;$EXTIF&#34; -j MASQUERADE
+</span></span></span><span class=line><span class=cl><span class=s>COMMIT
+</span></span></span><span class=line><span class=cl><span class=s>*filter
+</span></span></span><span class=line><span class=cl><span class=s>:INPUT ACCEPT [0:0]
+</span></span></span><span class=line><span class=cl><span class=s>:FORWARD DROP [0:0]
+</span></span></span><span class=line><span class=cl><span class=s>:OUTPUT ACCEPT [0:0]
+</span></span></span><span class=line><span class=cl><span class=s>-A FORWARD -i &#34;$EXTIF&#34; -o &#34;$INTIF&#34; -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT 
+</span></span></span><span class=line><span class=cl><span class=s>-A FORWARD -i &#34;$INTIF&#34; -o &#34;$EXTIF&#34; -j ACCEPT
+</span></span></span><span class=line><span class=cl><span class=s>-A FORWARD -j LOG
+</span></span></span><span class=line><span class=cl><span class=s>COMMIT
+</span></span></span><span class=line><span class=cl><span class=s>EOF</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> -e <span class=s2>&#34;\nrc.firewall-iptables v</span><span class=nv>$FWVER</span><span class=s2> done.\n&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>After configuring the 2 variables, save the script below as nat.sh and make it executable by doing</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>chmod a+x nat.sh
-</code></pre></td></tr></table>
-</div>
-</div><p>Now, test the script by running as root</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>chmod a+x nat.sh
+</span></span></code></pre></td></tr></table></div></div><p>Now, test the script by running as root</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo sh nat.sh
-</code></pre></td></tr></table>
-</div>
-</div><h3 id=clients-network-settings>Clients network settings</h3>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo sh nat.sh
+</span></span></code></pre></td></tr></table></div></div><h3 id=clients-network-settings>Clients network settings</h3><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>IPv4——选择使用指定的DNS，在DNS服务器地址中输入223.5.5.5 和 223.6.6.6，输入后确定退出即设置完成。
-IPv6——选择使用指定的DNS，在DNS服务器地址中输入2400:3200::1 和 2400:3200:baba::1，输入后确定退出即设置完成。
-</code></pre></td></tr></table>
-</div>
-</div><p>Each clients at the less MUST setting the corrent IP address, netmask, gateway and DNS.</p>
-<p>** TIPS:
-If you using the above bridge settings, you can following the below list to set-up your client network interface.</p>
-<ol>
-<li>The bridge IP is 192.168.1.1, so your clent IP should be 192.168.1.x (x minimum valu is 2, the maxmum value is 255), all of clients IP must be unique within this internal network(subnet).</li>
-<li>netmask should be 255.255.255.0</li>
-<li>gateway should be 192.168.1.1, which is bridge&rsquo;s IP address</li>
-<li>DNS can be setting as your ISP DNS or public DNS, such as Google&rsquo;s DNS 8.8.8.8, 8.8.4.4
-**</li>
-</ol>
-<h4 id=for-linux>For Linux</h4>
-<h5 id=using-ifconfig>Using ifconfig</h5>
-<p>Setting up IP address and Netmask command line</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>IPv4——选择使用指定的DNS，在DNS服务器地址中输入223.5.5.5 和 223.6.6.6，输入后确定退出即设置完成。
+</span></span><span class=line><span class=cl>IPv6——选择使用指定的DNS，在DNS服务器地址中输入2400:3200::1 和 2400:3200:baba::1，输入后确定退出即设置完成。
+</span></span></code></pre></td></tr></table></div></div><p>Each clients at the less MUST setting the corrent IP address, netmask, gateway and DNS.</p><p>** TIPS:
+If you using the above bridge settings, you can following the below list to set-up your client network interface.</p><ol>
+<li>The bridge IP is 192.168.1.1, so your clent IP should be 192.168.1.x (x minimum valu is 2, the maxmum value is 255), all of clients IP must be unique within this internal network(subnet).</li><li>netmask should be 255.255.255.0</li><li>gateway should be 192.168.1.1, which is bridge&rsquo;s IP address</li><li>DNS can be setting as your ISP DNS or public DNS, such as Google&rsquo;s DNS 8.8.8.8, 8.8.4.4
+**</li></ol><h4 id=for-linux>For Linux</h4><h5 id=using-ifconfig>Using ifconfig</h5><p>Setting up IP address and Netmask command line</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo ifconfig eth0 192.168.1.2 netmask 255.255.255.0
-</code></pre></td></tr></table>
-</div>
-</div><p>** TIPS: **</p>
-<ol>
-<li>eth0 is network interface name, you need change this.</li>
-<li>192.168.1.2 is client IP address you want to set.</li>
-<li>netmask 255.255.255.0 is good.</li>
-</ol>
-<p>Setting up gateway command line</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo ifconfig eth0 192.168.1.2 netmask 255.255.255.0
+</span></span></code></pre></td></tr></table></div></div><p>** TIPS: **</p><ol>
+<li>eth0 is network interface name, you need change this.</li><li>192.168.1.2 is client IP address you want to set.</li><li>netmask 255.255.255.0 is good.</li></ol><p>Setting up gateway command line</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo route add default gw 192.168.1.1 eth0
-</code></pre></td></tr></table>
-</div>
-</div><p>** TIPS: **</p>
-<ol>
-<li>eth0 is network interface name, you need change this.</li>
-<li><em>gw xxx.xxx.xxx.xxx</em> is your gateway IP address</li>
-</ol>
-<h5 id=ubuntu-gui>Ubuntu GUI</h5>
-<p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src="https://i0.wp.com/www.opensourceforu.com/wp-content/uploads/2015/03/fig5.png?resize=350%2C374&ssl=1" data-srcset="https://i0.wp.com/www.opensourceforu.com/wp-content/uploads/2015/03/fig5.png?resize=350%2C374&ssl=1, https://i0.wp.com/www.opensourceforu.com/wp-content/uploads/2015/03/fig5.png?resize=350%2C374&ssl=1 1.5x, https://i0.wp.com/www.opensourceforu.com/wp-content/uploads/2015/03/fig5.png?resize=350%2C374&ssl=1 2x" data-sizes=auto alt="https://i0.wp.com/www.opensourceforu.com/wp-content/uploads/2015/03/fig5.png?resize=350%2C374&ssl=1" title="Editing wired connection"></p>
-<h4 id=for-mac>For Mac</h4>
-<ol>
-<li>On your Mac, choose Apple menu > System Preferences, then click Network.</li>
-<li>Select the network connection you want to use (such as Ethernet) in the list.</li>
-<li>Choose Manually and enter the address in the IP Address field. Also, subnet mask, gateway, and Domain Name System (DNS) server address.</li>
-</ol>
-<h4 id=for-windows>For Windows</h4>
-<ol>
-<li>Open Start on Windows 10.</li>
-<li>Search for Command Prompt, right-click the result and select the Run as administrator option to open the console.</li>
-<li>Type the following command to see your current networking configuration and press Enter:</li>
-</ol>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo route add default gw 192.168.1.1 eth0
+</span></span></code></pre></td></tr></table></div></div><p>** TIPS: **</p><ol>
+<li>eth0 is network interface name, you need change this.</li><li><em>gw xxx.xxx.xxx.xxx</em> is your gateway IP address</li></ol><h5 id=ubuntu-gui>Ubuntu GUI</h5><p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src="https://i0.wp.com/www.opensourceforu.com/wp-content/uploads/2015/03/fig5.png?resize=350%2C374&ssl=1" data-srcset="https://i0.wp.com/www.opensourceforu.com/wp-content/uploads/2015/03/fig5.png?resize=350%2C374&ssl=1, https://i0.wp.com/www.opensourceforu.com/wp-content/uploads/2015/03/fig5.png?resize=350%2C374&ssl=1 1.5x, https://i0.wp.com/www.opensourceforu.com/wp-content/uploads/2015/03/fig5.png?resize=350%2C374&ssl=1 2x" data-sizes=auto alt="https://i0.wp.com/www.opensourceforu.com/wp-content/uploads/2015/03/fig5.png?resize=350%2C374&ssl=1" title="Editing wired connection"></p><h4 id=for-mac>For Mac</h4><ol>
+<li>On your Mac, choose Apple menu > System Preferences, then click Network.</li><li>Select the network connection you want to use (such as Ethernet) in the list.</li><li>Choose Manually and enter the address in the IP Address field. Also, subnet mask, gateway, and Domain Name System (DNS) server address.</li></ol><h4 id=for-windows>For Windows</h4><ol>
+<li>Open Start on Windows 10.</li><li>Search for Command Prompt, right-click the result and select the Run as administrator option to open the console.</li><li>Type the following command to see your current networking configuration and press Enter:</li></ol><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ipconfig /all
-</code></pre></td></tr></table>
-</div>
-</div><ol start=4>
-<li>Type the following command to assign a static IP address and press Enter:</li>
-</ol>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ipconfig /all
+</span></span></code></pre></td></tr></table></div></div><ol start=4>
+<li>Type the following command to assign a static IP address and press Enter:</li></ol><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>netsh interface ip <span class=nb>set</span> address <span class=nv>name</span><span class=o>=</span><span class=s2>&#34;Ethernet0&#34;</span> static 192.168.1.2 255.255.255.0 192.168.1.1
-</code></pre></td></tr></table>
-</div>
-</div><p>In the above command make sure to change Ethernet0 for the name of your network adapter, and you must change 192.168.1.2 255.255.255.0 192.168.1.1 with the device IP address, subnet mask, and default gateway address that corresponds to your network configuration.</p>
-<ol start=5>
-<li>Type the following command to set a DNS server address and press Enter:</li>
-</ol>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>netsh interface ip <span class=nb>set</span> address <span class=nv>name</span><span class=o>=</span><span class=s2>&#34;Ethernet0&#34;</span> static 192.168.1.2 255.255.255.0 192.168.1.1
+</span></span></code></pre></td></tr></table></div></div><p>In the above command make sure to change Ethernet0 for the name of your network adapter, and you must change 192.168.1.2 255.255.255.0 192.168.1.1 with the device IP address, subnet mask, and default gateway address that corresponds to your network configuration.</p><ol start=5>
+<li>Type the following command to set a DNS server address and press Enter:</li></ol><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>netsh interface ip <span class=nb>set</span> dns <span class=nv>name</span><span class=o>=</span><span class=s2>&#34;Ethernet0&#34;</span> static 10.1.2.1
-</code></pre></td></tr></table>
-</div>
-</div><p>In the above command make sure to change Ethernet0 with the name of your adapter and 10.1.2.1 with the DNS server address of your network.
-6. Type the following command to set an alternate DNS server address and press Enter:</p>
-<div class=highlight><div class=chroma>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>netsh interface ip <span class=nb>set</span> dns <span class=nv>name</span><span class=o>=</span><span class=s2>&#34;Ethernet0&#34;</span> static 10.1.2.1
+</span></span></code></pre></td></tr></table></div></div><p>In the above command make sure to change Ethernet0 with the name of your adapter and 10.1.2.1 with the DNS server address of your network.
+6. Type the following command to set an alternate DNS server address and press Enter:</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>netsh interface ip add dns <span class=nv>name</span><span class=o>=</span><span class=s2>&#34;Ethernet0&#34;</span> 8.8.8.8 <span class=nv>index</span><span class=o>=</span><span class=m>2</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>In the above command make sure to change Ethernet0 with the name of your adapter and 8.8.8.8 with an alternate DNS server address.</p>
-<p>** After you complete the steps, you can test the new configuration using the ping command (for example, ping google.com) to see if the internet is working. Alternatively, you can simply open your web browser and try to navigate to a website to see if the configuration works. **</p>
-<h2 id=troubleshooting>Troubleshooting</h2>
-</div><div class=post-footer id=post-footer>
+</span></code></pre></td><td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>netsh interface ip add dns <span class=nv>name</span><span class=o>=</span><span class=s2>&#34;Ethernet0&#34;</span> 8.8.8.8 <span class=nv>index</span><span class=o>=</span><span class=m>2</span>
+</span></span></code></pre></td></tr></table></div></div><p>In the above command make sure to change Ethernet0 with the name of your adapter and 8.8.8.8 with an alternate DNS server address.</p><p>** After you complete the steps, you can test the new configuration using the ping command (for example, ping google.com) to see if the internet is working. Alternatively, you can simply open your web browser and try to navigate to a website to see if the configuration works. **</p><h2 id=troubleshooting>Troubleshooting</h2></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2022-01-18</span>
-</div>
-<div class=post-info-license></div>
-</div>
-<div class=post-info-line>
+<span>Updated on 2022-03-02</span>
+</div><div class=post-info-license></div></div><div class=post-info-line>
 <div class=post-info-md><span>
 <a class=link-to-markdown href=https://yanboyang.com/ubunturouter/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
-</span></div>
-<div class=post-info-share>
+</span></div><div class=post-info-share>
 <span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/ubunturouter/ data-title="Setting up an Linux Router with bridge" data-hashtags=Networking,OVS><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/ubunturouter/ data-hashtag=Networking><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/ubunturouter/ data-title="Setting up an Linux Router with bridge" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/ubunturouter/ data-title="Setting up an Linux Router with bridge"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/ubunturouter/ data-title="Setting up an Linux Router with bridge"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/ubunturouter/ data-title="Setting up an Linux Router with bridge" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/ubunturouter/ data-title="Setting up an Linux Router with bridge" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/ubunturouter/ data-title="Setting up an Linux Router with bridge"><i class="fab fa-evernote fa-fw"></i></a></span>
-</div>
-</div>
-</div>
-<div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/networking/>Networking</a>,&nbsp;<a href=https://yanboyang.com/tags/ovs/>OVS</a></section>
-<section>
+</div></div></div><div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/networking/>Networking</a>,&nbsp;<a href=https://yanboyang.com/tags/ovs/>OVS</a></section><section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span>
-</section>
-</div>
-<div class=post-nav><a href=https://yanboyang.com/baslerwithopencv/ class=prev rel=prev title="Getting started with Basler Camera With Opencv on Python"><i class="fas fa-angle-left fa-fw"></i>Getting started with Basler Camera With Opencv on Python</a>
-<a href=https://yanboyang.com/patent/ class=next rel=next title="Intellectual Property Foundation and Patent Mining">Intellectual Property Foundation and Patent Mining<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-<div id=comments><div id=disqus_thread class=comment></div><noscript>
+</section></div><div class=post-nav><a href=https://yanboyang.com/baslerwithopencv/ class=prev rel=prev title="Getting started with Basler Camera With Opencv on Python"><i class="fas fa-angle-left fa-fw"></i>Getting started with Basler Camera With Opencv on Python</a>
+<a href=https://yanboyang.com/patent/ class=next rel=next title="Intellectual Property Foundation and Patent Mining">Intellectual Property Foundation and Patent Mining<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
-</noscript></div></article></div>
-</main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.92.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
-</div>
-</footer></div>
-<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+</noscript></div></article></div></main><footer class=footer>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
 <i class="fas fa-arrow-up fa-fw"></i>
 </a><a href=# id=view-comments class=fixed-button title="View Comments">
 <i class="fas fa-comment fa-fw"></i>
 </a>
-</div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body>
-</html>
+</div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>
