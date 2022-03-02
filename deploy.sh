@@ -5,7 +5,7 @@
 ## PURPOSE: This program for push Hugo to github             ##
 ## ENVIRONment: mac, Linux                                   ##
 ## COMMENTs:                                                 ##
-## Last Modified Date: 25.05.2021                            ##
+## Last Modified Date: 02.03.2022                            ##
 ###############################################################
 
 printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
@@ -54,7 +54,7 @@ initSSHkey () {
 
 testConnectionAndDeploy () {
     # Testing Github connection success or not
-    testConnection=$(ssh -T git@github.com 2>&1)
+    testConnection=$(ssh -o ConnectTimeout=10 -T -p 443 git@ssh.github.com 2>&1)
 
     # success connect to Github
     if [[ $testConnection =~ successfully ]]; then
@@ -68,7 +68,7 @@ testConnectionAndDeploy () {
         read -p "Are you done update your deploy key (Y/n)? " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]; then
-            testConnection=$(ssh -T git@github.com 2>&1)
+            testConnection=$(ssh -o ConnectTimeout=10 -T -p 443 git@ssh.github.com 2>&1)
             if [[ $testConnection =~ successfully ]]; then
                 deploy "$testConnection"
             else
@@ -82,7 +82,7 @@ testConnectionAndDeploy () {
 cd ~/blog
 
 # Have ssh key
-if [ "$(ls -A ~/.ssh 2>/dev/null)" ]; then
+if [ "$(ls -A ~/.ssh/id_rsa.pub 2>/dev/null)" ]; then
     echo "***** .ssh directory exists and has content, continuing *****";
     testConnectionAndDeploy
 # Have NOT ssh key

@@ -1,0 +1,15 @@
+#+TITLE: Machine Learning
+#+hugo_base_dir: ~/blog/
+#+hugo_section: posts
+#+hugo_front_matter_format: yaml
+
+* MachineLearning :@MachineLearning:
+** DONE test :vim:
+CLOSED: [2021-12-21 Tue 16:16]
+:PROPERTIES:
+:EXPORT_FILE_NAME: test
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** test
+test
