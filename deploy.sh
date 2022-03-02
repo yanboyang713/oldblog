@@ -15,7 +15,7 @@ deploy () {
     echo "$1"
 
     # Get System environment, if does NOT have get repo name auto
-    if [ -z "${BLOGREPOSITORIENAME}" ]; then
+    if [ ! -z "${BLOGREPOSITORIENAME}" ]; then
         echo "Your Github Repositorir Name is: $BLOGREPOSITORIENAME"
     else
         # get Repositorie Name for deploy SSH key
