@@ -20,6 +20,7 @@ deploy () {
     else
         # get Repositorie Name for deploy SSH key
         BLOGREPOSITORIENAME=$(grep -oP '(?<=[[:space:]]).*?(?=!)' <<< "$1")
+        echo "Your Github Repositorir Name is: $BLOGREPOSITORIENAME"
     fi
 
     #set git remote URL
