@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with NeoVim"
-date: 2022-01-06T18:36:00+08:00
+date: 2022-01-06T18:36:00+11:00
 categories: ["Editor"]
 draft: false
 ---
@@ -52,7 +52,7 @@ To make it easier to install plugins, use the [Vim-plug plugin manager](https://
 
 ## Import Existing NeoVim Configuration {#import-existing-neovim-configuration}
 
-I recommend you using **Make** to management all of your dotfiles, include the configuration of **NeoVim**, the details please have a look [Linux/Managing Your Dotfiles With Git and Make]({{< relref "dotfiles" >}}).
+I recommend you using **Make** to management all of your dotfiles, include the configuration of **NeoVim**, the details please have a look [Linux/Managing Your Dotfiles With Git and Make]({{< relref "#d41d8c" >}}).
 
 You also can found my NeoVim configuration in [HERE](https://github.com/yanboyang713/DotFiles/blob/main/nvim/init.vim).
 
@@ -86,7 +86,7 @@ VISUAL=nvim
 ## Plugins {#plugins}
 
 
-### coc.nvim Plugged {#coc-dot-nvim-plugged}
+### coc.nvim Plugged <span class="tag"><span class="coc">coc</span><span class="nvim">nvim</span></span> {#coc-dot-nvim-plugged}
 
 If you faced below error message.
 
@@ -102,6 +102,53 @@ cd ~/.config/nvim/plugged/coc.nvim
 yarn install
 yarn build
 ```
+
+
+## Install bash script {#install-bash-script}
+
+I write a bash script for doing all of those thing.
+
+```bash
+#!/bin/bash
+# Bash Menu Script
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: Init set-up NVIM                                ##
+## PURPOSE: Init Set-up NVIM                                 ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 03.02.2022                            ##
+###############################################################
+
+echo "Let's we start set-up NVIM"
+
+## Details at https://www.yanboyang.com/neovim/
+
+## Pre-requised Install
+sudo pkgfile --update
+sudo pacman --noconfirm -S --needed nodejs neovim
+
+## Install the Vim-plug Plugin Manager
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+## Import Existing NeoVim Configuration
+mkdir $HOME/.config/nvim/
+ln -vsf $PWD/nvim/init.vim $HOME/.config/nvim/init.vim
+
+## Install NeoVim Plugins
+nvim --headless +'PlugInstall --sync' +'UpdateRemotePlugins' +qall
+
+## Install coc.nvim Plugged
+npm -g list yarn || sudo npm install -g yarn
+
+# Go to your coc.nvim plugged DIR
+cd ~/.config/nvim/plugged/coc.nvim
+yarn install
+yarn build
+```
+
+Link: <https://github.com/yanboyang713/DotFiles/blob/main/Scripts/nvim>
 
 
 ## Reference List {#reference-list}

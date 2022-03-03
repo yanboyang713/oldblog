@@ -1,0 +1,4 @@
+#+TITLE: Text Editor
+#+hugo_base_dir: ~/blog/
+#+hugo_section: posts
+#+hugo_front_matter_format: yaml

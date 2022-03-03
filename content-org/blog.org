@@ -208,6 +208,50 @@ cd ~/.config/nvim/plugged/coc.nvim
 yarn install
 yarn build
 #+end_src
+*** Install bash script
+I write a bash script for doing all of those thing.
+
+#+begin_src bash
+#!/bin/bash
+# Bash Menu Script
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: Init set-up NVIM                                ##
+## PURPOSE: Init Set-up NVIM                                 ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 03.02.2022                            ##
+###############################################################
+
+echo "Let's we start set-up NVIM"
+
+## Details at https://www.yanboyang.com/neovim/
+
+## Pre-requised Install
+sudo pkgfile --update
+sudo pacman --noconfirm -S --needed nodejs neovim
+
+## Install the Vim-plug Plugin Manager
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+## Import Existing NeoVim Configuration
+mkdir $HOME/.config/nvim/
+ln -vsf $PWD/nvim/init.vim $HOME/.config/nvim/init.vim
+
+## Install NeoVim Plugins
+nvim --headless +'PlugInstall --sync' +'UpdateRemotePlugins' +qall
+
+## Install coc.nvim Plugged
+npm -g list yarn || sudo npm install -g yarn
+
+# Go to your coc.nvim plugged DIR
+cd ~/.config/nvim/plugged/coc.nvim
+yarn install
+yarn build
+#+end_src
+
+Link: https://github.com/yanboyang713/DotFiles/blob/main/Scripts/nvim
 
 *** Reference List
 1. https://www.cnblogs.com/sober-orange/p/cocnvim-build-indexjs.html
@@ -5821,6 +5865,49 @@ bindsym $mod+Return exec alacritty
 *** Reference List
 1. https://betterprogramming.pub/a-minimal-and-configurable-terminal-setup-72aa833672e
 2. https://frantzroulet.com/blog/other/2018/12/26/how-to-choose-alacritty-as-default-terminal.html
+
+
+** DONE Linux modification keys: ctrl and caps exchange :keyboard:modification:
+CLOSED: [2022-03-03 Thu 16:17]
+:PROPERTIES:
+:EXPORT_FILE_NAME: keyboardModification
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+The *ctrl* key is used more frequently than the key *caps*, but the position of the *ctrl* is not friendly to the little finger. The following introduces a simple methods to modify the key position.
+
+*** Set-up
+Step 1: You need add below contents to you */etc/profile*.
+
+#+begin_src file
+setxkbmap -option "ctrl:swapcaps"
+#+end_src
+
+The quick way run the below *Script.*
+
+#+begin_src bash
+#!/bin/sh
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: Keyboard, Modification                          ##
+## PURPOSE: ctrl and caps exchange                           ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 03.03.2022                            ##
+###############################################################
+
+read -p "Do you want to swap ctrl-L and Caps keys (Y/n)? " -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            ## swap ctrl-L and Caps when star-up
+            echo "Swap ctrl-L and Caps when start-up !!!"
+            echo -ne "\n#Swap ctrl-L and Caps when start-up\nsetxkbmap -option \"ctrl:swapcaps\"\n\n"  | tee -a ~/DotFiles/profile/profile
+        fi
+#+end_src
+
+*** Reference List
+1.  https://opensource.com/article/18/11/how-swap-ctrl-and-caps-lock-your-keyboard
 
 
 * Research :@Research:
