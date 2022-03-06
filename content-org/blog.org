@@ -5867,6 +5867,156 @@ bindsym $mod+Return exec alacritty
 2. https://frantzroulet.com/blog/other/2018/12/26/how-to-choose-alacritty-as-default-terminal.html
 
 
+** DONE Arch Linux Unofficial user repositories :unofficial:user:repository:
+CLOSED: [2022-03-06 Sun 16:56]
+:PROPERTIES:
+:EXPORT_FILE_NAME: archLinuxUserRepository
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction :archstrike:
+In Arch Linux, the common way to install new software is install software from official repositorie. But, on some of special fields, there are lots of unofficial user repositorie is avaliable.
+
+For example, [[https://archstrike.org/][archstrike]] is a famous repository for security professionals and enthusiasts.
+
+In this article, I will tech you how to use others repositorie and how to make you own repositorie for share your package with others person.
+
+*** Use others repositorie
+There are two categories of repositorie is often used: signed repositorie and unsigned repositorie.
+
+In order to use these repositories, the common method is add them to */etc/pacman.conf. If a repository is *signed*, you must obtain and locally sign the associated key.
+
+There is a example below to show you how to add community repositorie to your system and how to install those applications from your added repositorie.
+
+The example about install *wechat* from Arch Linux Chinese community repositorie.
+
+**** Arch Linux Chinese Community Repository
+:PROPERTIES:
+:ID:       2fbe6e51-166b-4702-9474-fb96182b03c0
+:END:
+***** Usage
+Add repo:
+
+#+begin_src file
+[archlinuxcn]
+Server = https://repo.archlinuxcn.org/$arch
+#+end_src
+
+to your /etc/pacman.conf .
+
+For mirrors (strongly recommended for users in China), see https://github.com/archlinuxcn/mirrorlist-repo.
+
+Import PGP Keys:
+
+#+begin_src bash
+sudo pacman -Sy && sudo pacman -S archlinuxcn-keyring
+#+end_src
+
+Install Wechat:
+#+begin_src bash
+yay -S wine-for-wechat
+#+end_src
+
+*** Create your own custom repository :arch:linux:custom:repository:
+
+
+*** Reference List
+1. https://wiki.archlinux.org/title/Unofficial_user_repositories
+
+
+** DONE Installing Wechat Desktop Client :wechat:linux:
+CLOSED: [2022-03-06 Sun 15:44]
+:PROPERTIES:
+:EXPORT_FILE_NAME: wechat
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+WeChat is a popular micro-messaging cross-platform app supporting text, image/videos, group chats with over 900 million active monthly users, mostly in China. Along with the basic messaging facilities, it also provides payment services in China to pay bills, order goods and services, transfer money and much more.
+
+Currently there is no official Linux version of WeChat. This article will introduce how to install WeChat.
+
+*** Using WeChat on Linux desktop
+
+Just as you saw for WhatsApp on Linux, WeChat can also be used via a web browser by scanning the QR code. That of course doesn’t provide a native desktop experience.
+
+You have two ways to use WeChat on Linux:
+
++ Use a dedicated unofficial WeChat client
++ Use a generic messaging service aggregator like Franz or Rambox
+
+The unofficial WeChat client known as electronic-chat is discontinued unfortunately. It is no longer developed but you could still use it in snap format. However, I recommend not using it.
+
+*** Method 1: Wine
+The compatibility layer [[https://wiki.archlinux.org/title/Wine][Wine]] can be used to run WeChat within Linux.
+
+If the WeChat shadow window is displayed on top of other windows during use, you can try to use *wine-for-wechat* in the [[https://wiki.archlinux.org/title/Archlinuxcn][archlinuxcn]] repository. This version of Wine uses a [[https://github.com/archlinuxcn/repo/blob/master/archlinuxcn/wine-for-wechat/wine-wechat.patch][patch]] for WeChat shadow windows.
+
+In addition, it is also provided by [[https://aur.archlinux.org/packages/deepin-wine-wechat/][deepin-wine-wechat]] AUR (without patch), which is a Wine container configured for Arch. The WeChat version is the latest official version. You can also install wine-wechat from the archlinuxcn repository.
+
+Details: [[id:2fbe6e51-166b-4702-9474-fb96182b03c0][Linux/Arch Linux Unofficial user repositories/Use others repositorie/Arch Linux Chinese Community Repository]]
+
+*** Method 2: Installing WeChat on Linux via Rambox Pro
+
+Rambox Pro is another method that you can use to run WeChat on Linux. It is a workspace browser that allows you to run and manage as many applications as you want.
+
+With this one, you cannot only run WeChat. But you can also run other applications like Discord, Airtable, Aol, Buffer, WhatsApp on Linux.
+
+You can download and install Rambox Pro free of cost. Also, it comes with premium plans for advanced users. However, as long as you are running WeChat, the free plan is enough.
+
+To get started with Rambox Pro, follow these steps:
+
+At first, you have to install Rambox Pro. You can install it from the Desktop Software center, or you can run the below command:
+
+#+begin_src bash
+
+boyang:~$ sudo snap install ramboxpro
+[sudo] password for yanboyang713:
+ramboxpro 1.4.1 from Rambox (ramboxapp✓) installed
+#+end_src
+
+Once installed, run the application from the menu, and it will ask you to sign up.
+[[https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/06/rambox-pro-signup.png?w=800&ssl=1]]
+
+After signing up, hit the Home icon, and now you have to select WeChat.
+[[https://i2.wp.com/itsfoss.com/wp-content/uploads/2020/06/add-a-new-app.png?w=800&ssl=1]]
+
+Then click on the Add button.
+[[https://i0.wp.com/itsfoss.com/wp-content/uploads/2020/06/add-wechat-2.png?w=800&ssl=1]]
+
+Once done, you will get to see a QR code on your screen.
+[[https://i0.wp.com/itsfoss.com/wp-content/uploads/2020/06/scan-QR-code.png?w=800&ssl=1]]
+
+Scan the QR code from your smartphone’s WeChat app to log in to WeChat on your Linux machine.
+
+*** Method 2: Installing WeChat on Linux via Snap [Deprecated]
+
+electronic-chat is a third party open source client for WeChat hosted on github. As you can see, the repository is archived and the project is no longer active.
+Though the article has mentioned the steps, please avoid using this method.
+
+You can use snap in your Linux distribution to install it:
+
+#+begin_src bash
+sudo snap install electronic-wechat
+#+end_src
+
+This will install WeChat client. Once done, launch it from the menu by searching for WeChat.
+[[https://i2.wp.com/itsfoss.com/wp-content/uploads/2020/06/wechat.jpg?w=800&ssl=1]]
+
+When you launch it for the first time, it will ask you to scan QR code.
+[[https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/06/scan-qr-code.jpg?w=800&ssl=1]]
+
+Select the option to Scan QR code from the app and you can use it from your Ubuntu system.
+
+If at any moment, you are not satisfied and would rather prefer your phone to keep using WeChat, you can uninstall it using below command:
+
+#+begin_src bash
+sudo snap remove electronic-wechat
+#+end_src
+
+That’s it. Enjoy WeChat on Linux desktop.
+
+
 ** DONE Linux modification keys: ctrl and caps exchange :keyboard:modification:
 CLOSED: [2022-03-03 Thu 16:17]
 :PROPERTIES:
