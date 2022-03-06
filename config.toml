@@ -544,7 +544,7 @@ canonifyURLs = true
 
 # Author config
 [authors]
-authorName = "Boyang Yan"
+authorName = "Boyang"
 authorLink = "https://www.yanboyang.com"
 #[author]
 #  name = "Boyang Yan"
