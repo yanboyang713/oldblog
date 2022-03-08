@@ -543,13 +543,10 @@ canonifyURLs = true
     endLevel = 6
 
 # Author config
-[authors]
-authorName = "Boyang"
-authorLink = "https://www.yanboyang.com"
-#[author]
-#  name = "Boyang Yan"
-#  email = "yanboyang713@gmail.com"
-#  link = ""
+[author]
+  name = "Boyang Yan"
+  email = "yanboyang713@gmail.com"
+  link = ""
 
 # Sitemap config
 [sitemap]
