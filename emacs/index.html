@@ -5,21 +5,19 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Getting Started with Emacs - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Getting Started with Emacs">
-<meta property="og:description" content="Installation Run Emacs in Docker https://github.com/Silex/docker-emacs
-Usage Console 1  docker run -it --rm silex/emacs   GUI 1 2  xhost +local:root # WARN: this comes with security issues docker run -it --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix silex/emacs   Arch Linux (Manjaro) 1  yay -S emacs   macOS Prerequisites 1 2  # Installs clang xcode-select --install   emacs-mac. It offers good integration with macOS, native emojis and better childframe support 1 2 3  brew tap railwaycat/emacsmacport brew install emacs-mac --with-modules ln -s /usr/local/opt/emacs-mac/Emacs.">
+<meta property="og:description" content="Installation Run Emacs in Docker https://github.com/Silex/docker-emacs  Usage Console 1  docker run -it --rm silex/emacs   GUI 1 2  xhost +local:root # WARN: this comes with security issues docker run -it --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix silex/emacs   Arch Linux (Manjaro) 1  yay -S emacs   macOS Prerequisites 1 2  # Installs clang xcode-select --install   emacs-mac. It offers good integration with macOS, native emojis and better childframe support 1 2 3  brew tap railwaycat/emacsmacport brew install emacs-mac --with-modules ln -s /usr/local/opt/emacs-mac/Emacs.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/emacs/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-09-15T06:11:32+10:00">
-<meta property="article:modified_time" content="2022-03-02T13:13:27+00:00">
+<meta property="article:modified_time" content="2022-03-08T12:48:14+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting Started with Emacs">
-<meta name=twitter:description content="Installation Run Emacs in Docker https://github.com/Silex/docker-emacs
-Usage Console 1  docker run -it --rm silex/emacs   GUI 1 2  xhost +local:root # WARN: this comes with security issues docker run -it --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix silex/emacs   Arch Linux (Manjaro) 1  yay -S emacs   macOS Prerequisites 1 2  # Installs clang xcode-select --install   emacs-mac. It offers good integration with macOS, native emojis and better childframe support 1 2 3  brew tap railwaycat/emacsmacport brew install emacs-mac --with-modules ln -s /usr/local/opt/emacs-mac/Emacs.">
+<meta name=twitter:description content="Installation Run Emacs in Docker https://github.com/Silex/docker-emacs  Usage Console 1  docker run -it --rm silex/emacs   GUI 1 2  xhost +local:root # WARN: this comes with security issues docker run -it --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix silex/emacs   Arch Linux (Manjaro) 1  yay -S emacs   macOS Prerequisites 1 2  # Installs clang xcode-select --install   emacs-mac. It offers good integration with macOS, native emojis and better childframe support 1 2 3  brew tap railwaycat/emacsmacport brew install emacs-mac --with-modules ln -s /usr/local/opt/emacs-mac/Emacs.">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/emacs/><link rel=prev href=https://yanboyang.com/research/><link rel=next href=https://yanboyang.com/ham/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Emacs","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/emacs\/"},"genre":"posts","keywords":"emacs","wordcount":3076,"url":"https:\/\/yanboyang.com\/emacs\/","datePublished":"2021-09-15T06:11:32+10:00","dateModified":"2022-03-02T13:13:27+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/emacs/><link rel=prev href=https://yanboyang.com/research/><link rel=next href=https://yanboyang.com/ham/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started with Emacs","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/emacs\/"},"genre":"posts","keywords":"emacs","wordcount":3076,"url":"https:\/\/yanboyang.com\/emacs\/","datePublished":"2021-09-15T06:11:32+10:00","dateModified":"2022-03-08T12:48:14+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Author"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
@@ -74,7 +72,10 @@ Cancel
 <div id=search-dropdown-mobile></div></div><main class=main>
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Getting Started with Emacs</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/emacs/><i class="far fa-folder fa-fw"></i>Emacs</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-09-15>2021-09-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3076 words&nbsp;
+<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
+Author
+</a>
+</span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/emacs/><i class="far fa-folder fa-fw"></i>Emacs</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-09-15>2021-09-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3076 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;15 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -97,7 +98,10 @@ Cancel
 <ul>
 <li><a href=#org-mode>Org-mode</a></li></ul></li><li><a href=#day-7>Day 7</a></li><li><a href=#day-8>Day 8</a></li><li><a href=#day-9>Day 9</a></li><li><a href=#day-10>Day 10</a>
 <ul>
-<li><a href=#how-company-mode-works>How company-mode works?</a></li><li><a href=#why-my-company-sucks>Why my company sucks?</a></li><li><a href=#group-backend>Group backend</a></li><li><a href=#reference>reference</a></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=installation>Installation</h2><h3 id=run-emacs-in-docker>Run Emacs in Docker</h3><p><a href=https://github.com/Silex/docker-emacs target=_blank rel="noopener noreferrer">https://github.com/Silex/docker-emacs</a></p><h4 id=usage>Usage</h4><h5 id=console>Console</h5><div class=highlight><div class=chroma>
+<li><a href=#how-company-mode-works>How company-mode works?</a></li><li><a href=#why-my-company-sucks>Why my company sucks?</a></li><li><a href=#group-backend>Group backend</a></li><li><a href=#reference>reference</a></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=installation>Installation</h2><h3 id=run-emacs-in-docker>Run Emacs in Docker</h3><p><a href=https://github.com/Silex/docker-emacs target=_blank rel="noopener noreferrer">
+https://github.com/Silex/docker-emacs
+</a>
+</p><h4 id=usage>Usage</h4><h5 id=console>Console</h5><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd>
@@ -147,7 +151,10 @@ Cancel
 </span></span></code></pre></td></tr></table></div></div><h2 id=go-over-the-emacs-tutorial-at-least-once>Go over the Emacs tutorial at least once</h2><ul>
 <li>C-h t to open the tutorial.</li><li>You should be familiar with M(meta), s(uper, command key), S(hift) and C(trl)</li><li>You need be familiar with cursor movement (C-f/C-b/C-n/C-p/C-a/C-e) and basic editing (C-k)</li><li>Prefix key (C-h) and C-g (Stop currently input)</li></ul><h2 id=learn-to-active-some-built-in-functionality>Learn to active some built-in functionality</h2><ul>
 <li>linum-mode to display line numbers (M-x linum-mode)</li><li>C-x C-f(find/file) to open files, C-x C-s(ave) to save files.</li><li>You should always ask Emacs the right question</li><li>C-h k(ey)/ C-h v(arable)/ C-h f(unction) (Emacs is a self document, extensiable editor)</li><li>The key bindings are actually a quick way to command Emacs.</li></ul><h2 id=learn-some-elisp-emacs-lisp>Learn some elisp (emacs lisp)</h2><ul>
-<li>Use <a href=https://learnxinyminutes.com/docs/elisp/ target=_blank rel="noopener noreferrer">learnxinyminutes</a> website to learn Emacs lisp.</li><li>at least you know how to define variable, functions</li></ul><div class=highlight><div class=chroma>
+<li>Use <a href=https://learnxinyminutes.com/docs/elisp/ target=_blank rel="noopener noreferrer">
+learnxinyminutes
+</a>
+website to learn Emacs lisp.</li><li>at least you know how to define variable, functions</li></ul><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -241,7 +248,10 @@ GTD (getting things done)</li></ul><h2 id=day-two>Day Two</h2><div class=highlig
 </span></span><span class=line><span class=cl><span class=p>(</span><span class=nv>setq-default</span> <span class=nv>cursor-type</span> <span class=ss>&#39;bar</span><span class=p>)</span>
 </span></span></code></pre></td></tr></table></div></div><p><strong>NOTE:</strong>
 The different between setq and setq-default
-<a href=https://stackoverflow.com/questions/18172728/the-difference-between-setq-and-setq-default-in-emacs-lisp target=_blank rel="noopener noreferrer">https://stackoverflow.com/questions/18172728/the-difference-between-setq-and-setq-default-in-emacs-lisp</a></p><p>disable backup file</p><div class=highlight><div class=chroma>
+<a href=https://stackoverflow.com/questions/18172728/the-difference-between-setq-and-setq-default-in-emacs-lisp target=_blank rel="noopener noreferrer">
+https://stackoverflow.com/questions/18172728/the-difference-between-setq-and-setq-default-in-emacs-lisp
+</a>
+</p><p>disable backup file</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd>
@@ -287,7 +297,10 @@ The different between setq and setq-default
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=line><span class=cl><span class=p>(</span><span class=nv>global-hl-line-mode</span> <span class=no>t</span><span class=p>)</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=improve-built-in-package-system>Improve built-in package system</h3><p>make package system more powerful with <a href=https://melpa.org/ target=_blank rel="noopener noreferrer">Melpa</a></p><div class=highlight><div class=chroma>
+</span></span></code></pre></td></tr></table></div></div><h3 id=improve-built-in-package-system>Improve built-in package system</h3><p>make package system more powerful with <a href=https://melpa.org/ target=_blank rel="noopener noreferrer">
+Melpa
+</a>
+</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -375,7 +388,10 @@ The different between setq and setq-default
 <pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>M-x package-list-packages
 </span></span></span></code></pre></td></tr></table></div></div><p>add <strong>i</strong>
 delete <strong>D - > X</strong>
-update <strong>U</strong></p><p>install and configure counsel and ivy mode(swiper)</p><p><a href=https://github.com/abo-abo/swiper/tree/040d458bce4a88f37359192061bcea5ebe87007c target=_blank rel="noopener noreferrer">https://github.com/abo-abo/swiper/tree/040d458bce4a88f37359192061bcea5ebe87007c</a></p><p>swiper for search by text in minibuffer C-s
+update <strong>U</strong></p><p>install and configure counsel and ivy mode(swiper)</p><p><a href=https://github.com/abo-abo/swiper/tree/040d458bce4a88f37359192061bcea5ebe87007c target=_blank rel="noopener noreferrer">
+https://github.com/abo-abo/swiper/tree/040d458bce4a88f37359192061bcea5ebe87007c
+</a>
+</p><p>swiper for search by text in minibuffer C-s
 find-file C-x C-f</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
@@ -787,7 +803,10 @@ toggle indent in web-mode</p><div class=highlight><div class=chroma>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;C-c t i&#34;</span><span class=p>)</span> <span class=ss>&#39;my-toggle-web-indent</span><span class=p>)</span>
 </span></span></code></pre></td></tr></table></div></div><p>js2-refactor
-<a href=https://github.com/js-emacs/js2-refactor.el target=_blank rel="noopener noreferrer">https://github.com/js-emacs/js2-refactor.el</a></p><div class=highlight><div class=chroma>
+<a href=https://github.com/js-emacs/js2-refactor.el target=_blank rel="noopener noreferrer">
+https://github.com/js-emacs/js2-refactor.el
+</a>
+</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd>
@@ -874,14 +893,20 @@ improve occur</p><div class=highlight><div class=chroma>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;M-s i&#34;</span><span class=p>)</span> <span class=ss>&#39;counsel-imenu</span><span class=p>)</span>
 </span></span></code></pre></td></tr></table></div></div><p>expand-region and iedit mode
-<a href=https://github.com/magnars/expand-region.el target=_blank rel="noopener noreferrer">https://github.com/magnars/expand-region.el</a></p><div class=highlight><div class=chroma>
+<a href=https://github.com/magnars/expand-region.el target=_blank rel="noopener noreferrer">
+https://github.com/magnars/expand-region.el
+</a>
+</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span></code></pre></td><td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=line><span class=cl><span class=p>(</span><span class=nb>require</span> <span class=ss>&#39;expand-region</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;C-=&#34;</span><span class=p>)</span> <span class=ss>&#39;er/expand-region</span><span class=p>)</span>
-</span></span></code></pre></td></tr></table></div></div><p><a href=https://github.com/victorhge/iedit target=_blank rel="noopener noreferrer">https://github.com/victorhge/iedit</a></p><p>Bonus Time. Org export
+</span></span></code></pre></td></tr></table></div></div><p><a href=https://github.com/victorhge/iedit target=_blank rel="noopener noreferrer">
+https://github.com/victorhge/iedit
+</a>
+</p><p>Bonus Time. Org export
 export to html, you could also export to pdf</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -939,7 +964,10 @@ install helm-ag</p><div class=highlight><div class=chroma>
 <pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=line><span class=cl><span class=p>(</span><span class=nv>global-set-key</span> <span class=p>(</span><span class=nv>kbd</span> <span class=s>&#34;C-c ps&#34;</span><span class=p>)</span> <span class=ss>&#39;helm-do-ag-project-root</span><span class=p>)</span>
 </span></span></code></pre></td></tr></table></div></div><p>at first, you should install ag
 search speed: ag > pt > ack > grep
-<a href=https://github.com/ggreer/the_silver_searcher target=_blank rel="noopener noreferrer">https://github.com/ggreer/the_silver_searcher</a></p><div class=highlight><div class=chroma>
+<a href=https://github.com/ggreer/the_silver_searcher target=_blank rel="noopener noreferrer">
+https://github.com/ggreer/the_silver_searcher
+</a>
+</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd>
@@ -949,8 +977,13 @@ apt-get install silversearcher-ag</p><p>Show javascript errors with flycheck
 flycheck-checkers
 eslint</p><p>Snippets and auto snippet
 exercises
-give <code>helm-swoop</code> package a try: <a href=https://github.com/ShingoFukuyama/helm-swoop target=_blank rel="noopener noreferrer">https://github.com/ShingoFukuyama/helm-swoop</a>
-Give <code>org-mac-link</code> package a try: <a href=http://melpa.org/#/org-mac-link target=_blank rel="noopener noreferrer">http://melpa.org/#/org-mac-link</a></p><h2 id=day-7>Day 7</h2><p>Tweak C-w to delete backward</p><div class=highlight><div class=chroma>
+give <code>helm-swoop</code> package a try: <a href=https://github.com/ShingoFukuyama/helm-swoop target=_blank rel="noopener noreferrer">
+https://github.com/ShingoFukuyama/helm-swoop
+</a>
+Give <code>org-mac-link</code> package a try: <a href=http://melpa.org/#/org-mac-link target=_blank rel="noopener noreferrer">
+http://melpa.org/#/org-mac-link
+</a>
+</p><h2 id=day-7>Day 7</h2><p>Tweak C-w to delete backward</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd>
@@ -1012,11 +1045,21 @@ Use which key to group key bindings
 Yeah! You got a minimal Spacemacs!
 Bonus Time: Search Org notes
 References
-<a href=https://www.emacswiki.org/emacs/Evil target=_blank rel="noopener noreferrer">https://www.emacswiki.org/emacs/Evil</a>
-<a href=http://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/ target=_blank rel="noopener noreferrer">http://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/</a>
-<a href=http://nathantypanski.com/blog/2014-08-03-a-vim-like-emacs-config.html target=_blank rel="noopener noreferrer">http://nathantypanski.com/blog/2014-08-03-a-vim-like-emacs-config.html</a>
-<a href=http://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html target=_blank rel="noopener noreferrer">http://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html</a>
-<a href=http://blog.jakubarnold.cz/2014/06/23/evil-mode-how-to-switch-from-vim-to-emacs.html target=_blank rel="noopener noreferrer">http://blog.jakubarnold.cz/2014/06/23/evil-mode-how-to-switch-from-vim-to-emacs.html</a>
+<a href=https://www.emacswiki.org/emacs/Evil target=_blank rel="noopener noreferrer">
+https://www.emacswiki.org/emacs/Evil
+</a>
+<a href=http://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/ target=_blank rel="noopener noreferrer">
+http://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/
+</a>
+<a href=http://nathantypanski.com/blog/2014-08-03-a-vim-like-emacs-config.html target=_blank rel="noopener noreferrer">
+http://nathantypanski.com/blog/2014-08-03-a-vim-like-emacs-config.html
+</a>
+<a href=http://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html target=_blank rel="noopener noreferrer">
+http://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html
+</a>
+<a href=http://blog.jakubarnold.cz/2014/06/23/evil-mode-how-to-switch-from-vim-to-emacs.html target=_blank rel="noopener noreferrer">
+http://blog.jakubarnold.cz/2014/06/23/evil-mode-how-to-switch-from-vim-to-emacs.html
+</a>
 Exercises
 Install hydra and begin to add your own hydras!</p><h2 id=day-8>Day 8</h2><p>mwe-log-commands</p><p>elpa mirros
 Cask and pallet</p><p>You can’t start different versions of Emacs with the single config
@@ -1199,8 +1242,14 @@ pretty print the lisp Object</p><div class=highlight><div class=chroma>
 <pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=line><span class=cl><span class=p>(</span><span class=nb>defmacro</span> <span class=nv>defsynonym</span> <span class=p>(</span><span class=nv>old-name</span> <span class=nv>new-name</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>  <span class=o>`</span><span class=p>(</span><span class=nb>defmacro</span> <span class=o>,</span><span class=nv>new-name</span> <span class=p>(</span><span class=kp>&amp;rest</span> <span class=nv>args</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>     <span class=o>`</span><span class=p>(</span><span class=o>,</span> <span class=ss>&#39;,old-name</span> <span class=o>,@</span><span class=nv>args</span><span class=p>)))</span>
-</span></span></code></pre></td></tr></table></div></div><p>more discussion: <a href=https://emacs-china.org/t/lisp/357 target=_blank rel="noopener noreferrer">https://emacs-china.org/t/lisp/357</a></p><p>Reference
-Readme more about macro: <a href=https://www.gnu.org/software/emacs/manual/html_node/elisp/Macros.html#Macros target=_blank rel="noopener noreferrer">https://www.gnu.org/software/emacs/manual/html_node/elisp/Macros.html#Macros</a></p><h2 id=day-10>Day 10</h2><p>Topic: Company-mode and auto-completion Cask and macro/use-package</p><p>Fix previous issues</p><div class=highlight><div class=chroma>
+</span></span></code></pre></td></tr></table></div></div><p>more discussion: <a href=https://emacs-china.org/t/lisp/357 target=_blank rel="noopener noreferrer">
+https://emacs-china.org/t/lisp/357
+</a>
+</p><p>Reference
+Readme more about macro: <a href=https://www.gnu.org/software/emacs/manual/html_node/elisp/Macros.html#Macros target=_blank rel="noopener noreferrer">
+https://www.gnu.org/software/emacs/manual/html_node/elisp/Macros.html#Macros
+</a>
+</p><h2 id=day-10>Day 10</h2><p>Topic: Company-mode and auto-completion Cask and macro/use-package</p><p>Fix previous issues</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -1242,12 +1291,20 @@ C-h C-f to view the backend implementation</p><h3 id=why-my-company-sucks>Why my
 some backend require build with a server-client architecture: company-anaconda, company-jedi, company-ycmd, company-tern etc
 At first, you should make sure the server side is working properly and then you want to make sure you use the right backend
 how to fix anaconda on Mac</p><h3 id=group-backend>Group backend</h3><p>Write a Simple company backend
-<a href=http://sixty-north.com/blog/writing-the-simplest-emacs-company-mode-backend target=_blank rel="noopener noreferrer">http://sixty-north.com/blog/writing-the-simplest-emacs-company-mode-backend</a></p><h3 id=reference>reference</h3><p><a href=http://sixty-north.com/blog/series/how-to-write-company-mode-backends target=_blank rel="noopener noreferrer">http://sixty-north.com/blog/series/how-to-write-company-mode-backends</a>
-<a href=https://www.emacswiki.org/emacs/CompanyMode target=_blank rel="noopener noreferrer">https://www.emacswiki.org/emacs/CompanyMode</a></p></div><div class=post-footer id=post-footer>
+<a href=http://sixty-north.com/blog/writing-the-simplest-emacs-company-mode-backend target=_blank rel="noopener noreferrer">
+http://sixty-north.com/blog/writing-the-simplest-emacs-company-mode-backend
+</a>
+</p><h3 id=reference>reference</h3><p><a href=http://sixty-north.com/blog/series/how-to-write-company-mode-backends target=_blank rel="noopener noreferrer">
+http://sixty-north.com/blog/series/how-to-write-company-mode-backends
+</a>
+<a href=https://www.emacswiki.org/emacs/CompanyMode target=_blank rel="noopener noreferrer">
+https://www.emacswiki.org/emacs/CompanyMode
+</a>
+</p></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2022-03-02</span>
+<span>Updated on 2022-03-08</span>
 </div><div class=post-info-license></div></div><div class=post-info-line>
 <div class=post-info-md><span>
 <a class=link-to-markdown href=https://yanboyang.com/emacs/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
@@ -1260,8 +1317,8 @@ how to fix anaconda on Mac</p><h3 id=group-backend>Group backend</h3><p>Write a 
 <a href=https://yanboyang.com/ham/ class=next rel=next title="Beginners Guide to Ham Radio">Beginners Guide to Ham Radio<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div></main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.2">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer"></a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
 <i class="fas fa-arrow-up fa-fw"></i>
 </a><a href=# id=view-comments class=fixed-button title="View Comments">
 <i class="fas fa-comment fa-fw"></i>

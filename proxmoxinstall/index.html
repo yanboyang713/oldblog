@@ -11,7 +11,7 @@ Download the installer ISO image You can download ISO image from: https://www.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/proxmoxinstall/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-29T18:17:00+08:00">
-<meta property="article:modified_time" content="2022-03-02T13:13:27+00:00">
+<meta property="article:modified_time" content="2022-03-08T12:48:14+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Beginner guide to install Proxmox">
@@ -21,7 +21,7 @@ Download the installer ISO image You can download ISO image from: https://www.">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/proxmoxinstall/><link rel=prev href=https://yanboyang.com/orgroam/><link rel=next href=https://yanboyang.com/scala/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Beginner guide to install Proxmox","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/proxmoxinstall\/"},"genre":"posts","keywords":"proxmox","wordcount":1877,"url":"https:\/\/yanboyang.com\/proxmoxinstall\/","datePublished":"2021-12-29T18:17:00+08:00","dateModified":"2022-03-02T13:13:27+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/proxmoxinstall/><link rel=prev href=https://yanboyang.com/orgroam/><link rel=next href=https://yanboyang.com/scala/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Beginner guide to install Proxmox","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/proxmoxinstall\/"},"genre":"posts","keywords":"proxmox","wordcount":1878,"url":"https:\/\/yanboyang.com\/proxmoxinstall\/","datePublished":"2021-12-29T18:17:00+08:00","dateModified":"2022-03-08T12:48:14+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Author"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
@@ -76,7 +76,10 @@ Cancel
 <div id=search-dropdown-mobile></div></div><main class=main>
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Beginner guide to install Proxmox</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/cluster/><i class="far fa-folder fa-fw"></i>Cluster</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-29>2021-12-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1877 words&nbsp;
+<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
+Author
+</a>
+</span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/cluster/><i class="far fa-folder fa-fw"></i>Cluster</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-29>2021-12-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1878 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -89,8 +92,13 @@ Cancel
 <ul>
 <li><a href=#linux>Linux</a></li></ul></li><li><a href=#start-installion>Start Installion</a>
 <ul>
-<li><a href=#step-1>Step 1:</a></li><li><a href=#step-2>Step 2:</a></li><li><a href=#step-3>Step 3:</a></li><li><a href=#step-4>Step 4:</a></li><li><a href=#step-5>Step 5:</a></li><li><a href=#advanced-lvm-configuration-options>Advanced LVM Configuration Options</a></li></ul></li></ul></li><li><a href=#how-to-update-proxmox-without-buying-a-subscription>How to update Proxmox without buying a subscription</a></li><li><a href=#renaming-a-pve-node>Renaming a PVE node</a></li><li><a href=#reference-list>Reference List</a></li></ul></nav></div></div><div class=content id=content><h2 id=introduction>Introduction</h2><p>Proxmox Virtual Environment is an open source server virtualization management solution based on QEMU/KVM and LXC. Proxmox VE is based on Debian. You can manage virtual machines, containers, highly available clusters, storage and networks with an integrated, easy-to-use web interface or via CLI.</p><h2 id=install>Install</h2><p>I recommend you use USB Flash Drive as <strong>Installation Medium</strong> because it is the faster option.</p><h3 id=download-the-installer-iso-image>Download the installer ISO image</h3><p>You can download ISO image from: <a href=https://www.proxmox.com/en/downloads/category/iso-images-pve target=_blank rel="noopener noreferrer">https://www.proxmox.com/en/downloads/category/iso-images-pve</a>
-Currently, the latest version is <strong>7.1-2</strong>.</p><h3 id=prepare-a-usb-flash-drive-as-installation-medium>Prepare a USB Flash Drive as Installation Medium</h3><p>Official link: <a href=https://pve.proxmox.com/wiki/Prepare%5FInstallation%5FMedia target=_blank rel="noopener noreferrer">https://pve.proxmox.com/wiki/Prepare%5FInstallation%5FMedia</a></p><h4 id=linux>Linux</h4><ul>
+<li><a href=#step-1>Step 1:</a></li><li><a href=#step-2>Step 2:</a></li><li><a href=#step-3>Step 3:</a></li><li><a href=#step-4>Step 4:</a></li><li><a href=#step-5>Step 5:</a></li><li><a href=#advanced-lvm-configuration-options>Advanced LVM Configuration Options</a></li></ul></li></ul></li><li><a href=#how-to-update-proxmox-without-buying-a-subscription>How to update Proxmox without buying a subscription</a></li><li><a href=#renaming-a-pve-node>Renaming a PVE node</a></li><li><a href=#reference-list>Reference List</a></li></ul></nav></div></div><div class=content id=content><h2 id=introduction>Introduction</h2><p>Proxmox Virtual Environment is an open source server virtualization management solution based on QEMU/KVM and LXC. Proxmox VE is based on Debian. You can manage virtual machines, containers, highly available clusters, storage and networks with an integrated, easy-to-use web interface or via CLI.</p><h2 id=install>Install</h2><p>I recommend you use USB Flash Drive as <strong>Installation Medium</strong> because it is the faster option.</p><h3 id=download-the-installer-iso-image>Download the installer ISO image</h3><p>You can download ISO image from: <a href=https://www.proxmox.com/en/downloads/category/iso-images-pve target=_blank rel="noopener noreferrer">
+https://www.proxmox.com/en/downloads/category/iso-images-pve
+</a>
+Currently, the latest version is <strong>7.1-2</strong>.</p><h3 id=prepare-a-usb-flash-drive-as-installation-medium>Prepare a USB Flash Drive as Installation Medium</h3><p>Official link: <a href=https://pve.proxmox.com/wiki/Prepare%5FInstallation%5FMedia target=_blank rel="noopener noreferrer">
+https://pve.proxmox.com/wiki/Prepare%5FInstallation%5FMedia
+</a>
+</p><h4 id=linux>Linux</h4><ul>
 <li>
 <p>Find the Correct USB Device Name :fdisk:lsblk:</p><p>There are two ways to find out the name of the USB flash drive. The first one is use <strong>lsblk</strong> (strong recommend). The second way is to compare the output of the <strong>fdisk -l</strong> command. Both example at the below.</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
@@ -181,7 +189,10 @@ Currently, the latest version is <strong>7.1-2</strong>.</p><h3 id=prepare-a-usb
 </span></span></span><span class=line><span class=cl><span class=go>812+1 records in
 </span></span></span><span class=line><span class=cl><span class=go>812+1 records out
 </span></span></span><span class=line><span class=cl><span class=go>852299776 bytes (852 MB, 813 MiB) copied, 185.781 s, 4.6 MB/s
-</span></span></span></code></pre></td></tr></table></div></div></li></ul><h3 id=start-installion>Start Installion</h3><p>Office Website: <a href=https://pve.proxmox.com/wiki/Installation target=_blank rel="noopener noreferrer">https://pve.proxmox.com/wiki/Installation</a></p><h4 id=step-1>Step 1:</h4><p>When you boot from USB, You will see the below image.
+</span></span></span></code></pre></td></tr></table></div></div></li></ul><h3 id=start-installion>Start Installion</h3><p>Office Website: <a href=https://pve.proxmox.com/wiki/Installation target=_blank rel="noopener noreferrer">
+https://pve.proxmox.com/wiki/Installation
+</a>
+</p><h4 id=step-1>Step 1:</h4><p>When you boot from USB, You will see the below image.
 <img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png data-srcset="https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png, https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png 1.5x, https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png 2x" data-sizes=auto alt=https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png title=https://pve.proxmox.com/pve-docs/images/screenshot/pve-grub-menu.png></p><ul>
 <li>
 <p>Install Proxmox VE
@@ -204,7 +215,10 @@ Next the password of the superuser (root) and an email address needs to be speci
 <p>Error messages from periodic CRON jobs.</p></li></ul><h4 id=step-4>Step 4:</h4><p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png data-srcset="https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png, https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png 1.5x, https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png 2x" data-sizes=auto alt=https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png title=https://pve.proxmox.com/pve-docs/images/screenshot/pve-setup-network.png>
 The last step is the network configuration. Please note that during installation you can either use an IPv4 or IPv6 address, but not both. To configure a dual stack node, add additional IP addresses after the installation.</p><h4 id=step-5>Step 5:</h4><p><img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png data-srcset="https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png, https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png 1.5x, https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png 2x" data-sizes=auto alt=https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png title=https://pve.proxmox.com/pve-docs/images/screenshot/pve-install-summary.png>
 The next step shows a summary of the previously selected options. Re-check every setting and use the Previous button if a setting needs to be changed. To accept, press Install. The installation starts to format disks and copies packages to the target. Please wait until this step has finished; then remove the installation medium and restart your system.</p><figure><img src=https://pve.proxmox.com/pve-docs/images/screenshot/pve-installation.png>
-</figure><p>If the installation failed check out specific errors on the second TTY (‘CTRL + ALT + F2’), ensure that the systems meets the minimum requirements. If the installation is still not working look at the how to get help chapter.</p><p>Further configuration is done via the Proxmox web interface. Point your browser to the IP address given during installation (<a href=https://youripaddress:8006 target=_blank rel="noopener noreferrer">https://youripaddress:8006</a>).</p><h4 id=advanced-lvm-configuration-options>Advanced LVM Configuration Options</h4><p>The installer creates a Volume Group (VG) called pve, and additional Logical Volumes (LVs) called root, data, and swap. To control the size of these volumes use:</p><ul>
+</figure><p>If the installation failed check out specific errors on the second TTY (‘CTRL + ALT + F2’), ensure that the systems meets the minimum requirements. If the installation is still not working look at the how to get help chapter.</p><p>Further configuration is done via the Proxmox web interface. Point your browser to the IP address given during installation (<a href=https://youripaddress:8006 target=_blank rel="noopener noreferrer">
+https://youripaddress:8006
+</a>
+).</p><h4 id=advanced-lvm-configuration-options>Advanced LVM Configuration Options</h4><p>The installer creates a Volume Group (VG) called pve, and additional Logical Volumes (LVs) called root, data, and swap. To control the size of these volumes use:</p><ul>
 <li>
 <p>hdsize
 Defines the total hard disk size to be used. This way you can reserve free space on the hard disk for further partitioning (for example for an additional PV and VG on the same hard disk that can be used for LVM storage).</p></li><li>
@@ -288,11 +302,20 @@ Open the copied file, pve-no-subscription.list, and change the line ever so slig
 </span></code></pre></td><td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>richie
 </span></span></code></pre></td></tr></table></div></div><h2 id=reference-list>Reference List</h2><ol>
-<li><a href=https://www.salvagedata.com/btrfs-zfs-xfs-ext4-how-are-they-different/ target=_blank rel="noopener noreferrer">https://www.salvagedata.com/btrfs-zfs-xfs-ext4-how-are-they-different/</a></li><li><a href=https://linuxhint.com/zfs%5Fvs%5Fxfs/ target=_blank rel="noopener noreferrer">https://linuxhint.com/zfs%5Fvs%5Fxfs/</a></li><li><a href=https://pve.proxmox.com/wiki/Renaming%5Fa%5FPVE%5Fnode target=_blank rel="noopener noreferrer">https://pve.proxmox.com/wiki/Renaming%5Fa%5FPVE%5Fnode</a></li></ol></div><div class=post-footer id=post-footer>
+<li><a href=https://www.salvagedata.com/btrfs-zfs-xfs-ext4-how-are-they-different/ target=_blank rel="noopener noreferrer">
+https://www.salvagedata.com/btrfs-zfs-xfs-ext4-how-are-they-different/
+</a>
+</li><li><a href=https://linuxhint.com/zfs%5Fvs%5Fxfs/ target=_blank rel="noopener noreferrer">
+https://linuxhint.com/zfs%5Fvs%5Fxfs/
+</a>
+</li><li><a href=https://pve.proxmox.com/wiki/Renaming%5Fa%5FPVE%5Fnode target=_blank rel="noopener noreferrer">
+https://pve.proxmox.com/wiki/Renaming%5Fa%5FPVE%5Fnode
+</a>
+</li></ol></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2022-03-02</span>
+<span>Updated on 2022-03-08</span>
 </div><div class=post-info-license></div></div><div class=post-info-line>
 <div class=post-info-md><span>
 <a class=link-to-markdown href=https://yanboyang.com/proxmoxinstall/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
@@ -305,8 +328,8 @@ Open the copied file, pve-no-subscription.list, and change the line ever so slig
 <a href=https://yanboyang.com/scala/ class=next rel=next title="Getting Started with Scala">Getting Started with Scala<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div></main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.2">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer"></a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
 <i class="fas fa-arrow-up fa-fw"></i>
 </a><a href=# id=view-comments class=fixed-button title="View Comments">
 <i class="fas fa-comment fa-fw"></i>

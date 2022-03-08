@@ -5,22 +5,20 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>How to install Docker, Nvidia Docker and Docker Compose - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="How to install Docker, Nvidia Docker and Docker Compose">
-<meta property="og:description" content="Install Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04 https://docs.docker.com/engine/install/ubuntu/
-Step 1 — Installing Docker The Docker installation package available in the official Ubuntu repository may not be the latest version. To ensure we get the latest version, we’ll install Docker from the official Docker repository. To do that, we’ll add a new package source, add the GPG key from Docker to ensure the downloads are valid, and then install the package.
+<meta property="og:description" content="Install Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04  https://docs.docker.com/engine/install/ubuntu/  Step 1 — Installing Docker The Docker installation package available in the official Ubuntu repository may not be the latest version. To ensure we get the latest version, we’ll install Docker from the official Docker repository. To do that, we’ll add a new package source, add the GPG key from Docker to ensure the downloads are valid, and then install the package.
 First, update your existing list of packages:">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/dockerinstall/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:modified_time" content="2022-03-02T13:13:27+00:00">
+<meta property="article:modified_time" content="2022-03-08T12:48:14+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="How to install Docker, Nvidia Docker and Docker Compose">
-<meta name=twitter:description content="Install Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04 https://docs.docker.com/engine/install/ubuntu/
-Step 1 — Installing Docker The Docker installation package available in the official Ubuntu repository may not be the latest version. To ensure we get the latest version, we’ll install Docker from the official Docker repository. To do that, we’ll add a new package source, add the GPG key from Docker to ensure the downloads are valid, and then install the package.
+<meta name=twitter:description content="Install Docker https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04  https://docs.docker.com/engine/install/ubuntu/  Step 1 — Installing Docker The Docker installation package available in the official Ubuntu repository may not be the latest version. To ensure we get the latest version, we’ll install Docker from the official Docker repository. To do that, we’ll add a new package source, add the GPG key from Docker to ensure the downloads are valid, and then install the package.
 First, update your existing list of packages:">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/dockerinstall/><link rel=prev href=https://yanboyang.com/tensorflowgpusupport/><link rel=next href=https://yanboyang.com/passwordmaster/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"How to install Docker, Nvidia Docker and Docker Compose","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dockerinstall\/"},"genre":"posts","keywords":"Docker","wordcount":2875,"url":"https:\/\/yanboyang.com\/dockerinstall\/","dateModified":"2022-03-02T13:13:27+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/dockerinstall/><link rel=prev href=https://yanboyang.com/tensorflowgpusupport/><link rel=next href=https://yanboyang.com/passwordmaster/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"How to install Docker, Nvidia Docker and Docker Compose","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dockerinstall\/"},"genre":"posts","keywords":"Docker","wordcount":2875,"url":"https:\/\/yanboyang.com\/dockerinstall\/","dateModified":"2022-03-08T12:48:14+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Author"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
@@ -75,7 +73,10 @@ Cancel
 <div id=search-dropdown-mobile></div></div><main class=main>
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">How to install Docker, Nvidia Docker and Docker Compose</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/virtual-environment/><i class="far fa-folder fa-fw"></i>virtual environment</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2875 words&nbsp;
+<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
+Author
+</a>
+</span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/virtual-environment/><i class="far fa-folder fa-fw"></i>virtual environment</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2875 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;14 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -96,8 +97,13 @@ Cancel
 <ul>
 <li><a href=#on-ubuntu-lts>On Ubuntu LTS</a></li><li><a href=#secure-uefi-boot>Secure UEFI Boot</a></li></ul></li></ul></li><li><a href=#installing-on-ubuntu-and-debian>Installing on Ubuntu and Debian</a></li></ul></li></ul></li><li><a href=#install-docker-in-arch-linux>Install Docker in Arch Linux</a>
 <ul>
-<li><a href=#step-1>Step 1:</a></li><li><a href=#step-2>Step 2:</a></li><li><a href=#step-3>Step 3:</a></li><li><a href=#step-4>Step 4:</a></li><li><a href=#step-5>Step 5:</a></li><li><a href=#step-6>Step 6:</a></li><li><a href=#run-gpu-accelerated-docker-containers-with-nvidia-gpus>Run GPU accelerated Docker containers with NVIDIA GPUs</a></li></ul></li><li><a href=#installing-nvidia-driver>Installing Nvidia Driver</a></li></ul></nav></div></div><div class=content id=content><h2 id=install-docker>Install Docker</h2><p><a href=https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04 target=_blank rel="noopener noreferrer">https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04</a>
-<a href=https://docs.docker.com/engine/install/ubuntu/ target=_blank rel="noopener noreferrer">https://docs.docker.com/engine/install/ubuntu/</a></p><h3 id=step-1--installing-docker>Step 1 — Installing Docker</h3><p>The Docker installation package available in the official Ubuntu repository may not be the latest version. To ensure we get the latest version, we’ll install Docker from the official Docker repository. To do that, we’ll add a new package source, add the GPG key from Docker to ensure the downloads are valid, and then install the package.</p><p>First, update your existing list of packages:</p><div class=highlight><div class=chroma>
+<li><a href=#step-1>Step 1:</a></li><li><a href=#step-2>Step 2:</a></li><li><a href=#step-3>Step 3:</a></li><li><a href=#step-4>Step 4:</a></li><li><a href=#step-5>Step 5:</a></li><li><a href=#step-6>Step 6:</a></li><li><a href=#run-gpu-accelerated-docker-containers-with-nvidia-gpus>Run GPU accelerated Docker containers with NVIDIA GPUs</a></li></ul></li><li><a href=#installing-nvidia-driver>Installing Nvidia Driver</a></li></ul></nav></div></div><div class=content id=content><h2 id=install-docker>Install Docker</h2><p><a href=https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04 target=_blank rel="noopener noreferrer">
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+</a>
+<a href=https://docs.docker.com/engine/install/ubuntu/ target=_blank rel="noopener noreferrer">
+https://docs.docker.com/engine/install/ubuntu/
+</a>
+</p><h3 id=step-1--installing-docker>Step 1 — Installing Docker</h3><p>The Docker installation package available in the official Ubuntu repository may not be the latest version. To ensure we get the latest version, we’ll install Docker from the official Docker repository. To do that, we’ll add a new package source, add the GPG key from Docker to ensure the downloads are valid, and then install the package.</p><p>First, update your existing list of packages:</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd>
@@ -569,7 +575,10 @@ To get access to experimental features such as CUDA on WSL or the new MIG capabi
 </span></span><span class=line><span class=cl><span class=go>lspci: Unable to load libkmod resources: error -2
 </span></span></span><span class=line><span class=cl><span class=go>01:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU106 [GeForce RTX 2070] [10de:1f02] (rev a1) (prog-if 00 [VGA controller])
 </span></span></span></code></pre></td></tr></table></div></div><ol start=3>
-<li>Download the Official Nvidia Driver. Using your web browser navigate to the <a href=http://www.nvidia.com/Download/index.aspx target=_blank rel="noopener noreferrer">official Nvidia</a> website and download an appropriate driver for your Nvidia graphic card. Save the file into your home directory. Example:</li></ol><div class=highlight><div class=chroma>
+<li>Download the Official Nvidia Driver. Using your web browser navigate to the <a href=http://www.nvidia.com/Download/index.aspx target=_blank rel="noopener noreferrer">
+official Nvidia
+</a>
+website and download an appropriate driver for your Nvidia graphic card. Save the file into your home directory. Example:</li></ol><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -710,7 +719,7 @@ To get access to experimental features such as CUDA on WSL or the new MIG capabi
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2022-03-02</span>
+<span>Updated on 2022-03-08</span>
 </div><div class=post-info-license></div></div><div class=post-info-line>
 <div class=post-info-md><span>
 <a class=link-to-markdown href=https://yanboyang.com/dockerinstall/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
@@ -723,8 +732,8 @@ To get access to experimental features such as CUDA on WSL or the new MIG capabi
 <a href=https://yanboyang.com/passwordmaster/ class=next rel=next title="Getting Started with Password Master (Bitwarden)">Getting Started with Password Master (Bitwarden)<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div></main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.2">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer"></a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
 <i class="fas fa-arrow-up fa-fw"></i>
 </a><a href=# id=view-comments class=fixed-button title="View Comments">
 <i class="fas fa-comment fa-fw"></i>

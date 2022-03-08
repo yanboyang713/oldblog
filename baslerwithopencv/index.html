@@ -10,7 +10,7 @@ Hardware and Software Testing Environment Hardware Environment  Camera: Basler (
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/baslerwithopencv/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2020-09-03T06:11:32+10:00">
-<meta property="article:modified_time" content="2022-03-02T13:13:27+00:00">
+<meta property="article:modified_time" content="2022-03-08T12:48:14+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting started with Basler Camera With Opencv on Python">
@@ -19,7 +19,7 @@ Hardware and Software Testing Environment Hardware Environment  Camera: Basler (
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/baslerwithopencv/><link rel=prev href=https://yanboyang.com/plantuml/><link rel=next href=https://yanboyang.com/ubunturouter/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting started with Basler Camera With Opencv on Python","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/baslerwithopencv\/"},"genre":"posts","keywords":"Basler, Opencv, python","wordcount":4729,"url":"https:\/\/yanboyang.com\/baslerwithopencv\/","datePublished":"2020-09-03T06:11:32+10:00","dateModified":"2022-03-02T13:13:27+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/baslerwithopencv/><link rel=prev href=https://yanboyang.com/plantuml/><link rel=next href=https://yanboyang.com/ubunturouter/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting started with Basler Camera With Opencv on Python","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/baslerwithopencv\/"},"genre":"posts","keywords":"Basler, Opencv, python","wordcount":4730,"url":"https:\/\/yanboyang.com\/baslerwithopencv\/","datePublished":"2020-09-03T06:11:32+10:00","dateModified":"2022-03-08T12:48:14+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Author"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
@@ -74,7 +74,10 @@ Cancel
 <div id=search-dropdown-mobile></div></div><main class=main>
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Getting started with Basler Camera With Opencv on Python</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/basler/><i class="far fa-folder fa-fw"></i>Basler</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-09-03>2020-09-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4729 words&nbsp;
+<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
+Author
+</a>
+</span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/basler/><i class="far fa-folder fa-fw"></i>Basler</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-09-03>2020-09-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4730 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;23 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -133,8 +136,14 @@ Cancel
 </span></span><span class=line><span class=cl>conda install notebook ipykernel
 </span></span><span class=line><span class=cl>ipython kernel install --user --name baslerOpencv --display-name <span class=s2>&#34;Python (Basler with Opencv)&#34;</span>
 </span></span></code></pre></td></tr></table></div></div><h3 id=installing-pylon>Installing Pylon</h3><h4 id=for-ubuntu>For Ubuntu</h4><ol>
-<li>Go to <a href=https://www.baslerweb.com/en/products/software/basler-pylon-camera-software-suite/ target=_blank rel="noopener noreferrer">Pylon Official Website</a>.</li><li>Go to Downloads Section</li><li>Click link: pylon 6.1.1 Camera Software Suite Linux x86 (64 Bit) - Debian Installer Package
-<a href=https://www.baslerweb.com/fp-1615275588/media/a_b_testing_1/pylon_6.2.0.21487_x86_64_setup.tar.gz target=_blank rel="noopener noreferrer">https://www.baslerweb.com/fp-1615275588/media/a_b_testing_1/pylon_6.2.0.21487_x86_64_setup.tar.gz</a></li><li>Filling in your personal INFOs and click &ldquo;Start the Download!&rdquo;</li><li>Goto you download directory(Using cd command)</li><li>You can use the apt command for install deb file</li></ol><div class=highlight><div class=chroma>
+<li>Go to <a href=https://www.baslerweb.com/en/products/software/basler-pylon-camera-software-suite/ target=_blank rel="noopener noreferrer">
+Pylon Official Website
+</a>
+.</li><li>Go to Downloads Section</li><li>Click link: pylon 6.1.1 Camera Software Suite Linux x86 (64 Bit) - Debian Installer Package
+<a href=https://www.baslerweb.com/fp-1615275588/media/a_b_testing_1/pylon_6.2.0.21487_x86_64_setup.tar.gz target=_blank rel="noopener noreferrer">
+https://www.baslerweb.com/fp-1615275588/media/a_b_testing_1/pylon_6.2.0.21487_x86_64_setup.tar.gz
+</a>
+</li><li>Filling in your personal INFOs and click &ldquo;Start the Download!&rdquo;</li><li>Goto you download directory(Using cd command)</li><li>You can use the apt command for install deb file</li></ol><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd>
@@ -145,9 +154,21 @@ Cancel
 </span></code></pre></td><td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>yay -S pylon
 </span></span></code></pre></td></tr></table></div></div><p><strong>NOTE:</strong></p><ol>
-<li>You can found pylon in DIR: /opt/pylon6</li><li><strong>ipconfigurator</strong>, <strong>PylonFirmwareUpdater</strong> and <strong>pylonviewer</strong>, which can found on DIR: /opt/pylon6/bin</li></ol><p>When you done, you can see there are three applications be installed, which are Pylon IP Configurator, pylon viewer and Basler Product Documention.</p><h3 id=installing-pypylon-binary-wheel-file-to-conda-environment>Installing pypylon binary wheel file to conda environment</h3><p><a href=https://github.com/basler/pypylon target=_blank rel="noopener noreferrer">pypylon</a></p><h3 id=for-the-impatient>For the Impatient</h3><ul>
-<li>Download a binary wheel from the <a href=https://github.com/Basler/pypylon/releases target=_blank rel="noopener noreferrer">releases</a> page.
-<a href=https://github.com/basler/pypylon/releases/download/1.6.0/pypylon-1.6.0-cp37-cp37m-linux_x86_64.whl target=_blank rel="noopener noreferrer">https://github.com/basler/pypylon/releases/download/1.6.0/pypylon-1.6.0-cp37-cp37m-linux_x86_64.whl</a></li><li>Install the wheel using pip3 install <your downloaded wheel>.whl</li><li>Look at <a href=https://github.com/basler/pypylon/blob/master/samples/grab.py target=_blank rel="noopener noreferrer">samples/grab.py</a> in this repository</li></ul><div class=highlight><div class=chroma>
+<li>You can found pylon in DIR: /opt/pylon6</li><li><strong>ipconfigurator</strong>, <strong>PylonFirmwareUpdater</strong> and <strong>pylonviewer</strong>, which can found on DIR: /opt/pylon6/bin</li></ol><p>When you done, you can see there are three applications be installed, which are Pylon IP Configurator, pylon viewer and Basler Product Documention.</p><h3 id=installing-pypylon-binary-wheel-file-to-conda-environment>Installing pypylon binary wheel file to conda environment</h3><p><a href=https://github.com/basler/pypylon target=_blank rel="noopener noreferrer">
+pypylon
+</a>
+</p><h3 id=for-the-impatient>For the Impatient</h3><ul>
+<li>Download a binary wheel from the <a href=https://github.com/Basler/pypylon/releases target=_blank rel="noopener noreferrer">
+releases
+</a>
+page.
+<a href=https://github.com/basler/pypylon/releases/download/1.6.0/pypylon-1.6.0-cp37-cp37m-linux_x86_64.whl target=_blank rel="noopener noreferrer">
+https://github.com/basler/pypylon/releases/download/1.6.0/pypylon-1.6.0-cp37-cp37m-linux_x86_64.whl
+</a>
+</li><li>Install the wheel using pip3 install <your downloaded wheel>.whl</li><li>Look at <a href=https://github.com/basler/pypylon/blob/master/samples/grab.py target=_blank rel="noopener noreferrer">
+samples/grab.py
+</a>
+in this repository</li></ul><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd>
@@ -368,7 +389,10 @@ The camera adjusts the OffsetY parameter value to center the image ROI verticall
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>assert</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>+</span> <span class=n>camera</span><span class=o>.</span><span class=n>OffsetX</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>&lt;=</span> <span class=n>camera</span><span class=o>.</span><span class=n>Width</span><span class=o>.</span><span class=n>GetMax</span><span class=p>()</span>
 </span></span><span class=line><span class=cl><span class=k>assert</span> <span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>+</span> <span class=n>camera</span><span class=o>.</span><span class=n>OffsetY</span><span class=o>.</span><span class=n>GetValue</span><span class=p>()</span> <span class=o>&lt;=</span> <span class=n>camera</span><span class=o>.</span><span class=n>Height</span><span class=o>.</span><span class=n>GetMax</span><span class=p>()</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=imagepixel-format-control>Image/Pixel Format Control</h3><p>The offical <a href=https://docs.baslerweb.com/pixel-format target=_blank rel="noopener noreferrer">Pixel Formats</a></p><ul>
+</span></span></code></pre></td></tr></table></div></div><h3 id=imagepixel-format-control>Image/Pixel Format Control</h3><p>The offical <a href=https://docs.baslerweb.com/pixel-format target=_blank rel="noopener noreferrer">
+Pixel Formats
+</a>
+</p><ul>
 <li>list your camera available Pixel Formats</li></ul><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -634,7 +658,7 @@ On some camera models, you can choose which features you want the camera to adju
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2022-03-02</span>
+<span>Updated on 2022-03-08</span>
 </div><div class=post-info-license></div></div><div class=post-info-line>
 <div class=post-info-md><span>
 <a class=link-to-markdown href=https://yanboyang.com/baslerwithopencv/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
@@ -647,8 +671,8 @@ On some camera models, you can choose which features you want the camera to adju
 <a href=https://yanboyang.com/ubunturouter/ class=next rel=next title="Setting up an Linux Router with bridge">Setting up an Linux Router with bridge<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div></main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.2">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer"></a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
 <i class="fas fa-arrow-up fa-fw"></i>
 </a><a href=# id=view-comments class=fixed-button title="View Comments">
 <i class="fas fa-comment fa-fw"></i>

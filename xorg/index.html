@@ -5,19 +5,19 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Getting Started Xorg with display manager - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Getting Started Xorg with display manager">
-<meta property="og:description" content="Introduction Pre-reading  WM/Getting Started Display Server compared with X11, Wayland and Mir  Install Xorg 1  pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot   Installing a Display Manager (DM) 1 2 3 4 5  pacman -S lightdm pacman -S lightdm-gtk-greeter pacman -S lightdm-gtk-greeter-settings   Enable lightdm service 1  sudo systemctl enable lightdm   xinit The xinit program allows a user to manually start an Xorg display server.">
+<meta property="og:description" content="Introduction Pre-reading  WM/Getting Started Display Server compared with X11, Wayland and Mir    Install Xorg 1  pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot   Installing a Display Manager (DM) 1 2 3 4 5  pacman -S lightdm pacman -S lightdm-gtk-greeter pacman -S lightdm-gtk-greeter-settings   Enable lightdm service 1  sudo systemctl enable lightdm   xinit The xinit program allows a user to manually start an Xorg display server.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanboyang.com/xorg/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-01-13T14:00:00+08:00">
-<meta property="article:modified_time" content="2022-03-02T13:13:27+00:00">
+<meta property="article:modified_time" content="2022-03-08T12:48:14+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://yanboyang.com/logo.png">
 <meta name=twitter:title content="Getting Started Xorg with display manager">
-<meta name=twitter:description content="Introduction Pre-reading  WM/Getting Started Display Server compared with X11, Wayland and Mir  Install Xorg 1  pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot   Installing a Display Manager (DM) 1 2 3 4 5  pacman -S lightdm pacman -S lightdm-gtk-greeter pacman -S lightdm-gtk-greeter-settings   Enable lightdm service 1  sudo systemctl enable lightdm   xinit The xinit program allows a user to manually start an Xorg display server.">
+<meta name=twitter:description content="Introduction Pre-reading  WM/Getting Started Display Server compared with X11, Wayland and Mir    Install Xorg 1  pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot   Installing a Display Manager (DM) 1 2 3 4 5  pacman -S lightdm pacman -S lightdm-gtk-greeter pacman -S lightdm-gtk-greeter-settings   Enable lightdm service 1  sudo systemctl enable lightdm   xinit The xinit program allows a user to manually start an Xorg display server.">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/xorg/><link rel=prev href=https://yanboyang.com/displayserver/><link rel=next href=https://yanboyang.com/dwmwallpaper/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started Xorg with display manager","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/xorg\/"},"genre":"posts","keywords":"Xorg","wordcount":1492,"url":"https:\/\/yanboyang.com\/xorg\/","datePublished":"2022-01-13T14:00:00+08:00","dateModified":"2022-03-02T13:13:27+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
+<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/xorg/><link rel=prev href=https://yanboyang.com/displayserver/><link rel=next href=https://yanboyang.com/dwmwallpaper/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started Xorg with display manager","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/xorg\/"},"genre":"posts","keywords":"Xorg","wordcount":1501,"url":"https:\/\/yanboyang.com\/xorg\/","datePublished":"2022-01-13T14:00:00+08:00","dateModified":"2022-03-08T12:48:14+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Author"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
@@ -72,7 +72,10 @@ Cancel
 <div id=search-dropdown-mobile></div></div><main class=main>
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Getting Started Xorg with display manager</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Boyang Yan</a></span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/wm/><i class="far fa-folder fa-fw"></i>WM</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-01-13>2022-01-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1492 words&nbsp;
+<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
+Author
+</a>
+</span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/wm/><i class="far fa-folder fa-fw"></i>WM</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-01-13>2022-01-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1501 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true>
 <div class="details-summary toc-title">
 <span>Contents</span>
@@ -90,7 +93,10 @@ Cancel
 <li><a href=#override-xinitrc>Override xinitrc</a></li><li><a href=#autostart-x-at-login>Autostart X at login</a></li><li><a href=#switching-between-desktop-environments-window-managers>Switching between desktop environments/window managers</a></li><li><a href=#starting-applications-without-a-window-manager>Starting applications without a window manager</a></li></ul></li></ul></li><li><a href=#xprofile>xprofile</a>
 <ul>
 <li><a href=#compatibility>Compatibility</a></li><li><a href=#configuration>Configuration</a></li></ul></li><li><a href=#reference-list>Reference List</a></li></ul></nav></div></div><div class=content id=content><h2 id=introduction>Introduction</h2><h2 id=pre-reading>Pre-reading</h2><ol>
-<li><a href=https://yanboyang.com/displayserver/ rel>WM/Getting Started Display Server compared with X11, Wayland and Mir</a></li></ol><h3 id=install-xorg>Install Xorg</h3><div class=highlight><div class=chroma>
+<li><a href=https://yanboyang.com/displayserver/ rel>
+WM/Getting Started Display Server compared with X11, Wayland and Mir
+</a>
+</li></ol><h3 id=install-xorg>Install Xorg</h3><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd>
@@ -113,7 +119,13 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl <span class=nb>enable</span> lightdm
-</span></span></code></pre></td></tr></table></div></div><h2 id=xinit>xinit</h2><p>The xinit program allows a user to manually start an Xorg display server. The startx script is a front-end for xinit.</p><p>xinit is typically used to start <a href=https://wiki.archlinux.org/title/Window_manager target=_blank rel="noopener noreferrer">window managers</a> or <a href=https://wiki.archlinux.org/title/Desktop_environment target=_blank rel="noopener noreferrer">desktop environments</a>. While you can also use xinit to run GUI applications without a window manager, many graphical applications expect an EWMH compliant window manager. Display managers start Xorg for you and generally source xprofile.</p><h3 id=configuration>Configuration</h3><p>xinit and startx take an optional client program argument, see #Override xinitrc. If you do not provide one they will look for ~/.xinitrc to run as a shell script to start up client programs.</p><h4 id=xinitrc>xinitrc</h4><p><strong>~/.xinitrc</strong> is handy to run programs depending on X and set environment variables on X server startup. If it is present in a user&rsquo;s home directory, startx and xinit execute it. Otherwise startx will run the default <strong>/etc/X11/xinit/xinitrc</strong>.</p><p>This default xinitrc will start a basic environment with Twm, xorg-xclock and Xterm (assuming that the necessary packages are installed). Therefore, to start a different window manager or desktop environment, first create a copy of the default xinitrc in your home directory:</p><div class=highlight><div class=chroma>
+</span></span></code></pre></td></tr></table></div></div><h2 id=xinit>xinit</h2><p>The xinit program allows a user to manually start an Xorg display server. The startx script is a front-end for xinit.</p><p>xinit is typically used to start <a href=https://wiki.archlinux.org/title/Window_manager target=_blank rel="noopener noreferrer">
+window managers
+</a>
+or <a href=https://wiki.archlinux.org/title/Desktop_environment target=_blank rel="noopener noreferrer">
+desktop environments
+</a>
+. While you can also use xinit to run GUI applications without a window manager, many graphical applications expect an EWMH compliant window manager. Display managers start Xorg for you and generally source xprofile.</p><h3 id=configuration>Configuration</h3><p>xinit and startx take an optional client program argument, see #Override xinitrc. If you do not provide one they will look for ~/.xinitrc to run as a shell script to start up client programs.</p><h4 id=xinitrc>xinitrc</h4><p><strong>~/.xinitrc</strong> is handy to run programs depending on X and set environment variables on X server startup. If it is present in a user&rsquo;s home directory, startx and xinit execute it. Otherwise startx will run the default <strong>/etc/X11/xinit/xinitrc</strong>.</p><p>This default xinitrc will start a basic environment with Twm, xorg-xclock and Xterm (assuming that the necessary packages are installed). Therefore, to start a different window manager or desktop environment, first create a copy of the default xinitrc in your home directory:</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd>
@@ -125,7 +137,10 @@ Cancel
 </span></code></pre></td><td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>xscreensaver &amp;
 </span></span><span class=line><span class=cl>exec openbox-session
-</span></span></code></pre></td></tr></table></div></div><p><strong>Note</strong>: At the very least, ensure that the last <strong>if</strong> block in <strong>/etc/X11/xinit/xinitrc</strong> is present in your <strong>~/.xinitrc</strong> file to ensure that the scripts in <strong>/etc/X11/xinit/xinitrc.d</strong> are sourced.</p><p>Long-running programs started before the window manager, such as a screensaver and wallpaper application, must either fork themselves or be run in the background by appending an & sign. Otherwise, the script would halt and wait for each program to exit before executing the window manager or desktop environment. Note that some programs should instead not be forked, to avoid race bugs, as is the case of xrdb. Prepending exec will replace the script process with the window manager process, so that X does not exit even if this process forks to the background.</p><h4 id=xserverrc>xserverrc</h4><p>The xserverrc file is a shell script responsible for starting up the X server. Both <strong>startx</strong> and <strong>xinit</strong> execute <strong>~/.xserverrc</strong> if it exists, <strong>startx</strong> will use <strong>/etc/X11/xinit/xserverrc</strong> otherwise.</p><p>In order to maintain an <a href=https://wiki.archlinux.org/title/General_troubleshooting#Session_permissions target=_blank rel="noopener noreferrer">authenticated session</a> with <strong>logind</strong> and to prevent bypassing the screen locker by switching terminals, Xorg has to be started on the same virtual terminal where the login occurred. Therefore it is recommended to specify <strong>vt$XDG_VTNR</strong> in the <strong>~/.xserverrc</strong> file:</p><p>~/.xserverrc</p><div class=highlight><div class=chroma>
+</span></span></code></pre></td></tr></table></div></div><p><strong>Note</strong>: At the very least, ensure that the last <strong>if</strong> block in <strong>/etc/X11/xinit/xinitrc</strong> is present in your <strong>~/.xinitrc</strong> file to ensure that the scripts in <strong>/etc/X11/xinit/xinitrc.d</strong> are sourced.</p><p>Long-running programs started before the window manager, such as a screensaver and wallpaper application, must either fork themselves or be run in the background by appending an & sign. Otherwise, the script would halt and wait for each program to exit before executing the window manager or desktop environment. Note that some programs should instead not be forked, to avoid race bugs, as is the case of xrdb. Prepending exec will replace the script process with the window manager process, so that X does not exit even if this process forks to the background.</p><h4 id=xserverrc>xserverrc</h4><p>The xserverrc file is a shell script responsible for starting up the X server. Both <strong>startx</strong> and <strong>xinit</strong> execute <strong>~/.xserverrc</strong> if it exists, <strong>startx</strong> will use <strong>/etc/X11/xinit/xserverrc</strong> otherwise.</p><p>In order to maintain an <a href=https://wiki.archlinux.org/title/General_troubleshooting#Session_permissions target=_blank rel="noopener noreferrer">
+authenticated session
+</a>
+with <strong>logind</strong> and to prevent bypassing the screen locker by switching terminals, Xorg has to be started on the same virtual terminal where the login occurred. Therefore it is recommended to specify <strong>vt$XDG_VTNR</strong> in the <strong>~/.xserverrc</strong> file:</p><p>~/.xserverrc</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -134,7 +149,13 @@ Cancel
 <pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/sh
 </span></span></span><span class=line><span class=cl><span class=cp></span>
 </span></span><span class=line><span class=cl><span class=nb>exec</span> /usr/bin/Xorg -nolisten tcp <span class=s2>&#34;</span><span class=nv>$@</span><span class=s2>&#34;</span> vt<span class=nv>$XDG_VTNR</span>
-</span></span></code></pre></td></tr></table></div></div><p>See <a href=https://man.archlinux.org/man/Xserver.1 target=_blank rel="noopener noreferrer">Xserver</a> for a list of all command line options.</p><p><strong>Tip</strong>: <strong>-nolisten local</strong> can be added after <strong>-nolisten tcp</strong> to disable abstract sockets of X11 to help with isolation. There is a quick background on how this potentially affects X11 security.</p><p>Alternatively, if you wish to have the X display on a separate console from the one where the server is invoked, you can do so by using the X server wrapper provided by <strong>/usr/lib/systemd/systemd-multi-seat-x</strong>. For convenience, xinit and startx can be set up to use this wrapper by modifying your <strong>~/.xserverrc</strong>.</p><p><strong>Note</strong>: To re-enable redirection of the output from X session into the Xorg log file, add the -keeptty option. See <a href=https://wiki.archlinux.org/title/Xorg#Session_log_redirection target=_blank rel="noopener noreferrer">Xorg#Session log</a> redirection for details.</p><h3 id=usage>Usage</h3><p>To run Xorg as a regular user, issue:</p><div class=highlight><div class=chroma>
+</span></span></code></pre></td></tr></table></div></div><p>See <a href=https://man.archlinux.org/man/Xserver.1 target=_blank rel="noopener noreferrer">
+Xserver
+</a>
+for a list of all command line options.</p><p><strong>Tip</strong>: <strong>-nolisten local</strong> can be added after <strong>-nolisten tcp</strong> to disable abstract sockets of X11 to help with isolation. There is a quick background on how this potentially affects X11 security.</p><p>Alternatively, if you wish to have the X display on a separate console from the one where the server is invoked, you can do so by using the X server wrapper provided by <strong>/usr/lib/systemd/systemd-multi-seat-x</strong>. For convenience, xinit and startx can be set up to use this wrapper by modifying your <strong>~/.xserverrc</strong>.</p><p><strong>Note</strong>: To re-enable redirection of the output from X session into the Xorg log file, add the -keeptty option. See <a href=https://wiki.archlinux.org/title/Xorg#Session_log_redirection target=_blank rel="noopener noreferrer">
+Xorg#Session log
+</a>
+redirection for details.</p><h3 id=usage>Usage</h3><p>To run Xorg as a regular user, issue:</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd>
@@ -154,7 +175,10 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ pkill -15 -t tty<span class=s2>&#34;</span><span class=nv>$XDG_VTNR</span><span class=s2>&#34;</span> Xorg
-</span></span></code></pre></td></tr></table></div></div><p>See also <a href=https://man.archlinux.org/man/signal.7 target=_blank rel="noopener noreferrer">signal(7)</a>.</p><h3 id=tips-and-tricks>Tips and tricks</h3><h4 id=override-xinitrc>Override xinitrc</h4><p>If you have a working <strong>~/.xinitrc</strong> but just want to try other window manager or desktop environment, you can run it by issuing startx followed by the path to the window manager, for example:</p><div class=highlight><div class=chroma>
+</span></span></code></pre></td></tr></table></div></div><p>See also <a href=https://man.archlinux.org/man/signal.7 target=_blank rel="noopener noreferrer">
+signal(7)
+</a>
+.</p><h3 id=tips-and-tricks>Tips and tricks</h3><h4 id=override-xinitrc>Override xinitrc</h4><p>If you have a working <strong>~/.xinitrc</strong> but just want to try other window manager or desktop environment, you can run it by issuing startx followed by the path to the window manager, for example:</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd>
@@ -169,7 +193,19 @@ Cancel
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd>
 <pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ startx /usr/bin/enlightenment -- -br +bs -dpi <span class=m>96</span>
-</span></span></code></pre></td></tr></table></div></div><p>See also <a href=https://man.archlinux.org/man/startx.1 target=_blank rel="noopener noreferrer">startx(1)</a>.</p><p><strong>Note</strong>: Display needs to be specified (as loading <em>etc/X11/xinit/xinitrc.d</em> is skipped) for some operations to work (e.g. notification daemons).</p><p><strong>Tip</strong>: This can be used to start regular GUI programs but without any of the basic window manager features. See also <a href=https://wiki.archlinux.org/title/Xinit#Starting_applications_without_a_window_manager target=_blank rel="noopener noreferrer">#Starting applications without a window manager</a> and <a href=https://wiki.archlinux.org/title/Running_program_in_separate_X_display target=_blank rel="noopener noreferrer">Running program in separate X display</a>.</p><h4 id=autostart-x-at-login>Autostart X at login</h4><p>Make sure that startx is properly configured.</p><p>Place the following in your <a href=https://wiki.archlinux.org/title/Login_shell target=_blank rel="noopener noreferrer">login shell</a> initialization file (e.g. <strong>~/.bash_profile</strong> for Bash or <strong>~/.zprofile</strong> for Zsh):</p><div class=highlight><div class=chroma>
+</span></span></code></pre></td></tr></table></div></div><p>See also <a href=https://man.archlinux.org/man/startx.1 target=_blank rel="noopener noreferrer">
+startx(1)
+</a>
+.</p><p><strong>Note</strong>: Display needs to be specified (as loading <em>etc/X11/xinit/xinitrc.d</em> is skipped) for some operations to work (e.g. notification daemons).</p><p><strong>Tip</strong>: This can be used to start regular GUI programs but without any of the basic window manager features. See also <a href=https://wiki.archlinux.org/title/Xinit#Starting_applications_without_a_window_manager target=_blank rel="noopener noreferrer">
+#Starting applications without a window manager
+</a>
+and <a href=https://wiki.archlinux.org/title/Running_program_in_separate_X_display target=_blank rel="noopener noreferrer">
+Running program in separate X display
+</a>
+.</p><h4 id=autostart-x-at-login>Autostart X at login</h4><p>Make sure that startx is properly configured.</p><p>Place the following in your <a href=https://wiki.archlinux.org/title/Login_shell target=_blank rel="noopener noreferrer">
+login shell
+</a>
+initialization file (e.g. <strong>~/.bash_profile</strong> for Bash or <strong>~/.zprofile</strong> for Zsh):</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -178,7 +214,19 @@ Cancel
 <pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> -z <span class=s2>&#34;</span><span class=si>${</span><span class=nv>DISPLAY</span><span class=si>}</span><span class=s2>&#34;</span> <span class=o>]</span> <span class=o>&amp;&amp;</span> <span class=o>[</span> <span class=s2>&#34;</span><span class=si>${</span><span class=nv>XDG_VTNR</span><span class=si>}</span><span class=s2>&#34;</span> -eq <span class=m>1</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
 </span></span><span class=line><span class=cl>  <span class=nb>exec</span> startx
 </span></span><span class=line><span class=cl><span class=k>fi</span>
-</span></span></code></pre></td></tr></table></div></div><p>You can replace the <strong>-eq</strong> comparison with one like <strong>-le 3</strong> (for vt1 to vt3) if you want to use graphical logins on more than one virtual terminal.</p><p>Alternative conditions to detect the virtual terminal include <strong>"$(tty)" = &ldquo;/dev/tty1&rdquo;</strong>, which does not allow comparison with <strong>-le</strong>, and <strong>"$(fgconsole 2>/dev/null || echo -1)" -eq 1</strong>, which does not work in <a href=https://wiki.archlinux.org/title/Serial_console target=_blank rel="noopener noreferrer">serial consoles</a>.</p><p>If you would like to remain logged in when the X session ends, remove <strong>exec</strong>.</p><p><strong>Warning</strong>: Without <strong>exec</strong>, anyone that can kill X can get a shell and access to files in your home directory. Decide whether this matters to you before implementing the above.</p><p>See also <a href=https://wiki.archlinux.org/title/Fish#Start_X_at_login target=_blank rel="noopener noreferrer">Fish#Start X at login</a> and <a href=https://wiki.archlinux.org/title/Systemd/User#Automatic_login_into_Xorg_without_display_manager target=_blank rel="noopener noreferrer">Systemd/User#Automatic login into Xorg without display manager</a>.</p><p><strong>Tip</strong>: This method can be combined with <a href=https://wiki.archlinux.org/title/Automatic_login_to_virtual_console target=_blank rel="noopener noreferrer">automatic login to virtual console</a>.</p><h4 id=switching-between-desktop-environments-window-managers>Switching between desktop environments/window managers</h4><p>If you are frequently switching between different desktop environments or window managers, it is convenient to either use a display manager or expand <strong>~/.xinitrc</strong> to make the switching possible.</p><p>The following example shows how to start a particular desktop environment or window manager with an argument:</p><p><strong>~/.xinitrc</strong></p><div class=highlight><div class=chroma>
+</span></span></code></pre></td></tr></table></div></div><p>You can replace the <strong>-eq</strong> comparison with one like <strong>-le 3</strong> (for vt1 to vt3) if you want to use graphical logins on more than one virtual terminal.</p><p>Alternative conditions to detect the virtual terminal include <strong>"$(tty)" = &ldquo;/dev/tty1&rdquo;</strong>, which does not allow comparison with <strong>-le</strong>, and <strong>"$(fgconsole 2>/dev/null || echo -1)" -eq 1</strong>, which does not work in <a href=https://wiki.archlinux.org/title/Serial_console target=_blank rel="noopener noreferrer">
+serial consoles
+</a>
+.</p><p>If you would like to remain logged in when the X session ends, remove <strong>exec</strong>.</p><p><strong>Warning</strong>: Without <strong>exec</strong>, anyone that can kill X can get a shell and access to files in your home directory. Decide whether this matters to you before implementing the above.</p><p>See also <a href=https://wiki.archlinux.org/title/Fish#Start_X_at_login target=_blank rel="noopener noreferrer">
+Fish#Start X at login
+</a>
+and <a href=https://wiki.archlinux.org/title/Systemd/User#Automatic_login_into_Xorg_without_display_manager target=_blank rel="noopener noreferrer">
+Systemd/User#Automatic login into Xorg without display manager
+</a>
+.</p><p><strong>Tip</strong>: This method can be combined with <a href=https://wiki.archlinux.org/title/Automatic_login_to_virtual_console target=_blank rel="noopener noreferrer">
+automatic login to virtual console
+</a>
+.</p><h4 id=switching-between-desktop-environments-window-managers>Switching between desktop environments/window managers</h4><p>If you are frequently switching between different desktop environments or window managers, it is convenient to either use a display manager or expand <strong>~/.xinitrc</strong> to make the switching possible.</p><p>The following example shows how to start a particular desktop environment or window manager with an argument:</p><p><strong>~/.xinitrc</strong></p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -226,7 +274,13 @@ Cancel
 </span></span><span class=line><span class=cl>...
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=nb>exec</span> chromium
-</span></span></code></pre></td></tr></table></div></div><p>Alternatively the binary can be called directly from the command prompt as described in []#Override xinitrc](<a href=https://wiki.archlinux.org/title/Xinit#Override_xinitrc%29 target=_blank rel="noopener noreferrer">https://wiki.archlinux.org/title/Xinit#Override_xinitrc)</a>.</p><p>With this method you need to set each application&rsquo;s window geometry through its own configuration files (if possible at all).</p><p><strong>Tip</strong>: This can be useful to launch graphical games, where excluding the overhead of a compositor can help improve the game&rsquo;s performance.</p><p>See also <a href=https://wiki.archlinux.org/title/Display_manager#Starting_applications_without_a_window_manager target=_blank rel="noopener noreferrer">Display manager#Starting applications without a window manager</a>.</p><h2 id=xprofile>xprofile</h2><p>An xprofile file, ~/.xprofile and /etc/xprofile, allows you to execute commands at the beginning of the X user session - before the window manager is started.</p><p>The xprofile file is similar in style to xinitrc.</p><h3 id=compatibility>Compatibility</h3><p>The xprofile files are natively sourced by the following display managers:</p><ul>
+</span></span></code></pre></td></tr></table></div></div><p>Alternatively the binary can be called directly from the command prompt as described in []#Override xinitrc](<a href=https://wiki.archlinux.org/title/Xinit#Override_xinitrc%29 target=_blank rel="noopener noreferrer">
+https://wiki.archlinux.org/title/Xinit#Override_xinitrc)
+</a>
+.</p><p>With this method you need to set each application&rsquo;s window geometry through its own configuration files (if possible at all).</p><p><strong>Tip</strong>: This can be useful to launch graphical games, where excluding the overhead of a compositor can help improve the game&rsquo;s performance.</p><p>See also <a href=https://wiki.archlinux.org/title/Display_manager#Starting_applications_without_a_window_manager target=_blank rel="noopener noreferrer">
+Display manager#Starting applications without a window manager
+</a>
+.</p><h2 id=xprofile>xprofile</h2><p>An xprofile file, ~/.xprofile and /etc/xprofile, allows you to execute commands at the beginning of the X user session - before the window manager is started.</p><p>The xprofile file is similar in style to xinitrc.</p><h3 id=compatibility>Compatibility</h3><p>The xprofile files are natively sourced by the following display managers:</p><ul>
 <li>GDM - /etc/gdm/Xsession</li><li>LightDM - /etc/lightdm/Xsession</li><li>LXDM - /etc/lxdm/Xsession</li><li>SDDM - /usr/share/sddm/scripts/Xsession</li></ul><p>Sourcing xprofile from a session started with xinit</p><p>It is possible to source xprofile from a session started with one of the following programs:</p><ul>
 <li>startx</li><li>xinit</li><li>XDM</li><li>Any other Display manager which uses ~/.xsession or ~/.xinitrc</li></ul><p>All of these execute, directly or indirectly, ~/.xinitrc or /etc/X11/xinit/xinitrc if it does not exist. That is why xprofile has to be sourced from these files.</p><p>~/.xinitrc and /etc/X11/xinit/xinitrc</p><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
@@ -253,11 +307,23 @@ Cancel
 <pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>tint2 &amp;
 </span></span><span class=line><span class=cl>nm-applet &amp;
 </span></span></code></pre></td></tr></table></div></div><h2 id=reference-list>Reference List</h2><ol>
-<li><a href=https://wiki.archlinux.org/title/Xinit target=_blank rel="noopener noreferrer">https://wiki.archlinux.org/title/Xinit</a></li><li><a href=https://wiki.archlinux.org/title/LightDM target=_blank rel="noopener noreferrer">https://wiki.archlinux.org/title/LightDM</a></li><li><a href=https://wiki.archlinux.org/title/Display_manager target=_blank rel="noopener noreferrer">https://wiki.archlinux.org/title/Display_manager</a></li><li><a href=https://wiki.archlinux.org/title/Xprofile target=_blank rel="noopener noreferrer">https://wiki.archlinux.org/title/Xprofile</a></li></ol></div><div class=post-footer id=post-footer>
+<li><a href=https://wiki.archlinux.org/title/Xinit target=_blank rel="noopener noreferrer">
+https://wiki.archlinux.org/title/Xinit
+</a>
+</li><li><a href=https://wiki.archlinux.org/title/LightDM target=_blank rel="noopener noreferrer">
+https://wiki.archlinux.org/title/LightDM
+</a>
+</li><li><a href=https://wiki.archlinux.org/title/Display_manager target=_blank rel="noopener noreferrer">
+https://wiki.archlinux.org/title/Display_manager
+</a>
+</li><li><a href=https://wiki.archlinux.org/title/Xprofile target=_blank rel="noopener noreferrer">
+https://wiki.archlinux.org/title/Xprofile
+</a>
+</li></ol></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2022-03-02</span>
+<span>Updated on 2022-03-08</span>
 </div><div class=post-info-license></div></div><div class=post-info-line>
 <div class=post-info-md><span>
 <a class=link-to-markdown href=https://yanboyang.com/xorg/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
@@ -270,8 +336,8 @@ Cancel
 <a href=https://yanboyang.com/dwmwallpaper/ class=next rel=next title="Change the Suckless DWM Wallpaper with Feh">Change the Suckless DWM Wallpaper with Feh<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
 </noscript></div></article></div></main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.0">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.2">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer"></a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
 <i class="fas fa-arrow-up fa-fw"></i>
 </a><a href=# id=view-comments class=fixed-button title="View Comments">
 <i class="fas fa-comment fa-fw"></i>
