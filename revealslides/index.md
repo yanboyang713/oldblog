@@ -87,6 +87,15 @@ If you like the default settings, that’s all you need! But if you want customi
 
        https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/EmacsIcon.svg/1200px-EmacsIcon.svg.png
     ```
+5.  Speacker Note
+
+    ```org
+       #+BEGIN_NOTEs
+       Here is NOTE.
+       ,#END_NOTEs
+    ```
+
+Type **s** to open Speacker View.
 
 
 ## Full Example {#full-example}
