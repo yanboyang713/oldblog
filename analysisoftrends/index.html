@@ -1,0 +1,524 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Analysis of Trends - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Analysis of Trends"><meta property="og:description" content="Introduction We will study trend models for the analysis of time series data. Trend models that we will cover include linear, quadratic and harmonic trend models and those account for seasonality. We will observe that while the trend models are very good at capturing the trend in time series data, their performance is poor on capturing serial correlation in time series data. We will have hands-on tasks to deepen your understanding of trend models and improve your skillsets for the implementation of time series analysis methods."><meta property="og:type" content="article"><meta property="og:url" content="https://yanboyang.com/analysisoftrends/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-03-16T00:04:00+11:00"><meta property="article:modified_time" content="2022-03-17T05:53:50+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://yanboyang.com/logo.png"><meta name=twitter:title content="Analysis of Trends"><meta name=twitter:description content="Introduction We will study trend models for the analysis of time series data. Trend models that we will cover include linear, quadratic and harmonic trend models and those account for seasonality. We will observe that while the trend models are very good at capturing the trend in time series data, their performance is poor on capturing serial correlation in time series data. We will have hands-on tasks to deepen your understanding of trend models and improve your skillsets for the implementation of time series analysis methods."><meta name=application-name content="LoveIt"><meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/analysisoftrends/><link rel=prev href=https://yanboyang.com/timeseriesanalysisweek1/><link rel=next href=https://yanboyang.com/gettingwithsumo/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Analysis of Trends","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/analysisoftrends\/"},"genre":"posts","keywords":"time, series, analysis","wordcount":5108,"url":"https:\/\/yanboyang.com\/analysisoftrends\/","datePublished":"2022-03-16T00:04:00+11:00","dateModified":"2022-03-17T05:53:50+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-wrapper><div class=header-title><a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a></div><div class=menu><div class=menu-inner><a class=menu-item href=https://yanboyang.com/>Home </a><a class=menu-item href=https://yanboyang.com/posts/>Posts </a><a class=menu-item href=https://yanboyang.com/tags/>Tags </a><a class=menu-item href=https://yanboyang.com/categories/>Categories </a><a class=menu-item href=https://yanboyang.com/about/>About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-container><div class=header-wrapper><div class=header-title><a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Analysis of Trends</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
+Boyang Yan</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-03-16>2022-03-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;5108 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;24 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#introduction>Introduction</a></li><li><a href=#learning-objectives>learning objectives</a></li><li><a href=#deterministic-versus-stochastic-trends>Deterministic Versus Stochastic Trends</a></li><li><a href=#estimation-of-a-constant-mean>Estimation of a Constant Mean</a></li><li><a href=#regression-approach>Regression Approach</a></li><li><a href=#linear-and-quadratic-trends-in-time>Linear and Quadratic Trends in Time</a></li><li><a href=#cyclical-or-seasonal-trends>Cyclical or Seasonal Trends</a></li><li><a href=#cosine-trends>Cosine Trends</a></li><li><a href=#residual-analysis>Residual Analysis</a></li><li><a href=#sample-autocorrelation-function>Sample Autocorrelation Function</a></li><li><a href=#forecasting-with-regression-models>Forecasting with regression models</a></li><li><a href=#summary>Summary</a></li></ul></nav></div></div><div class=content id=content><h2 id=introduction>Introduction</h2><p>We will study trend models for the analysis of time series data. Trend models that we will cover include linear, quadratic and harmonic trend models and those account for seasonality. We will observe that while the trend models are very good at capturing the trend in time series data, their performance is poor on capturing serial correlation in time series data. We will have hands-on tasks to deepen your understanding of trend models and improve your skillsets for the implementation of time series analysis methods.</p><p>The trend in time series is closely related to the mean function of the series. Changes in mean over time create a trend in the series. In general, the mean function is an arbitrary function of time. We will consider relatively simple functions of time to model the trend in time series.</p><p>In this module, we will study</p><ul><li>the deterministic and stochastic trend,</li><li>modeling deterministic trends,</li><li>estimation of constant mean,</li><li>regression approach to model the trend,</li><li>analysis of residuals after modelling the trend.</li></ul><h2 id=learning-objectives>learning objectives</h2><p>This week will contribute to Course Learning Objectives:</p><ol><li>Present time series in an informative way, both graphically and with summary statistics</li><li>Develop stationary and non-stationary, and seasonal and non-seasonal time series models</li></ol><h2 id=deterministic-versus-stochastic-trends>Deterministic Versus Stochastic Trends</h2><p>One of the challenges in time series analysis is that the same time series may be viewed quite differently by different analysts. For example, one can foresee a trend in a simulated random walk with a constant mean for all time. The perceived trend is a result of the strong positive correlation between the series values at nearby time points and the increasing variance in the process as time goes by. Therefore, one can see different trends in the next simulations. This type of trend is called stochastic trend.</p><p>In the average monthly temperatures example of the first module, we got the following time series plot in Figure 1:</p><p>Here we have a cyclical or seasonal trend, but here the reason for the trend is clear that the Northern Hemisphere’s changing inclination toward the sun. We can model this trend by Yt=Xt+μt, where μt is a deterministic function that is periodic with period 12 and it should satisfy μt=μt−12 for all t. We can assume that Xt represent an unobserved variation around μt and has zero mean for all t. So, this model assumes that μt is the mean function for the observed series Yt. Because the mean function is determined beforehand and we can set the “functions form” of a trend, the trend considered here is a deterministic trend. It is possible to set a linear mean function such that μt=β0+β1t or a quadratic time trend such as μt=β0+β1t+β2t2.</p><h2 id=estimation-of-a-constant-mean>Estimation of a Constant Mean</h2><p>When we consider a constant mean over time, we set μt=μ, for all t. So, our model is written as</p><p>Our aim is to estimate the value of μ using the observed series Y1,Y2,…,Yn. The straightforward estimate of μ is the sample mean calculated as</p><p>Here sample mean is an unbiased estimator of the constant mean. To investigate its efficiency, we need to find the variance of the sample mean. Suppose that {Yt} is a stationary time series with autocorrelation function ρk. Then, the variance of the sample mean is obtained as</p><p>Note that if the series {Yt} is just white noise then ρk=0 for k>0; and hence, Var(Y¯ reduces to simply γ0/n, which is the population variance divided by the sample size.</p><p>Instead of constant mean, we can set a moving average model such that Yt=et−1/2et−1, which is also stationary. Then, we find that ρ1=−0.4, which means that we have a negative correlation at lag 1, and ρk=0 for k>1. In this case, we have</p><p>For a large n, the correction factor (n−1)/n will approach to 1. Thus, we get</p><p>So, the variance of the estimator of μ for the moving average model is less than that of for the constant mean model: 0.2(γ0/n)&lt;γ0/n. The reason for getting a more efficient estimator with a moving average model is that in the moving average model, it is possible for the series to oscillate back and forth across the mean. On the other hand, if ρk≥0 for all k≥1, Var(Y¯) will be larger than γ0/n.</p><p>For many stationary processes, the autocorrelation function decays quickly enough with increasing lags. under this assumption and given a large sample, we obtain the following approximation:</p><p>Here, negative correlations and large sample size both increase the efficiency of the estimator.</p><p>We should note that the precision of the sample mean as an estimator of μ can be strikingly different for a nonstationary process with a constant mean. For example, for the random walk process defined in Module 1, we find the following:</p><p>Notice that in this special case the variance of our estimate of the mean actually increases as the sample size n increases. Because this is unacceptable, we need to consider other estimation techniques for nonstationary series.</p><h2 id=regression-approach>Regression Approach</h2><p>Classical regression analysis can be used to model nonconstant mean trend. We will consider linear, quadratic, seasonal means, and cosine trends.</p><h2 id=linear-and-quadratic-trends-in-time>Linear and Quadratic Trends in Time</h2><p>The deterministic linear trend model is expressed as follows:</p><p>μt=β0+β1t</p><p>where β0 represents intercept and β1 corresponds to the slope of the linear trend. Suppose β^0 and β^1 are the classical least squares estimates of β0 and β1, respectively. Then, β^0 and β^1 are obtained as follows:</p><p>where t=(n+1)/2 is the average of integers 1,2,…,n.</p><p>Consider the simulated random walk process in Figure 2:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>data</span><span class=p>(</span><span class=n>rwalk</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>model1</span> <span class=o>=</span> <span class=nf>lm</span><span class=p>(</span><span class=n>rwalk</span><span class=o>~</span><span class=nf>time</span><span class=p>(</span><span class=n>rwalk</span><span class=p>))</span> <span class=c1># label the model as model1</span>
+</span></span><span class=line><span class=cl><span class=nf>summary</span><span class=p>(</span><span class=n>model1</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Call:
+</span></span><span class=line><span class=cl>## lm(formula = rwalk ~ time(rwalk))
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Residuals:
+</span></span><span class=line><span class=cl>##      Min       1Q   Median       3Q      Max
+</span></span><span class=line><span class=cl>## -2.70045 -0.79782  0.06391  0.63064  2.22128
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Coefficients:
+</span></span><span class=line><span class=cl>##              Estimate Std. Error t value Pr(&gt;|t|)
+</span></span><span class=line><span class=cl>## (Intercept) -1.007888   0.297245  -3.391  0.00126 **
+</span></span><span class=line><span class=cl>## time(rwalk)  0.134087   0.008475  15.822  &lt; 2e-16 ***
+</span></span><span class=line><span class=cl>## ---
+</span></span><span class=line><span class=cl>## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Residual standard error: 1.137 on 58 degrees of freedom
+</span></span><span class=line><span class=cl>## Multiple R-squared:  0.8119, Adjusted R-squared:  0.8086
+</span></span><span class=line><span class=cl>## F-statistic: 250.3 on 1 and 58 DF,  p-value: &lt; 2.2e-16
+</span></span></code></pre></td></tr></table></div></div><p>Estimates of slope and intercept are β^1=0.1341 and β^0=−1.008, respectively. Here slope is statistically significant at 5% significance level. The trend line is plotted over the time series in Figure 3:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>plot</span><span class=p>(</span><span class=n>rwalk</span><span class=p>,</span><span class=n>type</span><span class=o>=</span><span class=s>&#39;o&#39;</span><span class=p>,</span><span class=n>ylab</span><span class=o>=</span><span class=s>&#39;y&#39;</span><span class=p>,</span> <span class=n>main</span> <span class=o>=</span> <span class=s>&#34;Figure 3. Fitted linear model to the simulated random walk series.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>abline</span><span class=p>(</span><span class=n>model1</span><span class=p>)</span> <span class=c1># add the fitted least squares line from model1</span>
+</span></span></code></pre></td></tr></table></div></div><p>Appropriateness of this linear trend model will be considered later.</p><p>The deterministic quadratic trend model is expressed as follows</p><p>μt=β0+β1t+β2t2</p><p>where β0 represents intercept, β1 corresponds to the linear trend, and β2 corresponds to quadratic trend in time.</p><p>The following code chunk fits a quadratic trend model to the random walk data:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=n>t</span> <span class=o>=</span> <span class=nf>time</span><span class=p>(</span><span class=n>rwalk</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>t2</span> <span class=o>=</span> <span class=n>t^2</span>
+</span></span><span class=line><span class=cl><span class=n>model1.1</span> <span class=o>=</span> <span class=nf>lm</span><span class=p>(</span><span class=n>rwalk</span><span class=o>~</span><span class=n>t</span><span class=o>+</span><span class=n>t2</span><span class=p>)</span> <span class=c1># label the model as model1</span>
+</span></span><span class=line><span class=cl><span class=nf>summary</span><span class=p>(</span><span class=n>model1.1</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Call:
+</span></span><span class=line><span class=cl>## lm(formula = rwalk ~ t + t2)
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Residuals:
+</span></span><span class=line><span class=cl>##      Min       1Q   Median       3Q      Max
+</span></span><span class=line><span class=cl>## -2.69623 -0.76802  0.00826  0.85337  2.34468
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Coefficients:
+</span></span><span class=line><span class=cl>##               Estimate Std. Error t value Pr(&gt;|t|)
+</span></span><span class=line><span class=cl>## (Intercept) -1.4272911  0.4534893  -3.147  0.00262 **
+</span></span><span class=line><span class=cl>## t            0.1746746  0.0343028   5.092 4.16e-06 ***
+</span></span><span class=line><span class=cl>## t2          -0.0006654  0.0005451  -1.221  0.22721
+</span></span><span class=line><span class=cl>## ---
+</span></span><span class=line><span class=cl>## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Residual standard error: 1.132 on 57 degrees of freedom
+</span></span><span class=line><span class=cl>## Multiple R-squared:  0.8167, Adjusted R-squared:  0.8102
+</span></span><span class=line><span class=cl>## F-statistic:   127 on 2 and 57 DF,  p-value: &lt; 2.2e-16
+</span></span></code></pre></td></tr></table></div></div><p>Fitted quadratic trend is shown in Figure 4:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>plot</span><span class=p>(</span><span class=nf>ts</span><span class=p>(</span><span class=nf>fitted</span><span class=p>(</span><span class=n>model1.1</span><span class=p>)),</span> <span class=n>ylim</span> <span class=o>=</span> <span class=nf>c</span><span class=p>(</span><span class=nf>min</span><span class=p>(</span><span class=nf>c</span><span class=p>(</span><span class=nf>fitted</span><span class=p>(</span><span class=n>model1.1</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>     <span class=nf>as.vector</span><span class=p>(</span><span class=n>rwalk</span><span class=p>))),</span> <span class=nf>max</span><span class=p>(</span><span class=nf>c</span><span class=p>(</span><span class=nf>fitted</span><span class=p>(</span><span class=n>model1.1</span><span class=p>),</span><span class=nf>as.vector</span><span class=p>(</span><span class=n>rwalk</span><span class=p>)))),</span><span class=n>ylab</span><span class=o>=</span><span class=s>&#39;y&#39;</span> <span class=p>,</span>
+</span></span><span class=line><span class=cl>     <span class=n>main</span> <span class=o>=</span> <span class=s>&#34;Figure 4. Fitted quadratic curve to the random walk series.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>lines</span><span class=p>(</span><span class=nf>as.vector</span><span class=p>(</span><span class=n>rwalk</span><span class=p>),</span><span class=n>type</span><span class=o>=</span><span class=s>&#34;o&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=cyclical-or-seasonal-trends>Cyclical or Seasonal Trends</h2><p>Consider now modeling and estimating seasonal trends, such as for the average monthly temperature data in Figure 5.</p><p>Here we assume that the observed series can be represented as</p><p>Yt=μt+Xt</p><p>where E(Xt)=0 for all t. The most general assumption for μt with monthly seasonal data is that there are 12 parameters, β1,β2,…,β12, giving the expected average temperature for each of the 12 months. To represent seasonality, we may write a seasonal model such that</p><p>We need to set up indicator variables (sometimes called dummy variables) that indicate the month to which each of the data points pertains before going on with estimation of parameters. We can also include an intercept term β0 in the model.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>data</span><span class=p>(</span><span class=n>tempdub</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>month.</span><span class=o>=</span><span class=nf>season</span><span class=p>(</span><span class=n>tempdub</span><span class=p>)</span> <span class=c1># period added to improve table display and this line sets up indicators</span>
+</span></span><span class=line><span class=cl><span class=n>model2</span><span class=o>=</span><span class=nf>lm</span><span class=p>(</span><span class=n>tempdub</span><span class=o>~</span><span class=n>month.</span><span class=m>-1</span><span class=p>)</span> <span class=c1># -1 removes the intercept term</span>
+</span></span><span class=line><span class=cl><span class=nf>summary</span><span class=p>(</span><span class=n>model2</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Call:
+</span></span><span class=line><span class=cl>## lm(formula = tempdub ~ month. - 1)
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Residuals:
+</span></span><span class=line><span class=cl>##     Min      1Q  Median      3Q     Max
+</span></span><span class=line><span class=cl>## -8.2750 -2.2479  0.1125  1.8896  9.8250
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Coefficients:
+</span></span><span class=line><span class=cl>##                 Estimate Std. Error t value Pr(&gt;|t|)
+</span></span><span class=line><span class=cl>## month.January     16.608      0.987   16.83   &lt;2e-16 ***
+</span></span><span class=line><span class=cl>## month.February    20.650      0.987   20.92   &lt;2e-16 ***
+</span></span><span class=line><span class=cl>## month.March       32.475      0.987   32.90   &lt;2e-16 ***
+</span></span><span class=line><span class=cl>## month.April       46.525      0.987   47.14   &lt;2e-16 ***
+</span></span><span class=line><span class=cl>## month.May         58.092      0.987   58.86   &lt;2e-16 ***
+</span></span><span class=line><span class=cl>## month.June        67.500      0.987   68.39   &lt;2e-16 ***
+</span></span><span class=line><span class=cl>## month.July        71.717      0.987   72.66   &lt;2e-16 ***
+</span></span><span class=line><span class=cl>## month.August      69.333      0.987   70.25   &lt;2e-16 ***
+</span></span><span class=line><span class=cl>## month.September   61.025      0.987   61.83   &lt;2e-16 ***
+</span></span><span class=line><span class=cl>## month.October     50.975      0.987   51.65   &lt;2e-16 ***
+</span></span><span class=line><span class=cl>## month.November    36.650      0.987   37.13   &lt;2e-16 ***
+</span></span><span class=line><span class=cl>## month.December    23.642      0.987   23.95   &lt;2e-16 ***
+</span></span><span class=line><span class=cl>## ---
+</span></span><span class=line><span class=cl>## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Residual standard error: 3.419 on 132 degrees of freedom
+</span></span><span class=line><span class=cl>## Multiple R-squared:  0.9957, Adjusted R-squared:  0.9953
+</span></span><span class=line><span class=cl>## F-statistic:  2569 on 12 and 132 DF,  p-value: &lt; 2.2e-16
+</span></span></code></pre></td></tr></table></div></div><p>All of the parameters corresponding to months are statistically significant at 5% level. We can include the intercept parameter as follows:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=n>model3</span><span class=o>=</span><span class=nf>lm</span><span class=p>(</span><span class=n>tempdub</span><span class=o>~</span><span class=n>month.</span><span class=p>)</span> <span class=c1># remove -1 to include the intercept term in the model</span>
+</span></span><span class=line><span class=cl><span class=nf>summary</span><span class=p>(</span><span class=n>model3</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Call:
+</span></span><span class=line><span class=cl>## lm(formula = tempdub ~ month.)
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Residuals:
+</span></span><span class=line><span class=cl>##     Min      1Q  Median      3Q     Max
+</span></span><span class=line><span class=cl>## -8.2750 -2.2479  0.1125  1.8896  9.8250
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Coefficients:
+</span></span><span class=line><span class=cl>##                 Estimate Std. Error t value Pr(&gt;|t|)
+</span></span><span class=line><span class=cl>## (Intercept)       16.608      0.987  16.828  &lt; 2e-16 ***
+</span></span><span class=line><span class=cl>## month.February     4.042      1.396   2.896  0.00443 **
+</span></span><span class=line><span class=cl>## month.March       15.867      1.396  11.368  &lt; 2e-16 ***
+</span></span><span class=line><span class=cl>## month.April       29.917      1.396  21.434  &lt; 2e-16 ***
+</span></span><span class=line><span class=cl>## month.May         41.483      1.396  29.721  &lt; 2e-16 ***
+</span></span><span class=line><span class=cl>## month.June        50.892      1.396  36.461  &lt; 2e-16 ***
+</span></span><span class=line><span class=cl>## month.July        55.108      1.396  39.482  &lt; 2e-16 ***
+</span></span><span class=line><span class=cl>## month.August      52.725      1.396  37.775  &lt; 2e-16 ***
+</span></span><span class=line><span class=cl>## month.September   44.417      1.396  31.822  &lt; 2e-16 ***
+</span></span><span class=line><span class=cl>## month.October     34.367      1.396  24.622  &lt; 2e-16 ***
+</span></span><span class=line><span class=cl>## month.November    20.042      1.396  14.359  &lt; 2e-16 ***
+</span></span><span class=line><span class=cl>## month.December     7.033      1.396   5.039 1.51e-06 ***
+</span></span><span class=line><span class=cl>## ---
+</span></span><span class=line><span class=cl>## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Residual standard error: 3.419 on 132 degrees of freedom
+</span></span><span class=line><span class=cl>## Multiple R-squared:  0.9712, Adjusted R-squared:  0.9688
+</span></span><span class=line><span class=cl>## F-statistic: 405.1 on 11 and 132 DF,  p-value: &lt; 2.2e-16
+</span></span></code></pre></td></tr></table></div></div><p>R omits the January coefficient in this case. Notice that when we have the intercept in the model, we interpret resulting parameters as the difference between the first month and the related one. Now the February coefficient is interpreted as the difference between February and January average temperatures, the March coefficient is the difference between March and January average temperatures, and so forth. In this model, all of the differences between January and the other months are statistically significant at 5% level in both models. Notice that the Intercept coefficient plus the February coefficient here equals the February coefficient the model with no intercept parameter.</p><h2 id=cosine-trends>Cosine Trends</h2><p>In the seasonal means model, we separate the effect of each month. However, there is nothing about the shape of the seasonal trend in the seasonal means model. We can include the information on the shape of the seasonal trend in the model by assigning a cosine curve as the mean function μt:</p><p>μt=βcos(2πft+Φ)</p><p>Here, β(>0), f, and Φ are called the amplitude, frequency, and phase of the curve. As t varies, the curve oscillates within [−β,β] interval. Since the curve repeats itself exactly every 1/f time units, 1/f is called the period of the cosine wave. When we set f=1/12, a cosine wave will repeat itself every 12 months. So we say that the period is 12.</p><p>For the estimation purposes, we need to make the above cosine trend model linear in terms of its parameters. With the following misinterpretation, we get</p><p>βcos(2πft+Φ)=β1cos(2πft)+β2sin(2πft)</p><p>where</p><p>β=β21+β22−−−−−−√ and Φ=atan(−β2/β1)</p><p>and, conversely,</p><p>β1=βcos(Φ) and β2=βsin(Φ).</p><p>Consequently, we will use cos(2πft) and sin(2πft) to estimate β1 and β2, respectively. The simplest such model for the trend would be expressed as</p><p>μt=β0+β1cos(2πft)+β2sin(2πft)</p><p>Here the constant term β0 represents a cosine with frequency zero.</p><p>In any practical example, we must be careful how we measure time, as our choice of time measurement will affect the values of the frequencies of interest. For example, if we have monthly data but use 1,2,3,… as our time scale, then 1/12 would be the most interesting frequency, with a corresponding period of 12 months. However, if we measure time by year and fractional year, say 1980 for January, 1980.08333 for February of 1980, and so forth, then a frequency of 1 corresponds to an annual or 12-month periodicity.</p><p>The following code chunk fits a cosine curve at the fundamental frequency to the average monthly temperature series.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=n>har.</span><span class=o>=</span><span class=nf>harmonic</span><span class=p>(</span><span class=n>tempdub</span><span class=p>,</span><span class=m>1</span><span class=p>)</span> <span class=c1># calculate cos(2*pi*t) and sin(2*pi*t)</span>
+</span></span><span class=line><span class=cl><span class=n>model4</span><span class=o>=</span><span class=nf>lm</span><span class=p>(</span><span class=n>tempdub</span><span class=o>~</span><span class=n>har.</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>summary</span><span class=p>(</span><span class=n>model4</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Call:
+</span></span><span class=line><span class=cl>## lm(formula = tempdub ~ har.)
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Residuals:
+</span></span><span class=line><span class=cl>##      Min       1Q   Median       3Q      Max
+</span></span><span class=line><span class=cl>## -11.1580  -2.2756  -0.1457   2.3754  11.2671
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Coefficients:
+</span></span><span class=line><span class=cl>##                 Estimate Std. Error t value Pr(&gt;|t|)
+</span></span><span class=line><span class=cl>## (Intercept)      46.2660     0.3088 149.816  &lt; 2e-16 ***
+</span></span><span class=line><span class=cl>## har.cos(2*pi*t) -26.7079     0.4367 -61.154  &lt; 2e-16 ***
+</span></span><span class=line><span class=cl>## har.sin(2*pi*t)  -2.1697     0.4367  -4.968 1.93e-06 ***
+</span></span><span class=line><span class=cl>## ---
+</span></span><span class=line><span class=cl>## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Residual standard error: 3.706 on 141 degrees of freedom
+</span></span><span class=line><span class=cl>## Multiple R-squared:  0.9639, Adjusted R-squared:  0.9634
+</span></span><span class=line><span class=cl>## F-statistic:  1882 on 2 and 141 DF,  p-value: &lt; 2.2e-16
+</span></span></code></pre></td></tr></table></div></div><p>The following code chunk plots the fitted curve along with the observed average monthly temperature series in Figure 6.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>plot</span><span class=p>(</span><span class=nf>ts</span><span class=p>(</span><span class=nf>fitted</span><span class=p>(</span><span class=n>model4</span><span class=p>),</span><span class=n>freq</span><span class=o>=</span><span class=m>12</span><span class=p>,</span><span class=n>start</span><span class=o>=</span><span class=nf>c</span><span class=p>(</span><span class=m>1964</span><span class=p>,</span><span class=m>1</span><span class=p>)),</span><span class=n>ylab</span><span class=o>=</span><span class=s>&#39;Temperature&#39;</span><span class=p>,</span><span class=n>type</span><span class=o>=</span><span class=s>&#39;l&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=n>ylim</span><span class=o>=</span><span class=nf>range</span><span class=p>(</span><span class=nf>c</span><span class=p>(</span><span class=nf>fitted</span><span class=p>(</span><span class=n>model4</span><span class=p>),</span><span class=n>tempdub</span><span class=p>)),</span><span class=n>main</span><span class=o>=</span><span class=s>&#34;Figure 6. Fitted model to average monthly temperature series.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># ylim ensures that the y axis range fits the raw data and the fitted values</span>
+</span></span><span class=line><span class=cl><span class=nf>points</span><span class=p>(</span><span class=n>tempdub</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>The cosine trend model fits the data quite well with the exception of most of the January values, where the observations are lower than the model would predict.</p><p>Interpreting Regression Output
+Estimates of regression parameters are obtained under some assumptions on the stochastic component {Xt} of linear trend model. So, some properties of regression output heavily depend on the assumption that Xt is white noise and some other parts depend on approximate normality of Xt.</p><p>When we have μt=β0+β1t as the mean function, the unobserved stochastic component Xt can be estimated (predicted) by Yt−μ^t. If Xt has a constant variance, we estimate the standard deviation of Xt, namely γ0−−√, by the residual standard deviation</p><p>s=1n−p∑t=1n(Yt−μ^t)2−−−−−−−−−−−−−−−−√</p><p>where p is the number of parameters estimated in μt and n−p is the so-called degrees of freedom for s.</p><p>The smaller the value of s, the better the fit.</p><p>Another measure of goodness of fit of the trend is the coefficient of determination, namely R2. One interpretation of R2 is that it is the square of the sample correlation coefficient between the observed series and the estimated trend. It is also the fraction of the variation in the series that is explained by the estimated trend.</p><p>High but not close to 1 values of R2 implies a satisfactory fit.</p><p>When we fit the straight line to the random walk data, we get the following output:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=n>model1</span><span class=o>=</span><span class=nf>lm</span><span class=p>(</span><span class=n>rwalk</span><span class=o>~</span><span class=nf>time</span><span class=p>(</span><span class=n>rwalk</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=nf>summary</span><span class=p>(</span><span class=n>model1</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Call:
+</span></span><span class=line><span class=cl>## lm(formula = rwalk ~ time(rwalk))
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Residuals:
+</span></span><span class=line><span class=cl>##      Min       1Q   Median       3Q      Max
+</span></span><span class=line><span class=cl>## -2.70045 -0.79782  0.06391  0.63064  2.22128
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Coefficients:
+</span></span><span class=line><span class=cl>##              Estimate Std. Error t value Pr(&gt;|t|)
+</span></span><span class=line><span class=cl>## (Intercept) -1.007888   0.297245  -3.391  0.00126 **
+</span></span><span class=line><span class=cl>## time(rwalk)  0.134087   0.008475  15.822  &lt; 2e-16 ***
+</span></span><span class=line><span class=cl>## ---
+</span></span><span class=line><span class=cl>## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## Residual standard error: 1.137 on 58 degrees of freedom
+</span></span><span class=line><span class=cl>## Multiple R-squared:  0.8119, Adjusted R-squared:  0.8086
+</span></span><span class=line><span class=cl>## F-statistic: 250.3 on 1 and 58 DF,  p-value: &lt; 2.2e-16
+</span></span></code></pre></td></tr></table></div></div><p>According to multiple R2, about 81% of the variation in the random walk series is explained by the linear time trend. The adjusted version of multiple R2 provides an approximately unbiased estimate of true R2.</p><p>The standard deviations of the coefficients labeled Std. Error on the output need to be interpreted carefully. They are appropriate only when the usual regression assumption that the stochastic component is white noise. This assumption rarely true for time series data!</p><p>If the stochastic component is normally distributed white noise, then the p-values are given under “Pr(>|t|)” can be used to test the null hypothesis that the corresponding unknown regression coefficient is zero.</p><h2 id=residual-analysis>Residual Analysis</h2><p>The estimator or predictor of unobserved stochastic component {Xt},</p><p>X^t=Yt−μ^t</p><p>is called residual corresponding to the tth observation.</p><p>An estimate is the guess of an unknown parameter and a prediction is an estimate of an unobserved random variable.</p><p>If the trend model is reasonably correct, then the residuals should behave roughly like the true stochastic component, and various assumptions about the stochastic component can be assessed by looking at the residuals.</p><p>If the stochastic component is white noise, then the residuals should behave roughly like independent (normal) random variables with zero mean and standard deviation of s. We can standardise residuals to make their mean zero.</p><p>After computation of residuals or standardised residual, we examine various residual plots. The first plot to examine is the plot of the residuals over time. If the series is seasonal, we can use labels while plotting to identify the seasonality better.</p><p>In the first example, We will use the monthly average temperature series which we fitted with seasonal means as our first example to illustrate some of the ideas of residual analysis. The following chunk generates a time series plot for the standardized residuals of the monthly temperature data fitted by seasonal means:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>plot</span><span class=p>(</span><span class=n>y</span><span class=o>=</span><span class=nf>rstudent</span><span class=p>(</span><span class=n>model3</span><span class=p>),</span><span class=n>x</span><span class=o>=</span><span class=nf>as.vector</span><span class=p>(</span><span class=nf>time</span><span class=p>(</span><span class=n>tempdub</span><span class=p>)),</span> <span class=n>xlab</span><span class=o>=</span><span class=s>&#39;Time&#39;</span><span class=p>,</span><span class=n>ylab</span><span class=o>=</span><span class=s>&#39;Standardized Residuals&#39;</span><span class=p>,</span><span class=n>type</span><span class=o>=</span><span class=s>&#39;o&#39;</span><span class=p>,</span> <span class=n>main</span> <span class=o>=</span> <span class=s>&#34;Figure 7. Time series plot of residuals.&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>If the stochastic component is white noise and the trend is adequately modeled, we would expect such a plot to suggest a rectangular scatter with no discernible trends whatsoever.</p><p>There are striking departures from randomness seen in the plot in Figure 7.</p><p>The labels of months are added in Figure 8.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>plot</span><span class=p>(</span><span class=n>y</span><span class=o>=</span><span class=nf>rstudent</span><span class=p>(</span><span class=n>model3</span><span class=p>),</span><span class=n>x</span><span class=o>=</span><span class=nf>as.vector</span><span class=p>(</span><span class=nf>time</span><span class=p>(</span><span class=n>tempdub</span><span class=p>)),</span><span class=n>xlab</span><span class=o>=</span><span class=s>&#39;Time&#39;</span><span class=p>,</span> <span class=n>ylab</span><span class=o>=</span><span class=s>&#39;Standardized Residuals&#39;</span><span class=p>,</span><span class=n>type</span><span class=o>=</span><span class=s>&#39;l&#39;</span><span class=p>,</span> <span class=n>main</span> <span class=o>=</span> <span class=s>&#34;Figure 8. Time series plot of residuals with labels.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>points</span><span class=p>(</span><span class=n>y</span><span class=o>=</span><span class=nf>rstudent</span><span class=p>(</span><span class=n>model3</span><span class=p>),</span><span class=n>x</span><span class=o>=</span><span class=nf>as.vector</span><span class=p>(</span><span class=nf>time</span><span class=p>(</span><span class=n>tempdub</span><span class=p>)),</span> <span class=n>pch</span><span class=o>=</span><span class=nf>as.vector</span><span class=p>(</span><span class=nf>season</span><span class=p>(</span><span class=n>tempdub</span><span class=p>)))</span>
+</span></span></code></pre></td></tr></table></div></div><p>There is no apparent pattern relating to different months of the year in Figure 8.</p><p>Next, we look at the standardized residuals versus the corresponding trend estimate, or fitted value in Figure 9. The function rstudent() computes standardised residuals.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>plot</span><span class=p>(</span><span class=n>y</span><span class=o>=</span><span class=nf>rstudent</span><span class=p>(</span><span class=n>model3</span><span class=p>),</span><span class=n>x</span><span class=o>=</span><span class=nf>as.vector</span><span class=p>(</span><span class=nf>fitted</span><span class=p>(</span><span class=n>model3</span><span class=p>)),</span> <span class=n>xlab</span><span class=o>=</span><span class=s>&#39;Fitted Trend Values&#39;</span><span class=p>,</span> <span class=n>ylab</span><span class=o>=</span><span class=s>&#39;Standardized Residuals&#39;</span><span class=p>,</span><span class=n>type</span><span class=o>=</span><span class=s>&#39;n&#39;</span><span class=p>,</span> <span class=n>main</span> <span class=o>=</span> <span class=s>&#34;Figure 9. Time series plot of standardised residuals
+</span></span></span><span class=line><span class=cl><span class=s>     versus fitted trend values.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>points</span><span class=p>(</span><span class=n>y</span><span class=o>=</span><span class=nf>rstudent</span><span class=p>(</span><span class=n>model3</span><span class=p>),</span><span class=n>x</span><span class=o>=</span><span class=nf>as.vector</span><span class=p>(</span><span class=nf>fitted</span><span class=p>(</span><span class=n>model3</span><span class=p>)),</span><span class=n>pch</span><span class=o>=</span><span class=nf>as.vector</span><span class=p>(</span><span class=nf>season</span><span class=p>(</span><span class=n>tempdub</span><span class=p>)))</span>
+</span></span></code></pre></td></tr></table></div></div><p>As anomaly with this plot small residuals would be associated with small fitted trend values and large residuals with large fitted trend values, or there would be less variation for residuals associated with certain sized fitted trend values or more variation with other fitted trend values. Although there is somewhat more variation for the March residuals and less for November, the plot does not indicate any dramatic patterns that would cause us to doubt the seasonal means model.</p><p>Normality of residuals can be checked with a histogram. Figure 10 displays a frequency histogram of the standardized residuals from the seasonal means model for the temperature series.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>hist</span><span class=p>(</span><span class=nf>rstudent</span><span class=p>(</span><span class=n>model3</span><span class=p>),</span><span class=n>xlab</span><span class=o>=</span><span class=s>&#39;Standardized Residuals&#39;</span><span class=p>,</span> <span class=n>main</span> <span class=o>=</span> <span class=s>&#34;Figure 10. Histogram of the standardized residuals from
+</span></span></span><span class=line><span class=cl><span class=s>     the seasonal means model.&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>The plot is somewhat symmetric and tails off at both the high and low ends as a normal distribution does.</p><p>Another plot to check normality is the quantile-quantile (QQ) plot. Such a plot displays the quantiles of the data versus the theoretical quantiles of a normal distribution.</p><p>With normally distributed data, the QQ plot looks approximately like a straight line.</p><p>Figure 11 shows the Q-Q scores (calculated under normal distribution) plot for the standardized residuals from the seasonal means model for the temperature series.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=n>y</span> <span class=o>=</span> <span class=nf>rstudent</span><span class=p>(</span><span class=n>model3</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>qqnorm</span><span class=p>(</span><span class=n>y</span><span class=p>,</span> <span class=n>main</span> <span class=o>=</span> <span class=s>&#34;Figure 11. Normal Q-Q plot of the standardized residuals from
+</span></span></span><span class=line><span class=cl><span class=s>     the seasonal means model.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>qqline</span><span class=p>(</span><span class=n>y</span><span class=p>,</span> <span class=n>col</span> <span class=o>=</span> <span class=m>2</span><span class=p>,</span> <span class=n>lwd</span> <span class=o>=</span> <span class=m>1</span><span class=p>,</span> <span class=n>lty</span> <span class=o>=</span> <span class=m>2</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>The straight-line pattern here supports the assumption of a normally distributed stochastic component in this model.</p><p>In addition to visualisations, there are various hypothesis tests that can be used to check the normality assumption of the stochastic component. One of these tests is the Shapiro-Wilk test that calculates the correlation between the residuals and the corresponding normal quantiles. We apply the Shapiro-Wilk test to the residuals of temperature series using the following code chunk</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=n>y</span> <span class=o>=</span> <span class=nf>rstudent</span><span class=p>(</span><span class=n>model3</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>shapiro.test</span><span class=p>(</span><span class=n>y</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>##  Shapiro-Wilk normality test
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## data:  y
+</span></span><span class=line><span class=cl>## W = 0.9929, p-value = 0.6954
+</span></span></code></pre></td></tr></table></div></div><p>We get the p-value of 0.6954. So we conclude not to reject the null hypothesis that the stochastic component of this model is normally distributed.</p><p>Independence in the stochastic component is another assumption to check. The runs test can be applied over the residuals. The runs test applied over the residuals of temperature series leads to a p-value of 0.216. Thus, we conclude not to reject the null hypothesis stating the independence of the stochastic component in this seasonal means model.</p><h2 id=sample-autocorrelation-function>Sample Autocorrelation Function</h2><p>Sample autocorrelation function (ACF) is a very useful and important tool in the analysis of time series data. We compute the sample correlation between the pairs k units apart in time. However, we modify this slightly, taking into account that we are assuming stationarity, which implies a common mean and variance for the series. With this in mind, we define the sample autocorrelation function, rk, at lag k as</p><p>for k=1,2,…. A plot of rk versus lag k is often called a correlogram.</p><p>Because we are interested in discovering possible dependence in the stochastic component, the sample autocorrelation function for the standardized residuals is of interest. Figure 12 displays the sample autocorrelation for the standardized residuals from the seasonal means model of the temperature series.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>acf</span><span class=p>(</span><span class=nf>rstudent</span><span class=p>(</span><span class=n>model3</span><span class=p>),</span> <span class=n>main</span> <span class=o>=</span> <span class=s>&#34;Figure 12. ACF of standardized residuals&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>All values are within the horizontal dashed lines, which are placed at ±2/n−−√. According to the ACF plot none of the hypotheses ρk=0 can be rejected at the usual significance levels for k=1,2,…,21. Thus, we infer that the stochastic component of the series is white noise.</p><p>As a second example, a time series plot of the standardized residuals arising from fitting a straight line to the random walk time series is shown in Figure 13:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>plot</span><span class=p>(</span><span class=n>y</span><span class=o>=</span><span class=nf>rstudent</span><span class=p>(</span><span class=n>model1</span><span class=p>),</span><span class=n>x</span><span class=o>=</span><span class=nf>as.vector</span><span class=p>(</span><span class=nf>time</span><span class=p>(</span><span class=n>rwalk</span><span class=p>)),</span> <span class=n>ylab</span><span class=o>=</span><span class=s>&#39;Standardized Residuals&#39;</span><span class=p>,</span><span class=n>xlab</span><span class=o>=</span><span class=s>&#39;Time&#39;</span><span class=p>,</span><span class=n>type</span><span class=o>=</span><span class=s>&#39;o&#39;</span><span class=p>,</span> <span class=n>main</span> <span class=o>=</span> <span class=s>&#34;Figure 13. Time series plot of the standardized residuals
+</span></span></span><span class=line><span class=cl><span class=s>     from fitting a straight line to the random walk series.&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>In Figure 13, the residuals “hang together” too much for the white noise-the plot is too smooth. Furthermore, there seems to be more variation in the last third of the series than in the first two-thirds. When we plot standardised residuals versus fitted trend line values, we observe a similar effect with larger residuals associated with larger fitted values from Figure 14.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>plot</span><span class=p>(</span><span class=n>y</span><span class=o>=</span><span class=nf>rstudent</span><span class=p>(</span><span class=n>model1</span><span class=p>),</span><span class=n>x</span><span class=o>=</span><span class=nf>fitted</span><span class=p>(</span><span class=n>model1</span><span class=p>),</span> <span class=n>ylab</span><span class=o>=</span><span class=s>&#39;Standardized Residuals&#39;</span><span class=p>,</span><span class=n>xlab</span><span class=o>=</span><span class=s>&#39;Fitted Trend Line Values&#39;</span><span class=p>,</span> <span class=n>type</span><span class=o>=</span><span class=s>&#39;p&#39;</span><span class=p>,</span> <span class=n>main</span> <span class=o>=</span> <span class=s>&#34;Figure 14. Scatter plot of standardised residuals versus fitted trend line values.&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>The sample ACF of the standardized residuals is given in Figure 15:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>acf</span><span class=p>(</span><span class=nf>rstudent</span><span class=p>(</span><span class=n>model1</span><span class=p>),</span> <span class=n>main</span> <span class=o>=</span> <span class=s>&#34;Figure 15. ACF of the standardized residuals.&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>This ACF plot confirms the smoothness of the time series plot as we have correlation values higher than the confidence bound at several lags. This is not what we expect from a white noise process.</p><p>As another example, we return to the annual rainfall in Los Angeles for which we found no evidence of dependence in that series and check the normality assumption using the QQ plot in Figure 16.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>data</span><span class=p>(</span><span class=n>larain</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>y</span> <span class=o>=</span> <span class=n>larain</span>
+</span></span><span class=line><span class=cl><span class=nf>qqnorm</span><span class=p>(</span><span class=n>y</span><span class=p>,</span> <span class=n>main</span> <span class=o>=</span> <span class=s>&#34;Figure 16. Normal Q-Q plot of LA rain series.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>qqline</span><span class=p>(</span><span class=n>y</span><span class=p>,</span> <span class=n>col</span> <span class=o>=</span> <span class=m>2</span><span class=p>,</span> <span class=n>lwd</span> <span class=o>=</span> <span class=m>1</span><span class=p>,</span> <span class=n>lty</span> <span class=o>=</span> <span class=m>2</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>Because we see a considerable amount of departure from the reference line, we conclude that the normality assumption does not hold for the annual rainfall series in Los Angeles. The Shapiro-Wilk test also confirms this inference with a p-value less than 0.05.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>y</span> <span class=o>=</span> <span class=n>larain</span>
+</span></span><span class=line><span class=cl><span class=nf>shapiro.test</span><span class=p>(</span><span class=n>y</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>##  Shapiro-Wilk normality test
+</span></span><span class=line><span class=cl>##
+</span></span><span class=line><span class=cl>## data:  y
+</span></span><span class=line><span class=cl>## W = 0.94617, p-value = 0.0001614
+</span></span></code></pre></td></tr></table></div></div><h2 id=forecasting-with-regression-models>Forecasting with regression models</h2><p>After ensuring that the fitted model is suitable for prediction purposes, we use the model to find forecasts. For time series regression models, this task is simply based on the straightforward use of the fitted regression model. We apply the following steps to find h steps ahead forecasts:</p><p>Generate a sequence of time points of lengths h starting from the last observation point. For example, suppose we have a time series of length 10 and h=4. Then the new sequence becomes t=11,12,13,14.</p><p>Write each value of the new sequence generated in the previous step in place in the fitted model and calculate forecasts.</p><p>We can implement these steps using the predict() function with the fitted model object and the sequence created at step 1 as inputs.</p><p>To illustrate, let’s use the fitted linear model for the random walk data to find 5 steps ahead forecasts. The following code chunk does this task:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>data</span><span class=p>(</span><span class=n>rwalk</span><span class=p>)</span> <span class=c1># Read the data</span>
+</span></span><span class=line><span class=cl><span class=n>t</span> <span class=o>=</span> <span class=nf>time</span><span class=p>(</span><span class=n>rwalk</span><span class=p>)</span> <span class=c1># Create time points for model fitting</span>
+</span></span><span class=line><span class=cl><span class=n>model1</span> <span class=o>=</span> <span class=nf>lm</span><span class=p>(</span><span class=n>rwalk</span><span class=o>~</span><span class=n>t</span><span class=p>)</span> <span class=c1># label the model as model1</span>
+</span></span><span class=line><span class=cl><span class=n>h</span> <span class=o>=</span> <span class=m>5</span> <span class=c1># 5 steps ahed forecasts</span>
+</span></span><span class=line><span class=cl><span class=c1># Now we will implement the two-step algorithm</span>
+</span></span><span class=line><span class=cl><span class=n>new</span> <span class=o>=</span> <span class=nf>data.frame</span><span class=p>(</span><span class=n>t</span> <span class=o>=</span> <span class=nf>seq</span><span class=p>((</span><span class=nf>length</span><span class=p>(</span><span class=n>t</span><span class=p>)</span><span class=m>+1</span><span class=p>),</span> <span class=p>(</span><span class=nf>length</span><span class=p>(</span><span class=n>t</span><span class=p>)</span><span class=o>+</span><span class=n>h</span><span class=p>),</span> <span class=m>1</span><span class=p>))</span> <span class=c1># Step 1</span>
+</span></span><span class=line><span class=cl><span class=c1># Notice here that I&#39;m using the same variable name &#34;t&#34; as in the</span>
+</span></span><span class=line><span class=cl><span class=c1># fitted model above, where the name of the variable showing time</span>
+</span></span><span class=line><span class=cl><span class=c1># is also &#34;t&#34;. To run the predict() function properly,</span>
+</span></span><span class=line><span class=cl><span class=c1># the names of variables in fitted model and &#34;new&#34; data frame</span>
+</span></span><span class=line><span class=cl><span class=c1># must be the same!!!</span>
+</span></span><span class=line><span class=cl><span class=n>forecasts</span> <span class=o>=</span> <span class=nf>predict</span><span class=p>(</span><span class=n>model1</span><span class=p>,</span> <span class=n>new</span><span class=p>,</span> <span class=n>interval</span> <span class=o>=</span> <span class=s>&#34;prediction&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># Here interval argument shows the prediction interval</span>
+</span></span><span class=line><span class=cl><span class=nf>print</span><span class=p>(</span><span class=n>forecasts</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>##        fit      lwr       upr
+</span></span><span class=line><span class=cl>## 1 7.171430 4.819249  9.523611
+</span></span><span class=line><span class=cl>## 2 7.305517 4.949546  9.661487
+</span></span><span class=line><span class=cl>## 3 7.439604 5.079727  9.799480
+</span></span><span class=line><span class=cl>## 4 7.573691 5.209794  9.937588
+</span></span><span class=line><span class=cl>## 5 7.707778 5.339745 10.075811
+</span></span></code></pre></td></tr></table></div></div><p>We can plot these forecasts next to the time series of interest by the following code chunk as in Figure 17:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>plot</span><span class=p>(</span><span class=n>rwalk</span><span class=p>,</span> <span class=n>xlim</span> <span class=o>=</span> <span class=nf>c</span><span class=p>(</span><span class=m>1</span><span class=p>,</span><span class=m>66</span><span class=p>),</span> <span class=n>ylim</span> <span class=o>=</span> <span class=nf>c</span><span class=p>(</span><span class=m>-3</span><span class=p>,</span> <span class=m>11</span><span class=p>),</span> <span class=n>ylab</span> <span class=o>=</span> <span class=s>&#34;Random walk data&#34;</span><span class=p>,</span> <span class=n>main</span> <span class=o>=</span> <span class=s>&#34;Figure 17. Random walk series with forecasts.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># We need to convert forecasts to time series object starting from the first</span>
+</span></span><span class=line><span class=cl><span class=c1># time steps-ahead to be able to use plot function.</span>
+</span></span><span class=line><span class=cl><span class=c1># We do this for all columns of forecasts</span>
+</span></span><span class=line><span class=cl><span class=nf>lines</span><span class=p>(</span><span class=nf>ts</span><span class=p>(</span><span class=nf>as.vector</span><span class=p>(</span><span class=n>forecasts[</span><span class=p>,</span><span class=m>1</span><span class=n>]</span><span class=p>),</span> <span class=n>start</span> <span class=o>=</span> <span class=m>61</span><span class=p>),</span> <span class=n>col</span><span class=o>=</span><span class=s>&#34;red&#34;</span><span class=p>,</span> <span class=n>type</span><span class=o>=</span><span class=s>&#34;l&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>lines</span><span class=p>(</span><span class=nf>ts</span><span class=p>(</span><span class=nf>as.vector</span><span class=p>(</span><span class=n>forecasts[</span><span class=p>,</span><span class=m>2</span><span class=n>]</span><span class=p>),</span> <span class=n>start</span> <span class=o>=</span> <span class=m>61</span><span class=p>),</span> <span class=n>col</span><span class=o>=</span><span class=s>&#34;blue&#34;</span><span class=p>,</span> <span class=n>type</span><span class=o>=</span><span class=s>&#34;l&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>lines</span><span class=p>(</span><span class=nf>ts</span><span class=p>(</span><span class=nf>as.vector</span><span class=p>(</span><span class=n>forecasts[</span><span class=p>,</span><span class=m>3</span><span class=n>]</span><span class=p>),</span> <span class=n>start</span> <span class=o>=</span> <span class=m>61</span><span class=p>),</span> <span class=n>col</span><span class=o>=</span><span class=s>&#34;blue&#34;</span><span class=p>,</span> <span class=n>type</span><span class=o>=</span><span class=s>&#34;l&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>legend</span><span class=p>(</span><span class=s>&#34;topleft&#34;</span><span class=p>,</span> <span class=n>lty</span><span class=o>=</span><span class=m>1</span><span class=p>,</span> <span class=n>pch</span><span class=o>=</span><span class=m>1</span><span class=p>,</span> <span class=n>col</span><span class=o>=</span><span class=nf>c</span><span class=p>(</span><span class=s>&#34;black&#34;</span><span class=p>,</span><span class=s>&#34;blue&#34;</span><span class=p>,</span><span class=s>&#34;red&#34;</span><span class=p>),</span> <span class=n>text.width</span> <span class=o>=</span> <span class=m>18</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>       <span class=nf>c</span><span class=p>(</span><span class=s>&#34;Data&#34;</span><span class=p>,</span><span class=s>&#34;5% forecast limits&#34;</span><span class=p>,</span> <span class=s>&#34;Forecasts&#34;</span><span class=p>))</span>
+</span></span></code></pre></td></tr></table></div></div><p>As another example, the harmonic model fitted to the average monthly temperature series and find forecasts for 7 months ahead.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=n>har.</span><span class=o>=</span><span class=nf>harmonic</span><span class=p>(</span><span class=n>tempdub</span><span class=p>,</span><span class=m>1</span><span class=p>)</span> <span class=c1># calculate cos(2*pi*t) and sin(2*pi*t)</span>
+</span></span><span class=line><span class=cl><span class=n>t1</span> <span class=o>=</span> <span class=n>har.[</span><span class=p>,</span><span class=m>1</span><span class=n>]</span> <span class=c1># To make it easier assign harmonic variables to separate variables</span>
+</span></span><span class=line><span class=cl><span class=n>t2</span> <span class=o>=</span> <span class=n>har.[</span><span class=p>,</span><span class=m>2</span><span class=n>]</span>
+</span></span><span class=line><span class=cl><span class=n>model4</span><span class=o>=</span><span class=nf>lm</span><span class=p>(</span><span class=n>tempdub</span><span class=o>~</span><span class=n>t1</span><span class=o>+</span><span class=n>t2</span><span class=p>)</span> <span class=c1># Fit the model with separate variables</span>
+</span></span><span class=line><span class=cl><span class=c1># We need to create continuous time for 7 months starting from the first month of 1976</span>
+</span></span><span class=line><span class=cl><span class=n>t</span> <span class=o>=</span> <span class=nf>c</span><span class=p>(</span><span class=m>1976.000</span><span class=p>,</span> <span class=m>1976.083</span><span class=p>,</span> <span class=m>1976.167</span> <span class=p>,</span><span class=m>1976.250</span><span class=p>,</span> <span class=m>1976.333</span><span class=p>,</span> <span class=m>1976.417</span> <span class=p>,</span><span class=m>1976.500</span><span class=p>,</span> <span class=m>1976.583</span> <span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>t1</span> <span class=o>=</span> <span class=nf>cos</span><span class=p>(</span><span class=m>2</span><span class=o>*</span><span class=kc>pi</span><span class=o>*</span><span class=n>t</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>t2</span> <span class=o>=</span> <span class=nf>sin</span><span class=p>(</span><span class=m>2</span><span class=o>*</span><span class=kc>pi</span><span class=o>*</span><span class=n>t</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>new</span> <span class=o>=</span> <span class=nf>data.frame</span><span class=p>(</span><span class=n>t1</span> <span class=p>,</span> <span class=n>t2</span><span class=p>)</span> <span class=c1># Step 1</span>
+</span></span><span class=line><span class=cl><span class=c1># Notice here that I&#39;m using the same variable names &#34;t1&#34; and &#34;t2&#34; as in the</span>
+</span></span><span class=line><span class=cl><span class=c1># fitted model above, where the name of the variables showing sine and cosine</span>
+</span></span><span class=line><span class=cl><span class=c1># components are also &#34;t1&#34; and &#34;t2&#34;. To run the predict() function properly,</span>
+</span></span><span class=line><span class=cl><span class=c1># the names of variables in fitted model and &#34;new&#34; data frame</span>
+</span></span><span class=line><span class=cl><span class=c1># must be the same!!!</span>
+</span></span><span class=line><span class=cl><span class=n>forecasts</span> <span class=o>=</span> <span class=nf>predict</span><span class=p>(</span><span class=n>model4</span><span class=p>,</span> <span class=n>new</span><span class=p>,</span> <span class=n>interval</span> <span class=o>=</span> <span class=s>&#34;prediction&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>print</span><span class=p>(</span><span class=n>forecasts</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>##        fit      lwr      upr
+</span></span><span class=line><span class=cl>## 1 19.55804 12.15595 26.96012
+</span></span><span class=line><span class=cl>## 2 22.02737 14.62528 29.42945
+</span></span><span class=line><span class=cl>## 3 31.07915 23.67707 38.48124
+</span></span><span class=line><span class=cl>## 4 44.09622 36.69414 51.49831
+</span></span><span class=line><span class=cl>## 5 57.69014 50.28806 65.09223
+</span></span><span class=line><span class=cl>## 6 68.34270 60.94062 75.74479
+</span></span><span class=line><span class=cl>## 7 72.97391 65.57182 80.37599
+</span></span><span class=line><span class=cl>## 8 70.50458 63.10249 77.90666
+</span></span></code></pre></td></tr></table></div></div><p>We plot the forecasts along with the original series with the following code chunk in Figure 18. The meaning of the colors is the same as Figure 17.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-R data-lang=R><span class=line><span class=cl><span class=nf>plot</span><span class=p>(</span><span class=n>tempdub</span><span class=p>,</span> <span class=n>xlim</span> <span class=o>=</span> <span class=nf>c</span><span class=p>(</span><span class=m>1964</span><span class=p>,</span><span class=m>1977</span><span class=p>),</span> <span class=n>ylim</span> <span class=o>=</span> <span class=nf>c</span><span class=p>(</span><span class=m>9</span><span class=p>,</span> <span class=m>80</span><span class=p>),</span> <span class=n>ylab</span> <span class=o>=</span> <span class=s>&#34;Average monthly temperature&#34;</span><span class=p>,</span> <span class=n>main</span> <span class=o>=</span> <span class=s>&#34;Figure 18. Average monthly temperature series with forecasts.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># Here we convert the forecasts and prediction limits to monthly time series!</span>
+</span></span><span class=line><span class=cl><span class=nf>lines</span><span class=p>(</span><span class=nf>ts</span><span class=p>(</span><span class=nf>as.vector</span><span class=p>(</span><span class=n>forecasts[</span><span class=p>,</span><span class=m>1</span><span class=n>]</span><span class=p>),</span> <span class=n>start</span> <span class=o>=</span> <span class=nf>c</span><span class=p>(</span><span class=m>1976</span><span class=p>,</span><span class=m>1</span><span class=p>),</span> <span class=n>frequency</span> <span class=o>=</span> <span class=m>12</span><span class=p>),</span> <span class=n>col</span><span class=o>=</span><span class=s>&#34;red&#34;</span><span class=p>,</span> <span class=n>type</span><span class=o>=</span><span class=s>&#34;l&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>lines</span><span class=p>(</span><span class=nf>ts</span><span class=p>(</span><span class=nf>as.vector</span><span class=p>(</span><span class=n>forecasts[</span><span class=p>,</span><span class=m>2</span><span class=n>]</span><span class=p>),</span> <span class=n>start</span> <span class=o>=</span> <span class=nf>c</span><span class=p>(</span><span class=m>1976</span><span class=p>,</span><span class=m>1</span><span class=p>),</span> <span class=n>frequency</span> <span class=o>=</span> <span class=m>12</span><span class=p>),</span> <span class=n>col</span><span class=o>=</span><span class=s>&#34;blue&#34;</span><span class=p>,</span> <span class=n>type</span><span class=o>=</span><span class=s>&#34;l&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>lines</span><span class=p>(</span><span class=nf>ts</span><span class=p>(</span><span class=nf>as.vector</span><span class=p>(</span><span class=n>forecasts[</span><span class=p>,</span><span class=m>3</span><span class=n>]</span><span class=p>),</span> <span class=n>start</span> <span class=o>=</span> <span class=nf>c</span><span class=p>(</span><span class=m>1976</span><span class=p>,</span><span class=m>1</span><span class=p>),</span> <span class=n>frequency</span> <span class=o>=</span> <span class=m>12</span><span class=p>),</span> <span class=n>col</span><span class=o>=</span><span class=s>&#34;blue&#34;</span><span class=p>,</span> <span class=n>type</span><span class=o>=</span><span class=s>&#34;l&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>Forecasts from the harmonic model successfully follow the repeating pattern in the original series.</p><h2 id=summary>Summary</h2><p>In this module, we focused on describing, modeling, and estimating deterministic trends in time series. The simplest deterministic “trend” is a constant-mean function. Regression methods were then pursued to estimate trends that are linear or quadratic in time. Methods for modeling cyclical or seasonal trends came next, and the reliability and efficiency of all of these regression methods were investigated. Finally, we studied residual analysis to investigate the quality of the fitted model. We also introduced the important sample autocorrelation function, which is a very useful and important tool in the analysis of time series.</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2022-03-17</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://yanboyang.com/analysisoftrends/index.md target=_blank rel="noopener noreferrer">Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/analysisoftrends/ data-title="Analysis of Trends" data-hashtags=time,series,analysis><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/analysisoftrends/ data-hashtag=time><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/analysisoftrends/ data-title="Analysis of Trends" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/analysisoftrends/ data-title="Analysis of Trends"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/analysisoftrends/ data-title="Analysis of Trends"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/analysisoftrends/ data-title="Analysis of Trends" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/analysisoftrends/ data-title="Analysis of Trends" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/analysisoftrends/ data-title="Analysis of Trends"><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/time/>time</a>,&nbsp;<a href=https://yanboyang.com/tags/series/>series</a>,&nbsp;<a href=https://yanboyang.com/tags/analysis/>analysis</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span></section></div><div class=post-nav><a href=https://yanboyang.com/timeseriesanalysisweek1/ class=prev rel=prev title="Time Series Analysis Basic Plots, Examples, and Fundamental Concepts"><i class="fas fa-angle-left fa-fw"></i>Time Series Analysis Basic Plots, Examples, and Fundamental Concepts</a>
+<a href=https://yanboyang.com/gettingwithsumo/ class=next rel=next title="Getting started with Simulation of Urban Mobility (SUMO)">Getting started with Simulation of Urban Mobility (SUMO)<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>

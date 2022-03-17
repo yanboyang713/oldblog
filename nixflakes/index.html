@@ -1,209 +1,81 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="noodp">
-<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Nix Flakes - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Nix Flakes">
-<meta property="og:description" content="Introduction Nix Flakes are an upcoming feature of the Nix package manager.
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Nix Flakes - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Nix Flakes"><meta property="og:description" content="Introduction Nix Flakes are an upcoming feature of the Nix package manager.
 Flakes replace stateful channels (which cause much confusion among novices) and introduce a more intuitive and consistent CLI, making them a perfect opportunity to start using Nix.
 It contains examples and advice on using flakes for a real-life use case: building applications in various languages.
-Pre-reading  Nix/Getting Started with Nix    Installing flakes In order to do anything with flakes, you will first have to get “unstable” Nix up and running on your machine.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://yanboyang.com/nixflakes/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-12-28T11:23:00+08:00">
-<meta property="article:modified_time" content="2022-03-09T07:16:10+00:00">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://yanboyang.com/logo.png">
-<meta name=twitter:title content="Nix Flakes">
-<meta name=twitter:description content="Introduction Nix Flakes are an upcoming feature of the Nix package manager.
+Pre-reading  Nix/Getting Started with Nix    Installing flakes In order to do anything with flakes, you will first have to get “unstable” Nix up and running on your machine."><meta property="og:type" content="article"><meta property="og:url" content="https://yanboyang.com/nixflakes/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-12-28T11:23:00+08:00"><meta property="article:modified_time" content="2022-03-17T05:53:50+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://yanboyang.com/logo.png"><meta name=twitter:title content="Nix Flakes"><meta name=twitter:description content="Introduction Nix Flakes are an upcoming feature of the Nix package manager.
 Flakes replace stateful channels (which cause much confusion among novices) and introduce a more intuitive and consistent CLI, making them a perfect opportunity to start using Nix.
 It contains examples and advice on using flakes for a real-life use case: building applications in various languages.
-Pre-reading  Nix/Getting Started with Nix    Installing flakes In order to do anything with flakes, you will first have to get “unstable” Nix up and running on your machine.">
-<meta name=application-name content="LoveIt">
-<meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/nixflakes/><link rel=prev href=https://yanboyang.com/nixhomemanager/><link rel=next href=https://yanboyang.com/cephonproxmox/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Nix Flakes","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/nixflakes\/"},"genre":"posts","keywords":"nix, Flakes","wordcount":1959,"url":"https:\/\/yanboyang.com\/nixflakes\/","datePublished":"2021-12-28T11:23:00+08:00","dateModified":"2022-03-09T07:16:10+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
-<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div><div class=menu>
-<div class=menu-inner><a class=menu-item href=https://yanboyang.com/> Home </a><a class=menu-item href=https://yanboyang.com/posts/> Posts </a><a class=menu-item href=https://yanboyang.com/tags/> Tags </a><a class=menu-item href=https://yanboyang.com/categories/> Categories </a><a class=menu-item href=https://yanboyang.com/about/> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+Pre-reading  Nix/Getting Started with Nix    Installing flakes In order to do anything with flakes, you will first have to get “unstable” Nix up and running on your machine."><meta name=application-name content="LoveIt"><meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/nixflakes/><link rel=prev href=https://yanboyang.com/nixhomemanager/><link rel=next href=https://yanboyang.com/cephonproxmox/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Nix Flakes","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/nixflakes\/"},"genre":"posts","keywords":"nix, Flakes","wordcount":1959,"url":"https:\/\/yanboyang.com\/nixflakes\/","datePublished":"2021-12-28T11:23:00+08:00","dateModified":"2022-03-17T05:53:50+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-wrapper><div class=header-title><a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a></div><div class=menu><div class=menu-inner><a class=menu-item href=https://yanboyang.com/>Home </a><a class=menu-item href=https://yanboyang.com/posts/>Posts </a><a class=menu-item href=https://yanboyang.com/tags/>Tags </a><a class=menu-item href=https://yanboyang.com/categories/>Categories </a><a class=menu-item href=https://yanboyang.com/about/>About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-desktop>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i>
-</a>
-</div></div></div></header><header class=mobile id=header-mobile>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<div class=header-container>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div><div class=menu-toggle id=menu-toggle-mobile>
-<span></span><span></span><span></span>
-</div></div><div class=menu id=menu-mobile><div class=search-wrapper>
-<div class="search mobile" id=search-mobile>
-<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-mobile>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
-Cancel
-</a>
-</div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i>
-</a></div></div></header><div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div></div><main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Nix Flakes</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
-Boyang Yan
-</a>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-container><div class=header-wrapper><div class=header-title><a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Nix Flakes</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
+Boyang Yan</a>
 </span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/nix/><i class="far fa-folder fa-fw"></i>Nix</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-28>2021-12-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1959 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;10 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true>
-<div class="details-summary toc-title">
-<span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
-<ul>
-<li><a href=#introduction>Introduction</a></li><li><a href=#pre-reading>Pre-reading</a></li><li><a href=#installing-flakes>Installing flakes</a></li><li><a href=#getting-a-feel-for-flakes>Getting a feel for flakes</a>
-<ul>
-<li><a href=#nix-shell>nix shell</a></li><li><a href=#nix-build>nix build</a></li><li><a href=#nix-develop>nix develop</a></li><li><a href=#nix-profile>nix profile</a></li><li><a href=#nix-flake>nix flake</a>
-<ul>
-<li><a href=#nix-flake-show>nix flake show</a></li><li><a href=#nix-flake-clone>nix flake clone</a></li><li><a href=#nix-flake-lock--previously-nix-flake-update>nix flake lock (<strong>previously</strong> nix flake update)</a></li></ul></li></ul></li><li><a href=#writing-your-own>Writing your own</a>
-<ul>
-<li><a href=#nix-language-refresher>Nix language refresher</a></li><li><a href=#basic-flake-structure>Basic flake structure</a></li></ul></li><li><a href=#what-are-nix-flakes>What are Nix flakes?</a></li><li><a href=#reference-list>Reference List</a></li></ul></nav></div></div><div class=content id=content><h2 id=introduction>Introduction</h2><p>Nix Flakes are an upcoming feature of the Nix package manager.</p><p>Flakes replace stateful channels (which cause much confusion among novices) and introduce a more intuitive and consistent CLI, making them a perfect opportunity to start using Nix.</p><p>It contains examples and advice on using flakes for a real-life use case: building applications in various languages.</p><h2 id=pre-reading>Pre-reading</h2><ol>
-<li><a href=https://yanboyang.com/nix/ rel>
-Nix/Getting Started with Nix
-</a>
-</li></ol><h2 id=installing-flakes>Installing flakes</h2><p>In order to do anything with flakes, you will first have to get “unstable” Nix up and running on your machine. Don’t mind that it is called unstable: it is not generally dangerous to run on your machine, it simply changes more often than “stable”.</p><p>If you have NOT install <strong>NIX</strong>, please following this <a href=https://yanboyang.com/nixinstallation/ rel>
-Nix/Nix Installation
-</a>
-.</p><p>For <strong>Non-NixOS</strong>, Follow the instructions until you have Nix working on your machine, and then update to unstable with:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+<i class="far fa-clock fa-fw"></i>&nbsp;10 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#introduction>Introduction</a></li><li><a href=#pre-reading>Pre-reading</a></li><li><a href=#installing-flakes>Installing flakes</a></li><li><a href=#getting-a-feel-for-flakes>Getting a feel for flakes</a><ul><li><a href=#nix-shell>nix shell</a></li><li><a href=#nix-build>nix build</a></li><li><a href=#nix-develop>nix develop</a></li><li><a href=#nix-profile>nix profile</a></li><li><a href=#nix-flake>nix flake</a><ul><li><a href=#nix-flake-show>nix flake show</a></li><li><a href=#nix-flake-clone>nix flake clone</a></li><li><a href=#nix-flake-lock--previously-nix-flake-update>nix flake lock (<strong>previously</strong> nix flake update)</a></li></ul></li></ul></li><li><a href=#writing-your-own>Writing your own</a><ul><li><a href=#nix-language-refresher>Nix language refresher</a></li><li><a href=#basic-flake-structure>Basic flake structure</a></li></ul></li><li><a href=#what-are-nix-flakes>What are Nix flakes?</a></li><li><a href=#reference-list>Reference List</a></li></ul></nav></div></div><div class=content id=content><h2 id=introduction>Introduction</h2><p>Nix Flakes are an upcoming feature of the Nix package manager.</p><p>Flakes replace stateful channels (which cause much confusion among novices) and introduce a more intuitive and consistent CLI, making them a perfect opportunity to start using Nix.</p><p>It contains examples and advice on using flakes for a real-life use case: building applications in various languages.</p><h2 id=pre-reading>Pre-reading</h2><ol><li><a href=https://yanboyang.com/nix/ rel>Nix/Getting Started with Nix</a></li></ol><h2 id=installing-flakes>Installing flakes</h2><p>In order to do anything with flakes, you will first have to get “unstable” Nix up and running on your machine. Don’t mind that it is called unstable: it is not generally dangerous to run on your machine, it simply changes more often than “stable”.</p><p>If you have NOT install <strong>NIX</strong>, please following this <a href=https://yanboyang.com/nixinstallation/ rel>Nix/Nix Installation</a>
+.</p><p>For <strong>Non-NixOS</strong>, Follow the instructions until you have Nix working on your machine, and then update to unstable with:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1>#On non-nixos systems, install nixFlakes in your environment:</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1>#On non-nixos systems, install nixFlakes in your environment:</span>
 </span></span><span class=line><span class=cl>nix-env -iA nixpkgs.nixUnstable
-</span></span></code></pre></td></tr></table></div></div><p>And enable experimental features. Edit either <strong>~/.config/nix/nix.conf</strong> or <strong>/etc/nix/nix.conf</strong> and add:</p><p>I recommend:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>And enable experimental features. Edit either <strong>~/.config/nix/nix.conf</strong> or <strong>/etc/nix/nix.conf</strong> and add:</p><p>I recommend:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mkdir -p ~/.config/nix
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mkdir -p ~/.config/nix
 </span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s1>&#39;experimental-features = nix-command flakes&#39;</span> &gt;&gt; ~/.config/nix/nix.conf
-</span></span></code></pre></td></tr></table></div></div><p>This is needed to expose the Nix 2.0 CLI and flakes support that are hidden behind feature-flags.</p><p>Finally, if the Nix installation is in multi-user mode, don’t forget to restart the nix-daemon.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>This is needed to expose the Nix 2.0 CLI and flakes support that are hidden behind feature-flags.</p><p>Finally, if the Nix installation is in multi-user mode, don’t forget to restart the nix-daemon.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl stop nix-daemon.socket
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl stop nix-daemon.socket
 </span></span><span class=line><span class=cl>sudo systemctl stop nix-daemon.service
 </span></span><span class=line><span class=cl>sudo systemctl start nix-daemon.socket
 </span></span><span class=line><span class=cl>sudo systemctl start nix-daemon.service
-</span></span></code></pre></td></tr></table></div></div><h2 id=getting-a-feel-for-flakes>Getting a feel for flakes</h2><p>Now that you have a “flaky” Nix installed, it’s time to use it!</p><h3 id=nix-shell>nix shell</h3><p>First, let’s enter a shell that has GNU Hello from nixpkgs’ branch nixpkgs-unstable in it:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nix shell <span class=s1>&#39;github:nixos/nixpkgs/nixpkgs-unstable#hello&#39;</span>
-</span></span></code></pre></td></tr></table></div></div><p>Note that this will start the same shell as you are running, but add a directory containing the hello executable to your <strong>$PATH</strong>.</p><p>For example:</p><p><strong>Before</strong>:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><h2 id=getting-a-feel-for-flakes>Getting a feel for flakes</h2><p>Now that you have a “flaky” Nix installed, it’s time to use it!</p><h3 id=nix-shell>nix shell</h3><p>First, let’s enter a shell that has GNU Hello from nixpkgs’ branch nixpkgs-unstable in it:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nix shell <span class=s1>&#39;github:nixos/nixpkgs/nixpkgs-unstable#hello&#39;</span>
+</span></span></code></pre></td></tr></table></div></div><p>Note that this will start the same shell as you are running, but add a directory containing the hello executable to your <strong>$PATH</strong>.</p><p>For example:</p><p><strong>Before</strong>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>[yanboyang713@manjaro] ➜ ~ echo $PATH
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>[yanboyang713@manjaro] ➜ ~ echo $PATH
 </span></span><span class=line><span class=cl>/home/yanboyang713/.miniconda/bin:/home/yanboyang713/.fnm:/home/yanboyang713/.local/share/go/bin:/home/yanboyang713/.cargo/bin:/home/yanboyang713/.local/bin:/home/yanboyang713/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/store/wxrplk88a4k9cvam0fz2x6m7hl01cpd7-user-environment/bin:/home/yanboyang713/.nix-profile/bin:/home/yanboyang713/.miniconda/bin:/home/yanboyang713/.fnm:/home/yanboyang713/.local/share/go/bin:/home/yanboyang713/.cargo/bin:/home/yanboyang713/.local/bin:/home/yanboyang713/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/home/yanboyang713/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/home/yanboyang713/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/home/yanboyang713/.local/bin/:/home/yanboyang713/.nix-profile/bin/:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
-</span></span></code></pre></td></tr></table></div></div><p><strong>After</strong>:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p><strong>After</strong>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>[yanboyang713@manjaro] ➜ ~ echo $PATH
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>[yanboyang713@manjaro] ➜ ~ echo $PATH
 </span></span><span class=line><span class=cl>/home/yanboyang713/.miniconda/bin:/home/yanboyang713/.fnm:/home/yanboyang713/.local/share/go/bin:/home/yanboyang713/.cargo/bin:/home/yanboyang713/.local/bin:/home/yanboyang713/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/store/xcp9cav49dmsjbwdjlmkjxj10gkpx553-hello-2.10/bin:/home/yanboyang713/.miniconda/bin:/home/yanboyang713/.fnm:/home/yanboyang713/.local/share/go/bin:/home/yanboyang713/.cargo/bin:/home/yanboyang713/.local/bin:/home/yanboyang713/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/store/wxrplk88a4k9cvam0fz2x6m7hl01cpd7-user-environment/bin:/home/yanboyang713/.nix-profile/bin:/home/yanboyang713/.miniconda/bin:/home/yanboyang713/.fnm:/home/yanboyang713/.local/share/go/bin:/home/yanboyang713/.cargo/bin:/home/yanboyang713/.local/bin:/home/yanboyang713/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/home/yanboyang713/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/home/yanboyang713/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/home/yanboyang713/.local/bin/:/home/yanboyang713/.nix-profile/bin/:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
-</span></span></code></pre></td></tr></table></div></div><p>you can found:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>/nix/store/xcp9cav49dmsjbwdjlmkjxj10gkpx553-hello-2.10/bin
-</span></span></code></pre></td></tr></table></div></div><p>The shell shouldn’t look any different from how it was outside the nix shell, so don’t panic if it looks like nothing is happening! The executable is not installed anywhere per se, it gets downloaded and unpacked in what you can consider a cache directory.</p><p>Now, inside that shell, try running <strong>hello</strong>.</p><p>Let’s go through what this command does. <strong>nix shell</strong> is a nix subcommand that is used to run a shell with some packages available in <strong>$PATH</strong>. Those packages can be specified as arguments in the &ldquo;<strong>installable</strong>&rdquo; format. Each installable contains two parts: the URL (<strong>github:nixos/nixpkgs/master</strong> in this case) and an &ldquo;attribute path&rdquo; (<strong>hello</strong> here).</p><p>There are a few URL schemes supported:</p><ul>
-<li>github:owner/repo/[revision or branch] and gitlab:owner/repo/[revision or branch] (for public repositories on github.com and gitlab.com; note that that the branch name cannot contain slashes).</li><li><a href=https://example.com/path/to/tarball.tar.gz target=_blank rel="noopener noreferrer">
-https://example.com/path/to/tarball.tar.gz
-</a>
+</span></span></code></pre></td></tr></table></div></div><p>you can found:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>/nix/store/xcp9cav49dmsjbwdjlmkjxj10gkpx553-hello-2.10/bin
+</span></span></code></pre></td></tr></table></div></div><p>The shell shouldn’t look any different from how it was outside the nix shell, so don’t panic if it looks like nothing is happening! The executable is not installed anywhere per se, it gets downloaded and unpacked in what you can consider a cache directory.</p><p>Now, inside that shell, try running <strong>hello</strong>.</p><p>Let’s go through what this command does. <strong>nix shell</strong> is a nix subcommand that is used to run a shell with some packages available in <strong>$PATH</strong>. Those packages can be specified as arguments in the &ldquo;<strong>installable</strong>&rdquo; format. Each installable contains two parts: the URL (<strong>github:nixos/nixpkgs/master</strong> in this case) and an &ldquo;attribute path&rdquo; (<strong>hello</strong> here).</p><p>There are a few URL schemes supported:</p><ul><li>github:owner/repo/[revision or branch] and gitlab:owner/repo/[revision or branch] (for public repositories on github.com and gitlab.com; note that that the branch name cannot contain slashes).</li><li><a href=https://example.com/path/to/tarball.tar.gz target=_blank rel="noopener noreferrer">https://example.com/path/to/tarball.tar.gz</a>
 for tarballs.</li><li>git+<a href=https://example.com/path/to/repo.git target=_blank rel="noopener noreferrer">
-https://example.com/path/to/repo.git
-</a>
-and git+ssh://example.com/path/to/repo.git for plain git repositories (you can, of course, use this for GitHub and GitLab). You can specify the branch or revision by adding ?ref=&lt;branch name here>.</li><li>&lt;/path/to/directory> or /path/to/directory or ./path/to/relative/directory for a local directory.</li><li>flake-registry-value for a value from a flake registry (I won’t talk about flake registries in this article).</li></ul><p>So, there are some other ways to get the same shell:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+https://example.com/path/to/repo.git</a>
+and git+ssh://example.com/path/to/repo.git for plain git repositories (you can, of course, use this for GitHub and GitLab). You can specify the branch or revision by adding ?ref=&lt;branch name here>.</li><li>&lt;/path/to/directory> or /path/to/directory or ./path/to/relative/directory for a local directory.</li><li>flake-registry-value for a value from a flake registry (I won’t talk about flake registries in this article).</li></ul><p>So, there are some other ways to get the same shell:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nix shell <span class=s1>&#39;https://github.com/nixos/nixpkgs/archive/nixpkgs-unstable.tar.gz#hello&#39;</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nix shell <span class=s1>&#39;https://github.com/nixos/nixpkgs/archive/nixpkgs-unstable.tar.gz#hello&#39;</span>
 </span></span><span class=line><span class=cl>nix shell <span class=s1>&#39;git+https://github.com/nixos/nixpkgs?ref=nixpkgs-unstable#hello&#39;</span>
 </span></span><span class=line><span class=cl>nix shell <span class=s1>&#39;nixpkgs#hello&#39;</span> <span class=c1># nixpkgs is specified in the default registry to be github:nixos/nixpkgs</span>
-</span></span></code></pre></td></tr></table></div></div><p>As for the attribute path, for now, just know that it’s a period-separated list of Nix &ldquo;<strong>attribute names</strong>&rdquo; that selects a flake output according to some simple logic.</p><p>Note that in this case, Nix did not have to build anything since it could just fetch GNU Hello and its dependencies from the binary cache. To achieve this, Nix evaluates a derivation from the expression, hashes its contents, and queries all the caches it knows to see if someone has the derivation with this hash cached. Nix uses all the dependencies and all the instructions as the input for this hash! If some binary cache has a version ready, it can be substituted (downloaded). Otherwise, Nix will build the derivation by first realising (substituting or building) all the dependencies and then executing the build instructions.</p><p>You might be wondering where exactly is the executable installed. Well, try <strong>command -v hello</strong> to see that it is located in a subdirectory of <strong>/nix/store</strong>. In fact, all Nix derivations have &ldquo;<strong>store paths</strong>&rdquo; (paths located in /nix/store) as inputs and outputs.</p><h3 id=nix-build>nix build</h3><p>If you just want to build something instead of entering a shell with it, try <strong>nix build</strong>:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nix build <span class=s1>&#39;nixpkgs#hello&#39;</span>
-</span></span></code></pre></td></tr></table></div></div><p>This will build Hello (or fetch it from the binary cache if available) and then symlink it to result in your current directory. You can then explore result, e.g.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>As for the attribute path, for now, just know that it’s a period-separated list of Nix &ldquo;<strong>attribute names</strong>&rdquo; that selects a flake output according to some simple logic.</p><p>Note that in this case, Nix did not have to build anything since it could just fetch GNU Hello and its dependencies from the binary cache. To achieve this, Nix evaluates a derivation from the expression, hashes its contents, and queries all the caches it knows to see if someone has the derivation with this hash cached. Nix uses all the dependencies and all the instructions as the input for this hash! If some binary cache has a version ready, it can be substituted (downloaded). Otherwise, Nix will build the derivation by first realising (substituting or building) all the dependencies and then executing the build instructions.</p><p>You might be wondering where exactly is the executable installed. Well, try <strong>command -v hello</strong> to see that it is located in a subdirectory of <strong>/nix/store</strong>. In fact, all Nix derivations have &ldquo;<strong>store paths</strong>&rdquo; (paths located in /nix/store) as inputs and outputs.</p><h3 id=nix-build>nix build</h3><p>If you just want to build something instead of entering a shell with it, try <strong>nix build</strong>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nix build <span class=s1>&#39;nixpkgs#hello&#39;</span>
+</span></span></code></pre></td></tr></table></div></div><p>This will build Hello (or fetch it from the binary cache if available) and then symlink it to result in your current directory. You can then explore result, e.g.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>[yanboyang713@manjaro] ➜ ~ ls -la
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>[yanboyang713@manjaro] ➜ ~ ls -la
 </span></span></span><span class=line><span class=cl><span class=go>lrwxrwxrwx  1 yanboyang713 yanboyang713    54 Dec 29 11:11  result -&gt; /nix/store/xcp9cav49dmsjbwdjlmkjxj10gkpx553-hello-2.10
-</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>$</span> ./result/bin/hello
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>$</span> ./result/bin/hello
 </span></span><span class=line><span class=cl><span class=go>Hello, world!
-</span></span></span></code></pre></td></tr></table></div></div><h3 id=nix-develop>nix develop</h3><p>Despite the use of binary caches, Nix is a sourcecode-first package manager. This means that it has the ability to provide a build environment for its derivations. So, you can use Nix to manage your build environments for you! To enter a shell with all runtime and buildtime dependencies of GNU Hello, use:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nix develop <span class=s1>&#39;nixpkgs#hello&#39;</span>
-</span></span></code></pre></td></tr></table></div></div><p>Inside that shell, you can call <strong>unpackPhase</strong> to place GNU Hello sources in the current directory, then <strong>configurePhase</strong> to run <strong>configure</strong> script with correct arguments and finally <strong>buildPhase</strong> to build.</p><h3 id=nix-profile>nix profile</h3><p>Nix implements stateful &ldquo;profiles&rdquo; to allow users to &ldquo;<strong>permanently</strong>&rdquo; install stuff.</p><p>For example:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></span></code></pre></td></tr></table></div></div><h3 id=nix-develop>nix develop</h3><p>Despite the use of binary caches, Nix is a sourcecode-first package manager. This means that it has the ability to provide a build environment for its derivations. So, you can use Nix to manage your build environments for you! To enter a shell with all runtime and buildtime dependencies of GNU Hello, use:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nix develop <span class=s1>&#39;nixpkgs#hello&#39;</span>
+</span></span></code></pre></td></tr></table></div></div><p>Inside that shell, you can call <strong>unpackPhase</strong> to place GNU Hello sources in the current directory, then <strong>configurePhase</strong> to run <strong>configure</strong> script with correct arguments and finally <strong>buildPhase</strong> to build.</p><h3 id=nix-profile>nix profile</h3><p>Nix implements stateful &ldquo;profiles&rdquo; to allow users to &ldquo;<strong>permanently</strong>&rdquo; install stuff.</p><p>For example:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nix profile install <span class=s1>&#39;nixpkgs#hello&#39;</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nix profile install <span class=s1>&#39;nixpkgs#hello&#39;</span>
 </span></span><span class=line><span class=cl>nix profile list
 </span></span><span class=line><span class=cl>nix profile update hello
 </span></span><span class=line><span class=cl>nix profile remove hello
-</span></span></code></pre></td></tr></table></div></div><p>If you’re already familiar with Nix, this is a replacement for <strong>nix-env</strong>.</p><h3 id=nix-flake>nix flake</h3><p><strong>nix flake</strong> set of subcommands is used to observe and manipulate flakes themselves rather than their outputs.</p><h4 id=nix-flake-show>nix flake show</h4><p>This command takes a flake URI and prints all the outputs of the flake as a nice tree structure, mapping attribute paths to the types of values.</p><p>For example:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><p>If you’re already familiar with Nix, this is a replacement for <strong>nix-env</strong>.</p><h3 id=nix-flake>nix flake</h3><p><strong>nix flake</strong> set of subcommands is used to observe and manipulate flakes themselves rather than their outputs.</p><h4 id=nix-flake-show>nix flake show</h4><p>This command takes a flake URI and prints all the outputs of the flake as a nice tree structure, mapping attribute paths to the types of values.</p><p>For example:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -221,8 +93,7 @@ and git+ssh://example.com/path/to/repo.git for plain git repositories (you can, 
 </span><span class=lnt>16
 </span><span class=lnt>17
 </span><span class=lnt>18
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>[yanboyang713@manjaro] ➜ ~ nix flake show github:nixos/nixpkgs
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>[yanboyang713@manjaro] ➜ ~ nix flake show github:nixos/nixpkgs
 </span></span></span><span class=line><span class=cl><span class=go>github:nixos/nixpkgs/41d4fbf65287038fcd88fce734282e522e2a6d33
 </span></span></span><span class=line><span class=cl><span class=go>├───checks
 </span></span></span><span class=line><span class=cl><span class=go>│   └───x86_64-linux
@@ -240,144 +111,78 @@ and git+ssh://example.com/path/to/repo.git for plain git repositories (you can, 
 </span></span></span><span class=line><span class=cl><span class=go>├───lib: unknown
 </span></span></span><span class=line><span class=cl><span class=go>└───nixosModules
 </span></span></span><span class=line><span class=cl><span class=go>    └───notDetected: NixOS module
-</span></span></span></code></pre></td></tr></table></div></div><h4 id=nix-flake-clone>nix flake clone</h4><p><strong>nix flake clone</strong> will clone the flake source to a local directory, similar to <strong>git clone</strong>.</p><p>Let’s clone some simple flake and use some other <strong>nix flake</strong> subcommands on it:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></span></code></pre></td></tr></table></div></div><h4 id=nix-flake-clone>nix flake clone</h4><p><strong>nix flake clone</strong> will clone the flake source to a local directory, similar to <strong>git clone</strong>.</p><p>Let’s clone some simple flake and use some other <strong>nix flake</strong> subcommands on it:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nix flake clone git+https://github.com/balsoft/hello-flake/ -f hello-flake
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nix flake clone git+https://github.com/balsoft/hello-flake/ -f hello-flake
 </span></span><span class=line><span class=cl><span class=nb>cd</span> hello-flake
-</span></span></code></pre></td></tr></table></div></div><h4 id=nix-flake-lock--previously-nix-flake-update>nix flake lock (<strong>previously</strong> nix flake update)</h4><p>Every time you call a Nix command on some flake in a local directory, Nix will make sure that the contents of <strong>flake.lock</strong> satisfy the <strong>inputs</strong> in <strong>flake.nix</strong>. If you want to do just that, without actually building (or even evaluating) any outputs, use <strong>nix flake lock</strong>.</p><p>There are also some arguments for flake input manipulation that can be passed to most Nix commands:</p><ul>
-<li><strong>&ndash;override-input</strong> takes an input name that you have specified in <strong>inputs</strong> of <strong>flake.nix</strong> and a flake URI to provide as this input; - <strong>&ndash;update-input</strong> will take an input name and update that input to the latest version satisfying the flake URI from <strong>flake.nix</strong>.</li></ul><h2 id=writing-your-own>Writing your own</h2><p>Now that you know how to interact with flakes, it’s time to write one.</p><h3 id=nix-language-refresher>Nix language refresher</h3><p>The widely used data type in Nix is an attribute set: a data type for storing key-value pairs. It is similar to a JSON object or a hashmap in many languages. Its syntax is confusingly similar to a list of statements in C-like languages:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><h4 id=nix-flake-lock--previously-nix-flake-update>nix flake lock (<strong>previously</strong> nix flake update)</h4><p>Every time you call a Nix command on some flake in a local directory, Nix will make sure that the contents of <strong>flake.lock</strong> satisfy the <strong>inputs</strong> in <strong>flake.nix</strong>. If you want to do just that, without actually building (or even evaluating) any outputs, use <strong>nix flake lock</strong>.</p><p>There are also some arguments for flake input manipulation that can be passed to most Nix commands:</p><ul><li><strong>&ndash;override-input</strong> takes an input name that you have specified in <strong>inputs</strong> of <strong>flake.nix</strong> and a flake URI to provide as this input; - <strong>&ndash;update-input</strong> will take an input name and update that input to the latest version satisfying the flake URI from <strong>flake.nix</strong>.</li></ul><h2 id=writing-your-own>Writing your own</h2><p>Now that you know how to interact with flakes, it’s time to write one.</p><h3 id=nix-language-refresher>Nix language refresher</h3><p>The widely used data type in Nix is an attribute set: a data type for storing key-value pairs. It is similar to a JSON object or a hashmap in many languages. Its syntax is confusingly similar to a list of statements in C-like languages:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{
 </span></span><span class=line><span class=cl>  hello = &#34;world&#34;;
 </span></span><span class=line><span class=cl>  foo = &#34;bar&#34;;
 </span></span><span class=line><span class=cl>}
-</span></span></code></pre></td></tr></table></div></div><p>The set above is equivalent to this JSON object:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>The set above is equivalent to this JSON object:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{
 </span></span><span class=line><span class=cl>    &#34;hello&#34;: &#34;world&#34;,
 </span></span><span class=line><span class=cl>    &#34;foo&#34;: &#34;bar&#34;
 </span></span><span class=line><span class=cl>}
-</span></span></code></pre></td></tr></table></div></div><p><strong>hello</strong> and <strong>foo</strong> are commonly referred to as &ldquo;attributes&rdquo; or &ldquo;attribute names&rdquo;; <strong>&ldquo;world&rdquo;</strong> and <strong>&ldquo;bar&rdquo;</strong> are &ldquo;attribute values&rdquo;.</p><p>To get an attribute value from an attribute set, use .. For example:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p><strong>hello</strong> and <strong>foo</strong> are commonly referred to as &ldquo;attributes&rdquo; or &ldquo;attribute names&rdquo;; <strong>&ldquo;world&rdquo;</strong> and <strong>&ldquo;bar&rdquo;</strong> are &ldquo;attribute values&rdquo;.</p><p>To get an attribute value from an attribute set, use .. For example:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>let
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>let
 </span></span><span class=line><span class=cl>  my_attrset = { foo = &#34;bar&#34;; };
 </span></span><span class=line><span class=cl>in my_attrset.foo
-</span></span></code></pre></td></tr></table></div></div><p>(<strong>let &mldr; in</strong> is a way to create bindings; the syntax inside it is identical to that of an attribute set)</p><p>You can also abbreviate your attribute set by setting specific attributes with . instead of defining the entire set:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>(<strong>let &mldr; in</strong> is a way to create bindings; the syntax inside it is identical to that of an attribute set)</p><p>You can also abbreviate your attribute set by setting specific attributes with . instead of defining the entire set:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{
 </span></span><span class=line><span class=cl>  foo.bar = &#34;baz&#34;;
 </span></span><span class=line><span class=cl>}
-</span></span></code></pre></td></tr></table></div></div><p>Is equivalent to</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>Is equivalent to</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{
 </span></span><span class=line><span class=cl>  foo = { bar = &#34;baz&#34;; };
 </span></span><span class=line><span class=cl>}
-</span></span></code></pre></td></tr></table></div></div><p>Other types include strings (<strong>&ldquo;foo&rdquo;</strong>), numbers (1, 3.1415), heterogenous lists (<strong>[ 1 2 &ldquo;foo&rdquo; ]</strong>) and – quite importantly – functions (<strong>x: x + 1</strong>).</p><p>Functions support pattern matching on attribute sets. For example, this function:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{ a, b }: a + b
-</span></span></code></pre></td></tr></table></div></div><p>When called with <strong>{ a = 10; b = 20; }</strong> will return 30.</p><p>Function application is done in ML style:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>Other types include strings (<strong>&ldquo;foo&rdquo;</strong>), numbers (1, 3.1415), heterogenous lists (<strong>[ 1 2 &ldquo;foo&rdquo; ]</strong>) and – quite importantly – functions (<strong>x: x + 1</strong>).</p><p>Functions support pattern matching on attribute sets. For example, this function:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{ a, b }: a + b
+</span></span></code></pre></td></tr></table></div></div><p>When called with <strong>{ a = 10; b = 20; }</strong> will return 30.</p><p>Function application is done in ML style:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>let
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>let
 </span></span><span class=line><span class=cl>  f = { a, b }: a + b;
 </span></span><span class=line><span class=cl>in f { a = 10; b = 20; }
-</span></span></code></pre></td></tr></table></div></div><p>The function itself comes first. Then there is a whitespace-separated list of arguments.</p><p>If you want to have a function of multiple arguments, use currying:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>The function itself comes first. Then there is a whitespace-separated list of arguments.</p><p>If you want to have a function of multiple arguments, use currying:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>let
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>let
 </span></span><span class=line><span class=cl>  f = a: b: a + b;
 </span></span><span class=line><span class=cl>in f 10 20
-</span></span></code></pre></td></tr></table></div></div><p>In this example, <strong>f 10</strong> evaluates to <strong>b: 10 + b</strong>, and then <strong>f 10 20</strong> evaluates to <strong>30</strong>.</p><p>If you want to learn more about Nix, check out the <a href=https://nixos.org/manual/nix/stable/expressions/writing-nix-expressions.html target=_blank rel="noopener noreferrer">
-corresponding manual section
-</a>
-and <a href=https://nixos.org/guides/nix-pills/ target=_blank rel="noopener noreferrer">
-Nix Pills
-</a>
-.</p><h3 id=basic-flake-structure>Basic flake structure</h3><p>The language description you got above is far from complete or formal, but it should help you understand and, more importantly, write some simple Nix expressions and, even more importantly, a flake.</p><p>A Nix flake is a directory that contains a flake.nix file. That file must contain an attribute set with one required attribute – outputs – and optionally description and inputs.</p><p>outputs is a function that takes an attribute set of inputs (there’s always at least one input – self – which refers to the flake that Nix is currently evaluating; this is possible due to laziness). So, the most trivial flake possible is this:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>In this example, <strong>f 10</strong> evaluates to <strong>b: 10 + b</strong>, and then <strong>f 10 20</strong> evaluates to <strong>30</strong>.</p><p>If you want to learn more about Nix, check out the <a href=https://nixos.org/manual/nix/stable/expressions/writing-nix-expressions.html target=_blank rel="noopener noreferrer">corresponding manual section</a>
+and <a href=https://nixos.org/guides/nix-pills/ target=_blank rel="noopener noreferrer">Nix Pills</a>
+.</p><h3 id=basic-flake-structure>Basic flake structure</h3><p>The language description you got above is far from complete or formal, but it should help you understand and, more importantly, write some simple Nix expressions and, even more importantly, a flake.</p><p>A Nix flake is a directory that contains a flake.nix file. That file must contain an attribute set with one required attribute – outputs – and optionally description and inputs.</p><p>outputs is a function that takes an attribute set of inputs (there’s always at least one input – self – which refers to the flake that Nix is currently evaluating; this is possible due to laziness). So, the most trivial flake possible is this:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{
 </span></span><span class=line><span class=cl>  outputs = { self }: { };
 </span></span><span class=line><span class=cl>}
-</span></span></code></pre></td></tr></table></div></div><h2 id=what-are-nix-flakes>What are Nix flakes?</h2><p>Flakes are self-contained units that have inputs (dependencies) and outputs (packages, deployment instructions, Nix functions for use in other flakes). You can think about them as Rust crates or Go modules but language-independent. Flakes have great reproducibility because they are only allowed to depend on their inputs and they pin the exact versions of said inputs in a lockfile.</p><p>If you’re already familiar with Nix, flakes are to Nix expressions what derivations are to build instructions.</p><p>Flakes allow you to specify your code&rsquo;s dependencies (e.g. remote Git repositories) in a declarative way, simply by listing them inside a <strong>flake.nix</strong> file:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><h2 id=what-are-nix-flakes>What are Nix flakes?</h2><p>Flakes are self-contained units that have inputs (dependencies) and outputs (packages, deployment instructions, Nix functions for use in other flakes). You can think about them as Rust crates or Go modules but language-independent. Flakes have great reproducibility because they are only allowed to depend on their inputs and they pin the exact versions of said inputs in a lockfile.</p><p>If you’re already familiar with Nix, flakes are to Nix expressions what derivations are to build instructions.</p><p>Flakes allow you to specify your code&rsquo;s dependencies (e.g. remote Git repositories) in a declarative way, simply by listing them inside a <strong>flake.nix</strong> file:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{
 </span></span><span class=line><span class=cl>  inputs = {
 </span></span><span class=line><span class=cl>    home-manager.url = &#34;github:nix-community/home-manager&#34;;
 </span></span><span class=line><span class=cl>  };
 </span></span><span class=line><span class=cl>}
-</span></span></code></pre></td></tr></table></div></div><p>Each dependency gets then pinned, that is: its commit hash gets automatically stored into a file - named flake.lock - making it easy to, say, upgrade it:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nix flake lock --update-input home-manager
-</span></span></code></pre></td></tr></table></div></div><p>(if you&rsquo;re familiar with modern packages managers like cargo or npm, then the overall mechanism shouldn&rsquo;t surprise you - Nix works in a similar way, although without a centralized repository.)</p><p>Flakes replace the nix-channels command and things like ad-hoc invocations of builtins.fetchgit - no more worrying about keeping your channels in sync, no more worrying about forgetting about a dependency deep down in your tree: everything&rsquo;s at hand right inside flake.lock.</p><h2 id=reference-list>Reference List</h2><ol>
-<li><a href=https://serokell.io/blog/practical-nix-flakes target=_blank rel="noopener noreferrer">
-https://serokell.io/blog/practical-nix-flakes
-</a>
-</li></ol></div><div class=post-footer id=post-footer>
-<div class=post-info>
-<div class=post-info-line>
-<div class=post-info-mod>
-<span>Updated on 2022-03-09</span>
-</div><div class=post-info-license></div></div><div class=post-info-line>
-<div class=post-info-md><span>
-<a class=link-to-markdown href=https://yanboyang.com/nixflakes/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
-</span></div><div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/nixflakes/ data-title="Nix Flakes" data-hashtags=nix,Flakes><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/nixflakes/ data-hashtag=nix><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/nixflakes/ data-title="Nix Flakes" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/nixflakes/ data-title="Nix Flakes"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/nixflakes/ data-title="Nix Flakes"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/nixflakes/ data-title="Nix Flakes" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/nixflakes/ data-title="Nix Flakes" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/nixflakes/ data-title="Nix Flakes"><i class="fab fa-evernote fa-fw"></i></a></span>
-</div></div></div><div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/nix/>nix</a>,&nbsp;<a href=https://yanboyang.com/tags/flakes/>Flakes</a></section><section>
-<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span>
-</section></div><div class=post-nav><a href=https://yanboyang.com/nixhomemanager/ class=prev rel=prev title="Home Manager using Nix"><i class="fas fa-angle-left fa-fw"></i>Home Manager using Nix</a>
-<a href=https://yanboyang.com/cephonproxmox/ class=next rel=next title="Using Ceph with Proxmox">Using Ceph with Proxmox<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>
-Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
-</noscript></div></article></div></main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.3">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
-<i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title="View Comments">
-<i class="fas fa-comment fa-fw"></i>
-</a>
-</div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>
+</span></span></code></pre></td></tr></table></div></div><p>Each dependency gets then pinned, that is: its commit hash gets automatically stored into a file - named flake.lock - making it easy to, say, upgrade it:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nix flake lock --update-input home-manager
+</span></span></code></pre></td></tr></table></div></div><p>(if you&rsquo;re familiar with modern packages managers like cargo or npm, then the overall mechanism shouldn&rsquo;t surprise you - Nix works in a similar way, although without a centralized repository.)</p><p>Flakes replace the nix-channels command and things like ad-hoc invocations of builtins.fetchgit - no more worrying about keeping your channels in sync, no more worrying about forgetting about a dependency deep down in your tree: everything&rsquo;s at hand right inside flake.lock.</p><h2 id=reference-list>Reference List</h2><ol><li><a href=https://serokell.io/blog/practical-nix-flakes target=_blank rel="noopener noreferrer">https://serokell.io/blog/practical-nix-flakes</a></li></ol></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2022-03-17</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://yanboyang.com/nixflakes/index.md target=_blank rel="noopener noreferrer">Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/nixflakes/ data-title="Nix Flakes" data-hashtags=nix,Flakes><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/nixflakes/ data-hashtag=nix><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/nixflakes/ data-title="Nix Flakes" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/nixflakes/ data-title="Nix Flakes"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/nixflakes/ data-title="Nix Flakes"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/nixflakes/ data-title="Nix Flakes" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/nixflakes/ data-title="Nix Flakes" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/nixflakes/ data-title="Nix Flakes"><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/nix/>nix</a>,&nbsp;<a href=https://yanboyang.com/tags/flakes/>Flakes</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span></section></div><div class=post-nav><a href=https://yanboyang.com/nixhomemanager/ class=prev rel=prev title="Home Manager using Nix"><i class="fas fa-angle-left fa-fw"></i>Home Manager using Nix</a>
+<a href=https://yanboyang.com/cephonproxmox/ class=next rel=next title="Using Ceph with Proxmox">Using Ceph with Proxmox<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>

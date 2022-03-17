@@ -1,100 +1,21 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="noodp">
-<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>linux basic commands and common tools - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="linux basic commands and common tools">
-<meta property="og:description" content="Hardware Information There are plenty of commands to check information about the hardware of Linux system. Some commands report only specific hardware components like CPU or memory while the rest cover multiple hardware units. This section will look at some of the most commonly used commands to check information and configuration details about various hardware peripherals and devices.
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>linux basic commands and common tools - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="linux basic commands and common tools"><meta property="og:description" content="Hardware Information There are plenty of commands to check information about the hardware of Linux system. Some commands report only specific hardware components like CPU or memory while the rest cover multiple hardware units. This section will look at some of the most commonly used commands to check information and configuration details about various hardware peripherals and devices.
 The list includes lscpu, hwinfo, lshw, dmidecode, lspci etc.
-lscpu The lscpu command reports information about the cpu and processing units.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://yanboyang.com/linux/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2020-09-06T06:11:32+10:00">
-<meta property="article:modified_time" content="2022-03-09T07:16:10+00:00">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://yanboyang.com/logo.png">
-<meta name=twitter:title content="linux basic commands and common tools">
-<meta name=twitter:description content="Hardware Information There are plenty of commands to check information about the hardware of Linux system. Some commands report only specific hardware components like CPU or memory while the rest cover multiple hardware units. This section will look at some of the most commonly used commands to check information and configuration details about various hardware peripherals and devices.
+lscpu The lscpu command reports information about the cpu and processing units."><meta property="og:type" content="article"><meta property="og:url" content="https://yanboyang.com/linux/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-09-06T06:11:32+10:00"><meta property="article:modified_time" content="2022-03-17T05:53:50+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://yanboyang.com/logo.png"><meta name=twitter:title content="linux basic commands and common tools"><meta name=twitter:description content="Hardware Information There are plenty of commands to check information about the hardware of Linux system. Some commands report only specific hardware components like CPU or memory while the rest cover multiple hardware units. This section will look at some of the most commonly used commands to check information and configuration details about various hardware peripherals and devices.
 The list includes lscpu, hwinfo, lshw, dmidecode, lspci etc.
-lscpu The lscpu command reports information about the cpu and processing units.">
-<meta name=application-name content="LoveIt">
-<meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/linux/><link rel=prev href=https://yanboyang.com/amlworkspaceauthentication/><link rel=next href=https://yanboyang.com/frp/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"linux basic commands and common tools","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/linux\/"},"genre":"posts","keywords":"Linux command","wordcount":2183,"url":"https:\/\/yanboyang.com\/linux\/","datePublished":"2020-09-06T06:11:32+10:00","dateModified":"2022-03-09T07:16:10+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
-<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div><div class=menu>
-<div class=menu-inner><a class=menu-item href=https://yanboyang.com/> Home </a><a class=menu-item href=https://yanboyang.com/posts/> Posts </a><a class=menu-item href=https://yanboyang.com/tags/> Tags </a><a class=menu-item href=https://yanboyang.com/categories/> Categories </a><a class=menu-item href=https://yanboyang.com/about/> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+lscpu The lscpu command reports information about the cpu and processing units."><meta name=application-name content="LoveIt"><meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/linux/><link rel=prev href=https://yanboyang.com/amlworkspaceauthentication/><link rel=next href=https://yanboyang.com/frp/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"linux basic commands and common tools","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/linux\/"},"genre":"posts","keywords":"Linux command","wordcount":2183,"url":"https:\/\/yanboyang.com\/linux\/","datePublished":"2020-09-06T06:11:32+10:00","dateModified":"2022-03-17T05:53:50+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-wrapper><div class=header-title><a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a></div><div class=menu><div class=menu-inner><a class=menu-item href=https://yanboyang.com/>Home </a><a class=menu-item href=https://yanboyang.com/posts/>Posts </a><a class=menu-item href=https://yanboyang.com/tags/>Tags </a><a class=menu-item href=https://yanboyang.com/categories/>Categories </a><a class=menu-item href=https://yanboyang.com/about/>About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-desktop>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i>
-</a>
-</div></div></div></header><header class=mobile id=header-mobile>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<div class=header-container>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div><div class=menu-toggle id=menu-toggle-mobile>
-<span></span><span></span><span></span>
-</div></div><div class=menu id=menu-mobile><div class=search-wrapper>
-<div class="search mobile" id=search-mobile>
-<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-mobile>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
-Cancel
-</a>
-</div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i>
-</a></div></div></header><div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div></div><main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">linux basic commands and common tools</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
-Boyang Yan
-</a>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-container><div class=header-wrapper><div class=header-title><a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">linux basic commands and common tools</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
+Boyang Yan</a>
 </span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/linux/><i class="far fa-folder fa-fw"></i>Linux</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-09-06>2020-09-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2183 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true>
-<div class="details-summary toc-title">
-<span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
-<ul>
-<li><a href=#hardware-information>Hardware Information</a>
-<ul>
-<li><a href=#lscpu>lscpu</a></li><li><a href=#lshw---list-hardware>lshw - List Hardware</a>
-<ul>
-<li><a href=#display-full-information>Display Full Information</a></li><li><a href=#display-information-in-short>Display information in short</a></li><li><a href=#display-only-memory-information>Display only memory information</a></li><li><a href=#display-processor-information>Display processor information</a></li><li><a href=#disk-drives>Disk drives</a></li><li><a href=#network-adapter-information>Network adapter information</a></li><li><a href=#display-address-details-with-businfo>Display address details with businfo</a></li><li><a href=#generate-report-in-htmlxml-format>Generate report in html/xml format</a></li></ul></li><li><a href=#lspci---list-pci>lspci - List PCI</a></li><li><a href=#lsscsi---list-scsi-devices>lsscsi - List scsi devices</a></li><li><a href=#lsusb---list-usb-buses-and-device-details>lsusb - List usb buses and device details</a></li><li><a href=#inxi>Inxi</a></li><li><a href=#lsblk---list-block-devices>lsblk - List block devices</a></li><li><a href=#df---disk-space-of-file-systems>df - disk space of file systems</a></li><li><a href=#pydf---python-df>Pydf - Python df</a></li><li><a href=#fdisk>fdisk</a></li><li><a href=#mount>mount</a></li><li><a href=#free---check-ram>free - Check RAM</a></li><li><a href=#dmidecode>dmidecode</a></li></ul></li><li><a href=#proc-files>/proc files</a>
-<ul>
-<li><a href=#hdparm>hdparm</a></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=hardware-information>Hardware Information</h2><p>There are plenty of commands to check information about the hardware of Linux system. Some commands report only specific hardware components like CPU or memory while the rest cover multiple hardware units. This section will look at some of the most commonly used commands to check information and configuration details about various hardware peripherals and devices.</p><p>The list includes lscpu, hwinfo, lshw, dmidecode, lspci etc.</p><h3 id=lscpu>lscpu</h3><p>The lscpu command reports information about the cpu and processing units. It does not have any further options or functionality.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+<i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#hardware-information>Hardware Information</a><ul><li><a href=#lscpu>lscpu</a></li><li><a href=#lshw---list-hardware>lshw - List Hardware</a><ul><li><a href=#display-full-information>Display Full Information</a></li><li><a href=#display-information-in-short>Display information in short</a></li><li><a href=#display-only-memory-information>Display only memory information</a></li><li><a href=#display-processor-information>Display processor information</a></li><li><a href=#disk-drives>Disk drives</a></li><li><a href=#network-adapter-information>Network adapter information</a></li><li><a href=#display-address-details-with-businfo>Display address details with businfo</a></li><li><a href=#generate-report-in-htmlxml-format>Generate report in html/xml format</a></li></ul></li><li><a href=#lspci---list-pci>lspci - List PCI</a></li><li><a href=#lsscsi---list-scsi-devices>lsscsi - List scsi devices</a></li><li><a href=#lsusb---list-usb-buses-and-device-details>lsusb - List usb buses and device details</a></li><li><a href=#inxi>Inxi</a></li><li><a href=#lsblk---list-block-devices>lsblk - List block devices</a></li><li><a href=#df---disk-space-of-file-systems>df - disk space of file systems</a></li><li><a href=#pydf---python-df>Pydf - Python df</a></li><li><a href=#fdisk>fdisk</a></li><li><a href=#mount>mount</a></li><li><a href=#free---check-ram>free - Check RAM</a></li><li><a href=#dmidecode>dmidecode</a></li></ul></li><li><a href=#proc-files>/proc files</a><ul><li><a href=#hdparm>hdparm</a></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=hardware-information>Hardware Information</h2><p>There are plenty of commands to check information about the hardware of Linux system. Some commands report only specific hardware components like CPU or memory while the rest cover multiple hardware units. This section will look at some of the most commonly used commands to check information and configuration details about various hardware peripherals and devices.</p><p>The list includes lscpu, hwinfo, lshw, dmidecode, lspci etc.</p><h3 id=lscpu>lscpu</h3><p>The lscpu command reports information about the cpu and processing units. It does not have any further options or functionality.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -120,8 +41,7 @@ Boyang Yan
 </span><span class=lnt>24
 </span><span class=lnt>25
 </span><span class=lnt>26
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>$</span> lscpu
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>$</span> lscpu
 </span></span><span class=line><span class=cl><span class=go>Architecture:        x86_64
 </span></span></span><span class=line><span class=cl><span class=go>CPU op-mode(s):      32-bit, 64-bit
 </span></span></span><span class=line><span class=cl><span class=go>Byte Order:          Little Endian
@@ -147,14 +67,9 @@ Boyang Yan
 </span></span></span><span class=line><span class=cl><span class=go>L3 cache:            12288K
 </span></span></span><span class=line><span class=cl><span class=go>NUMA node0 CPU(s):   0-7
 </span></span></span><span class=line><span class=cl><span class=go>Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
-</span></span></span></code></pre></td></tr></table></div></div><h3 id=lshw---list-hardware>lshw - List Hardware</h3><p>A general purpose utility, that reports detailed and brief information about multiple different hardware units such as cpu, memory, disk, usb controllers, network adapters etc. Lshw extracts the information from different /proc files.</p><h4 id=display-full-information>Display Full Information</h4><p>Running lshw without any options would generate full information report about all detected hardware. It would generate a big output with quite a lot of technical details.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo lshw
-</span></span></code></pre></td></tr></table></div></div><h4 id=display-information-in-short>Display information in short</h4><p>With the &ldquo;-short&rdquo; the lshw command would generate a brief information report about the hardware devices that would quickly give an idea about the hardware profile of the system.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></span></code></pre></td></tr></table></div></div><h3 id=lshw---list-hardware>lshw - List Hardware</h3><p>A general purpose utility, that reports detailed and brief information about multiple different hardware units such as cpu, memory, disk, usb controllers, network adapters etc. Lshw extracts the information from different /proc files.</p><h4 id=display-full-information>Display Full Information</h4><p>Running lshw without any options would generate full information report about all detected hardware. It would generate a big output with quite a lot of technical details.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo lshw
+</span></span></code></pre></td></tr></table></div></div><h4 id=display-information-in-short>Display information in short</h4><p>With the &ldquo;-short&rdquo; the lshw command would generate a brief information report about the hardware devices that would quickly give an idea about the hardware profile of the system.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -205,8 +120,7 @@ Boyang Yan
 </span><span class=lnt>49
 </span><span class=lnt>50
 </span><span class=lnt>51
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>yanboyang713@boyang$ sudo lshw -short
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>yanboyang713@boyang$ sudo lshw -short
 </span></span></span><span class=line><span class=cl><span class=go>H/W path         Device    Class          Description
 </span></span></span><span class=line><span class=cl><span class=go>=====================================================
 </span></span></span><span class=line><span class=cl><span class=go>                           system         MS-7C22 (Default string)
@@ -257,9 +171,7 @@ Boyang Yan
 </span></span></span><span class=line><span class=cl><span class=go>/1                         power          To Be Filled By O.E.M.
 </span></span></span><span class=line><span class=cl><span class=go>/2               docker0   network        Ethernet interface
 </span></span></span><span class=line><span class=cl><span class=go>/3               br0       network        Ethernet interface
-</span></span></span></code></pre></td></tr></table></div></div><h4 id=display-only-memory-information>Display only memory information</h4><p>To display information about the memory, specify the memory class.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></span></code></pre></td></tr></table></div></div><h4 id=display-only-memory-information>Display only memory information</h4><p>To display information about the memory, specify the memory class.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -272,8 +184,7 @@ Boyang Yan
 </span><span class=lnt>11
 </span><span class=lnt>12
 </span><span class=lnt>13
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>yanboyang713@boyang $ sudo lshw -short -class memory
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>yanboyang713@boyang $ sudo lshw -short -class memory
 </span></span></span><span class=line><span class=cl><span class=go>H/W path         Device    Class          Description
 </span></span></span><span class=line><span class=cl><span class=go>=====================================================
 </span></span></span><span class=line><span class=cl><span class=go>/0/0                       memory         64KiB BIOS
@@ -286,9 +197,7 @@ Boyang Yan
 </span></span></span><span class=line><span class=cl><span class=go>/0/44                      memory         2MiB L2 cache
 </span></span></span><span class=line><span class=cl><span class=go>/0/45                      memory         12MiB L3 cache
 </span></span></span><span class=line><span class=cl><span class=go>/0/100/14.2                memory         RAM memory
-</span></span></span></code></pre></td></tr></table></div></div><h4 id=display-processor-information>Display processor information</h4><p>With class processor, lshw would display information about the cpu. It is better to not use the short option and get full details about the processor.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></span></code></pre></td></tr></table></div></div><h4 id=display-processor-information>Display processor information</h4><p>With class processor, lshw would display information about the cpu. It is better to not use the short option and get full details about the processor.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -304,8 +213,7 @@ Boyang Yan
 </span><span class=lnt>14
 </span><span class=lnt>15
 </span><span class=lnt>16
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>yanboyang713@boyang$ sudo lshw -class processor
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>yanboyang713@boyang$ sudo lshw -class processor
 </span></span></span><span class=line><span class=cl><span class=go>  *-cpu                     
 </span></span></span><span class=line><span class=cl><span class=go>       description: CPU
 </span></span></span><span class=line><span class=cl><span class=go>       product: Intel(R) Core(TM) i7-9700F CPU @ 3.00GHz
@@ -321,40 +229,20 @@ Boyang Yan
 </span></span></span><span class=line><span class=cl><span class=go>       clock: 100MHz
 </span></span></span><span class=line><span class=cl><span class=go>       capabilities: x86-64 fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities cpufreq
 </span></span></span><span class=line><span class=cl><span class=go>       configuration: cores=8 enabledcores=8 threads=8
-</span></span></span></code></pre></td></tr></table></div></div><p>It should be noted that lshw does not accurately tell about the number of cores or processing units available. The above system for example is a quadcore processor with 4 processing units. Another command called lscpu gives more accurate information about the cpu.</p><h4 id=disk-drives>Disk drives</h4><p>Display the disk drives with the disk class.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo lshw -short -class disk
-</span></span></code></pre></td></tr></table></div></div><p>To display information about the partitions and controllers also, specify the storage and volume class along with the disk class. Then it would give a more clear picture about the storage on the system.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo lshw -short -class disk -class storage -class volume
-</span></span></code></pre></td></tr></table></div></div><h4 id=network-adapter-information>Network adapter information</h4><p>Use the network class to display information about the network adapter/interface. Omitting the short option is a good idea to get detailed information about it.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo lshw -class network
-</span></span></code></pre></td></tr></table></div></div><p>The value of the &ldquo;serial&rdquo; field is same as the MAC address. The configuration field indicates that autonegotiation is turned on and the current operating speed is 100Mbit/s. These configurations can be modified with the ethtool command.</p><h4 id=display-address-details-with-businfo>Display address details with businfo</h4><p>With the businfo option lshw would output the address details of pci, usb, scsi and ide devices.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo lshw -businfo
-</span></span></code></pre></td></tr></table></div></div><p>The output is similar to &ldquo;short&rdquo; option, with the first column replaced with Bus Info.</p><h4 id=generate-report-in-htmlxml-format>Generate report in html/xml format</h4><p>Lshw is capable of producing reports in html, xml and json formats.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ sudo lshw -html &gt; hardware.html
-</span></span></code></pre></td></tr></table></div></div><p>For xml format</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ sudo lshw -xml &gt; hardware.xml
+</span></span></span></code></pre></td></tr></table></div></div><p>It should be noted that lshw does not accurately tell about the number of cores or processing units available. The above system for example is a quadcore processor with 4 processing units. Another command called lscpu gives more accurate information about the cpu.</p><h4 id=disk-drives>Disk drives</h4><p>Display the disk drives with the disk class.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo lshw -short -class disk
+</span></span></code></pre></td></tr></table></div></div><p>To display information about the partitions and controllers also, specify the storage and volume class along with the disk class. Then it would give a more clear picture about the storage on the system.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo lshw -short -class disk -class storage -class volume
+</span></span></code></pre></td></tr></table></div></div><h4 id=network-adapter-information>Network adapter information</h4><p>Use the network class to display information about the network adapter/interface. Omitting the short option is a good idea to get detailed information about it.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo lshw -class network
+</span></span></code></pre></td></tr></table></div></div><p>The value of the &ldquo;serial&rdquo; field is same as the MAC address. The configuration field indicates that autonegotiation is turned on and the current operating speed is 100Mbit/s. These configurations can be modified with the ethtool command.</p><h4 id=display-address-details-with-businfo>Display address details with businfo</h4><p>With the businfo option lshw would output the address details of pci, usb, scsi and ide devices.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo lshw -businfo
+</span></span></code></pre></td></tr></table></div></div><p>The output is similar to &ldquo;short&rdquo; option, with the first column replaced with Bus Info.</p><h4 id=generate-report-in-htmlxml-format>Generate report in html/xml format</h4><p>Lshw is capable of producing reports in html, xml and json formats.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ sudo lshw -html &gt; hardware.html
+</span></span></code></pre></td></tr></table></div></div><p>For xml format</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ sudo lshw -xml &gt; hardware.xml
 </span></span></code></pre></td></tr></table></div></div><h3 id=lspci---list-pci>lspci - List PCI</h3><p>The lspci command lists out all the pci buses and details about the devices connected to them.
-The vga adapter, graphics card, network adapter, usb ports, sata controllers, etc all fall under this category.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+The vga adapter, graphics card, network adapter, usb ports, sata controllers, etc all fall under this category.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -382,8 +270,7 @@ The vga adapter, graphics card, network adapter, usb ports, sata controllers, et
 </span><span class=lnt>26
 </span><span class=lnt>27
 </span><span class=lnt>28
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>yanboyang713@boyang$ lspci
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>yanboyang713@boyang$ lspci
 </span></span></span><span class=line><span class=cl><span class=go>00:00.0 Host bridge: Intel Corporation Device 3e30 (rev 0d)
 </span></span></span><span class=line><span class=cl><span class=go>00:01.0 PCI bridge: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor PCIe Controller (x16) (rev 0d)
 </span></span></span><span class=line><span class=cl><span class=go>00:08.0 System peripheral: Intel Corporation Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th Gen Core Processor Gaussian Mixture Model
@@ -411,130 +298,58 @@ The vga adapter, graphics card, network adapter, usb ports, sata controllers, et
 </span></span></span><span class=line><span class=cl><span class=go>03:00.3 Ethernet controller: Intel Corporation I350 Gigabit Network Connection (rev 01)
 </span></span></span><span class=line><span class=cl><span class=go>05:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 15)
 </span></span></span><span class=line><span class=cl><span class=go>06:00.0 Non-Volatile memory controller: Micron/Crucial Technology Device 2263 (rev 03)
-</span></span></span></code></pre></td></tr></table></div></div><p>Filter out specific device information with grep.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ lspci -v <span class=p>|</span> grep <span class=s2>&#34;VGA&#34;</span> -A <span class=m>12</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=lsscsi---list-scsi-devices>lsscsi - List scsi devices</h3><p>Lists out the scsi/sata devices like hard drives and optical drives.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo apt install lsscsi
-</span></span></code></pre></td></tr></table></div></div><h3 id=lsusb---list-usb-buses-and-device-details>lsusb - List usb buses and device details</h3><p>This command shows the USB controllers and details about devices connected to them. By default brief information is printed. Use the verbose option &ldquo;-v&rdquo; to print detailed information about each usb port</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ lsusb
-</span></span></code></pre></td></tr></table></div></div><p>On the above system, 1 usb port is being used by the mouse.</p><h3 id=inxi>Inxi</h3><p>Inxi is a 10K line mega bash script that fetches hardware details from multiple different sources and commands on the system, and generates a beautiful looking report that non technical users can read easily.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ inxi -Fx
-</span></span></code></pre></td></tr></table></div></div><h3 id=lsblk---list-block-devices>lsblk - List block devices</h3><p>List out information all block devices, which are the hard drive partitions and other storage devices like optical drives and flash drives</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ lsblk
-</span></span></code></pre></td></tr></table></div></div><h3 id=df---disk-space-of-file-systems>df - disk space of file systems</h3><p>Reports various partitions, their mount points and the used and available space on each.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ df -H
-</span></span></code></pre></td></tr></table></div></div><h3 id=pydf---python-df>Pydf - Python df</h3><p>An improved df version written in python, that displays colored output that looks better than df</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ pydf
-</span></span></code></pre></td></tr></table></div></div><h3 id=fdisk>fdisk</h3><p>Fdisk is a utility to modify partitions on hard drives, and can be used to list out the partition information as well.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ sudo fdisk -l
-</span></span></code></pre></td></tr></table></div></div><h3 id=mount>mount</h3><p>The mount is used to mount/unmount and view mounted file systems.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ mount <span class=p>|</span> column -t
-</span></span></code></pre></td></tr></table></div></div><p>Again, use grep to filter out only those file systems that you want to see</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ mount <span class=p>|</span> column -t <span class=p>|</span> grep ext
-</span></span></code></pre></td></tr></table></div></div><h3 id=free---check-ram>free - Check RAM</h3><p>Check the amount of used, free and total amount of RAM on system with the free command.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ free -m
-</span></span></code></pre></td></tr></table></div></div><h3 id=dmidecode>dmidecode</h3><p>The dmidecode command is different from all other commands. It extracts hardware information by reading data from the SMBOIS data structures (also called DMI tables).</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></span></code></pre></td></tr></table></div></div><p>Filter out specific device information with grep.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ lspci -v <span class=p>|</span> grep <span class=s2>&#34;VGA&#34;</span> -A <span class=m>12</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=lsscsi---list-scsi-devices>lsscsi - List scsi devices</h3><p>Lists out the scsi/sata devices like hard drives and optical drives.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo apt install lsscsi
+</span></span></code></pre></td></tr></table></div></div><h3 id=lsusb---list-usb-buses-and-device-details>lsusb - List usb buses and device details</h3><p>This command shows the USB controllers and details about devices connected to them. By default brief information is printed. Use the verbose option &ldquo;-v&rdquo; to print detailed information about each usb port</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ lsusb
+</span></span></code></pre></td></tr></table></div></div><p>On the above system, 1 usb port is being used by the mouse.</p><h3 id=inxi>Inxi</h3><p>Inxi is a 10K line mega bash script that fetches hardware details from multiple different sources and commands on the system, and generates a beautiful looking report that non technical users can read easily.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ inxi -Fx
+</span></span></code></pre></td></tr></table></div></div><h3 id=lsblk---list-block-devices>lsblk - List block devices</h3><p>List out information all block devices, which are the hard drive partitions and other storage devices like optical drives and flash drives</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ lsblk
+</span></span></code></pre></td></tr></table></div></div><h3 id=df---disk-space-of-file-systems>df - disk space of file systems</h3><p>Reports various partitions, their mount points and the used and available space on each.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ df -H
+</span></span></code></pre></td></tr></table></div></div><h3 id=pydf---python-df>Pydf - Python df</h3><p>An improved df version written in python, that displays colored output that looks better than df</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ pydf
+</span></span></code></pre></td></tr></table></div></div><h3 id=fdisk>fdisk</h3><p>Fdisk is a utility to modify partitions on hard drives, and can be used to list out the partition information as well.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ sudo fdisk -l
+</span></span></code></pre></td></tr></table></div></div><h3 id=mount>mount</h3><p>The mount is used to mount/unmount and view mounted file systems.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ mount <span class=p>|</span> column -t
+</span></span></code></pre></td></tr></table></div></div><p>Again, use grep to filter out only those file systems that you want to see</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ mount <span class=p>|</span> column -t <span class=p>|</span> grep ext
+</span></span></code></pre></td></tr></table></div></div><h3 id=free---check-ram>free - Check RAM</h3><p>Check the amount of used, free and total amount of RAM on system with the free command.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ free -m
+</span></span></code></pre></td></tr></table></div></div><h3 id=dmidecode>dmidecode</h3><p>The dmidecode command is different from all other commands. It extracts hardware information by reading data from the SMBOIS data structures (also called DMI tables).</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1>## display information about the processor/cpu</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1>## display information about the processor/cpu</span>
 </span></span><span class=line><span class=cl>$ sudo dmidecode -t processor
 </span></span><span class=line><span class=cl><span class=c1>## memory/ram information</span>
 </span></span><span class=line><span class=cl>$ sudo dmidecode -t memory
 </span></span><span class=line><span class=cl><span class=c1>## bios details</span>
 </span></span><span class=line><span class=cl>$ sudo dmidecode -t bios
-</span></span></code></pre></td></tr></table></div></div><p>Check out the man page for more details.</p><h2 id=proc-files>/proc files</h2><p>Many of the virtual files in the /proc directory contain information about hardware and configurations. Here are some of them</p><p>CPU/Memory information</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>Check out the man page for more details.</p><h2 id=proc-files>/proc files</h2><p>Many of the virtual files in the /proc directory contain information about hardware and configurations. Here are some of them</p><p>CPU/Memory information</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1>## cpu information</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1>## cpu information</span>
 </span></span><span class=line><span class=cl>$ cat /proc/cpuinfo
 </span></span><span class=line><span class=cl><span class=c1>## memory information</span>
 </span></span><span class=line><span class=cl>$ cat /proc/meminfo
-</span></span></code></pre></td></tr></table></div></div><p>Linux/kernel information</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>Linux/kernel information</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ cat /proc/version
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ cat /proc/version
 </span></span><span class=line><span class=cl>Linux version 3.11.0-12-generic <span class=o>(</span>buildd@allspice<span class=o>)</span> <span class=o>(</span>gcc version 4.8.1 <span class=o>(</span>Ubuntu/Linaro 4.8.1-10ubuntu7<span class=o>)</span> <span class=o>)</span> <span class=c1>#19-Ubuntu SMP Wed Oct 9 16:20:46 UTC 2013</span>
-</span></span></code></pre></td></tr></table></div></div><p>SCSI/Sata devices</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ cat /proc/scsi/scsi
-</span></span></code></pre></td></tr></table></div></div><p>Partitions</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ cat /proc/partitions
-</span></span></code></pre></td></tr></table></div></div><h3 id=hdparm>hdparm</h3><p>The hdparm command gets information about sata devices like hard disks.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ sudo hdparm -i /dev/sda
-</span></span></code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer>
-<div class=post-info>
-<div class=post-info-line>
-<div class=post-info-mod>
-<span>Updated on 2022-03-09</span>
-</div><div class=post-info-license></div></div><div class=post-info-line>
-<div class=post-info-md><span>
-<a class=link-to-markdown href=https://yanboyang.com/linux/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
-</span></div><div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/linux/ data-title="linux basic commands and common tools" data-hashtags="Linux command"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/linux/ data-hashtag="Linux command"><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/linux/ data-title="linux basic commands and common tools" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/linux/ data-title="linux basic commands and common tools"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/linux/ data-title="linux basic commands and common tools"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/linux/ data-title="linux basic commands and common tools" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/linux/ data-title="linux basic commands and common tools" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/linux/ data-title="linux basic commands and common tools"><i class="fab fa-evernote fa-fw"></i></a></span>
-</div></div></div><div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/linux-command/>Linux command</a></section><section>
-<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span>
-</section></div><div class=post-nav><a href=https://yanboyang.com/amlworkspaceauthentication/ class=prev rel=prev title="Azure Machine Learning Workspace Authentication Troubleshooting Guide"><i class="fas fa-angle-left fa-fw"></i>Azure Machine Learning Workspace Authentication Troubleshooting Guide</a>
-<a href=https://yanboyang.com/frp/ class=next rel=next title="Getting Started with Reverse Proxy">Getting Started with Reverse Proxy<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>
-Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
-</noscript></div></article></div></main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.3">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
-<i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title="View Comments">
-<i class="fas fa-comment fa-fw"></i>
-</a>
-</div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>
+</span></span></code></pre></td></tr></table></div></div><p>SCSI/Sata devices</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ cat /proc/scsi/scsi
+</span></span></code></pre></td></tr></table></div></div><p>Partitions</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ cat /proc/partitions
+</span></span></code></pre></td></tr></table></div></div><h3 id=hdparm>hdparm</h3><p>The hdparm command gets information about sata devices like hard disks.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ sudo hdparm -i /dev/sda
+</span></span></code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2022-03-17</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://yanboyang.com/linux/index.md target=_blank rel="noopener noreferrer">Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/linux/ data-title="linux basic commands and common tools" data-hashtags="Linux command"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/linux/ data-hashtag="Linux command"><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/linux/ data-title="linux basic commands and common tools" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/linux/ data-title="linux basic commands and common tools"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/linux/ data-title="linux basic commands and common tools"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/linux/ data-title="linux basic commands and common tools" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/linux/ data-title="linux basic commands and common tools" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/linux/ data-title="linux basic commands and common tools"><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/linux-command/>Linux command</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span></section></div><div class=post-nav><a href=https://yanboyang.com/amlworkspaceauthentication/ class=prev rel=prev title="Azure Machine Learning Workspace Authentication Troubleshooting Guide"><i class="fas fa-angle-left fa-fw"></i>Azure Machine Learning Workspace Authentication Troubleshooting Guide</a>
+<a href=https://yanboyang.com/frp/ class=next rel=next title="Getting Started with Reverse Proxy">Getting Started with Reverse Proxy<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>

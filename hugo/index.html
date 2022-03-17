@@ -1,118 +1,27 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="noodp">
-<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Creating a Hugo blog - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Creating a Hugo blog">
-<meta property="og:description" content="Overview This is a tutorial on creating a blog or website using hugo  (a static site generator).
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Creating a Hugo blog - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Creating a Hugo blog"><meta property="og:description" content="Overview This is a tutorial on creating a blog or website using hugo  (a static site generator).
 We will use Docker as our development environment. Also, we will storge our Hugo development code in Github main branche and automate the whole process with Github Action Workflow for Github Pages.
 Prerequisites You will need to have the following:
- Docker installation. Docker is available for Mac/Windows/Linux and is easily installed. You can following the link at the below for install Docker.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://yanboyang.com/hugo/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-12-14T17:31:00+08:00">
-<meta property="article:modified_time" content="2022-03-09T07:16:10+00:00">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://yanboyang.com/logo.png">
-<meta name=twitter:title content="Creating a Hugo blog">
-<meta name=twitter:description content="Overview This is a tutorial on creating a blog or website using hugo  (a static site generator).
+ Docker installation. Docker is available for Mac/Windows/Linux and is easily installed. You can following the link at the below for install Docker."><meta property="og:type" content="article"><meta property="og:url" content="https://yanboyang.com/hugo/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-12-14T17:31:00+08:00"><meta property="article:modified_time" content="2022-03-17T05:53:50+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://yanboyang.com/logo.png"><meta name=twitter:title content="Creating a Hugo blog"><meta name=twitter:description content="Overview This is a tutorial on creating a blog or website using hugo  (a static site generator).
 We will use Docker as our development environment. Also, we will storge our Hugo development code in Github main branche and automate the whole process with Github Action Workflow for Github Pages.
 Prerequisites You will need to have the following:
- Docker installation. Docker is available for Mac/Windows/Linux and is easily installed. You can following the link at the below for install Docker.">
-<meta name=application-name content="LoveIt">
-<meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/hugo/><link rel=prev href=https://yanboyang.com/roamtohugo/><link rel=next href=https://yanboyang.com/org-mode/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Creating a Hugo blog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/hugo\/"},"genre":"posts","keywords":"hugo","wordcount":2208,"url":"https:\/\/yanboyang.com\/hugo\/","datePublished":"2021-12-14T17:31:00+08:00","dateModified":"2022-03-09T07:16:10+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
-<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div><div class=menu>
-<div class=menu-inner><a class=menu-item href=https://yanboyang.com/> Home </a><a class=menu-item href=https://yanboyang.com/posts/> Posts </a><a class=menu-item href=https://yanboyang.com/tags/> Tags </a><a class=menu-item href=https://yanboyang.com/categories/> Categories </a><a class=menu-item href=https://yanboyang.com/about/> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+ Docker installation. Docker is available for Mac/Windows/Linux and is easily installed. You can following the link at the below for install Docker."><meta name=application-name content="LoveIt"><meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/hugo/><link rel=prev href=https://yanboyang.com/roamtohugo/><link rel=next href=https://yanboyang.com/org-mode/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Creating a Hugo blog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/hugo\/"},"genre":"posts","keywords":"hugo","wordcount":2208,"url":"https:\/\/yanboyang.com\/hugo\/","datePublished":"2021-12-14T17:31:00+08:00","dateModified":"2022-03-17T05:53:50+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-wrapper><div class=header-title><a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a></div><div class=menu><div class=menu-inner><a class=menu-item href=https://yanboyang.com/>Home </a><a class=menu-item href=https://yanboyang.com/posts/>Posts </a><a class=menu-item href=https://yanboyang.com/tags/>Tags </a><a class=menu-item href=https://yanboyang.com/categories/>Categories </a><a class=menu-item href=https://yanboyang.com/about/>About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-desktop>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i>
-</a>
-</div></div></div></header><header class=mobile id=header-mobile>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<div class=header-container>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div><div class=menu-toggle id=menu-toggle-mobile>
-<span></span><span></span><span></span>
-</div></div><div class=menu id=menu-mobile><div class=search-wrapper>
-<div class="search mobile" id=search-mobile>
-<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-mobile>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
-Cancel
-</a>
-</div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i>
-</a></div></div></header><div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div></div><main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Creating a Hugo blog</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
-Boyang Yan
-</a>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-container><div class=header-wrapper><div class=header-title><a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Creating a Hugo blog</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
+Boyang Yan</a>
 </span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/blog/><i class="far fa-folder fa-fw"></i>Blog</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-14>2021-12-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2208 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true>
-<div class="details-summary toc-title">
-<span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
-<ul>
-<li><a href=#overview>Overview</a></li><li><a href=#prerequisites>Prerequisites</a></li><li><a href=#set-up>Set-up</a>
-<ul>
-<li><a href=#on-github-create-a-repository-called-something-dot-github-dot-io>On Github, create a repository called something.github.io</a></li><li><a href=#clone-this-repository-to-local>Clone this repository to Local</a></li><li><a href=#create-a-new-hugo-site>Create a new Hugo site</a></li><li><a href=#chown-user-and-group-recursively>Chown User and Group Recursively</a></li><li><a href=#add-the-theme-to-your-blog>Add the theme to your blog</a></li><li><a href=#basic-configuration>Basic Configuration</a></li><li><a href=#create-your-first-post>Create Your First Post</a></li><li><a href=#launching-the-website-in-docker>Launching the Website in Docker</a></li><li><a href=#build-hugo-with-github-action>Build Hugo With GitHub Action</a></li></ul></li><li><a href=#post-your-blog>Post your blog</a></li><li><a href=#set-up-your-google-analytics-account>Set up your Google Analytics account</a>
-<ul>
-<li><a href=#configuring-hugo>Configuring Hugo</a></li><li><a href=#header-dot-html>header.html</a></li></ul></li><li><a href=#write-blog-with-emacs-and-ox-hugo-package>Write Blog with Emacs and ox-hugo package</a>
-<ul>
-<li><a href=#prerequisites>Prerequisites</a></li><li><a href=#auto-export-the-whole-project-on-saving>Auto-export the whole project on Saving</a>
-<ul>
-<li><a href=#step-1-enable-minor-mode-org-hugo-auto-export-mode>Step 1: Enable minor mode org-hugo-auto-export-mode</a></li><li><a href=#step-2-enable-for-the-whole-project>Step 2: Enable for the whole project</a></li><li><a href=#step-3-create-a-post-with-org-mode>Step 3: Create a post with org mode</a></li></ul></li><li><a href=#export-bindings>Export bindings</a>
-<ul>
-<li><a href=#for-both-one-post-per-subtree-and-one-post-per-file-flows>For both one-post-per-subtree and one-post-per-file flows</a></li><li><a href=#for-only-the-one-post-per-file-flow>For only the one-post-per-file flow</a></li></ul></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=overview>Overview</h2><p>This is a tutorial on creating a blog or website using <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer">
-hugo
-</a>
-(a static site generator).</p><p>We will use Docker as our development environment. Also, we will storge our Hugo development code in Github main branche and automate the whole process with Github Action Workflow for Github Pages.</p><h2 id=prerequisites>Prerequisites</h2><p>You will need to have the following:</p><ol>
-<li>Docker installation. Docker is available for Mac/Windows/Linux and is easily installed. You can following the link at the below for install Docker.
-link &ldquo;content/posts/dockerinstall.md&rdquo; install Docker &ldquo;go!&rdquo;</li><li>Domain Name (optional). I will be using a domain name for my configuration. If you wish to follow along fully, you’ll need a domain name but, you can just as easily stick with the free subdomain provided by Github pages, i.e. name.github.io, and skip the domain name related aspects in this tutorial. If you don’t have a domain name but wish to purchase one, <a href=https://www.namecheap.com/ target=_blank rel="noopener noreferrer">
-namecheap
-</a>
-is an excellent provider and fits in well with this tutorial.</li><li>Github account, sign up for free on github.com</li></ol><p>In the subsequent sections, we will be covering the complete setup of <a href=https://yanboyang.com target=_blank rel="noopener noreferrer">
-https://yanboyang.com
-</a>
-</p><h2 id=set-up>Set-up</h2><h3 id=on-github-create-a-repository-called-something-dot-github-dot-io>On Github, create a repository called something.github.io</h3><p>In my case, I created yanboyang.github.io
-<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat%5FDec%5F26%5F05%5F24%5F25%5FPM%5FCST%5F2020%5Fzbblkc.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat%5FDec%5F26%5F05%5F24%5F25%5FPM%5FCST%5F2020%5Fzbblkc.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat%5FDec%5F26%5F05%5F24%5F25%5FPM%5FCST%5F2020%5Fzbblkc.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat%5FDec%5F26%5F05%5F24%5F25%5FPM%5FCST%5F2020%5Fzbblkc.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat%5FDec%5F26%5F05%5F24%5F25%5FPM%5FCST%5F2020%5Fzbblkc.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat%5FDec%5F26%5F05%5F24%5F25%5FPM%5FCST%5F2020%5Fzbblkc.png></p><h3 id=clone-this-repository-to-local>Clone this repository to Local</h3><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+<i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#overview>Overview</a></li><li><a href=#prerequisites>Prerequisites</a></li><li><a href=#set-up>Set-up</a><ul><li><a href=#on-github-create-a-repository-called-something-dot-github-dot-io>On Github, create a repository called something.github.io</a></li><li><a href=#clone-this-repository-to-local>Clone this repository to Local</a></li><li><a href=#create-a-new-hugo-site>Create a new Hugo site</a></li><li><a href=#chown-user-and-group-recursively>Chown User and Group Recursively</a></li><li><a href=#add-the-theme-to-your-blog>Add the theme to your blog</a></li><li><a href=#basic-configuration>Basic Configuration</a></li><li><a href=#create-your-first-post>Create Your First Post</a></li><li><a href=#launching-the-website-in-docker>Launching the Website in Docker</a></li><li><a href=#build-hugo-with-github-action>Build Hugo With GitHub Action</a></li></ul></li><li><a href=#post-your-blog>Post your blog</a></li><li><a href=#set-up-your-google-analytics-account>Set up your Google Analytics account</a><ul><li><a href=#configuring-hugo>Configuring Hugo</a></li><li><a href=#header-dot-html>header.html</a></li></ul></li><li><a href=#write-blog-with-emacs-and-ox-hugo-package>Write Blog with Emacs and ox-hugo package</a><ul><li><a href=#prerequisites>Prerequisites</a></li><li><a href=#auto-export-the-whole-project-on-saving>Auto-export the whole project on Saving</a><ul><li><a href=#step-1-enable-minor-mode-org-hugo-auto-export-mode>Step 1: Enable minor mode org-hugo-auto-export-mode</a></li><li><a href=#step-2-enable-for-the-whole-project>Step 2: Enable for the whole project</a></li><li><a href=#step-3-create-a-post-with-org-mode>Step 3: Create a post with org mode</a></li></ul></li><li><a href=#export-bindings>Export bindings</a><ul><li><a href=#for-both-one-post-per-subtree-and-one-post-per-file-flows>For both one-post-per-subtree and one-post-per-file flows</a></li><li><a href=#for-only-the-one-post-per-file-flow>For only the one-post-per-file flow</a></li></ul></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=overview>Overview</h2><p>This is a tutorial on creating a blog or website using <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer">hugo</a>
+(a static site generator).</p><p>We will use Docker as our development environment. Also, we will storge our Hugo development code in Github main branche and automate the whole process with Github Action Workflow for Github Pages.</p><h2 id=prerequisites>Prerequisites</h2><p>You will need to have the following:</p><ol><li>Docker installation. Docker is available for Mac/Windows/Linux and is easily installed. You can following the link at the below for install Docker.
+link &ldquo;content/posts/dockerinstall.md&rdquo; install Docker &ldquo;go!&rdquo;</li><li>Domain Name (optional). I will be using a domain name for my configuration. If you wish to follow along fully, you’ll need a domain name but, you can just as easily stick with the free subdomain provided by Github pages, i.e. name.github.io, and skip the domain name related aspects in this tutorial. If you don’t have a domain name but wish to purchase one, <a href=https://www.namecheap.com/ target=_blank rel="noopener noreferrer">namecheap</a>
+is an excellent provider and fits in well with this tutorial.</li><li>Github account, sign up for free on github.com</li></ol><p>In the subsequent sections, we will be covering the complete setup of <a href=https://yanboyang.com target=_blank rel="noopener noreferrer">https://yanboyang.com</a></p><h2 id=set-up>Set-up</h2><h3 id=on-github-create-a-repository-called-something-dot-github-dot-io>On Github, create a repository called something.github.io</h3><p>In my case, I created yanboyang.github.io
+<img class=lazyload src=https://yanboyang.com/svg/loading.min.svg data-src=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat%5FDec%5F26%5F05%5F24%5F25%5FPM%5FCST%5F2020%5Fzbblkc.png data-srcset="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat%5FDec%5F26%5F05%5F24%5F25%5FPM%5FCST%5F2020%5Fzbblkc.png, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat%5FDec%5F26%5F05%5F24%5F25%5FPM%5FCST%5F2020%5Fzbblkc.png 1.5x, https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat%5FDec%5F26%5F05%5F24%5F25%5FPM%5FCST%5F2020%5Fzbblkc.png 2x" data-sizes=auto alt=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat%5FDec%5F26%5F05%5F24%5F25%5FPM%5FCST%5F2020%5Fzbblkc.png title=https://res.cloudinary.com/dkvj6mo4c/image/upload/v1608974742/hexo/Sat%5FDec%5F26%5F05%5F24%5F25%5FPM%5FCST%5F2020%5Fzbblkc.png></p><h3 id=clone-this-repository-to-local>Clone this repository to Local</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -120,8 +29,7 @@ https://yanboyang.com
 </span><span class=lnt>6
 </span><span class=lnt>7
 </span><span class=lnt>8
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>[yanboyang713@boyang Documents]$</span> git clone https://github.com/yanboyang713/yanboyang.github.io.git
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>[yanboyang713@boyang Documents]$</span> git clone https://github.com/yanboyang713/yanboyang.github.io.git
 </span></span><span class=line><span class=cl><span class=go>Cloning into &#39;yanboyang.github.io&#39;...
 </span></span></span><span class=line><span class=cl><span class=go>remote: Enumerating objects: 760, done.
 </span></span></span><span class=line><span class=cl><span class=go>remote: Counting objects: 100% (760/760), done.
@@ -129,39 +37,25 @@ https://yanboyang.com
 </span></span></span><span class=line><span class=cl><span class=go>remote: Total 760 (delta 289), reused 743 (delta 276), pack-reused 0
 </span></span></span><span class=line><span class=cl><span class=go>Receiving objects: 100% (760/760), 4.13 MiB | 1.88 MiB/s, done.
 </span></span></span><span class=line><span class=cl><span class=go>Resolving deltas: 100% (289/289), done.
-</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Go to your blog root folder</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Go to your blog root folder</span>
 </span></span><span class=line><span class=cl><span class=nb>cd</span> yanboyang.github.io
-</span></span></code></pre></td></tr></table></div></div><h3 id=create-a-new-hugo-site>Create a new Hugo site</h3><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><h3 id=create-a-new-hugo-site>Create a new Hugo site</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker run --rm -it <span class=se>\
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker run --rm -it <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>  -v <span class=k>$(</span><span class=nb>pwd</span><span class=k>)</span>:/src <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>  -w<span class=o>=</span><span class=s2>&#34;/src&#34;</span> <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>  klakegg/hugo:latest <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>  <span class=s2>&#34;new site . --force&#34;</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=chown-user-and-group-recursively>Chown User and Group Recursively</h3><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo chown -R yanboyang713:yanboyang713 .
-</span></span></code></pre></td></tr></table></div></div><h3 id=add-the-theme-to-your-blog>Add the theme to your blog</h3><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git submodule add https://github.com/sunt-programator/CodeIT.git themes/CodeIT
-</span></span></code></pre></td></tr></table></div></div><h3 id=basic-configuration>Basic Configuration</h3><p>The following is a basic configuration for the CodeIT theme:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><h3 id=chown-user-and-group-recursively>Chown User and Group Recursively</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo chown -R yanboyang713:yanboyang713 .
+</span></span></code></pre></td></tr></table></div></div><h3 id=add-the-theme-to-your-blog>Add the theme to your blog</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git submodule add https://github.com/sunt-programator/CodeIT.git themes/CodeIT
+</span></span></code></pre></td></tr></table></div></div><h3 id=basic-configuration>Basic Configuration</h3><p>The following is a basic configuration for the CodeIT theme:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -210,8 +104,7 @@ https://yanboyang.com
 </span><span class=lnt>47
 </span><span class=lnt>48
 </span><span class=lnt>49
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=nx>baseURL</span> <span class=p>=</span> <span class=s2>&#34;http://example.org/&#34;</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=nx>baseURL</span> <span class=p>=</span> <span class=s2>&#34;http://example.org/&#34;</span>
 </span></span><span class=line><span class=cl><span class=c># [en, zh-cn, fr, ...] determines default content language</span>
 </span></span><span class=line><span class=cl><span class=nx>defaultContentLanguage</span> <span class=p>=</span> <span class=s2>&#34;en&#34;</span>
 </span></span><span class=line><span class=cl><span class=c># language code</span>
@@ -260,49 +153,35 @@ https://yanboyang.com
 </span></span><span class=line><span class=cl>  <span class=p>[</span><span class=nx>markup</span><span class=p>.</span><span class=nx>highlight</span><span class=p>]</span>
 </span></span><span class=line><span class=cl>    <span class=c># false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)</span>
 </span></span><span class=line><span class=cl>    <span class=nx>noClasses</span> <span class=p>=</span> <span class=kc>false</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=create-your-first-post>Create Your First Post</h3><p>Here is the way to create your first post:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><h3 id=create-your-first-post>Create Your First Post</h3><p>Here is the way to create your first post:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
 </span><span class=lnt>7
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker run --rm -it <span class=se>\
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker run --rm -it <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>  -v <span class=k>$(</span><span class=nb>pwd</span><span class=k>)</span>:/src <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>  -w<span class=o>=</span><span class=s2>&#34;/src&#34;</span> <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>  klakegg/hugo:latest <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>  <span class=s2>&#34;new posts/first_post.md&#34;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>sudo chown -R yanboyang713:yanboyang713 content
-</span></span></code></pre></td></tr></table></div></div><p><strong>NOTE:</strong> Go to your first post and change the <strong>draft: false</strong></p><h3 id=launching-the-website-in-docker>Launching the Website in Docker</h3><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p><strong>NOTE:</strong> Go to your first post and change the <strong>draft: false</strong></p><h3 id=launching-the-website-in-docker>Launching the Website in Docker</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker run --rm -it <span class=se>\
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker run --rm -it <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>  -v <span class=k>$(</span><span class=nb>pwd</span><span class=k>)</span>:/src <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>  -p 1313:1313 <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>  klakegg/hugo:latest <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>  server
-</span></span></code></pre></td></tr></table></div></div><p>Web Server is available at <a href=http://localhost:1313/ target=_blank rel="noopener noreferrer">
-http://localhost:1313/
-</a>
-</p><h3 id=build-hugo-with-github-action>Build Hugo With GitHub Action</h3><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>Web Server is available at <a href=http://localhost:1313/ target=_blank rel="noopener noreferrer">http://localhost:1313/</a></p><h3 id=build-hugo-with-github-action>Build Hugo With GitHub Action</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mkdir -p .github/workflows
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mkdir -p .github/workflows
 </span></span><span class=line><span class=cl>vim .github/workflows/main.yml
-</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -339,8 +218,7 @@ http://localhost:1313/
 </span><span class=lnt>35
 </span><span class=lnt>36
 </span><span class=lnt>37
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>github pages</span><span class=w>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>github pages</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>push</span><span class=p>:</span><span class=w>
@@ -377,10 +255,7 @@ http://localhost:1313/
 </span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>user_name</span><span class=p>:</span><span class=w> </span><span class=l>yanboyang713</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>user_email</span><span class=p>:</span><span class=w> </span><span class=l>yanboyang713@gmail.com</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>cname</span><span class=p>:</span><span class=w> </span><span class=l>yanboyang.com</span><span class=w>
-</span></span></span></code></pre></td></tr></table></div></div><h2 id=post-your-blog>Post your blog</h2><p>I written a bash script for push your blog to Github evertime.</p><p><strong>NOTE:</strong> If you need add your public key.</p><ol>
-<li>Go to Repository Settings</li><li>Go to Deploy Keys and add your public key with the Allow write access</li></ol><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></span></code></pre></td></tr></table></div></div><h2 id=post-your-blog>Post your blog</h2><p>I written a bash script for push your blog to Github evertime.</p><p><strong>NOTE:</strong> If you need add your public key.</p><ol><li>Go to Repository Settings</li><li>Go to Deploy Keys and add your public key with the Allow write access</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -465,8 +340,7 @@ http://localhost:1313/
 </span><span class=lnt>83
 </span><span class=lnt>84
 </span><span class=lnt>85
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/bash
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/bash
 </span></span></span><span class=line><span class=cl><span class=cp></span><span class=c1>###############################################################</span>
 </span></span><span class=line><span class=cl><span class=c1>## AUTHOR Name: Boyang Yan                                   ##</span>
 </span></span><span class=line><span class=cl><span class=c1>## KEYWORDs: Hugo Depolyment                                 ##</span>
@@ -551,69 +425,45 @@ http://localhost:1313/
 </span></span><span class=line><span class=cl>    testConnectionAndDeploy
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>fi</span><span class=p>;</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=set-up-your-google-analytics-account>Set up your Google Analytics account</h2><p>Head over to <a href=https://analytics.google.com/ target=_blank rel="noopener noreferrer">
-https://analytics.google.com/
-</a>
+</span></span></code></pre></td></tr></table></div></div><h2 id=set-up-your-google-analytics-account>Set up your Google Analytics account</h2><p>Head over to <a href=https://analytics.google.com/ target=_blank rel="noopener noreferrer">https://analytics.google.com/</a>
 and make an account (or sign in with your Google account).</p><p>Set up your “Property”, give it a name, and point it to the URL of the site you plan on tracking.</p><p>Click through the basic options until you land on a page with a Tracking Code. This is the value we need to be keeping track of.
-If you’re having trouble with this step then I recommend checking out <a href=http://cloudywithachanceofdevops.com/posts/2018/05/17/setting-up-google-analytics-on-hugo/ target=_blank rel="noopener noreferrer">
-this
-</a>
-tutorial, which has very detailed step by step instructions for configuring your GA account.</p><h3 id=configuring-hugo>Configuring Hugo</h3><p>Hugo has a built in template for Google Analytics. All we need to do is make sure the template gets included in all our pages, so we can have more detailed tracking.</p><h3 id=header-dot-html>header.html</h3><p>The easiest way to do this is to insert the template into the header.html file used by your Hugo theme of choice.</p><p>Since it is common to use a git submodule as a theme directory, it could be undesirable and messy to write changes directly into the submodule.</p><p>The solution to this is to create another directory layouts in the root of your hugo directory. Hugo looks at the contents of this folder and uses it to overwrites the styles defined by your theme.</p><p>For example I use the Terminal theme. The header file is located at <hugo root>/themes/terminal/layouts/partials/header.html</p><p>We can copy this file to our new directory, so it sits at <hugo root>/layouts/partials/header.html.</p><p>Next we can edit our header.html file to include the template for google analytics. Your header.html will look different depending on the theme you’re using, but there should be a <head> section at the top. If not we can simply create it.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+If you’re having trouble with this step then I recommend checking out <a href=http://cloudywithachanceofdevops.com/posts/2018/05/17/setting-up-google-analytics-on-hugo/ target=_blank rel="noopener noreferrer">this</a>
+tutorial, which has very detailed step by step instructions for configuring your GA account.</p><h3 id=configuring-hugo>Configuring Hugo</h3><p>Hugo has a built in template for Google Analytics. All we need to do is make sure the template gets included in all our pages, so we can have more detailed tracking.</p><h3 id=header-dot-html>header.html</h3><p>The easiest way to do this is to insert the template into the header.html file used by your Hugo theme of choice.</p><p>Since it is common to use a git submodule as a theme directory, it could be undesirable and messy to write changes directly into the submodule.</p><p>The solution to this is to create another directory layouts in the root of your hugo directory. Hugo looks at the contents of this folder and uses it to overwrites the styles defined by your theme.</p><p>For example I use the Terminal theme. The header file is located at <hugo root>/themes/terminal/layouts/partials/header.html</p><p>We can copy this file to our new directory, so it sits at <hugo root>/layouts/partials/header.html.</p><p>Next we can edit our header.html file to include the template for google analytics. Your header.html will look different depending on the theme you’re using, but there should be a<head>section at the top. If not we can simply create it.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
 </span></span><span class=line><span class=cl>  {{ template &#34;_internal/google_analytics.html&#34; . }}
 </span></span><span class=line><span class=cl>  {{ template &#34;_internal/google_analytics_async.html&#34; . }}
 </span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
-</span></span></code></pre></td></tr></table></div></div><p>Adding these two lines inside <head> will make the google tracking code embed in the HTML of all of your pages.</p><p>config.toml
-Finally we need to use that tracking code from earlier. At the top level of your config.toml, add the line</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=nx>googleAnalytics</span> <span class=p>=</span> <span class=s2>&#34;UA-302012394-1&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>Adding these two lines inside<head>will make the google tracking code embed in the HTML of all of your pages.</p><p>config.toml
+Finally we need to use that tracking code from earlier. At the top level of your config.toml, add the line</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=nx>googleAnalytics</span> <span class=p>=</span> <span class=s2>&#34;UA-302012394-1&#34;</span>
 </span></span></code></pre></td></tr></table></div></div><p>Replacing the string with your Google Analytics tracking code. After you rebuild the site, everything should work as expected! You should also be able to detect the traffic by running the server locally as well, before you push to production.</p><p>Note!
-I had quite the time figuring out why I couldn’t see any activity on my site. Being the paranoid privacy nut that I am, I have a multitude of tracker/script blocker plugins on my browsers, to block nefarious ads/scripts.</p><p>This also blocks the tracking I do want, wouldn’t you know. I switched over to a private window without plugins and the traffic was instantly visible!</p><h2 id=write-blog-with-emacs-and-ox-hugo-package>Write Blog with Emacs and ox-hugo package</h2><p><a href=https://ox-hugo.scripter.co/ target=_blank rel="noopener noreferrer">
-ox-hugo
-</a>
-is an awesome way to blog from org-mode. It makes it possible for posts in org-mode format to kept separate, and it generates the Markdown files for Hugo. Hugo supports org files, but using ox-hugo has multiple advantages:</p><ul>
-<li>Parsing is done by org-mode natively, not by an external library. Although goorgeous (used by Hugo) is very good, it still lacks in many areas, which leads to text being interpreted differently as by org-mode.</li><li>Hugo is left to parse a native Markdown file, which means that many of its features such as shortcodes, TOC generation, etc., can still be used on the generated file.</li></ul><h3 id=prerequisites>Prerequisites</h3><p>Currently, I am using Doom Emacs, which includes and configures ox-hugo as part of its <strong>(:lang org +hugo)</strong> module, so all that’s left is to configure some parameters to my liking.</p><p>I set org-hugo-use-code-for-kbd so that I can apply a custom style to keyboard bindings in my blog.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+I had quite the time figuring out why I couldn’t see any activity on my site. Being the paranoid privacy nut that I am, I have a multitude of tracker/script blocker plugins on my browsers, to block nefarious ads/scripts.</p><p>This also blocks the tracking I do want, wouldn’t you know. I switched over to a private window without plugins and the traffic was instantly visible!</p><h2 id=write-blog-with-emacs-and-ox-hugo-package>Write Blog with Emacs and ox-hugo package</h2><p><a href=https://ox-hugo.scripter.co/ target=_blank rel="noopener noreferrer">ox-hugo</a>
+is an awesome way to blog from org-mode. It makes it possible for posts in org-mode format to kept separate, and it generates the Markdown files for Hugo. Hugo supports org files, but using ox-hugo has multiple advantages:</p><ul><li>Parsing is done by org-mode natively, not by an external library. Although goorgeous (used by Hugo) is very good, it still lacks in many areas, which leads to text being interpreted differently as by org-mode.</li><li>Hugo is left to parse a native Markdown file, which means that many of its features such as shortcodes, TOC generation, etc., can still be used on the generated file.</li></ul><h3 id=prerequisites>Prerequisites</h3><p>Currently, I am using Doom Emacs, which includes and configures ox-hugo as part of its <strong>(:lang org +hugo)</strong> module, so all that’s left is to configure some parameters to my liking.</p><p>I set org-hugo-use-code-for-kbd so that I can apply a custom style to keyboard bindings in my blog.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=line><span class=cl><span class=p>(</span><span class=nv>after!</span> <span class=nv>ox-hugo</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=line><span class=cl><span class=p>(</span><span class=nv>after!</span> <span class=nv>ox-hugo</span>
 </span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nb>setq</span> <span class=nv>org-hugo-use-code-for-kbd</span> <span class=no>t</span><span class=p>))</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=auto-export-the-whole-project-on-saving>Auto-export the whole project on Saving</h3><h4 id=step-1-enable-minor-mode-org-hugo-auto-export-mode>Step 1: Enable minor mode org-hugo-auto-export-mode</h4><p>This minor mode is disabled by default. It can be enabled separately at project level or file level.</p><p><strong>Note</strong> that once you update the .dir-locals.el file or file-local Variables as shown below, you will be prompted by Emacs to tell it if those settings are safe. Hit ! in that prompt to says yes and to save that choice for future Emacs sessions.</p><h4 id=step-2-enable-for-the-whole-project>Step 2: Enable for the whole project</h4><p>If you want to enable auto-exporting for the whole project, add this to the <strong>.dir-locals.el</strong> file in the project root:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><h3 id=auto-export-the-whole-project-on-saving>Auto-export the whole project on Saving</h3><h4 id=step-1-enable-minor-mode-org-hugo-auto-export-mode>Step 1: Enable minor mode org-hugo-auto-export-mode</h4><p>This minor mode is disabled by default. It can be enabled separately at project level or file level.</p><p><strong>Note</strong> that once you update the .dir-locals.el file or file-local Variables as shown below, you will be prompted by Emacs to tell it if those settings are safe. Hit ! in that prompt to says yes and to save that choice for future Emacs sessions.</p><h4 id=step-2-enable-for-the-whole-project>Step 2: Enable for the whole project</h4><p>If you want to enable auto-exporting for the whole project, add this to the <strong>.dir-locals.el</strong> file in the project root:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>((&#34;content-org/&#34;
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>((&#34;content-org/&#34;
 </span></span><span class=line><span class=cl>  . ((org-mode . ((eval . (org-hugo-auto-export-mode)))))))
-</span></span></code></pre></td></tr></table></div></div><p>Above assumes that the Org files are in the “content-org"/ directory (at any nested level in there) relative to that .dir-locals.el file:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>Above assumes that the Org files are in the “content-org"/ directory (at any nested level in there) relative to that .dir-locals.el file:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
 </span><span class=lnt>7
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>&lt;HUGO_BASE_DIR&gt;
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>&lt;HUGO_BASE_DIR&gt;
 </span></span><span class=line><span class=cl>  ├── config.toml
 </span></span><span class=line><span class=cl>  ├── content
 </span></span><span class=line><span class=cl>  ├── content-org      &lt;-- Org files in there
 </span></span><span class=line><span class=cl>  ├── static
 </span></span><span class=line><span class=cl>  ├── themes
 </span></span><span class=line><span class=cl>  └── .dir-locals.el
-</span></span></code></pre></td></tr></table></div></div><h4 id=step-3-create-a-post-with-org-mode>Step 3: Create a post with org mode</h4><p>In content-org directory, create a xxx.org file.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><h4 id=step-3-create-a-post-with-org-mode>Step 3: Create a post with org mode</h4><p>In content-org directory, create a xxx.org file.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -635,8 +485,7 @@ is an awesome way to blog from org-mode. It makes it possible for posts in org-m
 </span><span class=lnt>20
 </span><span class=lnt>21
 </span><span class=lnt>22
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-org data-lang=org><span class=line><span class=cl>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-org data-lang=org><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=cs>#+title</span><span class=c>: Boyang Yan&#39;s Blog</span>
 </span></span><span class=line><span class=cl><span class=cs>#+hugo_base_dir</span><span class=c>: ~/blog/</span>
 </span></span><span class=line><span class=cl><span class=cs>#+hugo_section</span><span class=c>: posts</span>
@@ -658,39 +507,14 @@ is an awesome way to blog from org-mode. It makes it possible for posts in org-m
 </span></span><span class=line><span class=cl><span class=c># optional dependencies</span>
 </span></span><span class=line><span class=cl>pacman -S fd
 </span></span><span class=line><span class=cl>yay -S emacs-pdf-tools-git
-</span></span></code></pre></td></tr></table></div></div><p>#+end_src</p><p>When you save this file, you will found there are doom file created in your blog->content->posts automately.</p><h3 id=export-bindings>Export bindings</h3><p>The common ox-hugo export bindings are:</p><h4 id=for-both-one-post-per-subtree-and-one-post-per-file-flows>For both one-post-per-subtree and one-post-per-file flows</h4><ul>
-<li>
-<p><strong>C-c C-e H H</strong>
+</span></span></code></pre></td></tr></table></div></div><p>#+end_src</p><p>When you save this file, you will found there are doom file created in your blog->content->posts automately.</p><h3 id=export-bindings>Export bindings</h3><p>The common ox-hugo export bindings are:</p><h4 id=for-both-one-post-per-subtree-and-one-post-per-file-flows>For both one-post-per-subtree and one-post-per-file flows</h4><ul><li><p><strong>C-c C-e H H</strong>
 Export “What I Mean”.
 If point is in a valid Hugo post subtree, export that subtree to a Hugo post in Markdown.
 A valid Hugo post subtree is an Org subtree that has the <strong>EXPORT_FILE_NAME</strong> property set.
-If the file is intended to be exported as a whole (i.e. has the #+title keyword), export the whole Org file to a Hugo post in Markdown.</p></li><li>
-<p><strong>C-c C-e H A</strong>
+If the file is intended to be exported as a whole (i.e. has the #+title keyword), export the whole Org file to a Hugo post in Markdown.</p></li><li><p><strong>C-c C-e H A</strong>
 Export all “What I Mean”
 If the Org file has one or more ‘valid Hugo post subtrees’, export them to Hugo posts in Markdown.
-If the file is intended to be exported as a whole (i.e. no ‘valid Hugo post subtrees’ at all, and has the <strong>#+title</strong> keyword), export the whole Org file to a Hugo post in Markdown.</p></li></ul><h4 id=for-only-the-one-post-per-file-flow>For only the one-post-per-file flow</h4><ul>
-<li><strong>C-c C-e H h</strong>
-Export the Org file to a Hugo post in Markdown.</li></ul></div><div class=post-footer id=post-footer>
-<div class=post-info>
-<div class=post-info-line>
-<div class=post-info-mod>
-<span>Updated on 2022-03-09</span>
-</div><div class=post-info-license></div></div><div class=post-info-line>
-<div class=post-info-md><span>
-<a class=link-to-markdown href=https://yanboyang.com/hugo/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
-</span></div><div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/hugo/ data-title="Creating a Hugo blog" data-hashtags=hugo><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/hugo/ data-hashtag=hugo><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/hugo/ data-title="Creating a Hugo blog" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/hugo/ data-title="Creating a Hugo blog"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/hugo/ data-title="Creating a Hugo blog"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/hugo/ data-title="Creating a Hugo blog" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/hugo/ data-title="Creating a Hugo blog" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/hugo/ data-title="Creating a Hugo blog"><i class="fab fa-evernote fa-fw"></i></a></span>
-</div></div></div><div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/hugo/>hugo</a></section><section>
-<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span>
-</section></div><div class=post-nav><a href=https://yanboyang.com/roamtohugo/ class=prev rel=prev title="Exporting Org Roam notes to hugo"><i class="fas fa-angle-left fa-fw"></i>Exporting Org Roam notes to hugo</a>
-<a href=https://yanboyang.com/org-mode/ class=next rel=next title="Getting Started Org-mode on Emacs">Getting Started Org-mode on Emacs<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>
-Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
-</noscript></div></article></div></main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.3">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
-<i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title="View Comments">
-<i class="fas fa-comment fa-fw"></i>
-</a>
-</div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>
+If the file is intended to be exported as a whole (i.e. no ‘valid Hugo post subtrees’ at all, and has the <strong>#+title</strong> keyword), export the whole Org file to a Hugo post in Markdown.</p></li></ul><h4 id=for-only-the-one-post-per-file-flow>For only the one-post-per-file flow</h4><ul><li><strong>C-c C-e H h</strong>
+Export the Org file to a Hugo post in Markdown.</li></ul></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2022-03-17</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://yanboyang.com/hugo/index.md target=_blank rel="noopener noreferrer">Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/hugo/ data-title="Creating a Hugo blog" data-hashtags=hugo><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/hugo/ data-hashtag=hugo><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/hugo/ data-title="Creating a Hugo blog" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/hugo/ data-title="Creating a Hugo blog"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/hugo/ data-title="Creating a Hugo blog"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/hugo/ data-title="Creating a Hugo blog" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/hugo/ data-title="Creating a Hugo blog" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/hugo/ data-title="Creating a Hugo blog"><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/hugo/>hugo</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span></section></div><div class=post-nav><a href=https://yanboyang.com/roamtohugo/ class=prev rel=prev title="Exporting Org Roam notes to hugo"><i class="fas fa-angle-left fa-fw"></i>Exporting Org Roam notes to hugo</a>
+<a href=https://yanboyang.com/org-mode/ class=next rel=next title="Getting Started Org-mode on Emacs">Getting Started Org-mode on Emacs<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>

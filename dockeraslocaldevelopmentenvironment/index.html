@@ -1,123 +1,33 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="noodp">
-<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Docker as Local Development Environment - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Docker as Local Development Environment">
-<meta property="og:description" content="Introduction https://blog.atulr.com/docker-local-environment/  Perrequires  Install Docker Install Docker Compose  Docker Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.
-Docker container To form a mental picture, for the time being just consider a Docker Container as an extremely light weight isolated linux based virtual machine inside which we will run our application service (although containers are not exactly VMs).">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://yanboyang.com/dockeraslocaldevelopmentenvironment/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:modified_time" content="2022-03-09T07:16:10+00:00">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://yanboyang.com/logo.png">
-<meta name=twitter:title content="Docker as Local Development Environment">
-<meta name=twitter:description content="Introduction https://blog.atulr.com/docker-local-environment/  Perrequires  Install Docker Install Docker Compose  Docker Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.
-Docker container To form a mental picture, for the time being just consider a Docker Container as an extremely light weight isolated linux based virtual machine inside which we will run our application service (although containers are not exactly VMs).">
-<meta name=application-name content="LoveIt">
-<meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/dockeraslocaldevelopmentenvironment/><link rel=prev href=https://yanboyang.com/essentialmathematics/><link rel=next href=https://yanboyang.com/dns/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Docker as Local Development Environment","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dockeraslocaldevelopmentenvironment\/"},"genre":"posts","keywords":"Docker","wordcount":1703,"url":"https:\/\/yanboyang.com\/dockeraslocaldevelopmentenvironment\/","dateModified":"2022-03-09T07:16:10+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
-<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div><div class=menu>
-<div class=menu-inner><a class=menu-item href=https://yanboyang.com/> Home </a><a class=menu-item href=https://yanboyang.com/posts/> Posts </a><a class=menu-item href=https://yanboyang.com/tags/> Tags </a><a class=menu-item href=https://yanboyang.com/categories/> Categories </a><a class=menu-item href=https://yanboyang.com/about/> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Docker as Local Development Environment - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Docker as Local Development Environment"><meta property="og:description" content="Introduction https://blog.atulr.com/docker-local-environment/  Perrequires  Install Docker Install Docker Compose  Docker Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.
+Docker container To form a mental picture, for the time being just consider a Docker Container as an extremely light weight isolated linux based virtual machine inside which we will run our application service (although containers are not exactly VMs)."><meta property="og:type" content="article"><meta property="og:url" content="https://yanboyang.com/dockeraslocaldevelopmentenvironment/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts"><meta property="article:modified_time" content="2022-03-17T05:53:50+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://yanboyang.com/logo.png"><meta name=twitter:title content="Docker as Local Development Environment"><meta name=twitter:description content="Introduction https://blog.atulr.com/docker-local-environment/  Perrequires  Install Docker Install Docker Compose  Docker Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.
+Docker container To form a mental picture, for the time being just consider a Docker Container as an extremely light weight isolated linux based virtual machine inside which we will run our application service (although containers are not exactly VMs)."><meta name=application-name content="LoveIt"><meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/dockeraslocaldevelopmentenvironment/><link rel=prev href=https://yanboyang.com/essentialmathematics/><link rel=next href=https://yanboyang.com/dns/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Docker as Local Development Environment","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dockeraslocaldevelopmentenvironment\/"},"genre":"posts","keywords":"Docker","wordcount":1703,"url":"https:\/\/yanboyang.com\/dockeraslocaldevelopmentenvironment\/","dateModified":"2022-03-17T05:53:50+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-wrapper><div class=header-title><a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a></div><div class=menu><div class=menu-inner><a class=menu-item href=https://yanboyang.com/>Home </a><a class=menu-item href=https://yanboyang.com/posts/>Posts </a><a class=menu-item href=https://yanboyang.com/tags/>Tags </a><a class=menu-item href=https://yanboyang.com/categories/>Categories </a><a class=menu-item href=https://yanboyang.com/about/>About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-desktop>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i>
-</a>
-</div></div></div></header><header class=mobile id=header-mobile>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<div class=header-container>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div><div class=menu-toggle id=menu-toggle-mobile>
-<span></span><span></span><span></span>
-</div></div><div class=menu id=menu-mobile><div class=search-wrapper>
-<div class="search mobile" id=search-mobile>
-<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-mobile>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
-Cancel
-</a>
-</div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i>
-</a></div></div></header><div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div></div><main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Docker as Local Development Environment</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
-Boyang Yan
-</a>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-container><div class=header-wrapper><div class=header-title><a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Docker as Local Development Environment</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
+Boyang Yan</a>
 </span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/virtual-environment/><i class="far fa-folder fa-fw"></i>virtual environment</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1703 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true>
-<div class="details-summary toc-title">
-<span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
-<ul>
-<li><a href=#introduction>Introduction</a></li><li><a href=#perrequires>Perrequires</a></li><li><a href=#docker>Docker</a>
-<ul>
-<li><a href=#docker-container>Docker container</a></li><li><a href=#docker-compose>Docker-Compose</a>
-<ul>
-<li><a href=#docker-compose-in-general-will-contain>Docker compose in general will contain:</a></li></ul></li></ul></li><li><a href=#setting-it-up>Setting it up</a>
-<ul>
-<li><a href=#enter-docker>Enter docker</a></li><li><a href=#all-this-is-good-and-fine-but-how-can-i-use-it-for-efficient-development>All this is good and fine but how can I use it for efficient development?</a></li><li><a href=#try-editing-njs1-source-files->Try editing njs1 source files! 🎉</a></li><li><a href=#finishing-things-up->Finishing things up! 🏁</a></li><li><a href=#few-changes>Few Changes</a></li></ul></li><li><a href=#commands-cheatsheet>Commands Cheatsheet</a>
-<ul>
-<li><a href=#start-all-services>Start all services</a></li><li><a href=#stop-all-services>Stop all services</a></li><li><a href=#launch-a-specific-service>Launch a specific service</a></li><li><a href=#restart-a-single-service>Restart a single service</a></li><li><a href=#logs-from-specific-service>logs from specific service</a></li><li><a href=#ssh-into-a-particular-service-container>ssh into a particular service container</a></li></ul></li><li><a href=#some-tips-for-smoother-workflow>Some Tips for smoother workflow</a>
-<ul>
-<li><a href=#containers--services-running-too-slow>Containers / services running too slow?</a></li><li><a href=#low-on-space--messed-up-and-want-to-restart-everything-from-scratch->Low on space / messed up and want to restart everything from scratch ?</a></li><li><a href=#removing-all-images-and-then-refreshing-the-entire-thing>Removing all images and then refreshing the entire thing.</a></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=introduction>Introduction</h2><p><a href=https://blog.atulr.com/docker-local-environment/ target=_blank rel="noopener noreferrer">
-https://blog.atulr.com/docker-local-environment/
-</a>
-</p><h2 id=perrequires>Perrequires</h2><ul>
-<li>Install Docker</li><li>Install Docker Compose</li></ul><h2 id=docker>Docker</h2><p>Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.</p><h3 id=docker-container>Docker container</h3><p>To form a mental picture, for the time being just consider a Docker Container as an extremely light weight isolated linux based virtual machine inside which we will run our application service (although containers are not exactly VMs). The container will contain our code and all of its dependencies (system libraries, tools, etc). For our setup we will use one docker container per service and separate docker containers for our database.</p><p>containers_mental_modal</p><h3 id=docker-compose>Docker-Compose</h3><p>Docker compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.</p><p>TLDR; Docker compose lets you run all your services at once (also in the right order) and manage them via a unified interface.</p><h4 id=docker-compose-in-general-will-contain>Docker compose in general will contain:</h4><ol>
-<li><strong>Services</strong>: Services are the list of induvidual docker containers that will be run by the compose tool. We will specify the ports and other configurations needed to run the docker containers here.</li><li><strong>Networks</strong>: Network provides a way by which different services can interact with each other. Each container can attach itself to a network and all containers within same networks can communicate with each other. We will use a single network for our case.</li><li><strong>Volumes</strong>: Docker containers by default do not contain any kind of persistence storage. If a docker container is killed then all the data in its memory gets lost. So in order to save some persistant data you need volumes. Think of volumes as permanent hard drives for these containers. We will have one volume per service.</li></ol><h2 id=setting-it-up>Setting it up</h2><p>I have created a basic setup of services as described above. To follow along, take a clone of the repo with the following commands.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+<i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#introduction>Introduction</a></li><li><a href=#perrequires>Perrequires</a></li><li><a href=#docker>Docker</a><ul><li><a href=#docker-container>Docker container</a></li><li><a href=#docker-compose>Docker-Compose</a><ul><li><a href=#docker-compose-in-general-will-contain>Docker compose in general will contain:</a></li></ul></li></ul></li><li><a href=#setting-it-up>Setting it up</a><ul><li><a href=#enter-docker>Enter docker</a></li><li><a href=#all-this-is-good-and-fine-but-how-can-i-use-it-for-efficient-development>All this is good and fine but how can I use it for efficient development?</a></li><li><a href=#try-editing-njs1-source-files->Try editing njs1 source files! 🎉</a></li><li><a href=#finishing-things-up->Finishing things up! 🏁</a></li><li><a href=#few-changes>Few Changes</a></li></ul></li><li><a href=#commands-cheatsheet>Commands Cheatsheet</a><ul><li><a href=#start-all-services>Start all services</a></li><li><a href=#stop-all-services>Stop all services</a></li><li><a href=#launch-a-specific-service>Launch a specific service</a></li><li><a href=#restart-a-single-service>Restart a single service</a></li><li><a href=#logs-from-specific-service>logs from specific service</a></li><li><a href=#ssh-into-a-particular-service-container>ssh into a particular service container</a></li></ul></li><li><a href=#some-tips-for-smoother-workflow>Some Tips for smoother workflow</a><ul><li><a href=#containers--services-running-too-slow>Containers / services running too slow?</a></li><li><a href=#low-on-space--messed-up-and-want-to-restart-everything-from-scratch->Low on space / messed up and want to restart everything from scratch ?</a></li><li><a href=#removing-all-images-and-then-refreshing-the-entire-thing>Removing all images and then refreshing the entire thing.</a></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=introduction>Introduction</h2><p><a href=https://blog.atulr.com/docker-local-environment/ target=_blank rel="noopener noreferrer">https://blog.atulr.com/docker-local-environment/</a></p><h2 id=perrequires>Perrequires</h2><ul><li>Install Docker</li><li>Install Docker Compose</li></ul><h2 id=docker>Docker</h2><p>Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.</p><h3 id=docker-container>Docker container</h3><p>To form a mental picture, for the time being just consider a Docker Container as an extremely light weight isolated linux based virtual machine inside which we will run our application service (although containers are not exactly VMs). The container will contain our code and all of its dependencies (system libraries, tools, etc). For our setup we will use one docker container per service and separate docker containers for our database.</p><p>containers_mental_modal</p><h3 id=docker-compose>Docker-Compose</h3><p>Docker compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.</p><p>TLDR; Docker compose lets you run all your services at once (also in the right order) and manage them via a unified interface.</p><h4 id=docker-compose-in-general-will-contain>Docker compose in general will contain:</h4><ol><li><strong>Services</strong>: Services are the list of induvidual docker containers that will be run by the compose tool. We will specify the ports and other configurations needed to run the docker containers here.</li><li><strong>Networks</strong>: Network provides a way by which different services can interact with each other. Each container can attach itself to a network and all containers within same networks can communicate with each other. We will use a single network for our case.</li><li><strong>Volumes</strong>: Docker containers by default do not contain any kind of persistence storage. If a docker container is killed then all the data in its memory gets lost. So in order to save some persistant data you need volumes. Think of volumes as permanent hard drives for these containers. We will have one volume per service.</li></ol><h2 id=setting-it-up>Setting it up</h2><p>I have created a basic setup of services as described above. To follow along, take a clone of the repo with the following commands.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
 </span><span class=lnt>7
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git clone https://github.com/boyyan713/docker-as-dev-environment.git
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git clone https://github.com/boyyan713/docker-as-dev-environment.git
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=nb>cd</span> docker-as-dev-environment/
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>git checkout tags/basic-setup
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>git checkout -b tryingout
-</span></span></code></pre></td></tr></table></div></div><p>Now you should have the following project structure to start with:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><p>Now you should have the following project structure to start with:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -140,8 +50,7 @@ https://blog.atulr.com/docker-local-environment/
 </span><span class=lnt>21
 </span><span class=lnt>22
 </span><span class=lnt>23
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>(base) yanboyang713@boyang:~/Documents/docker-as-dev-environment$ tree .
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>(base) yanboyang713@boyang:~/Documents/docker-as-dev-environment$ tree .
 </span></span></span><span class=line><span class=cl><span class=go>.
 </span></span></span><span class=line><span class=cl><span class=go>├── go1
 </span></span></span><span class=line><span class=cl><span class=go>│   ├── main.go
@@ -164,24 +73,17 @@ https://blog.atulr.com/docker-local-environment/
 </span></span></span><span class=line><span class=cl><span class=go>        └── __main__.py
 </span></span></span><span class=line><span class=cl><span class=go></span><span class=err>
 </span></span></span><span class=line><span class=cl><span class=err></span><span class=go>5 directories, 14 files
-</span></span></span></code></pre></td></tr></table></div></div><p>You could browse through each project inside and read the README to understand how to run those projects induvidually.</p><h3 id=enter-docker>Enter docker</h3><p>Make sure you have docker running by following the instructions here <a href=https://www.docker.com/get-started target=_blank rel="noopener noreferrer">
-https://www.docker.com/get-started
-</a>
-.</p><p>First step is to create a docker file for our service njs1. Create a Dockerfile: blog-docker-dev-environment-example/njs1/Dockerfile</p><p>njs1/Dockerfile</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></span></code></pre></td></tr></table></div></div><p>You could browse through each project inside and read the README to understand how to run those projects induvidually.</p><h3 id=enter-docker>Enter docker</h3><p>Make sure you have docker running by following the instructions here <a href=https://www.docker.com/get-started target=_blank rel="noopener noreferrer">https://www.docker.com/get-started</a>
+.</p><p>First step is to create a docker file for our service njs1. Create a Dockerfile: blog-docker-dev-environment-example/njs1/Dockerfile</p><p>njs1/Dockerfile</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>FROM node:6.17.0
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>FROM node:6.17.0
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>WORKDIR /root
 </span></span><span class=line><span class=cl>ADD . /root
 </span></span></code></pre></td></tr></table></div></div><p>Create the file at blog-docker-dev-environment-example/docker-compose.yml .
-Now let jump to docker-compose.</p><p>Lets add our first service (njs1) to it.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+Now let jump to docker-compose.</p><p>Lets add our first service (njs1) to it.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -192,8 +94,7 @@ Now let jump to docker-compose.</p><p>Lets add our first service (njs1) to it.</
 </span><span class=lnt> 9
 </span><span class=lnt>10
 </span><span class=lnt>11
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3&#39;</span><span class=w>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3&#39;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>services</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>njs1</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>build</span><span class=p>:</span><span class=w> </span><span class=l>./njs1</span><span class=w>
@@ -204,31 +105,19 @@ Now let jump to docker-compose.</p><p>Lets add our first service (njs1) to it.</
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>ports</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=s1>&#39;7000:7000&#39;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>working_dir</span><span class=p>:</span><span class=w> </span><span class=l>/root/njs1</span><span class=w>
-</span></span></span></code></pre></td></tr></table></div></div><p>The above docker compose file has only one service (njs1). We will add more services incrementally. Before that lets run it and see what we get.</p><p>In the folder which contains our docker-compose.yml run:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker-compose up
-</span></span></code></pre></td></tr></table></div></div><p>if all goes well you should see it building our app container and in the very end</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>NJS1 app listening on port 7000!
-</span></span></code></pre></td></tr></table></div></div><p>Open it up on the browser: http://localhost:7000 to test it out.</p><p>docker-compose service in detail:</p><ul>
-<li>build: : Path to the dockerfile. Note: you can either specify the folder which contains the Dockerfile or the complete path to Dockerfile itself. Both works.</li><li>command: : Command to run when docker container is started.</li><li>environment: : All the environment variables you need to set.</li><li>ports:: This specifies the mapping of the port inside the container to that of the host machine. They need not be same.</li><li>working_dir: : This is the path inside the container where you want to the run the command you specified above.</li></ul><h3 id=all-this-is-good-and-fine-but-how-can-i-use-it-for-efficient-development>All this is good and fine but how can I use it for efficient development?</h3><p>To make an efficient development environment we need to be able to edit the source code (which with current setup is not possible without re building container again and again). To achieve this we will make use of volumes.</p><p>Make the following changes. First lets tell our njs1/Dockerfile to not copy the project files to the container.</p><p>njs1/Dockerfile</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></span></code></pre></td></tr></table></div></div><p>The above docker compose file has only one service (njs1). We will add more services incrementally. Before that lets run it and see what we get.</p><p>In the folder which contains our docker-compose.yml run:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker-compose up
+</span></span></code></pre></td></tr></table></div></div><p>if all goes well you should see it building our app container and in the very end</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>NJS1 app listening on port 7000!
+</span></span></code></pre></td></tr></table></div></div><p>Open it up on the browser: http://localhost:7000 to test it out.</p><p>docker-compose service in detail:</p><ul><li>build: : Path to the dockerfile. Note: you can either specify the folder which contains the Dockerfile or the complete path to Dockerfile itself. Both works.</li><li>command: : Command to run when docker container is started.</li><li>environment: : All the environment variables you need to set.</li><li>ports:: This specifies the mapping of the port inside the container to that of the host machine. They need not be same.</li><li>working_dir: : This is the path inside the container where you want to the run the command you specified above.</li></ul><h3 id=all-this-is-good-and-fine-but-how-can-i-use-it-for-efficient-development>All this is good and fine but how can I use it for efficient development?</h3><p>To make an efficient development environment we need to be able to edit the source code (which with current setup is not possible without re building container again and again). To achieve this we will make use of volumes.</p><p>Make the following changes. First lets tell our njs1/Dockerfile to not copy the project files to the container.</p><p>njs1/Dockerfile</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>FROM node:latest
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>FROM node:latest
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>## WORKDIR /root &lt;-- comment out
 </span></span><span class=line><span class=cl>## ADD . /root   &lt;-- these two lines
-</span></span></code></pre></td></tr></table></div></div><p>then tell docker-compose to mount our project directory from our local machine as a directory inside the container.</p><p>docker-compose.yml</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><p>then tell docker-compose to mount our project directory from our local machine as a directory inside the container.</p><p>docker-compose.yml</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -241,8 +130,7 @@ Now let jump to docker-compose.</p><p>Lets add our first service (njs1) to it.</
 </span><span class=lnt>11
 </span><span class=lnt>12
 </span><span class=lnt>13
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3&#39;</span><span class=w>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3&#39;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>services</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>njs1</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>build</span><span class=p>:</span><span class=w> </span><span class=l>./njs1</span><span class=w>
@@ -255,18 +143,12 @@ Now let jump to docker-compose.</p><p>Lets add our first service (njs1) to it.</
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>working_dir</span><span class=p>:</span><span class=w> </span><span class=l>/root/njs1</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>volumes</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>./njs1:/root/njs1:cached</span><span class=w> </span><span class=c># &lt;--- This will map ./njs1 to /root/njs1 inside the container.</span><span class=w>
-</span></span></span></code></pre></td></tr></table></div></div><p>In detail</p><ul>
-<li>volumes: - volumes gives us a way to map our local directories to a directory inside the container. Here we are saying map njs1 folder from our local machine to /root/njs1 inside the docker container. Here we are not copying the files into the container, instead we are mounting it as a shared volume. And thats the trick that makes it useful.</li></ul><p>To test it out. Lets add nodemon to our njs1 service.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></span></code></pre></td></tr></table></div></div><p>In detail</p><ul><li>volumes: - volumes gives us a way to map our local directories to a directory inside the container. Here we are saying map njs1 folder from our local machine to /root/njs1 inside the docker container. Here we are not copying the files into the container, instead we are mounting it as a shared volume. And thats the trick that makes it useful.</li></ul><p>To test it out. Lets add nodemon to our njs1 service.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>cd njs1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>cd njs1
 </span></span><span class=line><span class=cl>npm install --save-dev nodemon
 </span></span></code></pre></td></tr></table></div></div><p>Now make the following change in
-njs1/package.json</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+njs1/package.json</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -278,8 +160,7 @@ njs1/package.json</p><div class=highlight><div class=chroma>
 </span><span class=lnt>10
 </span><span class=lnt>11
 </span><span class=lnt>12
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>...
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>...
 </span></span><span class=line><span class=cl>...
 </span></span><span class=line><span class=cl>...
 </span></span><span class=line><span class=cl>  &#34;description&#34;: &#34;A sample nodejs server&#34;,
@@ -291,9 +172,7 @@ njs1/package.json</p><div class=highlight><div class=chroma>
 </span></span><span class=line><span class=cl>...
 </span></span><span class=line><span class=cl>...
 </span></span><span class=line><span class=cl>...
-</span></span></code></pre></td></tr></table></div></div><p>Time to test it out! Go to the root folder and run</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><p>Time to test it out! Go to the root folder and run</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -323,8 +202,7 @@ njs1/package.json</p><div class=highlight><div class=chroma>
 </span><span class=lnt>28
 </span><span class=lnt>29
 </span><span class=lnt>30
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>(base) yanboyang713@boyang:~/Documents/docker-as-dev-environment$ docker-compose up --build
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>(base) yanboyang713@boyang:~/Documents/docker-as-dev-environment$ docker-compose up --build
 </span></span></span><span class=line><span class=cl><span class=go>Building njs1
 </span></span></span><span class=line><span class=cl><span class=go>Step 1/1 : FROM node:latest
 </span></span></span><span class=line><span class=cl><span class=go> ---&gt; f47907840247
@@ -354,9 +232,7 @@ njs1/package.json</p><div class=highlight><div class=chroma>
 </span></span></span><span class=line><span class=cl><span class=go>njs1_1  | [nodemon] watching extensions: js,mjs,json
 </span></span></span><span class=line><span class=cl><span class=go>njs1_1  | [nodemon] starting `node index.js`
 </span></span></span><span class=line><span class=cl><span class=go>njs1_1  | NJS1 app listening on port 7000!
-</span></span></span></code></pre></td></tr></table></div></div><p>The &ndash;build tells docker-compose to rebuild the images.</p><h3 id=try-editing-njs1-source-files->Try editing njs1 source files! 🎉</h3><p>Try making some changes in the njs1/index.js file and you should see nodemon auto reloading on file change.</p><h3 id=finishing-things-up->Finishing things up! 🏁</h3><p>Once you add other services to the docker-compose file. It should look something like this:</p><p>docker-compose.yml</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></span></code></pre></td></tr></table></div></div><p>The &ndash;build tells docker-compose to rebuild the images.</p><h3 id=try-editing-njs1-source-files->Try editing njs1 source files! 🎉</h3><p>Try making some changes in the njs1/index.js file and you should see nodemon auto reloading on file change.</p><h3 id=finishing-things-up->Finishing things up! 🏁</h3><p>Once you add other services to the docker-compose file. It should look something like this:</p><p>docker-compose.yml</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -405,8 +281,7 @@ njs1/package.json</p><div class=highlight><div class=chroma>
 </span><span class=lnt>47
 </span><span class=lnt>48
 </span><span class=lnt>49
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3&#39;</span><span class=w>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3&#39;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>services</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>njs1</span><span class=p>:</span><span class=w>
@@ -455,71 +330,22 @@ njs1/package.json</p><div class=highlight><div class=chroma>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>working_dir</span><span class=p>:</span><span class=w> </span><span class=l>/root/go1</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>volumes</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>./go1:/root/go1:cached</span><span class=w> </span><span class=c># &lt;--- This will map ./py1 to /root/py1 inside the container.</span><span class=w>
-</span></span></span></code></pre></td></tr></table></div></div><h3 id=few-changes>Few Changes</h3><ul>
-<li>image: instead of build : In docker-compose we can specify the docker image from docker-hub directly instead of a dockerfile using the image: property. Hence for simple setups we dont need to write our own Dockerfile.</li></ul><p>There are many more configuration options which you can use in your docker-compose.yml file. To see a complete reference of those, you can visit this link: <a href=https://docs.docker.com/compose/compose-file/ target=_blank rel="noopener noreferrer">
-https://docs.docker.com/compose/compose-file/
-</a>
-</p><h2 id=commands-cheatsheet>Commands Cheatsheet</h2><p>Now that you have setup your services to run via docker-compose for local development. There are few commands that can help.</p><h3 id=start-all-services>Start all services</h3><p>This will start all services in the docker-compose file and detach from the terminal. So your services can run in background.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker-compose start
-</span></span></code></pre></td></tr></table></div></div><h3 id=stop-all-services>Stop all services</h3><p>Corresponding stop command</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker-compose stop
-</span></span></code></pre></td></tr></table></div></div><h3 id=launch-a-specific-service>Launch a specific service</h3><p>This will only launch njs1 from the list of services in the docker-compose.yml</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker-compose up njs1
-</span></span></code></pre></td></tr></table></div></div><p>You can use similar commands to stop, start induvidual services as well.</p><h3 id=restart-a-single-service>Restart a single service</h3><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker-compose restart njs1
-</span></span></code></pre></td></tr></table></div></div><h3 id=logs-from-specific-service>logs from specific service</h3><p>This will show logs of only njs1 and also watch for more logs</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker-compose logs -f njs1
-</span></span></code></pre></td></tr></table></div></div><h3 id=ssh-into-a-particular-service-container>ssh into a particular service container</h3><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker-compose <span class=nb>exec</span> njs1 bash
-</span></span></code></pre></td></tr></table></div></div><h2 id=some-tips-for-smoother-workflow>Some Tips for smoother workflow</h2><h3 id=containers--services-running-too-slow>Containers / services running too slow?</h3><p>You might notice that your services are running/launching at extremely slow as compared to when you launch them without docker-compose. This might be because you have allocated less CPU/RAM to docker service. The default values are very low and that causes issues when launching multiple services.</p><p>Go to : dockerIcon -> preferences -> Advanced</p><p>Change the slider to give CPU > 3 cores and RAM > 6GB</p><h3 id=low-on-space--messed-up-and-want-to-restart-everything-from-scratch->Low on space / messed up and want to restart everything from scratch ?</h3><h3 id=removing-all-images-and-then-refreshing-the-entire-thing>Removing all images and then refreshing the entire thing.</h3><p>To remove all docker containers:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker rm <span class=k>$(</span>docker ps -a -q<span class=k>)</span> -f
-</span></span></code></pre></td></tr></table></div></div><p>To remove all docker images:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker rmi <span class=k>$(</span>docker images<span class=k>)</span> -f
-</span></span></code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer>
-<div class=post-info>
-<div class=post-info-line>
-<div class=post-info-mod>
-<span>Updated on 2022-03-09</span>
-</div><div class=post-info-license></div></div><div class=post-info-line>
-<div class=post-info-md><span>
-<a class=link-to-markdown href=https://yanboyang.com/dockeraslocaldevelopmentenvironment/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
-</span></div><div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ data-title="Docker as Local Development Environment" data-hashtags=Docker><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ data-hashtag=Docker><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ data-title="Docker as Local Development Environment" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ data-title="Docker as Local Development Environment"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ data-title="Docker as Local Development Environment"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ data-title="Docker as Local Development Environment" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ data-title="Docker as Local Development Environment" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ data-title="Docker as Local Development Environment"><i class="fab fa-evernote fa-fw"></i></a></span>
-</div></div></div><div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/docker/>Docker</a></section><section>
-<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span>
-</section></div><div class=post-nav><a href=https://yanboyang.com/essentialmathematics/ class=prev rel=prev title="Essential Mathematics"><i class="fas fa-angle-left fa-fw"></i>Essential Mathematics</a>
-<a href=https://yanboyang.com/dns/ class=next rel=next title=dns>dns<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>
-Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
-</noscript></div></article></div></main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.3">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
-<i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title="View Comments">
-<i class="fas fa-comment fa-fw"></i>
-</a>
-</div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>
+</span></span></span></code></pre></td></tr></table></div></div><h3 id=few-changes>Few Changes</h3><ul><li>image: instead of build : In docker-compose we can specify the docker image from docker-hub directly instead of a dockerfile using the image: property. Hence for simple setups we dont need to write our own Dockerfile.</li></ul><p>There are many more configuration options which you can use in your docker-compose.yml file. To see a complete reference of those, you can visit this link: <a href=https://docs.docker.com/compose/compose-file/ target=_blank rel="noopener noreferrer">https://docs.docker.com/compose/compose-file/</a></p><h2 id=commands-cheatsheet>Commands Cheatsheet</h2><p>Now that you have setup your services to run via docker-compose for local development. There are few commands that can help.</p><h3 id=start-all-services>Start all services</h3><p>This will start all services in the docker-compose file and detach from the terminal. So your services can run in background.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker-compose start
+</span></span></code></pre></td></tr></table></div></div><h3 id=stop-all-services>Stop all services</h3><p>Corresponding stop command</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker-compose stop
+</span></span></code></pre></td></tr></table></div></div><h3 id=launch-a-specific-service>Launch a specific service</h3><p>This will only launch njs1 from the list of services in the docker-compose.yml</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker-compose up njs1
+</span></span></code></pre></td></tr></table></div></div><p>You can use similar commands to stop, start induvidual services as well.</p><h3 id=restart-a-single-service>Restart a single service</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker-compose restart njs1
+</span></span></code></pre></td></tr></table></div></div><h3 id=logs-from-specific-service>logs from specific service</h3><p>This will show logs of only njs1 and also watch for more logs</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker-compose logs -f njs1
+</span></span></code></pre></td></tr></table></div></div><h3 id=ssh-into-a-particular-service-container>ssh into a particular service container</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker-compose <span class=nb>exec</span> njs1 bash
+</span></span></code></pre></td></tr></table></div></div><h2 id=some-tips-for-smoother-workflow>Some Tips for smoother workflow</h2><h3 id=containers--services-running-too-slow>Containers / services running too slow?</h3><p>You might notice that your services are running/launching at extremely slow as compared to when you launch them without docker-compose. This might be because you have allocated less CPU/RAM to docker service. The default values are very low and that causes issues when launching multiple services.</p><p>Go to : dockerIcon -> preferences -> Advanced</p><p>Change the slider to give CPU > 3 cores and RAM > 6GB</p><h3 id=low-on-space--messed-up-and-want-to-restart-everything-from-scratch->Low on space / messed up and want to restart everything from scratch ?</h3><h3 id=removing-all-images-and-then-refreshing-the-entire-thing>Removing all images and then refreshing the entire thing.</h3><p>To remove all docker containers:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker rm <span class=k>$(</span>docker ps -a -q<span class=k>)</span> -f
+</span></span></code></pre></td></tr></table></div></div><p>To remove all docker images:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker rmi <span class=k>$(</span>docker images<span class=k>)</span> -f
+</span></span></code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2022-03-17</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://yanboyang.com/dockeraslocaldevelopmentenvironment/index.md target=_blank rel="noopener noreferrer">Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ data-title="Docker as Local Development Environment" data-hashtags=Docker><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ data-hashtag=Docker><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ data-title="Docker as Local Development Environment" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ data-title="Docker as Local Development Environment"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ data-title="Docker as Local Development Environment"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ data-title="Docker as Local Development Environment" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ data-title="Docker as Local Development Environment" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/dockeraslocaldevelopmentenvironment/ data-title="Docker as Local Development Environment"><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/docker/>Docker</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span></section></div><div class=post-nav><a href=https://yanboyang.com/essentialmathematics/ class=prev rel=prev title="Essential Mathematics"><i class="fas fa-angle-left fa-fw"></i>Essential Mathematics</a>
+<a href=https://yanboyang.com/dns/ class=next rel=next title=dns>dns<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>

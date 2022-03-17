@@ -1,158 +1,54 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="noodp">
-<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Home Manager using Nix - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Home Manager using Nix">
-<meta property="og:description" content="Standalone installation   Add the appropriate Home Manager channel. If you are following Nixpkgs master or an unstable channel you can run.
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Home Manager using Nix - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Home Manager using Nix"><meta property="og:description" content="Standalone installation   Add the appropriate Home Manager channel. If you are following Nixpkgs master or an unstable channel you can run.
 1 2  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager nix-channel --update   1 2  cat ~/.nix-channels nix-channel --list   Check your echo $NIX_PATH, If your have NOT
 you may have to add
-1 2 3 4 5 6  export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH /nix/var/nix/profiles/per-user/yanboyang713/channels export NIX_PATH=nixpkgs=/nix/var/nix/profiles/per-user/yanboyang713/channels/nixpkgs:/nix/var/nix/profiles/per-user/yanboyang713/channels:~/.nix-defexpr/channels   to your shell">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://yanboyang.com/nixhomemanager/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-12-26T17:30:00+08:00">
-<meta property="article:modified_time" content="2022-03-09T07:16:10+00:00">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://yanboyang.com/logo.png">
-<meta name=twitter:title content="Home Manager using Nix">
-<meta name=twitter:description content="Standalone installation   Add the appropriate Home Manager channel. If you are following Nixpkgs master or an unstable channel you can run.
+1 2 3 4 5 6  export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH /nix/var/nix/profiles/per-user/yanboyang713/channels export NIX_PATH=nixpkgs=/nix/var/nix/profiles/per-user/yanboyang713/channels/nixpkgs:/nix/var/nix/profiles/per-user/yanboyang713/channels:~/.nix-defexpr/channels   to your shell"><meta property="og:type" content="article"><meta property="og:url" content="https://yanboyang.com/nixhomemanager/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-12-26T17:30:00+08:00"><meta property="article:modified_time" content="2022-03-17T05:53:50+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://yanboyang.com/logo.png"><meta name=twitter:title content="Home Manager using Nix"><meta name=twitter:description content="Standalone installation   Add the appropriate Home Manager channel. If you are following Nixpkgs master or an unstable channel you can run.
 1 2  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager nix-channel --update   1 2  cat ~/.nix-channels nix-channel --list   Check your echo $NIX_PATH, If your have NOT
 you may have to add
-1 2 3 4 5 6  export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH /nix/var/nix/profiles/per-user/yanboyang713/channels export NIX_PATH=nixpkgs=/nix/var/nix/profiles/per-user/yanboyang713/channels/nixpkgs:/nix/var/nix/profiles/per-user/yanboyang713/channels:~/.nix-defexpr/channels   to your shell">
-<meta name=application-name content="LoveIt">
-<meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/nixhomemanager/><link rel=prev href=https://yanboyang.com/nixinstallation/><link rel=next href=https://yanboyang.com/nixflakes/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Home Manager using Nix","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/nixhomemanager\/"},"genre":"posts","keywords":"home, manager, nix","wordcount":1827,"url":"https:\/\/yanboyang.com\/nixhomemanager\/","datePublished":"2021-12-26T17:30:00+08:00","dateModified":"2022-03-09T07:16:10+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
-<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div><div class=menu>
-<div class=menu-inner><a class=menu-item href=https://yanboyang.com/> Home </a><a class=menu-item href=https://yanboyang.com/posts/> Posts </a><a class=menu-item href=https://yanboyang.com/tags/> Tags </a><a class=menu-item href=https://yanboyang.com/categories/> Categories </a><a class=menu-item href=https://yanboyang.com/about/> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+1 2 3 4 5 6  export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH /nix/var/nix/profiles/per-user/yanboyang713/channels export NIX_PATH=nixpkgs=/nix/var/nix/profiles/per-user/yanboyang713/channels/nixpkgs:/nix/var/nix/profiles/per-user/yanboyang713/channels:~/.nix-defexpr/channels   to your shell"><meta name=application-name content="LoveIt"><meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/nixhomemanager/><link rel=prev href=https://yanboyang.com/nixinstallation/><link rel=next href=https://yanboyang.com/nixflakes/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Home Manager using Nix","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/nixhomemanager\/"},"genre":"posts","keywords":"home, manager, nix","wordcount":1827,"url":"https:\/\/yanboyang.com\/nixhomemanager\/","datePublished":"2021-12-26T17:30:00+08:00","dateModified":"2022-03-17T05:53:50+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-wrapper><div class=header-title><a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a></div><div class=menu><div class=menu-inner><a class=menu-item href=https://yanboyang.com/>Home </a><a class=menu-item href=https://yanboyang.com/posts/>Posts </a><a class=menu-item href=https://yanboyang.com/tags/>Tags </a><a class=menu-item href=https://yanboyang.com/categories/>Categories </a><a class=menu-item href=https://yanboyang.com/about/>About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-desktop>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i>
-</a>
-</div></div></div></header><header class=mobile id=header-mobile>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<div class=header-container>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div><div class=menu-toggle id=menu-toggle-mobile>
-<span></span><span></span><span></span>
-</div></div><div class=menu id=menu-mobile><div class=search-wrapper>
-<div class="search mobile" id=search-mobile>
-<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-mobile>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
-Cancel
-</a>
-</div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i>
-</a></div></div></header><div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div></div><main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Home Manager using Nix</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
-Boyang Yan
-</a>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-container><div class=header-wrapper><div class=header-title><a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Home Manager using Nix</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
+Boyang Yan</a>
 </span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/nix/><i class="far fa-folder fa-fw"></i>Nix</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-26>2021-12-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1827 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true>
-<div class="details-summary toc-title">
-<span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
-<ul>
-<li><a href=#standalone-installation>Standalone installation</a></li><li><a href=#getting-started-home-manager>Getting started Home Manager</a></li><li><a href=#git-it>Git-it</a></li><li><a href=#let-s-add-our-first-package>Let’s add our first package</a></li><li><a href=#what-is-this-home-manager-switch-business>What is this home-manager switch business?</a></li><li><a href=#porting-over-an-existing-dotfile>Porting over an existing dotfile</a></li><li><a href=#using-home-manager-modules>Using Home Manager modules</a>
-<ul>
-<li><a href=#porting-your-git-config>Porting your git config</a></li></ul></li><li><a href=#structuring-your-home-manager-config>Structuring your Home Manager config</a></li><li><a href=#reference-list>Reference List</a></li></ul></nav></div></div><div class=content id=content><h2 id=standalone-installation>Standalone installation</h2><ol>
-<li>
-<p>Add the appropriate Home Manager channel. If you are following Nixpkgs master or an unstable channel you can run.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+<i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#standalone-installation>Standalone installation</a></li><li><a href=#getting-started-home-manager>Getting started Home Manager</a></li><li><a href=#git-it>Git-it</a></li><li><a href=#let-s-add-our-first-package>Let’s add our first package</a></li><li><a href=#what-is-this-home-manager-switch-business>What is this home-manager switch business?</a></li><li><a href=#porting-over-an-existing-dotfile>Porting over an existing dotfile</a></li><li><a href=#using-home-manager-modules>Using Home Manager modules</a><ul><li><a href=#porting-your-git-config>Porting your git config</a></li></ul></li><li><a href=#structuring-your-home-manager-config>Structuring your Home Manager config</a></li><li><a href=#reference-list>Reference List</a></li></ul></nav></div></div><div class=content id=content><h2 id=standalone-installation>Standalone installation</h2><ol><li><p>Add the appropriate Home Manager channel. If you are following Nixpkgs master or an unstable channel you can run.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>   nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>   nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 </span></span><span class=line><span class=cl>    nix-channel --update
-</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>   cat ~/.nix-channels
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>   cat ~/.nix-channels
 </span></span><span class=line><span class=cl>   nix-channel --list
-</span></span></code></pre></td></tr></table></div></div><p>Check your <strong>echo $NIX_PATH</strong>, If your have NOT</p><p>you may have to add</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>Check your <strong>echo $NIX_PATH</strong>, If your have NOT</p><p>you may have to add</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>   <span class=nb>export</span> <span class=nv>NIX_PATH</span><span class=o>=</span><span class=nv>$HOME</span>/.nix-defexpr/channels<span class=si>${</span><span class=nv>NIX_PATH</span><span class=p>:+:</span><span class=si>}</span><span class=nv>$NIX_PATH</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>   <span class=nb>export</span> <span class=nv>NIX_PATH</span><span class=o>=</span><span class=nv>$HOME</span>/.nix-defexpr/channels<span class=si>${</span><span class=nv>NIX_PATH</span><span class=p>:+:</span><span class=si>}</span><span class=nv>$NIX_PATH</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>   /nix/var/nix/profiles/per-user/yanboyang713/channels
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>   <span class=nb>export</span> <span class=nv>NIX_PATH</span><span class=o>=</span><span class=nv>nixpkgs</span><span class=o>=</span>/nix/var/nix/profiles/per-user/yanboyang713/channels/nixpkgs:/nix/var/nix/profiles/per-user/yanboyang713/channels:~/.nix-defexpr/channels
-</span></span></code></pre></td></tr></table></div></div><p>to your shell</p></li><li>
-<p>Run the Home Manager installation command and create the first Home Manager generation:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>   nix-shell <span class=s1>&#39;&lt;home-manager&gt;&#39;</span> -A install
-</span></span></code></pre></td></tr></table></div></div></li></ol><p>Once finished, Home Manager should be active and available in your user environment.</p><ol>
-<li>
-<p>If you do not plan on having Home Manager manage your shell configuration then you must source the</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>   $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+</span></span></code></pre></td></tr></table></div></div><p>to your shell</p></li><li><p>Run the Home Manager installation command and create the first Home Manager generation:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>   nix-shell <span class=s1>&#39;&lt;home-manager&gt;&#39;</span> -A install
+</span></span></code></pre></td></tr></table></div></div></li></ol><p>Once finished, Home Manager should be active and available in your user environment.</p><ol><li><p>If you do not plan on having Home Manager manage your shell configuration then you must source the</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>   $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 </span></span></code></pre></td></tr></table></div></div></li></ol><p>file in your shell configuration.
-This file can be sourced directly by POSIX.2-like shells such as Bash or Z shell</p><p>For example, if you use Bash then add</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>. &#34;$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh&#34;
-</span></span></code></pre></td></tr></table></div></div><p>to your ~/.profile file.</p><p>You can test that everything worked by typing</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>home-manager
-</span></span></code></pre></td></tr></table></div></div><p>Congratulations, you are ready to go!</p><h2 id=getting-started-home-manager>Getting started Home Manager</h2><p>As you have seen in the install prompt, by default Home Manager initializes a new configuration in</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nv>$HOME</span>/.config/nixpkgs/home.nix
-</span></span></code></pre></td></tr></table></div></div><p>that should look roughly like this</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+This file can be sourced directly by POSIX.2-like shells such as Bash or Z shell</p><p>For example, if you use Bash then add</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>. &#34;$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh&#34;
+</span></span></code></pre></td></tr></table></div></div><p>to your ~/.profile file.</p><p>You can test that everything worked by typing</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>home-manager
+</span></span></code></pre></td></tr></table></div></div><p>Congratulations, you are ready to go!</p><h2 id=getting-started-home-manager>Getting started Home Manager</h2><p>As you have seen in the install prompt, by default Home Manager initializes a new configuration in</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nv>$HOME</span>/.config/nixpkgs/home.nix
+</span></span></code></pre></td></tr></table></div></div><p>that should look roughly like this</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -173,8 +69,7 @@ This file can be sourced directly by POSIX.2-like shells such as Bash or Z shell
 </span><span class=lnt>19
 </span><span class=lnt>20
 </span><span class=lnt>21
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{ config, pkgs, ... }:
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{ config, pkgs, ... }:
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>{
 </span></span><span class=line><span class=cl>  # Home Manager needs a bit of information about you and the
@@ -195,21 +90,13 @@ This file can be sourced directly by POSIX.2-like shells such as Bash or Z shell
 </span></span><span class=line><span class=cl>  # Let Home Manager install and manage itself.
 </span></span><span class=line><span class=cl>  programs.home-manager.enable = true;
 </span></span><span class=line><span class=cl>}
-</span></span></code></pre></td></tr></table></div></div><p>Your use of Home Manager is centered around the configuration file.</p><p>This configuration file can be built and activated.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>home-manager build
-</span></span></code></pre></td></tr></table></div></div><p>Once a configuration is successfully built, it can be activated. The activation performs the steps necessary to make the files, programs, and services available in your user environment.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>Your use of Home Manager is centered around the configuration file.</p><p>This configuration file can be built and activated.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>home-manager build
+</span></span></code></pre></td></tr></table></div></div><p>Once a configuration is successfully built, it can be activated. The activation performs the steps necessary to make the files, programs, and services available in your user environment.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># The command performs a combined build and activation</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># The command performs a combined build and activation</span>
 </span></span><span class=line><span class=cl>home-manager switch
-</span></span></code></pre></td></tr></table></div></div><h2 id=git-it>Git-it</h2><p>The first step is to move this configuration to a git repository, I prefer to have it in a different location and use symlinks to expose it to Home Manager.</p><p>Run:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><h2 id=git-it>Git-it</h2><p>The first step is to move this configuration to a git repository, I prefer to have it in a different location and use symlinks to expose it to Home Manager.</p><p>Run:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -217,8 +104,7 @@ This file can be sourced directly by POSIX.2-like shells such as Bash or Z shell
 </span><span class=lnt>6
 </span><span class=lnt>7
 </span><span class=lnt>8
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>mv ~/.config/nixpkgs ~/nixfiles
 </span></span><span class=line><span class=cl><span class=nb>cd</span> ~/nixfiles
 </span></span><span class=line><span class=cl>git init
@@ -226,14 +112,9 @@ This file can be sourced directly by POSIX.2-like shells such as Bash or Z shell
 </span></span><span class=line><span class=cl>git commit -m <span class=s1>&#39;getting started with Home Manager&#39;</span>
 </span></span><span class=line><span class=cl><span class=nb>cd</span> ~/.config
 </span></span><span class=line><span class=cl>ln -s ~/nixfiles nixpkgs
-</span></span></code></pre></td></tr></table></div></div><p>Then test that you can apply the configuration.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>home-manager switch
-</span></span></code></pre></td></tr></table></div></div><p>We have not added anything so this should be a no-op.</p><p>Home Manager will let you know that it’s &ldquo;reusing lastest profile generation&rdquo;.</p><h2 id=let-s-add-our-first-package>Let’s add our first package</h2><p>First let’s see how we can use Home Manager to install packages for our user. In this example we’ll add tmux. Edit ~/nixfiles/home.nix as follows:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><p>Then test that you can apply the configuration.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>home-manager switch
+</span></span></code></pre></td></tr></table></div></div><p>We have not added anything so this should be a no-op.</p><p>Home Manager will let you know that it’s &ldquo;reusing lastest profile generation&rdquo;.</p><h2 id=let-s-add-our-first-package>Let’s add our first package</h2><p>First let’s see how we can use Home Manager to install packages for our user. In this example we’ll add tmux. Edit ~/nixfiles/home.nix as follows:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -259,8 +140,7 @@ This file can be sourced directly by POSIX.2-like shells such as Bash or Z shell
 </span><span class=lnt>24
 </span><span class=lnt>25
 </span><span class=lnt>26
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{ config, pkgs, ... }:
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{ config, pkgs, ... }:
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>{
 </span></span><span class=line><span class=cl>  # Home Manager needs a bit of information about you and the
@@ -286,67 +166,42 @@ This file can be sourced directly by POSIX.2-like shells such as Bash or Z shell
 </span></span><span class=line><span class=cl>  # Let Home Manager install and manage itself.
 </span></span><span class=line><span class=cl>  programs.home-manager.enable = true;
 </span></span><span class=line><span class=cl>}
-</span></span></code></pre></td></tr></table></div></div><p>Then run</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>home-manager switch
-</span></span></code></pre></td></tr></table></div></div><p>And now try it out</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>htop
-</span></span></code></pre></td></tr></table></div></div><p>A great place to search for packages is <a href=https://search.nixos.org/packages target=_blank rel="noopener noreferrer">
-https://search.nixos.org/packages
-</a>
-, make sure you pick the right “channel”, if you are following this guide it will be unstable.</p><h2 id=what-is-this-home-manager-switch-business>What is this home-manager switch business?</h2><p><strong>home-manager switch</strong> is how you &ldquo;<strong>activate</strong>&rdquo; your configuration. Home Manager will evaluate your configuration, build the result and <strong>atomically</strong> switch your old configuration with the new one.</p><p>This also means that it’s possible to see all old configurations</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>Then run</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>home-manager switch
+</span></span></code></pre></td></tr></table></div></div><p>And now try it out</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>htop
+</span></span></code></pre></td></tr></table></div></div><p>A great place to search for packages is <a href=https://search.nixos.org/packages target=_blank rel="noopener noreferrer">https://search.nixos.org/packages</a>
+, make sure you pick the right “channel”, if you are following this guide it will be unstable.</p><h2 id=what-is-this-home-manager-switch-business>What is this home-manager switch business?</h2><p><strong>home-manager switch</strong> is how you &ldquo;<strong>activate</strong>&rdquo; your configuration. Home Manager will evaluate your configuration, build the result and <strong>atomically</strong> switch your old configuration with the new one.</p><p>This also means that it’s possible to see all old configurations</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>[yanboyang713@manjaro] ➜ nixpkgs home-manager generations
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>[yanboyang713@manjaro] ➜ nixpkgs home-manager generations
 </span></span></span><span class=line><span class=cl><span class=go>2021-12-26 19:53 : id 2 -&gt; /nix/store/hgma8yixml6ngwizw31sxdj9n08kmkfg-home-manager-generation
 </span></span></span><span class=line><span class=cl><span class=go>2021-12-26 17:55 : id 1 -&gt; /nix/store/1xkax9m57lbyrcvhybpksqsga28injsf-home-manager-generation
-</span></span></span></code></pre></td></tr></table></div></div><p>And you can rollback to older versions as well.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></span></code></pre></td></tr></table></div></div><p>And you can rollback to older versions as well.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
 </span><span class=lnt>7
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl># copy the path from the command above and add /activate
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl># copy the path from the command above and add /activate
 </span></span><span class=line><span class=cl>/nix/store/1xkax9m57lbyrcvhybpksqsga28injsf-home-manager-generation/activate
 </span></span><span class=line><span class=cl>...
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl># this will create a new generation
 </span></span><span class=line><span class=cl>Creating profile generation 3
 </span></span><span class=line><span class=cl>...
-</span></span></code></pre></td></tr></table></div></div><p>You can then switch again to re-apply your changes to go back to the current version of home.nix.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>home-manager switch
-</span></span></code></pre></td></tr></table></div></div><h2 id=porting-over-an-existing-dotfile>Porting over an existing dotfile</h2><p>So far we saw how to use Home Manager to install packages for our user, but a perhaps more important use case is manage our user configuration.</p><p>First we’ll see how to take an existing configuration file and make it part of Home Manager.</p><p>The simplest way to do this is to use the <strong>home.file</strong> option.</p><p>Assume that you have a <strong>~/.vimrc</strong> with the following contents:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>You can then switch again to re-apply your changes to go back to the current version of home.nix.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>home-manager switch
+</span></span></code></pre></td></tr></table></div></div><h2 id=porting-over-an-existing-dotfile>Porting over an existing dotfile</h2><p>So far we saw how to use Home Manager to install packages for our user, but a perhaps more important use case is manage our user configuration.</p><p>First we’ll see how to take an existing configuration file and make it part of Home Manager.</p><p>The simplest way to do this is to use the <strong>home.file</strong> option.</p><p>Assume that you have a <strong>~/.vimrc</strong> with the following contents:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>call plug#begin()
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>call plug#begin()
 </span></span><span class=line><span class=cl>Plug &#39;LnL7/vim-nix&#39;
 </span></span><span class=line><span class=cl>call plug#end()
-</span></span></code></pre></td></tr></table></div></div><p>First let’s move it in our nixfiles repo</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mv ~/.vimrc ~/nixfiles/vimrc
-</span></span></code></pre></td></tr></table></div></div><p>You can then edit ~/nixfiles/home.nix as follows</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><p>First let’s move it in our nixfiles repo</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mv ~/.vimrc ~/nixfiles/vimrc
+</span></span></code></pre></td></tr></table></div></div><p>You can then edit ~/nixfiles/home.nix as follows</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -375,8 +230,7 @@ https://search.nixos.org/packages
 </span><span class=lnt>27
 </span><span class=lnt>28
 </span><span class=lnt>29
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{ config, pkgs, ... }:
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{ config, pkgs, ... }:
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>{
 </span></span><span class=line><span class=cl>  # Home Manager needs a bit of information about you and the
@@ -406,42 +260,27 @@ https://search.nixos.org/packages
 </span></span><span class=line><span class=cl>  programs.home-manager.enable = true;
 </span></span><span class=line><span class=cl>}
 </span></span></code></pre></td></tr></table></div></div><p>And run <strong>home-manager switch</strong> again.
-Now, let’s check what happened</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+Now, let’s check what happened</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>[yanboyang713@manjaro] ➜ nixpkgs ls -l ~/.vimrc
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>[yanboyang713@manjaro] ➜ nixpkgs ls -l ~/.vimrc
 </span></span></span><span class=line><span class=cl><span class=go>lrwxrwxrwx 1 yanboyang713 yanboyang713 69 Dec 27 13:49 /home/yanboyang713/.vimrc -&gt; /nix/store/mfjw8j9c04wp9zxj4g6xj83jcxlld045-home-manager-files/.vimrc
-</span></span></span></code></pre></td></tr></table></div></div><p>/.vimrc is now a symlink to a file in the “Nix store”, the place where all the nix things go. Without concering ourself with details, the thing to notice is that if you now change the contents of ~/nixfiles/vimrc and re-run home-manager switch Home Manager will detect the changes, create a new version of .vimrc in the Nix store and update the symlink.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></span></code></pre></td></tr></table></div></div><p>/.vimrc is now a symlink to a file in the “Nix store”, the place where all the nix things go. Without concering ourself with details, the thing to notice is that if you now change the contents of ~/nixfiles/vimrc and re-run home-manager switch Home Manager will detect the changes, create a new version of .vimrc in the Nix store and update the symlink.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>$</span> <span class=nb>echo</span> <span class=s2>&#34;hello nix&#34;</span> &gt; ~/nixfiles/vimrc
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>$</span> <span class=nb>echo</span> <span class=s2>&#34;hello nix&#34;</span> &gt; ~/nixfiles/vimrc
 </span></span><span class=line><span class=cl><span class=gp>$</span> home-manager switch
 </span></span><span class=line><span class=cl><span class=gp>$</span> ls -l ~/.vimrc
 </span></span><span class=line><span class=cl><span class=go>lrwxrwxrwx 1 ghedamat ghedamat 69 Apr  3 05:47 /home/ghedamat/.vimrc -&gt; /nix/store/dsq0da2y4p7w67imwnd95crv4k35d6qb-home-manager-files/.vimrc
 </span></span></span></code></pre></td></tr></table></div></div><p>It is true that managing configuration in this way will add a step every time you want to edit your vimrc. I believe that this tradeoff is worth it even if you were to decide to not use any other feature offered by Home Manager as you now have a reliable and consistent way to manage all your configuration files and packages.</p><h2 id=using-home-manager-modules>Using Home Manager modules</h2><p>Using the <strong>home.file</strong> configuration option is my preferred way to port existing configuration files. Once that’s done though Home Manager has much more to offer.</p><p>Home Manager comes with a large amount of pre-defined configuration <strong>modules</strong> for a variety of applications (<a href=https://github.com/nix-community/home-manager/tree/master/modules target=_blank rel="noopener noreferrer">
-full list on github
-</a>
-). These modules allow you to use a consistent syntax (the Nix language) to configure every application regardless of the output format that each program requires (ini, yaml, custom…).</p><p>By using modules you will get <strong>type safety guarantees</strong> about your configuration as it will be now written in Nix and the modules can specify types for each option you pass. This also means that <strong>you can use the Nix language to add logic</strong> (i.e conditionals and functions) as well as the ability to compose your configuration as you would with any other functional program written in Nix.</p><p>The downside is that you have to learn at least a small part of the Nix language (mostly how to write sets, which are similar to maps and hash in other languages).</p><p>Once you have identified a module you are interested in, all the options available are listed in the <a href=https://nix-community.github.io/home-manager/ target=_blank rel="noopener noreferrer">
-Home Manager Manual
-</a>
+full list on github</a>
+). These modules allow you to use a consistent syntax (the Nix language) to configure every application regardless of the output format that each program requires (ini, yaml, custom…).</p><p>By using modules you will get <strong>type safety guarantees</strong> about your configuration as it will be now written in Nix and the modules can specify types for each option you pass. This also means that <strong>you can use the Nix language to add logic</strong> (i.e conditionals and functions) as well as the ability to compose your configuration as you would with any other functional program written in Nix.</p><p>The downside is that you have to learn at least a small part of the Nix language (mostly how to write sets, which are similar to maps and hash in other languages).</p><p>Once you have identified a module you are interested in, all the options available are listed in the <a href=https://nix-community.github.io/home-manager/ target=_blank rel="noopener noreferrer">Home Manager Manual</a>
 .</p><h3 id=porting-your-git-config>Porting your git config</h3><p>Let’s see an example with porting over our <strong>~/.config/git/config</strong> to Home Manager.</p><p>[user]
-email = <a href=mailto:ghedamat@gmail.com rel>
-ghedamat@gmail.com
-</a>
+email = <a href=mailto:ghedamat@gmail.com rel>ghedamat@gmail.com</a>
 name = ghedamat
 [alias]
-st = &ldquo;status&rdquo;</p><p>Edit <strong>home.nix</strong> as follows (you can find the full list of options for <strong>programs.git</strong> <a href=https://nix-community.github.io/home-manager/options.html#opt-programs.git.enable target=_blank rel="noopener noreferrer">
-here
-</a>
-)</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+st = &ldquo;status&rdquo;</p><p>Edit <strong>home.nix</strong> as follows (you can find the full list of options for <strong>programs.git</strong> <a href=https://nix-community.github.io/home-manager/options.html#opt-programs.git.enable target=_blank rel="noopener noreferrer">here</a>
+)</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -480,8 +319,7 @@ here
 </span><span class=lnt>37
 </span><span class=lnt>38
 </span><span class=lnt>39
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{ config, pkgs, ... }:
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{ config, pkgs, ... }:
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>{
 </span></span><span class=line><span class=cl>  # Home Manager needs a bit of information about you and the
@@ -520,59 +358,22 @@ here
 </span></span><span class=line><span class=cl>  # Let Home Manager install and manage itself.
 </span></span><span class=line><span class=cl>  programs.home-manager.enable = true;
 </span></span><span class=line><span class=cl>}
-</span></span></code></pre></td></tr></table></div></div><p>Let’s try to apply this change</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>home-manager switch
-</span></span></code></pre></td></tr></table></div></div><p>We can verify that the file is now generated by Home Manager (notice the content is slightly different)</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>Let’s try to apply this change</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>home-manager switch
+</span></span></code></pre></td></tr></table></div></div><p>We can verify that the file is now generated by Home Manager (notice the content is slightly different)</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
 </span><span class=lnt>7
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>$</span> cat ~/.config/git/config
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>$</span> cat ~/.config/git/config
 </span></span><span class=line><span class=cl><span class=go>[alias]
 </span></span></span><span class=line><span class=cl><span class=go>        st = &#34;status&#34;
 </span></span></span><span class=line><span class=cl><span class=go></span><span class=err>
 </span></span></span><span class=line><span class=cl><span class=err></span><span class=go>[user]
 </span></span></span><span class=line><span class=cl><span class=go>        email = &#34;yanboyang713@gmail.com&#34;
 </span></span></span><span class=line><span class=cl><span class=go>        name = &#34;Boyang Yan&#34;
-</span></span></span></code></pre></td></tr></table></div></div><h2 id=structuring-your-home-manager-config>Structuring your Home Manager config</h2><p>The author of Home Manager recommends to start with a single home.nix file and I would definitely agree. As you learn more about the Nix language you’ll find about all the different ways to structure your code.</p><p>Later, you might want to learn about using imports to break down your configuration into multiple files. A more advance approach is to build your own Nix modules.</p><p>I might decide to cover these in a future post.</p><h2 id=reference-list>Reference List</h2><ol>
-<li><a href=https://github.com/nix-community/home-manager target=_blank rel="noopener noreferrer">
-https://github.com/nix-community/home-manager
-</a>
-</li><li><a href=https://nix-community.github.io/home-manager/index.html#sec-install-standalone target=_blank rel="noopener noreferrer">
-https://nix-community.github.io/home-manager/index.html#sec-install-standalone
-</a>
-</li><li><a href=https://ghedam.at/24353/tutorial-getting-started-with-home-manager-for-nix target=_blank rel="noopener noreferrer">
-https://ghedam.at/24353/tutorial-getting-started-with-home-manager-for-nix
-</a>
-</li></ol></div><div class=post-footer id=post-footer>
-<div class=post-info>
-<div class=post-info-line>
-<div class=post-info-mod>
-<span>Updated on 2022-03-09</span>
-</div><div class=post-info-license></div></div><div class=post-info-line>
-<div class=post-info-md><span>
-<a class=link-to-markdown href=https://yanboyang.com/nixhomemanager/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
-</span></div><div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/nixhomemanager/ data-title="Home Manager using Nix" data-hashtags=home,manager,nix><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/nixhomemanager/ data-hashtag=home><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/nixhomemanager/ data-title="Home Manager using Nix" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/nixhomemanager/ data-title="Home Manager using Nix"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/nixhomemanager/ data-title="Home Manager using Nix"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/nixhomemanager/ data-title="Home Manager using Nix" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/nixhomemanager/ data-title="Home Manager using Nix" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/nixhomemanager/ data-title="Home Manager using Nix"><i class="fab fa-evernote fa-fw"></i></a></span>
-</div></div></div><div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/home/>home</a>,&nbsp;<a href=https://yanboyang.com/tags/manager/>manager</a>,&nbsp;<a href=https://yanboyang.com/tags/nix/>nix</a></section><section>
-<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span>
-</section></div><div class=post-nav><a href=https://yanboyang.com/nixinstallation/ class=prev rel=prev title="Nix Installation"><i class="fas fa-angle-left fa-fw"></i>Nix Installation</a>
-<a href=https://yanboyang.com/nixflakes/ class=next rel=next title="Nix Flakes">Nix Flakes<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>
-Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
-</noscript></div></article></div></main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.3">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
-<i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title="View Comments">
-<i class="fas fa-comment fa-fw"></i>
-</a>
-</div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>
+</span></span></span></code></pre></td></tr></table></div></div><h2 id=structuring-your-home-manager-config>Structuring your Home Manager config</h2><p>The author of Home Manager recommends to start with a single home.nix file and I would definitely agree. As you learn more about the Nix language you’ll find about all the different ways to structure your code.</p><p>Later, you might want to learn about using imports to break down your configuration into multiple files. A more advance approach is to build your own Nix modules.</p><p>I might decide to cover these in a future post.</p><h2 id=reference-list>Reference List</h2><ol><li><a href=https://github.com/nix-community/home-manager target=_blank rel="noopener noreferrer">https://github.com/nix-community/home-manager</a></li><li><a href=https://nix-community.github.io/home-manager/index.html#sec-install-standalone target=_blank rel="noopener noreferrer">https://nix-community.github.io/home-manager/index.html#sec-install-standalone</a></li><li><a href=https://ghedam.at/24353/tutorial-getting-started-with-home-manager-for-nix target=_blank rel="noopener noreferrer">https://ghedam.at/24353/tutorial-getting-started-with-home-manager-for-nix</a></li></ol></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2022-03-17</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://yanboyang.com/nixhomemanager/index.md target=_blank rel="noopener noreferrer">Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/nixhomemanager/ data-title="Home Manager using Nix" data-hashtags=home,manager,nix><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/nixhomemanager/ data-hashtag=home><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/nixhomemanager/ data-title="Home Manager using Nix" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/nixhomemanager/ data-title="Home Manager using Nix"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/nixhomemanager/ data-title="Home Manager using Nix"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/nixhomemanager/ data-title="Home Manager using Nix" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/nixhomemanager/ data-title="Home Manager using Nix" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/nixhomemanager/ data-title="Home Manager using Nix"><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/home/>home</a>,&nbsp;<a href=https://yanboyang.com/tags/manager/>manager</a>,&nbsp;<a href=https://yanboyang.com/tags/nix/>nix</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span></section></div><div class=post-nav><a href=https://yanboyang.com/nixinstallation/ class=prev rel=prev title="Nix Installation"><i class="fas fa-angle-left fa-fw"></i>Nix Installation</a>
+<a href=https://yanboyang.com/nixflakes/ class=next rel=next title="Nix Flakes">Nix Flakes<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>

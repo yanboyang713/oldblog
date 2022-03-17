@@ -1,123 +1,22 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="noodp">
-<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Getting Started Dynamic Window Manager (DWM) - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Getting Started Dynamic Window Manager (DWM)">
-<meta property="og:description" content="Introduction dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
-Pre-reading  WM/Getting Started Xorg with display manager    Installing Before you install DWM, firstly, please Set-up your Display Server and Display Manager. I recommand you use X11 (Xorg) as your Display Server and Lightdm as your Display Server.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://yanboyang.com/dwm/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-11-30T17:50:00+08:00">
-<meta property="article:modified_time" content="2022-03-09T07:16:10+00:00">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://yanboyang.com/logo.png">
-<meta name=twitter:title content="Getting Started Dynamic Window Manager (DWM)">
-<meta name=twitter:description content="Introduction dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
-Pre-reading  WM/Getting Started Xorg with display manager    Installing Before you install DWM, firstly, please Set-up your Display Server and Display Manager. I recommand you use X11 (Xorg) as your Display Server and Lightdm as your Display Server.">
-<meta name=application-name content="LoveIt">
-<meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/dwm/><link rel=prev href=https://yanboyang.com/srs/><link rel=next href=https://yanboyang.com/k8sonproxmox/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started Dynamic Window Manager (DWM)","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dwm\/"},"genre":"posts","keywords":"DWM","wordcount":2886,"url":"https:\/\/yanboyang.com\/dwm\/","datePublished":"2021-11-30T17:50:00+08:00","dateModified":"2022-03-09T07:16:10+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script>
-<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div><div class=menu>
-<div class=menu-inner><a class=menu-item href=https://yanboyang.com/> Home </a><a class=menu-item href=https://yanboyang.com/posts/> Posts </a><a class=menu-item href=https://yanboyang.com/tags/> Tags </a><a class=menu-item href=https://yanboyang.com/categories/> Categories </a><a class=menu-item href=https://yanboyang.com/about/> About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Getting Started Dynamic Window Manager (DWM) - Boyang Yan's Tech Blog</title><meta name=description content="This is Boyang Yan's Tech Blog"><meta property="og:title" content="Getting Started Dynamic Window Manager (DWM)"><meta property="og:description" content="Introduction dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
+Pre-reading  WM/Getting Started Xorg with display manager    Installing Before you install DWM, firstly, please Set-up your Display Server and Display Manager. I recommand you use X11 (Xorg) as your Display Server and Lightdm as your Display Server."><meta property="og:type" content="article"><meta property="og:url" content="https://yanboyang.com/dwm/"><meta property="og:image" content="https://yanboyang.com/logo.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-11-30T17:50:00+08:00"><meta property="article:modified_time" content="2022-03-17T05:53:50+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://yanboyang.com/logo.png"><meta name=twitter:title content="Getting Started Dynamic Window Manager (DWM)"><meta name=twitter:description content="Introduction dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.
+Pre-reading  WM/Getting Started Xorg with display manager    Installing Before you install DWM, firstly, please Set-up your Display Server and Display Manager. I recommand you use X11 (Xorg) as your Display Server and Lightdm as your Display Server."><meta name=application-name content="LoveIt"><meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://yanboyang.com/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://yanboyang.com/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://yanboyang.com/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://yanboyang.com/apple-touch-icon.png><link rel=mask-icon href=https://yanboyang.com/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://yanboyang.com/site.webmanifest><link rel=canonical href=https://yanboyang.com/dwm/><link rel=prev href=https://yanboyang.com/srs/><link rel=next href=https://yanboyang.com/k8sonproxmox/><link rel=stylesheet href=https://yanboyang.com/lib/normalize/normalize.min.css><link rel=stylesheet href=https://yanboyang.com/css/style.min.css><link rel=stylesheet href=https://yanboyang.com/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://yanboyang.com/lib/animate/animate.min.css><meta name=baidu-site-verification content="wsCeKMuJ31RLblHf"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Getting Started Dynamic Window Manager (DWM)","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/yanboyang.com\/dwm\/"},"genre":"posts","keywords":"DWM","wordcount":2886,"url":"https:\/\/yanboyang.com\/dwm\/","datePublished":"2021-11-30T17:50:00+08:00","dateModified":"2022-03-17T05:53:50+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Boyang Yan"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>("true"==="true"&&window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-wrapper><div class=header-title><a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a></div><div class=menu><div class=menu-inner><a class=menu-item href=https://yanboyang.com/>Home </a><a class=menu-item href=https://yanboyang.com/posts/>Posts </a><a class=menu-item href=https://yanboyang.com/tags/>Tags </a><a class=menu-item href=https://yanboyang.com/categories/>Categories </a><a class=menu-item href=https://yanboyang.com/about/>About Me </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-desktop>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i>
-</a>
-</div></div></div></header><header class=mobile id=header-mobile>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-<div class=header-container>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a>
-</div><div class=menu-toggle id=menu-toggle-mobile>
-<span></span><span></span><span></span>
-</div></div><div class=menu id=menu-mobile><div class=search-wrapper>
-<div class="search mobile" id=search-mobile>
-<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-mobile>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
-Cancel
-</a>
-</div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i>
-</a></div></div></header><div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div></div><main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Getting Started Dynamic Window Manager (DWM)</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
-Boyang Yan
-</a>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-101949995-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><div class=header-container><div class=header-wrapper><div class=header-title><a href=https://yanboyang.com/ title="Boyang Yan's Tech Blog"></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=https://yanboyang.com/ title>Home</a><a class=menu-item href=https://yanboyang.com/posts/ title>Posts</a><a class=menu-item href=https://yanboyang.com/tags/ title>Tags</a><a class=menu-item href=https://yanboyang.com/categories/ title>Categories</a><a class=menu-item href=https://yanboyang.com/about/ title>About Me</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Getting Started Dynamic Window Manager (DWM)</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://yanboyang.com/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>
+Boyang Yan</a>
 </span>&nbsp;<span class=post-category>included in <a href=https://yanboyang.com/categories/wm/><i class="far fa-folder fa-fw"></i>WM</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-11-30>2021-11-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2886 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;14 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true>
-<div class="details-summary toc-title">
-<span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
-<ul>
-<li><a href=#introduction>Introduction</a></li><li><a href=#pre-reading>Pre-reading</a></li><li><a href=#installing>Installing</a>
-<ul>
-<li><a href=#install-dwm>Install DWM</a>
-<ul>
-<li><a href=#dwm-flexipatch>dwm-flexipatch</a></li><li><a href=#from-scratch>From Scratch</a></li></ul></li><li><a href=#adding-an-entry-for-dwm-in-the-dm>Adding an entry for DWM in the DM</a></li></ul></li><li><a href=#default-usage>Default Usage</a>
-<ul>
-<li><a href=#basic-commands>Basic Commands</a></li><li><a href=#layouts>Layouts</a></li><li><a href=#floating>Floating</a></li><li><a href=#quitting>Quitting</a></li></ul></li><li><a href=#configuration>Configuration</a>
-<ul>
-<li><a href=#change-mod1-key-to-the-windows-key>Change Mod1 key to the Windows key</a>
-<ul>
-<li><a href=#other-modifier-key>Other modifier key</a></li></ul></li><li><a href=#change-terminal-as-alacritty>Change terminal as Alacritty</a></li><li><a href=#add-hotkey-for-some-of-binary-program>Add Hotkey for some of binary program</a></li><li><a href=#add-hotkey-for-shell-commands>Add Hotkey for shell commands</a></li><li><a href=#multi-monitor-set-up>Multi Monitor set-up</a>
-<ul>
-<li><a href=#set-tags>Set Tags</a></li><li><a href=#key-binding-switch-monitor>Key Binding switch Monitor</a></li></ul></li></ul></li><li><a href=#patches>Patches</a>
-<ul>
-<li><a href=#restart-dwm-without-logging-out-or-closing-applications>Restart DWM without logging out or closing applications</a></li><li><a href=#dwm-fullgaps>dwm-fullgaps</a></li><li><a href=#autostart>Autostart</a></li><li><a href=#fullscreen>Fullscreen</a></li></ul></li><li><a href=#reference-list>Reference List</a></li><li><a href=#acknowledge>Acknowledge</a></li></ul></nav></div></div><div class=content id=content><h2 id=introduction>Introduction</h2><p>dwm is a dynamic window manager for X. It manages windows in <strong>tiled</strong>, <strong>monocle</strong> and <strong>floating</strong> layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.</p><h2 id=pre-reading>Pre-reading</h2><ol>
-<li><a href=https://yanboyang.com/xorg/ rel>
-WM/Getting Started Xorg with display manager
-</a>
-</li></ol><h2 id=installing>Installing</h2><p>Before you install <strong>DWM</strong>, firstly, please Set-up your <strong>Display Server</strong> and <strong>Display Manager</strong>. I recommand you use X11 (Xorg) as your <strong>Display Server</strong> and Lightdm as your <strong>Display Server</strong>. If you don&rsquo;t know how to do it, please, read <a href=https://yanboyang.com/xorg/ rel>
-WM/Getting Started Xorg with display manager
-</a>
-</p><h3 id=install-dwm>Install DWM</h3><p>There are ways install <strong>DWM</strong>:</p><ol>
-<li>Manual patching <strong>DWM</strong> from scratch.</li><li>&ldquo;<strong>Fully fledged</strong>&rdquo; <strong>DWM</strong>, such as <strong>dwm-flexipatch</strong> (recommand)</li></ol><h4 id=dwm-flexipatch>dwm-flexipatch</h4><p>If you have ever been <strong>curious</strong> about trying out <strong>dwm</strong>, but have been <strong>discouraged</strong> by manual patching, then this may be a good starting point to see <a href=https://github.com/bakkeby/dwm-flexipatch.git target=_blank rel="noopener noreferrer">
-dwm-flexipatch
-</a>
-Just flip a config and recompile.</p><p>Once you have found out what works for you and what doesn&rsquo;t then you should be in a better position to choose patches should you want to start patching from scratch.</p><p>Alternatively if you have found the patches you want, but don&rsquo;t want the rest of the flexipatch entanglement on your plate then you may want to have a look at <a href=https://github.com/bakkeby/flexipatch-finalizer target=_blank rel="noopener noreferrer">
-flexipatch-finalizer
-</a>
-; a custom pre-processor tool that removes all the unused flexipatch code leaving you with a build that contains the patches you selected.</p><p>For how to install flexipatch, please read <a href=https://yanboyang.com/dwmpatches/#dwm-flexipatch rel>
-DWM Flexipatch
-</a>
-.</p><h4 id=from-scratch>From Scratch</h4><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+<i class="far fa-clock fa-fw"></i>&nbsp;14 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept=true><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#introduction>Introduction</a></li><li><a href=#pre-reading>Pre-reading</a></li><li><a href=#installing>Installing</a><ul><li><a href=#install-dwm>Install DWM</a><ul><li><a href=#dwm-flexipatch>dwm-flexipatch</a></li><li><a href=#from-scratch>From Scratch</a></li></ul></li><li><a href=#adding-an-entry-for-dwm-in-the-dm>Adding an entry for DWM in the DM</a></li></ul></li><li><a href=#default-usage>Default Usage</a><ul><li><a href=#basic-commands>Basic Commands</a></li><li><a href=#layouts>Layouts</a></li><li><a href=#floating>Floating</a></li><li><a href=#quitting>Quitting</a></li></ul></li><li><a href=#configuration>Configuration</a><ul><li><a href=#change-mod1-key-to-the-windows-key>Change Mod1 key to the Windows key</a><ul><li><a href=#other-modifier-key>Other modifier key</a></li></ul></li><li><a href=#change-terminal-as-alacritty>Change terminal as Alacritty</a></li><li><a href=#add-hotkey-for-some-of-binary-program>Add Hotkey for some of binary program</a></li><li><a href=#add-hotkey-for-shell-commands>Add Hotkey for shell commands</a></li><li><a href=#multi-monitor-set-up>Multi Monitor set-up</a><ul><li><a href=#set-tags>Set Tags</a></li><li><a href=#key-binding-switch-monitor>Key Binding switch Monitor</a></li></ul></li></ul></li><li><a href=#patches>Patches</a><ul><li><a href=#restart-dwm-without-logging-out-or-closing-applications>Restart DWM without logging out or closing applications</a></li><li><a href=#dwm-fullgaps>dwm-fullgaps</a></li><li><a href=#autostart>Autostart</a></li><li><a href=#fullscreen>Fullscreen</a></li></ul></li><li><a href=#reference-list>Reference List</a></li><li><a href=#acknowledge>Acknowledge</a></li></ul></nav></div></div><div class=content id=content><h2 id=introduction>Introduction</h2><p>dwm is a dynamic window manager for X. It manages windows in <strong>tiled</strong>, <strong>monocle</strong> and <strong>floating</strong> layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed.</p><h2 id=pre-reading>Pre-reading</h2><ol><li><a href=https://yanboyang.com/xorg/ rel>WM/Getting Started Xorg with display manager</a></li></ol><h2 id=installing>Installing</h2><p>Before you install <strong>DWM</strong>, firstly, please Set-up your <strong>Display Server</strong> and <strong>Display Manager</strong>. I recommand you use X11 (Xorg) as your <strong>Display Server</strong> and Lightdm as your <strong>Display Server</strong>. If you don&rsquo;t know how to do it, please, read <a href=https://yanboyang.com/xorg/ rel>WM/Getting Started Xorg with display manager</a></p><h3 id=install-dwm>Install DWM</h3><p>There are ways install <strong>DWM</strong>:</p><ol><li>Manual patching <strong>DWM</strong> from scratch.</li><li>&ldquo;<strong>Fully fledged</strong>&rdquo; <strong>DWM</strong>, such as <strong>dwm-flexipatch</strong> (recommand)</li></ol><h4 id=dwm-flexipatch>dwm-flexipatch</h4><p>If you have ever been <strong>curious</strong> about trying out <strong>dwm</strong>, but have been <strong>discouraged</strong> by manual patching, then this may be a good starting point to see <a href=https://github.com/bakkeby/dwm-flexipatch.git target=_blank rel="noopener noreferrer">dwm-flexipatch</a>
+Just flip a config and recompile.</p><p>Once you have found out what works for you and what doesn&rsquo;t then you should be in a better position to choose patches should you want to start patching from scratch.</p><p>Alternatively if you have found the patches you want, but don&rsquo;t want the rest of the flexipatch entanglement on your plate then you may want to have a look at <a href=https://github.com/bakkeby/flexipatch-finalizer target=_blank rel="noopener noreferrer">flexipatch-finalizer</a>
+; a custom pre-processor tool that removes all the unused flexipatch code leaving you with a build that contains the patches you selected.</p><p>For how to install flexipatch, please read <a href=https://yanboyang.com/dwmpatches/#dwm-flexipatch rel>DWM Flexipatch</a>
+.</p><h4 id=from-scratch>From Scratch</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -130,8 +29,7 @@ DWM Flexipatch
 </span><span class=lnt>11
 </span><span class=lnt>12
 </span><span class=lnt>13
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git clone git://git.suckless.org/dwm ~/.config/dwm
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git clone git://git.suckless.org/dwm ~/.config/dwm
 </span></span><span class=line><span class=cl>git clone https://github.com/WouterSpekkink/dwm.git
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>
@@ -144,66 +42,43 @@ DWM Flexipatch
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>git clone git://git.suckless.org/dmenu ~/.config/dmenu
 </span></span><span class=line><span class=cl>git clone https://github.com/WouterSpekkink/dmenu.git
-</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>cd</span> ~/.config/dwm <span class=o>&amp;&amp;</span> sudo make install
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>cd</span> ~/.config/dwm <span class=o>&amp;&amp;</span> sudo make install
 </span></span><span class=line><span class=cl><span class=nb>cd</span> ~/.config/st <span class=o>&amp;&amp;</span> sudo make install
 </span></span><span class=line><span class=cl><span class=nb>cd</span> ~/.config/dmenu <span class=o>&amp;&amp;</span> sudo make install
-</span></span></code></pre></td></tr></table></div></div><h3 id=adding-an-entry-for-dwm-in-the-dm>Adding an entry for DWM in the DM</h3><p>Create this file and add the following.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><h3 id=adding-an-entry-for-dwm-in-the-dm>Adding an entry for DWM in the DM</h3><p>Create this file and add the following.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mkdir /usr/share/xsessions
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mkdir /usr/share/xsessions
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>sudo vim /usr/share/xsessions/dwm.desktop
-</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
 </span><span class=lnt>7
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[Desktop Entry]
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[Desktop Entry]
 </span></span><span class=line><span class=cl>Encoding=UTF-8
 </span></span><span class=line><span class=cl>Name=Dwm
 </span></span><span class=line><span class=cl>Comment=the dynamic window manager
 </span></span><span class=line><span class=cl>Exec=dwm
 </span></span><span class=line><span class=cl>Icon=dwm
 </span></span><span class=line><span class=cl>Type=XSession
-</span></span></code></pre></td></tr></table></div></div><h2 id=default-usage>Default Usage</h2><p>In this section, I will introduction the basic usage by default. After, I will talk more on how to make you <strong>OWN</strong> configuration and Patches.</p><h3 id=basic-commands>Basic Commands</h3><ul>
-<li>Moving between windows: <strong>[Alt]+[j]</strong> or <strong>[Alt]+[k]</strong></li><li>To move a terminal to another tag: <strong>[Shift]+[Alt]+[&lt;TAG_NUMBER>]</strong></li><li>To focus on another tag: <strong>[Alt]+[tag number]</strong></li><li>To change the amount of windows in the master area: <strong>[Alt]+[d]</strong> (Decrease) or <strong>[Alt]+[i]</strong> (Increase)</li><li>To toggle a window between the master and stack area: <strong>[Alt]+[Return]</strong></li><li>To kill a window: <strong>[Shift]+[Alt]+[c]</strong></li><li>Click another tag with the right mouse button to bring those windows into your current focus.</li></ul><h3 id=layouts>Layouts</h3><p><strong>Note</strong>: By default dwm is in tiled layout mode.</p><ul>
-<li>Tiled: <strong>[Alt]+[t]</strong></li><li>Floating: <strong>[Alt]+[f]</strong></li><li>Monocle: <strong>[Alt]+[m]</strong></li></ul><p>Further layout modes can be included through patches.</p><h3 id=floating>Floating</h3><p>To resize the floating window: <strong>[Alt]+[right mouse button]</strong></p><p>To move it around <strong>[Alt]+[left mouse button]</strong></p><p>Floating in Tiled Layout</p><ul>
-<li>Toggle floating mode on the active window: <strong>[Alt]+[Shift]+[space]</strong></li><li>Resize the window: <strong>[Alt]+[right mouse button]</strong></li><li>toggle it in being floating <strong>[Alt]+[middle mouse button]</strong></li></ul><p>If you want to set some type of window to be always floating, look at the config.def.h and the rules array, where the last but one element defines this behaviour.</p><h3 id=quitting>Quitting</h3><p>To quit dwm cleanly: <strong>[Shift]+[Alt]+[q]</strong></p><h2 id=configuration>Configuration</h2><p>All of configuration should be in <strong>config.def.h</strong> file.</p><p>When you make modified, please run:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><h2 id=default-usage>Default Usage</h2><p>In this section, I will introduction the basic usage by default. After, I will talk more on how to make you <strong>OWN</strong> configuration and Patches.</p><h3 id=basic-commands>Basic Commands</h3><ul><li>Moving between windows: <strong>[Alt]+[j]</strong> or <strong>[Alt]+[k]</strong></li><li>To move a terminal to another tag: <strong>[Shift]+[Alt]+[&lt;TAG_NUMBER>]</strong></li><li>To focus on another tag: <strong>[Alt]+[tag number]</strong></li><li>To change the amount of windows in the master area: <strong>[Alt]+[d]</strong> (Decrease) or <strong>[Alt]+[i]</strong> (Increase)</li><li>To toggle a window between the master and stack area: <strong>[Alt]+[Return]</strong></li><li>To kill a window: <strong>[Shift]+[Alt]+[c]</strong></li><li>Click another tag with the right mouse button to bring those windows into your current focus.</li></ul><h3 id=layouts>Layouts</h3><p><strong>Note</strong>: By default dwm is in tiled layout mode.</p><ul><li>Tiled: <strong>[Alt]+[t]</strong></li><li>Floating: <strong>[Alt]+[f]</strong></li><li>Monocle: <strong>[Alt]+[m]</strong></li></ul><p>Further layout modes can be included through patches.</p><h3 id=floating>Floating</h3><p>To resize the floating window: <strong>[Alt]+[right mouse button]</strong></p><p>To move it around <strong>[Alt]+[left mouse button]</strong></p><p>Floating in Tiled Layout</p><ul><li>Toggle floating mode on the active window: <strong>[Alt]+[Shift]+[space]</strong></li><li>Resize the window: <strong>[Alt]+[right mouse button]</strong></li><li>toggle it in being floating <strong>[Alt]+[middle mouse button]</strong></li></ul><p>If you want to set some type of window to be always floating, look at the config.def.h and the rules array, where the last but one element defines this behaviour.</p><h3 id=quitting>Quitting</h3><p>To quit dwm cleanly: <strong>[Shift]+[Alt]+[q]</strong></p><h2 id=configuration>Configuration</h2><p>All of configuration should be in <strong>config.def.h</strong> file.</p><p>When you make modified, please run:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>rm config.h
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>rm config.h
 </span></span><span class=line><span class=cl>sudo make clean install
-</span></span></code></pre></td></tr></table></div></div><h3 id=change-mod1-key-to-the-windows-key>Change Mod1 key to the Windows key</h3><p><strong>dwm</strong>&rsquo;s documentation refers to <strong>Mod1</strong> as the <strong>modifier</strong> key that you must press to issue commands to it.</p><p>On most keyboards, <strong>Mod1</strong> is mapped to the <strong>left Alt</strong> key. Most new keyboards now come equipped with the <strong>Windows</strong> key. Since no known UNIX/X applications are known to use the <strong>Windows</strong> key, it is an excellent alternative mapping to issue commands to dwm.</p><p>In <strong>config.def.h</strong>, under the comment ,/* key definitions */, you can find the line</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>#define MODKEY Mod1Mask
-</span></span></code></pre></td></tr></table></div></div><p>In order to change dwm&rsquo;s modifier key to the <strong>Windows</strong> key, you can simply change its value definition to <strong>Mod4Mask</strong>.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><h3 id=change-mod1-key-to-the-windows-key>Change Mod1 key to the Windows key</h3><p><strong>dwm</strong>&rsquo;s documentation refers to <strong>Mod1</strong> as the <strong>modifier</strong> key that you must press to issue commands to it.</p><p>On most keyboards, <strong>Mod1</strong> is mapped to the <strong>left Alt</strong> key. Most new keyboards now come equipped with the <strong>Windows</strong> key. Since no known UNIX/X applications are known to use the <strong>Windows</strong> key, it is an excellent alternative mapping to issue commands to dwm.</p><p>In <strong>config.def.h</strong>, under the comment ,/* key definitions */, you can find the line</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>#define MODKEY Mod1Mask
+</span></span></code></pre></td></tr></table></div></div><p>In order to change dwm&rsquo;s modifier key to the <strong>Windows</strong> key, you can simply change its value definition to <strong>Mod4Mask</strong>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>//Change ALT key to Windows key
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>//Change ALT key to Windows key
 </span></span><span class=line><span class=cl>#define MODKEY Mod4Mask
-</span></span></code></pre></td></tr></table></div></div><h4 id=other-modifier-key>Other modifier key</h4><p>There are 5 modifiers, Mod1Mask to Mod5Mask. They are associated to up-to three keysyms (keycodes) from the X window server. To show the current association on your keyboard, run xmodmap with no arguments. It will show something like:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><h4 id=other-modifier-key>Other modifier key</h4><p>There are 5 modifiers, Mod1Mask to Mod5Mask. They are associated to up-to three keysyms (keycodes) from the X window server. To show the current association on your keyboard, run xmodmap with no arguments. It will show something like:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -214,8 +89,7 @@ DWM Flexipatch
 </span><span class=lnt> 9
 </span><span class=lnt>10
 </span><span class=lnt>11
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>[yanboyang713@manjaro] ➜ ~ xmodmap
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>[yanboyang713@manjaro] ➜ ~ xmodmap
 </span></span></span><span class=line><span class=cl><span class=go>xmodmap:  up to 4 keys per modifier, (keycodes in parentheses):
 </span></span></span><span class=line><span class=cl><span class=go></span><span class=err>
 </span></span></span><span class=line><span class=cl><span class=err></span><span class=go>shift       Shift_L (0x32),  Shift_R (0x3e)
@@ -226,191 +100,113 @@ DWM Flexipatch
 </span></span></span><span class=line><span class=cl><span class=go>mod3
 </span></span></span><span class=line><span class=cl><span class=go>mod4        Super_L (0x85),  Super_R (0x86),  Super_L (0xce),  Hyper_L (0xcf)
 </span></span></span><span class=line><span class=cl><span class=go>mod5        ISO_Level3_Shift (0x5c),  Mode_switch (0xcb)
-</span></span></span></code></pre></td></tr></table></div></div><p>Using <strong>xev</strong>, a utility to show X events, such as key presses, we can quickly identify which keysym (keycode) combination a particular key has, and associate that to a modifier using <strong>xmodmap</strong>.</p><h3 id=change-terminal-as-alacritty>Change terminal as Alacritty</h3><p>If you <strong>NOT</strong> install Alacritty, please have look this <a href=https://yanboyang.com/alacritty/ rel>
-Linux/Getting Started Alacritty Terminal
-</a>
-.</p><p>When you done install <strong>Alacritty</strong>,</p><p>Change termcmd as below.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>static const char *termcmd[]  = { &#34;alacritty&#34;, NULL };
-</span></span></code></pre></td></tr></table></div></div><p>and add below to keys array (static Key keys[])</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{ MODKEY,             XK_Return,     spawn,                  {.v = termcmd } },
-</span></span></code></pre></td></tr></table></div></div><h3 id=add-hotkey-for-some-of-binary-program>Add Hotkey for some of binary program</h3><p>There are <strong>two</strong> example, <strong>emacs</strong>, <strong>zotero</strong> and <strong>google-chrome-stable</strong>.</p><p>Please, set-up <strong>emacs</strong> and <strong>zotero</strong> first. Following the below guide:</p><ol>
-<li><a href=https://yanboyang.com/doom/ rel>
-Emacs/Getting Started with Doom Emacs
-</a>
-</li><li><a href=https://yanboyang.com/zotero/ rel>
-Research/Getting Started with Zotero
-</a>
-</li></ol><p>Firstly, create two new variable for each command.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></span></code></pre></td></tr></table></div></div><p>Using <strong>xev</strong>, a utility to show X events, such as key presses, we can quickly identify which keysym (keycode) combination a particular key has, and associate that to a modifier using <strong>xmodmap</strong>.</p><h3 id=change-terminal-as-alacritty>Change terminal as Alacritty</h3><p>If you <strong>NOT</strong> install Alacritty, please have look this <a href=https://yanboyang.com/alacritty/ rel>Linux/Getting Started Alacritty Terminal</a>
+.</p><p>When you done install <strong>Alacritty</strong>,</p><p>Change termcmd as below.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>static const char *termcmd[]  = { &#34;alacritty&#34;, NULL };
+</span></span></code></pre></td></tr></table></div></div><p>and add below to keys array (static Key keys[])</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{ MODKEY,             XK_Return,     spawn,                  {.v = termcmd } },
+</span></span></code></pre></td></tr></table></div></div><h3 id=add-hotkey-for-some-of-binary-program>Add Hotkey for some of binary program</h3><p>There are <strong>two</strong> example, <strong>emacs</strong>, <strong>zotero</strong> and <strong>google-chrome-stable</strong>.</p><p>Please, set-up <strong>emacs</strong> and <strong>zotero</strong> first. Following the below guide:</p><ol><li><a href=https://yanboyang.com/doom/ rel>Emacs/Getting Started with Doom Emacs</a></li><li><a href=https://yanboyang.com/zotero/ rel>Research/Getting Started with Zotero</a></li></ol><p>Firstly, create two new variable for each command.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>static const char *emacscmd[] = { &#34;emacsclient&#34;, &#34;-c&#34;, &#34;-a emacs&#34;, NULL };
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>static const char *emacscmd[] = { &#34;emacsclient&#34;, &#34;-c&#34;, &#34;-a emacs&#34;, NULL };
 </span></span><span class=line><span class=cl>static const char *zoterocmd[] = { &#34;zotero&#34;, NULL };
 </span></span><span class=line><span class=cl>static const char *googleChromecmd[] = { &#34;google-chrome-stable&#34;, NULL };
-</span></span></code></pre></td></tr></table></div></div><p>and add below to keys array (static Key keys[])</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>and add below to keys array (static Key keys[])</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>	{ MODKEY,                       XK_e, 	   spawn,          {.v = emacscmd } },
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>	{ MODKEY,                       XK_e, 	   spawn,          {.v = emacscmd } },
 </span></span><span class=line><span class=cl>	{ MODKEY,                       XK_z,      spawn,          {.v = zoterocmd } },
 </span></span><span class=line><span class=cl>	{ MODKEY,                       XK_g,      spawn,          {.v = googleChromecmd } },
 </span></span></code></pre></td></tr></table></div></div><h3 id=add-hotkey-for-shell-commands>Add Hotkey for shell commands</h3><p>There is a example for take a screenshot.
-First, please read <a href=https://yanboyang.com/cloudinary/ rel>
-Linux/Take a Screenshot and upload to Cloudinary using Bash Scripts
-</a>
-.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+First, please read <a href=https://yanboyang.com/cloudinary/ rel>Linux/Take a Screenshot and upload to Cloudinary using Bash Scripts</a>
+.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>/* helper for spawning shell commands in the pre dwm-5.0 fashion */
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>/* helper for spawning shell commands in the pre dwm-5.0 fashion */
 </span></span><span class=line><span class=cl>#define SHCMD(cmd) { .v = (const char*[]){ &#34;/bin/sh&#34;, &#34;-c&#34;, cmd, NULL } }
-</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{ ControlMask|ShiftMask,              XK_p,      spawn,          SHCMD(&#34;screenshot&#34;) },
-</span></span></code></pre></td></tr></table></div></div><h3 id=multi-monitor-set-up>Multi Monitor set-up</h3><p>Before, you start this section, please read <a href=https://yanboyang.com/multimonitor/ rel>
-WM/Multi Monitor SetUp
-</a>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>{ ControlMask|ShiftMask,              XK_p,      spawn,          SHCMD(&#34;screenshot&#34;) },
+</span></span></code></pre></td></tr></table></div></div><h3 id=multi-monitor-set-up>Multi Monitor set-up</h3><p>Before, you start this section, please read <a href=https://yanboyang.com/multimonitor/ rel>WM/Multi Monitor SetUp</a>
 first.
-When you done set-up your <strong>~/.xprofile</strong>. You can start read the below <strong>two</strong> sections (<strong>Set Tags</strong> and <strong>Key Binding switch monitor</strong>).</p><h4 id=set-tags>Set Tags</h4><p>There is a patch <a href=https://github.com/bakkeby/patches/wiki/tagicons target=_blank rel="noopener noreferrer">
-tagicons
-</a>
+When you done set-up your <strong>~/.xprofile</strong>. You can start read the below <strong>two</strong> sections (<strong>Set Tags</strong> and <strong>Key Binding switch monitor</strong>).</p><h4 id=set-tags>Set Tags</h4><p>There is a patch <a href=https://github.com/bakkeby/patches/wiki/tagicons target=_blank rel="noopener noreferrer">tagicons</a>
 that allows you to have different sets of <strong>tags</strong> on a per monitor basis.
-As for <strong>dwm-flexipatch</strong> the <strong>tagicons</strong> patch is already integrated (<strong>hardcoded</strong>) so it can&rsquo;t be <strong>enabled</strong> via <strong>patches.h</strong>.</p><ul>
-<li>
-<p>Changing the number of tags per monitor</p><p>In a traditional dwm the number of tags in use can be changed by changing the number of strings in the tags array.</p><p>With this patch the number of tags is controlled with the <strong>NUMTAGS</strong> macro in dwm.c, which is primarily used to differentiate between different icons per monitor.</p></li></ul><ul>
-<li>
-<p>Tags per monitor</p><p>Tag icons can be defined on a per monitor basis and the position of the icons is derived based on the number of tags (NUMTAGS) and the monitor number (index). If the derived tag index is greater than the available icons then a modulus between the two is further applied.</p><p>Let&rsquo;s have look at a practical example:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+As for <strong>dwm-flexipatch</strong> the <strong>tagicons</strong> patch is already integrated (<strong>hardcoded</strong>) so it can&rsquo;t be <strong>enabled</strong> via <strong>patches.h</strong>.</p><ul><li><p>Changing the number of tags per monitor</p><p>In a traditional dwm the number of tags in use can be changed by changing the number of strings in the tags array.</p><p>With this patch the number of tags is controlled with the <strong>NUMTAGS</strong> macro in dwm.c, which is primarily used to differentiate between different icons per monitor.</p></li></ul><ul><li><p>Tags per monitor</p><p>Tag icons can be defined on a per monitor basis and the position of the icons is derived based on the number of tags (NUMTAGS) and the monitor number (index). If the derived tag index is greater than the available icons then a modulus between the two is further applied.</p><p>Let&rsquo;s have look at a practical example:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>static</span> <span class=kt>char</span> <span class=o>*</span><span class=n>tagicons</span><span class=p>[][</span><span class=n>NUMTAGS</span><span class=o>*</span><span class=mi>2</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>static</span> <span class=kt>char</span> <span class=o>*</span><span class=n>tagicons</span><span class=p>[][</span><span class=n>NUMTAGS</span><span class=o>*</span><span class=mi>2</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsDefault</span><span class=p>]</span>        <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;1&#34;</span><span class=p>,</span> <span class=s>&#34;2&#34;</span><span class=p>,</span> <span class=s>&#34;3&#34;</span><span class=p>,</span> <span class=s>&#34;4&#34;</span><span class=p>,</span> <span class=s>&#34;5&#34;</span><span class=p>,</span> <span class=s>&#34;6&#34;</span><span class=p>,</span> <span class=s>&#34;7&#34;</span><span class=p>,</span> <span class=s>&#34;8&#34;</span><span class=p>,</span> <span class=s>&#34;9&#34;</span><span class=p>,</span> <span class=s>&#34;A&#34;</span><span class=p>,</span> <span class=s>&#34;B&#34;</span><span class=p>,</span> <span class=s>&#34;C&#34;</span><span class=p>,</span> <span class=s>&#34;D&#34;</span><span class=p>,</span> <span class=s>&#34;E&#34;</span><span class=p>,</span> <span class=s>&#34;F&#34;</span><span class=p>,</span> <span class=s>&#34;G&#34;</span><span class=p>,</span> <span class=s>&#34;H&#34;</span><span class=p>,</span> <span class=s>&#34;I&#34;</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsVacant</span><span class=p>]</span>         <span class=o>=</span> <span class=p>{</span> <span class=nb>NULL</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsOccupied</span><span class=p>]</span>       <span class=o>=</span> <span class=p>{</span> <span class=nb>NULL</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl><span class=p>};</span>
 </span></span></code></pre></td></tr></table></div></div><p>In this case icons 1 through 9 is being used for monitor 0 while icons A through I are used for monitor 1.</p><p><strong>How does that work exactly?</strong>
-Note the <strong>NUMTAGS*2</strong> which doubles the number of icons. The icon for a tag is derived as tag index + monitor index * NUMTAGS. So for the third tag on the second monitor we end up with 2 + 1 * 9 which gives the icon of &ldquo;C&rdquo;.</p><p>If a third monitor is used then that gives 2 + 2 * 9 (index 20). As that is greater than the number of icons (NUMTAGS*2) a modulus is applied: 20 % 18 = 2, giving the icon of &ldquo;3&rdquo;. In other words the icons wraps around. A fourth monitor would then use icons A through I.</p><p>This mechanism comes into play again in the example below.</p></li></ul><ul>
-<li>
-<p>Repeating icons</p><p>Having identical tags can also make for an elegant look and feel. For example having all tags shown as bullet points gives a certain aesthetic.</p><p>In a normal dwm build that would be configured like this:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>static</span> <span class=k>const</span> <span class=kt>char</span> <span class=o>*</span><span class=n>tags</span><span class=p>[]</span> <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;•&#34;</span><span class=p>,</span> <span class=s>&#34;•&#34;</span><span class=p>,</span> <span class=s>&#34;•&#34;</span><span class=p>,</span> <span class=s>&#34;•&#34;</span><span class=p>,</span> <span class=s>&#34;•&#34;</span><span class=p>,</span> <span class=s>&#34;•&#34;</span><span class=p>,</span> <span class=s>&#34;•&#34;</span><span class=p>,</span> <span class=s>&#34;•&#34;</span><span class=p>,</span> <span class=s>&#34;•&#34;</span> <span class=p>};</span>
-</span></span></code></pre></td></tr></table></div></div><p>With the tagicons patch this can be simplified to a single bullet point thanks to how icon indexes are derived and reduced:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+Note the <strong>NUMTAGS*2</strong> which doubles the number of icons. The icon for a tag is derived as tag index + monitor index * NUMTAGS. So for the third tag on the second monitor we end up with 2 + 1 * 9 which gives the icon of &ldquo;C&rdquo;.</p><p>If a third monitor is used then that gives 2 + 2 * 9 (index 20). As that is greater than the number of icons (NUMTAGS*2) a modulus is applied: 20 % 18 = 2, giving the icon of &ldquo;3&rdquo;. In other words the icons wraps around. A fourth monitor would then use icons A through I.</p><p>This mechanism comes into play again in the example below.</p></li></ul><ul><li><p>Repeating icons</p><p>Having identical tags can also make for an elegant look and feel. For example having all tags shown as bullet points gives a certain aesthetic.</p><p>In a normal dwm build that would be configured like this:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>static</span> <span class=k>const</span> <span class=kt>char</span> <span class=o>*</span><span class=n>tags</span><span class=p>[]</span> <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;•&#34;</span><span class=p>,</span> <span class=s>&#34;•&#34;</span><span class=p>,</span> <span class=s>&#34;•&#34;</span><span class=p>,</span> <span class=s>&#34;•&#34;</span><span class=p>,</span> <span class=s>&#34;•&#34;</span><span class=p>,</span> <span class=s>&#34;•&#34;</span><span class=p>,</span> <span class=s>&#34;•&#34;</span><span class=p>,</span> <span class=s>&#34;•&#34;</span><span class=p>,</span> <span class=s>&#34;•&#34;</span> <span class=p>};</span>
+</span></span></code></pre></td></tr></table></div></div><p>With the tagicons patch this can be simplified to a single bullet point thanks to how icon indexes are derived and reduced:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>static</span> <span class=kt>char</span> <span class=o>*</span><span class=n>tagicons</span><span class=p>[][</span><span class=n>NUMTAGS</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>static</span> <span class=kt>char</span> <span class=o>*</span><span class=n>tagicons</span><span class=p>[][</span><span class=n>NUMTAGS</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsDefault</span><span class=p>]</span>        <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;•&#34;</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsVacant</span><span class=p>]</span>         <span class=o>=</span> <span class=p>{</span> <span class=nb>NULL</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsOccupied</span><span class=p>]</span>       <span class=o>=</span> <span class=p>{</span> <span class=nb>NULL</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl><span class=p>};</span>
-</span></span></code></pre></td></tr></table></div></div><p>Similarly if you choose two tags A and B then tags will alternate between them.</p><p>If you want identical tags for all tags, but different tags per monitor, then you will have to explicitly define them all though.</p></li></ul><ul>
-<li>
-<p>Occupied tags</p><p>The IconsOccupied tag set will replace the default icons if there are clients occupating the given tag. This is a practical representation of the <a href=https://dwm.suckless.org/patches/alttagsdecoration/ target=_blank rel="noopener noreferrer">
-alttagsdecoration
-</a>
-patch.</p><p>If <strong>IconsOccupied</strong> is NULL then that means that the feature is not to be used.</p><p>A practical example:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>Similarly if you choose two tags A and B then tags will alternate between them.</p><p>If you want identical tags for all tags, but different tags per monitor, then you will have to explicitly define them all though.</p></li></ul><ul><li><p>Occupied tags</p><p>The IconsOccupied tag set will replace the default icons if there are clients occupating the given tag. This is a practical representation of the <a href=https://dwm.suckless.org/patches/alttagsdecoration/ target=_blank rel="noopener noreferrer">alttagsdecoration</a>
+patch.</p><p>If <strong>IconsOccupied</strong> is NULL then that means that the feature is not to be used.</p><p>A practical example:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>static</span> <span class=kt>char</span> <span class=o>*</span><span class=n>tagicons</span><span class=p>[][</span><span class=n>NUMTAGS</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>static</span> <span class=kt>char</span> <span class=o>*</span><span class=n>tagicons</span><span class=p>[][</span><span class=n>NUMTAGS</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsDefault</span><span class=p>]</span>        <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;1&#34;</span><span class=p>,</span> <span class=s>&#34;2&#34;</span><span class=p>,</span> <span class=s>&#34;3&#34;</span><span class=p>,</span> <span class=s>&#34;4&#34;</span><span class=p>,</span> <span class=s>&#34;5&#34;</span><span class=p>,</span> <span class=s>&#34;6&#34;</span><span class=p>,</span> <span class=s>&#34;7&#34;</span><span class=p>,</span> <span class=s>&#34;8&#34;</span><span class=p>,</span> <span class=s>&#34;9&#34;</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsVacant</span><span class=p>]</span>         <span class=o>=</span> <span class=p>{</span> <span class=nb>NULL</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsOccupied</span><span class=p>]</span>       <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;&lt;1&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;2&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;3&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;4&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;5&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;6&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;7&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;8&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;9&gt;&#34;</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl><span class=p>};</span>
-</span></span></code></pre></td></tr></table></div></div><p>When dwm starts up tags 1 through 9 will be displayed. As soon as a client is opened on a tag then the occupied tag icon is being used instead. E.g. opening a client on tag 5 means that &ldquo;&lt;5>&rdquo; will be shown instead of &ldquo;5&rdquo;.</p></li></ul><ul>
-<li>
-<p>Hide vacant tags</p><p>To hide vacant (as in empty) tags simply set the icon text to be an empty string.</p><p>Taking advantage of the repeating icons logic we can set a single empty string to replicate the behavour of the <a href=https://dwm.suckless.org/patches/hide_vacant_tags/ target=_blank rel="noopener noreferrer">
-hide vacant tags
-</a>
-patch.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>When dwm starts up tags 1 through 9 will be displayed. As soon as a client is opened on a tag then the occupied tag icon is being used instead. E.g. opening a client on tag 5 means that &ldquo;&lt;5>&rdquo; will be shown instead of &ldquo;5&rdquo;.</p></li></ul><ul><li><p>Hide vacant tags</p><p>To hide vacant (as in empty) tags simply set the icon text to be an empty string.</p><p>Taking advantage of the repeating icons logic we can set a single empty string to replicate the behavour of the <a href=https://dwm.suckless.org/patches/hide_vacant_tags/ target=_blank rel="noopener noreferrer">hide vacant tags</a>
+patch.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>static</span> <span class=kt>char</span> <span class=o>*</span><span class=n>tagicons</span><span class=p>[][</span><span class=n>NUMTAGS</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>static</span> <span class=kt>char</span> <span class=o>*</span><span class=n>tagicons</span><span class=p>[][</span><span class=n>NUMTAGS</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsDefault</span><span class=p>]</span>        <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;&#34;</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsVacant</span><span class=p>]</span>         <span class=o>=</span> <span class=p>{</span> <span class=nb>NULL</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsOccupied</span><span class=p>]</span>       <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;&lt;1&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;2&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;3&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;4&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;5&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;6&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;7&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;8&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;9&gt;&#34;</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl><span class=p>};</span>
-</span></span></code></pre></td></tr></table></div></div><p>One benefit of doing it this way (using empty strings) is that you could choose to hide all tags except for special ones that you want to always display. Here is an example that hides all but the seventh, eight and ninth tag:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>One benefit of doing it this way (using empty strings) is that you could choose to hide all tags except for special ones that you want to always display. Here is an example that hides all but the seventh, eight and ninth tag:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>static</span> <span class=kt>char</span> <span class=o>*</span><span class=n>tagicons</span><span class=p>[][</span><span class=n>NUMTAGS</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>static</span> <span class=kt>char</span> <span class=o>*</span><span class=n>tagicons</span><span class=p>[][</span><span class=n>NUMTAGS</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsDefault</span><span class=p>]</span>        <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;&#34;</span><span class=p>,</span> <span class=s>&#34;&#34;</span><span class=p>,</span> <span class=s>&#34;&#34;</span><span class=p>,</span> <span class=s>&#34;&#34;</span><span class=p>,</span> <span class=s>&#34;&#34;</span><span class=p>,</span> <span class=s>&#34;&#34;</span><span class=p>,</span> <span class=s>&#34;7&#34;</span><span class=p>,</span> <span class=s>&#34;8&#34;</span><span class=p>,</span> <span class=s>&#34;9&#34;</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsVacant</span><span class=p>]</span>         <span class=o>=</span> <span class=p>{</span> <span class=nb>NULL</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsOccupied</span><span class=p>]</span>       <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;&lt;1&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;2&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;3&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;4&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;5&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;6&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;7&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;8&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;9&gt;&#34;</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl><span class=p>};</span>
-</span></span></code></pre></td></tr></table></div></div><p>If a client exists on tag 3 then &ldquo;&lt;3>&rdquo; will be shown as per the occupied tags feature.</p><p>This brings us to an exception; vacant tags.</p></li></ul><ul>
-<li>
-<p>Vacant tags</p><p>The <strong>IconsVacant</strong> tag set is a bit of an exception and is only used when:</p><ul>
-<li>The default icon is hidden (i.e. being an empty string) and</li><li>The selected tag is not occupied</li></ul><p>In other words this is only used when you explicitly view a tag that has no clients on it.</p><p>An example configuration may look like:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>If a client exists on tag 3 then &ldquo;&lt;3>&rdquo; will be shown as per the occupied tags feature.</p><p>This brings us to an exception; vacant tags.</p></li></ul><ul><li><p>Vacant tags</p><p>The <strong>IconsVacant</strong> tag set is a bit of an exception and is only used when:</p><ul><li>The default icon is hidden (i.e. being an empty string) and</li><li>The selected tag is not occupied</li></ul><p>In other words this is only used when you explicitly view a tag that has no clients on it.</p><p>An example configuration may look like:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>static</span> <span class=kt>char</span> <span class=o>*</span><span class=n>tagicons</span><span class=p>[][</span><span class=n>NUMTAGS</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>static</span> <span class=kt>char</span> <span class=o>*</span><span class=n>tagicons</span><span class=p>[][</span><span class=n>NUMTAGS</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsDefault</span><span class=p>]</span>        <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;&#34;</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsVacant</span><span class=p>]</span>         <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;1&#34;</span><span class=p>,</span> <span class=s>&#34;2&#34;</span><span class=p>,</span> <span class=s>&#34;3&#34;</span><span class=p>,</span> <span class=s>&#34;4&#34;</span><span class=p>,</span> <span class=s>&#34;5&#34;</span><span class=p>,</span> <span class=s>&#34;6&#34;</span><span class=p>,</span> <span class=s>&#34;7&#34;</span><span class=p>,</span> <span class=s>&#34;8&#34;</span><span class=p>,</span> <span class=s>&#34;9&#34;</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsOccupied</span><span class=p>]</span>       <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;&lt;1&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;2&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;3&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;4&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;5&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;6&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;7&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;8&gt;&#34;</span><span class=p>,</span> <span class=s>&#34;&lt;9&gt;&#34;</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl><span class=p>};</span>
-</span></span></code></pre></td></tr></table></div></div><p>Here all tags are hidden by default, but show &ldquo;1&rdquo;, &ldquo;2&rdquo;, etc. when selected unless they have clients on them.</p></li></ul><ul>
-<li>
-<p>Alternative tags</p><p>Icon sets are defined by an enum in dwm.c:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>Here all tags are hidden by default, but show &ldquo;1&rdquo;, &ldquo;2&rdquo;, etc. when selected unless they have clients on them.</p></li></ul><ul><li><p>Alternative tags</p><p>Icon sets are defined by an enum in dwm.c:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>enum</span> <span class=p>{</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>enum</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>	<span class=n>IconsDefault</span><span class=p>,</span>
 </span></span><span class=line><span class=cl>	<span class=n>IconsVacant</span><span class=p>,</span>
 </span></span><span class=line><span class=cl>	<span class=n>IconsOccupied</span><span class=p>,</span>
 </span></span><span class=line><span class=cl>	<span class=n>IconsLast</span>
 </span></span><span class=line><span class=cl><span class=p>};</span> <span class=cm>/* icon sets */</span>
-</span></span></code></pre></td></tr></table></div></div><p>As with colour schemes you can add your own sets here and as many as you want. Here is an example setup:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>As with colour schemes you can add your own sets here and as many as you want. Here is an example setup:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -419,8 +215,7 @@ patch.</p><div class=highlight><div class=chroma>
 </span><span class=lnt>7
 </span><span class=lnt>8
 </span><span class=lnt>9
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>static</span> <span class=kt>char</span> <span class=o>*</span><span class=n>tagicons</span><span class=p>[][</span><span class=n>NUMTAGS</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=k>static</span> <span class=kt>char</span> <span class=o>*</span><span class=n>tagicons</span><span class=p>[][</span><span class=n>NUMTAGS</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsDefault</span><span class=p>]</span>        <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;1&#34;</span><span class=p>,</span> <span class=s>&#34;2&#34;</span><span class=p>,</span> <span class=s>&#34;3&#34;</span><span class=p>,</span> <span class=s>&#34;4&#34;</span><span class=p>,</span> <span class=s>&#34;5&#34;</span><span class=p>,</span> <span class=s>&#34;6&#34;</span><span class=p>,</span> <span class=s>&#34;7&#34;</span><span class=p>,</span> <span class=s>&#34;8&#34;</span><span class=p>,</span> <span class=s>&#34;9&#34;</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsBullets</span><span class=p>]</span>        <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;•&#34;</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsLetters</span><span class=p>]</span>        <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;A&#34;</span><span class=p>,</span> <span class=s>&#34;B&#34;</span><span class=p>,</span> <span class=s>&#34;C&#34;</span><span class=p>,</span> <span class=s>&#34;D&#34;</span><span class=p>,</span> <span class=s>&#34;E&#34;</span><span class=p>,</span> <span class=s>&#34;F&#34;</span><span class=p>,</span> <span class=s>&#34;G&#34;</span><span class=p>,</span> <span class=s>&#34;H&#34;</span><span class=p>,</span> <span class=s>&#34;I&#34;</span> <span class=p>},</span>
@@ -429,12 +224,8 @@ patch.</p><div class=highlight><div class=chroma>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsVacant</span><span class=p>]</span>         <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;•₁&#34;</span><span class=p>,</span> <span class=s>&#34;•₂&#34;</span><span class=p>,</span> <span class=s>&#34;•₃&#34;</span><span class=p>,</span> <span class=s>&#34;•₄&#34;</span><span class=p>,</span> <span class=s>&#34;•₅&#34;</span><span class=p>,</span> <span class=s>&#34;•₆&#34;</span><span class=p>,</span> <span class=s>&#34;•₇&#34;</span><span class=p>,</span> <span class=s>&#34;•₈&#34;</span><span class=p>,</span> <span class=s>&#34;•₉&#34;</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl>	<span class=p>[</span><span class=n>IconsOccupied</span><span class=p>]</span>       <span class=o>=</span> <span class=p>{</span> <span class=s>&#34;◉₁&#34;</span><span class=p>,</span> <span class=s>&#34;☢₂&#34;</span><span class=p>,</span> <span class=s>&#34;❖₃&#34;</span><span class=p>,</span> <span class=s>&#34;⚉₄&#34;</span><span class=p>,</span> <span class=s>&#34;♻₅&#34;</span><span class=p>,</span> <span class=s>&#34;⌬₆&#34;</span><span class=p>,</span> <span class=s>&#34;♹₇&#34;</span><span class=p>,</span> <span class=s>&#34;✇₈&#34;</span><span class=p>,</span> <span class=s>&#34;☉₉&#34;</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl><span class=p>};</span>
-</span></span></code></pre></td></tr></table></div></div><p>You can then cycle through the various icon sets with the <strong>cycleiconset</strong> function by using the mouse scroll wheel on the tags (provided that the button binding is set of course). Alternatively you can add keybindings to set specific icon sets if you prefer.</p><p>This extends the <a href=https://dwm.suckless.org/patches/alternativetags/ target=_blank rel="noopener noreferrer">
-alternativetags
-</a>
-patch by allowing you to have multiple alternative tags rather than just the one.</p><p>It should be noted though that with the implementation as-is the <strong>IconsOccupied icon</strong> set will always override the selected icon set if the tag is occupied by clients. Being able to define occupied and vacant icon sets on a per icon set basis was considered, but was deemed to add too much complexity for a feature that most people would likey not want. One likely solution could be to use variables that point to the sets that defines vacant and occupied icons, and allow these to be changed during runtime.</p></li></ul><h4 id=key-binding-switch-monitor>Key Binding switch Monitor</h4><p>The keybindings here are defined as:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>You can then cycle through the various icon sets with the <strong>cycleiconset</strong> function by using the mouse scroll wheel on the tags (provided that the button binding is set of course). Alternatively you can add keybindings to set specific icon sets if you prefer.</p><p>This extends the <a href=https://dwm.suckless.org/patches/alternativetags/ target=_blank rel="noopener noreferrer">alternativetags</a>
+patch by allowing you to have multiple alternative tags rather than just the one.</p><p>It should be noted though that with the implementation as-is the <strong>IconsOccupied icon</strong> set will always override the selected icon set if the tag is occupied by clients. Being able to define occupied and vacant icon sets on a per icon set basis was considered, but was deemed to add too much complexity for a feature that most people would likey not want. One likely solution could be to use variables that point to the sets that defines vacant and occupied icons, and allow these to be changed during runtime.</p></li></ul><h4 id=key-binding-switch-monitor>Key Binding switch Monitor</h4><p>The keybindings here are defined as:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -443,8 +234,7 @@ patch by allowing you to have multiple alternative tags rather than just the one
 </span><span class=lnt>7
 </span><span class=lnt>8
 </span><span class=lnt>9
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl> <span class=n>TAGKEYS</span><span class=p>(</span>                        <span class=n>XK_1</span><span class=p>,</span>                                  <span class=mi>0</span><span class=p>)</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl> <span class=n>TAGKEYS</span><span class=p>(</span>                        <span class=n>XK_1</span><span class=p>,</span>                                  <span class=mi>0</span><span class=p>)</span>
 </span></span><span class=line><span class=cl> <span class=n>TAGKEYS</span><span class=p>(</span>                        <span class=n>XK_2</span><span class=p>,</span>                                  <span class=mi>1</span><span class=p>)</span>
 </span></span><span class=line><span class=cl> <span class=n>TAGKEYS</span><span class=p>(</span>                        <span class=n>XK_3</span><span class=p>,</span>                                  <span class=mi>2</span><span class=p>)</span>
 </span></span><span class=line><span class=cl> <span class=n>TAGKEYS</span><span class=p>(</span>                        <span class=n>XK_4</span><span class=p>,</span>                                  <span class=mi>3</span><span class=p>)</span>
@@ -453,35 +243,24 @@ patch by allowing you to have multiple alternative tags rather than just the one
 </span></span><span class=line><span class=cl> <span class=n>TAGKEYS</span><span class=p>(</span>                        <span class=n>XK_7</span><span class=p>,</span>                                  <span class=mi>6</span><span class=p>)</span>
 </span></span><span class=line><span class=cl> <span class=n>TAGKEYS</span><span class=p>(</span>                        <span class=n>XK_8</span><span class=p>,</span>                                  <span class=mi>7</span><span class=p>)</span>
 </span></span><span class=line><span class=cl> <span class=n>TAGKEYS</span><span class=p>(</span>                        <span class=n>XK_9</span><span class=p>,</span>                                  <span class=mi>8</span><span class=p>)</span>
-</span></span></code></pre></td></tr></table></div></div><p>Which uses the following macro:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>Which uses the following macro:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=cp>#define TAGKEYS(KEY,TAG) \
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=cp>#define TAGKEYS(KEY,TAG) \
 </span></span></span><span class=line><span class=cl><span class=cp> 	{ MODKEY,                       KEY,      view,           {.ui = 1 &lt;&lt; TAG} }, \
 </span></span></span><span class=line><span class=cl><span class=cp> 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 &lt;&lt; TAG} }, \
 </span></span></span><span class=line><span class=cl><span class=cp> 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 &lt;&lt; TAG} }, \
 </span></span></span><span class=line><span class=cl><span class=cp> 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 &lt;&lt; TAG} },
-</span></span></span></code></pre></td></tr></table></div></div><p>You can think of the macro as text being copy-pasted for every TAGKEYS reference above.</p><p>So MOD+1 will trigger the view function to change the tags on the currently selected monitor.</p><p>To focus on another monitor it is expected that you change focus to the other monitor first.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></span></code></pre></td></tr></table></div></div><p>You can think of the macro as text being copy-pasted for every TAGKEYS reference above.</p><p>So MOD+1 will trigger the view function to change the tags on the currently selected monitor.</p><p>To focus on another monitor it is expected that you change focus to the other monitor first.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=p>{</span> <span class=n>MODKEY</span><span class=p>,</span>                       <span class=n>XK_comma</span><span class=p>,</span>      <span class=n>focusmon</span><span class=p>,</span>               <span class=p>{.</span><span class=n>i</span> <span class=o>=</span> <span class=o>-</span><span class=mi>1</span> <span class=p>}</span> <span class=p>},</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=p>{</span> <span class=n>MODKEY</span><span class=p>,</span>                       <span class=n>XK_comma</span><span class=p>,</span>      <span class=n>focusmon</span><span class=p>,</span>               <span class=p>{.</span><span class=n>i</span> <span class=o>=</span> <span class=o>-</span><span class=mi>1</span> <span class=p>}</span> <span class=p>},</span>
 </span></span><span class=line><span class=cl> <span class=p>{</span> <span class=n>MODKEY</span><span class=p>,</span>                       <span class=n>XK_period</span><span class=p>,</span>     <span class=n>focusmon</span><span class=p>,</span>               <span class=p>{.</span><span class=n>i</span> <span class=o>=</span> <span class=o>+</span><span class=mi>1</span> <span class=p>}</span> <span class=p>},</span>
 </span></span></code></pre></td></tr></table></div></div><h2 id=patches>Patches</h2><h3 id=restart-dwm-without-logging-out-or-closing-applications>Restart DWM without logging out or closing applications</h3><p>dwm can now be restarted without destroying other X windows by pressing the usual Mod-Shift-Q combination.
 { MODKEY|ShiftMask, XK_r, self_restart, {0} },
-#endif // SELFRESTART_PATCH</p><h3 id=dwm-fullgaps>dwm-fullgaps</h3><h3 id=autostart>Autostart</h3><p><em>* This patch will make dwm run &ldquo;~</em>.local/share/dwm/autostart_blocking.sh&rdquo; and</p><ul>
-<li>&ldquo;~/.local/share/dwm/autostart.sh &&rdquo; before entering the handler loop. One or</li><li>both of these files can be ommited. Note the path inside .local/share rather</li><li>than the original ~/.dwm folder.</li><li><a href=https://dwm.suckless.org/patches/autostart/ target=_blank rel="noopener noreferrer">
-https://dwm.suckless.org/patches/autostart/
-</a>
-*/</li></ul><p>#define AUTOSTART_PATCH 1</p><p>cd <em>home/yanboyang713</em>.local/share/dwm</p><p>autostart_blocking.sh</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+#endif // SELFRESTART_PATCH</p><h3 id=dwm-fullgaps>dwm-fullgaps</h3><h3 id=autostart>Autostart</h3><p><em>* This patch will make dwm run &ldquo;~</em>.local/share/dwm/autostart_blocking.sh&rdquo; and</p><ul><li>&ldquo;~/.local/share/dwm/autostart.sh &&rdquo; before entering the handler loop. One or</li><li>both of these files can be ommited. Note the path inside .local/share rather</li><li>than the original ~/.dwm folder.</li><li><a href=https://dwm.suckless.org/patches/autostart/ target=_blank rel="noopener noreferrer">https://dwm.suckless.org/patches/autostart/</a>
+*/</li></ul><p>#define AUTOSTART_PATCH 1</p><p>cd <em>home/yanboyang713</em>.local/share/dwm</p><p>autostart_blocking.sh</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -509,8 +288,7 @@ https://dwm.suckless.org/patches/autostart/
 </span><span class=lnt>26
 </span><span class=lnt>27
 </span><span class=lnt>28
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl><span class=cp>#!/bin/sh
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl><span class=cp>#!/bin/sh
 </span></span></span><span class=line><span class=cl><span class=cp></span>
 </span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> -n <span class=s2>&#34;</span><span class=k>$(</span>qvm-usb <span class=p>|</span> grep tslil_clingman_dactyl_manuform_mini_0<span class=k>)</span><span class=s2>&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
 </span></span><span class=line><span class=cl>	<span class=c1># If my USB keyboard is detected, don&#39;t mangle the layout</span>
@@ -538,9 +316,7 @@ https://dwm.suckless.org/patches/autostart/
 </span></span><span class=line><span class=cl><span class=k>fi</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=nb>exec</span> xdg_autostart
-</span></span></code></pre></td></tr></table></div></div><p>autostart.sh</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><p>autostart.sh</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -556,8 +332,7 @@ https://dwm.suckless.org/patches/autostart/
 </span><span class=lnt>14
 </span><span class=lnt>15
 </span><span class=lnt>16
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl><span class=cp>#!/bin/sh
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl><span class=cp>#!/bin/sh
 </span></span></span><span class=line><span class=cl><span class=cp></span>
 </span></span><span class=line><span class=cl><span class=c1># This is to catch lock-session from systemd</span>
 </span></span><span class=line><span class=cl>xss-lock lock <span class=p>&amp;</span>
@@ -573,55 +348,14 @@ https://dwm.suckless.org/patches/autostart/
 </span></span><span class=line><span class=cl>feh --bg-scale /usr/share/backgrounds/tiles/default_blue.jpg
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=nb>exec</span> dwm_status <span class=p>&amp;</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=fullscreen>Fullscreen</h3><p>This patch allows you to toggle fullscreen on and off using a single shortcut key.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=cp>#define TOGGLEFULLSCREEN_PATCH 1
-</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><h3 id=fullscreen>Fullscreen</h3><p>This patch allows you to toggle fullscreen on and off using a single shortcut key.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=cp>#define TOGGLEFULLSCREEN_PATCH 1
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>[yanboyang713@manjaro] ➜ dwm-flexipatch (U master) rm config.h
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=go>[yanboyang713@manjaro] ➜ dwm-flexipatch (U master) rm config.h
 </span></span></span><span class=line><span class=cl><span class=go>rm: remove write-protected regular file &#39;config.h&#39;? yes
-</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl>	<span class=p>{</span> <span class=n>MODKEY</span><span class=p>,</span>                       <span class=n>XK_y</span><span class=p>,</span>          <span class=n>togglefullscreen</span><span class=p>,</span>       <span class=p>{</span><span class=mi>0</span><span class=p>}</span> <span class=p>},</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=reference-list>Reference List</h2><ol>
-<li><a href=https://github.com/bakkeby/dwm-flexipatch/issues/213 target=_blank rel="noopener noreferrer">
-https://github.com/bakkeby/dwm-flexipatch/issues/213
-</a>
-</li><li><a href=https://github.com/bakkeby/patches/wiki/tagicons target=_blank rel="noopener noreferrer">
-https://github.com/bakkeby/patches/wiki/tagicons
-</a>
-</li></ol><h2 id=acknowledge>Acknowledge</h2><ol>
-<li>Stein Gunnar Bakkeby: <a href=https://github.com/bakkeby target=_blank rel="noopener noreferrer">
-https://github.com/bakkeby
-</a>
-</li></ol></div><div class=post-footer id=post-footer>
-<div class=post-info>
-<div class=post-info-line>
-<div class=post-info-mod>
-<span>Updated on 2022-03-09</span>
-</div><div class=post-info-license></div></div><div class=post-info-line>
-<div class=post-info-md><span>
-<a class=link-to-markdown href=https://yanboyang.com/dwm/index.md target=_blank rel="noopener noreferrer">Read Markdown</a>
-</span></div><div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/dwm/ data-title="Getting Started Dynamic Window Manager (DWM)" data-hashtags=DWM><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/dwm/ data-hashtag=DWM><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/dwm/ data-title="Getting Started Dynamic Window Manager (DWM)" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/dwm/ data-title="Getting Started Dynamic Window Manager (DWM)"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/dwm/ data-title="Getting Started Dynamic Window Manager (DWM)"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/dwm/ data-title="Getting Started Dynamic Window Manager (DWM)" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/dwm/ data-title="Getting Started Dynamic Window Manager (DWM)" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/dwm/ data-title="Getting Started Dynamic Window Manager (DWM)"><i class="fab fa-evernote fa-fw"></i></a></span>
-</div></div></div><div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/dwm/>DWM</a></section><section>
-<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span>
-</section></div><div class=post-nav><a href=https://yanboyang.com/srs/ class=prev rel=prev title="Gettting Started SRS(Simple Realtime Server) :SRS:video-server:"><i class="fas fa-angle-left fa-fw"></i>Gettting Started SRS(Simple Realtime Server) :SRS:video-server:</a>
-<a href=https://yanboyang.com/k8sonproxmox/ class=next rel=next title="Build a Kubernetes cluster on Proxmox via Ansible and Terraform">Build a Kubernetes cluster on Proxmox via Ansible and Terraform<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>
-Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
-</noscript></div></article></div></main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.93.3">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
-<i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title="View Comments">
-<i class="fas fa-comment fa-fw"></i>
-</a>
-</div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl>	<span class=p>{</span> <span class=n>MODKEY</span><span class=p>,</span>                       <span class=n>XK_y</span><span class=p>,</span>          <span class=n>togglefullscreen</span><span class=p>,</span>       <span class=p>{</span><span class=mi>0</span><span class=p>}</span> <span class=p>},</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=reference-list>Reference List</h2><ol><li><a href=https://github.com/bakkeby/dwm-flexipatch/issues/213 target=_blank rel="noopener noreferrer">https://github.com/bakkeby/dwm-flexipatch/issues/213</a></li><li><a href=https://github.com/bakkeby/patches/wiki/tagicons target=_blank rel="noopener noreferrer">https://github.com/bakkeby/patches/wiki/tagicons</a></li></ol><h2 id=acknowledge>Acknowledge</h2><ol><li>Stein Gunnar Bakkeby: <a href=https://github.com/bakkeby target=_blank rel="noopener noreferrer">https://github.com/bakkeby</a></li></ol></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2022-03-17</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://yanboyang.com/dwm/index.md target=_blank rel="noopener noreferrer">Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://yanboyang.com/dwm/ data-title="Getting Started Dynamic Window Manager (DWM)" data-hashtags=DWM><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://yanboyang.com/dwm/ data-hashtag=DWM><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://yanboyang.com/dwm/ data-title="Getting Started Dynamic Window Manager (DWM)" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://yanboyang.com/dwm/ data-title="Getting Started Dynamic Window Manager (DWM)"><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://yanboyang.com/dwm/ data-title="Getting Started Dynamic Window Manager (DWM)"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="Share on Myspace" data-sharer=myspace data-url=https://yanboyang.com/dwm/ data-title="Getting Started Dynamic Window Manager (DWM)" data-description><i data-svg-src=https://yanboyang.com/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="Share on Blogger" data-sharer=blogger data-url=https://yanboyang.com/dwm/ data-title="Getting Started Dynamic Window Manager (DWM)" data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="Share on Evernote" data-sharer=evernote data-url=https://yanboyang.com/dwm/ data-title="Getting Started Dynamic Window Manager (DWM)"><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://yanboyang.com/tags/dwm/>DWM</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://yanboyang.com/>Home</a></span></section></div><div class=post-nav><a href=https://yanboyang.com/srs/ class=prev rel=prev title="Gettting Started SRS(Simple Realtime Server) :SRS:video-server:"><i class="fas fa-angle-left fa-fw"></i>Gettting Started SRS(Simple Realtime Server) :SRS:video-server:</a>
+<a href=https://yanboyang.com/k8sonproxmox/ class=next rel=next title="Build a Kubernetes cluster on Proxmox via Ansible and Terraform">Build a Kubernetes cluster on Proxmox via Ansible and Terraform<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href=https://github.com/sunt-programator/CodeIT target=_blank rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2019 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://yanboyang.com/ target=_blank rel="noopener noreferrer">Boyang Yan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=https://yanboyang.com/lib/katex/katex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/katex/copy-tex.min.css><link rel=stylesheet href=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.css><script type=text/javascript src=https://boyang-blog.disqus.com/embed.js defer></script><script type=text/javascript src=https://yanboyang.com/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lunr/lunr.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/sharer/sharer.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/katex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/auto-render.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/copy-tex.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/katex/mhchem.min.js></script><script type=text/javascript src=https://yanboyang.com/lib/cookieconsent/cookieconsent.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},cookieconsent:{content:{dismiss:"Got it!",link:"Learn more",message:"This website uses Cookies to improve your experience."},enable:!0,palette:{button:{background:"#f0f0f0"},popup:{background:"#1aa3ff"}},theme:"edgeless"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=https://yanboyang.com/js/theme.min.js></script></body></html>
