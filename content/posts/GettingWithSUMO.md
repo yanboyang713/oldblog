@@ -18,6 +18,10 @@ There are multiple ways to [install SUMO](https://sumo.dlr.de/docs/Downloads.php
 conda create -n SUMO
 conda activate SUMO
 pip install eclipse-sumo
+pip install traci
+pip install pytz
+pip install pandas
+pip install openpyxl
 ```
 
 That’s it! Now let’s get to creating your first simulation of traffic flow on a network!
@@ -80,3 +84,6 @@ sumo-gui -c ./grid.sumocfg --device.fcd.period 100
 Running this pops up the SUMO GUI, where you can see the entire simulation!
 
 Vehicle colors indicate their speeds from slowest (red) to fastest (green).
+
+
+## Simulating Realistic Traffic {#simulating-realistic-traffic}
