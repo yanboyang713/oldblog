@@ -7777,3 +7777,36 @@ Now, ready to start this VM.
 *** Reference List
 1. https://www.youtube.com/watch?app=desktop&v=fupuTkkKPDU
 2. https://dannyda.com/2021/10/08/how-to-install-windows-11-on-proxmox-ve-pve-without-workarounds/
+
+
+
+* SUMO :@SUMO:
+** DONE Getting started with Simulation of Urban Mobility (SUMO)
+CLOSED: [2022-03-17 Thu 16:15]
+:PROPERTIES:
+:EXPORT_FILE_NAME: GettingWithSUMO
+:EXPORT_OPTIONS: author:nil
+:END:
+*** Introduction
+The Simulation of Urban Mobility (SUMO) platform is an open source platform that enables simulation of traffic flows in complex environments. There aren’t many tutorials I’ve come across that teach you how to create a complex traffic simulation from start to finish.
+
+
+*** Installation
+There are multiple ways to [[https://sumo.dlr.de/docs/Downloads.php][install SUMO]], but I prefer the pip install way, that installs *SUMO* as well as the *python libraries* to interface with SUMO.
+
+#+begin_src bash
+conda create -n SUMO
+conda activate SUMO
+pip install eclipse-sumo
+#+end_src
+
+That’s it! Now let’s get to creating your first simulation of traffic flow on a network!
+*** Simulating traffic in grid networks
+In urban planning, grid road networks are pretty common. In SUMO, we setup a 5x5 grid with each road of length 200m, and 3 lanes, as below:
+[[https://sumo.dlr.de/docs/netgenerate.html#usage_description][netgenerate document]]
+
+#+begin_src bash
+netgenerate --grid true --grid.number=5 -L=3 --grid.length=200 --output-file=grid.net.xml
+#+end_src
+
+Next, we use randomTrips.py located in the tools folder within the SUMO home directory (sumo -> tools), to generate random trips for a certain number of vehicles (200 vehicles in the example below). The begin and end times denote the times during which the vehicles enter the simulation. I’ve chosen 0&1, meaning all vehicles enter the simulation in the first 1 second of the simulation. Period denotes the arrival rate of vehicles.

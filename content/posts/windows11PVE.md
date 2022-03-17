@@ -1,6 +1,6 @@
 ---
 title: "Virtualize Windows 11 with Proxmox"
-date: 2021-12-20T12:37:00+08:00
+date: 2021-12-20T12:37:00+11:00
 tags: ["windows", 11, "proxmox", "pve"]
 categories: ["Windows"]
 draft: false
