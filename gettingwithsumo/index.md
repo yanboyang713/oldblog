@@ -28,5 +28,52 @@ In urban planning, grid road networks are pretty common. In SUMO, we setup a 5x5
 netgenerate --grid true --grid.number=5 -L=3 --grid.length=200 --output-file=grid.net.xml
 ```
 
-Next, we use randomTrips.py located in the tools folder within the SUMO home directory (sumo -&gt; tools), to generate random trips for a certain number of vehicles (200 vehicles in the example below). The begin and end times denote the times during which the vehicles enter the simulation. I’ve chosen 0&amp;1, meaning all vehicles enter the simulation in the first 1 second of the simulation. Period denotes the arrival rate of vehicles.
+Next, we use randomTrips.py located in the tools folder within the SUMO home directory (**sumo** -&gt; **tools**), to generate random trips for a certain number of vehicles (200 vehicles in the example below). The begin and end times denote the times during which the vehicles enter the simulation. I’ve chosen 0&amp;1, meaning all vehicles enter the simulation in the first 1 second of the simulation. Period denotes the arrival rate of vehicles.
+
+```bash
+./sumo/tools/randomTrips.py -n grid.net.xml -o flows.xml -b 0 -e 1 -p 1 --flows 200
+```
+
+Next, we generate the routes taken by individual vehicles using SUMO’s [jtrrouter](https://sumo.dlr.de/docs/jtrrouter.html), between times 0 to 10000.
+
+```bash
+jtrrouter --route-files flows.xml --net-file grid.net.xml --output-file grid.rou.xml --begin 0 --end 10000 --accept-all-destinations true
+```
+
+Finally, for simplicity we want to maintain a constant density. The most obvious way to do this is by vehicles driving randomly, and not exiting the simulation. For this, we use the Manhattan traffic model, where vehicles encountering an intersection choose to either go straight, left, or right based on set probabilities. By default in SUMO, vehicles exit the simulation once they reach their destination. However, SUMO has an implementation of the Manhattan model, using a continuous rerouter python script.
+
+```bash
+./sumo/tools/generateContinuousRerouters.py -n grid.net.xml --end 10000 -o rerouter.add.xml
+```
+
+Next, we create a sumo config file, in order to run the simulation in SUMO, which is basically a .xml file with certain attributes, containing the names of the network file, route file, and additional rerouting file for vehicles to stay in the simulation until the simulation is completed. We define an output file: **grid.sumocfg**, to store the detailed vehicle information during the traffic simulation.
+
+```xml
+<configuration>
+    <input>
+        <net-file value="grid.net.xml"/>
+        <route-files value="grid.rou.xml"/>
+        <additional-files value="rerouter.add.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="10000"/>
+    </time>
+    <output>
+        <fcd-output value="grid.output.xml"/>
+    </output>
+</configuration>
+```
+
+Finally, we run the simulation in the terminal as below. Period denotes the time interval at which data is saved — 100 denotes saving vehicular information i.e. speed and position, every 100 timesteps.
+
+[sumo-gui](https://sumo.dlr.de/docs/sumo-gui.html) document.
+
+```bash
+sumo-gui -c ./grid.sumocfg --device.fcd.period 100
+```
+
+Running this pops up the SUMO GUI, where you can see the entire simulation!
+
+Vehicle colors indicate their speeds from slowest (red) to fastest (green).
 
