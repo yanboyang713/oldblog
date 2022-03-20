@@ -6447,6 +6447,17 @@ read -p "Do you want to swap ctrl-L and Caps keys (Y/n)? " -n 1 -r
 1.  https://opensource.com/article/18/11/how-swap-ctrl-and-caps-lock-your-keyboard
 
 
+** DONE Getting Started Personal Arch Linux Package Repository with GitHub
+CLOSED: [2022-03-20 Sun 18:43]
+:PROPERTIES:
+:EXPORT_FILE_NAME: ArchLinuxPackageRepository
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Reference List
+1. [[https://www.sainnhe.dev/post/create-personal-arch-linux-package-repository/][Create Personal Arch Linux Package Repository via GitHub Pages]]
+
+
 * Research :@Research:
 ** DONE Getting Started with Zotero :zotero:
 CLOSED: [2021-12-07 Tue 12:46]
