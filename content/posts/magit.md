@@ -129,79 +129,82 @@ p u
 
 when you want to paste into minibuffer, C-y
 
-128 git … push -v --set-upstream origin master\\:refs/heads/master
-Pushing to <https://github.com/yanboyang713/testMagit.git>
+```console
+128 git … push -v --set-upstream origin master\:refs/heads/master
+Pushing to https://github.com/yanboyang713/testMagit.git
 Username for 'https://github.com': Password for 'https://yanboyang713@github.com':
 remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
-remote: Please see <https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/> for more information.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
 fatal: Authentication failed for 'https://github.com/yanboyang713/testMagit.git/'
+```
 
 
 ### Rebase {#rebase}
 
 Let’s create an empty repository and add one empty file to it.
 
-\`\`\`bash
+```bash
 git init
 touch file.txt
 git add .
 git commit -m 'first commit'
-\`\`\`
+```
 
 
 #### Rewording commit {#rewording-commit}
 
 Now let’s add some fruits in the file. Open the file and add a new line
-\`\`\`file
+
+```file
 apple
-\`\`\`
+```
 
 Open Magit, commit the change with a message says
 
-\`\`\`file
+```file
 Add apple
-\`\`\`
+```
 
 Then add a new line
 
-\`\`\`file
+```file
 pear
-\`\`\`
+```
 
 with commit message
 
-\`\`\`file
+```file
 apple again, wrong commit message
-\`\`\`
+```
 
 Then add a new line
 
-\`\`\`file
+```file
 peach
-\`\`\`
+```
 
 with a commit message
 
-\`\`\`file
+```file
 peach
-\`\`\`
+```
 
-Now it is clear that we need to fix the second commit message. But since this is not the last one we cannot use ****git commit --amend****. But we can still use ****rebase**** to change it.
+Now it is clear that we need to fix the second commit message. But since this is not the last one we cannot use **git commit --amend**. But we can still use **rebase** to change it.
 
-In Magit, press ****ll**** to open the log history. Put the cursor under the wrong commit.
-\![](![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017008/git/Rewording_s2foua.png))
+In Magit, press **ll** to open the log history. Put the cursor under the wrong commit.
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017008/git/Rewording_s2foua.png)
 
-Then press ****r(rebase)**** and ****w(to reword a commit)****.
-Now enter the correct commit message pear and press ****C-c C-c****. Now you should see the commit messages updates.
+Then press **r(rebase)** and **w(to reword a commit)**.
+Now enter the correct commit message pear and press **C-c C-c**. Now you should see the commit messages updates.
 
 
 ### Squashing commits {#squashing-commits}
 
 It appears that the last 3 commits should really be 1 commit with a message like add fruits. We can use rebase to squash them into one commit like this:
 
-In the commit history, put the cursor on the oldest of the 3 commits that we want to squash, and press ****r(rebase)**** ****i(interactively)****. We now see the interactive rebase page.
+In the commit history, put the cursor on the oldest of the 3 commits that we want to squash, and press **r(rebase)** **i(interactively)**. We now see the interactive rebase page.
 
-\![](![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017472/git/Squashing_nfufkr.png))
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017472/git/Squashing_nfufkr.png" >}}
 
 The good thing about this page is that it contains a cheatsheet already, so you can just see what kind things can be done here.
 
@@ -209,14 +212,14 @@ Notice that the order of the commits now is reversed, the latest commit being at
 
 As the cheatsheet says, we can put the cursor on the pear commit and press s, this means that we want this commit to be squashed into its previous commit. And then we do the same for the peach commit.
 
-\![](![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017669/git/Squashing2_rfht8t.png))
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017669/git/Squashing2_rfht8t.png" >}}
 
 We can see that the two commits are marked as squash now, then we can press C-c C-c to make the squash happen. It will prompt you to enter the new commit and also hint you the previous commit messages. Type Add fruits and press C-c C-c.
 
 Now we can see from the history that the 3 previous commits become one now.
 
-\![](![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017873/git/Squashing3_zchjry.png))
-\![](![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631018028/git/Squashing4_n9ry27.png))
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631017873/git/Squashing3_zchjry.png)
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631018028/git/Squashing4_n9ry27.png)
 
 
 ### Splitting commit (does NOT work yet) {#splitting-commit--does-not-work-yet}
@@ -227,12 +230,12 @@ Let’s add a new file file2.txt and modify the file.txt to add some animal name
 
 As always, we go to the commits history page, put the cursor on the last commit, and press r, then press m(to edit a commit).
 
-\![](![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631018477/git/Splitting1_ij6vvu.png))
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631018477/git/Splitting1_ij6vvu.png" >}}
 
 Notice that there is a @ sign in front of the commit, meaning the HEAD now is at this commit. And then, we want to move the HEAD one step before the current by git reset. Move the cursor to previous commit Add fruits and press x, then choose master. Now go back to the main screen you should see this:
 
-****TIPS:**** You can switch between Vim and Emacs per buffer with C-z
-\![](![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631019252/git/Splitting2_i6p9cr.png))
+**TIPS:** You can switch between Vim and Emacs per buffer with C-z
+![](https://res.cloudinary.com/dkvj6mo4c/image/upload/v1631019252/git/Splitting2_i6p9cr.png)
 
 
 ### Reset commits {#reset-commits}
