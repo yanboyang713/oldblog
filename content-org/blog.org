@@ -6451,13 +6451,14 @@ read -p "Do you want to swap ctrl-L and Caps keys (Y/n)? " -n 1 -r
 CLOSED: [2022-03-20 Sun 18:43]
 :PROPERTIES:
 :EXPORT_FILE_NAME: ArchLinuxPackageRepository
-:EXPORT_OPTIONS: author:nil
+:EXPORT_OPTIONS: author: Boyang Yan
 :END:
 
 *** Introduction
 I am making a Arch Linux based Meta Scientific Linux,so I need create a custom Package Repository for this OS packages.
 
 In this article, I’m going to record my steps to create my own arch linux package repository, via github pages, no need to maintain your server.
+
 *** Build signed packages
 
 **** Create your gpg key

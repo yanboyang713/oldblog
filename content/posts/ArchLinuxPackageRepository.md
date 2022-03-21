@@ -1,5 +1,6 @@
 ---
 title: "Getting Started Custom Arch Linux Package Repository with GitHub"
+author: ["Boyang Yan"]
 date: 2022-03-20T18:43:00+11:00
 categories: ["Linux"]
 draft: false
