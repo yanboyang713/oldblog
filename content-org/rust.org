@@ -1,0 +1,61 @@
+#+title: Rust
+#+hugo_base_dir: ~/blog/
+#+hugo_section: posts
+#+hugo_front_matter_format: yaml
+
+* Rust :@Rust:
+** TODO Getting started with Rust
+:PROPERTIES:
+:EXPORT_FILE_NAME: rustGettingStart
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+
+*** Installing Rust
+Rustup: the Rust installer and version management tool. The primary way that install *Rust* is use [[https://rustup.rs/][rustup]], which is a Rust installer and version management tool, as this makes it easy to use the nightly toolchain.
+
+It can be running on macOS, Linux, or another Unix-like OS. To download Rustup and install Rust, run the following in your terminal, then follow the on-screen instructions.
+
+#+begin_src bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+#+end_src
+
+To get started you may need to restart your current shell.
+This would reload your PATH environment variable to include
+Cargo's bin directory ($HOME/.cargo/bin).
+
+To configure your current shell, run:
+#+begin_src bash
+source $HOME/.cargo/env
+#+end_src
+
+File *$HOME/.cargo/env*:
+#+begin_src bash
+#!/bin/sh
+# rustup shell setup
+# affix colons on either side of $PATH to simplify matching
+case ":${PATH}:" in
+    *:"$HOME/.cargo/bin":*)
+        ;;
+    *)
+        # Prepending path in case a system-installed rustc needs to be overridden
+        export PATH="$HOME/.cargo/bin:$PATH"
+        ;;
+esac
+#+end_src
+
+*** Update Rust
+Rust updates very frequently. If you have installed Rustup some time ago, chances are your Rust version is out of date. Get the latest version of Rust by running.
+
+#+begin_src bash
+rustup update
+#+end_src
+
+*** Test cargo installed
+#+begin_src bash
+cargo --version
+#+end_src
+
+*** Reference List
+1. https://www.rust-lang.org/learn/get-started
