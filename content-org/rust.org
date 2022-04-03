@@ -11,7 +11,7 @@
 :END:
 
 *** Introduction
-
+Rust
 *** Installing Rust
 Rustup: the Rust installer and version management tool. The primary way that install *Rust* is use [[https://rustup.rs/][rustup]], which is a Rust installer and version management tool, as this makes it easy to use the nightly toolchain.
 
