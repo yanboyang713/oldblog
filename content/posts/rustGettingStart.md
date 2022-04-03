@@ -6,7 +6,7 @@ draft: true
 
 ## Introduction {#introduction}
 
-Rust
+Rust.
 
 
 ## Installing Rust {#installing-rust}

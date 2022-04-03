@@ -14,21 +14,6 @@ deploy () {
 
     echo "$1"
 
-    # Get System environment, if does NOT have get repo name auto
-    if [ ! -z "${BLOGREPOSITORIENAME}" ]; then
-        echo "Your Github Repositorir Name is: $BLOGREPOSITORIENAME"
-    else
-        # get Repositorie Name for deploy SSH key
-        BLOGREPOSITORIENAME=$(grep -oP '(?<=[[:space:]]).*?(?=!)' <<< "$1")
-        echo "Your Github Repositorir Name is: $BLOGREPOSITORIENAME"
-    fi
-
-    #set git remote URL
-    git remote set-url origin git@github.com:"$BLOGREPOSITORIENAME".git
-
-    # switch to main branch
-    git checkout main
-
     # pull
     git pull
 
