@@ -95,4 +95,3 @@ Running this pops up the SUMO GUI, where you can see the entire simulation!
 Vehicle colors indicate their speeds from slowest (red) to fastest (green).
 
 *** Simulating Realistic Traffic
-hi, this is a test.
