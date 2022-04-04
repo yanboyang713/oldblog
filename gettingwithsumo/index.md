@@ -100,5 +100,3 @@ Vehicle colors indicate their speeds from slowest (red) to fastest (green).
 
 ## Simulating Realistic Traffic {#simulating-realistic-traffic}
 
-hi, this is a test.
-
