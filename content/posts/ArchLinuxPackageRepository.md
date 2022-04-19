@@ -1,6 +1,5 @@
 ---
 title: "Getting Started Custom Arch Linux Package Repository with GitHub"
-author: ["Boyang Yan"]
 date: 2022-03-20T18:43:00+11:00
 categories: ["Linux"]
 draft: false
@@ -142,6 +141,82 @@ gpg --import /path/to/boyang.gpg
 
 
 ### Configure pacman {#configure-pacman}
+
+Now let’s configure pacman to use this gpg key.
+
+Like gpg, there are also two methods for pacman to import a gpg key.
+
+Mehod 1 is to receive it from key server:
+
+```bash
+(base) [yanboyang713@Boyang-ThinkpadT470s] ➜ ~ sudo pacman-key --recv-keys 3A1A0AAF6F4C8495DDEF5A4785FA48B5318C31E8
+[sudo] password for yanboyang713:
+gpg: key 85FA48B5318C31E8: public key "Boyang Yan <yanboyang713@gmail.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+```
+
+Another method is to directly import this key from a key file:
+
+```bash
+sudo pacman-key --add /path/to/sainnhe.gpg
+```
+
+After importing this key, it’s recommended to verify the fingerprint:
+
+```bash
+(base) [yanboyang713@Boyang-ThinkpadT470s] ➜ ~ sudo pacman-key --finger 85FA48B5318C31E8
+pub   rsa3072 2022-03-20 [SC]
+      3A1A 0AAF 6F4C 8495 DDEF  5A47 85FA 48B5 318C 31E8
+uid           [ unknown] Boyang Yan <yanboyang713@gmail.com>
+sub   rsa3072 2022-03-20 [E]
+```
+
+Finally, we need to locally sign the key:
+
+```bash
+(base) [yanboyang713@Boyang-ThinkpadT470s] ➜ ~ sudo pacman-key --lsign-key 85FA48B5318C31E8
+  -> Locally signed 1 keys.
+==> Updating trust database...
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: public key CF66D153D884358F is 16 seconds newer than the signature
+gpg: depth: 0  valid:   1  signed:  74  trust: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: depth: 1  valid:  74  signed:  94  trust: 1-, 0q, 0n, 73m, 0f, 0u
+gpg: depth: 2  valid:  85  signed:  31  trust: 85-, 0q, 0n, 0m, 0f, 0u
+```
+
+```bash
+(base) [yanboyang713@Boyang-ThinkpadT470s] ➜ ~ sudo pacman-key --finger 85FA48B5318C31E8
+pub   rsa3072 2022-03-20 [SC]
+      3A1A 0AAF 6F4C 8495 DDEF  5A47 85FA 48B5 318C 31E8
+uid           [  full  ] Boyang Yan <yanboyang713@gmail.com>
+sub   rsa3072 2022-03-20 [E]
+```
+
+Configure makepkg
+If you want to build packages signed with this key, you’ll also need to configure makepkg.
+
+In your **/etc/makepkg.conf**, uncomment and modify the following lines:
+
+```file
+#-- Packager: name/email of the person or organization building packages
+PACKAGER="Boyang Yan <yanboyang713@gmail.com>"
+#-- Specify a key to use for package signing
+GPGKEY="85FA48B5318C31E8"
+```
+
+Remember to change the PACKAGER field, too. This will determine the Packager section in your package.
+
+Build signed packages
+Now let’s try to build a signed package.
+
+```bash
+makepkg -sr --sign
+```
+
+The main difference between building signed packages and building unsigned packages is that you need to pass --sign argument to makepkg if you want to build signed packages.
+
+And after building a signed package, we will get not only a \*.pkg.tar.zst, but also a \*.pkg.tar.zst.sig file. This \*.pkg.tar.zst.sig file is the binary signature of this package, we’ll need to add both of these two files to our package repository.
 
 
 ## Reference List {#reference-list}

@@ -419,6 +419,7 @@ One of the challenges in time series analysis is that the same time series may b
 In the average monthly temperatures example of the first module, we got the following time series plot in Figure 1:
 
 Here we have a cyclical or seasonal trend, but here the reason for the trend is clear that the Northern Hemisphere’s changing inclination toward the sun. We can model this trend by Yt=Xt+μt, where μt is a deterministic function that is periodic with period 12 and it should satisfy μt=μt−12 for all t. We can assume that Xt represent an unobserved variation around μt and has zero mean for all t. So, this model assumes that μt is the mean function for the observed series Yt. Because the mean function is determined beforehand and we can set the “functions form” of a trend, the trend considered here is a deterministic trend. It is possible to set a linear mean function such that μt=β0+β1t or a quadratic time trend such as μt=β0+β1t+β2t2.
+
 *** Estimation of a Constant Mean
 When we consider a constant mean over time, we set μt=μ, for all t. So, our model is written as
 
@@ -983,3 +984,14 @@ Forecasts from the harmonic model successfully follow the repeating pattern in t
 
 *** Summary
 In this module, we focused on describing, modeling, and estimating deterministic trends in time series. The simplest deterministic “trend” is a constant-mean function. Regression methods were then pursued to estimate trends that are linear or quadratic in time. Methods for modeling cyclical or seasonal trends came next, and the reliability and efficiency of all of these regression methods were investigated. Finally, we studied residual analysis to investigate the quality of the fitted model. We also introduced the important sample autocorrelation function, which is a very useful and important tool in the analysis of time series.
+
+
+** DONE Models for Stationary Time Series
+CLOSED: [2022-03-22 Tue 16:18]
+:PROPERTIES:
+:EXPORT_FILE_NAME: stationaryTimeSeries
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Introduction
+We will focus on general linear processes, moving average processes, autoregressive processes, the mixed Autoregressive Moving Average (ARMA) models and invertibility. These concepts provide the required basis for one of the frequently used ARMA methodology. We will have hands-on tasks to deepen your understanding of ARMA models and improve your skillsets for the implementation of time series analysis methods.
