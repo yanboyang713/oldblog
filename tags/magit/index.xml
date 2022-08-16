@@ -2,4 +2,5 @@
 Magit is arguably the best Git tool out there and also my favorite. It is a package in Emacs, and it is text based.
 Commands Initialize create a Git Repository from a floder
 1 SPC g i or,
-1 M-x magit-init Navigate to the Magit Window:</description></item></channel></rss>
+1 M-x magit-init Navigate to the Magit Window:
+1 SPC-g-g or C-x g staged and unstaged Add all of files to staged</description></item></channel></rss>

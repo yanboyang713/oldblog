@@ -2,4 +2,4 @@
 If you &ldquo;PCI passthrough&rdquo; a device, the device is not available to the host anymore.
 Note: PCI passthrough is an experimental feature in Proxmox VE! VMs with passthroughed devices cannot be migrated.
 Enable the IOMMU First open your bootloader kernel command line config file.
-1  vim /etc/default/grub   Find line GRUB_CMDLINE_LINUX_DEFAULT=&ldquo;quiet&rdquo;]]></description></item></channel></rss>
+1 vim /etc/default/grub Find line GRUB_CMDLINE_LINUX_DEFAULT=&ldquo;quiet&rdquo;]]></description></item></channel></rss>
