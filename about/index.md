@@ -1,8 +1,6 @@
 # About Me
 
 
-<iframe src="https://calendar.google.com/calendar/embed?src=byan4%40ncsu.edu&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-
 ## Overview
 
 I see myself advancing with strong ability, and passion for new technology and academic research. I have three years of working experience in Machine Learning and Software Testing at Microsoft and research institution. Also, I like to write my blog every week to  share some of my new readings and findings.
