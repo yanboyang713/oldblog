@@ -52,6 +52,11 @@ canonifyURLs = true
     name = "About Me"
     url = "/about/"
     weight = 5
+  [[menu.main]]
+    identifier = "Calendar"
+    name = "Calendar"
+    url = "/calendar/"
+    weight = 6
 
 [params]
   #  LoveIt theme version
