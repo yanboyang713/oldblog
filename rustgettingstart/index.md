@@ -1,0 +1,252 @@
+# Getting started with Rust
+
+
+## Introduction {#introduction}
+
+Rust is a new systems programming language that combines the performance and low-level control of C and C++ with memory safety and thread safety. Rust's modern, flexible types ensure your program is free of null pointer dereferences, double frees, dangling pointers, and similar bugs, all at compile time, without runtime overhead. In multi-threaded code, Rust catches data races at complie time, making concurrency much easier to use.
+
+
+## Installing Rust {#installing-rust}
+
+Rustup: the Rust installer and version management tool. The primary way that install **Rust** is use [rustup](https://rustup.rs/), which is a Rust installer and version management tool, as this makes it easy to use the nightly toolchain.
+
+It can be running on macOS, Linux, or another Unix-like OS. To download Rustup and install Rust, run the following in your terminal, then follow the on-screen instructions.
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+To get started you may need to restart your current shell.
+This would reload your PATH environment variable to include
+Cargo's bin directory ($HOME/.cargo/bin).
+
+To configure your current shell, run:
+
+```bash
+source $HOME/.cargo/env
+```
+
+File **$HOME/.cargo/env**:
+
+```bash
+#!/bin/sh
+# rustup shell setup
+# affix colons on either side of $PATH to simplify matching
+case ":${PATH}:" in
+    *:"$HOME/.cargo/bin":*)
+        ;;
+    *)
+        # Prepending path in case a system-installed rustc needs to be overridden
+        export PATH="$HOME/.cargo/bin:$PATH"
+        ;;
+esac
+```
+
+
+### Update Rust {#update-rust}
+
+Rust updates very frequently. If you have installed Rustup some time ago, chances are your Rust version is out of date. Get the latest version of Rust by running.
+
+```bash
+rustup update
+```
+
+
+### Test cargo installed {#test-cargo-installed}
+
+```bash
+cargo --version
+```
+
+
+### cargo, rustc and rustdoc {#cargo-rustc-and-rustdoc}
+
+-   **cargo** is Rust’s compilation manager, package manager, and general-purpose tool.
+
+    You can use Cargo to start a new project, build and run your program, and manage any external libraries your code depends on.
+
+-   **rustc** is the Rust compiler. Usually we let Cargo invoke the compiler for us, but sometimes it’s useful to run it directly.
+
+-   **rustdoc** is the Rust documentation tool. If you write documentation in comments of the appropriate form in your program’s source code, rustdoc can build nicely formatted HTML from them. Like rustc, we usually let Cargo run **rustdoc** for us.
+
+
+## Create a new Rust package {#create-a-new-rust-package}
+
+As a convenience, Cargo can create a new Rust package for us, with some standard metadata arranged appropriately:
+
+```console
+$ cargo new --bin hello
+Created binary (application) `hello` project
+```
+
+This command creates a new package directory named hello, and the --bin flag directs Cargo to prepare this as an executable, not a library. Looking inside the package’s top-level directory:
+
+```console
+(base) [yanboyang713@Boyang-ThinkpadT470s] ➜ hello (! master) ls -la
+total 24
+drwxr-xr-x 4 yanboyang713 yanboyang713 4096 Aug 16 17:23 .
+drwxr-xr-x 3 yanboyang713 yanboyang713 4096 Aug 16 17:23 ..
+-rw-r--r-- 1 yanboyang713 yanboyang713  174 Aug 16 17:23 Cargo.toml
+drwxr-xr-x 6 yanboyang713 yanboyang713 4096 Aug 16 17:23 .git
+-rw-r--r-- 1 yanboyang713 yanboyang713    8 Aug 16 17:23 .gitignore
+drwxr-xr-x 2 yanboyang713 yanboyang713 4096 Aug 16 17:23 src
+```
+
+We can see that Cargo has created a file Cargo.toml to hold metadata for the package.
+At the moment this file doesn’t contain much:
+
+```file
+ [yanboyang713@Boyang-ThinkpadT470s] ➜ hello (! master) cat Cargo.toml
+[package]
+name = "hello"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+```
+
+If our program ever acquires dependencies on other libraries, we can record them in this file, and Cargo will take care of downloading, building, and updating those libraries for us.
+
+Cargo has set up our package for use with the git version control system, creating a .git metadata subdirectory, and a .gitignore file. You can tell Cargo to skip this step by specifying **--vcs none** on the command line.
+
+The **src** subdirectory contains the actual Rust code:
+
+```console
+[yanboyang713@Boyang-ThinkpadT470s] ➜ hello (! master) cd src
+(base) [yanboyang713@Boyang-ThinkpadT470s] ➜ src (! master) ls -la
+total 12
+drwxr-xr-x 2 yanboyang713 yanboyang713 4096 Aug 16 17:23 .
+drwxr-xr-x 4 yanboyang713 yanboyang713 4096 Aug 16 17:23 ..
+-rw-r--r-- 1 yanboyang713 yanboyang713   45 Aug 16 17:23 main.rs
+```
+
+It seems that Cargo has begun writing the program on our behalf. The main.rs file contains the text:
+
+```rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+
+In Rust, you don’t even need to write your own “Hello, World!” program.
+
+We can invoke the **cargo run** command from any directory in the package to build and run our program:
+
+```console
+[yanboyang713@Boyang-ThinkpadT470s] ➜ src (! master) cargo run
+   Compiling hello v0.1.0 (/home/yanboyang713/learnRust/hello)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.47s
+     Running `/home/yanboyang713/learnRust/hello/target/debug/hello`
+Hello, world!
+```
+
+Here, Cargo has invoked the Rust compiler, rustc, and then run the executable it produced. Cargo places the executable in the target subdirectory at the top of the package:
+
+```console
+ [yanboyang713@Boyang-ThinkpadT470s] ➜ src (! master) cd ../target/debug
+(base) [yanboyang713@Boyang-ThinkpadT470s] ➜ debug (! master) ls -la
+total 3804
+drwxr-xr-x 7 yanboyang713 yanboyang713    4096 Aug 16 17:33 .
+drwxr-xr-x 3 yanboyang713 yanboyang713    4096 Aug 16 17:33 ..
+drwxr-xr-x 2 yanboyang713 yanboyang713    4096 Aug 16 17:33 build
+-rw-r--r-- 1 yanboyang713 yanboyang713       0 Aug 16 17:33 .cargo-lock
+drwxr-xr-x 2 yanboyang713 yanboyang713    4096 Aug 16 17:33 deps
+drwxr-xr-x 2 yanboyang713 yanboyang713    4096 Aug 16 17:33 examples
+drwxr-xr-x 3 yanboyang713 yanboyang713    4096 Aug 16 17:33 .fingerprint
+-rwxr-xr-x 2 yanboyang713 yanboyang713 3862368 Aug 16 17:33 hello
+-rw-r--r-- 1 yanboyang713 yanboyang713     102 Aug 16 17:33 hello.d
+drwxr-xr-x 3 yanboyang713 yanboyang713    4096 Aug 16 17:33 incremental
+```
+
+```console
+[yanboyang713@Boyang-ThinkpadT470s] ➜ debug (! master) ./hello
+Hello, world!
+```
+
+When we’re through, Cargo can clean up the generated files for us:
+
+```bash
+cargo clean
+```
+
+
+## A Simple Function {#a-simple-function}
+
+Rust’s syntax is deliberately unoriginal. If you are familiar with C, C++, Java, or JavaScript, you can probably find your way through the general structure of a Rust program. Here is a function that computes the greatest common divisor of two integers, using Euclid’s algorithm:
+
+```rust
+fn gcd(mut n: u64, mut m: u64) -> u64 {
+    assert!(n != 0 && m != 0);
+    while m != 0 {
+        if m < n {
+            let t = m;
+            m = n;
+            n = t;
+        }
+        m = m % n;
+    }
+    n
+}
+```
+
+The **fn** keyword (pronounced “fun”) introduces a function. Here, we’re defining a function named **gcd**, which takes two parameters n and m, each of which is of type **u64**, an unsigned 64-bit integer. The **-&gt;** token precedes the return type: our function returns a **u64** value. Four-space indentation is standard Rust style.
+
+Rust’s machine integer type names reflect their size and signedness: **i32** is a signed 32-bit integer; **u8** is an unsigned eight-bit integer (used for “byte” values), and so on. The **isize** and **usize** types hold pointer-sized signed and unsigned integers, 32 bits long on 32-bit platforms, and 64 bits long on 64-bit platforms. Rust also has two floating-point types, f32 and f64, which are the IEEE single- and double-precision floating-point types, like float and double in C and C++.
+
+By default, once a variable is initialized, its value can’t be changed, but placing the **mut** keyword (pronounced “mute”, short for mutable) before the parameters n and m allows our function body to assign to them. In practice, most variables don’t get assigned to; the mut keyword on those that do can be a helpful hint when reading code.
+
+The function’s body starts with a call to the assert! macro, verifying that neither argument is zero. The ! character marks this as a macro invocation, not a function call. Like the assert macro in C and C++, Rust’s assert! checks that its argument is true, and if it is not, terminates the program with a helpful message including the source location of the failing check; this kind of abrupt termination is called a **panic**. Unlike C and C++, in which assertions can be skipped, Rust always checks assertions regardless of how the program was compiled. There is also a **debug_assert!** macro, whose assertions are skipped when the program is compiled for speed.
+
+The heart of our function is a while loop containing an if statement and an assignment. Unlike C and C++, Rust does not require parentheses around the conditional expressions, but it does require curly braces around the statements they control.
+
+A **let** statement declares a local variable, like **t** in our function. We don’t need to write out t’s type, as long as Rust can infer it from how the variable is used. In our function, the only type that works for t is u64, matching m and n. Rust only infers types within function bodies: you must write out the types of function parameters and return values, as we did before. If we wanted to spell out t’s type, we could write:
+
+```rust
+let t: u64 = m;
+```
+
+Rust has a return statement, but the gcd function doesn’t need one. If a function body ends with an expression that is not followed by a semicolon, that’s the function’s return value. In fact, any block surrounded by curly braces can function as an expression. For example, this is an expression that prints a message and then yields x.cos()
+as its value:
+
+```rust
+{
+println!("evaluating cos x");
+x.cos()
+}
+```
+
+It’s typical in Rust to use this form to establish the function’s value when control "falls off the end" of the function, and use return statements only for explicit early returns from the midst of a function.
+
+
+## Writing and Running Unit Tests {#writing-and-running-unit-tests}
+
+Rust has simple support for testing built into the language. To test our gcd function, we can write:
+
+```rust
+#[test]
+fn test_gcd() {
+    assert_eq!(gcd(14, 15), 1);
+
+    assert_eq!(gcd(2 * 3 * 5 * 11 * 17,
+                   3 * 7 * 11 * 13 * 19),
+               3 * 11);
+}
+```
+
+Here we define a function named **test_gcd**, which calls gcd and checks that it returns correct values. The **#[test]** atop the definition marks **test_gcd** as a test function, to be skipped in normal compilations, but included and called automatically if we run our program with the **cargo test** command. If our current directory is somewhere within the package’s subtree, we can run the tests as follows:
+
+```bash
+cargo test
+```
+
+We can have test functions scattered throughout our source tree, placed next to the code they exercise, and cargo test will automatically gather them up and run them all.
+
+The **#[test]** marker is an example of an attribute. Attributes are an open-ended system for marking functions and other declarations with extra information, like attributes in C++ and C#, or annotations in Java. They’re used to control compiler warnings and code style checks, include code conditionally (like #ifdef in C and C++), tell Rust how to interact with code written in other languages, and so on.
+
+
+## Reference List {#reference-list}
+
+1.  <https://www.rust-lang.org/learn/get-started>
+
