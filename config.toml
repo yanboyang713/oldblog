@@ -48,15 +48,22 @@ canonifyURLs = true
     title = ""
     weight = 4
   [[menu.main]]
-    identifier = "About Me"
+    identifier = "AboutMe"
+    pre = ""
+    post = ""
     name = "About Me"
     url = "/about/"
+    title = ""
     weight = 5
   [[menu.main]]
     identifier = "Calendar"
+    pre = ""
+    post = ""
     name = "Calendar"
     url = "/calendar/"
+    title = ""
     weight = 6
+
 
 [params]
   #  LoveIt theme version
