@@ -1,6 +1,6 @@
 ---
 title: "Building a Second Brain"
-date: 2021-12-07T10:18:00+08:00
+date: 2021-12-07T10:18:00-05:00
 tags: ["second", "brain", "org", "mode", "emacs"]
 categories: ["Research"]
 draft: false
@@ -15,9 +15,9 @@ Much like any well-integrated tool, I am currently using **Emacs Org Mode** as S
 
 I will follow the below overview diagram introducte each components one by one.
 
-{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638851036/research/orgmode2%5Ffirjld.png" >}}
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638851036/research/orgmode2_firjld.png" >}}
 
-{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638851036/research/orgMode%5Fasb3an.png" >}}
+{{< figure src="https://res.cloudinary.com/dkvj6mo4c/image/upload/v1638851036/research/orgMode_asb3an.png" >}}
 
 
 ## Pre-reading {#pre-reading}

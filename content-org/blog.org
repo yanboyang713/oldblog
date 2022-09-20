@@ -6649,9 +6649,14 @@ The main difference between building signed packages and building unsigned packa
 
 And after building a signed package, we will get not only a *.pkg.tar.zst, but also a *.pkg.tar.zst.sig file. This *.pkg.tar.zst.sig file is the binary signature of this package, we’ll need to add both of these two files to our package repository.
 
+**** Create a local repo
+#+begin_src bash
+repo-add meta-scientific-linux.db.tar.gz
+#+end_src
 
 *** Reference List
 1. [[https://www.sainnhe.dev/post/create-personal-arch-linux-package-repository/][Create Personal Arch Linux Package Repository via GitHub Pages]]
+
 
 ** DONE Getting Started Creating Arch Linux packages
 CLOSED: [2022-04-19 Tue 15:25]
@@ -7067,28 +7072,34 @@ I will follow the below overview diagram introducte each components one by one.
 + The types of TODO’s can either be set globally in your init file, or they can be file/buffer specific.
 + They are created as a subtree (think ‘heading’), or in-line ('org-inlinetask).
 + You can assign deadlines, scheduled date and time, active timestamps, and inactive timestamps
+
 ***** Org-capture
 These are customizable org-headings that you can create on-the-go.
 They can be regular TODO’s or just notes.
+
 ***** Org-agenda
 Populates all your TODO’s and appointments into a singular view.
 Default is week-view.
 Using org-super-agenda, I set up my agenda as a daily view with
 appointments, deadlines, and a habit tracker.
+
 ***** Org-sidebar
 Another way of accessing your TODO’s that are outside of your agenda. I
 am using it to keep my project-specific TODO’s in the main project org
 file.
+
 **** Writing
 ***** org-roam
 A note-taking package that replicates Roam Research which is based on
 the Zettelkasten method. I use it to build my literature review and I use
 org-roam-server to visualize my notes into a network.
 It builds on the strength of org-mode’s hyperlinking properties.
+
 ***** Org-roam-bibtex
 Utilizes a combination of org-ref, helm-bibtex, and
 bibtex-completion to streamline note-taking workflow with references
 within the org-roam ecosystem.
+
 ***** Org-noter
 I use it to annotate PDFs and take notes within the same buffer.
 + Works extremely well with PDF-tools.
@@ -8257,6 +8268,51 @@ You need change the *channel_id* with your owm *channel_id*.
 *** Reference List
 1. https://towardsdatascience.com/build-a-stunning-readme-for-your-github-profile-9b80434fe5d7
 
+
+** DONE Github Action Push To Another Repository :github:action:
+CLOSED: [2022-09-18 Sun 19:13]
+:PROPERTIES:
+:EXPORT_FILE_NAME: githubActionPushToAnotherRepository
+:EXPORT_OPTIONS: author:nil
+:END:
+
+*** Overview
+Using Github Action push to another Repository is common in used.
+
+There are two ways to set up this GitHub action:
+
++ Using SSH deploy keys (recommended, a bit harder to set up): push-to-another-repository-deploy-keys-example. The configuration is in the file ci.yml (ssh keys).
+
++ Using a Personal Access Token (first iteration, not recommended but easier to set up: push-to-another-repository-example. The configuration is in the file ci.yml (token).
+
+*** Setup using the Personal Access Token
+This method is here for compatibility with the initial approach of this GitHub Action.
+The Personal Access Token would have access to all your repositories, so if it were to be leaked, the damage would be greater: it would allow pushes to the same repositories to which the Personal Access Token owner has access, and other possible associated permissions. On the other hand, the setup is a bit easier because it does not involve creating the deploy key.
+
+Generate your Personal Access Token using the following steps:
+1. Go to the general GitHub Settings (on the right-hand side on the profile picture)
+   [[https://cpina.github.io/push-to-another-repository-docs/_images/pat-10.png]]
+2. On the left-hand side pane, scroll to the bottom and click on “Developer Settings"
+   [[https://cpina.github.io/push-to-another-repository-docs/_images/pat-20.png]]
+3. Click on “Personal Access Tokens” (also available at https://github.com/settings/tokens)
+   [[https://cpina.github.io/push-to-another-repository-docs/_images/pat-30.png]]
+4. Generate a new token entering a name and expiration date, and choose “Repo”. Click the bottom button “Generate token”. If you choose an expiration date you will need to create a new token after this date. In this example, I have used “No expiration”; this should be used carefully.
+   [[https://cpina.github.io/push-to-another-repository-docs/_images/pat-40.png]]
+5. Copy the displayed token
+   [[https://cpina.github.io/push-to-another-repository-docs/_images/pat-50.png]]
+
+Then make the token available to the GitHub Action using the following steps:
+
+1. Go to the GitHub page for the repository that you push from (origin repository). Click on “Settings” for the repository
+2. Click on “New repository secret”
+   [[https://res.cloudinary.com/dkvj6mo4c/image/upload/v1663544055/githubAction/newRepoSecret_gadfaz.png]]
+3. Name: “API_TOKEN_GITHUB”
+4. Value: paste the token that you copied earlier
+5. Click on “Add secret”
+   [[https://cpina.github.io/push-to-another-repository-docs/_images/pat-70.png]]
+
+*** Reference List
+1. https://cpina.github.io/push-to-another-repository-docs/overview.html
 
 * Windows :@Windows:
 ** DONE Virtualize Windows 11 with Proxmox :windows:11:proxmox:pve:

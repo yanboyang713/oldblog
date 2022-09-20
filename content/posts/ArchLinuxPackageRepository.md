@@ -1,6 +1,6 @@
 ---
 title: "Getting Started Custom Arch Linux Package Repository with GitHub"
-date: 2022-03-20T18:43:00+11:00
+date: 2022-03-20T18:43:00-04:00
 categories: ["Linux"]
 draft: false
 ---
@@ -217,6 +217,13 @@ makepkg -sr --sign
 The main difference between building signed packages and building unsigned packages is that you need to pass --sign argument to makepkg if you want to build signed packages.
 
 And after building a signed package, we will get not only a \*.pkg.tar.zst, but also a \*.pkg.tar.zst.sig file. This \*.pkg.tar.zst.sig file is the binary signature of this package, we’ll need to add both of these two files to our package repository.
+
+
+### Create a local repo {#create-a-local-repo}
+
+```bash
+repo-add meta-scientific-linux.db.tar.gz
+```
 
 
 ## Reference List {#reference-list}
